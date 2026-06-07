@@ -36,7 +36,7 @@ export interface Lead {
 export interface Conversation {
   id: string;
   name: string;
-  channel: "WhatsApp" | "SMS" | "Email" | "Phone";
+  channel: "WhatsApp" | "SMS" | "Email" | "Phone" | "Facebook" | "Website";
   latest: string;
   urgency: "critical" | "high" | "medium" | "low";
   status: "awaiting-reply" | "replied" | "completed" | "pending-quote";

@@ -1,21 +1,41 @@
+import type { ReactNode } from "react";
+
 type PanelProps = {
-  title: string;
+  title?: string;
   subtitle?: string;
-  footer?: React.ReactNode;
+  eyebrow?: string;
+  action?: ReactNode;
+  footer?: ReactNode;
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
-export default function Panel({ title, subtitle, footer, className = "", children }: PanelProps) {
+export default function Panel({
+  title,
+  subtitle,
+  eyebrow,
+  action,
+  footer,
+  className = "",
+  children,
+}: PanelProps) {
+  const hasHeader = eyebrow || title || subtitle || action;
+
   return (
-    <section className={`panel ${className}`}>
-      <div className="panel-header">
-        <div>
-          <h2>{title}</h2>
-          {subtitle ? <p>{subtitle}</p> : null}
+    <section className={`panel ${className}`.trim()}>
+      {hasHeader ? (
+        <div className="panel-header">
+          <div>
+            {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
+            {title ? <h2>{title}</h2> : null}
+            {subtitle ? <p>{subtitle}</p> : null}
+          </div>
+          {action ? <div>{action}</div> : null}
         </div>
-      </div>
+      ) : null}
+
       <div className="panel-content">{children}</div>
+
       {footer ? <div className="panel-footer">{footer}</div> : null}
     </section>
   );
