@@ -10,6 +10,10 @@ const navItems = [
   { href: "/messages", label: "Messages" },
   { href: "/bookings", label: "Bookings" },
   { href: "/customers", label: "Customers" },
+  { href: "/follow-ups", label: "Follow-Ups" },
+  { href: "/reviews", label: "Reviews" },
+  { href: "/activity-log", label: "Activity Log" },
+  { href: "/error-log", label: "Error Log" },
   { href: "/settings", label: "Settings" },
 ];
 
@@ -29,11 +33,13 @@ export default function Sidebar() {
       <nav className="sidebar-nav">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
+
           return (
             <Link
               key={item.href}
               href={item.href}
-              className={`sidebar-link ${isActive ? "active" : ""}`}>
+              className={`sidebar-link ${isActive ? "active" : ""}`}
+            >
               {item.label}
             </Link>
           );
@@ -42,8 +48,8 @@ export default function Sidebar() {
 
       <div className="sidebar-status">
         <p className="status-title">System health</p>
-        <p className="status-text">All AI services are online.</p>
-        <p className="status-note">No issues detected</p>
+        <p className="status-text">Demo system online.</p>
+        <p className="status-note">Fake data only</p>
       </div>
     </aside>
   );
