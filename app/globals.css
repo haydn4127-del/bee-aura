@@ -3029,3 +3029,440 @@ h1 {
   }
 }
 /* === End Dashboard 12-column exact layout patch v5 === */
+
+
+/* === Bee-Aura Leads page clean v2 === */
+.leads-board {
+  width: 100%;
+  max-width: 1540px;
+  margin: 0 auto;
+  color: #f5f7fb;
+}
+
+.leads-board-header {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.leads-board-header h1 {
+  margin: 0 0 6px;
+  font-size: clamp(2.1rem, 3vw, 3.25rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.leads-board-header p {
+  margin: 0;
+  color: #d7dfec;
+  font-size: 1.02rem;
+}
+
+.leads-board-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  flex-wrap: nowrap;
+}
+
+.lead-add-button,
+.lead-filter-button,
+.lead-search-box,
+.lead-owner-card {
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 12px;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.lead-add-button {
+  gap: 10px;
+  padding: 0 24px;
+  color: #08111d;
+  background: linear-gradient(180deg, #ffd968, #f2a914);
+  border: 1px solid rgba(255, 217, 104, 0.72);
+  box-shadow: 0 18px 40px rgba(245, 188, 22, 0.18);
+}
+
+.lead-add-button span {
+  font-size: 1.35rem;
+}
+
+.lead-filter-button {
+  padding: 0 22px;
+  color: #f5f7fb;
+  background: rgba(3, 13, 27, 0.78);
+  border: 1px solid rgba(245, 188, 22, 0.32);
+}
+
+.lead-search-box {
+  min-width: 310px;
+  justify-content: space-between;
+  padding: 0 16px;
+  color: #8fa2ba;
+  background: rgba(3, 13, 27, 0.78);
+  border: 1px solid rgba(132, 159, 206, 0.24);
+}
+
+.lead-search-box strong {
+  color: #f5f7fb;
+}
+
+.lead-owner-card {
+  gap: 10px;
+  min-width: 176px;
+  padding: 0 12px;
+  color: #f5f7fb;
+  background: rgba(3, 13, 27, 0.78);
+  border: 1px solid rgba(245, 188, 22, 0.32);
+}
+
+.lead-owner-card small {
+  display: block;
+  color: #90a0b8;
+  margin-top: 2px;
+}
+
+.lead-owner-card em {
+  margin-left: auto;
+  font-style: normal;
+}
+
+.lead-owner-avatar {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #07111d;
+  font-weight: 950;
+  background: linear-gradient(135deg, #f5bc16, #29a8ff);
+}
+
+.leads-board-card {
+  border-radius: 20px;
+  border: 1px solid rgba(41, 168, 255, 0.42);
+  background:
+    radial-gradient(circle at top right, rgba(10, 132, 255, 0.10), transparent 32%),
+    linear-gradient(180deg, rgba(5, 15, 30, 0.94), rgba(2, 8, 18, 0.98));
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.38);
+  overflow: hidden;
+}
+
+.lead-tabs-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(132, 159, 206, 0.16);
+}
+
+.lead-tabs {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.lead-tabs button,
+.lead-sort-button {
+  min-height: 40px;
+  padding: 0 17px;
+  border-radius: 10px;
+  color: #f5f7fb;
+  background: transparent;
+  border: 1px solid transparent;
+  font-weight: 850;
+}
+
+.lead-tabs button.active {
+  color: #f5f7fb;
+  border-color: #f5bc16;
+  box-shadow: 0 0 0 2px rgba(245, 188, 22, 0.16), inset 0 0 24px rgba(245, 188, 22, 0.12);
+}
+
+.lead-tabs button span {
+  margin-left: 8px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  color: #bce8ff;
+  background: rgba(10, 132, 255, 0.20);
+}
+
+.lead-sort-button {
+  border-color: rgba(132, 159, 206, 0.20);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.lead-table-frame {
+  overflow-x: auto;
+  padding: 0 12px;
+}
+
+.lead-table {
+  width: 100%;
+  min-width: 1240px;
+  border-collapse: collapse;
+}
+
+.lead-table th,
+.lead-table td {
+  padding: 14px 11px;
+  text-align: left;
+  border-bottom: 1px solid rgba(132, 159, 206, 0.12);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.lead-table th {
+  color: #cad4e4;
+  font-size: 0.84rem;
+  font-weight: 850;
+  background: rgba(6, 18, 34, 0.78);
+}
+
+.lead-table td {
+  color: #f5f7fb;
+  font-size: 0.86rem;
+}
+
+.lead-source,
+.lead-status {
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 7px;
+  font-weight: 900;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lead-source-google,
+.lead-source-website,
+.lead-source-facebook {
+  color: #29a8ff;
+  background: rgba(10, 132, 255, 0.15);
+}
+
+.lead-source-referral {
+  color: #f5bc16;
+  background: rgba(245, 188, 22, 0.15);
+}
+
+.lead-status-new {
+  color: #29a8ff;
+  background: rgba(10, 132, 255, 0.15);
+}
+
+.lead-status-contacted,
+.lead-status-quote-sent {
+  color: #c084fc;
+  background: rgba(168, 85, 247, 0.16);
+}
+
+.lead-status-follow-up {
+  color: #f5bc16;
+  background: rgba(245, 188, 22, 0.16);
+}
+
+.lead-status-referral {
+  color: #f5f7fb;
+  background: rgba(148, 163, 184, 0.16);
+}
+
+.lead-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.lead-actions a,
+.lead-actions button {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #d7dfec;
+  border: 1px solid rgba(132, 159, 206, 0.22);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.lead-table-footer {
+  min-height: 132px;
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) auto minmax(260px, 310px);
+  gap: 24px;
+  align-items: end;
+  padding: 16px 18px;
+}
+
+.lead-table-footer p {
+  margin: 0;
+  color: #d7dfec;
+}
+
+.lead-pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lead-pagination button,
+.lead-pagination span {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #f5bc16;
+  font-weight: 900;
+}
+
+.lead-pagination button {
+  border: 1px solid rgba(132, 159, 206, 0.22);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.lead-pagination button.active {
+  color: #08111d;
+  background: #f5bc16;
+}
+
+.lead-outcomes-card {
+  justify-self: end;
+  width: 100%;
+  max-width: 310px;
+  min-height: 108px;
+  display: grid;
+  grid-template-columns: 1fr 82px;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(41, 168, 255, 0.34);
+  background: rgba(5, 15, 30, 0.84);
+}
+
+.lead-outcomes-card h3 {
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+}
+
+.lead-outcomes-card p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 5px 0;
+  color: #d7dfec;
+  font-size: 0.8rem;
+}
+
+.lead-outcomes-card strong {
+  margin-left: auto;
+}
+
+.lead-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.lead-dot.blue {
+  background: #0a84ff;
+}
+
+.lead-dot.gold {
+  background: #f5bc16;
+}
+
+.lead-donut {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, #08111d 0 45%, transparent 47%),
+    conic-gradient(#f5bc16 0 31%, #0a84ff 31% 100%);
+}
+
+.lead-donut span {
+  display: grid;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 950;
+}
+
+.lead-donut small {
+  font-size: 0.62rem;
+  color: #cad4e4;
+}
+
+@media (max-width: 1280px) {
+  .leads-board-header {
+    grid-template-columns: 1fr;
+  }
+
+  .leads-board-controls {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .lead-table-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .lead-outcomes-card {
+    justify-self: start;
+  }
+}
+/* === End Bee-Aura Leads page clean v2 === */
+
+/* === Leads footer right alignment fix v3 === */
+
+/* Force the Leads footer to stay in one row on laptop screens */
+.lead-table-footer,
+.leads-pro-footer {
+  display: grid !important;
+  grid-template-columns: minmax(190px, 1fr) auto minmax(240px, 300px) !important;
+  align-items: end !important;
+  gap: 18px !important;
+}
+
+.lead-outcomes-card,
+.leads-pro-outcomes {
+  justify-self: end !important;
+  max-width: 300px !important;
+  width: 100% !important;
+}
+
+/* Make the table slightly more compact so it fits closer to the reference */
+.lead-table {
+  min-width: 1160px !important;
+}
+
+.lead-table th,
+.lead-table td {
+  padding: 12px 9px !important;
+  font-size: 0.8rem !important;
+}
+
+/* Only stack the footer on genuinely small screens */
+@media (max-width: 900px) {
+  .lead-table-footer,
+  .leads-pro-footer {
+    grid-template-columns: 1fr !important;
+  }
+
+  .lead-outcomes-card,
+  .leads-pro-outcomes {
+    justify-self: start !important;
+  }
+}
+
+/* === End Leads footer right alignment fix v3 === */
