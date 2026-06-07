@@ -3466,3 +3466,526 @@ h1 {
 }
 
 /* === End Leads footer right alignment fix v3 === */
+
+/* === Sidebar Bee bot visual upgrade v1 === */
+.sidebar-bot {
+  position: relative;
+  width: 72px !important;
+  height: 78px !important;
+  margin-bottom: 10px;
+  font-size: 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.sidebar-bot::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 13px;
+  width: 46px;
+  height: 34px;
+  border-radius: 16px;
+  background: #07111d;
+  border: 3px solid #f5bc16;
+  box-shadow:
+    0 0 18px rgba(41, 168, 255, 0.42),
+    inset 0 -4px 0 rgba(245, 188, 22, 0.18);
+}
+
+.sidebar-bot::after {
+  content: "";
+  position: absolute;
+  left: 21px;
+  top: 25px;
+  width: 9px;
+  height: 13px;
+  border-radius: 999px;
+  background: #29a8ff;
+  box-shadow:
+    21px 0 0 #29a8ff,
+    0 0 13px rgba(41, 168, 255, 0.85),
+    21px 0 13px rgba(41, 168, 255, 0.85);
+}
+
+/* small gold body */
+.sidebar-assistant-card .sidebar-bot span {
+  display: none;
+}
+
+.sidebar-assistant-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-assistant-card::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 48px;
+  width: 34px;
+  height: 28px;
+  border-radius: 45%;
+  background: linear-gradient(
+    90deg,
+    #f5bc16 0 34%,
+    #07111d 34% 51%,
+    #f5bc16 51% 72%,
+    #07111d 72%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+.sidebar-assistant-card::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 40px;
+  width: 24px;
+  height: 34px;
+  border-radius: 55% 10% 55% 10%;
+  background: rgba(41, 168, 255, 0.18);
+  border: 1px solid rgba(41, 168, 255, 0.52);
+  transform: rotate(-24deg);
+  box-shadow: 42px 4px 0 rgba(41, 168, 255, 0.14);
+}
+
+/* make the card feel closer to the premium reference */
+.sidebar-assistant-card {
+  border-color: rgba(245, 188, 22, 0.72) !important;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(245, 188, 22, 0.22), transparent 28%),
+    radial-gradient(circle at 72% 18%, rgba(41, 168, 255, 0.16), transparent 32%),
+    linear-gradient(180deg, rgba(8, 19, 36, 0.98), rgba(3, 11, 23, 0.98)) !important;
+}
+
+.sidebar-assistant-card .status-title {
+  margin-left: 78px !important;
+}
+
+.sidebar-assistant-card .status-text {
+  margin-left: 78px !important;
+}
+
+.sidebar-assistant-card a {
+  margin-top: 12px;
+}
+/* === End Sidebar Bee bot visual upgrade v1 === */
+
+/* === Leads full-page compact fit patch v4 === */
+
+/* Make the Leads page fit more like the reference on laptop screens */
+.leads-board {
+  max-width: 1500px !important;
+  font-size: 0.82rem;
+}
+
+.leads-board-header {
+  margin-bottom: 12px !important;
+  gap: 14px !important;
+}
+
+.leads-board-header h1 {
+  font-size: clamp(1.8rem, 2.4vw, 2.55rem) !important;
+  margin-bottom: 4px !important;
+}
+
+.leads-board-header p {
+  font-size: 0.9rem !important;
+}
+
+.leads-board-controls {
+  gap: 10px !important;
+}
+
+.lead-add-button,
+.lead-filter-button,
+.lead-search-box,
+.lead-owner-card {
+  min-height: 40px !important;
+  border-radius: 10px !important;
+  font-size: 0.78rem !important;
+}
+
+.lead-add-button {
+  padding: 0 18px !important;
+}
+
+.lead-filter-button {
+  padding: 0 16px !important;
+}
+
+.lead-search-box {
+  min-width: 250px !important;
+  padding: 0 12px !important;
+}
+
+.lead-owner-card {
+  min-width: 150px !important;
+  padding: 0 10px !important;
+}
+
+.lead-owner-avatar {
+  width: 32px !important;
+  height: 32px !important;
+  font-size: 0.75rem !important;
+}
+
+/* Table card compact */
+.lead-tabs-row {
+  padding: 10px 14px !important;
+}
+
+.lead-tabs {
+  gap: 12px !important;
+}
+
+.lead-tabs button,
+.lead-sort-button {
+  min-height: 34px !important;
+  padding: 0 13px !important;
+  font-size: 0.78rem !important;
+}
+
+.lead-tabs button span {
+  padding: 2px 7px !important;
+  margin-left: 5px !important;
+}
+
+/* Make table rows shorter so footer appears on screen */
+.lead-table {
+  min-width: 1120px !important;
+}
+
+.lead-table th,
+.lead-table td {
+  padding: 8px 8px !important;
+  font-size: 0.73rem !important;
+  line-height: 1.15 !important;
+}
+
+.lead-source,
+.lead-status {
+  min-height: 24px !important;
+  padding: 0 8px !important;
+  font-size: 0.72rem !important;
+  border-radius: 6px !important;
+}
+
+.lead-actions {
+  gap: 5px !important;
+}
+
+.lead-actions a,
+.lead-actions button {
+  width: 27px !important;
+  height: 27px !important;
+  border-radius: 7px !important;
+  font-size: 0.7rem !important;
+}
+
+/* Footer should show without needing lots of scrolling */
+.lead-table-footer {
+  min-height: 92px !important;
+  padding: 10px 14px !important;
+  grid-template-columns: minmax(170px, 1fr) auto minmax(220px, 270px) !important;
+  gap: 14px !important;
+}
+
+.lead-table-footer p {
+  font-size: 0.78rem !important;
+}
+
+.lead-pagination {
+  gap: 7px !important;
+}
+
+.lead-pagination button,
+.lead-pagination span {
+  width: 30px !important;
+  height: 30px !important;
+  font-size: 0.75rem !important;
+}
+
+.lead-outcomes-card {
+  max-width: 270px !important;
+  min-height: 86px !important;
+  grid-template-columns: 1fr 66px !important;
+  padding: 9px 11px !important;
+}
+
+.lead-outcomes-card h3 {
+  font-size: 0.78rem !important;
+  margin-bottom: 5px !important;
+}
+
+.lead-outcomes-card p {
+  font-size: 0.68rem !important;
+  margin: 3px 0 !important;
+}
+
+.lead-donut {
+  width: 62px !important;
+  height: 62px !important;
+}
+
+.lead-donut span {
+  font-size: 0.78rem !important;
+}
+
+.lead-donut small {
+  font-size: 0.5rem !important;
+}
+
+/* Keep page from feeling too spaced out */
+.leads-board-card {
+  border-radius: 16px !important;
+}
+
+/* === End Leads full-page compact fit patch v4 === */
+
+/* === Leads alignment and full-width table patch v5 === */
+
+/* Let the Leads page use the full available app width */
+.leads-board {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* Header: title left, controls pushed right */
+.leads-board-header {
+  grid-template-columns: minmax(260px, 1fr) minmax(620px, auto) !important;
+  align-items: end !important;
+}
+
+.leads-board-controls {
+  justify-content: flex-end !important;
+  width: 100% !important;
+}
+
+/* Make controls more like the reference, tighter and right-aligned */
+.lead-add-button,
+.lead-filter-button,
+.lead-search-box,
+.lead-owner-card {
+  min-height: 38px !important;
+  font-size: 0.72rem !important;
+}
+
+.lead-add-button {
+  padding: 0 15px !important;
+}
+
+.lead-filter-button {
+  padding: 0 14px !important;
+}
+
+.lead-search-box {
+  min-width: 220px !important;
+  max-width: 260px !important;
+}
+
+.lead-owner-card {
+  min-width: 130px !important;
+}
+
+/* Make the table box stretch properly across the page */
+.leads-board-card {
+  width: 100% !important;
+}
+
+/* Keep the tabs and sort aligned like the reference */
+.lead-tabs-row {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: center !important;
+}
+
+.lead-tabs {
+  min-width: 0 !important;
+}
+
+/* Key fix: stop the table being too wide for the laptop */
+.lead-table {
+  width: 100% !important;
+  min-width: 980px !important;
+  table-layout: fixed !important;
+}
+
+/* Column widths so headers line up with data and everything fits better */
+.lead-table th:nth-child(1),
+.lead-table td:nth-child(1) {
+  width: 9%;
+}
+
+.lead-table th:nth-child(2),
+.lead-table td:nth-child(2) {
+  width: 11%;
+}
+
+.lead-table th:nth-child(3),
+.lead-table td:nth-child(3) {
+  width: 12%;
+}
+
+.lead-table th:nth-child(4),
+.lead-table td:nth-child(4) {
+  width: 8%;
+}
+
+.lead-table th:nth-child(5),
+.lead-table td:nth-child(5) {
+  width: 9%;
+}
+
+.lead-table th:nth-child(6),
+.lead-table td:nth-child(6) {
+  width: 9%;
+}
+
+.lead-table th:nth-child(7),
+.lead-table td:nth-child(7) {
+  width: 7%;
+}
+
+.lead-table th:nth-child(8),
+.lead-table td:nth-child(8) {
+  width: 8%;
+}
+
+.lead-table th:nth-child(9),
+.lead-table td:nth-child(9) {
+  width: 12%;
+}
+
+.lead-table th:nth-child(10),
+.lead-table td:nth-child(10) {
+  width: 7%;
+}
+
+.lead-table th:nth-child(11),
+.lead-table td:nth-child(11) {
+  width: 8%;
+}
+
+/* Truncate long text neatly instead of pushing columns out */
+.lead-table th,
+.lead-table td {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  padding: 8px 7px !important;
+  font-size: 0.69rem !important;
+  line-height: 1.12 !important;
+}
+
+/* Keep badge sizes under control */
+.lead-source,
+.lead-status {
+  min-height: 22px !important;
+  padding: 0 7px !important;
+  font-size: 0.66rem !important;
+}
+
+/* Actions smaller so they fit */
+.lead-actions {
+  gap: 4px !important;
+}
+
+.lead-actions a,
+.lead-actions button {
+  width: 24px !important;
+  height: 24px !important;
+  font-size: 0.64rem !important;
+}
+
+/* Footer: full row, outcomes forced bottom-right */
+.lead-table-footer {
+  grid-template-columns: minmax(170px, 1fr) auto minmax(220px, 270px) !important;
+  align-items: end !important;
+  width: 100% !important;
+}
+
+.lead-outcomes-card {
+  justify-self: end !important;
+  align-self: end !important;
+}
+
+/* Make pagination compact enough to sit in the middle */
+.lead-pagination {
+  gap: 6px !important;
+}
+
+.lead-pagination button,
+.lead-pagination span {
+  width: 28px !important;
+  height: 28px !important;
+  font-size: 0.7rem !important;
+}
+
+/* === End Leads alignment and full-width table patch v5 === */
+
+/* === Leads full-height table panel patch v6 === */
+
+/* Make Leads page use the available viewport height */
+.leads-board {
+  min-height: calc(100vh - 40px) !important;
+  display: grid !important;
+  grid-template-rows: auto minmax(0, 1fr) !important;
+}
+
+/* Make the main Leads box stretch to the bottom */
+.leads-board-card {
+  min-height: calc(100vh - 180px) !important;
+  display: grid !important;
+  grid-template-rows: auto minmax(0, 1fr) auto !important;
+}
+
+/* Let the table area fill the middle of the box */
+.lead-table-frame {
+  min-height: 0 !important;
+  height: 100% !important;
+  overflow: auto !important;
+}
+
+/* Keep footer locked at the bottom of the Leads box */
+.lead-table-footer {
+  align-self: end !important;
+}
+
+/* Avoid rows getting too tall inside the extended panel */
+.lead-table th,
+.lead-table td {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+/* === End Leads full-height table panel patch v6 === */
+
+/* === Leads vertical fill patch v8 === */
+
+/* Make the main leads card reach lower on the laptop screen */
+.leads-board-card {
+  min-height: calc(100vh - 138px) !important;
+}
+
+/* Let the table body naturally occupy more vertical space */
+.lead-table th,
+.lead-table td {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+/* Give the footer a little more breathing room while staying at the bottom */
+.lead-table-footer {
+  min-height: 118px !important;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
+/* Push the footer area lower inside the card */
+.lead-table-frame {
+  min-height: 0 !important;
+  flex: 1 1 auto !important;
+}
+
+/* === End Leads vertical fill patch v8 === */

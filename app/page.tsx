@@ -46,6 +46,7 @@ export default function Home() {
         </Link>
 
         <div className="landing-nav-links">
+          <Link href="/dashboard">Dashboard</Link>
           <a href="#platform">Platform</a>
           <a href="#features">Features</a>
           <a href="#how-it-works">How It Works</a>

@@ -46,6 +46,15 @@ export default function Sidebar() {
         })}
       </nav>
 
+      <div className="sidebar-assistant-card">
+        <div className="sidebar-bot">🤖</div>
+        <div>
+          <p className="status-title">Bee-Aura AI</p>
+          <p className="status-text">Need help with your leads?</p>
+        </div>
+        <a href="/messages">Ask me anything →</a>
+      </div>
+
       <div className="sidebar-status">
         <p className="status-title">System health</p>
         <p className="status-text">Demo system online.</p>
