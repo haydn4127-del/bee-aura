@@ -1,121 +1,244 @@
 import Link from "next/link";
-import Panel from "./components/Panel";
 
-const quickLinks = [
-  { href: "/dashboard", label: "Dashboard" },
-  { href: "/leads", label: "Leads" },
-  { href: "/messages", label: "Messages" },
-  { href: "/bookings", label: "Bookings" },
+const featureCards = [
+  {
+    title: "Lead Capture",
+    body: "Capture enquiries from calls, forms, messages and more before competitors get there.",
+    icon: "☎",
+    accent: "gold",
+  },
+  {
+    title: "Smart Inbox",
+    body: "Keep every message, enquiry and customer conversation organised in one place.",
+    icon: "💬",
+    accent: "blue",
+  },
+  {
+    title: "Booking Support",
+    body: "Manage appointments, confirmations and job updates with less admin.",
+    icon: "📅",
+    accent: "purple",
+  },
+  {
+    title: "Follow-Up Queue",
+    body: "Stay on top of warm leads and stop opportunities going cold.",
+    icon: "✅",
+    accent: "green",
+  },
+];
+
+const previewStats = [
+  ["Leads Captured", "482", "▲ 10%"],
+  ["Response Time", "2m 48s", "▼ 21%"],
+  ["Bookings Today", "14", "▲ 27%"],
+  ["Pipeline Value", "£84,350", "▲ 17%"],
 ];
 
 export default function Home() {
   return (
-    <div className="page page-home">
-      <section className="home-hero">
-        <div className="hero-copy-block">
-          <p className="eyebrow">Bee-Aura AI</p>
-          <h1>Lead Recovery OS for service businesses</h1>
-          <p className="hero-copy">
-            Recover missed leads, manage conversations, book appointments, and follow up automatically from one smart dashboard.
+    <main className="landing-page">
+      <nav className="landing-nav">
+        <Link href="/" className="landing-brand">
+          <span className="landing-bee-mark">🐝</span>
+          <span>
+            Bee-Aura <strong>AI</strong>
+          </span>
+        </Link>
+
+        <div className="landing-nav-links">
+          <a href="#platform">Platform</a>
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#about">About</a>
+        </div>
+
+        <div className="landing-nav-actions">
+          <Link href="/settings" className="landing-button landing-button-ghost">
+            Login
+          </Link>
+          <Link href="/dashboard" className="landing-button landing-button-primary">
+            Book a Demo
+          </Link>
+        </div>
+      </nav>
+
+      <section className="landing-hero" id="platform">
+        <div className="landing-hero-copy">
+          <p className="landing-eyebrow">Lead Recovery OS for UK service businesses</p>
+          <h1>Turn More Enquiries Into Booked Jobs</h1>
+          <h2>Lead Capture. Faster Replies. More Revenue.</h2>
+          <p className="landing-hero-text">
+            Bee-Aura AI helps UK service businesses capture leads, manage messages,
+            support bookings, follow up faster and stay in control — all from one
+            smart operating system.
           </p>
-          <p className="hero-notice">Fake data only. No real integrations.</p>
-          <div className="hero-actions">
-            {quickLinks.map((item) => (
-              <Link key={item.href} href={item.href} className="button button-secondary">
-                {item.label}
-              </Link>
-            ))}
+
+          <div className="landing-hero-actions">
+            <Link href="/dashboard" className="landing-button landing-button-primary landing-button-large">
+              ▶ View Demo
+            </Link>
+            <a href="#how-it-works" className="landing-button landing-button-outline landing-button-large">
+              ▶ How It Works
+            </a>
           </div>
-          <div className="hero-summary-cards">
-            <div>
-              <p>New leads today</p>
-              <strong>127</strong>
-            </div>
-            <div>
-              <p>Missed calls recovered</p>
-              <strong>39</strong>
-            </div>
-            <div>
-              <p>Bookings created</p>
-              <strong>24</strong>
-            </div>
-            <div>
-              <p>Reviews ready</p>
-              <strong>11</strong>
-            </div>
+
+          <div className="landing-trust-row">
+            <span>♙ Owner Controlled</span>
+            <span>◎ UK Focused</span>
+            <span>◇ Audit Ready</span>
           </div>
         </div>
 
-        <Panel className="hero-preview">
-          <div className="preview-header">
-            <div>
-              <p className="eyebrow">Owner command centre</p>
-              <strong className="preview-title">Today’s lead recovery snapshot</strong>
+        <div className="landing-hero-visual">
+          <div className="bee-bot bee-bot-small" aria-label="Bee-Aura AI mascot">
+            <div className="bee-wing bee-wing-left" />
+            <div className="bee-wing bee-wing-right" />
+            <div className="bee-head">
+              <span className="bee-eye" />
+              <span className="bee-eye" />
             </div>
-            <span className="pill pill-tag">Demo</span>
-          </div>
-          <div className="preview-chart">
-            <svg viewBox="0 0 620 300" aria-hidden="true">
-              <defs>
-                <linearGradient id="home-gold" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#f5bc16" />
-                  <stop offset="100%" stopColor="#ffd147" />
-                </linearGradient>
-                <linearGradient id="home-blue" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#0a84ff" />
-                  <stop offset="100%" stopColor="#29a8ff" />
-                </linearGradient>
-              </defs>
-              <g stroke="rgba(255,255,255,0.12)" strokeWidth="1">
-                <path d="M24 48 H596" />
-                <path d="M24 96 H596" />
-                <path d="M24 144 H596" />
-                <path d="M24 192 H596" />
-                <path d="M24 240 H596" />
-              </g>
-              <path
-                d="M 30 220 C 110 192 180 176 260 154 C 325 138 370 142 430 120 C 480 104 530 98 586 72"
-                fill="none"
-                stroke="url(#home-gold)"
-                strokeWidth="5"
-                strokeLinecap="round"
-              />
-              <path
-                d="M 30 240 C 110 212 180 196 260 180 C 325 166 370 170 430 150 C 480 136 530 130 586 108"
-                fill="none"
-                stroke="url(#home-blue)"
-                strokeWidth="4"
-                strokeLinecap="round"
-                strokeDasharray="12 10"
-              />
-            </svg>
-          </div>
-          <div className="preview-summary">
-            <div>
-              <span>Lead recovery</span>
-              <strong>91%</strong>
-            </div>
-            <div>
-              <span>Response speed</span>
-              <strong>5 min</strong>
+            <div className="bee-body">
+              <span />
+              <span />
             </div>
           </div>
-        </Panel>
+
+          <div className="landing-dashboard-preview">
+            <aside className="preview-sidebar">
+              <div className="preview-brand">🐝 Bee-Aura AI</div>
+              <span className="active">Overview</span>
+              <span>Leads</span>
+              <span>Conversations</span>
+              <span>Bookings</span>
+              <span>Follow-Ups</span>
+              <span>Reports</span>
+              <span>Settings</span>
+            </aside>
+
+            <section className="preview-content">
+              <div className="preview-topbar">
+                <div>
+                  <p>Overview</p>
+                  <strong>Northfield Home Services</strong>
+                </div>
+                <span>10 May – 16 May 2025 ▾</span>
+              </div>
+
+              <div className="preview-stat-grid">
+                {previewStats.map(([label, value, change]) => (
+                  <div className="preview-stat" key={label}>
+                    <span>{label}</span>
+                    <strong>{value}</strong>
+                    <small>{change} vs last 7 days</small>
+                  </div>
+                ))}
+              </div>
+
+              <div className="preview-chart-grid">
+                <div className="preview-chart-card">
+                  <div className="chart-card-header">
+                    <span>Leads Captured</span>
+                    <strong>482</strong>
+                  </div>
+                  <svg viewBox="0 0 280 130" role="img" aria-label="Fake leads chart">
+                    <polyline points="5,104 42,72 78,88 116,56 150,62 190,38 228,45 275,18" />
+                  </svg>
+                </div>
+
+                <div className="preview-chart-card">
+                  <div className="chart-card-header">
+                    <span>Pipeline Value</span>
+                    <strong>£84,350</strong>
+                  </div>
+                  <svg viewBox="0 0 280 130" role="img" aria-label="Fake pipeline chart">
+                    <polyline points="5,108 44,92 80,68 116,75 150,54 190,45 228,22 275,34" />
+                  </svg>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
       </section>
 
-      <section className="home-features">
-        {[
-          { title: "Automated intake", label: "Capture every missed inbound lead with AI triage." },
-          { title: "Smart follow-up", label: "Keep hot prospects moving with timely nudges." },
-          { title: "Booking assistant", label: "Keep the schedule full without manual tracking." },
-          { title: "Owner dashboard", label: "See what needs attention first with one glance." },
-        ].map((feature) => (
-          <div key={feature.title} className="feature-card">
+      <section className="landing-features" id="features">
+        {featureCards.map((feature) => (
+          <article className={`landing-feature landing-feature-${feature.accent}`} key={feature.title}>
+            <div className="landing-feature-icon">{feature.icon}</div>
             <h3>{feature.title}</h3>
-            <p>{feature.label}</p>
-          </div>
+            <p>{feature.body}</p>
+            <span className="feature-line" />
+          </article>
         ))}
       </section>
-    </div>
+
+      <section className="landing-how" id="how-it-works">
+        <p className="landing-eyebrow">How it works</p>
+        <h2>Simple. Fast. Effective.</h2>
+
+        <div className="landing-steps">
+          <div className="landing-step">
+            <span>1</span>
+            <strong>Capture</strong>
+            <p>New leads come in from calls, forms and messages.</p>
+          </div>
+
+          <div className="landing-step">
+            <span>2</span>
+            <strong>Organise</strong>
+            <p>Bee-Aura keeps conversations, bookings and follow-ups tidy.</p>
+          </div>
+
+          <div className="landing-step">
+            <span>3</span>
+            <strong>Convert & Grow</strong>
+            <p>Respond faster, recover more leads and win more jobs.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="landing-system-panel" id="about">
+        <div>
+          <h2>The AI Operating System for Service Businesses</h2>
+          <h3>Capture More Leads. Respond Faster. Stay in Control.</h3>
+          <p>
+            Bee-Aura AI brings lead capture, messaging, bookings, follow-ups and
+            business visibility into one modern platform.
+          </p>
+
+          <div className="landing-hero-actions">
+            <Link href="/dashboard" className="landing-button landing-button-primary">
+              📅 Book a Demo
+            </Link>
+            <Link href="/leads" className="landing-button landing-button-outline">
+              ▣ See Platform
+            </Link>
+          </div>
+        </div>
+
+        <div className="bee-bot bee-bot-large" aria-label="Bee-Aura AI mascot">
+          <div className="bee-wing bee-wing-left" />
+          <div className="bee-wing bee-wing-right" />
+          <div className="bee-head">
+            <span className="bee-eye" />
+            <span className="bee-eye" />
+          </div>
+          <div className="bee-body">
+            <span />
+            <span />
+          </div>
+          <div className="bee-glow" />
+        </div>
+      </section>
+
+      <section className="landing-bottom-strip">
+        <Link href="/leads">Leads</Link>
+        <Link href="/messages">Messages</Link>
+        <Link href="/bookings">Bookings</Link>
+        <Link href="/follow-ups">Follow-Ups</Link>
+        <Link href="/reviews">Reviews</Link>
+        <Link href="/dashboard">Reporting</Link>
+      </section>
+    </main>
   );
 }
