@@ -1,98 +1,120 @@
 import Link from "next/link";
-import KpiCard from "./components/KpiCard";
 import Panel from "./components/Panel";
+
+const quickLinks = [
+  { href: "/dashboard", label: "Dashboard" },
+  { href: "/leads", label: "Leads" },
+  { href: "/messages", label: "Messages" },
+  { href: "/bookings", label: "Bookings" },
+];
 
 export default function Home() {
   return (
     <div className="page page-home">
       <section className="home-hero">
-        <div>
+        <div className="hero-copy-block">
           <p className="eyebrow">Bee-Aura AI</p>
-          <h1>AI automation system for service businesses</h1>
+          <h1>Lead Recovery OS for service businesses</h1>
           <p className="hero-copy">
             Recover missed leads, manage conversations, book appointments, and follow up automatically from one smart dashboard.
           </p>
+          <p className="hero-notice">Fake data only. No real integrations.</p>
           <div className="hero-actions">
-            <Link href="/dashboard" className="button button-primary">
-              View Dashboard
-            </Link>
-            <Link href="/leads" className="button button-secondary">
-              View Leads
-            </Link>
+            {quickLinks.map((item) => (
+              <Link key={item.href} href={item.href} className="button button-secondary">
+                {item.label}
+              </Link>
+            ))}
           </div>
-        </div>
-
-        <div className="hero-panel">
-          <div className="hero-metrics">
+          <div className="hero-summary-cards">
             <div>
-              <span>New Leads</span>
+              <p>New leads today</p>
               <strong>127</strong>
             </div>
             <div>
-              <span>AI Calls Handled</span>
-              <strong>89</strong>
+              <p>Missed calls recovered</p>
+              <strong>39</strong>
             </div>
             <div>
-              <span>Appointments Booked</span>
+              <p>Bookings created</p>
               <strong>24</strong>
             </div>
             <div>
-              <span>Revenue Generated</span>
-              <strong>£3,420</strong>
+              <p>Reviews ready</p>
+              <strong>11</strong>
             </div>
-            <div>
-              <span>Active Clients</span>
-              <strong>56</strong>
-            </div>
-          </div>
-          <div className="hero-chart">
-            <svg viewBox="0 0 600 240" aria-hidden="true">
-              <defs>
-                <linearGradient id="hero-line" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#f9da5d" />
-                  <stop offset="100%" stopColor="#4fc5ff" />
-                </linearGradient>
-              </defs>
-              <path d="M 40 180 C 120 150 180 140 260 120 C 340 100 400 110 480 80 C 560 50 580 45 600 40" fill="none" stroke="url(#hero-line)" strokeWidth="6" strokeLinecap="round" />
-              {[60, 140, 220, 300, 380, 460, 540].map((x, index) => (
-                <circle key={x} cx={x} cy={180 - index * 16} r="6" fill="#f9da5d" />
-              ))}
-            </svg>
           </div>
         </div>
+
+        <Panel className="hero-preview">
+          <div className="preview-header">
+            <div>
+              <p className="eyebrow">Owner command centre</p>
+              <strong className="preview-title">Today’s lead recovery snapshot</strong>
+            </div>
+            <span className="pill pill-tag">Demo</span>
+          </div>
+          <div className="preview-chart">
+            <svg viewBox="0 0 620 300" aria-hidden="true">
+              <defs>
+                <linearGradient id="home-gold" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#f5bc16" />
+                  <stop offset="100%" stopColor="#ffd147" />
+                </linearGradient>
+                <linearGradient id="home-blue" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#0a84ff" />
+                  <stop offset="100%" stopColor="#29a8ff" />
+                </linearGradient>
+              </defs>
+              <g stroke="rgba(255,255,255,0.12)" strokeWidth="1">
+                <path d="M24 48 H596" />
+                <path d="M24 96 H596" />
+                <path d="M24 144 H596" />
+                <path d="M24 192 H596" />
+                <path d="M24 240 H596" />
+              </g>
+              <path
+                d="M 30 220 C 110 192 180 176 260 154 C 325 138 370 142 430 120 C 480 104 530 98 586 72"
+                fill="none"
+                stroke="url(#home-gold)"
+                strokeWidth="5"
+                strokeLinecap="round"
+              />
+              <path
+                d="M 30 240 C 110 212 180 196 260 180 C 325 166 370 170 430 150 C 480 136 530 130 586 108"
+                fill="none"
+                stroke="url(#home-blue)"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeDasharray="12 10"
+              />
+            </svg>
+          </div>
+          <div className="preview-summary">
+            <div>
+              <span>Lead recovery</span>
+              <strong>91%</strong>
+            </div>
+            <div>
+              <span>Response speed</span>
+              <strong>5 min</strong>
+            </div>
+          </div>
+        </Panel>
       </section>
 
       <section className="home-features">
         {[
-          { title: "Lead Recovery", label: "Never miss a new inquiry." },
-          { title: "AI Receptionist", label: "Capture and qualify leads instantly." },
-          { title: "Follow-Up Engine", label: "Automate reminders and nurture sequences." },
-          { title: "Appointment Control", label: "Keep your calendar full and organised." },
+          { title: "Automated intake", label: "Capture every missed inbound lead with AI triage." },
+          { title: "Smart follow-up", label: "Keep hot prospects moving with timely nudges." },
+          { title: "Booking assistant", label: "Keep the schedule full without manual tracking." },
+          { title: "Owner dashboard", label: "See what needs attention first with one glance." },
         ].map((feature) => (
           <div key={feature.title} className="feature-card">
             <h3>{feature.title}</h3>
             <p>{feature.label}</p>
           </div>
         ))}
-      </section>
-
-      <section className="home-summary-grid">
-        <Panel title="Today’s Hive Summary" subtitle="A quick view of your AI operations">
-          <div className="summary-grid">
-            <div>
-              <p>Automations live</p>
-              <strong>12</strong>
-            </div>
-            <div>
-              <p>Leads captured</p>
-              <strong>127</strong>
-            </div>
-            <div>
-              <p>Follow-ups queued</p>
-              <strong>45</strong>
-            </div>
-          </div>
-        </Panel>
       </section>
     </div>
   );

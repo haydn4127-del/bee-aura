@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
+  { href: "/", label: "Home" },
   { href: "/dashboard", label: "Dashboard" },
   { href: "/leads", label: "Leads" },
   { href: "/messages", label: "Messages" },
@@ -21,7 +22,7 @@ export default function Sidebar() {
         <span className="brand-mark">🐝</span>
         <div>
           <p className="brand-label">Bee-Aura AI</p>
-          <p className="brand-subtitle">AI Automation System</p>
+          <p className="brand-subtitle">Lead Recovery OS</p>
         </div>
       </div>
 
@@ -40,8 +41,9 @@ export default function Sidebar() {
       </nav>
 
       <div className="sidebar-status">
-        <div className="status-chip">All Systems Operational</div>
-        <p>Uptime: <strong>99.9%</strong></p>
+        <p className="status-title">System health</p>
+        <p className="status-text">All AI services are online.</p>
+        <p className="status-note">No issues detected</p>
       </div>
     </aside>
   );

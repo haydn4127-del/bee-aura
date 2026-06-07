@@ -1,46 +1,86 @@
 import Panel from "../components/Panel";
 
+const bookings = [
+  {
+    name: "Emma Wilson",
+    service: "Strategy Review",
+    date: "Today",
+    time: "10:00",
+    status: "Confirmed",
+    confirmation: "Sent",
+    action: "Prepare agenda",
+  },
+  {
+    name: "Olivia Martin",
+    service: "Consultation",
+    date: "Today",
+    time: "13:30",
+    status: "Pending",
+    confirmation: "Awaiting",
+    action: "Send reminder",
+  },
+  {
+    name: "Peter Hughes",
+    service: "Follow-up call",
+    date: "Tomorrow",
+    time: "09:00",
+    status: "Confirmed",
+    confirmation: "Sent",
+    action: "Review notes",
+  },
+  {
+    name: "Sophie Carter",
+    service: "Onboarding",
+    date: "Tomorrow",
+    time: "14:30",
+    status: "Pending",
+    confirmation: "Awaiting",
+    action: "Confirm details",
+  },
+];
+
 export default function BookingsPage() {
   return (
     <div className="page page-section">
       <section className="page-header-block">
         <div>
-          <p className="eyebrow">Appointment control</p>
-          <h1>See upcoming bookings and keep your calendar full.</h1>
+          <p className="eyebrow">Bookings</p>
+          <h1>Control appointments and confirmation status with ease.</h1>
+          <p className="page-copy">A practical booking view for today’s schedule and upcoming requests.</p>
         </div>
       </section>
 
-      <section className="dashboard-grid bookings-grid">
-        <Panel title="Upcoming bookings" subtitle="Today and tomorrow">
-          <div className="booking-list">
-            {[
-              { time: "09:00", client: "Emma Hill", type: "Strategy Review" },
-              { time: "11:30", client: "Leo Park", type: "Consultation" },
-              { time: "14:00", client: "Nina James", type: "Onboarding" },
-            ].map((booking) => (
-              <div key={booking.time} className="booking-row">
-                <div>
-                  <p className="booking-time">{booking.time}</p>
-                  <p className="booking-client">{booking.client}</p>
-                </div>
-                <span>{booking.type}</span>
+      <section className="panel full-width">
+        <div className="panel-header">
+          <div>
+            <h2>Upcoming bookings</h2>
+            <p>Today's appointments and next actions.</p>
+          </div>
+        </div>
+        <div className="booking-list">
+          <div className="message-row message-head">
+            <div>Customer</div>
+            <div>Service</div>
+            <div>Date</div>
+            <div>Time</div>
+            <div>Status</div>
+            <div>Confirmation</div>
+            <div>Action</div>
+          </div>
+          {bookings.map((booking) => (
+            <div key={`${booking.name}-${booking.time}`} className="message-row">
+              <div>
+                <p className="message-name">{booking.name}</p>
               </div>
-            ))}
-          </div>
-        </Panel>
-
-        <Panel title="Booking momentum" subtitle="Conversion and fulfilment trends">
-          <div className="booking-summary">
-            <div>
-              <p>Confirmed this week</p>
-              <strong>24</strong>
+              <div>{booking.service}</div>
+              <div>{booking.date}</div>
+              <div>{booking.time}</div>
+              <div>{booking.status}</div>
+              <div>{booking.confirmation}</div>
+              <div>{booking.action}</div>
             </div>
-            <div>
-              <p>Average fill rate</p>
-              <strong>83%</strong>
-            </div>
-          </div>
-        </Panel>
+          ))}
+        </div>
       </section>
     </div>
   );
