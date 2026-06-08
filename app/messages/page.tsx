@@ -45,6 +45,11 @@ type ThreadMessage = {
   channel: Channel | "System";
 };
 
+type ActivityItem = {
+  id: string;
+  text: string;
+};
+
 const baseConversations: Conversation[] = [
   {
     id: "conv-sarah",
@@ -364,10 +369,19 @@ export default function MessagesPage() {
   const [searchText, setSearchText] = useState("");
   const [composerText, setComposerText] = useState("");
   const [, setActionNotice] = useState("Messages command centre ready.");
-  const [activityItems, setActivityItems] = useState<string[]>([
-    "Emergency heating lead flagged for fast reply.",
-    "Average response target set to 2m 48s.",
-    "Owner approval remains required for high-risk actions.",
+  const [activityItems, setActivityItems] = useState<ActivityItem[]>([
+    {
+      id: "activity-start-1",
+      text: "Emergency heating lead flagged for fast reply.",
+    },
+    {
+      id: "activity-start-2",
+      text: "Average response target set to 2m 48s.",
+    },
+    {
+      id: "activity-start-3",
+      text: "Owner approval remains required for high-risk actions.",
+    },
   ]);
 
   const selectedConversation =
@@ -419,8 +433,10 @@ export default function MessagesPage() {
   }, [conversations]);
 
   function pushActivity(message: string) {
+    const activityId = `activity-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+
     setActionNotice(message);
-    setActivityItems((current) => [message, ...current].slice(0, 5));
+    setActivityItems((current) => [{ id: activityId, text: message }, ...current].slice(0, 5));
   }
 
   function selectConversation(conversation: Conversation) {
@@ -839,7 +855,7 @@ export default function MessagesPage() {
           <h3>{selectedConversation.recentActivity}</h3>
           <ul>
             {activityItems.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item.id}>{item.text}</li>
             ))}
           </ul>
           <button
