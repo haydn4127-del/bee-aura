@@ -1,460 +1,893 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
-type Channel = "WhatsApp" | "Email" | "SMS" | "Web Chat" | "Facebook";
-type Filter = "All" | "Unread" | "Assigned" | "Starred";
+type Channel = "WhatsApp" | "Facebook" | "Website" | "Email" | "Instagram" | "SMS" | "Phone";
+type ConversationStatus =
+  | "Unread"
+  | "Needs Reply"
+  | "Replied"
+  | "Booked"
+  | "Follow-up"
+  | "Closed";
+type Priority = "Emergency" | "Today" | "Tomorrow" | "Later";
+type StatusTab = "All" | "Unread" | "Needs reply" | "Booked" | "Follow-up" | "Closed";
 
 type Conversation = {
   id: string;
-  initials: string;
-  name: string;
+  customerName: string;
+  customerSlug?: string;
   phone: string;
   email: string;
+  address: string;
   channel: Channel;
+  status: ConversationStatus;
+  priority: Priority;
   enquiry: string;
-  latest: string;
-  time: string;
-  unread: number;
-  assignedTo: string;
-  leadStatus: string;
-  starred?: boolean;
+  lastMessage: string;
+  lastSeen: string;
+  avgResponseMinutes: number;
   booking: string;
   followUp: string;
-  value: string;
+  recentActivity: string;
+  estimatedValue: string;
+  ownerAction: string;
+  unread: boolean;
 };
 
-type Message = {
-  from: "customer" | "owner";
+type ThreadMessage = {
+  id: string;
+  sender: "customer" | "business" | "system";
+  name: string;
   body: string;
   time: string;
+  channel: Channel | "System";
 };
 
-const conversations: Conversation[] = [
+const baseConversations: Conversation[] = [
   {
-    id: "tom-wilson",
-    initials: "TW",
-    name: "Tom Wilson",
-    phone: "+44 7912 345678",
-    email: "tom.wilson@gmail.com",
+    id: "conv-sarah",
+    customerName: "Sarah Johnson",
+    customerSlug: "sarah-johnson",
+    phone: "07944 203 118",
+    email: "sarah.johnson@example.com",
+    address: "Moseley, Birmingham",
     channel: "WhatsApp",
-    enquiry: "Boiler Repair",
-    latest: "Hi, I need help with a boiler issue...",
-    time: "2m ago",
-    unread: 2,
-    assignedTo: "John D.",
-    leadStatus: "New Lead",
-    starred: true,
-    booking: "Tomorrow, 10:00 AM · Boiler Repair · Inspection",
-    followUp: "Send quote follow-up · 20 May 2025, 11:00 AM",
-    value: "£450",
+    status: "Needs Reply",
+    priority: "Emergency",
+    enquiry: "Emergency boiler repair",
+    lastMessage: "Can someone come today? The boiler has stopped and we have no hot water.",
+    lastSeen: "2 min ago",
+    avgResponseMinutes: 2,
+    booking: "Today, 14:30 — emergency boiler repair",
+    followUp: "Confirm engineer ETA within 10 minutes",
+    recentActivity: "AI flagged this as emergency heating lead",
+    estimatedValue: "£180–£350",
+    ownerAction: "Approve fast reply and confirm slot",
+    unread: true,
   },
   {
-    id: "sarah-johnson",
-    initials: "SJ",
-    name: "Sarah Johnson",
-    phone: "+44 7845 678912",
-    email: "sarah.johnson@gmail.com",
+    id: "conv-tom",
+    customerName: "Tom Wilson",
+    customerSlug: "tom-wilson",
+    phone: "07891 882 014",
+    email: "tom.wilson@example.com",
+    address: "Solihull, Birmingham",
     channel: "Email",
-    enquiry: "Plumbing Leak",
-    latest: "Re: Plumbing leak at my kitchen",
-    time: "15m ago",
-    unread: 1,
-    assignedTo: "John D.",
-    leadStatus: "Contacted",
-    booking: "No booking yet",
-    followUp: "Call back today, 2:00 PM",
-    value: "£320",
+    status: "Booked",
+    priority: "Tomorrow",
+    enquiry: "Annual boiler servicing",
+    lastMessage: "Thanks, tomorrow morning works for me.",
+    lastSeen: "9 min ago",
+    avgResponseMinutes: 4,
+    booking: "Tomorrow, 09:00 — annual boiler service",
+    followUp: "Send reminder tonight at 18:00",
+    recentActivity: "Booking confirmed from email enquiry",
+    estimatedValue: "£95",
+    ownerAction: "Send service reminder",
+    unread: false,
   },
   {
-    id: "emma-davis",
-    initials: "ED",
-    name: "Emma Davis",
-    phone: "+44 7955 789123",
-    email: "emma.davis@gmail.com",
+    id: "conv-emma",
+    customerName: "Emma Davis",
+    customerSlug: "emma-davis",
+    phone: "07720 339 901",
+    email: "emma.davis@example.com",
+    address: "Edgbaston, Birmingham",
     channel: "SMS",
-    enquiry: "Bathroom Renovation",
-    latest: "Is tomorrow 11am still available?",
-    time: "1h ago",
-    unread: 1,
-    assignedTo: "Lucy C.",
-    leadStatus: "Quote Sent",
-    starred: true,
-    booking: "Tomorrow, 11:00 AM · Bathroom Renovation · Quote review",
-    followUp: "Quote follow-up tomorrow, 11:00 AM",
-    value: "£6,200",
+    status: "Follow-up",
+    priority: "Today",
+    enquiry: "Plumbing leak repair",
+    lastMessage: "I can send a photo of the leak if that helps.",
+    lastSeen: "18 min ago",
+    avgResponseMinutes: 3,
+    booking: "No booking yet — waiting on photo",
+    followUp: "Ask for photo and preferred access time",
+    recentActivity: "Lead moved to follow-up queue",
+    estimatedValue: "£120–£260",
+    ownerAction: "Request photo and book inspection",
+    unread: false,
   },
   {
-    id: "mike-thompson",
-    initials: "MT",
-    name: "Mike Thompson",
-    phone: "+44 7798 123456",
-    email: "mike.thompson@gmail.com",
-    channel: "Web Chat",
-    enquiry: "Electrical Fault",
-    latest: "Can you provide a quote?",
-    time: "2h ago",
-    unread: 0,
-    assignedTo: "Adam H.",
-    leadStatus: "Follow-Up",
-    booking: "No booking yet",
-    followUp: "Today, 4:00 PM",
-    value: "£180",
+    id: "conv-marc",
+    customerName: "Marc Patel",
+    customerSlug: "marc-patel",
+    phone: "07900 442 712",
+    email: "marc.patel@example.com",
+    address: "Harborne, Birmingham",
+    channel: "Phone",
+    status: "Unread",
+    priority: "Today",
+    enquiry: "Drain clearance",
+    lastMessage: "Missed call captured. Customer tried to call about a blocked outside drain.",
+    lastSeen: "31 min ago",
+    avgResponseMinutes: 5,
+    booking: "No booking yet — missed call recovery needed",
+    followUp: "Call back or send SMS within 5 minutes",
+    recentActivity: "Missed call converted into message thread",
+    estimatedValue: "£140–£300",
+    ownerAction: "Recover missed call",
+    unread: true,
   },
   {
-    id: "james-brown",
-    initials: "JB",
-    name: "James Brown",
-    phone: "+44 7534 567890",
-    email: "james.brown@gmail.com",
+    id: "conv-olivia",
+    customerName: "Olivia Brown",
+    customerSlug: "olivia-brown",
+    phone: "07855 734 620",
+    email: "olivia.brown@example.com",
+    address: "Kings Heath, Birmingham",
+    channel: "Website",
+    status: "Replied",
+    priority: "Later",
+    enquiry: "Maintenance plan",
+    lastMessage: "Could you send information about monthly maintenance plans?",
+    lastSeen: "1 hr ago",
+    avgResponseMinutes: 6,
+    booking: "No booking yet — nurture lead",
+    followUp: "Send plan options and invite call",
+    recentActivity: "Website form routed into inbox",
+    estimatedValue: "£25–£65/month",
+    ownerAction: "Send plan summary",
+    unread: false,
+  },
+  {
+    id: "conv-facebook",
+    customerName: "Daniel Price",
+    customerSlug: "daniel-price",
+    phone: "07788 440 219",
+    email: "daniel.price@example.com",
+    address: "Bearwood, Birmingham",
     channel: "Facebook",
-    enquiry: "Drain Clearance",
-    latest: "Do you service heat pumps?",
-    time: "3h ago",
-    unread: 0,
-    assignedTo: "John D.",
-    leadStatus: "New Lead",
-    booking: "No booking yet",
-    followUp: "Tomorrow, 9:30 AM",
-    value: "£220",
+    status: "Needs Reply",
+    priority: "Today",
+    enquiry: "Electrical fault inspection",
+    lastMessage: "Hi, I saw your page. We have sockets tripping downstairs. Can someone inspect it?",
+    lastSeen: "12 min ago",
+    avgResponseMinutes: 3,
+    booking: "No booking yet — qualify electrical issue",
+    followUp: "Ask if power is currently off and confirm safe access",
+    recentActivity: "Facebook enquiry routed into inbox",
+    estimatedValue: "£95–£220",
+    ownerAction: "Qualify fault and offer inspection slot",
+    unread: true,
   },
   {
-    id: "olivia-smith",
-    initials: "OS",
-    name: "Olivia Smith",
-    phone: "+44 7766 445566",
-    email: "olivia.smith@gmail.com",
-    channel: "WhatsApp",
-    enquiry: "Thermostat Install",
-    latest: "Thank you! That works.",
-    time: "5h ago",
-    unread: 0,
-    assignedTo: "Lucy C.",
-    leadStatus: "Contacted",
-    booking: "Tomorrow, 1:00 PM · Thermostat Install",
-    followUp: "Confirm tomorrow morning",
-    value: "£210",
+    id: "conv-instagram",
+    customerName: "Mia Green",
+    customerSlug: "mia-green",
+    phone: "07822 114 907",
+    email: "mia.green@example.com",
+    address: "Jewellery Quarter, Birmingham",
+    channel: "Instagram",
+    status: "Follow-up",
+    priority: "Tomorrow",
+    enquiry: "Thermostat installation",
+    lastMessage: "I messaged on Instagram about installing a smart thermostat.",
+    lastSeen: "24 min ago",
+    avgResponseMinutes: 4,
+    booking: "No booking yet — waiting on thermostat model",
+    followUp: "Ask for thermostat model and property type",
+    recentActivity: "Instagram DM added to follow-up queue",
+    estimatedValue: "£110–£190",
+    ownerAction: "Ask for model and book installation",
+    unread: false,
   },
 ];
 
-const conversationMessages: Record<string, Message[]> = {
-  "tom-wilson": [
-    { from: "customer", body: "Hi, I need help with a boiler issue. It's not heating up properly.", time: "10:21 AM" },
-    { from: "owner", body: "Hi Tom, thanks for reaching out. We can help with that. Is the boiler making any unusual noises or showing an error code?", time: "10:23 AM" },
-    { from: "customer", body: "Yes, it's making a banging noise when the heating kicks in.", time: "10:24 AM" },
-    { from: "owner", body: "Thanks. That could be a pressure or pump issue. We can arrange an engineer visit and check it safely.", time: "10:26 AM" },
-    { from: "customer", body: "Yes please, tomorrow morning would be great.", time: "10:27 AM" },
+const initialThreads: Record<string, ThreadMessage[]> = {
+  "conv-sarah": [
+    {
+      id: "sarah-1",
+      sender: "customer",
+      name: "Sarah Johnson",
+      body: "Hi, our boiler has stopped working and we have no hot water. Can someone come today?",
+      time: "09:14",
+      channel: "WhatsApp",
+    },
+    {
+      id: "sarah-2",
+      sender: "system",
+      name: "Bee-Aura",
+      body: "Emergency heating lead detected. Suggested next step: confirm availability, collect postcode, and offer today slot.",
+      time: "09:15",
+      channel: "System",
+    },
   ],
-  "sarah-johnson": [
-    { from: "customer", body: "Hi, I have a plumbing leak under the kitchen sink.", time: "09:14 AM" },
-    { from: "owner", body: "Hi Sarah, we can help. Is the leak active right now or only when the tap is running?", time: "09:16 AM" },
-    { from: "customer", body: "It is dripping constantly now.", time: "09:18 AM" },
+  "conv-tom": [
+    {
+      id: "tom-1",
+      sender: "customer",
+      name: "Tom Wilson",
+      body: "Can I book an annual boiler service for tomorrow morning?",
+      time: "08:52",
+      channel: "Email",
+    },
+    {
+      id: "tom-2",
+      sender: "business",
+      name: "Sarah via Bee-Aura",
+      body: "Yes, we can book you in tomorrow at 09:00. Please reply YES and we will confirm the engineer.",
+      time: "08:56",
+      channel: "Email",
+    },
+    {
+      id: "tom-3",
+      sender: "customer",
+      name: "Tom Wilson",
+      body: "Thanks, tomorrow morning works for me.",
+      time: "09:04",
+      channel: "Email",
+    },
   ],
-  "emma-davis": [
-    { from: "customer", body: "Is tomorrow 11am still available for the bathroom renovation quote?", time: "08:44 AM" },
-    { from: "owner", body: "Yes, 11am is still available. I can book that in for you now.", time: "08:47 AM" },
+  "conv-emma": [
+    {
+      id: "emma-1",
+      sender: "customer",
+      name: "Emma Davis",
+      body: "There is water coming through under the sink. I can send a photo if that helps.",
+      time: "08:41",
+      channel: "SMS",
+    },
+    {
+      id: "emma-2",
+      sender: "system",
+      name: "Bee-Aura",
+      body: "Follow-up due: request photo, access details, and whether the leak is still active.",
+      time: "08:42",
+      channel: "System",
+    },
   ],
-  "mike-thompson": [
-    { from: "customer", body: "Can you provide a quote for an electrical fault inspection?", time: "08:02 AM" },
-    { from: "owner", body: "Yes, we can help. Is it affecting lights, sockets, or the consumer unit?", time: "08:04 AM" },
-    { from: "customer", body: "Mainly sockets in the kitchen.", time: "08:05 AM" },
+  "conv-marc": [
+    {
+      id: "marc-1",
+      sender: "system",
+      name: "Bee-Aura",
+      body: "Missed call captured from Marc Patel. Likely urgent drain clearance enquiry.",
+      time: "08:28",
+      channel: "System",
+    },
   ],
-  "james-brown": [
-    { from: "customer", body: "Do you service heat pumps?", time: "Yesterday" },
-    { from: "owner", body: "We mainly handle boilers, plumbing, drainage and electrical inspections. I can still check if we can help with your setup.", time: "Yesterday" },
+  "conv-olivia": [
+    {
+      id: "olivia-1",
+      sender: "customer",
+      name: "Olivia Brown",
+      body: "Could you send information about monthly maintenance plans?",
+      time: "07:59",
+      channel: "Website",
+    },
+    {
+      id: "olivia-2",
+      sender: "business",
+      name: "Sarah via Bee-Aura",
+      body: "Of course. We have maintenance options for boilers, plumbing checks, and priority call-outs.",
+      time: "08:05",
+      channel: "Website",
+    },
   ],
-  "olivia-smith": [
-    { from: "customer", body: "Thank you! That works.", time: "5h ago" },
-    { from: "owner", body: "Great, we will keep the appointment booked and send a reminder before arrival.", time: "5h ago" },
+  "conv-facebook": [
+    {
+      id: "facebook-1",
+      sender: "customer",
+      name: "Daniel Price",
+      body: "Hi, I saw your page. We have sockets tripping downstairs. Can someone inspect it?",
+      time: "09:22",
+      channel: "Facebook",
+    },
+    {
+      id: "facebook-2",
+      sender: "system",
+      name: "Bee-Aura",
+      body: "Facebook enquiry detected. Suggested next step: ask if power is off, confirm postcode, and offer inspection slot.",
+      time: "09:23",
+      channel: "System",
+    },
+  ],
+  "conv-instagram": [
+    {
+      id: "instagram-1",
+      sender: "customer",
+      name: "Mia Green",
+      body: "I messaged on Instagram about installing a smart thermostat. Do you cover Birmingham city centre?",
+      time: "09:05",
+      channel: "Instagram",
+    },
+    {
+      id: "instagram-2",
+      sender: "system",
+      name: "Bee-Aura",
+      body: "Instagram DM moved into follow-up queue. Ask for thermostat model and property type.",
+      time: "09:06",
+      channel: "System",
+    },
   ],
 };
 
-const kpis = [
-  { title: "Unread Messages", value: "24", detail: "↗ 12% vs yesterday", icon: "☰" },
-  { title: "Open Conversations", value: "18", detail: "↗ 8% vs yesterday", icon: "👥" },
-  { title: "Avg Response Time", value: "2m 48s", detail: "↘ 73% vs yesterday", icon: "◷" },
-  { title: "Channels Active", value: "5 / 5", detail: "● All channels connected", icon: "⌘" },
-];
+const channelTabs: Array<"All" | Channel> = ["All", "WhatsApp", "Facebook", "Website", "Email", "Instagram", "SMS", "Phone"];
+const statusTabs: StatusTab[] = ["All", "Unread", "Needs reply", "Booked", "Follow-up", "Closed"];
 
-function channelClass(channel: Channel) {
-  return channel.toLowerCase().replace(" ", "-");
+function priorityClass(priority: Priority) {
+  return priority.toLowerCase().replace(" ", "-");
+}
+
+function statusClass(status: ConversationStatus) {
+  return status.toLowerCase().replace(" ", "-");
+}
+
+function channelClass(channel: "All" | Channel) {
+  return `messagesV7-channelTab messagesV7-channel-${channel.toLowerCase()}`;
+}
+
+function makeSuggestedReply(conversation: Conversation) {
+  if (conversation.priority === "Emergency") {
+    return `Hi ${conversation.customerName.split(" ")[0]}, thanks for messaging Northfield Home Services. We can help with the ${conversation.enquiry.toLowerCase()} today. Please confirm your postcode and whether someone is at the property now, and I will secure the next available engineer slot.`;
+  }
+
+  if (conversation.status === "Booked") {
+    return `Hi ${conversation.customerName.split(" ")[0]}, your booking is confirmed for ${conversation.booking}. We will send a reminder before arrival. Please reply here if anything changes.`;
+  }
+
+  if (conversation.status === "Follow-up") {
+    return `Hi ${conversation.customerName.split(" ")[0]}, thanks for the update. Please send the photo when ready and let us know your preferred access time. We can then confirm the best next slot for you.`;
+  }
+
+  return `Hi ${conversation.customerName.split(" ")[0]}, thanks for contacting Northfield Home Services. We can help with your ${conversation.enquiry.toLowerCase()}. Please send your postcode and preferred time, and we will come back with the best available option.`;
 }
 
 export default function MessagesPage() {
-  const [selectedId, setSelectedId] = useState("tom-wilson");
-  const [activeFilter, setActiveFilter] = useState<Filter>("All");
-  const [channelFilter, setChannelFilter] = useState<"All" | Channel>("All");
+  const [conversations, setConversations] = useState<Conversation[]>(baseConversations);
+  const [threads, setThreads] = useState<Record<string, ThreadMessage[]>>(initialThreads);
+  const [selectedId, setSelectedId] = useState(baseConversations[0].id);
+  const [channelTab, setChannelTab] = useState<"All" | Channel>("All");
+  const [statusTab, setStatusTab] = useState<StatusTab>("All");
   const [searchText, setSearchText] = useState("");
-  const [draft, setDraft] = useState("");
-  const [notice, setNotice] = useState("Ready to help with the selected conversation.");
-  const [sentMessagesById, setSentMessagesById] = useState<Record<string, Message[]>>({});
+  const [composerText, setComposerText] = useState("");
+  const [, setActionNotice] = useState("Messages command centre ready.");
+  const [activityItems, setActivityItems] = useState<string[]>([
+    "Emergency heating lead flagged for fast reply.",
+    "Average response target set to 2m 48s.",
+    "Owner approval remains required for high-risk actions.",
+  ]);
 
-  const selected = conversations.find((conversation) => conversation.id === selectedId) ?? conversations[0];
+  const selectedConversation =
+    conversations.find((conversation) => conversation.id === selectedId) ?? conversations[0];
 
-  const selectedMessages = [
-    ...(conversationMessages[selected.id] ?? conversationMessages["tom-wilson"]),
-    ...(sentMessagesById[selected.id] ?? []),
-  ];
+  const suggestedReply = composerText || makeSuggestedReply(selectedConversation);
+  const selectedMessages = threads[selectedConversation.id] ?? [];
 
   const filteredConversations = useMemo(() => {
+    const lowerSearch = searchText.trim().toLowerCase();
+
     return conversations.filter((conversation) => {
-      const matchesTab =
-        activeFilter === "All" ||
-        (activeFilter === "Unread" && conversation.unread > 0) ||
-        (activeFilter === "Assigned" && conversation.assignedTo === "John D.") ||
-        (activeFilter === "Starred" && conversation.starred);
+      const channelMatch = channelTab === "All" || conversation.channel === channelTab;
 
-      const matchesChannel = channelFilter === "All" || conversation.channel === channelFilter;
+      const statusMatch =
+        statusTab === "All" ||
+        (statusTab === "Unread" && conversation.unread) ||
+        (statusTab === "Needs reply" &&
+          (conversation.status === "Needs Reply" || conversation.status === "Unread")) ||
+        (statusTab === "Booked" && conversation.status === "Booked") ||
+        (statusTab === "Follow-up" && conversation.status === "Follow-up") ||
+        (statusTab === "Closed" && conversation.status === "Closed");
 
-      const haystack = `${conversation.name} ${conversation.latest} ${conversation.enquiry} ${conversation.channel}`.toLowerCase();
-      const matchesSearch = haystack.includes(searchText.toLowerCase());
+      const searchMatch =
+        lowerSearch.length === 0 ||
+        conversation.customerName.toLowerCase().includes(lowerSearch) ||
+        conversation.enquiry.toLowerCase().includes(lowerSearch) ||
+        conversation.phone.toLowerCase().includes(lowerSearch) ||
+        conversation.channel.toLowerCase().includes(lowerSearch);
 
-      return matchesTab && matchesChannel && matchesSearch;
+      return channelMatch && statusMatch && searchMatch;
     });
-  }, [activeFilter, channelFilter, searchText]);
+  }, [channelTab, conversations, searchText, statusTab]);
 
-  function sendMessage(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  const statusCounts = useMemo(() => {
+    return conversations.reduce(
+      (counts, conversation) => {
+        counts.total += 1;
+        if (conversation.unread) counts.unread += 1;
+        if (conversation.status === "Needs Reply" || conversation.status === "Unread") {
+          counts.needsReply += 1;
+        }
+        if (conversation.status === "Booked") counts.booked += 1;
+        if (conversation.status === "Follow-up") counts.followUp += 1;
+        return counts;
+      },
+      { total: 0, unread: 0, needsReply: 0, booked: 0, followUp: 0 },
+    );
+  }, [conversations]);
 
-    if (!draft.trim()) return;
+  function pushActivity(message: string) {
+    setActionNotice(message);
+    setActivityItems((current) => [message, ...current].slice(0, 5));
+  }
 
-    setSentMessagesById((current) => ({
+  function selectConversation(conversation: Conversation) {
+    setSelectedId(conversation.id);
+    setComposerText("");
+    setConversations((current) =>
+      current.map((item) =>
+        item.id === conversation.id
+          ? {
+              ...item,
+              unread: false,
+              status: item.status === "Unread" ? "Needs Reply" : item.status,
+            }
+          : item,
+      ),
+    );
+    pushActivity(`Opened ${conversation.customerName}'s ${conversation.channel} thread.`);
+  }
+
+  function startNewMessage() {
+    const newId = `new-demo-${Date.now()}`;
+    const newConversation: Conversation = {
+      id: newId,
+      customerName: "New demo enquiry",
+      phone: "07--- --- ---",
+      email: "new.lead@example.com",
+      address: "Birmingham, UK",
+      channel: "WhatsApp",
+      status: "Needs Reply",
+      priority: "Today",
+      enquiry: "New customer message",
+      lastMessage: "New message draft created by Bee-Aura.",
+      lastSeen: "Just now",
+      avgResponseMinutes: 0,
+      booking: "No booking yet — qualify the enquiry first",
+      followUp: "Ask for service type, postcode, and preferred time",
+      recentActivity: "New demo thread generated from the New Message button",
+      estimatedValue: "To qualify",
+      ownerAction: "Send first response",
+      unread: false,
+    };
+
+    setConversations((current) => [newConversation, ...current]);
+    setThreads((current) => ({
       ...current,
-      [selected.id]: [
-        ...(current[selected.id] ?? []),
+      [newId]: [
         {
-          from: "owner",
-          body: draft.trim(),
+          id: `${newId}-system`,
+          sender: "system",
+          name: "Bee-Aura",
+          body: "New demo message created. Use this to practise starting a fresh customer conversation.",
           time: "Just now",
+          channel: "System",
         },
       ],
     }));
-
-    setNotice(`Message drafted/sent in demo for ${selected.name}.`);
-    setDraft("");
+    setSelectedId(newId);
+    setComposerText(
+      "Hi, thanks for contacting Northfield Home Services. Please send your postcode, the service you need, and your preferred time, and we will help you as quickly as possible.",
+    );
+    pushActivity("New message created and ready to send.");
   }
 
-  function suggestedReply() {
-    setDraft(
-      `Hi ${selected.name.split(" ")[0]}, thanks for your message. We can help with your ${selected.enquiry.toLowerCase()}. I can arrange the next available visit and keep you updated here.`
+  function updateSelectedConversation(update: Partial<Conversation>, notice: string) {
+    setConversations((current) =>
+      current.map((conversation) =>
+        conversation.id === selectedConversation.id ? { ...conversation, ...update } : conversation,
+      ),
     );
-    setNotice("AI suggested reply added to the message box.");
+    pushActivity(notice);
+  }
+
+  function sendMessage(text: string, label: string) {
+    const cleanText = text.trim();
+
+    if (!cleanText) {
+      pushActivity("Type a message or choose a suggested reply first.");
+      return;
+    }
+
+    const outgoingMessage: ThreadMessage = {
+      id: `msg-${Date.now()}`,
+      sender: "business",
+      name: "Sarah via Bee-Aura",
+      body: cleanText,
+      time: "Just now",
+      channel: selectedConversation.channel,
+    };
+
+    setThreads((current) => ({
+      ...current,
+      [selectedConversation.id]: [...(current[selectedConversation.id] ?? []), outgoingMessage],
+    }));
+
+    setConversations((current) =>
+      current.map((conversation) =>
+        conversation.id === selectedConversation.id
+          ? {
+              ...conversation,
+              status: "Replied",
+              unread: false,
+              lastMessage: cleanText,
+              lastSeen: "Just now",
+              avgResponseMinutes: Math.min(conversation.avgResponseMinutes, 2),
+              recentActivity: label,
+            }
+          : conversation,
+      ),
+    );
+
+    setComposerText("");
+    pushActivity(`${label}: reply added to ${selectedConversation.customerName}'s thread.`);
+  }
+
+  function copyPhoneNumber() {
+    void navigator.clipboard?.writeText(selectedConversation.phone);
+    pushActivity(`Copied phone number for ${selectedConversation.customerName}.`);
+  }
+
+  function useReplyTemplate(template: "fast" | "booking" | "followup") {
+    if (template === "fast") {
+      setComposerText(makeSuggestedReply(selectedConversation));
+      pushActivity("Fast reply template loaded into the message box.");
+      return;
+    }
+
+    if (template === "booking") {
+      setComposerText(
+        `Hi ${selectedConversation.customerName.split(" ")[0]}, we can book this in for you. Please confirm your postcode and the best arrival window, and we will secure the slot.`,
+      );
+      pushActivity("Booking template loaded into the message box.");
+      return;
+    }
+
+    setComposerText(
+      `Hi ${selectedConversation.customerName.split(" ")[0]}, just following up on your ${selectedConversation.enquiry.toLowerCase()}. Would you like us to get this booked in?`,
+    );
+    pushActivity("Follow-up template loaded into the message box.");
   }
 
   return (
-    <main className="messages-pro-page">
-      <header className="messages-pro-header">
+    <main className="messagesV7-page">
+      <section className="messagesV7-hero">
         <div>
-          <h1>Messages</h1>
-          <p>Manage WhatsApp, email, SMS and web chat conversations in one place.</p>
+          <p className="messagesV7-eyebrow">Bee-Aura AI Inbox</p>
+          <h1>Messages that turn into booked jobs.</h1>
+          <p>
+            One command centre for WhatsApp, email, SMS, calls, and web enquiries — built for fast
+            replies, clean handovers, and owner-controlled lead recovery.
+          </p>
         </div>
 
-        <div className="messages-pro-controls">
-          <button className="msg-new-button" type="button" onClick={suggestedReply}>
-            <span>＋</span> New Message
+        <div className="messagesV7-heroActions">
+          <button type="button" onClick={startNewMessage} className="messagesV7-primaryButton">
+            + New Message
           </button>
-
-          <select
-            className="msg-filter-button"
-            value={channelFilter}
-            onChange={(event) => setChannelFilter(event.target.value as "All" | Channel)}
-          >
-            <option>All</option>
-            <option>WhatsApp</option>
-            <option>Email</option>
-            <option>SMS</option>
-            <option>Web Chat</option>
-            <option>Facebook</option>
-          </select>
-
-          <label className="msg-search-box">
-            <input
-              value={searchText}
-              onChange={(event) => setSearchText(event.target.value)}
-              placeholder="Search messages..."
-            />
-            <strong>⌕</strong>
-          </label>
-
-          <Link href="/settings" className="msg-owner-card">
-            <span>JD</span>
-            <b>John D.<small>Owner</small></b>
-            <em>⌄</em>
+          <Link href="/bookings" className="messagesV7-secondaryButton">
+            View Bookings
           </Link>
         </div>
-      </header>
-
-      <section className="messages-kpi-grid">
-        {kpis.map((kpi) => (
-          <Link href="/activity-log" className="messages-kpi" key={kpi.title}>
-            <span>{kpi.icon}</span>
-            <div>
-              <p>{kpi.title}</p>
-              <strong>{kpi.value}</strong>
-              <small>{kpi.detail}</small>
-            </div>
-          </Link>
-        ))}
       </section>
 
-      <section className="messages-workspace messages-bottom-layout">
-        <aside className="messages-list-card">
-          <div className="msg-tabs">
-            {(["All", "Unread", "Assigned", "Starred"] as Filter[]).map((filter) => (
+      <section className="messagesV7-kpiRow">
+        <article>
+          <span>Average response</span>
+          <strong>2m 48s</strong>
+          <small>Under 12 minute target</small>
+        </article>
+        <article>
+          <span>Needs reply</span>
+          <strong>{statusCounts.needsReply}</strong>
+          <small>Live threads to recover</small>
+        </article>
+        <article>
+          <span>Unread</span>
+          <strong>{statusCounts.unread}</strong>
+          <small>Waiting for action</small>
+        </article>
+        <article>
+          <span>Booked</span>
+          <strong>{statusCounts.booked}</strong>
+          <small>Conversations converted</small>
+        </article>
+      </section>
+
+      <section className="messagesV7-tabsPanel">
+        <div>
+          <p>Channel tabs</p>
+          <div className="messagesV7-tabRow">
+            {channelTabs.map((tab) => (
               <button
-                key={filter}
+                key={tab}
                 type="button"
-                className={activeFilter === filter ? "active" : ""}
-                onClick={() => setActiveFilter(filter)}
+                onClick={() => {
+                  setChannelTab(tab);
+                  pushActivity(`${tab} channel tab selected.`);
+                }}
+                className={`${channelClass(tab)} ${channelTab === tab ? "isActive" : ""}`}
               >
-                {filter} {filter === "Unread" ? <span>24</span> : null}
+                {tab}
               </button>
             ))}
           </div>
+        </div>
 
-          <div className="msg-conversation-list">
+        <div>
+          <p>Status tabs</p>
+          <div className="messagesV7-tabRow">
+            {statusTabs.map((tab) => (
+              <button
+                key={tab}
+                type="button"
+                onClick={() => {
+                  setStatusTab(tab);
+                  pushActivity(`${tab} status tab selected.`);
+                }}
+                className={statusTab === tab ? "isActive" : ""}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <label className="messagesV7-search">
+          Search inbox
+          <input
+            value={searchText}
+            onChange={(event) => setSearchText(event.target.value)}
+            placeholder="Search name, phone, service, channel..."
+          />
+        </label>
+      </section>
+
+      <section className="messagesV7-shell">
+        <aside className="messagesV7-listPanel">
+          <div className="messagesV7-panelHeader">
+            <div>
+              <p>Live inbox</p>
+              <h2>{filteredConversations.length} conversations</h2>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                setChannelTab("All");
+                setStatusTab("All");
+                setSearchText("");
+                pushActivity("Inbox filters cleared.");
+              }}
+            >
+              Clear
+            </button>
+          </div>
+
+          <div className="messagesV7-conversationList">
             {filteredConversations.map((conversation) => (
               <button
                 key={conversation.id}
                 type="button"
-                className={`msg-conversation ${conversation.id === selectedId ? "active" : ""}`}
-                onClick={() => {
-                  setSelectedId(conversation.id);
-                  setNotice(`Viewing ${conversation.name}'s conversation.`);
-                }}
+                onClick={() => selectConversation(conversation)}
+                className={`messagesV7-conversationCard ${
+                  selectedConversation.id === conversation.id ? "isSelected" : ""
+                }`}
               >
-                <span className="msg-avatar">{conversation.initials}</span>
-
-                <span className="msg-conversation-main">
-                  <strong>{conversation.name}</strong>
-                  <small>{conversation.latest}</small>
+                <span className={`messagesV7-priority ${priorityClass(conversation.priority)}`}>
+                  {conversation.priority}
                 </span>
-
-                <span className={`msg-channel msg-channel-${channelClass(conversation.channel)}`}>
-                  {conversation.channel}
+                <strong>{conversation.customerName}</strong>
+                <small>
+                  {conversation.channel} · {conversation.lastSeen}
+                </small>
+                <p>{conversation.lastMessage}</p>
+                <span className={`messagesV7-status ${statusClass(conversation.status)}`}>
+                  {conversation.status}
                 </span>
-
-                <em>{conversation.time}</em>
-
-                {conversation.unread ? <b>{conversation.unread}</b> : null}
               </button>
             ))}
-          </div>
 
-          <Link href="/messages" className="msg-view-all">
-            View all conversations →
-          </Link>
+            {filteredConversations.length === 0 && (
+              <div className="messagesV7-empty">
+                <strong>No conversations found.</strong>
+                <p>Clear the filters or start a new demo message.</p>
+                <button type="button" onClick={startNewMessage}>
+                  Create demo message
+                </button>
+              </div>
+            )}
+          </div>
         </aside>
 
-        <section className="messages-chat-card">
-          <header className="msg-chat-header">
+        <section className="messagesV7-chatPanel">
+          <div className="messagesV7-chatHeader">
             <div>
-              <span className="msg-avatar large">{selected.initials}</span>
-              <div>
-                <h2>{selected.name}</h2>
-                <p>{selected.phone}</p>
-              </div>
-              <span className={`msg-channel msg-channel-${channelClass(selected.channel)}`}>
-                {selected.channel}
-              </span>
+              <p>{selectedConversation.channel} conversation</p>
+              <h2>{selectedConversation.customerName}</h2>
+              <span>{selectedConversation.enquiry}</span>
             </div>
+            <div className="messagesV7-chatHeaderActions">
+              {selectedConversation.customerSlug ? (
+                <Link href={`/customers/${selectedConversation.customerSlug}`}>Open Customer</Link>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => pushActivity("Demo customer record prepared but not saved.")}
+                >
+                  Create Customer
+                </button>
+              )}
+            </div>
+          </div>
 
-            <nav>
-              <button type="button" onClick={() => setNotice(`Demo call action opened for ${selected.name}.`)}>☎ Call</button>
-              <button type="button" onClick={() => setNotice(`${selected.name}'s conversation archived in demo.`)}>▣ Archive</button>
-              <button type="button" onClick={() => setNotice(`${selected.name} assigned to John D. in demo.`)}>♙ Assign</button>
-              <button type="button" onClick={() => setNotice("More actions opened in demo.")}>⋮</button>
-            </nav>
-          </header>
-
-          <div className="msg-chat-body">
-            <span className="msg-day-pill">Today</span>
-
-            {selectedMessages.map((message, index) => (
-              <article className={`msg-bubble msg-bubble-${message.from}`} key={`${message.time}-${index}`}>
-                <p>{message.body}</p>
-                <small>{message.time}{message.from === "owner" ? " ✓✓" : ""}</small>
-              </article>
+          <div className="messagesV7-thread">
+            {selectedMessages.map((message) => (
+              <div
+                key={message.id}
+                className={`messagesV7-messageRow ${
+                  message.sender === "business"
+                    ? "isBusiness"
+                    : message.sender === "system"
+                      ? "isSystem"
+                      : ""
+                }`}
+              >
+                <article>
+                  <span>
+                    {message.name} · {message.time}
+                  </span>
+                  <p>{message.body}</p>
+                </article>
+              </div>
             ))}
           </div>
 
-          <form className="msg-composer" onSubmit={sendMessage}>
-            <input
-              value={draft}
-              onChange={(event) => setDraft(event.target.value)}
-              placeholder="Type your message..."
+          <div className="messagesV7-composer">
+            <div>
+              <p>Suggested reply</p>
+              <strong>{suggestedReply}</strong>
+            </div>
+
+            <textarea
+              value={composerText}
+              onChange={(event) => setComposerText(event.target.value)}
+              placeholder="Write a reply or load a template..."
             />
 
-            <button type="button" onClick={() => setNotice("Attachment option opened in demo.")}>📎</button>
-            <button type="button" onClick={suggestedReply}>Templates</button>
-            <button type="button" onClick={() => setDraft((current) => `${current} 😊`)}>☺</button>
-            <button type="button" onClick={() => setNotice("Extra message tools opened in demo.")}>＋</button>
-            <button type="submit" className="msg-send">➤</button>
-          </form>
+            <div className="messagesV7-composerActions">
+              <button type="button" onClick={() => useReplyTemplate("fast")}>
+                Load Fast Reply
+              </button>
+              <button type="button" onClick={() => useReplyTemplate("booking")}>
+                Load Booking Reply
+              </button>
+              <button type="button" onClick={() => useReplyTemplate("followup")}>
+                Load Follow-Up
+              </button>
+              <button
+                type="button"
+                className="messagesV7-primaryButton"
+                onClick={() => sendMessage(suggestedReply, "Message sent")}
+              >
+                Send Reply
+              </button>
+            </div>
+          </div>
         </section>
       </section>
 
-      <section className="messages-bottom-panels">
-        <article className="msg-context-card">
-          <div className="msg-context-header">
-            <h2>Contact Details</h2>
-            <button type="button" onClick={() => setNotice("Contact menu opened in demo.")}>⋮</button>
-          </div>
-
-          <div className="msg-contact-top">
-            <span className="msg-avatar xl">{selected.initials}</span>
-            <div>
-              <h3>{selected.name} ⭐</h3>
-              <p>{selected.phone}</p>
-              <p>{selected.email}</p>
-            </div>
-          </div>
-
-          <dl className="msg-detail-list">
-            <div><dt>Enquiry</dt><dd>{selected.enquiry}</dd></div>
-            <div><dt>Status</dt><dd><span>{selected.leadStatus}</span></dd></div>
-            <div><dt>Value</dt><dd>{selected.value}</dd></div>
-          </dl>
-
-          <div className="msg-context-actions">
-            <Link href={`/customers/${selected.id}`}>View Profile</Link>
-            <Link href={`/customers/${selected.id}`}>Edit Contact</Link>
-          </div>
-        </article>
-
-        <article className="msg-context-card small">
-          <h2>Upcoming Booking</h2>
-          <p>{selected.booking}</p>
-          <Link href="/bookings">Open Booking</Link>
-        </article>
-
-        <article className="msg-context-card small">
-          <h2>Follow-Up Due</h2>
-          <p>{selected.followUp}</p>
-          <button type="button" onClick={() => setNotice(`Follow-up snoozed for ${selected.name} in demo.`)}>Snooze</button>
-        </article>
-
-        <article className="msg-context-card small">
-          <h2>Recent Activity</h2>
-          <ul>
-            <li><span>{selected.channel} received</span><b>2m ago</b></li>
-            <li><span>Profile viewed</span><b>1h ago</b></li>
-            <li><span>Lead updated</span><b>2h ago</b></li>
-          </ul>
-        </article>
-
-        <article className="msg-context-card small">
-          <h2>AI Suggestions</h2>
-          <button type="button" onClick={suggestedReply}>Suggested reply <span>Draft</span></button>
-          <Link href="/bookings">Book inspection <span>Create</span></Link>
-          <button type="button" onClick={() => setDraft(`Hi ${selected.name.split(" ")[0]}, just following up on your ${selected.enquiry.toLowerCase()}. Would you like us to book this in?`)}>
-            Send follow-up <span>Draft</span>
+      <section className="messagesV7-bottomGrid">
+        <article>
+          <span>Contact Details</span>
+          <h3>{selectedConversation.customerName}</h3>
+          <p>{selectedConversation.phone}</p>
+          <p>{selectedConversation.email}</p>
+          <p>{selectedConversation.address}</p>
+          <button type="button" onClick={copyPhoneNumber}>
+            Copy contact
           </button>
+        </article>
+
+        <article>
+          <span>Upcoming Booking</span>
+          <h3>{selectedConversation.booking}</h3>
+          <p>Estimated value: {selectedConversation.estimatedValue}</p>
+          <button
+            type="button"
+            onClick={() =>
+              updateSelectedConversation(
+                { status: "Booked", booking: "Demo slot secured — next available engineer" },
+                `${selectedConversation.customerName} marked as booked.`,
+              )
+            }
+          >
+            Mark booked
+          </button>
+        </article>
+
+        <article>
+          <span>Follow-Up Due</span>
+          <h3>{selectedConversation.followUp}</h3>
+          <p>Owner action: {selectedConversation.ownerAction}</p>
+          <button
+            type="button"
+            onClick={() =>
+              updateSelectedConversation(
+                { status: "Follow-up", followUp: "Follow-up scheduled for later today" },
+                `Follow-up scheduled for ${selectedConversation.customerName}.`,
+              )
+            }
+          >
+            Schedule follow-up
+          </button>
+        </article>
+
+        <article>
+          <span>Recent Activity</span>
+          <h3>{selectedConversation.recentActivity}</h3>
+          <ul>
+            {activityItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <button
+            type="button"
+            onClick={() => pushActivity(`${selectedConversation.customerName} activity reviewed.`)}
+          >
+            Mark reviewed
+          </button>
+        </article>
+
+        <article className="messagesV7-aiCard">
+          <span>AI Suggestions</span>
+          <h3>Next best move</h3>
+          <p>{selectedConversation.ownerAction}</p>
+          <div>
+            <button
+              type="button"
+              onClick={() =>
+                updateSelectedConversation(
+                  { priority: "Emergency" },
+                  `${selectedConversation.customerName} marked urgent for owner review.`,
+                )
+              }
+            >
+              Mark urgent
+            </button>
+            <button
+              type="button"
+              onClick={() => sendMessage(makeSuggestedReply(selectedConversation), "AI suggestion sent")}
+            >
+              Send AI suggestion
+            </button>
+          </div>
         </article>
       </section>
 
-      <p className="messages-demo-notice">{notice}</p>
+      <section className="messagesV7-brandBanner">
+        <div>
+          <p>From ping to paid job</p>
+          <h2>Bee-Aura keeps every lead warm, every reply fast, and every booking under control.</h2>
+        </div>
+        <div>
+          <span>Recover missed calls</span>
+          <span>Reply before leads go cold</span>
+          <span>Turn chats into booked work</span>
+          <span>Keep the owner in control</span>
+        </div>
+      </section>
     </main>
   );
 }
