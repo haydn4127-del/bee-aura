@@ -3423,50 +3423,6 @@ h1 {
 }
 /* === End Bee-Aura Leads page clean v2 === */
 
-/* === Leads footer right alignment fix v3 === */
-
-/* Force the Leads footer to stay in one row on laptop screens */
-.lead-table-footer,
-.leads-pro-footer {
-  display: grid !important;
-  grid-template-columns: minmax(190px, 1fr) auto minmax(240px, 300px) !important;
-  align-items: end !important;
-  gap: 18px !important;
-}
-
-.lead-outcomes-card,
-.leads-pro-outcomes {
-  justify-self: end !important;
-  max-width: 300px !important;
-  width: 100% !important;
-}
-
-/* Make the table slightly more compact so it fits closer to the reference */
-.lead-table {
-  min-width: 1160px !important;
-}
-
-.lead-table th,
-.lead-table td {
-  padding: 12px 9px !important;
-  font-size: 0.8rem !important;
-}
-
-/* Only stack the footer on genuinely small screens */
-@media (max-width: 900px) {
-  .lead-table-footer,
-  .leads-pro-footer {
-    grid-template-columns: 1fr !important;
-  }
-
-  .lead-outcomes-card,
-  .leads-pro-outcomes {
-    justify-self: start !important;
-  }
-}
-
-/* === End Leads footer right alignment fix v3 === */
-
 /* === Sidebar Bee bot visual upgrade v1 === */
 .sidebar-bot {
   position: relative;
@@ -3572,420 +3528,1325 @@ h1 {
 }
 /* === End Sidebar Bee bot visual upgrade v1 === */
 
-/* === Leads full-page compact fit patch v4 === */
 
-/* Make the Leads page fit more like the reference on laptop screens */
+/* === Bee-Aura Leads clean final layout v14 === */
+
 .leads-board {
-  max-width: 1500px !important;
-  font-size: 0.82rem;
+  width: 100%;
+  max-width: none;
+  min-height: calc(100vh - 40px);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 14px;
+  color: #f5f7fb;
 }
 
 .leads-board-header {
-  margin-bottom: 12px !important;
-  gap: 14px !important;
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) auto;
+  gap: 18px;
+  align-items: end;
 }
 
 .leads-board-header h1 {
-  font-size: clamp(1.8rem, 2.4vw, 2.55rem) !important;
-  margin-bottom: 4px !important;
+  margin: 0 0 5px;
+  font-size: clamp(2rem, 2.7vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
 }
 
 .leads-board-header p {
-  font-size: 0.9rem !important;
+  margin: 0;
+  color: #d7dfec;
+  font-size: 0.95rem;
 }
 
 .leads-board-controls {
-  gap: 10px !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: nowrap;
 }
 
 .lead-add-button,
 .lead-filter-button,
 .lead-search-box,
 .lead-owner-card {
-  min-height: 40px !important;
-  border-radius: 10px !important;
-  font-size: 0.78rem !important;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 0.78rem;
+  font-weight: 850;
+  white-space: nowrap;
 }
 
 .lead-add-button {
-  padding: 0 18px !important;
+  gap: 8px;
+  padding: 0 18px;
+  color: #08111d;
+  background: linear-gradient(180deg, #ffd968, #f2a914);
+  border: 1px solid rgba(255, 217, 104, 0.72);
+  box-shadow: 0 18px 40px rgba(245, 188, 22, 0.18);
+}
+
+.lead-add-button span {
+  font-size: 1.2rem;
 }
 
 .lead-filter-button {
-  padding: 0 16px !important;
+  padding: 0 16px;
+  color: #f5f7fb;
+  background: rgba(3, 13, 27, 0.78);
+  border: 1px solid rgba(245, 188, 22, 0.32);
 }
 
 .lead-search-box {
-  min-width: 250px !important;
-  padding: 0 12px !important;
+  min-width: 260px;
+  justify-content: space-between;
+  padding: 0 13px;
+  color: #8fa2ba;
+  background: rgba(3, 13, 27, 0.78);
+  border: 1px solid rgba(132, 159, 206, 0.24);
+}
+
+.lead-search-box strong {
+  color: #f5f7fb;
 }
 
 .lead-owner-card {
-  min-width: 150px !important;
-  padding: 0 10px !important;
+  min-width: 150px;
+  gap: 9px;
+  padding: 0 10px;
+  color: #f5f7fb;
+  background: rgba(3, 13, 27, 0.78);
+  border: 1px solid rgba(245, 188, 22, 0.32);
+}
+
+.lead-owner-card small {
+  display: block;
+  color: #90a0b8;
+  margin-top: 1px;
+}
+
+.lead-owner-card em {
+  margin-left: auto;
+  font-style: normal;
 }
 
 .lead-owner-avatar {
-  width: 32px !important;
-  height: 32px !important;
-  font-size: 0.75rem !important;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #07111d;
+  font-weight: 950;
+  background: linear-gradient(135deg, #f5bc16, #29a8ff);
 }
 
-/* Table card compact */
+.lead-create-panel {
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(245, 188, 22, 0.42);
+  background:
+    radial-gradient(circle at top right, rgba(245, 188, 22, 0.10), transparent 32%),
+    linear-gradient(180deg, rgba(5, 15, 30, 0.96), rgba(2, 8, 18, 0.98));
+}
+
+.lead-create-panel h2 {
+  margin: 0 0 4px;
+  color: #f5bc16;
+}
+
+.lead-create-panel p {
+  margin: 0 0 12px;
+  color: #cad4e4;
+}
+
+.lead-create-panel form {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  align-items: end;
+}
+
+.lead-create-panel label {
+  display: grid;
+  gap: 5px;
+  color: #cad4e4;
+  font-size: 0.75rem;
+  font-weight: 850;
+}
+
+.lead-create-panel input,
+.lead-create-panel select {
+  min-width: 0;
+  height: 38px;
+  border-radius: 9px;
+  padding: 0 10px;
+  color: #f5f7fb;
+  background: rgba(3, 13, 27, 0.82);
+  border: 1px solid rgba(132, 159, 206, 0.28);
+}
+
+.lead-create-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.lead-create-actions button {
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 9px;
+  font-weight: 900;
+  border: 1px solid rgba(132, 159, 206, 0.28);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f5f7fb;
+}
+
+.lead-create-actions button[type="submit"] {
+  color: #08111d;
+  background: #f5bc16;
+  border-color: #f5bc16;
+}
+
+.leads-board-card {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  border-radius: 18px;
+  border: 1px solid rgba(41, 168, 255, 0.42);
+  background:
+    radial-gradient(circle at top right, rgba(10, 132, 255, 0.10), transparent 32%),
+    linear-gradient(180deg, rgba(5, 15, 30, 0.94), rgba(2, 8, 18, 0.98));
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.38);
+  overflow: hidden;
+}
+
 .lead-tabs-row {
-  padding: 10px 14px !important;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(132, 159, 206, 0.16);
 }
 
 .lead-tabs {
-  gap: 12px !important;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
 }
 
-.lead-tabs button,
+.lead-tabs a,
 .lead-sort-button {
-  min-height: 34px !important;
-  padding: 0 13px !important;
-  font-size: 0.78rem !important;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  border-radius: 9px;
+  color: #f5f7fb;
+  background: transparent;
+  border: 1px solid transparent;
+  font-size: 0.78rem;
+  font-weight: 850;
 }
 
-.lead-tabs button span {
-  padding: 2px 7px !important;
-  margin-left: 5px !important;
+.lead-tabs a.active {
+  border-color: #f5bc16;
+  box-shadow: 0 0 0 2px rgba(245, 188, 22, 0.16), inset 0 0 24px rgba(245, 188, 22, 0.12);
 }
 
-/* Make table rows shorter so footer appears on screen */
+.lead-tabs a span {
+  margin-left: 7px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: #bce8ff;
+  background: rgba(10, 132, 255, 0.20);
+}
+
+.lead-sort-button {
+  border-color: rgba(132, 159, 206, 0.20);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.lead-table-frame {
+  min-height: 0;
+  overflow: auto;
+  padding: 0 10px;
+}
+
 .lead-table {
-  min-width: 1120px !important;
+  width: 100%;
+  min-width: 1180px;
+  table-layout: fixed;
+  border-collapse: collapse;
 }
 
 .lead-table th,
 .lead-table td {
-  padding: 8px 8px !important;
-  font-size: 0.73rem !important;
-  line-height: 1.15 !important;
+  padding: 9px 7px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(132, 159, 206, 0.12);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.72rem;
+  line-height: 1.15;
 }
 
+.lead-table th {
+  color: #cad4e4;
+  font-weight: 850;
+  background: rgba(6, 18, 34, 0.78);
+}
+
+.lead-table td {
+  color: #f5f7fb;
+}
+
+.lead-table th:nth-child(1),
+.lead-table td:nth-child(1) { width: 9%; }
+
+.lead-table th:nth-child(2),
+.lead-table td:nth-child(2) { width: 10%; }
+
+.lead-table th:nth-child(3),
+.lead-table td:nth-child(3) { width: 11%; }
+
+.lead-table th:nth-child(4),
+.lead-table td:nth-child(4) { width: 8%; }
+
+.lead-table th:nth-child(5),
+.lead-table td:nth-child(5) { width: 8%; }
+
+.lead-table th:nth-child(6),
+.lead-table td:nth-child(6) { width: 7%; }
+
+.lead-table th:nth-child(7),
+.lead-table td:nth-child(7) { width: 8%; }
+
+.lead-table th:nth-child(8),
+.lead-table td:nth-child(8) { width: 7%; }
+
+.lead-table th:nth-child(9),
+.lead-table td:nth-child(9) { width: 8%; }
+
+.lead-table th:nth-child(10),
+.lead-table td:nth-child(10) { width: 11%; }
+
+.lead-table th:nth-child(11),
+.lead-table td:nth-child(11) { width: 6%; }
+
+.lead-table th:nth-child(12),
+.lead-table td:nth-child(12) { width: 7%; }
+
 .lead-source,
-.lead-status {
-  min-height: 24px !important;
-  padding: 0 8px !important;
-  font-size: 0.72rem !important;
-  border-radius: 6px !important;
+.lead-status,
+.lead-urgency {
+  min-height: 23px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 7px;
+  border-radius: 7px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+.lead-source-google,
+.lead-source-website,
+.lead-source-facebook {
+  color: #29a8ff;
+  background: rgba(10, 132, 255, 0.15);
+}
+
+.lead-source-referral {
+  color: #f5bc16;
+  background: rgba(245, 188, 22, 0.15);
+}
+
+.lead-status-new {
+  color: #29a8ff;
+  background: rgba(10, 132, 255, 0.15);
+}
+
+.lead-status-contacted,
+.lead-status-quote-sent {
+  color: #c084fc;
+  background: rgba(168, 85, 247, 0.16);
+}
+
+.lead-status-follow-up {
+  color: #f5bc16;
+  background: rgba(245, 188, 22, 0.16);
+}
+
+.lead-status-referral {
+  color: #f5f7fb;
+  background: rgba(148, 163, 184, 0.16);
+}
+
+.lead-urgency-critical {
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.14);
+}
+
+.lead-urgency-high {
+  color: #f5bc16;
+  background: rgba(245, 188, 22, 0.14);
+}
+
+.lead-urgency-medium {
+  color: #29a8ff;
+  background: rgba(10, 132, 255, 0.14);
+}
+
+.lead-urgency-normal {
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.12);
+}
+
+.lead-click-text,
+.lead-click-muted,
+.lead-click-value {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+  cursor: pointer;
+}
+
+.lead-click-text {
+  color: #f5f7fb;
+  font-weight: 850;
+}
+
+.lead-click-muted {
+  color: #d7dfec;
+}
+
+.lead-click-value {
+  color: #f5bc16;
+  font-weight: 900;
+}
+
+.lead-click-text:hover,
+.lead-click-muted:hover,
+.lead-click-value:hover {
+  color: #29a8ff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .lead-actions {
-  gap: 5px !important;
+  display: flex;
+  gap: 5px;
 }
 
-.lead-actions a,
-.lead-actions button {
-  width: 27px !important;
-  height: 27px !important;
-  border-radius: 7px !important;
-  font-size: 0.7rem !important;
+.lead-actions a {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  color: #d7dfec;
+  border: 1px solid rgba(132, 159, 206, 0.22);
+  background: rgba(255, 255, 255, 0.035);
+  font-size: 0.68rem;
 }
 
-/* Footer should show without needing lots of scrolling */
 .lead-table-footer {
-  min-height: 92px !important;
-  padding: 10px 14px !important;
-  grid-template-columns: minmax(170px, 1fr) auto minmax(220px, 270px) !important;
-  gap: 14px !important;
+  min-height: 102px;
+  display: grid;
+  grid-template-columns: minmax(170px, 1fr) auto minmax(300px, 370px);
+  gap: 18px;
+  align-items: center;
+  padding: 12px 14px;
+  border-top: 1px solid rgba(132, 159, 206, 0.12);
 }
 
 .lead-table-footer p {
-  font-size: 0.78rem !important;
+  margin: 0;
+  color: #d7dfec;
+  font-size: 0.82rem;
 }
 
 .lead-pagination {
-  gap: 7px !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.lead-pagination button,
+.lead-pagination a,
 .lead-pagination span {
-  width: 30px !important;
-  height: 30px !important;
-  font-size: 0.75rem !important;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #f5bc16;
+  font-weight: 900;
+  border: 1px solid rgba(132, 159, 206, 0.22);
+  background: rgba(255, 255, 255, 0.035);
+  font-size: 0.72rem;
+}
+
+.lead-pagination a.active {
+  color: #08111d;
+  background: #f5bc16;
 }
 
 .lead-outcomes-card {
-  max-width: 270px !important;
-  min-height: 86px !important;
-  grid-template-columns: 1fr 66px !important;
-  padding: 9px 11px !important;
+  justify-self: end;
+  align-self: center;
+  width: 100%;
+  max-width: 370px;
+  min-height: 118px;
+  display: grid;
+  grid-template-columns: 1fr 98px;
+  gap: 14px;
+  align-items: center;
+  padding: 13px 15px;
+  border-radius: 14px;
+  border: 1px solid rgba(41, 168, 255, 0.34);
+  background: rgba(5, 15, 30, 0.84);
 }
 
 .lead-outcomes-card h3 {
-  font-size: 0.78rem !important;
-  margin-bottom: 5px !important;
+  margin: 0 0 8px;
+  font-size: 0.94rem;
 }
 
 .lead-outcomes-card p {
-  font-size: 0.68rem !important;
-  margin: 3px 0 !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 5px 0;
+  color: #d7dfec;
+  font-size: 0.8rem;
+}
+
+.lead-outcomes-card strong {
+  margin-left: auto;
+}
+
+.lead-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.lead-dot.blue {
+  background: #0a84ff;
+}
+
+.lead-dot.gold {
+  background: #f5bc16;
 }
 
 .lead-donut {
-  width: 62px !important;
-  height: 62px !important;
+  width: 92px;
+  height: 92px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, #08111d 0 45%, transparent 47%),
+    conic-gradient(#f5bc16 0 31%, #0a84ff 31% 100%);
 }
 
 .lead-donut span {
-  font-size: 0.78rem !important;
+  display: grid;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 950;
 }
 
 .lead-donut small {
-  font-size: 0.5rem !important;
+  font-size: 0.64rem;
+  color: #cad4e4;
 }
 
-/* Keep page from feeling too spaced out */
-.leads-board-card {
-  border-radius: 16px !important;
+/* Customer detail page */
+.customer-detail-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #f5f7fb;
 }
 
-/* === End Leads full-page compact fit patch v4 === */
-
-/* === Leads alignment and full-width table patch v5 === */
-
-/* Let the Leads page use the full available app width */
-.leads-board {
-  max-width: none !important;
-  width: 100% !important;
+.customer-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 24px;
 }
 
-/* Header: title left, controls pushed right */
-.leads-board-header {
-  grid-template-columns: minmax(260px, 1fr) minmax(620px, auto) !important;
-  align-items: end !important;
+.customer-detail-header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2.2rem, 3vw, 3.5rem);
 }
 
-.leads-board-controls {
-  justify-content: flex-end !important;
-  width: 100% !important;
+.customer-detail-header p {
+  margin: 0;
+  color: #cad4e4;
 }
 
-/* Make controls more like the reference, tighter and right-aligned */
-.lead-add-button,
-.lead-filter-button,
-.lead-search-box,
-.lead-owner-card {
-  min-height: 38px !important;
-  font-size: 0.72rem !important;
+.customer-back-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 10px;
+  color: #f5bc16;
+  border: 1px solid rgba(245, 188, 22, 0.45);
+  font-weight: 900;
 }
 
-.lead-add-button {
-  padding: 0 15px !important;
+.customer-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 
-.lead-filter-button {
-  padding: 0 14px !important;
+.customer-detail-card {
+  min-width: 0;
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(41, 168, 255, 0.34);
+  background:
+    radial-gradient(circle at top right, rgba(10, 132, 255, 0.10), transparent 34%),
+    linear-gradient(180deg, rgba(5, 15, 30, 0.94), rgba(2, 8, 18, 0.98));
 }
 
-.lead-search-box {
-  min-width: 220px !important;
-  max-width: 260px !important;
+.customer-detail-card.wide {
+  grid-column: 1 / -1;
 }
 
-.lead-owner-card {
-  min-width: 130px !important;
+.customer-detail-card h2 {
+  margin: 0 0 16px;
 }
 
-/* Make the table box stretch properly across the page */
-.leads-board-card {
-  width: 100% !important;
+.customer-detail-card p {
+  margin: 12px 0;
+  color: #d7dfec;
 }
 
-/* Keep the tabs and sort aligned like the reference */
-.lead-tabs-row {
-  display: grid !important;
-  grid-template-columns: minmax(0, 1fr) auto !important;
-  align-items: center !important;
+.customer-detail-card p span {
+  display: block;
+  color: #90a0b8;
+  margin-bottom: 4px;
 }
 
-.lead-tabs {
-  min-width: 0 !important;
+.customer-detail-card p strong {
+  color: #f5f7fb;
 }
 
-/* Key fix: stop the table being too wide for the laptop */
-.lead-table {
-  width: 100% !important;
-  min-width: 980px !important;
-  table-layout: fixed !important;
+.customer-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
 }
 
-/* Column widths so headers line up with data and everything fits better */
-.lead-table th:nth-child(1),
-.lead-table td:nth-child(1) {
-  width: 9%;
+.customer-detail-actions a {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  border-radius: 9px;
+  color: #08111d;
+  background: #f5bc16;
+  font-weight: 900;
 }
 
-.lead-table th:nth-child(2),
-.lead-table td:nth-child(2) {
-  width: 11%;
+.customer-detail-card li {
+  margin: 10px 0;
+  color: #d7dfec;
 }
 
-.lead-table th:nth-child(3),
-.lead-table td:nth-child(3) {
-  width: 12%;
-}
+@media (max-width: 1280px) {
+  .leads-board-header {
+    grid-template-columns: 1fr;
+  }
 
-.lead-table th:nth-child(4),
-.lead-table td:nth-child(4) {
-  width: 8%;
-}
+  .leads-board-controls {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 
-.lead-table th:nth-child(5),
-.lead-table td:nth-child(5) {
-  width: 9%;
-}
+  .lead-create-panel form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-.lead-table th:nth-child(6),
-.lead-table td:nth-child(6) {
-  width: 9%;
-}
+  .lead-create-actions {
+    grid-column: 1 / -1;
+  }
 
-.lead-table th:nth-child(7),
-.lead-table td:nth-child(7) {
-  width: 7%;
-}
+  .lead-table-footer {
+    grid-template-columns: 1fr;
+  }
 
-.lead-table th:nth-child(8),
-.lead-table td:nth-child(8) {
-  width: 8%;
-}
+  .lead-outcomes-card {
+    justify-self: start;
+  }
 
-.lead-table th:nth-child(9),
-.lead-table td:nth-child(9) {
-  width: 12%;
-}
+  .customer-detail-grid {
+    grid-template-columns: 1fr;
+  }
 
-.lead-table th:nth-child(10),
-.lead-table td:nth-child(10) {
-  width: 7%;
+  .customer-detail-header {
+    flex-direction: column;
+  }
 }
+/* === End Bee-Aura Leads clean final layout v14 === */
 
-.lead-table th:nth-child(11),
-.lead-table td:nth-child(11) {
-  width: 8%;
-}
+/* === Leads footer/pie chart final position patch v15 === */
 
-/* Truncate long text neatly instead of pushing columns out */
-.lead-table th,
-.lead-table td {
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  padding: 8px 7px !important;
-  font-size: 0.69rem !important;
-  line-height: 1.12 !important;
-}
-
-/* Keep badge sizes under control */
-.lead-source,
-.lead-status {
-  min-height: 22px !important;
-  padding: 0 7px !important;
-  font-size: 0.66rem !important;
-}
-
-/* Actions smaller so they fit */
-.lead-actions {
-  gap: 4px !important;
-}
-
-.lead-actions a,
-.lead-actions button {
-  width: 24px !important;
-  height: 24px !important;
-  font-size: 0.64rem !important;
-}
-
-/* Footer: full row, outcomes forced bottom-right */
+/* Force Leads footer into the reference layout on laptop screens */
 .lead-table-footer {
-  grid-template-columns: minmax(170px, 1fr) auto minmax(220px, 270px) !important;
-  align-items: end !important;
+  display: grid !important;
+  grid-template-columns: minmax(180px, 1fr) auto minmax(260px, 320px) !important;
+  align-items: center !important;
+  gap: 18px !important;
   width: 100% !important;
 }
 
+/* Left text */
+.lead-table-footer > p {
+  justify-self: start !important;
+}
+
+/* Middle pagination */
+.lead-pagination {
+  justify-self: center !important;
+}
+
+/* Right Lead Outcomes card */
 .lead-outcomes-card {
   justify-self: end !important;
-  align-self: end !important;
+  align-self: center !important;
+  width: 100% !important;
+  max-width: 320px !important;
+  min-height: 108px !important;
+  grid-template-columns: minmax(0, 1fr) 88px !important;
 }
 
-/* Make pagination compact enough to sit in the middle */
-.lead-pagination {
-  gap: 6px !important;
+/* Pie chart slightly larger but not oversized */
+.lead-donut {
+  width: 84px !important;
+  height: 84px !important;
 }
 
-.lead-pagination button,
-.lead-pagination span {
-  width: 28px !important;
-  height: 28px !important;
-  font-size: 0.7rem !important;
+/* Override older mobile rule that was pushing outcomes left too early */
+@media (max-width: 1280px) and (min-width: 980px) {
+  .lead-table-footer {
+    grid-template-columns: minmax(160px, 1fr) auto minmax(250px, 310px) !important;
+  }
+
+  .lead-outcomes-card {
+    justify-self: end !important;
+  }
 }
 
-/* === End Leads alignment and full-width table patch v5 === */
+/* Only stack footer on genuinely narrow screens */
+@media (max-width: 979px) {
+  .lead-table-footer {
+    grid-template-columns: 1fr !important;
+  }
 
-/* === Leads full-height table panel patch v6 === */
-
-/* Make Leads page use the available viewport height */
-.leads-board {
-  min-height: calc(100vh - 40px) !important;
-  display: grid !important;
-  grid-template-rows: auto minmax(0, 1fr) !important;
+  .lead-pagination,
+  .lead-outcomes-card {
+    justify-self: start !important;
+  }
 }
 
-/* Make the main Leads box stretch to the bottom */
-.leads-board-card {
-  min-height: calc(100vh - 180px) !important;
-  display: grid !important;
-  grid-template-rows: auto minmax(0, 1fr) auto !important;
+/* === End Leads footer/pie chart final position patch v15 === */
+
+/* === Bee-Aura Leads clean working standard v2 === */
+
+.leads-final-page {
+  width: 100%;
+  max-width: none;
+  min-height: calc(100vh - 40px);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 14px;
+  color: #f5f7fb;
 }
 
-/* Let the table area fill the middle of the box */
-.lead-table-frame {
-  min-height: 0 !important;
-  height: 100% !important;
-  overflow: auto !important;
+.leads-final-header {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) auto;
+  gap: 18px;
+  align-items: end;
 }
 
-/* Keep footer locked at the bottom of the Leads box */
-.lead-table-footer {
-  align-self: end !important;
+.leads-final-header h1 {
+  margin: 0 0 5px;
+  font-size: clamp(2rem, 2.7vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
 }
 
-/* Avoid rows getting too tall inside the extended panel */
-.lead-table th,
-.lead-table td {
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
+.leads-final-header p {
+  margin: 0;
+  color: #d7dfec;
+  font-size: 0.95rem;
 }
 
-/* === End Leads full-height table panel patch v6 === */
-
-/* === Leads vertical fill patch v8 === */
-
-/* Make the main leads card reach lower on the laptop screen */
-.leads-board-card {
-  min-height: calc(100vh - 138px) !important;
+.leads-final-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: nowrap;
 }
 
-/* Let the table body naturally occupy more vertical space */
-.lead-table th,
-.lead-table td {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
+.lf-add,
+.lf-control,
+.lf-search,
+.lf-owner {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 0.78rem;
+  font-weight: 850;
+  white-space: nowrap;
 }
 
-/* Give the footer a little more breathing room while staying at the bottom */
-.lead-table-footer {
-  min-height: 118px !important;
-  padding-top: 16px !important;
-  padding-bottom: 16px !important;
+.lf-add {
+  gap: 8px;
+  padding: 0 18px;
+  color: #08111d;
+  background: linear-gradient(180deg, #ffd968, #f2a914);
+  border: 1px solid rgba(255, 217, 104, 0.72);
+  box-shadow: 0 18px 40px rgba(245, 188, 22, 0.18);
 }
 
-/* Push the footer area lower inside the card */
-.lead-table-frame {
-  min-height: 0 !important;
-  flex: 1 1 auto !important;
+.lf-add span {
+  font-size: 1.2rem;
 }
 
-/* === End Leads vertical fill patch v8 === */
+.lf-control {
+  padding: 0 16px;
+  color: #f5f7fb;
+  background: rgba(3, 13, 27, 0.78);
+  border: 1px solid rgba(245, 188, 22, 0.32);
+}
+
+.lf-search {
+  min-width: 260px;
+  justify-content: space-between;
+  padding: 0 13px;
+  color: #8fa2ba;
+  background: rgba(3, 13, 27, 0.78);
+  border: 1px solid rgba(132, 159, 206, 0.24);
+}
+
+.lf-search strong {
+  color: #f5f7fb;
+}
+
+.lf-owner {
+  min-width: 150px;
+  gap: 9px;
+  padding: 0 10px;
+  color: #f5f7fb;
+  background: rgba(3, 13, 27, 0.78);
+  border: 1px solid rgba(245, 188, 22, 0.32);
+}
+
+.lf-owner > span {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #07111d;
+  font-weight: 950;
+  background: linear-gradient(135deg, #f5bc16, #29a8ff);
+}
+
+.lf-owner small {
+  display: block;
+  color: #90a0b8;
+  margin-top: 1px;
+}
+
+.lf-owner em {
+  margin-left: auto;
+  font-style: normal;
+}
+
+.lf-create {
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(245, 188, 22, 0.42);
+  background:
+    radial-gradient(circle at top right, rgba(245, 188, 22, 0.10), transparent 32%),
+    linear-gradient(180deg, rgba(5, 15, 30, 0.96), rgba(2, 8, 18, 0.98));
+}
+
+.lf-create h2 {
+  margin: 0 0 4px;
+  color: #f5bc16;
+}
+
+.lf-create p {
+  margin: 0 0 12px;
+  color: #cad4e4;
+}
+
+.lf-create form {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  align-items: end;
+}
+
+.lf-create label {
+  display: grid;
+  gap: 5px;
+  color: #cad4e4;
+  font-size: 0.75rem;
+  font-weight: 850;
+}
+
+.lf-create input,
+.lf-create select {
+  min-width: 0;
+  height: 38px;
+  border-radius: 9px;
+  padding: 0 10px;
+  color: #f5f7fb;
+  background: rgba(3, 13, 27, 0.82);
+  border: 1px solid rgba(132, 159, 206, 0.28);
+}
+
+.lf-create-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.lf-create-actions button {
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 9px;
+  font-weight: 900;
+  border: 1px solid rgba(132, 159, 206, 0.28);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f5f7fb;
+}
+
+.lf-create-actions button[type="submit"] {
+  color: #08111d;
+  background: #f5bc16;
+  border-color: #f5bc16;
+}
+
+.leads-final-card {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  border-radius: 18px;
+  border: 1px solid rgba(41, 168, 255, 0.42);
+  background:
+    radial-gradient(circle at top right, rgba(10, 132, 255, 0.10), transparent 32%),
+    linear-gradient(180deg, rgba(5, 15, 30, 0.94), rgba(2, 8, 18, 0.98));
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.38);
+  overflow: hidden;
+}
+
+.lf-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(132, 159, 206, 0.16);
+}
+
+.lf-tabs {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.lf-tabs button,
+.lf-sort {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9px;
+  color: #f5f7fb;
+  background: transparent;
+  border: 1px solid transparent;
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.lf-tabs button {
+  padding: 0 14px;
+}
+
+.lf-tabs button.active {
+  border-color: #f5bc16;
+  box-shadow: 0 0 0 2px rgba(245, 188, 22, 0.16), inset 0 0 24px rgba(245, 188, 22, 0.12);
+}
+
+.lf-tabs span {
+  margin-left: 7px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: #bce8ff;
+  background: rgba(10, 132, 255, 0.20);
+}
+
+.lf-sort {
+  gap: 8px;
+  padding: 0 12px;
+  border-color: rgba(132, 159, 206, 0.20);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.lf-sort select {
+  color: #f5f7fb;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-weight: 850;
+}
+
+.lf-table-wrap {
+  min-height: 0;
+  overflow: auto;
+  padding: 0 10px;
+}
+
+.lf-table {
+  width: 100%;
+  min-width: 1180px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.lf-table th,
+.lf-table td {
+  padding: 9px 7px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(132, 159, 206, 0.12);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.72rem;
+  line-height: 1.15;
+}
+
+.lf-table th {
+  color: #cad4e4;
+  font-weight: 850;
+  background: rgba(6, 18, 34, 0.78);
+}
+
+.lf-col-name { width: 9%; }
+.lf-col-enquiry { width: 10%; }
+.lf-col-contact { width: 11%; }
+.lf-col-source { width: 8%; }
+.lf-col-status { width: 8%; }
+.lf-col-urgency { width: 7%; }
+.lf-col-date { width: 8%; }
+.lf-col-value { width: 7%; }
+.lf-col-activity { width: 8%; }
+.lf-col-follow { width: 11%; }
+.lf-col-owner { width: 6%; }
+.lf-col-actions { width: 7%; }
+
+.lf-link {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #d7dfec;
+  cursor: pointer;
+}
+
+.lf-link.strong {
+  color: #f5f7fb;
+  font-weight: 850;
+}
+
+.lf-link.value {
+  color: #f5bc16;
+  font-weight: 900;
+}
+
+.lf-link:hover {
+  color: #29a8ff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.lf-source,
+.lf-status,
+.lf-urgency {
+  min-height: 23px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 7px;
+  border-radius: 7px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+.lf-source-google,
+.lf-source-website,
+.lf-source-facebook {
+  color: #29a8ff;
+  background: rgba(10, 132, 255, 0.15);
+}
+
+.lf-source-referral {
+  color: #f5bc16;
+  background: rgba(245, 188, 22, 0.15);
+}
+
+.lf-status-new {
+  color: #29a8ff;
+  background: rgba(10, 132, 255, 0.15);
+}
+
+.lf-status-contacted,
+.lf-status-quote-sent {
+  color: #c084fc;
+  background: rgba(168, 85, 247, 0.16);
+}
+
+.lf-status-follow-up {
+  color: #f5bc16;
+  background: rgba(245, 188, 22, 0.16);
+}
+
+.lf-status-referral {
+  color: #f5f7fb;
+  background: rgba(148, 163, 184, 0.16);
+}
+
+.lf-urgency-critical {
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.14);
+}
+
+.lf-urgency-high {
+  color: #f5bc16;
+  background: rgba(245, 188, 22, 0.14);
+}
+
+.lf-urgency-medium {
+  color: #29a8ff;
+  background: rgba(10, 132, 255, 0.14);
+}
+
+.lf-urgency-normal {
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.12);
+}
+
+.lf-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.lf-actions a {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  color: #d7dfec;
+  border: 1px solid rgba(132, 159, 206, 0.22);
+  background: rgba(255, 255, 255, 0.035);
+  font-size: 0.68rem;
+}
+
+.lf-bottom-fill {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 10px 14px;
+  border-top: 1px solid rgba(132, 159, 206, 0.12);
+}
+
+.lf-bottom-fill article {
+  min-height: 54px;
+  padding: 9px 11px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(132, 159, 206, 0.15);
+}
+
+.lf-bottom-fill strong {
+  display: block;
+  font-size: 0.76rem;
+  color: #f5bc16;
+}
+
+.lf-bottom-fill span {
+  display: block;
+  margin-top: 4px;
+  color: #cad4e4;
+  font-size: 0.7rem;
+}
+
+.lf-footer {
+  min-height: 104px;
+  display: grid;
+  grid-template-columns: minmax(170px, 1fr) auto minmax(300px, 370px);
+  gap: 18px;
+  align-items: center;
+  padding: 12px 14px;
+  border-top: 1px solid rgba(132, 159, 206, 0.12);
+}
+
+.lf-footer p {
+  margin: 0;
+  color: #d7dfec;
+  font-size: 0.82rem;
+}
+
+.lf-pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lf-pagination a,
+.lf-pagination span {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #f5bc16;
+  font-weight: 900;
+  border: 1px solid rgba(132, 159, 206, 0.22);
+  background: rgba(255, 255, 255, 0.035);
+  font-size: 0.72rem;
+}
+
+.lf-pagination a.active {
+  color: #08111d;
+  background: #f5bc16;
+}
+
+.lf-outcomes {
+  justify-self: end;
+  width: 100%;
+  max-width: 370px;
+  min-height: 112px;
+  display: grid;
+  grid-template-columns: 1fr 98px;
+  gap: 14px;
+  align-items: center;
+  padding: 13px 15px;
+  border-radius: 14px;
+  border: 1px solid rgba(41, 168, 255, 0.34);
+  background: rgba(5, 15, 30, 0.84);
+}
+
+.lf-outcomes h3 {
+  margin: 0 0 8px;
+  font-size: 0.94rem;
+}
+
+.lf-outcomes p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 5px 0;
+  color: #d7dfec;
+  font-size: 0.8rem;
+}
+
+.lf-outcomes b {
+  margin-left: auto;
+}
+
+.lf-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.lf-dot.blue {
+  background: #0a84ff;
+}
+
+.lf-dot.gold {
+  background: #f5bc16;
+}
+
+.lf-donut {
+  width: 92px;
+  height: 92px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, #08111d 0 45%, transparent 47%),
+    conic-gradient(#f5bc16 0 31%, #0a84ff 31% 100%);
+}
+
+.lf-donut span {
+  display: grid;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 950;
+}
+
+.lf-donut small {
+  font-size: 0.64rem;
+  color: #cad4e4;
+}
+
+@media (max-width: 1280px) {
+  .leads-final-header {
+    grid-template-columns: 1fr;
+  }
+
+  .leads-final-controls {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .lf-create form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lf-create-actions {
+    grid-column: 1 / -1;
+  }
+
+  .lf-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .lf-outcomes {
+    justify-self: start;
+  }
+}
+
+/* === End Bee-Aura Leads clean working standard v2 === */
