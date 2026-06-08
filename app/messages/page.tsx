@@ -811,9 +811,6 @@ export default function MessagesPage() {
           <p>{selectedConversation.phone}</p>
           <p>{selectedConversation.email}</p>
           <p>{selectedConversation.address}</p>
-          <button type="button" onClick={copyPhoneNumber}>
-            Copy contact
-          </button>
         </article>
 
         <article>
