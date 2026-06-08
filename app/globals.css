@@ -8994,3 +8994,342 @@ aside {
   }
 }
 /* End Bee-Aura Error Log reference layout v1 */
+
+
+/* Bee-Aura Settings reference layout v1 */
+.settingsRef-page {
+  width: 100%;
+  max-width: 1320px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.settingsRef-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+.settingsRef-topbar h1 {
+  margin: 0;
+  color: #fff8dc;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.settingsRef-topbar p {
+  margin: 8px 0 0;
+  color: rgba(255, 248, 220, 0.72);
+  font-size: 0.92rem;
+}
+
+.settingsRef-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.settingsRef-search,
+.settingsRef-owner,
+.settingsRef-primaryAction,
+.settingsRef-resetAction,
+.settingsRef-secondaryAction {
+  border: 1px solid rgba(247, 200, 75, 0.34);
+  border-radius: 10px;
+  background: rgba(20, 157, 255, 0.07);
+  color: #eaf6ff;
+  text-decoration: none;
+}
+
+.settingsRef-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 230px;
+  padding: 0 12px;
+}
+
+.settingsRef-search span {
+  color: rgba(255, 248, 220, 0.66);
+}
+
+.settingsRef-search input {
+  width: 100%;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  color: #fff8dc;
+  padding: 11px 0;
+  outline: none;
+}
+
+.settingsRef-owner {
+  display: grid;
+  grid-template-columns: 34px auto;
+  align-items: center;
+  column-gap: 8px;
+  padding: 8px 12px;
+  line-height: 1.05;
+}
+
+.settingsRef-owner span {
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f7c84b, #3b82f6);
+  color: #07111f;
+  font-weight: 950;
+}
+
+.settingsRef-owner strong {
+  color: #fff8dc;
+}
+
+.settingsRef-owner small {
+  color: rgba(226, 239, 255, 0.58);
+}
+
+.settingsRef-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.settingsRef-card {
+  border: 1px solid rgba(20, 157, 255, 0.22);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at top right, rgba(20, 157, 255, 0.08), transparent 34%),
+    linear-gradient(135deg, rgba(6, 16, 31, 0.96), rgba(3, 8, 18, 0.96));
+  box-shadow:
+    0 18px 54px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(96, 165, 250, 0.09);
+  overflow: hidden;
+}
+
+.settingsRef-cardHeader {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(20, 157, 255, 0.12);
+}
+
+.settingsRef-cardHeader h2 {
+  margin: 0;
+  color: #fff8dc;
+  font-size: 0.95rem;
+}
+
+.settingsRef-form,
+.settingsRef-toggleList,
+.settingsRef-teamList {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+}
+
+.settingsRef-form label {
+  display: grid;
+  gap: 6px;
+}
+
+.settingsRef-form span {
+  color: rgba(226, 239, 255, 0.58);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.settingsRef-form input,
+.settingsRef-form select,
+.settingsRef-teamRow select {
+  width: 100%;
+  border: 1px solid rgba(20, 157, 255, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #fff8dc;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.settingsRef-form option,
+.settingsRef-teamRow option {
+  color: #07111f;
+}
+
+.settingsRef-toggleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 42px;
+}
+
+.settingsRef-toggleRow strong,
+.settingsRef-teamIdentity strong {
+  display: block;
+  color: #fff8dc;
+  font-size: 0.85rem;
+}
+
+.settingsRef-toggleRow small,
+.settingsRef-teamIdentity small {
+  display: block;
+  margin-top: 3px;
+  color: rgba(226, 239, 255, 0.56);
+  font-size: 0.72rem;
+}
+
+.settingsRef-toggle {
+  position: relative;
+  width: 42px;
+  height: 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(247, 200, 75, 0.28);
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.settingsRef-toggle span {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #fff8dc;
+  transition: 0.2s ease;
+}
+
+.settingsRef-toggle.is-on {
+  background: linear-gradient(135deg, #f7c84b, #ffb300);
+  border-color: rgba(255, 222, 119, 0.72);
+}
+
+.settingsRef-toggle.is-on span {
+  left: 22px;
+  background: #171104;
+}
+
+.settingsRef-teamRow {
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  gap: 12px;
+  align-items: center;
+}
+
+.settingsRef-teamIdentity {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.settingsRef-teamIdentity > span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f7c84b, #3b82f6);
+  color: #07111f;
+  font-size: 0.75rem;
+  font-weight: 950;
+}
+
+.settingsRef-secondaryAction,
+.settingsRef-primaryAction,
+.settingsRef-resetAction {
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.settingsRef-secondaryAction,
+.settingsRef-primaryAction {
+  background: linear-gradient(135deg, #f7c84b, #ff9f1c);
+  color: #171104;
+  border-color: rgba(255, 222, 119, 0.78);
+  box-shadow: 0 14px 34px rgba(247, 200, 75, 0.12);
+}
+
+.settingsRef-resetAction {
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 248, 220, 0.82);
+}
+
+.settingsRef-footerBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(20, 157, 255, 0.22);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background:
+    radial-gradient(circle at top right, rgba(20, 157, 255, 0.08), transparent 34%),
+    linear-gradient(135deg, rgba(6, 16, 31, 0.96), rgba(3, 8, 18, 0.96));
+  box-shadow:
+    0 18px 54px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(96, 165, 250, 0.09);
+}
+
+.settingsRef-footerNote {
+  color: rgba(226, 239, 255, 0.58);
+  font-size: 0.78rem;
+}
+
+.settingsRef-footerActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.settingsRef-notice {
+  color: rgba(226, 239, 255, 0.58);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 1180px) {
+  .settingsRef-topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .settingsRef-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .settingsRef-footerBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 760px) {
+  .settingsRef-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .settingsRef-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .settingsRef-search {
+    min-width: unset;
+  }
+
+  .settingsRef-teamRow {
+    grid-template-columns: 1fr;
+  }
+
+  .settingsRef-footerActions {
+    flex-direction: column;
+  }
+}
+/* End Bee-Aura Settings reference layout v1 */
