@@ -61,13 +61,6 @@ Preferred direction:
 - simple mark plus wordmark
 - serious SaaS identity
 
-The main brand mark should communicate:
-- coordination
-- responsiveness
-- operating system control
-- lead recovery
-- professional AI support
-
 ## Assistant direction
 
 The assistant should be separate from the main logo.
@@ -82,24 +75,12 @@ The assistant should feel:
 - controlled
 - supportive
 
-The assistant should not feel:
-- like a mascot
-- like a cartoon bee
-- like a chatbot toy
-- like a cheap robot
-
 Assistant should appear only where useful:
 - AI suggestions
 - message drafts
 - approval panels
 - help/support areas
 - dashboard assistant panel
-
-Assistant should not dominate:
-- sidebar
-- every card
-- every empty state
-- every page header
 
 ## Image direction
 
@@ -135,19 +116,6 @@ Improve:
 - make cards cleaner
 - make borders calmer
 - make typography more mature
-
-Gold should be used for:
-- primary CTA
-- selected state
-- premium highlight
-- important approval action
-
-Blue should be used for:
-- system state
-- links
-- selected rows
-- active technology feel
-- controlled glow only
 
 ## Layout rule
 
@@ -196,4 +164,3 @@ Before real backend work, the demo must feel:
 - realistic with coherent fake data
 - aligned with the future SaaS product
 - free of cheap mascot or placeholder branding
-
