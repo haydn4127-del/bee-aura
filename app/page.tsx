@@ -39,7 +39,7 @@ export default function Home() {
     <main className="landing-page">
       <nav className="landing-nav">
         <Link href="/" className="landing-brand">
-          <span className="landing-bee-mark">🐝</span>
+          <img src="/brand/bee-aura-mark.svg" alt="" className="landing-brand-image-mark" />
           <span>
             Bee-Aura <strong>AI</strong>
           </span>
@@ -92,22 +92,11 @@ export default function Home() {
         </div>
 
         <div className="landing-hero-visual">
-          <div className="bee-bot bee-bot-small" aria-label="Bee-Aura AI mascot">
-            <div className="bee-wing bee-wing-left" />
-            <div className="bee-wing bee-wing-right" />
-            <div className="bee-head">
-              <span className="bee-eye" />
-              <span className="bee-eye" />
-            </div>
-            <div className="bee-body">
-              <span />
-              <span />
-            </div>
-          </div>
+          <img src="/brand/aura-assistant-visual.svg" alt="Bee-Aura assistant visual" className="landing-assistant-image landing-assistant-image-small" />
 
           <div className="landing-dashboard-preview">
             <aside className="preview-sidebar">
-              <div className="preview-brand">🐝 Bee-Aura AI</div>
+              <div className="preview-brand"><img src="/brand/bee-aura-mark.svg" alt="" className="preview-brand-image" /> Bee-Aura AI</div>
               <span className="active">Overview</span>
               <span>Leads</span>
               <span>Conversations</span>
@@ -217,19 +206,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bee-bot bee-bot-large" aria-label="Bee-Aura AI mascot">
-          <div className="bee-wing bee-wing-left" />
-          <div className="bee-wing bee-wing-right" />
-          <div className="bee-head">
-            <span className="bee-eye" />
-            <span className="bee-eye" />
-          </div>
-          <div className="bee-body">
-            <span />
-            <span />
-          </div>
-          <div className="bee-glow" />
-        </div>
+        <img src="/brand/aura-assistant-visual.svg" alt="Bee-Aura assistant visual" className="landing-assistant-image landing-assistant-image-large" />
       </section>
 
       <section className="landing-bottom-strip">

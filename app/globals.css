@@ -9333,3 +9333,273 @@ aside {
   }
 }
 /* End Bee-Aura Settings reference layout v1 */
+
+
+/* Bee-Aura Sidebar professional cleanup v2 */
+.sidebar-professional {
+  background:
+    radial-gradient(circle at 22% 8%, rgba(20, 157, 255, 0.10), transparent 30%),
+    linear-gradient(180deg, rgba(4, 12, 25, 0.98), rgba(3, 8, 18, 0.98)) !important;
+}
+
+.sidebar-brand-professional {
+  align-items: center;
+}
+
+.brand-aura-mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  border-radius: 13px;
+  border: 1px solid rgba(200, 162, 93, 0.42);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 248, 220, 0.28), transparent 22%),
+    linear-gradient(135deg, rgba(200, 162, 93, 0.92), rgba(32, 77, 124, 0.95));
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.brand-aura-mark::before,
+.brand-aura-mark::after,
+.brand-aura-mark i {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.brand-aura-mark::before {
+  inset: 8px;
+  border: 1px solid rgba(6, 16, 31, 0.62);
+}
+
+.brand-aura-mark::after {
+  width: 5px;
+  height: 5px;
+  background: rgba(6, 16, 31, 0.85);
+  box-shadow:
+    9px 0 0 rgba(6, 16, 31, 0.65),
+    -9px 0 0 rgba(6, 16, 31, 0.65);
+}
+
+.brand-aura-mark i {
+  inset: 13px;
+  border: 1px solid rgba(255, 248, 220, 0.5);
+}
+
+.sidebar-professional .brand-label {
+  color: #fff8dc;
+  font-size: 1rem;
+  font-weight: 950;
+  letter-spacing: -0.035em;
+}
+
+.sidebar-professional .brand-subtitle {
+  color: rgba(226, 239, 255, 0.58);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sidebar-assistant-professional {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(20, 157, 255, 0.22) !important;
+  background:
+    radial-gradient(circle at top right, rgba(20, 157, 255, 0.11), transparent 38%),
+    linear-gradient(135deg, rgba(8, 22, 39, 0.92), rgba(4, 10, 22, 0.92)) !important;
+}
+
+.assistant-orbit-mark {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  border-radius: 12px;
+  border: 1px solid rgba(20, 157, 255, 0.30);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.20), transparent 36%),
+    linear-gradient(135deg, rgba(8, 28, 52, 0.96), rgba(4, 10, 22, 0.96));
+}
+
+.assistant-orbit-mark::before,
+.assistant-orbit-mark::after,
+.assistant-orbit-mark i {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.assistant-orbit-mark::before {
+  inset: 8px;
+  border: 1px solid rgba(56, 189, 248, 0.42);
+}
+
+.assistant-orbit-mark::after {
+  inset: 14px;
+  background: #c8a25d;
+  box-shadow: 0 0 16px rgba(200, 162, 93, 0.26);
+}
+
+.assistant-orbit-mark i {
+  inset: 4px 12px;
+  border: 1px solid rgba(226, 239, 255, 0.16);
+  transform: rotate(-28deg);
+}
+
+.sidebar-assistant-professional .status-title {
+  color: #fff8dc;
+}
+
+.sidebar-assistant-professional .status-text {
+  color: rgba(226, 239, 255, 0.62);
+  line-height: 1.35;
+}
+
+.sidebar-assistant-professional a {
+  position: relative;
+  z-index: 2;
+  color: #c8a25d !important;
+  font-weight: 850;
+  text-decoration: none;
+}
+/* End Bee-Aura Sidebar professional cleanup v2 */
+
+
+/* Bee-Aura premium brand assets v1 */
+.sidebar-premium {
+  background:
+    radial-gradient(circle at 22% 8%, rgba(20, 157, 255, 0.10), transparent 30%),
+    linear-gradient(180deg, rgba(4, 12, 25, 0.98), rgba(3, 8, 18, 0.98)) !important;
+}
+
+.sidebar-brand-premium {
+  align-items: center;
+}
+
+.brand-image-mark {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  border-radius: 14px;
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.28),
+    0 0 28px rgba(20, 157, 255, 0.08);
+}
+
+.sidebar-premium .brand-label {
+  color: #fff8dc;
+  font-size: 1.02rem;
+  font-weight: 950;
+  letter-spacing: -0.035em;
+}
+
+.sidebar-premium .brand-subtitle {
+  color: rgba(226, 239, 255, 0.58);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sidebar-assistant-premium {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(20, 157, 255, 0.22) !important;
+  background:
+    radial-gradient(circle at top right, rgba(20, 157, 255, 0.10), transparent 38%),
+    linear-gradient(135deg, rgba(8, 22, 39, 0.92), rgba(4, 10, 22, 0.92)) !important;
+}
+
+.assistant-image-mark {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.22),
+    0 0 24px rgba(56, 189, 248, 0.08);
+}
+
+.sidebar-assistant-premium .status-title {
+  color: #fff8dc;
+}
+
+.sidebar-assistant-premium .status-text {
+  color: rgba(226, 239, 255, 0.62);
+  line-height: 1.35;
+}
+
+.sidebar-assistant-premium a {
+  color: #c8a25d !important;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.landing-brand-image-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  object-fit: cover;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+.preview-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px;
+}
+
+.preview-brand-image {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+}
+
+.landing-assistant-image {
+  object-fit: cover;
+  filter: drop-shadow(0 24px 50px rgba(0, 0, 0, 0.32));
+}
+
+.landing-assistant-image-small {
+  position: absolute;
+  top: -28px;
+  right: 24px;
+  width: 92px;
+  height: 92px;
+  border-radius: 26px;
+  z-index: 3;
+}
+
+.landing-assistant-image-large {
+  width: min(320px, 100%);
+  border-radius: 38px;
+  justify-self: center;
+}
+
+.command-assistant-image {
+  width: 132px;
+  height: 132px;
+  border-radius: 34px;
+  object-fit: cover;
+  box-shadow:
+    0 24px 58px rgba(0, 0, 0, 0.32),
+    0 0 36px rgba(56, 189, 248, 0.10);
+}
+
+@media (max-width: 760px) {
+  .landing-assistant-image-small {
+    display: none;
+  }
+
+  .command-assistant-image {
+    width: 92px;
+    height: 92px;
+  }
+}
+/* End Bee-Aura premium brand assets v1 */

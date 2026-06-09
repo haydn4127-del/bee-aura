@@ -341,17 +341,7 @@ export default function DashboardPage() {
 
         <section className="command-assistant">
           <h2>Bee-Aura AI Assistant</h2>
-          <div className="command-bot">
-            <span className="bot-antenna left" />
-            <span className="bot-antenna right" />
-            <span className="bot-head">
-              <i />
-              <i />
-            </span>
-            <span className="bot-body" />
-            <span className="bot-wing left" />
-            <span className="bot-wing right" />
-          </div>
+          <img src="/brand/aura-assistant-visual.svg" alt="Aura Assistant" className="command-assistant-image" />
           <h3>Everything looks buzzing!</h3>
           <p>You have <strong>14</strong> new leads and <strong>8</strong> follow-ups due.</p>
           <Link href="/follow-ups">View My Tasks</Link>

@@ -21,11 +21,11 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="sidebar">
-      <div className="sidebar-brand">
-        <span className="brand-mark">🐝</span>
+    <aside className="sidebar sidebar-premium">
+      <div className="sidebar-brand sidebar-brand-premium">
+        <img src="/brand/bee-aura-mark.svg" alt="" className="brand-image-mark" />
         <div>
-          <p className="brand-label">Bee-Aura AI</p>
+          <p className="brand-label">Bee-Aura</p>
           <p className="brand-subtitle">Lead Recovery OS</p>
         </div>
       </div>
@@ -46,13 +46,13 @@ export default function Sidebar() {
         })}
       </nav>
 
-      <div className="sidebar-assistant-card">
-        <div className="sidebar-bot">🤖</div>
+      <div className="sidebar-assistant-card sidebar-assistant-premium">
+        <img src="/brand/aura-assistant-visual.svg" alt="" className="assistant-image-mark" />
         <div>
-          <p className="status-title">Bee-Aura AI</p>
-          <p className="status-text">Need help with your leads?</p>
+          <p className="status-title">Aura Assistant</p>
+          <p className="status-text">Controlled suggestions for leads, replies and follow-ups.</p>
         </div>
-        <a href="/messages">Ask me anything →</a>
+        <Link href="/messages">Review suggestions →</Link>
       </div>
 
       <div className="sidebar-status">
