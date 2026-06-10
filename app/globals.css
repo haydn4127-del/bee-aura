@@ -9603,3 +9603,19 @@ aside {
   }
 }
 /* End Bee-Aura premium brand assets v1 */
+
+/* Real Bee-Aura brand assets fit v1 */
+.brand-image-mark,
+.landing-brand-image-mark,
+.preview-brand-image {
+  object-fit: contain !important;
+}
+
+.assistant-image-mark,
+.landing-assistant-image,
+.command-assistant-image {
+  object-fit: contain !important;
+  background: transparent !important;
+}
+/* End Real Bee-Aura brand assets fit v1 */
+

@@ -39,7 +39,7 @@ export default function Home() {
     <main className="landing-page">
       <nav className="landing-nav">
         <Link href="/" className="landing-brand">
-          <img src="/brand/bee-aura-mark.svg" alt="" className="landing-brand-image-mark" />
+          <img src="/brand/source/bee-aura-symbol.svg" alt="" className="landing-brand-image-mark" />
           <span>
             Bee-Aura <strong>AI</strong>
           </span>
@@ -92,11 +92,11 @@ export default function Home() {
         </div>
 
         <div className="landing-hero-visual">
-          <img src="/brand/aura-assistant-visual.svg" alt="Bee-Aura assistant visual" className="landing-assistant-image landing-assistant-image-small" />
+          <img src="/brand/source/aura-assistant-transparent.png" alt="Bee-Aura assistant visual" className="landing-assistant-image landing-assistant-image-small" />
 
           <div className="landing-dashboard-preview">
             <aside className="preview-sidebar">
-              <div className="preview-brand"><img src="/brand/bee-aura-mark.svg" alt="" className="preview-brand-image" /> Bee-Aura AI</div>
+              <div className="preview-brand"><img src="/brand/source/bee-aura-symbol.svg" alt="" className="preview-brand-image" /> Bee-Aura AI</div>
               <span className="active">Overview</span>
               <span>Leads</span>
               <span>Conversations</span>
@@ -206,7 +206,7 @@ export default function Home() {
           </div>
         </div>
 
-        <img src="/brand/aura-assistant-visual.svg" alt="Bee-Aura assistant visual" className="landing-assistant-image landing-assistant-image-large" />
+        <img src="/brand/source/aura-assistant-transparent.png" alt="Bee-Aura assistant visual" className="landing-assistant-image landing-assistant-image-large" />
       </section>
 
       <section className="landing-bottom-strip">

@@ -23,7 +23,7 @@ export default function Sidebar() {
   return (
     <aside className="sidebar sidebar-premium">
       <div className="sidebar-brand sidebar-brand-premium">
-        <img src="/brand/bee-aura-mark.svg" alt="" className="brand-image-mark" />
+        <img src="/brand/source/bee-aura-symbol.svg" alt="" className="brand-image-mark" />
         <div>
           <p className="brand-label">Bee-Aura</p>
           <p className="brand-subtitle">Lead Recovery OS</p>
@@ -47,7 +47,7 @@ export default function Sidebar() {
       </nav>
 
       <div className="sidebar-assistant-card sidebar-assistant-premium">
-        <img src="/brand/aura-assistant-visual.svg" alt="" className="assistant-image-mark" />
+        <img src="/brand/source/aura-assistant-transparent.png" alt="" className="assistant-image-mark" />
         <div>
           <p className="status-title">Aura Assistant</p>
           <p className="status-text">Controlled suggestions for leads, replies and follow-ups.</p>
