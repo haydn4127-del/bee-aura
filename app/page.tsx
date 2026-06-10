@@ -39,10 +39,11 @@ export default function Home() {
     <main className="landing-page">
       <nav className="landing-nav">
         <Link href="/" className="landing-brand">
-          <img src="/brand/source/bee-aura-symbol.svg" alt="" className="landing-brand-image-mark" />
-          <span>
-            Bee-Aura <strong>AI</strong>
-          </span>
+          <img
+            src="/brand/source/bee-aura-horizontal-lockup.svg"
+            alt="Bee-Aura Service Business OS"
+            className="landing-brand-lockup"
+          />
         </Link>
 
         <div className="landing-nav-links">
@@ -96,7 +97,7 @@ export default function Home() {
 
           <div className="landing-dashboard-preview">
             <aside className="preview-sidebar">
-              <div className="preview-brand"><img src="/brand/source/bee-aura-symbol.svg" alt="" className="preview-brand-image" /> Bee-Aura AI</div>
+              <div className="preview-brand"><img src="/brand/source/bee-aura-symbol.svg" alt="" className="preview-brand-image" /> Bee-Aura OS</div>
               <span className="active">Overview</span>
               <span>Leads</span>
               <span>Conversations</span>

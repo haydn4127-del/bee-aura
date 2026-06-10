@@ -9619,3 +9619,134 @@ aside {
 }
 /* End Real Bee-Aura brand assets fit v1 */
 
+/* Brand Asset Fit Pass v1 */
+.brand-lockup-image {
+  width: 178px;
+  max-width: 100%;
+  height: 58px;
+  display: block;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.landing-brand-lockup {
+  width: 220px;
+  max-width: 44vw;
+  height: 58px;
+  display: block;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.brand-image-mark,
+.landing-brand-image-mark,
+.preview-brand-image {
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+.preview-brand-image {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.assistant-image-mark {
+  width: 58px !important;
+  height: 58px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+.landing-assistant-image,
+.command-assistant-image {
+  object-fit: contain !important;
+  object-position: center !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+.landing-assistant-image-small {
+  width: 108px !important;
+  height: 108px !important;
+}
+
+.landing-assistant-image-large {
+  width: min(380px, 100%) !important;
+  max-height: 380px !important;
+}
+
+.command-assistant-image {
+  width: 168px !important;
+  height: 168px !important;
+}
+
+.sidebar-assistant-premium {
+  align-items: center;
+}
+
+@media (max-width: 760px) {
+  .landing-brand-lockup {
+    width: 172px;
+    height: 48px;
+  }
+
+  .command-assistant-image {
+    width: 118px !important;
+    height: 118px !important;
+  }
+}
+/* End Brand Asset Fit Pass v1 */
+
+/* Brand Asset Fit Pass v1 sidebar correction */
+.sidebar-brand-premium {
+  gap: 12px !important;
+}
+
+.sidebar-brand-premium .brand-image-mark {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 0 !important;
+  object-fit: contain !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.sidebar-premium .brand-label {
+  font-size: 1rem !important;
+  line-height: 1.05 !important;
+}
+
+.sidebar-premium .brand-subtitle {
+  font-size: 0.68rem !important;
+  line-height: 1.25 !important;
+}
+
+.sidebar-assistant-premium {
+  gap: 10px !important;
+  align-items: center !important;
+}
+
+.sidebar-assistant-premium .assistant-image-mark {
+  width: 64px !important;
+  height: 64px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  flex: 0 0 auto !important;
+}
+
+.sidebar-assistant-premium .status-title {
+  font-size: 0.95rem !important;
+}
+
+.sidebar-assistant-premium .status-text {
+  font-size: 0.82rem !important;
+  line-height: 1.32 !important;
+}
+
+.command-assistant-image {
+  object-fit: contain !important;
+}
+/* End Brand Asset Fit Pass v1 sidebar correction */
+
