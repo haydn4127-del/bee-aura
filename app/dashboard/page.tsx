@@ -3,28 +3,28 @@ import Link from "next/link";
 const kpis = [
   {
     href: "/leads",
-    icon: "👥",
+    icon: "LC",
     label: "Leads Captured",
     value: "482",
-    change: "▲ 10%",
+    change: "+10%",
     detail: "vs last 7 days",
     tone: "blue",
   },
   {
     href: "/messages",
-    icon: "💬",
+    icon: "RT",
     label: "Avg. Response Time",
     value: "2m 48s",
-    change: "▼ 21%",
+    change: "21% faster",
     detail: "vs last 7 days",
     tone: "blue",
   },
   {
     href: "/bookings",
-    icon: "📅",
+    icon: "BK",
     label: "Bookings Today",
     value: "14",
-    change: "▲ 27%",
+    change: "+27%",
     detail: "vs yesterday",
     tone: "purple",
   },
@@ -39,10 +39,10 @@ const kpis = [
   },
   {
     href: "/follow-ups",
-    icon: "⏱",
+    icon: "FU",
     label: "Follow-Ups Due",
     value: "23",
-    change: "▲ 15%",
+    change: "+15%",
     detail: "vs yesterday",
     tone: "gold",
   },
@@ -50,7 +50,7 @@ const kpis = [
 
 const liveActivity = [
   {
-    icon: "👥",
+    icon: "NL",
     title: "New lead captured",
     detail: "John Smith • Boiler Insulation",
     time: "Just now",
@@ -58,7 +58,7 @@ const liveActivity = [
     tone: "blue",
   },
   {
-    icon: "📅",
+    icon: "BK",
     title: "New booking confirmed",
     detail: "Emily Davis • Bathroom Renovation",
     time: "2m ago",
@@ -66,7 +66,7 @@ const liveActivity = [
     tone: "purple",
   },
   {
-    icon: "✓",
+    icon: "FU",
     title: "Follow-up completed",
     detail: "Paul Davies • Quote Follow-Up",
     time: "2m ago",
@@ -74,7 +74,7 @@ const liveActivity = [
     tone: "gold",
   },
   {
-    icon: "☆",
+    icon: "RV",
     title: "New review received",
     detail: "5★ from Sarah T.",
     time: "12m ago",
@@ -84,7 +84,7 @@ const liveActivity = [
 ];
 
 const inbox = [
-  ["Emily Davis", "Bathroom Renovation Enquiry", "2m ago", "2"],
+  ["Emily Davis", "Bathroom renovation enquiry", "2m ago", "2"],
   ["John Smith", "Boiler Installation", "5m ago", "1"],
   ["Sarah Roberts", "Kitchen Fitting – Availability", "15m ago", ""],
   ["Tom Brown", "Plumbing Issue – Urgent", "22m ago", ""],
@@ -182,7 +182,7 @@ function Panel({
 
 export default function DashboardPage() {
   return (
-    <main className="command-dashboard">
+    <main className="command-dashboard command-dashboard-polish-v1">
       <header className="command-topbar">
         <Link href="/settings" className="command-business-select">
           <span>⌂</span>
@@ -197,11 +197,11 @@ export default function DashboardPage() {
         </div>
 
         <Link href="/leads" className="command-search">
-          🔍 Search leads, customers, bookings...
+          Search leads, customers, bookings...
         </Link>
 
         <div className="command-user">
-          <span className="command-bell">🔔<strong>4</strong></span>
+          <span className="command-bell"><strong>4</strong></span>
           <span className="command-avatar">JC</span>
           <div>
             <strong>James Carter</strong>
@@ -242,39 +242,104 @@ export default function DashboardPage() {
           ))}
         </div>
 
-        <Panel title="Leads & Pipeline Trend" badge="Last 7 Days">
+        <Panel title="Lead Recovery Trend" badge="Last 7 Days">
           <div className="command-chart-legend">
-            <span><i className="blue" /> Leads Captured</span>
-            <span><i className="green" /> Pipeline Value (£)</span>
+            <span><i className="blue" /> New enquiries</span>
+            <span><i className="green" /> Recovered follow-ups</span>
           </div>
-          <svg className="command-line-chart" viewBox="0 0 620 260" aria-label="Fake leads and pipeline trend">
-            <g className="command-grid-lines">
-              <line x1="44" y1="40" x2="600" y2="40" />
-              <line x1="44" y1="90" x2="600" y2="90" />
-              <line x1="44" y1="140" x2="600" y2="140" />
-              <line x1="44" y1="190" x2="600" y2="190" />
-              <line x1="44" y1="230" x2="600" y2="230" />
-            </g>
-            <polyline className="line-blue" points="44,190 120,145 196,132 272,136 348,110 424,76 500,66 580,48" />
-            <polyline className="line-green" points="44,215 120,178 196,164 272,136 348,140 424,104 500,74 580,65" />
-            <circle cx="580" cy="48" r="5" className="dot-blue" />
-            <circle cx="580" cy="65" r="5" className="dot-green" />
+
+          <svg className="command-line-chart command-pro-line-chart" viewBox="0 0 620 260" aria-label="Lead recovery trend chart">
+            <defs>
+              <linearGradient id="dashboardLeadArea" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stopColor="rgba(46, 167, 255, 0.25)" />
+                <stop offset="100%" stopColor="rgba(46, 167, 255, 0.02)" />
+              </linearGradient>
+            </defs>
+
+            <line x1="58" y1="32" x2="58" y2="210" className="dash-axis" />
+            <line x1="58" y1="210" x2="590" y2="210" className="dash-axis" />
+
+            <line x1="58" y1="54" x2="590" y2="54" className="dash-grid" />
+            <line x1="58" y1="92" x2="590" y2="92" className="dash-grid" />
+            <line x1="58" y1="130" x2="590" y2="130" className="dash-grid" />
+            <line x1="58" y1="168" x2="590" y2="168" className="dash-grid" />
+
+            <text x="22" y="58" className="dash-axis-label">90</text>
+            <text x="22" y="96" className="dash-axis-label">70</text>
+            <text x="22" y="134" className="dash-axis-label">50</text>
+            <text x="22" y="172" className="dash-axis-label">30</text>
+
+            <path
+              d="M76 178 L144 138 L212 128 L280 136 L348 104 L416 72 L484 64 L568 42 L568 210 L76 210 Z"
+              fill="url(#dashboardLeadArea)"
+            />
+
+            <polyline
+              points="76,178 144,138 212,128 280,136 348,104 416,72 484,64 568,42"
+              className="dash-line-primary"
+            />
+
+            <polyline
+              points="76,196 144,166 212,152 280,132 348,136 416,102 484,78 568,66"
+              className="dash-line-secondary"
+            />
+
+            <circle cx="568" cy="42" r="5" className="dash-dot-primary" />
+            <circle cx="568" cy="66" r="5" className="dash-dot-secondary" />
+
+            <text x="72" y="236" className="dash-x-label">Mon</text>
+            <text x="140" y="236" className="dash-x-label">Tue</text>
+            <text x="208" y="236" className="dash-x-label">Wed</text>
+            <text x="276" y="236" className="dash-x-label">Thu</text>
+            <text x="344" y="236" className="dash-x-label">Fri</text>
+            <text x="412" y="236" className="dash-x-label">Sat</text>
+            <text x="480" y="236" className="dash-x-label">Sun</text>
           </svg>
         </Panel>
 
         <Panel title="Booking Performance" badge="Last 7 Days">
           <div className="command-chart-legend">
-            <span><i className="blue" /> Bookings</span>
-            <span><i className="green" /> Revenue (£)</span>
+            <span><i className="gold" /> Confirmed bookings</span>
+            <span><i className="blue" /> Revenue trend</span>
           </div>
-          <div className="command-bar-chart">
-            {[17, 14, 20, 11, 20, 18, 9].map((height, index) => (
-              <span key={index} style={{ height: `${height * 7}px` }} />
-            ))}
-            <svg viewBox="0 0 340 170" aria-hidden="true">
-              <polyline points="5,100 58,112 110,78 165,101 220,70 276,45 335,62" />
-            </svg>
-          </div>
+
+          <svg className="command-bar-chart command-pro-bar-chart" viewBox="0 0 620 260" aria-label="Booking performance chart">
+            <line x1="58" y1="32" x2="58" y2="210" className="dash-axis" />
+            <line x1="58" y1="210" x2="590" y2="210" className="dash-axis" />
+
+            <line x1="58" y1="54" x2="590" y2="54" className="dash-grid" />
+            <line x1="58" y1="92" x2="590" y2="92" className="dash-grid" />
+            <line x1="58" y1="130" x2="590" y2="130" className="dash-grid" />
+            <line x1="58" y1="168" x2="590" y2="168" className="dash-grid" />
+
+            <text x="28" y="58" className="dash-axis-label">20</text>
+            <text x="28" y="96" className="dash-axis-label">15</text>
+            <text x="28" y="134" className="dash-axis-label">10</text>
+            <text x="34" y="172" className="dash-axis-label">5</text>
+
+            <rect x="86" y="112" width="34" height="98" rx="8" className="dash-bar-blue" />
+            <rect x="154" y="132" width="34" height="78" rx="8" className="dash-bar-blue-muted" />
+            <rect x="222" y="78" width="34" height="132" rx="8" className="dash-bar-gold" />
+            <rect x="290" y="120" width="34" height="90" rx="8" className="dash-bar-blue-muted" />
+            <rect x="358" y="84" width="34" height="126" rx="8" className="dash-bar-blue" />
+            <rect x="426" y="96" width="34" height="114" rx="8" className="dash-bar-gold-muted" />
+            <rect x="494" y="148" width="34" height="62" rx="8" className="dash-bar-blue-muted" />
+
+            <polyline
+              points="103,146 171,158 239,112 307,142 375,96 443,66 511,88"
+              className="dash-line-secondary"
+            />
+
+            <circle cx="443" cy="66" r="5" className="dash-dot-secondary" />
+
+            <text x="82" y="236" className="dash-x-label">Mon</text>
+            <text x="150" y="236" className="dash-x-label">Tue</text>
+            <text x="218" y="236" className="dash-x-label">Wed</text>
+            <text x="286" y="236" className="dash-x-label">Thu</text>
+            <text x="354" y="236" className="dash-x-label">Fri</text>
+            <text x="422" y="236" className="dash-x-label">Sat</text>
+            <text x="490" y="236" className="dash-x-label">Sun</text>
+          </svg>
         </Panel>
 
         <Panel title="Smart Inbox" badge="12 Unread" href="/messages">
@@ -339,12 +404,47 @@ export default function DashboardPage() {
           </div>
         </Panel>
 
-        <section className="command-assistant">
-          <h2>Bee-Aura AI Assistant</h2>
-          <img src="/brand/source/aura-assistant-transparent.png" alt="Aura Assistant" className="command-assistant-image" />
-          <h3>Everything looks buzzing!</h3>
-          <p>You have <strong>14</strong> new leads and <strong>8</strong> follow-ups due.</p>
-          <Link href="/follow-ups">View My Tasks</Link>
+        <section className="command-assistant command-assistant-pro">
+          <div className="command-assistant-visual">
+            <img
+              src="/brand/source/aura-assistant-transparent.png"
+              alt="Aura Assistant"
+              className="command-assistant-image"
+            />
+          </div>
+
+          <div className="command-assistant-content">
+            <p className="command-assistant-kicker">Aura Assistant</p>
+            <h2>Your next best actions are ready.</h2>
+            <p>
+              Bee-Aura has spotted the jobs, replies and follow-ups that need
+              attention first, so the owner can stay in control without checking
+              every page manually.
+            </p>
+
+            <div className="command-assistant-insights">
+              <div>
+                <strong>14</strong>
+                <span>new leads waiting</span>
+              </div>
+              <div>
+                <strong>8</strong>
+                <span>follow-ups due</span>
+              </div>
+              <div>
+                <strong>2m 48s</strong>
+                <span>average response</span>
+              </div>
+            </div>
+
+            <ul className="command-assistant-actions">
+              <li>Call back Alice Hughes before the boiler enquiry goes cold.</li>
+              <li>Confirm today’s 15:00 kitchen fitting appointment.</li>
+              <li>Send review request to Sarah T. after the completed job.</li>
+            </ul>
+
+            <Link href="/follow-ups">Review Priority Tasks</Link>
+          </div>
         </section>
       </section>
     </main>
