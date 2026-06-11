@@ -11407,3 +11407,46 @@ aside {
   }
 }
 /* End Dashboard Assistant Left Text Fix v1 */
+
+/* Dashboard Search Action Fix v1 */
+.dashboard-search-active {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 7px 8px 7px 14px !important;
+  cursor: default !important;
+}
+
+.dashboard-search-active input {
+  width: 100% !important;
+  min-width: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  color: #edf6ff !important;
+  font: inherit !important;
+  font-size: 0.9rem !important;
+}
+
+.dashboard-search-active input::placeholder {
+  color: rgba(226, 239, 255, 0.56) !important;
+}
+
+.dashboard-search-active button {
+  border: 1px solid rgba(212, 175, 55, 0.32) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #f4d978, #d4af37) !important;
+  color: #07111f !important;
+  font-weight: 950 !important;
+  font-size: 0.76rem !important;
+  padding: 8px 13px !important;
+  cursor: pointer !important;
+  box-shadow: 0 12px 28px rgba(212, 175, 55, 0.16) !important;
+}
+
+.dashboard-search-active button:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 16px 34px rgba(212, 175, 55, 0.22) !important;
+}
+/* End Dashboard Search Action Fix v1 */

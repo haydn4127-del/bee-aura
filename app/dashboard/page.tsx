@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState, type FormEvent } from "react";
 
 const kpis = [
   {
@@ -180,7 +184,92 @@ function Panel({
   );
 }
 
+
+function getDashboardSearchHref(searchText: string) {
+  const clean = searchText.trim();
+  const query = clean.toLowerCase();
+  const encoded = encodeURIComponent(clean);
+
+  if (!clean) return "/dashboard";
+
+  if (
+    query.includes("message") ||
+    query.includes("inbox") ||
+    query.includes("whatsapp") ||
+    query.includes("facebook") ||
+    query.includes("email") ||
+    query.includes("reply")
+  ) {
+    return `/messages?search=${encoded}`;
+  }
+
+  if (
+    query.includes("booking") ||
+    query.includes("appointment") ||
+    query.includes("job") ||
+    query.includes("calendar") ||
+    query.includes("emily") ||
+    query.includes("bathroom")
+  ) {
+    return `/bookings?search=${encoded}`;
+  }
+
+  if (
+    query.includes("customer") ||
+    query.includes("client") ||
+    query.includes("sarah johnson") ||
+    query.includes("tom wilson") ||
+    query.includes("emma davis")
+  ) {
+    return `/customers?search=${encoded}`;
+  }
+
+  if (
+    query.includes("follow") ||
+    query.includes("callback") ||
+    query.includes("call back") ||
+    query.includes("alice") ||
+    query.includes("paul")
+  ) {
+    return `/follow-ups?search=${encoded}`;
+  }
+
+  if (
+    query.includes("review") ||
+    query.includes("rating") ||
+    query.includes("feedback")
+  ) {
+    return `/reviews?search=${encoded}`;
+  }
+
+  if (
+    query.includes("activity") ||
+    query.includes("audit") ||
+    query.includes("log")
+  ) {
+    return `/activity-log?search=${encoded}`;
+  }
+
+  if (
+    query.includes("error") ||
+    query.includes("failed") ||
+    query.includes("issue")
+  ) {
+    return `/error-log?search=${encoded}`;
+  }
+
+  return `/leads?search=${encoded}`;
+}
+
 export default function DashboardPage() {
+  const router = useRouter();
+  const [searchText, setSearchText] = useState("");
+
+  function handleDashboardSearch(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    router.push(getDashboardSearchHref(searchText));
+  }
+
   return (
     <main className="command-dashboard command-dashboard-polish-v1">
       <header className="command-topbar">
@@ -196,9 +285,15 @@ export default function DashboardPage() {
           <small>⌄</small>
         </div>
 
-        <Link href="/leads" className="command-search">
-          Search leads, customers, bookings...
-        </Link>
+        <form className="command-search dashboard-search-active" onSubmit={handleDashboardSearch}>
+          <input
+            value={searchText}
+            onChange={(event) => setSearchText(event.target.value)}
+            placeholder="Search leads, customers, bookings..."
+            aria-label="Search Bee-Aura dashboard"
+          />
+          <button type="submit">Search</button>
+        </form>
 
         <div className="command-user">
           <span className="command-bell"><strong>4</strong></span>
