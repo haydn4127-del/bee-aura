@@ -58,7 +58,7 @@ const liveActivity = [
     title: "New lead captured",
     detail: "John Smith • Boiler Insulation",
     time: "Just now",
-    href: "/leads",
+    href: "/leads?search=John%20Smith%20Boiler%20Installation",
     tone: "blue",
   },
   {
@@ -66,7 +66,7 @@ const liveActivity = [
     title: "New booking confirmed",
     detail: "Emily Davis • Bathroom Renovation",
     time: "2m ago",
-    href: "/bookings",
+    href: "/bookings?search=Emily%20Davis%20Bathroom%20Renovation",
     tone: "purple",
   },
   {
@@ -74,7 +74,7 @@ const liveActivity = [
     title: "Follow-up completed",
     detail: "Paul Davies • Quote Follow-Up",
     time: "2m ago",
-    href: "/follow-ups",
+    href: "/follow-ups?search=Paul%20Davies%20Quote%20Follow-Up",
     tone: "gold",
   },
   {
@@ -82,7 +82,7 @@ const liveActivity = [
     title: "New review received",
     detail: "5★ from Sarah T.",
     time: "12m ago",
-    href: "/reviews",
+    href: "/reviews?search=Sarah%20T%205%20star",
     tone: "green",
   },
 ];
