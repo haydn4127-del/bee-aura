@@ -25,7 +25,7 @@ export default function Sidebar() {
       <div className="sidebar-brand sidebar-brand-premium">
         <img src="/brand/source/bee-aura-symbol.svg" alt="" className="brand-image-mark" />
         <div>
-          <p className="brand-label">Bee-Aura</p>
+          <p className="brand-label">BEE-AURA AI SYSTEMS</p>
           <p className="brand-subtitle">Lead Recovery OS</p>
         </div>
       </div>
@@ -46,13 +46,10 @@ export default function Sidebar() {
         })}
       </nav>
 
-      <div className="sidebar-assistant-card sidebar-assistant-premium">
-        <img src="/brand/source/aura-assistant-transparent.png" alt="" className="assistant-image-mark" />
-        <div>
-          <p className="status-title">Aura Assistant</p>
-          <p className="status-text">Controlled suggestions for leads, replies and follow-ups.</p>
-        </div>
-        <Link href="/messages">Review suggestions →</Link>
+      <div className="sidebar-status sidebar-control-card">
+        <p className="status-title">Aura control</p>
+        <p className="status-text">AI suggestions only. Owner approval stays on.</p>
+        <p className="status-note">Review before action</p>
       </div>
 
       <div className="sidebar-status">
