@@ -12071,3 +12071,550 @@ aside {
   background-color: rgba(46, 167, 255, 0.035) !important;
 }
 /* End Dashboard Lower Box Cleanup v2 */
+
+/* Dashboard Final Visual Tweaks v1 */
+
+/* Push bottom Aura bot further to the right without changing the panel layout */
+.command-dashboard .command-assistant-pro {
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 360px) !important;
+}
+
+.command-assistant-pro .command-assistant-visual {
+  justify-self: end !important;
+  margin-left: auto !important;
+  margin-right: 4px !important;
+  width: min(340px, 100%) !important;
+}
+
+.command-assistant-pro .command-assistant-image {
+  width: 235px !important;
+  height: 235px !important;
+}
+
+/* Make Aura control card feel more premium */
+.sidebar-control-card {
+  position: relative !important;
+  overflow: hidden !important;
+  border-color: rgba(212, 175, 55, 0.28) !important;
+  background:
+    radial-gradient(circle at top right, rgba(212, 175, 55, 0.16), transparent 38%),
+    radial-gradient(circle at bottom left, rgba(46, 167, 255, 0.10), transparent 40%),
+    linear-gradient(145deg, rgba(10, 22, 40, 0.94), rgba(3, 8, 18, 0.96)) !important;
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+}
+
+.sidebar-control-card::before {
+  content: "AI" !important;
+  position: absolute !important;
+  top: 12px !important;
+  right: 12px !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 10px !important;
+  background: rgba(212, 175, 55, 0.16) !important;
+  color: #f4d978 !important;
+  border: 1px solid rgba(212, 175, 55, 0.22) !important;
+  font-size: 0.62rem !important;
+  font-weight: 950 !important;
+}
+
+.sidebar-control-card .status-title {
+  color: #f8fafc !important;
+  font-size: 0.95rem !important;
+  letter-spacing: -0.02em !important;
+}
+
+.sidebar-control-card .status-text {
+  max-width: 140px !important;
+  color: rgba(226, 239, 255, 0.70) !important;
+  font-size: 0.78rem !important;
+  line-height: 1.38 !important;
+}
+
+.sidebar-control-card .status-note {
+  width: fit-content !important;
+  margin-top: 8px !important;
+  padding: 7px 9px !important;
+  border-radius: 999px !important;
+  background: rgba(65, 224, 176, 0.12) !important;
+  color: #41e0b0 !important;
+  border: 1px solid rgba(65, 224, 176, 0.16) !important;
+  font-size: 0.72rem !important;
+  font-weight: 950 !important;
+}
+
+/* Different lower-column tones while keeping Bee-Aura blue / gold / white theme */
+.command-panel:has(.dashboard-inbox-v2) {
+  border-color: rgba(46, 167, 255, 0.18) !important;
+  background:
+    radial-gradient(circle at top right, rgba(46, 167, 255, 0.12), transparent 42%),
+    linear-gradient(145deg, rgba(8, 21, 39, 0.94), rgba(3, 8, 18, 0.96)) !important;
+}
+
+.command-panel:has(.dashboard-leads-v2) {
+  border-color: rgba(212, 175, 55, 0.18) !important;
+  background:
+    radial-gradient(circle at top right, rgba(212, 175, 55, 0.12), transparent 42%),
+    linear-gradient(145deg, rgba(26, 22, 10, 0.72), rgba(3, 8, 18, 0.96)) !important;
+}
+
+.command-panel:has(.dashboard-bookings-v2) {
+  border-color: rgba(241, 245, 249, 0.16) !important;
+  background:
+    radial-gradient(circle at top right, rgba(241, 245, 249, 0.08), transparent 42%),
+    linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(3, 8, 18, 0.96)) !important;
+}
+
+.command-panel:has(.dashboard-followups-v2) {
+  border-color: rgba(212, 175, 55, 0.20) !important;
+  background:
+    radial-gradient(circle at top right, rgba(212, 175, 55, 0.10), transparent 36%),
+    radial-gradient(circle at bottom left, rgba(46, 167, 255, 0.08), transparent 42%),
+    linear-gradient(145deg, rgba(8, 18, 33, 0.92), rgba(3, 8, 18, 0.96)) !important;
+}
+
+/* Give the lower box content a little breathing room without making it empty */
+.dashboard-lower-panel {
+  gap: 11px !important;
+}
+
+.dashboard-feature-row,
+.dashboard-lead-card,
+.dashboard-booking-row,
+.dashboard-followup-row {
+  min-height: 58px !important;
+}
+
+.dashboard-simple-row {
+  min-height: 32px !important;
+}
+
+/* Make lower panel headings slightly more distinct */
+.command-panel:has(.dashboard-inbox-v2) .command-panel-header h2::after {
+  background: linear-gradient(90deg, #2ea7ff, rgba(46, 167, 255, 0)) !important;
+}
+
+.command-panel:has(.dashboard-leads-v2) .command-panel-header h2::after,
+.command-panel:has(.dashboard-followups-v2) .command-panel-header h2::after {
+  background: linear-gradient(90deg, #d4af37, rgba(212, 175, 55, 0)) !important;
+}
+
+.command-panel:has(.dashboard-bookings-v2) .command-panel-header h2::after {
+  background: linear-gradient(90deg, rgba(241, 245, 249, 0.78), rgba(241, 245, 249, 0)) !important;
+}
+
+/* End Dashboard Final Visual Tweaks v1 */
+
+/* Dashboard Bottom Bot Left v1 */
+.command-dashboard .command-assistant-pro {
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1.35fr) !important;
+}
+
+.command-assistant-pro .command-assistant-visual {
+  order: 1 !important;
+  justify-self: start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  width: min(340px, 100%) !important;
+}
+
+.command-assistant-pro .command-assistant-content {
+  order: 2 !important;
+}
+
+.command-assistant-pro .command-assistant-image {
+  width: 235px !important;
+  height: 235px !important;
+}
+
+@media (max-width: 980px) {
+  .command-dashboard .command-assistant-pro {
+    grid-template-columns: 1fr !important;
+  }
+
+  .command-assistant-pro .command-assistant-visual,
+  .command-assistant-pro .command-assistant-content {
+    order: initial !important;
+  }
+}
+/* End Dashboard Bottom Bot Left v1 */
+
+/* Sidebar Aura Face v1 */
+.sidebar-control-card-bot {
+  padding: 14px !important;
+}
+
+.sidebar-control-top {
+  display: grid !important;
+  grid-template-columns: 58px minmax(0, 1fr) !important;
+  gap: 12px !important;
+  align-items: start !important;
+}
+
+.sidebar-control-bot-image {
+  width: 58px !important;
+  height: 58px !important;
+  object-fit: contain !important;
+  align-self: start !important;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.24));
+}
+
+.sidebar-control-copy {
+  min-width: 0 !important;
+}
+
+.sidebar-control-copy .status-title {
+  margin-bottom: 6px !important;
+}
+
+.sidebar-control-copy .status-text {
+  max-width: none !important;
+  margin-bottom: 8px !important;
+}
+
+.sidebar-control-copy .status-note {
+  display: inline-block !important;
+}
+
+@media (max-width: 900px) {
+  .sidebar-control-top {
+    grid-template-columns: 50px minmax(0, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .sidebar-control-bot-image {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
+/* End Sidebar Aura Face v1 */
+
+/* Live Activity Detail Fill v1 */
+.dashboard-live-detail-stack {
+  display: grid !important;
+  gap: 8px !important;
+  margin-top: 12px !important;
+  padding-top: 12px !important;
+  border-top: 1px solid rgba(148, 163, 184, 0.10) !important;
+}
+
+.dashboard-live-detail-row {
+  display: grid !important;
+  grid-template-columns: 30px minmax(0, 1fr) auto !important;
+  gap: 9px !important;
+  align-items: center !important;
+  padding: 8px 0 !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.07) !important;
+}
+
+.dashboard-live-detail-row span {
+  display: grid !important;
+  place-items: center !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 999px !important;
+  font-size: 0.62rem !important;
+  font-weight: 950 !important;
+  border: 1px solid rgba(148, 163, 184, 0.14) !important;
+}
+
+.dashboard-live-detail-row.recovered span,
+.dashboard-live-detail-row.booking span {
+  background: rgba(46, 167, 255, 0.13) !important;
+  color: #2ea7ff !important;
+}
+
+.dashboard-live-detail-row.draft span,
+.dashboard-live-detail-row.follow span {
+  background: rgba(212, 175, 55, 0.14) !important;
+  color: #f4d978 !important;
+}
+
+.dashboard-live-detail-row strong {
+  display: block !important;
+  color: rgba(248, 250, 252, 0.92) !important;
+  font-size: 0.76rem !important;
+  line-height: 1.12 !important;
+}
+
+.dashboard-live-detail-row small {
+  display: block !important;
+  margin-top: 2px !important;
+  color: rgba(226, 239, 255, 0.52) !important;
+  font-size: 0.66rem !important;
+  line-height: 1.22 !important;
+}
+
+.dashboard-live-detail-row em {
+  color: rgba(226, 239, 255, 0.58) !important;
+  font-size: 0.66rem !important;
+  font-style: normal !important;
+  white-space: nowrap !important;
+}
+
+.dashboard-live-detail-row:hover {
+  background: rgba(46, 167, 255, 0.035) !important;
+}
+
+.dashboard-live-snapshot {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+  margin-top: 12px !important;
+}
+
+.dashboard-live-snapshot span {
+  border: 1px solid rgba(148, 163, 184, 0.10) !important;
+  border-radius: 14px !important;
+  background:
+    radial-gradient(circle at top right, rgba(46, 167, 255, 0.08), transparent 42%),
+    rgba(3, 8, 18, 0.28) !important;
+  padding: 9px 10px !important;
+}
+
+.dashboard-live-snapshot strong {
+  display: block !important;
+  color: #f4d978 !important;
+  font-size: 0.95rem !important;
+  line-height: 1 !important;
+}
+
+.dashboard-live-snapshot small {
+  display: block !important;
+  margin-top: 4px !important;
+  color: rgba(226, 239, 255, 0.58) !important;
+  font-size: 0.66rem !important;
+}
+/* End Live Activity Detail Fill v1 */
+
+/* Live Activity + Aura Control Alignment Fix v1 */
+
+/* Make every Live Activity row use the same structure */
+.dashboard-live-detail-row {
+  grid-template-columns: 30px minmax(0, 1fr) 42px !important;
+  align-items: center !important;
+}
+
+.dashboard-live-copy {
+  display: grid !important;
+  gap: 2px !important;
+  min-width: 0 !important;
+}
+
+.dashboard-live-copy strong {
+  display: block !important;
+  color: rgba(248, 250, 252, 0.92) !important;
+  font-size: 0.74rem !important;
+  line-height: 1.12 !important;
+  white-space: normal !important;
+}
+
+.dashboard-live-copy small {
+  display: block !important;
+  color: rgba(226, 239, 255, 0.52) !important;
+  font-size: 0.64rem !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+}
+
+.dashboard-live-detail-row > em {
+  justify-self: end !important;
+  align-self: center !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+}
+
+/* Stop the old AI badge from covering the Aura control wording */
+.sidebar-control-card-bot::before {
+  content: none !important;
+  display: none !important;
+}
+
+.sidebar-control-card-bot {
+  padding: 13px !important;
+}
+
+.sidebar-control-top {
+  grid-template-columns: 46px minmax(0, 1fr) !important;
+  gap: 10px !important;
+  align-items: start !important;
+}
+
+.sidebar-control-bot-image {
+  width: 46px !important;
+  height: 46px !important;
+  margin-top: 2px !important;
+}
+
+.sidebar-control-copy .status-title {
+  color: #f8fafc !important;
+  font-size: 0.78rem !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  margin: 0 0 5px !important;
+  padding-right: 0 !important;
+}
+
+.sidebar-control-copy .status-text {
+  max-width: none !important;
+  color: rgba(226, 239, 255, 0.68) !important;
+  font-size: 0.68rem !important;
+  line-height: 1.32 !important;
+  margin: 0 0 8px !important;
+}
+
+.sidebar-control-copy .status-note {
+  margin-top: 2px !important;
+  padding: 6px 8px !important;
+  font-size: 0.64rem !important;
+}
+/* End Live Activity + Aura Control Alignment Fix v1 */
+
+/* Live Activity Row Match Fix v2 */
+
+/* Make the extra Live Activity rows match the clean rows above */
+.dashboard-live-detail-stack {
+  gap: 0 !important;
+  margin-top: 10px !important;
+  padding-top: 10px !important;
+}
+
+.dashboard-live-detail-row {
+  display: grid !important;
+  grid-template-columns: 36px minmax(0, 1fr) auto !important;
+  gap: 10px !important;
+  align-items: center !important;
+  min-height: 48px !important;
+  padding: 9px 0 !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08) !important;
+}
+
+/* Only the first span should be the round icon */
+.dashboard-live-detail-row > span:first-child {
+  display: grid !important;
+  place-items: center !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 999px !important;
+  font-size: 0.62rem !important;
+  font-weight: 950 !important;
+  flex: none !important;
+}
+
+/* The copy span must NOT inherit icon styling */
+.dashboard-live-detail-row .dashboard-live-copy {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.dashboard-live-detail-row .dashboard-live-copy strong {
+  display: block !important;
+  color: rgba(248, 250, 252, 0.92) !important;
+  font-size: 0.76rem !important;
+  line-height: 1.15 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.dashboard-live-detail-row .dashboard-live-copy small {
+  display: block !important;
+  margin-top: 2px !important;
+  color: rgba(226, 239, 255, 0.52) !important;
+  font-size: 0.66rem !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.dashboard-live-detail-row > em {
+  justify-self: end !important;
+  align-self: center !important;
+  min-width: 42px !important;
+  color: rgba(226, 239, 255, 0.58) !important;
+  font-size: 0.68rem !important;
+  font-style: normal !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+}
+
+.dashboard-live-snapshot {
+  margin-top: 10px !important;
+}
+
+/* End Live Activity Row Match Fix v2 */
+
+/* Live Activity Remove Highlight Fix v3 */
+
+/* Make the added Live Activity rows visually match the clean top rows */
+.dashboard-live-detail-row {
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 9px 0 !important;
+  min-height: 48px !important;
+}
+
+.dashboard-live-detail-row:hover {
+  background: rgba(46, 167, 255, 0.035) !important;
+}
+
+/* Remove any boxed/highlighted treatment from the text area */
+.dashboard-live-detail-row .dashboard-live-copy,
+.dashboard-live-detail-row .dashboard-live-copy:hover,
+.dashboard-live-detail-row .dashboard-live-copy strong,
+.dashboard-live-detail-row .dashboard-live-copy small {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Match the top Live Activity typography */
+.dashboard-live-detail-row .dashboard-live-copy strong {
+  color: rgba(248, 250, 252, 0.92) !important;
+  font-size: 0.76rem !important;
+  font-weight: 850 !important;
+  line-height: 1.15 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.dashboard-live-detail-row .dashboard-live-copy small {
+  color: rgba(226, 239, 255, 0.54) !important;
+  font-size: 0.66rem !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Keep icons and times aligned like the rows above */
+.dashboard-live-detail-row > span:first-child {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+}
+
+.dashboard-live-detail-row > em {
+  min-width: 42px !important;
+  color: rgba(226, 239, 255, 0.58) !important;
+}
+/* End Live Activity Remove Highlight Fix v3 */

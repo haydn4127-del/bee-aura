@@ -320,6 +320,49 @@ export default function DashboardPage() {
               </Link>
             ))}
           </div>
+
+          <div className="dashboard-live-detail-stack">
+            <Link href="/messages?search=missed%20call" className="dashboard-live-detail-row recovered">
+              <span>MC</span>
+              <span className="dashboard-live-copy">
+                <strong>Missed call recovered</strong>
+                <small>Boiler enquiry turned into an inbox task.</small>
+              </span>
+              <em>4m ago</em>
+            </Link>
+
+            <Link href="/messages?search=drafted%20reply" className="dashboard-live-detail-row draft">
+              <span>AI</span>
+              <span className="dashboard-live-copy">
+                <strong>Reply drafted for review</strong>
+                <small>Suggested response waiting for owner approval.</small>
+              </span>
+              <em>7m ago</em>
+            </Link>
+
+            <Link href="/bookings?search=reminder" className="dashboard-live-detail-row booking">
+              <span>RM</span>
+              <span className="dashboard-live-copy">
+                <strong>Booking reminder queued</strong>
+                <small>15:00 kitchen fitting reminder ready.</small>
+              </span>
+              <em>9m ago</em>
+            </Link>
+
+            <Link href="/follow-ups?search=priority" className="dashboard-live-detail-row follow">
+              <span>PR</span>
+              <span className="dashboard-live-copy">
+                <strong>Priority risk raised</strong>
+                <small>Alice Hughes follow-up moved to high priority.</small>
+              </span>
+              <em>14m ago</em>
+            </Link>
+          </div>
+
+          <div className="dashboard-live-snapshot">
+            <span><strong>12</strong><small>events tracked</small></span>
+            <span><strong>4</strong><small>need review</small></span>
+          </div>
         </Panel>
 
         <div className="command-kpi-row">
@@ -527,7 +570,7 @@ export default function DashboardPage() {
           </div>
         </Panel>
 
-        <Panel title="Smart Inbox" badge="12 Unread" href="/messages">
+        <Panel title="Inbox" badge="12 Unread" href="/messages">
           <div className="dashboard-lower-panel dashboard-inbox-v2">
             <Link href="/messages?search=Emily%20Davis" className="dashboard-feature-row priority">
               <span className="dashboard-row-icon">ED</span>

@@ -46,10 +46,23 @@ export default function Sidebar() {
         })}
       </nav>
 
-      <div className="sidebar-status sidebar-control-card">
-        <p className="status-title">Aura control</p>
-        <p className="status-text">AI suggestions only. Owner approval stays on.</p>
-        <p className="status-note">Review before action</p>
+      <div className="sidebar-status sidebar-control-card sidebar-control-card-bot">
+        <div className="sidebar-control-top">
+          <img
+            src="/brand/source/aura-assistant-transparent.png"
+            alt="Aura Assistant"
+            className="sidebar-control-bot-image"
+          />
+
+          <div className="sidebar-control-copy">
+            <p className="status-title">AURA CONTROL</p>
+            <p className="status-text">
+              AI is watching replies, leads and follow-ups. Nothing is sent without
+              owner approval.
+            </p>
+            <p className="status-note">Safe assist mode</p>
+          </div>
+        </div>
       </div>
 
       <div className="sidebar-status">
