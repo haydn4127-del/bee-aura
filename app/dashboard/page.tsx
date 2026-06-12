@@ -375,6 +375,26 @@ export default function DashboardPage() {
             <text x="30" y="150" className="pro-label">50</text>
             <text x="30" y="188" className="pro-label">30</text>
 
+            <g className="pro-bar-layer pro-bar-layer-blue" aria-hidden="true">
+              <rect x="96" y="190" width="16" height="28" rx="5" />
+              <rect x="188" y="168" width="16" height="50" rx="5" />
+              <rect x="280" y="158" width="16" height="60" rx="5" />
+              <rect x="372" y="170" width="16" height="48" rx="5" />
+              <rect x="464" y="132" width="16" height="86" rx="5" />
+              <rect x="556" y="104" width="16" height="114" rx="5" />
+              <rect x="648" y="88" width="16" height="130" rx="5" />
+            </g>
+
+            <g className="pro-bar-layer pro-bar-layer-gold" aria-hidden="true">
+              <rect x="116" y="202" width="10" height="16" rx="4" />
+              <rect x="208" y="184" width="10" height="34" rx="4" />
+              <rect x="300" y="172" width="10" height="46" rx="4" />
+              <rect x="392" y="156" width="10" height="62" rx="4" />
+              <rect x="484" y="154" width="10" height="64" rx="4" />
+              <rect x="576" y="122" width="10" height="96" rx="4" />
+              <rect x="668" y="106" width="10" height="112" rx="4" />
+            </g>
+
             <path
               d="M86 198 L178 156 L270 146 L362 154 L454 112 L546 88 L638 70 L638 218 L86 218 Z"
               fill="url(#leadGraphBlue6a)"
@@ -405,51 +425,106 @@ export default function DashboardPage() {
             <text x="630" y="248" className="pro-x">Sun</text>
             </svg>
           </Link>
+          <div className="graph-detail-row graph-detail-leads">
+            <span><strong>482</strong> captured</span>
+            <span><strong>71</strong> recovered</span>
+            <span><strong>+10%</strong> week trend</span>
+          </div>
         </Panel>
 
         <Panel title="Booking Performance" badge="Last 7 Days">
-          <div className="command-chart-legend">
-            <span><i className="gold" /> Confirmed bookings</span>
-            <span><i className="blue" /> Revenue trend</span>
+          <div className="command-chart-legend graph-pro-legend">
+            <span><i className="gold" /> Booked jobs</span>
+            <span><i className="blue" /> Estimated value</span>
           </div>
 
-          <svg className="command-bar-chart command-pro-bar-chart" viewBox="0 0 620 260" aria-label="Booking performance chart">
-            <line x1="58" y1="32" x2="58" y2="210" className="dash-axis" />
-            <line x1="58" y1="210" x2="590" y2="210" className="dash-axis" />
+          <Link href="/bookings" className="dashboard-chart-link dashboard-bookings-chart-link" aria-label="Open bookings page">
+            <svg
+              className="command-bar-chart command-pro-bar-chart booking-graph-pro-6b"
+              viewBox="0 0 720 280"
+              aria-label="Booking performance trend chart"
+            >
+              <defs>
+                <linearGradient id="bookingGraphGold6b" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stopColor="rgba(212, 175, 55, 0.13)" />
+                  <stop offset="100%" stopColor="rgba(212, 175, 55, 0)" />
+                </linearGradient>
+                <linearGradient id="bookingGraphBlue6b" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stopColor="rgba(46, 167, 255, 0.12)" />
+                  <stop offset="100%" stopColor="rgba(46, 167, 255, 0)" />
+                </linearGradient>
+              </defs>
 
-            <line x1="58" y1="54" x2="590" y2="54" className="dash-grid" />
-            <line x1="58" y1="92" x2="590" y2="92" className="dash-grid" />
-            <line x1="58" y1="130" x2="590" y2="130" className="dash-grid" />
-            <line x1="58" y1="168" x2="590" y2="168" className="dash-grid" />
+              <rect x="0" y="0" width="720" height="280" rx="22" className="pro-chart-bg" />
 
-            <text x="28" y="58" className="dash-axis-label">20</text>
-            <text x="28" y="96" className="dash-axis-label">15</text>
-            <text x="28" y="134" className="dash-axis-label">10</text>
-            <text x="34" y="172" className="dash-axis-label">5</text>
+              <line x1="68" y1="42" x2="68" y2="218" className="pro-axis" />
+              <line x1="68" y1="218" x2="666" y2="218" className="pro-axis" />
 
-            <rect x="86" y="112" width="34" height="98" rx="8" className="dash-bar-blue" />
-            <rect x="154" y="132" width="34" height="78" rx="8" className="dash-bar-blue-muted" />
-            <rect x="222" y="78" width="34" height="132" rx="8" className="dash-bar-gold" />
-            <rect x="290" y="120" width="34" height="90" rx="8" className="dash-bar-blue-muted" />
-            <rect x="358" y="84" width="34" height="126" rx="8" className="dash-bar-blue" />
-            <rect x="426" y="96" width="34" height="114" rx="8" className="dash-bar-gold-muted" />
-            <rect x="494" y="148" width="34" height="62" rx="8" className="dash-bar-blue-muted" />
+              <line x1="68" y1="70" x2="666" y2="70" className="pro-grid" />
+              <line x1="68" y1="108" x2="666" y2="108" className="pro-grid" />
+              <line x1="68" y1="146" x2="666" y2="146" className="pro-grid" />
+              <line x1="68" y1="184" x2="666" y2="184" className="pro-grid" />
 
-            <polyline
-              points="103,146 171,158 239,112 307,142 375,96 443,66 511,88"
-              className="dash-line-secondary"
-            />
+              <text x="26" y="74" className="pro-label">£5k</text>
+              <text x="26" y="112" className="pro-label">£4k</text>
+              <text x="26" y="150" className="pro-label">£3k</text>
+              <text x="26" y="188" className="pro-label">£2k</text>
 
-            <circle cx="443" cy="66" r="5" className="dash-dot-secondary" />
+              <g className="pro-bar-layer pro-bar-layer-gold" aria-hidden="true">
+                <rect x="96" y="178" width="16" height="40" rx="5" />
+                <rect x="188" y="188" width="16" height="30" rx="5" />
+                <rect x="280" y="118" width="16" height="100" rx="5" />
+                <rect x="372" y="154" width="16" height="64" rx="5" />
+                <rect x="464" y="112" width="16" height="106" rx="5" />
+                <rect x="556" y="92" width="16" height="126" rx="5" />
+                <rect x="648" y="144" width="16" height="74" rx="5" />
+              </g>
 
-            <text x="82" y="236" className="dash-x-label">Mon</text>
-            <text x="150" y="236" className="dash-x-label">Tue</text>
-            <text x="218" y="236" className="dash-x-label">Wed</text>
-            <text x="286" y="236" className="dash-x-label">Thu</text>
-            <text x="354" y="236" className="dash-x-label">Fri</text>
-            <text x="422" y="236" className="dash-x-label">Sat</text>
-            <text x="490" y="236" className="dash-x-label">Sun</text>
-          </svg>
+              <g className="pro-bar-layer pro-bar-layer-blue" aria-hidden="true">
+                <rect x="116" y="198" width="10" height="20" rx="4" />
+                <rect x="208" y="204" width="10" height="14" rx="4" />
+                <rect x="300" y="166" width="10" height="52" rx="4" />
+                <rect x="392" y="178" width="10" height="40" rx="4" />
+                <rect x="484" y="138" width="10" height="80" rx="4" />
+                <rect x="576" y="96" width="10" height="122" rx="4" />
+                <rect x="668" y="118" width="10" height="100" rx="4" />
+              </g>
+
+              <path
+                d="M86 178 L178 188 L270 112 L362 154 L454 104 L546 82 L638 136 L638 218 L86 218 Z"
+                fill="url(#bookingGraphGold6b)"
+              />
+              <path
+                d="M86 198 L178 204 L270 166 L362 178 L454 138 L546 96 L638 118 L638 218 L86 218 Z"
+                fill="url(#bookingGraphBlue6b)"
+              />
+
+              <path
+                d="M86 178 L178 188 L270 112 L362 154 L454 104 L546 82 L638 136"
+                className="pro-line-gold"
+              />
+              <path
+                d="M86 198 L178 204 L270 166 L362 178 L454 138 L546 96 L638 118"
+                className="pro-line-blue"
+              />
+
+              <circle cx="638" cy="136" r="4" className="pro-dot-gold" />
+              <circle cx="638" cy="118" r="4" className="pro-dot-blue" />
+
+              <text x="78" y="248" className="pro-x">Mon</text>
+              <text x="170" y="248" className="pro-x">Tue</text>
+              <text x="262" y="248" className="pro-x">Wed</text>
+              <text x="354" y="248" className="pro-x">Thu</text>
+              <text x="446" y="248" className="pro-x">Fri</text>
+              <text x="538" y="248" className="pro-x">Sat</text>
+              <text x="630" y="248" className="pro-x">Sun</text>
+            </svg>
+          </Link>
+          <div className="graph-detail-row graph-detail-bookings">
+            <span><strong>82</strong> jobs booked</span>
+            <span><strong>£18.4k</strong> estimated value</span>
+            <span><strong>14</strong> today</span>
+          </div>
         </Panel>
 
         <Panel title="Smart Inbox" badge="12 Unread" href="/messages">
