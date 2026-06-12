@@ -5,7 +5,9 @@ import { FormEvent, useMemo, useState } from "react";
 
 type LeadStatus = "New" | "Contacted" | "Quote Sent" | "Follow-Up" | "Referral";
 type LeadUrgency = "Critical" | "High" | "Medium" | "Normal";
+type LeadSource = "Google" | "Website" | "WhatsApp" | "Referral" | "Facebook";
 type LeadFilter = "All" | "New" | "Contacted" | "Quote Sent";
+type SourceFilter = "All Channels" | LeadSource;
 type SortMode = "newest" | "oldest" | "name";
 
 type Lead = {
@@ -13,7 +15,7 @@ type Lead = {
   slug: string;
   enquiry: string;
   contact: string;
-  source: "Google" | "Website" | "Referral" | "Facebook";
+  source: LeadSource;
   status: LeadStatus;
   urgency: LeadUrgency;
   date: string;
@@ -26,7 +28,7 @@ type Lead = {
 
 const initialLeads: Lead[] = [
   { name: "Tom Wilson", slug: "tom-wilson", enquiry: "Boiler repair", contact: "07912 345678", source: "Google", status: "New", urgency: "High", date: "19 May 2025", dateKey: 20250519, value: "£450", lastActivity: "2m ago", nextFollowUp: "Tomorrow, 10:00 AM", owner: "John D." },
-  { name: "Sarah Johnson", slug: "sarah-johnson", enquiry: "Plumbing leak", contact: "07845 678912", source: "Website", status: "Contacted", urgency: "Medium", date: "18 May 2025", dateKey: 20250518, value: "£320", lastActivity: "15m ago", nextFollowUp: "Today, 2:00 PM", owner: "John D." },
+  { name: "Sarah Johnson", slug: "sarah-johnson", enquiry: "Plumbing leak", contact: "07845 678912", source: "WhatsApp", status: "Contacted", urgency: "Medium", date: "18 May 2025", dateKey: 20250518, value: "£320", lastActivity: "15m ago", nextFollowUp: "Today, 2:00 PM", owner: "John D." },
   { name: "Emma Davis", slug: "emma-davis", enquiry: "Bathroom renovation", contact: "07955 789123", source: "Referral", status: "Quote Sent", urgency: "High", date: "18 May 2025", dateKey: 20250518, value: "£6,200", lastActivity: "1h ago", nextFollowUp: "Tomorrow, 11:00 AM", owner: "Lucy C." },
   { name: "Mike Thompson", slug: "mike-thompson", enquiry: "Electrical fault", contact: "07798 123456", source: "Google", status: "Follow-Up", urgency: "Critical", date: "17 May 2025", dateKey: 20250517, value: "£180", lastActivity: "2h ago", nextFollowUp: "Today, 4:00 PM", owner: "Adam H." },
   { name: "James Brown", slug: "james-brown", enquiry: "Drain clearance", contact: "07534 567890", source: "Facebook", status: "New", urgency: "High", date: "17 May 2025", dateKey: 20250517, value: "£220", lastActivity: "3h ago", nextFollowUp: "Tomorrow, 9:30 AM", owner: "John D." },
@@ -48,6 +50,10 @@ function classSlug(value: string) {
   return value.toLowerCase().replaceAll(" ", "-");
 }
 
+function customerRoute(lead: Lead) {
+  return `/customers/${lead.slug}`;
+}
+
 function statusRoute(status: LeadStatus) {
   if (status === "Follow-Up") return "/follow-ups";
   if (status === "Quote Sent") return "/bookings";
@@ -55,35 +61,47 @@ function statusRoute(status: LeadStatus) {
   return "/messages";
 }
 
-function customerRoute(lead: Lead) {
-  return `/customers/${lead.slug}`;
-}
-
 export default function LeadsPage() {
   const [leads, setLeads] = useState<Lead[]>(initialLeads);
   const [activeFilter, setActiveFilter] = useState<LeadFilter>("All");
+  const [sourceFilter, setSourceFilter] = useState<SourceFilter>("All Channels");
   const [sortMode, setSortMode] = useState<SortMode>("newest");
+  const [searchText, setSearchText] = useState("");
   const [isAddingLead, setIsAddingLead] = useState(false);
   const [form, setForm] = useState({
     name: "",
     enquiry: "",
     contact: "",
-    source: "Website" as Lead["source"],
+    source: "Website" as LeadSource,
     urgency: "High" as LeadUrgency,
     value: "",
   });
 
   const visibleLeads = useMemo(() => {
-    const filtered = activeFilter === "All"
-      ? leads
-      : leads.filter((lead) => lead.status === activeFilter);
+    const query = searchText.trim().toLowerCase();
+
+    const filtered = leads.filter((lead) => {
+      const matchesStatus = activeFilter === "All" || lead.status === activeFilter;
+      const matchesSource = sourceFilter === "All Channels" || lead.source === sourceFilter;
+      const matchesSearch =
+        !query ||
+        lead.name.toLowerCase().includes(query) ||
+        lead.enquiry.toLowerCase().includes(query) ||
+        lead.contact.toLowerCase().includes(query) ||
+        lead.source.toLowerCase().includes(query) ||
+        lead.status.toLowerCase().includes(query) ||
+        lead.urgency.toLowerCase().includes(query) ||
+        lead.owner.toLowerCase().includes(query);
+
+      return matchesStatus && matchesSource && matchesSearch;
+    });
 
     return [...filtered].sort((a, b) => {
       if (sortMode === "name") return a.name.localeCompare(b.name);
       if (sortMode === "oldest") return a.dateKey - b.dateKey;
       return b.dateKey - a.dateKey;
     });
-  }, [activeFilter, leads, sortMode]);
+  }, [activeFilter, leads, searchText, sortMode, sourceFilter]);
 
   function updateForm(field: keyof typeof form, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
@@ -125,31 +143,48 @@ export default function LeadsPage() {
     });
 
     setActiveFilter("All");
+    setSourceFilter("All Channels");
+    setSearchText("");
     setSortMode("newest");
     setIsAddingLead(false);
   }
 
   return (
-    <main className="leads-final-page">
-      <header className="leads-final-header">
+    <main className="leads-clean-page">
+      <header className="leads-clean-header">
         <div>
           <h1>Leads</h1>
           <p>Manage, track and convert every enquiry in one place.</p>
         </div>
 
-        <div className="leads-final-controls">
-          <button className="lf-add" type="button" onClick={() => setIsAddingLead(true)}>
+        <div className="leads-clean-controls">
+          <button className="lc-add" type="button" onClick={() => setIsAddingLead(true)}>
             <span>＋</span> Add Lead
           </button>
 
-          <Link href="/messages" className="lf-control">⌯ All Channels⌄</Link>
+          <label className="lc-control">
+            <span>≡</span>
+            <select value={sourceFilter} onChange={(event) => setSourceFilter(event.target.value as SourceFilter)}>
+              <option>All Channels</option>
+              <option>Google</option>
+              <option>Website</option>
+              <option>WhatsApp</option>
+              <option>Referral</option>
+              <option>Facebook</option>
+            </select>
+          </label>
 
-          <Link href="/leads" className="lf-search">
-            <span>Search leads...</span>
+          <label className="lc-search">
+            <input
+              value={searchText}
+              onChange={(event) => setSearchText(event.target.value)}
+              placeholder="Search leads..."
+              aria-label="Search leads"
+            />
             <strong>⌕</strong>
-          </Link>
+          </label>
 
-          <Link href="/settings" className="lf-owner">
+          <Link href="/settings" className="lc-owner">
             <span>JD</span>
             <b>John D.<small>Owner</small></b>
             <em>⌄</em>
@@ -158,7 +193,7 @@ export default function LeadsPage() {
       </header>
 
       {isAddingLead ? (
-        <section className="lf-create">
+        <section className="lc-create">
           <div>
             <h2>Add new lead</h2>
             <p>Demo only. This creates a temporary lead in the table.</p>
@@ -171,9 +206,10 @@ export default function LeadsPage() {
 
             <label>
               Source
-              <select value={form.source} onChange={(event) => updateForm("source", event.target.value as Lead["source"])}>
+              <select value={form.source} onChange={(event) => updateForm("source", event.target.value as LeadSource)}>
                 <option>Website</option>
                 <option>Google</option>
+                <option>WhatsApp</option>
                 <option>Facebook</option>
                 <option>Referral</option>
               </select>
@@ -191,7 +227,7 @@ export default function LeadsPage() {
 
             <label>Value<input value={form.value} onChange={(event) => updateForm("value", event.target.value)} placeholder="£450" /></label>
 
-            <div className="lf-create-actions">
+            <div className="lc-create-actions">
               <button type="button" onClick={() => setIsAddingLead(false)}>Cancel</button>
               <button type="submit">Create Lead</button>
             </div>
@@ -199,9 +235,9 @@ export default function LeadsPage() {
         </section>
       ) : null}
 
-      <section className="leads-final-card">
-        <div className="lf-toolbar">
-          <div className="lf-tabs">
+      <section className="leads-clean-card">
+        <div className="lc-toolbar">
+          <div className="lc-tabs">
             {(["All", "New", "Contacted", "Quote Sent"] as LeadFilter[]).map((filter) => (
               <button
                 key={filter}
@@ -214,7 +250,7 @@ export default function LeadsPage() {
             ))}
           </div>
 
-          <label className="lf-sort">
+          <label className="lc-sort">
             <span>↕ Sort:</span>
             <select value={sortMode} onChange={(event) => setSortMode(event.target.value as SortMode)}>
               <option value="newest">Newest to oldest</option>
@@ -224,23 +260,8 @@ export default function LeadsPage() {
           </label>
         </div>
 
-        <div className="lf-table-wrap">
-          <table className="lf-table">
-            <colgroup>
-              <col className="lf-col-name" />
-              <col className="lf-col-enquiry" />
-              <col className="lf-col-contact" />
-              <col className="lf-col-source" />
-              <col className="lf-col-status" />
-              <col className="lf-col-urgency" />
-              <col className="lf-col-date" />
-              <col className="lf-col-value" />
-              <col className="lf-col-activity" />
-              <col className="lf-col-follow" />
-              <col className="lf-col-owner" />
-              <col className="lf-col-actions" />
-            </colgroup>
-
+        <div className="lc-table-wrap">
+          <table className="lc-table">
             <thead>
               <tr>
                 <th>Name</th>
@@ -253,7 +274,6 @@ export default function LeadsPage() {
                 <th>Value</th>
                 <th>Last Activity</th>
                 <th>Next Follow-Up</th>
-                <th>Owner</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -261,19 +281,18 @@ export default function LeadsPage() {
             <tbody>
               {visibleLeads.map((lead) => (
                 <tr key={`${lead.name}-${lead.contact}`}>
-                  <td><Link className="lf-link strong" href={customerRoute(lead)}>{lead.name}</Link></td>
-                  <td><Link className="lf-link" href="/bookings">{lead.enquiry}</Link></td>
-                  <td><Link className="lf-link muted" href={customerRoute(lead)}>☎ {lead.contact}</Link></td>
-                  <td><Link href="/leads" className={`lf-source lf-source-${classSlug(lead.source)}`}>{lead.source}</Link></td>
-                  <td><Link href={statusRoute(lead.status)} className={`lf-status lf-status-${classSlug(lead.status)}`}>{lead.status}</Link></td>
-                  <td><Link href="/follow-ups" className={`lf-urgency lf-urgency-${classSlug(lead.urgency)}`}>{lead.urgency}</Link></td>
+                  <td><Link className="lc-link strong" href={customerRoute(lead)}>{lead.name}</Link></td>
+                  <td><Link className="lc-link" href="/bookings">{lead.enquiry}</Link></td>
+                  <td><Link className="lc-link muted" href={customerRoute(lead)}>☎ {lead.contact}</Link></td>
+                  <td><Link href="/leads" className={`lc-source lc-source-${classSlug(lead.source)}`}>{lead.source}</Link></td>
+                  <td><Link href={statusRoute(lead.status)} className={`lc-status lc-status-${classSlug(lead.status)}`}>{lead.status}</Link></td>
+                  <td><Link href="/follow-ups" className={`lc-urgency lc-urgency-${classSlug(lead.urgency)}`}>{lead.urgency}</Link></td>
                   <td>{lead.date}</td>
-                  <td><Link className="lf-link value" href="/dashboard">{lead.value}</Link></td>
-                  <td><Link className="lf-link muted" href="/activity-log">{lead.lastActivity}</Link></td>
-                  <td><Link className="lf-link muted" href="/follow-ups">{lead.nextFollowUp}</Link></td>
-                  <td><Link className="lf-link muted" href="/settings">{lead.owner}</Link></td>
+                  <td><Link className="lc-link value" href="/dashboard">{lead.value}</Link></td>
+                  <td><Link className="lc-link muted" href="/activity-log">{lead.lastActivity}</Link></td>
+                  <td><Link className="lc-link muted" href="/follow-ups">{lead.nextFollowUp}</Link></td>
                   <td>
-                    <div className="lf-actions">
+                    <div className="lc-actions">
                       <Link href="/messages">☏</Link>
                       <Link href={customerRoute(lead)}>✎</Link>
                       <Link href="/bookings">＋</Link>
@@ -285,7 +304,7 @@ export default function LeadsPage() {
           </table>
         </div>
 
-        <div className="lf-bottom-fill">
+        <div className="lc-insights">
           <article>
             <strong>Urgent lead focus</strong>
             <span>{leads.filter((lead) => lead.urgency === "Critical").length} critical leads need action</span>
@@ -300,31 +319,52 @@ export default function LeadsPage() {
           </article>
         </div>
 
-        <footer className="lf-footer">
-          <p>Showing 1 to {visibleLeads.length} of 208 leads</p>
+        <footer className="lc-footer">
+          <div className="lc-footer-top">
+            <p>Showing 1 to {visibleLeads.length} of {leads.length} demo leads</p>
 
-          <div className="lf-pagination">
-            <Link href="/leads">‹</Link>
-            <Link className="active" href="/leads">1</Link>
-            <Link href="/leads">2</Link>
-            <Link href="/leads">3</Link>
-            <Link href="/leads">4</Link>
-            <Link href="/leads">5</Link>
-            <span>...</span>
-            <Link href="/leads">24</Link>
-            <Link href="/leads">›</Link>
+            <div className="lc-pagination">
+              <Link href="/leads">‹</Link>
+              <Link className="active" href="/leads">1</Link>
+              <Link href="/leads">2</Link>
+              <Link href="/leads">3</Link>
+              <Link href="/leads">4</Link>
+              <Link href="/leads">5</Link>
+              <span>...</span>
+              <Link href="/leads">24</Link>
+              <Link href="/leads">›</Link>
+            </div>
           </div>
 
-          <aside className="lf-outcomes">
-            <div>
-              <h3>Lead Outcomes</h3>
-              <p><span className="lf-dot blue" /> Won <b>72 (69%)</b></p>
-              <p><span className="lf-dot gold" /> Lost <b>32 (31%)</b></p>
-            </div>
-            <Link href="/dashboard" className="lf-donut">
-              <span>104<small>Total</small></span>
+          <div className="lc-footer-body">
+            <Link href="/messages" className="lc-bot-panel" aria-label="Open AI lead suggestions">
+              <img
+                src="/brand/source/aura-assistant-transparent.png"
+                alt="Aura Assistant"
+              />
             </Link>
-          </aside>
+
+            <aside className="lc-outcomes-card">
+              <div className="lc-outcomes-copy">
+                <p className="lc-kicker">Lead outcomes</p>
+                <h3>Conversion snapshot</h3>
+                <p>
+                  A clean view of won versus lost enquiries for the current demo period.
+                </p>
+
+                <div className="lc-outcome-stats">
+                  <span><strong>72</strong><small>won leads</small></span>
+                  <span><strong>32</strong><small>lost leads</small></span>
+                  <span><strong>69%</strong><small>win rate</small></span>
+                </div>
+              </div>
+
+              <Link href="/dashboard" className="lc-donut" aria-label="Open dashboard">
+                <span className="lc-donut-ring" />
+                <strong>104<small>Total</small></strong>
+              </Link>
+            </aside>
+          </div>
         </footer>
       </section>
     </main>

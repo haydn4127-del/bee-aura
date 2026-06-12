@@ -12618,3 +12618,2124 @@ aside {
   color: rgba(226, 239, 255, 0.58) !important;
 }
 /* End Live Activity Remove Highlight Fix v3 */
+
+/* Leads Search + Channel Filter v1 */
+.lf-channel-filter {
+  gap: 8px !important;
+  cursor: pointer !important;
+}
+
+.lf-channel-filter select {
+  color: #f5f7fb !important;
+  background: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  font: inherit !important;
+  font-weight: 900 !important;
+  cursor: pointer !important;
+}
+
+.lf-search-active {
+  cursor: text !important;
+}
+
+.lf-search-active input {
+  width: 100% !important;
+  min-width: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  color: #f5f7fb !important;
+  font: inherit !important;
+  font-weight: 800 !important;
+}
+
+.lf-search-active input::placeholder {
+  color: #8fa2ba !important;
+}
+
+.lf-search-active:focus-within,
+.lf-channel-filter:focus-within {
+  border-color: rgba(245, 188, 22, 0.58) !important;
+  box-shadow: 0 0 0 2px rgba(245, 188, 22, 0.13) !important;
+}
+/* End Leads Search + Channel Filter v1 */
+
+/* Leads Source Colour Stage 1 */
+
+/* Source column colours */
+.lf-source-google {
+  color: #fb923c !important;
+  background: rgba(251, 146, 60, 0.15) !important;
+  border-color: rgba(251, 146, 60, 0.26) !important;
+}
+
+.lf-source-website {
+  color: #f4d978 !important;
+  background: rgba(212, 175, 55, 0.16) !important;
+  border-color: rgba(212, 175, 55, 0.28) !important;
+}
+
+.lf-source-whatsapp {
+  color: #41e0b0 !important;
+  background: rgba(65, 224, 176, 0.14) !important;
+  border-color: rgba(65, 224, 176, 0.26) !important;
+}
+
+.lf-source-facebook {
+  color: #2ea7ff !important;
+  background: rgba(46, 167, 255, 0.15) !important;
+  border-color: rgba(46, 167, 255, 0.26) !important;
+}
+
+.lf-source-referral {
+  color: #f4d978 !important;
+  background: rgba(212, 175, 55, 0.14) !important;
+  border-color: rgba(212, 175, 55, 0.24) !important;
+}
+/* End Leads Source Colour Stage 1 */
+
+/* Leads Source Colour Stage 2 */
+
+/* Referral source badge = purple */
+.lf-source-referral {
+  color: #c084fc !important;
+  background: rgba(168, 85, 247, 0.16) !important;
+  border-color: rgba(168, 85, 247, 0.30) !important;
+}
+
+/* End Leads Source Colour Stage 2 */
+
+/* Leads Bottom Right Aura Bot v1 */
+.lf-footer {
+  grid-template-columns: minmax(150px, 0.8fr) auto minmax(280px, 350px) minmax(210px, 250px) !important;
+}
+
+.lf-aura-nudge {
+  justify-self: end !important;
+  width: 100% !important;
+  max-width: 250px !important;
+  min-height: 112px !important;
+  display: grid !important;
+  grid-template-columns: 76px minmax(0, 1fr) !important;
+  gap: 12px !important;
+  align-items: center !important;
+  padding: 12px 14px !important;
+  border-radius: 16px !important;
+  text-decoration: none !important;
+  border: 1px solid rgba(212, 175, 55, 0.22) !important;
+  background:
+    radial-gradient(circle at top right, rgba(212, 175, 55, 0.12), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(46, 167, 255, 0.10), transparent 42%),
+    rgba(5, 15, 30, 0.84) !important;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.20) !important;
+}
+
+.lf-aura-nudge img {
+  width: 76px !important;
+  height: 76px !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.28)) !important;
+}
+
+.lf-aura-nudge span {
+  display: grid !important;
+  gap: 5px !important;
+  min-width: 0 !important;
+}
+
+.lf-aura-nudge strong {
+  color: #f8fafc !important;
+  font-size: 0.86rem !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.lf-aura-nudge small {
+  color: rgba(226, 239, 255, 0.62) !important;
+  font-size: 0.68rem !important;
+  line-height: 1.32 !important;
+}
+
+.lf-aura-nudge:hover {
+  border-color: rgba(212, 175, 55, 0.34) !important;
+  transform: translateY(-1px) !important;
+}
+
+@media (max-width: 1280px) {
+  .lf-footer {
+    grid-template-columns: 1fr !important;
+  }
+
+  .lf-aura-nudge {
+    justify-self: start !important;
+  }
+}
+/* End Leads Bottom Right Aura Bot v1 */
+
+/* Leads Big Bottom Aura Bot v2 */
+
+/* Remove the old text-card feel */
+.lf-aura-nudge {
+  display: none !important;
+}
+
+/* Make the leads card a safe positioning area */
+.leads-final-card {
+  position: relative !important;
+}
+
+/* Big Aura bot to fill the bottom-right gap */
+.lf-aura-bot-fill {
+  position: absolute !important;
+  right: 42px !important;
+  bottom: 22px !important;
+  width: 190px !important;
+  height: 190px !important;
+  display: grid !important;
+  place-items: center !important;
+  text-decoration: none !important;
+  border: 0 !important;
+  background: transparent !important;
+  z-index: 3 !important;
+}
+
+.lf-aura-bot-fill img {
+  width: 190px !important;
+  height: 190px !important;
+  object-fit: contain !important;
+  filter:
+    drop-shadow(0 26px 45px rgba(0, 0, 0, 0.34))
+    drop-shadow(0 0 22px rgba(46, 167, 255, 0.12)) !important;
+}
+
+.lf-aura-bot-fill:hover img {
+  transform: translateY(-2px) !important;
+}
+
+/* Give the footer enough room so the bot does not crush the outcomes card */
+.lf-footer {
+  min-height: 180px !important;
+  padding-right: 250px !important;
+}
+
+@media (max-width: 1280px) {
+  .lf-aura-bot-fill {
+    position: static !important;
+    width: 150px !important;
+    height: 150px !important;
+    justify-self: start !important;
+  }
+
+  .lf-aura-bot-fill img {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  .lf-footer {
+    padding-right: 14px !important;
+  }
+}
+/* End Leads Big Bottom Aura Bot v2 */
+
+/* Leads Bot Left + Bigger Fix v3 */
+
+/* Move the existing Aura bot to the left side and make it larger */
+.lf-aura-bot-fill {
+  left: 28px !important;
+  right: auto !important;
+  bottom: 18px !important;
+  width: 270px !important;
+  height: 270px !important;
+  justify-items: start !important;
+  align-items: end !important;
+}
+
+.lf-aura-bot-fill img {
+  width: 270px !important;
+  height: 270px !important;
+  object-fit: contain !important;
+  filter:
+    drop-shadow(0 30px 50px rgba(0, 0, 0, 0.36))
+    drop-shadow(0 0 26px rgba(46, 167, 255, 0.14)) !important;
+}
+
+/* Give the lower area enough room so the bigger bot sits nicely */
+.lf-footer {
+  min-height: 340px !important;
+  padding-right: 14px !important;
+}
+
+@media (max-width: 1280px) {
+  .lf-aura-bot-fill {
+    position: static !important;
+    width: 170px !important;
+    height: 170px !important;
+    justify-self: start !important;
+  }
+
+  .lf-aura-bot-fill img {
+    width: 170px !important;
+    height: 170px !important;
+  }
+
+  .lf-footer {
+    min-height: auto !important;
+  }
+}
+/* End Leads Bot Left + Bigger Fix v3 */
+
+/* Leads Professional Pie Chart Right v1 */
+
+/* Keep the lower area open and use it properly */
+.leads-final-card {
+  position: relative !important;
+}
+
+.lf-footer {
+  min-height: 340px !important;
+  position: relative !important;
+  padding: 20px 34px !important;
+  display: block !important;
+}
+
+/* Move Lead Outcomes to the right and make it feel like a serious SaaS analytics card */
+.lf-outcomes {
+  position: absolute !important;
+  right: 34px !important;
+  bottom: 30px !important;
+  width: min(520px, 44%) !important;
+  max-width: 520px !important;
+  min-height: 210px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 168px !important;
+  gap: 24px !important;
+  align-items: center !important;
+  padding: 24px 26px !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(46, 167, 255, 0.24) !important;
+  background:
+    radial-gradient(circle at 88% 20%, rgba(46, 167, 255, 0.14), transparent 34%),
+    radial-gradient(circle at 8% 12%, rgba(212, 175, 55, 0.12), transparent 34%),
+    linear-gradient(145deg, rgba(8, 20, 38, 0.94), rgba(3, 8, 18, 0.98)) !important;
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+}
+
+.lf-outcomes h3 {
+  margin: 0 0 14px !important;
+  color: #f8fafc !important;
+  font-size: 1.12rem !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.045em !important;
+}
+
+.lf-outcomes h3::after {
+  content: "Lead conversion snapshot" !important;
+  display: block !important;
+  margin-top: 6px !important;
+  color: rgba(226, 239, 255, 0.56) !important;
+  font-size: 0.72rem !important;
+  font-weight: 650 !important;
+  letter-spacing: 0 !important;
+}
+
+.lf-outcomes p {
+  display: grid !important;
+  grid-template-columns: 16px minmax(0, 1fr) auto !important;
+  gap: 10px !important;
+  align-items: center !important;
+  margin: 10px 0 !important;
+  color: rgba(226, 239, 255, 0.74) !important;
+  font-size: 0.86rem !important;
+}
+
+.lf-outcomes b {
+  color: #f8fafc !important;
+  font-size: 0.88rem !important;
+  font-weight: 950 !important;
+}
+
+/* More professional donut chart */
+.lf-donut {
+  width: 158px !important;
+  height: 158px !important;
+  position: relative !important;
+  border-radius: 50% !important;
+  background:
+    radial-gradient(circle at center, rgba(5, 12, 24, 0.98) 0 46%, transparent 47%),
+    conic-gradient(
+      #2ea7ff 0deg 248deg,
+      #d4af37 248deg 360deg
+    ) !important;
+  border: 1px solid rgba(148, 163, 184, 0.12) !important;
+  box-shadow:
+    0 22px 50px rgba(0, 0, 0, 0.28),
+    0 0 36px rgba(46, 167, 255, 0.10) !important;
+}
+
+.lf-donut::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 12px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255, 255, 255, 0.055) !important;
+  pointer-events: none !important;
+}
+
+.lf-donut span {
+  position: relative !important;
+  z-index: 1 !important;
+  display: grid !important;
+  place-items: center !important;
+  text-align: center !important;
+  color: #f8fafc !important;
+  font-size: 1.55rem !important;
+  font-weight: 950 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.055em !important;
+}
+
+.lf-donut small {
+  display: block !important;
+  margin-top: 5px !important;
+  color: rgba(226, 239, 255, 0.62) !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0 !important;
+}
+
+/* Keep the bot on the left and stop overlap */
+.lf-aura-bot-fill {
+  left: 34px !important;
+  bottom: 28px !important;
+}
+
+@media (max-width: 1280px) {
+  .lf-footer {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+    padding: 14px !important;
+  }
+
+  .lf-outcomes {
+    position: static !important;
+    width: 100% !important;
+    max-width: 520px !important;
+  }
+}
+/* End Leads Professional Pie Chart Right v1 */
+
+/* Leads Pie Chart Far Right v2 */
+
+/* Make sure the whole leads card can position bottom content properly */
+.leads-final-card {
+  position: relative !important;
+}
+
+/* Give the bottom area enough height */
+.lf-footer {
+  position: relative !important;
+  min-height: 340px !important;
+  display: block !important;
+  padding: 22px 34px !important;
+}
+
+/* Push Lead Outcomes / pie chart to the far right side of the page */
+.lf-outcomes {
+  position: absolute !important;
+  right: 34px !important;
+  left: auto !important;
+  bottom: 34px !important;
+  width: 560px !important;
+  max-width: calc(100% - 380px) !important;
+  min-height: 220px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 175px !important;
+  gap: 26px !important;
+  align-items: center !important;
+}
+
+/* Keep the Aura bot on the left side */
+.lf-aura-bot-fill {
+  left: 34px !important;
+  right: auto !important;
+  bottom: 28px !important;
+  width: 270px !important;
+  height: 270px !important;
+}
+
+.lf-aura-bot-fill img {
+  width: 270px !important;
+  height: 270px !important;
+}
+
+/* Bigger, cleaner donut */
+.lf-donut {
+  width: 168px !important;
+  height: 168px !important;
+}
+
+@media (max-width: 1280px) {
+  .lf-footer {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+    padding: 14px !important;
+  }
+
+  .lf-outcomes,
+  .lf-aura-bot-fill {
+    position: static !important;
+    width: 100% !important;
+    max-width: 560px !important;
+  }
+
+  .lf-aura-bot-fill {
+    width: 170px !important;
+    height: 170px !important;
+  }
+
+  .lf-aura-bot-fill img {
+    width: 170px !important;
+    height: 170px !important;
+  }
+}
+/* End Leads Pie Chart Far Right v2 */
+
+/* Leads Footer Clean Reset v1 */
+
+.lf-footer-v2 {
+  position: relative !important;
+  min-height: 330px !important;
+  display: grid !important;
+  grid-template-rows: auto 1fr !important;
+  gap: 18px !important;
+  padding: 16px 18px 22px !important;
+  border-top: 1px solid rgba(132, 159, 206, 0.12) !important;
+}
+
+.lf-footer-meta {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+}
+
+.lf-footer-meta p {
+  margin: 0 !important;
+  color: #d7dfec !important;
+  font-size: 0.82rem !important;
+}
+
+.lf-footer-showcase {
+  display: grid !important;
+  grid-template-columns: minmax(260px, 0.75fr) minmax(440px, 1.25fr) !important;
+  gap: 28px !important;
+  align-items: end !important;
+  min-height: 245px !important;
+}
+
+/* Remove old messy footer bot/card behaviours */
+.lf-aura-nudge,
+.lf-aura-bot-fill {
+  display: none !important;
+}
+
+.lf-aura-stage-left {
+  align-self: end !important;
+  justify-self: start !important;
+  width: 280px !important;
+  height: 245px !important;
+  display: grid !important;
+  place-items: end start !important;
+  text-decoration: none !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.lf-aura-stage-left img {
+  width: 245px !important;
+  height: 245px !important;
+  object-fit: contain !important;
+  filter:
+    drop-shadow(0 30px 54px rgba(0, 0, 0, 0.38))
+    drop-shadow(0 0 24px rgba(46, 167, 255, 0.12)) !important;
+}
+
+.lf-aura-stage-left:hover img {
+  transform: translateY(-2px) !important;
+}
+
+/* Professional right-side Lead Outcomes card */
+.lf-footer-v2 .lf-outcomes-pro-v2 {
+  position: static !important;
+  justify-self: stretch !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 230px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 190px !important;
+  gap: 28px !important;
+  align-items: center !important;
+  padding: 26px 30px !important;
+  border-radius: 26px !important;
+  border: 1px solid rgba(46, 167, 255, 0.25) !important;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(46, 167, 255, 0.16), transparent 34%),
+    radial-gradient(circle at 8% 10%, rgba(212, 175, 55, 0.14), transparent 34%),
+    linear-gradient(145deg, rgba(8, 20, 38, 0.94), rgba(3, 8, 18, 0.98)) !important;
+  box-shadow:
+    0 30px 84px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+}
+
+.lf-outcomes-copy {
+  min-width: 0 !important;
+}
+
+.lf-outcomes-kicker {
+  margin: 0 0 6px !important;
+  color: #d4af37 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  font-size: 0.68rem !important;
+  font-weight: 950 !important;
+}
+
+.lf-footer-v2 .lf-outcomes h3 {
+  margin: 0 0 14px !important;
+  color: #f8fafc !important;
+  font-size: 1.55rem !important;
+  line-height: 1 !important;
+  letter-spacing: -0.06em !important;
+}
+
+.lf-outcome-row {
+  display: grid !important;
+  grid-template-columns: 14px minmax(0, 1fr) auto !important;
+  gap: 10px !important;
+  align-items: center !important;
+  margin: 10px 0 !important;
+  color: rgba(226, 239, 255, 0.76) !important;
+  font-size: 0.9rem !important;
+}
+
+.lf-outcome-row b {
+  color: #f8fafc !important;
+  font-size: 0.92rem !important;
+  font-weight: 950 !important;
+}
+
+.lf-outcomes-copy > small {
+  display: block !important;
+  margin-top: 14px !important;
+  max-width: 360px !important;
+  color: rgba(226, 239, 255, 0.55) !important;
+  font-size: 0.76rem !important;
+  line-height: 1.42 !important;
+}
+
+/* Larger clean donut */
+.lf-footer-v2 .lf-donut-pro-v2 {
+  width: 178px !important;
+  height: 178px !important;
+  justify-self: end !important;
+  position: relative !important;
+  border-radius: 50% !important;
+  background:
+    radial-gradient(circle at center, rgba(5, 12, 24, 0.98) 0 46%, transparent 47%),
+    conic-gradient(#2ea7ff 0deg 248deg, #d4af37 248deg 360deg) !important;
+  border: 1px solid rgba(148, 163, 184, 0.12) !important;
+  box-shadow:
+    0 24px 54px rgba(0, 0, 0, 0.30),
+    0 0 38px rgba(46, 167, 255, 0.11) !important;
+}
+
+.lf-footer-v2 .lf-donut-pro-v2::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 13px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255, 255, 255, 0.055) !important;
+}
+
+.lf-footer-v2 .lf-donut-pro-v2 span {
+  position: relative !important;
+  z-index: 1 !important;
+  display: grid !important;
+  place-items: center !important;
+  text-align: center !important;
+  color: #f8fafc !important;
+  font-size: 1.7rem !important;
+  font-weight: 950 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.055em !important;
+}
+
+.lf-footer-v2 .lf-donut-pro-v2 small {
+  display: block !important;
+  margin-top: 5px !important;
+  color: rgba(226, 239, 255, 0.62) !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0 !important;
+}
+
+@media (max-width: 1280px) {
+  .lf-footer-showcase {
+    grid-template-columns: 1fr !important;
+  }
+
+  .lf-aura-stage-left {
+    width: 180px !important;
+    height: 180px !important;
+  }
+
+  .lf-aura-stage-left img {
+    width: 180px !important;
+    height: 180px !important;
+  }
+
+  .lf-footer-v2 .lf-outcomes-pro-v2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .lf-footer-v2 .lf-donut-pro-v2 {
+    justify-self: start !important;
+  }
+}
+/* End Leads Footer Clean Reset v1 */
+
+/* Leads Footer Side By Side v3 */
+
+.lf-footer-v3 {
+  position: relative !important;
+  min-height: 300px !important;
+  display: grid !important;
+  grid-template-rows: auto 1fr !important;
+  gap: 18px !important;
+  padding: 16px 18px 24px !important;
+  border-top: 1px solid rgba(132, 159, 206, 0.12) !important;
+}
+
+/* Override older footer positioning/card experiments */
+.lf-footer-v3 .lf-outcomes,
+.lf-footer-v3 .lf-outcomes-v3 {
+  position: static !important;
+  inset: auto !important;
+}
+
+.lf-footer-meta-v3 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+}
+
+.lf-footer-meta-v3 p {
+  margin: 0 !important;
+  color: #d7dfec !important;
+  font-size: 0.82rem !important;
+}
+
+.lf-footer-showcase-v3 {
+  display: grid !important;
+  grid-template-columns: 300px minmax(0, 1fr) !important;
+  gap: 26px !important;
+  align-items: center !important;
+  min-height: 230px !important;
+}
+
+/* Hide older bot versions */
+.lf-aura-nudge,
+.lf-aura-bot-fill,
+.lf-aura-stage-left {
+  display: none !important;
+}
+
+.lf-aura-stage-v3 {
+  display: grid !important;
+  place-items: center !important;
+  width: 300px !important;
+  height: 230px !important;
+  text-decoration: none !important;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(46, 167, 255, 0.10), transparent 48%),
+    rgba(3, 8, 18, 0.18) !important;
+  border: 1px solid rgba(46, 167, 255, 0.10) !important;
+  border-radius: 24px !important;
+}
+
+.lf-aura-stage-v3 img {
+  width: 220px !important;
+  height: 220px !important;
+  object-fit: contain !important;
+  filter:
+    drop-shadow(0 30px 54px rgba(0, 0, 0, 0.38))
+    drop-shadow(0 0 24px rgba(46, 167, 255, 0.12)) !important;
+}
+
+.lf-outcomes-v3 {
+  width: 100% !important;
+  min-height: 230px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 190px !important;
+  gap: 28px !important;
+  align-items: center !important;
+  padding: 26px 30px !important;
+  border-radius: 26px !important;
+  border: 1px solid rgba(46, 167, 255, 0.25) !important;
+  background:
+    radial-gradient(circle at 88% 20%, rgba(46, 167, 255, 0.16), transparent 34%),
+    radial-gradient(circle at 8% 10%, rgba(212, 175, 55, 0.14), transparent 34%),
+    linear-gradient(145deg, rgba(8, 20, 38, 0.94), rgba(3, 8, 18, 0.98)) !important;
+  box-shadow:
+    0 30px 84px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+}
+
+.lf-outcomes-kicker-v3 {
+  margin: 0 0 8px !important;
+  color: #d4af37 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.14em !important;
+  font-size: 0.7rem !important;
+  font-weight: 950 !important;
+}
+
+.lf-outcomes-copy-v3 h3 {
+  margin: 0 !important;
+  color: #f8fafc !important;
+  font-size: 1.65rem !important;
+  line-height: 1 !important;
+  letter-spacing: -0.06em !important;
+}
+
+.lf-outcomes-desc-v3 {
+  max-width: 480px !important;
+  margin: 12px 0 18px !important;
+  color: rgba(226, 239, 255, 0.62) !important;
+  font-size: 0.84rem !important;
+  line-height: 1.45 !important;
+}
+
+.lf-outcomes-stats-v3 {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+}
+
+.lf-outcomes-stats-v3 span {
+  border: 1px solid rgba(148, 163, 184, 0.11) !important;
+  border-radius: 15px !important;
+  background: rgba(3, 8, 18, 0.32) !important;
+  padding: 10px 12px !important;
+}
+
+.lf-outcomes-stats-v3 strong {
+  display: block !important;
+  color: #f4d978 !important;
+  font-size: 1rem !important;
+  line-height: 1 !important;
+}
+
+.lf-outcomes-stats-v3 small {
+  display: block !important;
+  margin-top: 5px !important;
+  color: rgba(226, 239, 255, 0.58) !important;
+  font-size: 0.68rem !important;
+}
+
+.lf-donut-v3 {
+  position: relative !important;
+  justify-self: end !important;
+  width: 178px !important;
+  height: 178px !important;
+  display: grid !important;
+  place-items: center !important;
+  text-decoration: none !important;
+  border-radius: 50% !important;
+}
+
+.lf-donut-ring-v3 {
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: 50% !important;
+  background:
+    radial-gradient(circle at center, rgba(5, 12, 24, 0.98) 0 47%, transparent 48%),
+    conic-gradient(#2ea7ff 0deg 248deg, #d4af37 248deg 360deg) !important;
+  border: 1px solid rgba(148, 163, 184, 0.12) !important;
+  box-shadow:
+    0 24px 54px rgba(0, 0, 0, 0.30),
+    0 0 38px rgba(46, 167, 255, 0.11) !important;
+}
+
+.lf-donut-ring-v3::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 13px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255, 255, 255, 0.055) !important;
+}
+
+.lf-donut-v3 strong {
+  position: relative !important;
+  z-index: 1 !important;
+  display: grid !important;
+  place-items: center !important;
+  text-align: center !important;
+  color: #f8fafc !important;
+  font-size: 1.75rem !important;
+  font-weight: 950 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.055em !important;
+}
+
+.lf-donut-v3 small {
+  display: block !important;
+  margin-top: 5px !important;
+  color: rgba(226, 239, 255, 0.62) !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0 !important;
+}
+
+@media (max-width: 1280px) {
+  .lf-footer-showcase-v3,
+  .lf-outcomes-v3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .lf-aura-stage-v3 {
+    width: 220px !important;
+    height: 190px !important;
+  }
+
+  .lf-aura-stage-v3 img {
+    width: 180px !important;
+    height: 180px !important;
+  }
+
+  .lf-donut-v3 {
+    justify-self: start !important;
+  }
+}
+/* End Leads Footer Side By Side v3 */
+
+/* Leads Footer Professional v4 */
+
+.lf-footer-v4 {
+  display: grid !important;
+  grid-template-rows: auto 1fr !important;
+  gap: 18px !important;
+  padding: 14px 16px 24px !important;
+  border-top: 1px solid rgba(132, 159, 206, 0.12) !important;
+}
+
+.lf-footer-top-v4 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+}
+
+.lf-footer-top-v4 p {
+  margin: 0 !important;
+  color: #d7dfec !important;
+  font-size: 0.82rem !important;
+}
+
+.lf-footer-body-v4 {
+  display: grid !important;
+  grid-template-columns: 220px minmax(0, 1fr) !important;
+  gap: 22px !important;
+  align-items: stretch !important;
+  min-height: 260px !important;
+}
+
+.lf-bot-panel-v4 {
+  display: grid !important;
+  place-items: center !important;
+  min-height: 260px !important;
+  border-radius: 22px !important;
+  border: 1px solid rgba(46, 167, 255, 0.12) !important;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(46, 167, 255, 0.12), transparent 46%),
+    rgba(3, 8, 18, 0.20) !important;
+  text-decoration: none !important;
+}
+
+.lf-bot-panel-v4 img {
+  width: 170px !important;
+  height: 170px !important;
+  object-fit: contain !important;
+  filter:
+    drop-shadow(0 24px 40px rgba(0, 0, 0, 0.34))
+    drop-shadow(0 0 24px rgba(46, 167, 255, 0.10)) !important;
+}
+
+.lf-outcomes-panel-v4 {
+  min-height: 260px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 220px !important;
+  gap: 26px !important;
+  align-items: center !important;
+  padding: 26px 28px !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(46, 167, 255, 0.16) !important;
+  background:
+    radial-gradient(circle at 86% 20%, rgba(46, 167, 255, 0.14), transparent 32%),
+    radial-gradient(circle at 10% 12%, rgba(212, 175, 55, 0.12), transparent 28%),
+    linear-gradient(145deg, rgba(8, 20, 38, 0.96), rgba(3, 8, 18, 0.98)) !important;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28) !important;
+}
+
+.lf-outcomes-kicker-v4 {
+  margin: 0 0 10px !important;
+  color: #d4af37 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.14em !important;
+  font-size: 0.7rem !important;
+  font-weight: 900 !important;
+}
+
+.lf-outcomes-copy-v4 h3 {
+  margin: 0 !important;
+  color: #f8fafc !important;
+  font-size: 1.65rem !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.05em !important;
+}
+
+.lf-outcomes-desc-v4 {
+  margin: 10px 0 18px !important;
+  max-width: 520px !important;
+  color: rgba(226, 239, 255, 0.66) !important;
+  font-size: 0.84rem !important;
+  line-height: 1.45 !important;
+}
+
+.lf-outcomes-legend-v4 {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+}
+
+.lf-outcomes-legend-v4 div {
+  border: 1px solid rgba(148, 163, 184, 0.12) !important;
+  border-radius: 16px !important;
+  background: rgba(3, 8, 18, 0.32) !important;
+  padding: 12px 14px !important;
+}
+
+.lf-outcomes-legend-v4 i {
+  display: inline-block !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 999px !important;
+  margin-right: 8px !important;
+  vertical-align: middle !important;
+}
+
+.lf-outcomes-legend-v4 i.won {
+  background: #2ea7ff !important;
+}
+
+.lf-outcomes-legend-v4 i.lost {
+  background: #d4af37 !important;
+}
+
+.lf-outcomes-legend-v4 i.rate {
+  background: #7dd3fc !important;
+}
+
+.lf-outcomes-legend-v4 span {
+  color: rgba(226, 239, 255, 0.76) !important;
+  font-size: 0.76rem !important;
+  font-weight: 700 !important;
+}
+
+.lf-outcomes-legend-v4 strong {
+  display: block !important;
+  margin-top: 6px !important;
+  color: #f8fafc !important;
+  font-size: 1.05rem !important;
+  line-height: 1 !important;
+}
+
+.lf-outcomes-legend-v4 small {
+  display: block !important;
+  margin-top: 4px !important;
+  color: rgba(226, 239, 255, 0.52) !important;
+  font-size: 0.68rem !important;
+}
+
+.lf-donut-wrap-v4 {
+  position: relative !important;
+  width: 200px !important;
+  height: 200px !important;
+  justify-self: end !important;
+  display: grid !important;
+  place-items: center !important;
+  text-decoration: none !important;
+  border-radius: 50% !important;
+}
+
+.lf-donut-ring-v4 {
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: 50% !important;
+  background:
+    radial-gradient(circle at center, rgba(5, 12, 24, 0.98) 0 52%, transparent 53%),
+    conic-gradient(#2ea7ff 0deg 248deg, #d4af37 248deg 360deg) !important;
+  border: 1px solid rgba(148, 163, 184, 0.12) !important;
+  box-shadow:
+    0 26px 60px rgba(0, 0, 0, 0.34),
+    0 0 36px rgba(46, 167, 255, 0.08) !important;
+}
+
+.lf-donut-ring-v4::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 14px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.lf-donut-wrap-v4 strong {
+  position: relative !important;
+  z-index: 1 !important;
+  display: grid !important;
+  place-items: center !important;
+  text-align: center !important;
+  color: #f8fafc !important;
+  font-size: 1.9rem !important;
+  line-height: 1 !important;
+  letter-spacing: -0.05em !important;
+}
+
+.lf-donut-wrap-v4 small {
+  display: block !important;
+  margin-top: 6px !important;
+  color: rgba(226, 239, 255, 0.62) !important;
+  font-size: 0.72rem !important;
+}
+
+@media (max-width: 1200px) {
+  .lf-footer-body-v4,
+  .lf-outcomes-panel-v4,
+  .lf-outcomes-legend-v4 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .lf-donut-wrap-v4 {
+    justify-self: start !important;
+  }
+}
+
+/* End Leads Footer Professional v4 */
+
+/* Leads Clean Rebuild v1 */
+.leads-clean-page {
+  width: 100%;
+  min-height: calc(100vh - 40px);
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  gap: 14px;
+  color: #f5f7fb;
+}
+
+.leads-clean-header {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) auto;
+  gap: 18px;
+  align-items: end;
+}
+
+.leads-clean-header h1 {
+  margin: 0 0 5px;
+  font-size: clamp(2rem, 2.7vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.leads-clean-header p {
+  margin: 0;
+  color: #d7dfec;
+  font-size: 0.95rem;
+}
+
+.leads-clean-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.lc-add,
+.lc-control,
+.lc-search,
+.lc-owner {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 0.78rem;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.lc-add {
+  gap: 8px;
+  padding: 0 18px;
+  color: #08111d;
+  background: linear-gradient(180deg, #ffd968, #f2a914);
+  border: 1px solid rgba(255, 217, 104, 0.72);
+}
+
+.lc-add span {
+  font-size: 1.2rem;
+}
+
+.lc-control {
+  gap: 8px;
+  padding: 0 14px;
+  color: #f5f7fb;
+  background: rgba(3, 13, 27, 0.78);
+  border: 1px solid rgba(245, 188, 22, 0.32);
+}
+
+.lc-control select,
+.lc-sort select {
+  color: #f5f7fb;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  font-weight: 850;
+}
+
+.lc-search {
+  min-width: 260px;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 13px;
+  background: rgba(3, 13, 27, 0.78);
+  border: 1px solid rgba(132, 159, 206, 0.24);
+}
+
+.lc-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #f5f7fb;
+  font: inherit;
+}
+
+.lc-search input::placeholder {
+  color: #8fa2ba;
+}
+
+.lc-owner {
+  min-width: 150px;
+  gap: 9px;
+  padding: 0 10px;
+  color: #f5f7fb;
+  background: rgba(3, 13, 27, 0.78);
+  border: 1px solid rgba(245, 188, 22, 0.32);
+}
+
+.lc-owner > span {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #07111d;
+  font-weight: 950;
+  background: linear-gradient(135deg, #f5bc16, #29a8ff);
+}
+
+.lc-owner small {
+  display: block;
+  color: #90a0b8;
+  margin-top: 1px;
+}
+
+.lc-owner em {
+  margin-left: auto;
+  font-style: normal;
+}
+
+.lc-create {
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(245, 188, 22, 0.42);
+  background: linear-gradient(180deg, rgba(5, 15, 30, 0.96), rgba(2, 8, 18, 0.98));
+}
+
+.lc-create h2 {
+  margin: 0 0 4px;
+  color: #f5bc16;
+}
+
+.lc-create p {
+  margin: 0 0 12px;
+  color: #cad4e4;
+}
+
+.lc-create form {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  align-items: end;
+}
+
+.lc-create label {
+  display: grid;
+  gap: 5px;
+  color: #cad4e4;
+  font-size: 0.75rem;
+  font-weight: 850;
+}
+
+.lc-create input,
+.lc-create select {
+  min-width: 0;
+  height: 38px;
+  border-radius: 9px;
+  padding: 0 10px;
+  color: #f5f7fb;
+  background: rgba(3, 13, 27, 0.82);
+  border: 1px solid rgba(132, 159, 206, 0.28);
+}
+
+.lc-create-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.lc-create-actions button {
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 9px;
+  font-weight: 900;
+  border: 1px solid rgba(132, 159, 206, 0.28);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f5f7fb;
+}
+
+.lc-create-actions button[type="submit"] {
+  color: #08111d;
+  background: #f5bc16;
+  border-color: #f5bc16;
+}
+
+.leads-clean-card {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, auto) auto auto;
+  border-radius: 18px;
+  border: 1px solid rgba(41, 168, 255, 0.42);
+  background:
+    radial-gradient(circle at top right, rgba(10, 132, 255, 0.10), transparent 32%),
+    linear-gradient(180deg, rgba(5, 15, 30, 0.94), rgba(2, 8, 18, 0.98));
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.38);
+  overflow: hidden;
+}
+
+.lc-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(132, 159, 206, 0.16);
+}
+
+.lc-tabs {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lc-tabs button,
+.lc-sort {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9px;
+  color: #f5f7fb;
+  background: transparent;
+  border: 1px solid transparent;
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.lc-tabs button {
+  padding: 0 14px;
+}
+
+.lc-tabs button.active {
+  border-color: #f5bc16;
+  box-shadow: 0 0 0 2px rgba(245, 188, 22, 0.16), inset 0 0 24px rgba(245, 188, 22, 0.12);
+}
+
+.lc-tabs span {
+  margin-left: 7px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: #bce8ff;
+  background: rgba(10, 132, 255, 0.20);
+}
+
+.lc-sort {
+  gap: 8px;
+  padding: 0 12px;
+  border-color: rgba(132, 159, 206, 0.20);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.lc-table-wrap {
+  overflow: auto;
+  padding: 0 10px;
+}
+
+.lc-table {
+  width: 100%;
+  min-width: 1120px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.lc-table th,
+.lc-table td {
+  padding: 9px 7px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(132, 159, 206, 0.12);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.72rem;
+  line-height: 1.15;
+}
+
+.lc-table th {
+  color: #cad4e4;
+  font-weight: 850;
+  background: rgba(6, 18, 34, 0.78);
+}
+
+.lc-link {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #d7dfec;
+}
+
+.lc-link.strong {
+  color: #f5f7fb;
+  font-weight: 850;
+}
+
+.lc-link.value {
+  color: #f5bc16;
+  font-weight: 900;
+}
+
+.lc-source,
+.lc-status,
+.lc-urgency {
+  min-height: 23px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 7px;
+  border-radius: 7px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lc-source-google {
+  color: #fb923c;
+  background: rgba(251, 146, 60, 0.15);
+  border-color: rgba(251, 146, 60, 0.26);
+}
+
+.lc-source-website {
+  color: #f4d978;
+  background: rgba(212, 175, 55, 0.16);
+  border-color: rgba(212, 175, 55, 0.28);
+}
+
+.lc-source-whatsapp {
+  color: #41e0b0;
+  background: rgba(65, 224, 176, 0.14);
+  border-color: rgba(65, 224, 176, 0.26);
+}
+
+.lc-source-facebook {
+  color: #2ea7ff;
+  background: rgba(46, 167, 255, 0.15);
+  border-color: rgba(46, 167, 255, 0.26);
+}
+
+.lc-source-referral {
+  color: #c084fc;
+  background: rgba(168, 85, 247, 0.16);
+  border-color: rgba(168, 85, 247, 0.30);
+}
+
+.lc-status-new,
+.lc-urgency-medium {
+  color: #29a8ff;
+  background: rgba(10, 132, 255, 0.15);
+}
+
+.lc-status-contacted,
+.lc-status-quote-sent {
+  color: #c084fc;
+  background: rgba(168, 85, 247, 0.16);
+}
+
+.lc-status-follow-up,
+.lc-urgency-high {
+  color: #f5bc16;
+  background: rgba(245, 188, 22, 0.16);
+}
+
+.lc-status-referral {
+  color: #f5f7fb;
+  background: rgba(148, 163, 184, 0.16);
+}
+
+.lc-urgency-critical {
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.14);
+}
+
+.lc-urgency-normal {
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.12);
+}
+
+.lc-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.lc-actions a {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  color: #d7dfec;
+  border: 1px solid rgba(132, 159, 206, 0.22);
+  background: rgba(255, 255, 255, 0.035);
+  font-size: 0.68rem;
+}
+
+.lc-insights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 10px 14px;
+  border-top: 1px solid rgba(132, 159, 206, 0.12);
+}
+
+.lc-insights article {
+  min-height: 54px;
+  padding: 9px 11px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(132, 159, 206, 0.15);
+}
+
+.lc-insights strong {
+  display: block;
+  font-size: 0.76rem;
+  color: #f5bc16;
+}
+
+.lc-insights span {
+  display: block;
+  margin-top: 4px;
+  color: #cad4e4;
+  font-size: 0.7rem;
+}
+
+.lc-footer {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 18px;
+  padding: 14px 16px 24px;
+  border-top: 1px solid rgba(132, 159, 206, 0.12);
+}
+
+.lc-footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.lc-footer-top p {
+  margin: 0;
+  color: #d7dfec;
+  font-size: 0.82rem;
+}
+
+.lc-pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lc-pagination a,
+.lc-pagination span {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #f5bc16;
+  font-weight: 900;
+  border: 1px solid rgba(132, 159, 206, 0.22);
+  background: rgba(255, 255, 255, 0.035);
+  font-size: 0.72rem;
+}
+
+.lc-pagination a.active {
+  color: #08111d;
+  background: #f5bc16;
+}
+
+.lc-footer-body {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+  min-height: 260px;
+}
+
+.lc-bot-panel {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  border-radius: 24px;
+  border: 1px solid rgba(46, 167, 255, 0.12);
+  background:
+    radial-gradient(circle at 50% 42%, rgba(46, 167, 255, 0.12), transparent 46%),
+    rgba(3, 8, 18, 0.20);
+}
+
+.lc-bot-panel img {
+  width: 190px;
+  height: 190px;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 24px 40px rgba(0, 0, 0, 0.34))
+    drop-shadow(0 0 24px rgba(46, 167, 255, 0.10));
+}
+
+.lc-outcomes-card {
+  min-height: 260px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 210px;
+  gap: 28px;
+  align-items: center;
+  padding: 26px 30px;
+  border-radius: 26px;
+  border: 1px solid rgba(46, 167, 255, 0.20);
+  background:
+    radial-gradient(circle at 86% 20%, rgba(46, 167, 255, 0.14), transparent 32%),
+    radial-gradient(circle at 10% 12%, rgba(212, 175, 55, 0.12), transparent 28%),
+    linear-gradient(145deg, rgba(8, 20, 38, 0.96), rgba(3, 8, 18, 0.98));
+}
+
+.lc-kicker {
+  margin: 0 0 10px;
+  color: #d4af37;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+.lc-outcomes-copy h3 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: 1.65rem;
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+
+.lc-outcomes-copy > p:not(.lc-kicker) {
+  margin: 10px 0 18px;
+  max-width: 520px;
+  color: rgba(226, 239, 255, 0.66);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.lc-outcome-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.lc-outcome-stats span {
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 16px;
+  background: rgba(3, 8, 18, 0.32);
+  padding: 12px 14px;
+}
+
+.lc-outcome-stats strong {
+  display: block;
+  color: #f4d978;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.lc-outcome-stats small {
+  display: block;
+  margin-top: 4px;
+  color: rgba(226, 239, 255, 0.55);
+  font-size: 0.68rem;
+}
+
+.lc-donut {
+  position: relative;
+  justify-self: end;
+  width: 190px;
+  height: 190px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.lc-donut-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, rgba(5, 12, 24, 0.98) 0 52%, transparent 53%),
+    conic-gradient(#2ea7ff 0deg 248deg, #d4af37 248deg 360deg);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.lc-donut-ring::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.lc-donut strong {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #f8fafc;
+  font-size: 1.9rem;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.lc-donut small {
+  display: block;
+  margin-top: 6px;
+  color: rgba(226, 239, 255, 0.62);
+  font-size: 0.72rem;
+}
+
+@media (max-width: 1280px) {
+  .leads-clean-header,
+  .lc-footer-body,
+  .lc-outcomes-card,
+  .lc-outcome-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .leads-clean-controls {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .lc-create form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lc-create-actions {
+    grid-column: 1 / -1;
+  }
+
+  .lc-donut {
+    justify-self: start;
+  }
+}
+/* End Leads Clean Rebuild v1 */
+
+/* Leads Layout Alignment Fix v2 */
+
+/* Move the top controls to the right side */
+.leads-clean-header {
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: end !important;
+}
+
+.leads-clean-controls {
+  justify-self: end !important;
+  justify-content: flex-end !important;
+  margin-left: auto !important;
+}
+
+/* Keep controls compact so they sit on the right */
+.lc-add {
+  min-width: 128px !important;
+}
+
+.lc-control {
+  min-width: 148px !important;
+}
+
+.lc-search {
+  min-width: 260px !important;
+}
+
+.lc-owner {
+  min-width: 138px !important;
+}
+
+/* Put Aura bot and Conversion Snapshot side by side */
+.lc-footer-body {
+  display: grid !important;
+  grid-template-columns: 280px minmax(0, 1fr) !important;
+  gap: 26px !important;
+  align-items: stretch !important;
+  min-height: 285px !important;
+}
+
+/* Left bot panel */
+.lc-bot-panel {
+  width: 100% !important;
+  min-height: 285px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 26px !important;
+}
+
+.lc-bot-panel img {
+  width: 220px !important;
+  height: 220px !important;
+  object-fit: contain !important;
+}
+
+/* Right conversion snapshot card */
+.lc-outcomes-card {
+  width: 100% !important;
+  min-height: 285px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 210px !important;
+  gap: 30px !important;
+  align-items: center !important;
+}
+
+/* Make the pie feel contained and professional */
+.lc-donut {
+  justify-self: end !important;
+  width: 190px !important;
+  height: 190px !important;
+}
+
+.lc-outcome-stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+@media (max-width: 1080px) {
+  .leads-clean-header,
+  .lc-footer-body,
+  .lc-outcomes-card,
+  .lc-outcome-stats {
+    grid-template-columns: 1fr !important;
+  }
+
+  .leads-clean-controls {
+    justify-self: start !important;
+    justify-content: flex-start !important;
+  }
+
+  .lc-donut {
+    justify-self: start !important;
+  }
+}
+/* End Leads Layout Alignment Fix v2 */
+
+/* Leads Owner Profile Top Right v1 */
+
+/* Create a safe anchor point for the profile */
+.leads-clean-header {
+  position: relative !important;
+  padding-right: 170px !important;
+}
+
+/* Keep the main action controls aligned neatly without the owner profile */
+.leads-clean-controls {
+  justify-self: end !important;
+  justify-content: flex-end !important;
+  padding-right: 0 !important;
+}
+
+/* Pin owner profile to the actual top-right corner */
+.leads-clean-header .lc-owner {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  z-index: 5 !important;
+  min-width: 145px !important;
+  height: 42px !important;
+}
+
+/* Give the search/control row space so it does not crash into the profile */
+.leads-clean-header .lc-search {
+  margin-right: 0 !important;
+}
+
+@media (max-width: 1080px) {
+  .leads-clean-header {
+    padding-right: 0 !important;
+  }
+
+  .leads-clean-header .lc-owner {
+    position: static !important;
+  }
+}
+/* End Leads Owner Profile Top Right v1 */
+
+/* Leads Top Controls Right Fill v1 */
+
+/* Let the action controls use the space where owner profile used to sit */
+.leads-clean-header {
+  grid-template-columns: minmax(240px, 0.75fr) minmax(620px, 1.25fr) !important;
+  column-gap: 24px !important;
+  padding-right: 0 !important;
+}
+
+.leads-clean-controls {
+  justify-self: stretch !important;
+  justify-content: flex-end !important;
+  width: 100% !important;
+  padding-right: 0 !important;
+  gap: 12px !important;
+}
+
+/* Keep owner pinned top-right above the row */
+.leads-clean-header .lc-owner {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+}
+
+/* Give controls better width balance */
+.leads-clean-controls .lc-add {
+  min-width: 140px !important;
+}
+
+.leads-clean-controls .lc-control {
+  min-width: 165px !important;
+}
+
+.leads-clean-controls .lc-search {
+  min-width: 340px !important;
+  max-width: 430px !important;
+  flex: 1 1 340px !important;
+}
+
+/* Make room under the owner profile so controls do not clash */
+.leads-clean-header > div:first-child {
+  padding-right: 165px !important;
+}
+
+@media (max-width: 1280px) {
+  .leads-clean-header {
+    grid-template-columns: 1fr !important;
+  }
+
+  .leads-clean-header > div:first-child {
+    padding-right: 0 !important;
+  }
+
+  .leads-clean-controls {
+    justify-content: flex-start !important;
+  }
+
+  .leads-clean-header .lc-owner {
+    position: static !important;
+  }
+
+  .leads-clean-controls .lc-search {
+    min-width: 260px !important;
+    max-width: none !important;
+  }
+}
+/* End Leads Top Controls Right Fill v1 */
+
+/* Leads Top Controls Full Top Right v2 */
+
+/* Header becomes a clean positioning area */
+.leads-clean-header {
+  position: relative !important;
+  display: block !important;
+  min-height: 78px !important;
+  padding-right: 0 !important;
+}
+
+/* Keep page title on the left */
+.leads-clean-header > div:first-child {
+  max-width: 390px !important;
+  padding-right: 0 !important;
+}
+
+/* Move the full control group into the top-right corner */
+.leads-clean-controls {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  gap: 12px !important;
+  width: auto !important;
+  max-width: calc(100% - 420px) !important;
+  margin-left: auto !important;
+  padding-right: 0 !important;
+  z-index: 5 !important;
+}
+
+/* Owner profile must sit inside the same top-right row, not floating separately */
+.leads-clean-header .lc-owner {
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  min-width: 150px !important;
+  height: 42px !important;
+}
+
+/* Make the controls balanced across the top row */
+.leads-clean-controls .lc-add {
+  min-width: 138px !important;
+}
+
+.leads-clean-controls .lc-control {
+  min-width: 160px !important;
+}
+
+.leads-clean-controls .lc-search {
+  min-width: 300px !important;
+  max-width: 360px !important;
+  flex: 1 1 320px !important;
+}
+
+@media (max-width: 1280px) {
+  .leads-clean-header {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    min-height: auto !important;
+  }
+
+  .leads-clean-header > div:first-child {
+    max-width: none !important;
+  }
+
+  .leads-clean-controls {
+    position: static !important;
+    max-width: none !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+  }
+
+  .leads-clean-controls .lc-search {
+    min-width: 260px !important;
+    max-width: none !important;
+  }
+}
+/* End Leads Top Controls Full Top Right v2 */
+
+/* Leads Top Controls One Row v3 */
+
+/* Keep title left and controls in one top-right row */
+.leads-clean-header {
+  display: grid !important;
+  grid-template-columns: minmax(260px, 0.7fr) minmax(680px, 1.3fr) !important;
+  align-items: start !important;
+  column-gap: 24px !important;
+  min-height: 72px !important;
+}
+
+.leads-clean-header > div:first-child {
+  max-width: 390px !important;
+}
+
+.leads-clean-controls {
+  position: static !important;
+  justify-self: end !important;
+  align-self: start !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  gap: 10px !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+
+.leads-clean-controls .lc-add {
+  min-width: 132px !important;
+  flex: 0 0 auto !important;
+}
+
+.leads-clean-controls .lc-control {
+  min-width: 150px !important;
+  flex: 0 0 auto !important;
+}
+
+.leads-clean-controls .lc-search {
+  min-width: 280px !important;
+  max-width: 390px !important;
+  flex: 1 1 320px !important;
+}
+
+.leads-clean-controls .lc-owner {
+  position: static !important;
+  min-width: 142px !important;
+  height: 40px !important;
+  flex: 0 0 auto !important;
+}
+
+@media (max-width: 1280px) {
+  .leads-clean-header {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+
+  .leads-clean-controls {
+    justify-self: start !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+  }
+
+  .leads-clean-controls .lc-search {
+    min-width: 260px !important;
+    max-width: none !important;
+  }
+}
+/* End Leads Top Controls One Row v3 */
