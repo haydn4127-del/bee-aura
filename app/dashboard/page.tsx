@@ -338,58 +338,73 @@ export default function DashboardPage() {
         </div>
 
         <Panel title="Lead Recovery Trend" badge="Last 7 Days">
-          <div className="command-chart-legend">
+          <div className="command-chart-legend graph-pro-legend">
             <span><i className="blue" /> New enquiries</span>
             <span><i className="green" /> Recovered follow-ups</span>
           </div>
 
-          <svg className="command-line-chart command-pro-line-chart" viewBox="0 0 620 260" aria-label="Lead recovery trend chart">
+          <Link href="/leads" className="dashboard-chart-link dashboard-leads-chart-link" aria-label="Open leads page">
+            <svg
+              className="command-line-chart command-pro-line-chart lead-graph-pro-6a"
+            viewBox="0 0 720 280"
+            aria-label="Lead recovery trend chart"
+          >
             <defs>
-              <linearGradient id="dashboardLeadArea" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0%" stopColor="rgba(46, 167, 255, 0.25)" />
-                <stop offset="100%" stopColor="rgba(46, 167, 255, 0.02)" />
+              <linearGradient id="leadGraphBlue6a" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stopColor="rgba(46, 167, 255, 0.14)" />
+                <stop offset="100%" stopColor="rgba(46, 167, 255, 0)" />
+              </linearGradient>
+              <linearGradient id="leadGraphGreen6a" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stopColor="rgba(212, 175, 55, 0.12)" />
+                <stop offset="100%" stopColor="rgba(212, 175, 55, 0)" />
               </linearGradient>
             </defs>
 
-            <line x1="58" y1="32" x2="58" y2="210" className="dash-axis" />
-            <line x1="58" y1="210" x2="590" y2="210" className="dash-axis" />
+            <rect x="0" y="0" width="720" height="280" rx="22" className="pro-chart-bg" />
 
-            <line x1="58" y1="54" x2="590" y2="54" className="dash-grid" />
-            <line x1="58" y1="92" x2="590" y2="92" className="dash-grid" />
-            <line x1="58" y1="130" x2="590" y2="130" className="dash-grid" />
-            <line x1="58" y1="168" x2="590" y2="168" className="dash-grid" />
+            <line x1="68" y1="42" x2="68" y2="218" className="pro-axis" />
+            <line x1="68" y1="218" x2="666" y2="218" className="pro-axis" />
 
-            <text x="22" y="58" className="dash-axis-label">90</text>
-            <text x="22" y="96" className="dash-axis-label">70</text>
-            <text x="22" y="134" className="dash-axis-label">50</text>
-            <text x="22" y="172" className="dash-axis-label">30</text>
+            <line x1="68" y1="70" x2="666" y2="70" className="pro-grid" />
+            <line x1="68" y1="108" x2="666" y2="108" className="pro-grid" />
+            <line x1="68" y1="146" x2="666" y2="146" className="pro-grid" />
+            <line x1="68" y1="184" x2="666" y2="184" className="pro-grid" />
+
+            <text x="30" y="74" className="pro-label">90</text>
+            <text x="30" y="112" className="pro-label">70</text>
+            <text x="30" y="150" className="pro-label">50</text>
+            <text x="30" y="188" className="pro-label">30</text>
 
             <path
-              d="M76 178 L144 138 L212 128 L280 136 L348 104 L416 72 L484 64 L568 42 L568 210 L76 210 Z"
-              fill="url(#dashboardLeadArea)"
+              d="M86 198 L178 156 L270 146 L362 154 L454 112 L546 88 L638 70 L638 218 L86 218 Z"
+              fill="url(#leadGraphBlue6a)"
+            />
+            <path
+              d="M86 210 L178 178 L270 162 L362 144 L454 146 L546 104 L638 88 L638 218 L86 218 Z"
+              fill="url(#leadGraphGreen6a)"
             />
 
-            <polyline
-              points="76,178 144,138 212,128 280,136 348,104 416,72 484,64 568,42"
-              className="dash-line-primary"
+            <path
+              d="M86 198 L178 156 L270 146 L362 154 L454 112 L546 88 L638 70"
+              className="pro-line-blue"
+            />
+            <path
+              d="M86 210 L178 178 L270 162 L362 144 L454 146 L546 104 L638 88"
+              className="pro-line-green"
             />
 
-            <polyline
-              points="76,196 144,166 212,152 280,132 348,136 416,102 484,78 568,66"
-              className="dash-line-secondary"
-            />
+            <circle cx="638" cy="70" r="4" className="pro-dot-blue" />
+            <circle cx="638" cy="88" r="4" className="pro-dot-green" />
 
-            <circle cx="568" cy="42" r="5" className="dash-dot-primary" />
-            <circle cx="568" cy="66" r="5" className="dash-dot-secondary" />
-
-            <text x="72" y="236" className="dash-x-label">Mon</text>
-            <text x="140" y="236" className="dash-x-label">Tue</text>
-            <text x="208" y="236" className="dash-x-label">Wed</text>
-            <text x="276" y="236" className="dash-x-label">Thu</text>
-            <text x="344" y="236" className="dash-x-label">Fri</text>
-            <text x="412" y="236" className="dash-x-label">Sat</text>
-            <text x="480" y="236" className="dash-x-label">Sun</text>
-          </svg>
+            <text x="78" y="248" className="pro-x">Mon</text>
+            <text x="170" y="248" className="pro-x">Tue</text>
+            <text x="262" y="248" className="pro-x">Wed</text>
+            <text x="354" y="248" className="pro-x">Thu</text>
+            <text x="446" y="248" className="pro-x">Fri</text>
+            <text x="538" y="248" className="pro-x">Sat</text>
+            <text x="630" y="248" className="pro-x">Sun</text>
+            </svg>
+          </Link>
         </Panel>
 
         <Panel title="Booking Performance" badge="Last 7 Days">
