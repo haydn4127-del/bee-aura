@@ -528,64 +528,145 @@ export default function DashboardPage() {
         </Panel>
 
         <Panel title="Smart Inbox" badge="12 Unread" href="/messages">
-          <div className="command-list">
-            {inbox.map(([name, detail, time, count]) => (
-              <Link href="/messages" className="command-list-row" key={name}>
-                <span className="command-face">{name.split(" ").map((part) => part[0]).join("")}</span>
-                <span>
-                  <strong>{name}</strong>
-                  <small>{detail}</small>
-                </span>
-                <em>{time}</em>
-                {count ? <b>{count}</b> : null}
-              </Link>
-            ))}
+          <div className="dashboard-lower-panel dashboard-inbox-v2">
+            <Link href="/messages?search=Emily%20Davis" className="dashboard-feature-row priority">
+              <span className="dashboard-row-icon">ED</span>
+              <span className="dashboard-row-copy">
+                <small>WhatsApp • 2 minutes ago</small>
+                <strong>Emily Davis</strong>
+                <em>Bathroom renovation enquiry needs a fast reply before it cools down.</em>
+              </span>
+              <b>2</b>
+            </Link>
+
+            <Link href="/messages?search=John%20Smith" className="dashboard-simple-row">
+              <span>John Smith</span>
+              <em>Boiler install reply waiting</em>
+              <b>5m</b>
+            </Link>
+
+            <Link href="/messages?search=Tom%20Brown" className="dashboard-simple-row">
+              <span>Tom Brown</span>
+              <em>Urgent plumbing message</em>
+              <b>22m</b>
+            </Link>
+
+            <Link href="/messages?search=Michael%20Walker" className="dashboard-simple-row">
+              <span>Michael Walker</span>
+              <em>Roof repair callback request</em>
+              <b>30m</b>
+            </Link>
           </div>
         </Panel>
 
         <Panel title="New Leads" badge="View all" href="/leads">
-          <div className="command-list">
-            {newLeads.map(([initials, name, detail, time, count]) => (
-              <Link href="/leads" className="command-list-row" key={name}>
-                <span className="command-initials">{initials}</span>
-                <span>
-                  <strong>{name} <small className="command-tag">New</small></strong>
-                  <small>{detail}</small>
-                </span>
-                <em>{time}</em>
-                {count ? <b>{count}</b> : null}
-              </Link>
-            ))}
+          <div className="dashboard-lower-panel dashboard-leads-v2">
+            <Link href="/leads?search=John%20Smith" className="dashboard-lead-card hot">
+              <span>Hot</span>
+              <span className="dashboard-row-copy">
+                <strong>John Smith</strong>
+                <em>Boiler installation • website form • ready to quote</em>
+              </span>
+              <b>£2.4k</b>
+            </Link>
+
+            <Link href="/leads?search=Emily%20Davis" className="dashboard-lead-card warm">
+              <span>Warm</span>
+              <span className="dashboard-row-copy">
+                <strong>Emily Davis</strong>
+                <em>Bathroom renovation • WhatsApp • wants availability</em>
+              </span>
+              <b>£6.8k</b>
+            </Link>
+
+            <Link href="/leads?search=Michael%20Walker" className="dashboard-lead-card review">
+              <span>Review</span>
+              <span className="dashboard-row-copy">
+                <strong>Michael Walker</strong>
+                <em>Roof repair • callback needed • quote not sent</em>
+              </span>
+              <b>£1.9k</b>
+            </Link>
           </div>
         </Panel>
 
         <Panel title="Today's Bookings" badge="14" href="/bookings">
-          <div className="command-schedule">
-            {bookings.map(([time, name, detail, status]) => (
-              <Link href="/bookings" className="command-schedule-row" key={`${time}-${name}`}>
-                <strong>{time}</strong>
-                <span>
-                  <b>{name}</b>
-                  <small>{detail}</small>
-                </span>
-                <em className={`command-status command-status-${status.toLowerCase().replace(" ", "-")}`}>{status}</em>
-              </Link>
-            ))}
+          <div className="dashboard-lower-panel dashboard-bookings-v2">
+            <Link href="/bookings?search=James%20Wilson" className="dashboard-booking-row confirmed">
+              <strong>09:00</strong>
+              <span className="dashboard-row-copy">
+                <b>James Wilson</b>
+                <em>Boiler install • engineer confirmed</em>
+              </span>
+              <small>Confirmed</small>
+            </Link>
+
+            <Link href="/bookings?search=Emily%20Davis" className="dashboard-booking-row confirmed">
+              <strong>11:30</strong>
+              <span className="dashboard-row-copy">
+                <b>Emily Davis</b>
+                <em>Bathroom quote visit • customer confirmed</em>
+              </span>
+              <small>Confirmed</small>
+            </Link>
+
+            <Link href="/bookings?search=Tom%20Brown" className="dashboard-booking-row active">
+              <strong>13:00</strong>
+              <span className="dashboard-row-copy">
+                <b>Tom Brown</b>
+                <em>Plumbing repair • currently on site</em>
+              </span>
+              <small>In progress</small>
+            </Link>
+
+            <Link href="/bookings?search=Sarah%20Roberts" className="dashboard-booking-row waiting">
+              <strong>15:00</strong>
+              <span className="dashboard-row-copy">
+                <b>Sarah Roberts</b>
+                <em>Kitchen fitting • confirm ETA</em>
+              </span>
+              <small>Check</small>
+            </Link>
           </div>
         </Panel>
 
         <Panel title="Follow-Up Queue" badge="8 Due" href="/follow-ups">
-          <div className="command-list">
-            {followUps.map(([initials, name, detail, status]) => (
-              <Link href="/follow-ups" className="command-list-row" key={name}>
-                <span className="command-initials">{initials}</span>
-                <span>
-                  <strong>{name}</strong>
-                  <small>{detail}</small>
-                </span>
-                <em className={`command-due command-due-${status.toLowerCase()}`}>{status}</em>
-              </Link>
-            ))}
+          <div className="dashboard-lower-panel dashboard-followups-v2">
+            <Link href="/follow-ups?search=Alice%20Hughes" className="dashboard-followup-row critical">
+              <span>High</span>
+              <span className="dashboard-row-copy">
+                <strong>Alice Hughes</strong>
+                <em>Boiler service enquiry overdue. Call before the lead goes cold.</em>
+              </span>
+              <b>Call now</b>
+            </Link>
+
+            <Link href="/follow-ups?search=Paul%20Davies" className="dashboard-followup-row medium">
+              <span>Med</span>
+              <span className="dashboard-row-copy">
+                <strong>Paul Davies</strong>
+                <em>Quote follow-up due today. Decision likely after callback.</em>
+              </span>
+              <b>Today</b>
+            </Link>
+
+            <Link href="/follow-ups?search=Lucy%20Clarke" className="dashboard-followup-row medium">
+              <span>Med</span>
+              <span className="dashboard-row-copy">
+                <strong>Lucy Clarke</strong>
+                <em>Bathroom renovation reply needed. Keep momentum warm.</em>
+              </span>
+              <b>Today</b>
+            </Link>
+
+            <Link href="/follow-ups?search=Natalie%20Hall" className="dashboard-followup-row low">
+              <span>Low</span>
+              <span className="dashboard-row-copy">
+                <strong>Natalie Hall</strong>
+                <em>Kitchen fitting reminder scheduled for tomorrow morning.</em>
+              </span>
+              <b>Tomorrow</b>
+            </Link>
           </div>
         </Panel>
 

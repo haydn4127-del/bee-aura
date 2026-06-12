@@ -11662,3 +11662,412 @@ aside {
   }
 }
 /* End Graph Detail Pass 6C */
+
+/* Dashboard Content Cleanup v1 */
+.dashboard-inbox-focus,
+.dashboard-lead-pulse,
+.dashboard-booking-timeline,
+.dashboard-risk-queue {
+  display: grid !important;
+  gap: 10px !important;
+}
+
+.dashboard-inbox-focus a,
+.dashboard-lead-pulse a,
+.dashboard-booking-timeline a,
+.dashboard-risk-queue a {
+  text-decoration: none !important;
+}
+
+.dashboard-inbox-priority {
+  display: grid !important;
+  grid-template-columns: 36px minmax(0, 1fr) auto !important;
+  gap: 10px !important;
+  align-items: center !important;
+  padding: 12px !important;
+  border-radius: 17px !important;
+  border: 1px solid rgba(46, 167, 255, 0.18) !important;
+  background:
+    radial-gradient(circle at top right, rgba(46, 167, 255, 0.12), transparent 42%),
+    rgba(3, 8, 18, 0.34) !important;
+}
+
+.dashboard-inbox-priority small,
+.dashboard-inbox-priority em,
+.dashboard-lead-pulse-row em,
+.dashboard-booking-slot small,
+.dashboard-risk-row em {
+  color: rgba(226, 239, 255, 0.58) !important;
+  font-style: normal !important;
+  font-size: 0.72rem !important;
+  line-height: 1.28 !important;
+}
+
+.dashboard-inbox-priority strong,
+.dashboard-lead-pulse-row strong,
+.dashboard-risk-row strong {
+  display: block !important;
+  color: #f8fafc !important;
+  font-size: 0.86rem !important;
+  margin: 2px 0 !important;
+}
+
+.dashboard-inbox-priority b {
+  display: grid !important;
+  place-items: center !important;
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 999px !important;
+  background: #2ea7ff !important;
+  color: #04111f !important;
+  font-size: 0.72rem !important;
+}
+
+.dashboard-mini-queue {
+  display: grid !important;
+  gap: 7px !important;
+}
+
+.dashboard-mini-queue a {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  padding: 8px 0 !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08) !important;
+}
+
+.dashboard-mini-queue strong {
+  color: rgba(248, 250, 252, 0.9) !important;
+  font-size: 0.78rem !important;
+}
+
+.dashboard-mini-queue span {
+  color: rgba(226, 239, 255, 0.54) !important;
+  font-size: 0.7rem !important;
+  text-align: right !important;
+}
+
+.dashboard-lead-pulse-row {
+  display: grid !important;
+  grid-template-columns: 48px minmax(0, 1fr) auto !important;
+  gap: 10px !important;
+  align-items: center !important;
+  padding: 10px 0 !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08) !important;
+}
+
+.dashboard-lead-pulse-row > span,
+.dashboard-risk-row > span {
+  display: inline-grid !important;
+  place-items: center !important;
+  min-width: 42px !important;
+  height: 24px !important;
+  border-radius: 999px !important;
+  font-size: 0.62rem !important;
+  font-weight: 950 !important;
+}
+
+.dashboard-lead-pulse-row.hot > span,
+.dashboard-risk-row.critical > span {
+  background: rgba(212, 175, 55, 0.16) !important;
+  color: #f4d978 !important;
+}
+
+.dashboard-lead-pulse-row.warm > span,
+.dashboard-risk-row.medium > span {
+  background: rgba(46, 167, 255, 0.13) !important;
+  color: #2ea7ff !important;
+}
+
+.dashboard-lead-pulse-row.cold > span,
+.dashboard-risk-row.low > span {
+  background: rgba(148, 163, 184, 0.12) !important;
+  color: rgba(226, 239, 255, 0.72) !important;
+}
+
+.dashboard-lead-pulse-row b {
+  color: #f4d978 !important;
+  font-size: 0.82rem !important;
+}
+
+.dashboard-booking-slot {
+  display: grid !important;
+  grid-template-columns: 46px minmax(0, 1fr) auto !important;
+  gap: 10px !important;
+  align-items: center !important;
+  padding: 9px 0 !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08) !important;
+}
+
+.dashboard-booking-slot > strong {
+  color: #f8fafc !important;
+  font-size: 0.86rem !important;
+}
+
+.dashboard-booking-slot b {
+  color: rgba(248, 250, 252, 0.9) !important;
+  font-size: 0.78rem !important;
+}
+
+.dashboard-booking-slot em,
+.dashboard-risk-row b {
+  justify-self: end !important;
+  border-radius: 999px !important;
+  padding: 6px 9px !important;
+  font-style: normal !important;
+  font-size: 0.68rem !important;
+  font-weight: 950 !important;
+}
+
+.dashboard-booking-slot.confirmed em {
+  background: rgba(65, 224, 176, 0.12) !important;
+  color: #41e0b0 !important;
+}
+
+.dashboard-booking-slot.active em {
+  background: rgba(46, 167, 255, 0.13) !important;
+  color: #2ea7ff !important;
+}
+
+.dashboard-booking-slot.waiting em {
+  background: rgba(212, 175, 55, 0.13) !important;
+  color: #f4d978 !important;
+}
+
+.dashboard-risk-row {
+  display: grid !important;
+  grid-template-columns: 42px minmax(0, 1fr) auto !important;
+  gap: 10px !important;
+  align-items: center !important;
+  padding: 10px 0 !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08) !important;
+}
+
+.dashboard-risk-row.critical b {
+  background: rgba(248, 113, 113, 0.13) !important;
+  color: #fca5a5 !important;
+}
+
+.dashboard-risk-row.medium b {
+  background: rgba(212, 175, 55, 0.13) !important;
+  color: #f4d978 !important;
+}
+
+.dashboard-risk-row.low b {
+  background: rgba(148, 163, 184, 0.10) !important;
+  color: rgba(226, 239, 255, 0.72) !important;
+}
+
+.dashboard-inbox-focus a:hover,
+.dashboard-lead-pulse a:hover,
+.dashboard-booking-timeline a:hover,
+.dashboard-risk-queue a:hover {
+  background-color: rgba(46, 167, 255, 0.035) !important;
+}
+/* End Dashboard Content Cleanup v1 */
+
+/* Dashboard Lower Box Cleanup v2 */
+.dashboard-lower-panel {
+  display: grid !important;
+  gap: 10px !important;
+  align-content: start !important;
+}
+
+.dashboard-lower-panel a {
+  text-decoration: none !important;
+  color: inherit !important;
+  min-width: 0 !important;
+}
+
+.dashboard-row-copy {
+  display: grid !important;
+  gap: 3px !important;
+  min-width: 0 !important;
+}
+
+.dashboard-row-copy strong,
+.dashboard-row-copy b {
+  color: rgba(248, 250, 252, 0.94) !important;
+  font-size: 0.82rem !important;
+  line-height: 1.15 !important;
+}
+
+.dashboard-row-copy small,
+.dashboard-row-copy em {
+  color: rgba(226, 239, 255, 0.58) !important;
+  font-style: normal !important;
+  font-size: 0.69rem !important;
+  line-height: 1.28 !important;
+}
+
+.dashboard-feature-row {
+  display: grid !important;
+  grid-template-columns: 38px minmax(0, 1fr) 26px !important;
+  align-items: center !important;
+  gap: 11px !important;
+  padding: 12px !important;
+  border: 1px solid rgba(46, 167, 255, 0.16) !important;
+  border-radius: 18px !important;
+  background:
+    radial-gradient(circle at top right, rgba(46, 167, 255, 0.10), transparent 42%),
+    rgba(3, 8, 18, 0.32) !important;
+}
+
+.dashboard-row-icon {
+  width: 34px !important;
+  height: 34px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 999px !important;
+  background: rgba(46, 167, 255, 0.14) !important;
+  color: #dff3ff !important;
+  font-size: 0.72rem !important;
+  font-weight: 950 !important;
+}
+
+.dashboard-feature-row > b {
+  width: 24px !important;
+  height: 24px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 999px !important;
+  background: #2ea7ff !important;
+  color: #04111f !important;
+  font-size: 0.72rem !important;
+}
+
+.dashboard-simple-row {
+  display: grid !important;
+  grid-template-columns: minmax(82px, 0.8fr) minmax(0, 1.3fr) 32px !important;
+  gap: 8px !important;
+  align-items: center !important;
+  padding: 8px 2px !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08) !important;
+}
+
+.dashboard-simple-row span,
+.dashboard-simple-row b {
+  color: rgba(248, 250, 252, 0.88) !important;
+  font-size: 0.74rem !important;
+  font-weight: 850 !important;
+}
+
+.dashboard-simple-row em {
+  color: rgba(226, 239, 255, 0.52) !important;
+  font-size: 0.68rem !important;
+  font-style: normal !important;
+  line-height: 1.2 !important;
+}
+
+.dashboard-simple-row b {
+  text-align: right !important;
+}
+
+.dashboard-lead-card,
+.dashboard-followup-row {
+  display: grid !important;
+  grid-template-columns: 50px minmax(0, 1fr) 50px !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 10px 0 !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08) !important;
+}
+
+.dashboard-lead-card > span:first-child,
+.dashboard-followup-row > span:first-child {
+  min-width: 42px !important;
+  height: 24px !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  border-radius: 999px !important;
+  font-size: 0.62rem !important;
+  font-weight: 950 !important;
+}
+
+.dashboard-lead-card.hot > span:first-child,
+.dashboard-followup-row.critical > span:first-child {
+  background: rgba(212, 175, 55, 0.16) !important;
+  color: #f4d978 !important;
+}
+
+.dashboard-lead-card.warm > span:first-child,
+.dashboard-followup-row.medium > span:first-child {
+  background: rgba(46, 167, 255, 0.13) !important;
+  color: #2ea7ff !important;
+}
+
+.dashboard-lead-card.review > span:first-child,
+.dashboard-followup-row.low > span:first-child {
+  background: rgba(148, 163, 184, 0.12) !important;
+  color: rgba(226, 239, 255, 0.72) !important;
+}
+
+.dashboard-lead-card > b {
+  color: #f4d978 !important;
+  font-size: 0.78rem !important;
+  text-align: right !important;
+}
+
+.dashboard-booking-row {
+  display: grid !important;
+  grid-template-columns: 48px minmax(0, 1fr) 78px !important;
+  gap: 10px !important;
+  align-items: center !important;
+  padding: 10px 0 !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08) !important;
+}
+
+.dashboard-booking-row > strong {
+  color: #f8fafc !important;
+  font-size: 0.86rem !important;
+}
+
+.dashboard-booking-row small,
+.dashboard-followup-row > b {
+  justify-self: end !important;
+  text-align: center !important;
+  border-radius: 999px !important;
+  padding: 6px 8px !important;
+  font-size: 0.66rem !important;
+  font-weight: 950 !important;
+  white-space: nowrap !important;
+}
+
+.dashboard-booking-row.confirmed small {
+  background: rgba(65, 224, 176, 0.12) !important;
+  color: #41e0b0 !important;
+}
+
+.dashboard-booking-row.active small {
+  background: rgba(46, 167, 255, 0.13) !important;
+  color: #2ea7ff !important;
+}
+
+.dashboard-booking-row.waiting small {
+  background: rgba(212, 175, 55, 0.13) !important;
+  color: #f4d978 !important;
+}
+
+.dashboard-followup-row > b {
+  color: rgba(226, 239, 255, 0.8) !important;
+}
+
+.dashboard-followup-row.critical > b {
+  background: rgba(248, 113, 113, 0.14) !important;
+  color: #fca5a5 !important;
+}
+
+.dashboard-followup-row.medium > b {
+  background: rgba(212, 175, 55, 0.13) !important;
+  color: #f4d978 !important;
+}
+
+.dashboard-followup-row.low > b {
+  background: rgba(148, 163, 184, 0.10) !important;
+  color: rgba(226, 239, 255, 0.72) !important;
+}
+
+.dashboard-lower-panel a:hover {
+  background-color: rgba(46, 167, 255, 0.035) !important;
+}
+/* End Dashboard Lower Box Cleanup v2 */
