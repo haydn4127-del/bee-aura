@@ -271,7 +271,7 @@ const baseConversations: Conversation[] = [
     email: "lucas.green@example.com",
     address: "Erdington, Birmingham",
     channel: "Facebook",
-    status: "Quote Sent",
+    status: "Follow-up",
     priority: "Tomorrow",
     enquiry: "Blocked drain",
     lastMessage: "Thanks for the quote. Can you still do tomorrow around lunchtime?",
