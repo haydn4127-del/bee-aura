@@ -1,397 +1,990 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
+import styles from "./customers.module.css";
 
 type CustomerType = "Active" | "Repeat" | "VIP" | "New" | "Inactive";
+type CustomerTab = "All" | CustomerType;
+
+type Channel =
+  | "WhatsApp"
+  | "Phone"
+  | "Website"
+  | "Email"
+  | "Facebook"
+  | "Instagram"
+  | "SMS";
+
+type ChannelFilter = "All Channels" | Channel;
+
+type SortMode =
+  | "Last Activity"
+  | "Total Spend"
+  | "Next Booking"
+  | "Satisfaction"
+  | "Name";
+
+type Area =
+  | "Manchester"
+  | "Salford"
+  | "Stockport"
+  | "Bolton"
+  | "Rochdale"
+  | "Oldham";
 
 type Customer = {
   id: string;
-  name: string;
-  slug: string;
   initials: string;
-  contact: string;
-  area: string;
-  type: CustomerType;
+  name: string;
+  phone: string;
+  area: Area;
+  channel: Channel;
+  customerType: CustomerType;
   lastService: string;
-  totalSpend: string;
+  lastServiceDate: string;
+  totalSpend: number;
   lastActivity: string;
+  lastActivityMinutes: number;
   nextBooking: string;
+  nextBookingRank: number;
   satisfaction: number;
-  owner: string;
-  service: string;
+  risk: "Low" | "Medium" | "High";
+  opportunity: string;
+  notes: string;
 };
 
-const startingCustomers: Customer[] = [
+const customerTypes: CustomerType[] = [
+  "Active",
+  "Repeat",
+  "VIP",
+  "New",
+  "Inactive",
+];
+
+const tabs: CustomerTab[] = ["All", ...customerTypes];
+
+const channels: ChannelFilter[] = [
+  "All Channels",
+  "WhatsApp",
+  "Phone",
+  "Website",
+  "Email",
+  "Facebook",
+  "Instagram",
+  "SMS",
+];
+
+const sortModes: SortMode[] = [
+  "Last Activity",
+  "Total Spend",
+  "Next Booking",
+  "Satisfaction",
+  "Name",
+];
+
+const areas: Area[] = [
+  "Manchester",
+  "Salford",
+  "Stockport",
+  "Bolton",
+  "Rochdale",
+  "Oldham",
+];
+
+const initialCustomers: Customer[] = [
   {
-    id: "CUS-1001",
-    name: "Tom Wilson",
-    slug: "tom-wilson",
-    initials: "TW",
-    contact: "07912 345678",
-    area: "Birmingham",
-    type: "Active",
-    lastService: "24 May 2025",
-    totalSpend: "£1,245",
-    lastActivity: "2h ago",
-    nextBooking: "29 May 2025",
-    satisfaction: 5,
-    owner: "John D.",
-    service: "Boiler service",
-  },
-  {
-    id: "CUS-1002",
-    name: "Sarah Johnson",
-    slug: "sarah-johnson",
+    id: "sarah-johnson",
     initials: "SJ",
-    contact: "07845 678912",
-    area: "Solihull",
-    type: "Repeat",
-    lastService: "22 May 2025",
-    totalSpend: "£895",
+    name: "Sarah Johnson",
+    phone: "07845 678912",
+    area: "Salford",
+    channel: "WhatsApp",
+    customerType: "Repeat",
+    lastService: "Boiler service",
+    lastServiceDate: "22 May 2025",
+    totalSpend: 895,
     lastActivity: "15m ago",
+    lastActivityMinutes: 15,
     nextBooking: "22 May 2025",
-    satisfaction: 4.5,
-    owner: "John D.",
-    service: "Emergency boiler repair",
-  },
-  {
-    id: "CUS-1003",
-    name: "Emma Davis",
-    slug: "emma-davis",
-    initials: "ED",
-    contact: "07955 789123",
-    area: "Dudley",
-    type: "VIP",
-    lastService: "18 Jun 2025",
-    totalSpend: "£6,200",
-    lastActivity: "1h ago",
-    nextBooking: "18 Jun 2025",
-    satisfaction: 5,
-    owner: "Lucy C.",
-    service: "Plumbing leak repair",
-  },
-  {
-    id: "CUS-1004",
-    name: "Mike Thompson",
-    slug: "mike-thompson",
-    initials: "MT",
-    contact: "07798 123456",
-    area: "Sutton Coldfield",
-    type: "Active",
-    lastService: "27 May 2025",
-    totalSpend: "£780",
-    lastActivity: "2h ago",
-    nextBooking: "27 May 2025",
+    nextBookingRank: 1,
     satisfaction: 4,
-    owner: "Adam H.",
-    service: "Electrical fault inspection",
+    risk: "Low",
+    opportunity: "Annual service reminder",
+    notes: "Repeat customer. Strong chance of another booked service if followed up quickly.",
   },
   {
-    id: "CUS-1005",
-    name: "James Brown",
-    slug: "james-brown",
-    initials: "JB",
-    contact: "07534 567890",
-    area: "Wolverhampton",
-    type: "Repeat",
-    lastService: "20 May 2025",
-    totalSpend: "£640",
-    lastActivity: "3h ago",
-    nextBooking: "—",
-    satisfaction: 4.5,
-    owner: "John D.",
-    service: "Drain clearance",
-  },
-  {
-    id: "CUS-1006",
-    name: "Olivia Smith",
-    slug: "olivia-smith",
-    initials: "OS",
-    contact: "07766 445566",
-    area: "Walsall",
-    type: "New",
-    lastService: "03 Jun 2025",
-    totalSpend: "£210",
-    lastActivity: "5h ago",
-    nextBooking: "03 Jun 2025",
-    satisfaction: 3.5,
-    owner: "Lucy C.",
-    service: "Thermostat installation",
-  },
-  {
-    id: "CUS-1007",
-    name: "David Clarke",
-    slug: "david-clarke",
+    id: "david-clarke",
     initials: "DC",
-    contact: "07888 223344",
-    area: "Birmingham",
-    type: "VIP",
-    lastService: "30 May 2025",
-    totalSpend: "£1,850",
+    name: "David Clarke",
+    phone: "07888 223344",
+    area: "Manchester",
+    channel: "Phone",
+    customerType: "VIP",
+    lastService: "Emergency repair",
+    lastServiceDate: "30 May 2025",
+    totalSpend: 1850,
     lastActivity: "1d ago",
+    lastActivityMinutes: 1440,
     nextBooking: "30 May 2025",
+    nextBookingRank: 8,
     satisfaction: 5,
-    owner: "John D.",
-    service: "Maintenance plan",
+    risk: "Low",
+    opportunity: "Owner-approved review request",
+    notes: "High-value customer. Keep owner approval on pricing, call-backs, and review requests.",
   },
   {
-    id: "CUS-1008",
-    name: "Charlotte Lee",
-    slug: "charlotte-lee",
+    id: "emma-davis",
+    initials: "ED",
+    name: "Emma Davis",
+    phone: "07955 789123",
+    area: "Stockport",
+    channel: "Website",
+    customerType: "VIP",
+    lastService: "Heating install",
+    lastServiceDate: "18 Jun 2025",
+    totalSpend: 6200,
+    lastActivity: "1h ago",
+    lastActivityMinutes: 60,
+    nextBooking: "18 Jun 2025",
+    nextBookingRank: 12,
+    satisfaction: 5,
+    risk: "Low",
+    opportunity: "Case study candidate",
+    notes: "Premium customer. Good example of high-value work captured through the website.",
+  },
+  {
+    id: "charlotte-lee",
     initials: "CL",
-    contact: "07990 112233",
-    area: "Solihull",
-    type: "Repeat",
-    lastService: "24 Jun 2025",
-    totalSpend: "£520",
+    name: "Charlotte Lee",
+    phone: "07990 112233",
+    area: "Salford",
+    channel: "Instagram",
+    customerType: "Repeat",
+    lastService: "Leak inspection",
+    lastServiceDate: "24 Jun 2025",
+    totalSpend: 520,
     lastActivity: "2d ago",
+    lastActivityMinutes: 2880,
     nextBooking: "24 Jun 2025",
+    nextBookingRank: 15,
     satisfaction: 4,
-    owner: "Adam H.",
-    service: "Boiler service",
+    risk: "Medium",
+    opportunity: "Confirmation follow-up",
+    notes: "Repeat enquiry from social. Needs a warm confirmation message before the booking.",
   },
   {
-    id: "CUS-1009",
-    name: "Ben Morris",
-    slug: "ben-morris",
+    id: "ben-morris",
     initials: "BM",
-    contact: "07700 998877",
-    area: "Dudley",
-    type: "Inactive",
-    lastService: "12 Apr 2025",
-    totalSpend: "£250",
+    name: "Ben Morris",
+    phone: "07700 998877",
+    area: "Stockport",
+    channel: "SMS",
+    customerType: "Inactive",
+    lastService: "Radiator repair",
+    lastServiceDate: "12 Apr 2025",
+    totalSpend: 250,
     lastActivity: "2d ago",
-    nextBooking: "—",
+    lastActivityMinutes: 2880,
+    nextBooking: "No booking",
+    nextBookingRank: 999,
     satisfaction: 3,
-    owner: "Lucy C.",
-    service: "Drain clearance",
+    risk: "High",
+    opportunity: "Win-back message",
+    notes: "Inactive customer. Good fit for a polite service check-in or seasonal reminder.",
+  },
+  {
+    id: "tom-wilson",
+    initials: "TW",
+    name: "Tom Wilson",
+    phone: "07912 345678",
+    area: "Manchester",
+    channel: "Email",
+    customerType: "Active",
+    lastService: "Kitchen plumbing",
+    lastServiceDate: "24 May 2025",
+    totalSpend: 1245,
+    lastActivity: "2h ago",
+    lastActivityMinutes: 120,
+    nextBooking: "29 May 2025",
+    nextBookingRank: 6,
+    satisfaction: 5,
+    risk: "Low",
+    opportunity: "Booking reminder",
+    notes: "Active customer with upcoming work. Keep reminders warm and professional.",
+  },
+  {
+    id: "mike-thompson",
+    initials: "MT",
+    name: "Mike Thompson",
+    phone: "07798 123456",
+    area: "Bolton",
+    channel: "Facebook",
+    customerType: "Active",
+    lastService: "Drainage check",
+    lastServiceDate: "27 May 2025",
+    totalSpend: 780,
+    lastActivity: "2h ago",
+    lastActivityMinutes: 130,
+    nextBooking: "27 May 2025",
+    nextBookingRank: 5,
+    satisfaction: 4,
+    risk: "Medium",
+    opportunity: "Social lead nurture",
+    notes: "Facebook lead now active. Shows how social messages can become booked jobs.",
+  },
+  {
+    id: "james-brown",
+    initials: "JB",
+    name: "James Brown",
+    phone: "07534 567890",
+    area: "Rochdale",
+    channel: "WhatsApp",
+    customerType: "Repeat",
+    lastService: "Tap replacement",
+    lastServiceDate: "20 May 2025",
+    totalSpend: 640,
+    lastActivity: "3h ago",
+    lastActivityMinutes: 180,
+    nextBooking: "No booking",
+    nextBookingRank: 999,
+    satisfaction: 4,
+    risk: "Medium",
+    opportunity: "Review request queue",
+    notes: "Repeat WhatsApp customer. Good candidate for owner-approved review request.",
+  },
+  {
+    id: "olivia-smith",
+    initials: "OS",
+    name: "Olivia Smith",
+    phone: "07766 445566",
+    area: "Oldham",
+    channel: "Website",
+    customerType: "New",
+    lastService: "New enquiry",
+    lastServiceDate: "03 Jun 2025",
+    totalSpend: 210,
+    lastActivity: "5h ago",
+    lastActivityMinutes: 300,
+    nextBooking: "03 Jun 2025",
+    nextBookingRank: 9,
+    satisfaction: 3,
+    risk: "Medium",
+    opportunity: "First follow-up",
+    notes: "New website customer. Needs fast first follow-up to avoid losing the lead.",
   },
 ];
 
-const customerTabs: Array<"All" | CustomerType> = ["All", "Active", "Repeat", "VIP", "New", "Inactive"];
-
-const statCards = [
-  { icon: "👥", label: "Repeat Customers", value: "128", change: "↑ 18% vs last 30 days", tone: "blue" },
-  { icon: "☆", label: "VIP Customers", value: "22", change: "↑ 12% vs last 30 days", tone: "gold" },
-  { icon: "▣", label: "Avg Spend", value: "£412", change: "↑ 9% vs last 30 days", tone: "cyan" },
-  { icon: "↻", label: "Returning Rate", value: "68%", change: "↑ 11% vs last 30 days", tone: "gold" },
+const portfolioBreakdown = [
+  {
+    label: "Active",
+    count: 58,
+    percentage: 45,
+    value: "£47.2k",
+    note: "bookable customer base",
+  },
+  {
+    label: "VIP",
+    count: 22,
+    percentage: 17,
+    value: "£31.5k",
+    note: "highest value customers",
+  },
+  {
+    label: "Repeat",
+    count: 36,
+    percentage: 28,
+    value: "£22.8k",
+    note: "easy repeat-work wins",
+  },
+  {
+    label: "New",
+    count: 5,
+    percentage: 4,
+    value: "£1.1k",
+    note: "needs fast nurture",
+  },
+  {
+    label: "Inactive",
+    count: 7,
+    percentage: 6,
+    value: "£3.4k",
+    note: "win-back opportunity",
+  },
 ];
 
-function typeClass(type: CustomerType) {
-  return type.toLowerCase();
+const currencyFormatter = new Intl.NumberFormat("en-GB", {
+  style: "currency",
+  currency: "GBP",
+  maximumFractionDigits: 0,
+});
+
+const typeStyles: Record<CustomerType, string> = {
+  Active: styles.typeActive,
+  Repeat: styles.typeRepeat,
+  VIP: styles.typeVip,
+  New: styles.typeNew,
+  Inactive: styles.typeInactive,
+};
+
+const riskStyles: Record<Customer["risk"], string> = {
+  Low: styles.riskLow,
+  Medium: styles.riskMedium,
+  High: styles.riskHigh,
+};
+
+function formatCurrency(value: number) {
+  return currencyFormatter.format(value);
 }
 
-function renderStars(score: number) {
-  const fullStars = Math.floor(score);
-  const hasHalf = score % 1 !== 0;
-  const emptyStars = 5 - fullStars - (hasHalf ? 1 : 0);
+function makeInitials(name: string) {
+  return (
+    name
+      .split(" ")
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((part) => part.charAt(0).toUpperCase())
+      .join("") || "DC"
+  );
+}
 
-  return `${"★".repeat(fullStars)}${hasHalf ? "☆" : ""}${"☆".repeat(emptyStars)}`;
+function makeStars(score: number) {
+  const full = Math.max(0, Math.min(5, Math.round(score)));
+  return "★★★★★".slice(0, full) + "☆☆☆☆☆".slice(0, 5 - full);
 }
 
 export default function CustomersPage() {
-  const [customers, setCustomers] = useState<Customer[]>(startingCustomers);
-  const [activeTab, setActiveTab] = useState<"All" | CustomerType>("All");
-  const [search, setSearch] = useState("");
-  const [notice, setNotice] = useState("Customer command centre ready.");
+  const [customers, setCustomers] = useState<Customer[]>(initialCustomers);
+  const [selectedTab, setSelectedTab] = useState<CustomerTab>("All");
+  const [channelFilter, setChannelFilter] =
+    useState<ChannelFilter>("All Channels");
+  const [sortMode, setSortMode] = useState<SortMode>("Last Activity");
+  const [searchText, setSearchText] = useState("");
+  const [selectedCustomer, setSelectedCustomer] = useState<Customer | null>(
+    initialCustomers[0]
+  );
+  const [addPanelOpen, setAddPanelOpen] = useState(false);
+  const [ownerPanelOpen, setOwnerPanelOpen] = useState(false);
+  const [demoNotice, setDemoNotice] = useState(
+    "Customers page ready: filters, search, sorting, customer records, and demo actions are active."
+  );
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    area: "Manchester" as Area,
+    channel: "WhatsApp" as Channel,
+    customerType: "New" as CustomerType,
+    notes: "",
+  });
 
-  const filteredCustomers = useMemo(() => {
-    const query = search.trim().toLowerCase();
+  const tabCounts = useMemo(() => {
+    const counts = {} as Record<CustomerTab, number>;
 
-    return customers.filter((customer) => {
-      const tabMatch = activeTab === "All" || customer.type === activeTab;
-      const searchMatch =
-        query.length === 0 ||
-        customer.name.toLowerCase().includes(query) ||
-        customer.area.toLowerCase().includes(query) ||
-        customer.contact.toLowerCase().includes(query) ||
-        customer.service.toLowerCase().includes(query) ||
-        customer.type.toLowerCase().includes(query);
-
-      return tabMatch && searchMatch;
+    tabs.forEach((tab) => {
+      counts[tab] =
+        tab === "All"
+          ? customers.length
+          : customers.filter((customer) => customer.customerType === tab)
+              .length;
     });
-  }, [activeTab, customers, search]);
 
-  const counts = useMemo(() => {
-    return customers.reduce(
-      (total, customer) => {
-        total.all += 1;
-        total[customer.type] += 1;
-        return total;
-      },
-      { all: 0, Active: 0, Repeat: 0, VIP: 0, New: 0, Inactive: 0 } as Record<
-        "all" | CustomerType,
-        number
-      >,
-    );
+    return counts;
   }, [customers]);
 
-  function addDemoCustomer() {
-    const nextNumber = customers.length + 1;
+  const filteredCustomers = useMemo(() => {
+    const query = searchText.trim().toLowerCase();
+
+    const filtered = customers.filter((customer) => {
+      const matchesTab =
+        selectedTab === "All" || customer.customerType === selectedTab;
+
+      const matchesChannel =
+        channelFilter === "All Channels" || customer.channel === channelFilter;
+
+      const searchable = [
+        customer.name,
+        customer.phone,
+        customer.area,
+        customer.channel,
+        customer.customerType,
+        customer.lastService,
+        customer.opportunity,
+        customer.notes,
+        customer.risk,
+      ]
+        .join(" ")
+        .toLowerCase();
+
+      return matchesTab && matchesChannel && (!query || searchable.includes(query));
+    });
+
+    return [...filtered].sort((a, b) => {
+      if (sortMode === "Total Spend") return b.totalSpend - a.totalSpend;
+      if (sortMode === "Next Booking") return a.nextBookingRank - b.nextBookingRank;
+      if (sortMode === "Satisfaction") return b.satisfaction - a.satisfaction;
+      if (sortMode === "Name") return a.name.localeCompare(b.name);
+      return a.lastActivityMinutes - b.lastActivityMinutes;
+    });
+  }, [customers, selectedTab, channelFilter, sortMode, searchText]);
+
+  const visibleSpend = filteredCustomers.reduce(
+    (total, customer) => total + customer.totalSpend,
+    0
+  );
+
+  const hasFilters =
+    selectedTab !== "All" ||
+    channelFilter !== "All Channels" ||
+    sortMode !== "Last Activity" ||
+    searchText.trim().length > 0;
+
+  function clearFilters() {
+    setSelectedTab("All");
+    setChannelFilter("All Channels");
+    setSortMode("Last Activity");
+    setSearchText("");
+    setDemoNotice("Filters cleared. Showing the full demo customer list.");
+  }
+
+  function saveDemoCustomer() {
+    const cleanName = form.name.trim();
+
+    if (!cleanName) {
+      setDemoNotice("Add a customer name before saving the demo customer.");
+      return;
+    }
 
     const newCustomer: Customer = {
-      id: `CUS-DEMO-${Date.now()}`,
-      name: `New Demo Customer ${nextNumber}`,
-      slug: "tom-wilson",
-      initials: "NC",
-      contact: "07--- --- ---",
-      area: "Birmingham",
-      type: "New",
-      lastService: "Not booked yet",
-      totalSpend: "£0",
+      id: `demo-${Date.now()}`,
+      initials: makeInitials(cleanName),
+      name: cleanName,
+      phone: form.phone.trim() || "Demo phone",
+      area: form.area,
+      channel: form.channel,
+      customerType: form.customerType,
+      lastService: "New demo customer",
+      lastServiceDate: "Today",
+      totalSpend: 0,
       lastActivity: "Just now",
-      nextBooking: "Needs follow-up",
+      lastActivityMinutes: 0,
+      nextBooking: "To arrange",
+      nextBookingRank: 99,
       satisfaction: 0,
-      owner: "John D.",
-      service: "New enquiry",
+      risk: "Medium",
+      opportunity: "Needs first follow-up",
+      notes:
+        form.notes.trim() ||
+        "Demo-only customer added locally. No database, API, or real data was touched.",
     };
 
     setCustomers((current) => [newCustomer, ...current]);
-    setActiveTab("All");
-    setNotice("New demo customer added to the top of the table.");
+    setSelectedCustomer(newCustomer);
+    setSelectedTab("All");
+    setAddPanelOpen(false);
+    setDemoNotice(
+      `${cleanName} was added to this local demo view only. No backend or database was touched.`
+    );
+    setForm({
+      name: "",
+      phone: "",
+      area: "Manchester",
+      channel: "WhatsApp",
+      customerType: "New",
+      notes: "",
+    });
+  }
+
+  function openCustomerTab(tab: CustomerTab) {
+    const matchingCustomers =
+      tab === "All"
+        ? customers
+        : customers.filter((customer) => customer.customerType === tab);
+
+    setSelectedTab(tab);
+    setChannelFilter("All Channels");
+    setSearchText("");
+    setSortMode("Last Activity");
+    setSelectedCustomer(matchingCustomers[0] ?? null);
+
+    setDemoNotice(
+      tab === "All"
+        ? `All customers opened. Showing ${customers.length} demo customer records.`
+        : `${tab} customers opened. Showing ${matchingCustomers.length} ${tab.toLowerCase()} customer record${
+            matchingCustomers.length === 1 ? "" : "s"
+          }.`
+    );
+
+    window.setTimeout(() => {
+      document
+        .getElementById("customer-results")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 0);
+  }
+
+  function handleDemoAction(action: string, customer: Customer) {
+    setSelectedCustomer(customer);
+    setDemoNotice(`${action} opened for ${customer.name}. Demo action only.`);
   }
 
   return (
-    <main className="customerRef-page">
-      <header className="customerRef-topbar">
-        <div>
-          <h1>Customers</h1>
-          <p>Manage customer relationships and grow repeat business.</p>
-        </div>
+    <main className={styles.customersPage}>
+      <section className={styles.heroPanel}>
+        <div className={styles.heroTop}>
+          <div className={styles.titleBlock}>
+            <p className={styles.kicker}>CUSTOMER COMMAND CENTRE</p>
+            <h1>Customers</h1>
+            <p>
+              Manage repeat customers, VIP spend, customer history, and
+              follow-up opportunities across Manchester and Greater Manchester.
+            </p>
+          </div>
 
-        <div className="customerRef-actions">
-          <button type="button" onClick={addDemoCustomer} className="customerRef-addButton">
-            ＋ Add Customer
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setActiveTab("All");
-              setSearch("");
-              setNotice("All channel/customer filters cleared.");
-            }}
-            className="customerRef-darkButton"
-          >
-            ▽ All Channels⌄
-          </button>
-          <label className="customerRef-search">
-            <input
-              value={search}
-              onChange={(event) => setSearch(event.target.value)}
-              placeholder="Search customers..."
-            />
-            <span>⌕</span>
-          </label>
-          <Link href="/settings" className="customerRef-owner">
-            <span>JD</span>
-            <strong>John D.</strong>
-            <small>Owner</small>
-          </Link>
-        </div>
-      </header>
-
-      <section className="customerRef-stats">
-        {statCards.map((card) => (
-          <article key={card.label} className={`customerRef-stat customerRef-stat-${card.tone}`}>
-            <span className="customerRef-statIcon">{card.icon}</span>
-            <div>
-              <strong>{card.value}</strong>
-              <p>{card.label}</p>
-              <small>{card.change}</small>
-            </div>
-          </article>
-        ))}
-      </section>
-
-      <section className="customerRef-card">
-        <div className="customerRef-tabsRow">
-          <div className="customerRef-tabs">
-            {customerTabs.map((tab) => (
+          <div className={styles.headerTools}>
+            <div className={styles.commandBar} aria-label="Customer command controls">
               <button
-                key={tab}
+                className={styles.primaryButton}
                 type="button"
                 onClick={() => {
-                  setActiveTab(tab);
-                  setNotice(`${tab} customers selected.`);
+                  setAddPanelOpen(true);
+                  setOwnerPanelOpen(false);
+                  setDemoNotice("Add Customer panel opened. Demo-only local action.");
                 }}
-                className={activeTab === tab ? "active" : ""}
+              >
+                + Add Customer
+              </button>
+
+              <label className={styles.controlShell}>
+                <span>Channel</span>
+                <select
+                  value={channelFilter}
+                  onChange={(event) => {
+                    setChannelFilter(event.target.value as ChannelFilter);
+                    setDemoNotice(`Channel filter changed to ${event.target.value}.`);
+                    window.setTimeout(() => {
+                      document
+                        .getElementById("customer-results")
+                        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }, 0);
+                  }}
+                >
+                  {channels.map((channel) => (
+                    <option key={channel} value={channel}>
+                      {channel}
+                    </option>
+                  ))}
+                </select>
+              </label>
+
+              <label className={`${styles.controlShell} ${styles.searchControl}`}>
+                <span>Search</span>
+                <input
+                  value={searchText}
+                  onChange={(event) => {
+                    setSearchText(event.target.value);
+                    setDemoNotice("Search is filtering the customer table live.");
+                  }}
+                  placeholder="Search customers..."
+                />
+              </label>
+
+              <label className={styles.controlShell}>
+                <span>Sort</span>
+                <select
+                  value={sortMode}
+                  onChange={(event) => {
+                    setSortMode(event.target.value as SortMode);
+                    setDemoNotice(`Customer list sorted by ${event.target.value}.`);
+                    window.setTimeout(() => {
+                      document
+                        .getElementById("customer-results")
+                        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }, 0);
+                  }}
+                >
+                  {sortModes.map((mode) => (
+                    <option key={mode} value={mode}>
+                      {mode}
+                    </option>
+                  ))}
+                </select>
+              </label>
+
+              <button
+                className={styles.ownerChip}
+                type="button"
+                onClick={() => {
+                  setOwnerPanelOpen(true);
+                  setAddPanelOpen(false);
+                  setDemoNotice("Owner profile opened. Demo-only control view.");
+                }}
+              >
+                <span>JD</span>
+                <strong>John D.</strong>
+                <small>Owner</small>
+              </button>
+            </div>
+</div>
+        </div>
+
+        <div className={styles.metricGrid}>
+          <article className={styles.metricCard}>
+            <span className={styles.metricIcon}>👥</span>
+            <div>
+              <strong>128</strong>
+              <p>Customer records</p>
+              <small>↑ 18% vs last 30 days</small>
+            </div>
+          </article>
+
+          <article className={styles.metricCard}>
+            <span className={styles.metricIcon}>★</span>
+            <div>
+              <strong>22</strong>
+              <p>VIP customers</p>
+              <small>£31.5k protected value</small>
+            </div>
+          </article>
+
+          <article className={styles.metricCard}>
+            <span className={styles.metricIcon}>£</span>
+            <div>
+              <strong>£412</strong>
+              <p>Average spend</p>
+              <small>↑ 9% vs last 30 days</small>
+            </div>
+          </article>
+
+          <article className={styles.metricCard}>
+            <span className={styles.metricIcon}>↻</span>
+            <div>
+              <strong>68%</strong>
+              <p>Returning rate</p>
+              <small>12 follow-ups ready</small>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {addPanelOpen && (
+        <section className={styles.addPanel}>
+          <div className={styles.panelHeader}>
+            <div>
+              <p className={styles.kicker}>DEMO ACTION</p>
+              <h2>Add demo customer</h2>
+              <p>
+                This proves the action works in the sales demo. It does not
+                create real customer data or touch a database.
+              </p>
+            </div>
+
+            <button
+              className={styles.ghostButton}
+              type="button"
+              onClick={() => {
+                setAddPanelOpen(false);
+                setDemoNotice("Add Customer panel closed.");
+              }}
+            >
+              Close
+            </button>
+          </div>
+
+          <div className={styles.formGrid}>
+            <label>
+              Customer name
+              <input
+                value={form.name}
+                onChange={(event) =>
+                  setForm((current) => ({ ...current, name: event.target.value }))
+                }
+                placeholder="Example: Mia Green"
+              />
+            </label>
+
+            <label>
+              Phone
+              <input
+                value={form.phone}
+                onChange={(event) =>
+                  setForm((current) => ({ ...current, phone: event.target.value }))
+                }
+                placeholder="Example: 07900 111222"
+              />
+            </label>
+
+            <label>
+              Area
+              <select
+                value={form.area}
+                onChange={(event) =>
+                  setForm((current) => ({
+                    ...current,
+                    area: event.target.value as Area,
+                  }))
+                }
+              >
+                {areas.map((area) => (
+                  <option key={area} value={area}>
+                    {area}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label>
+              Channel
+              <select
+                value={form.channel}
+                onChange={(event) =>
+                  setForm((current) => ({
+                    ...current,
+                    channel: event.target.value as Channel,
+                  }))
+                }
+              >
+                {channels
+                  .filter((channel): channel is Channel => channel !== "All Channels")
+                  .map((channel) => (
+                    <option key={channel} value={channel}>
+                      {channel}
+                    </option>
+                  ))}
+              </select>
+            </label>
+
+            <label>
+              Customer type
+              <select
+                value={form.customerType}
+                onChange={(event) =>
+                  setForm((current) => ({
+                    ...current,
+                    customerType: event.target.value as CustomerType,
+                  }))
+                }
+              >
+                {customerTypes.map((type) => (
+                  <option key={type} value={type}>
+                    {type}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className={styles.wideField}>
+              Notes
+              <textarea
+                value={form.notes}
+                onChange={(event) =>
+                  setForm((current) => ({ ...current, notes: event.target.value }))
+                }
+                placeholder="Example: Wants a call-back tomorrow morning."
+              />
+            </label>
+          </div>
+
+          <div className={styles.formActions}>
+            <button
+              className={styles.ghostButton}
+              type="button"
+              onClick={() => {
+                setAddPanelOpen(false);
+                setDemoNotice("Demo customer creation cancelled.");
+              }}
+            >
+              Cancel
+            </button>
+
+            <button
+              className={styles.primaryButton}
+              type="button"
+              onClick={saveDemoCustomer}
+            >
+              Save Demo Customer
+            </button>
+          </div>
+        </section>
+      )}
+
+      {ownerPanelOpen && (
+        <section className={styles.ownerPanel}>
+          <div className={styles.panelHeader}>
+            <div>
+              <p className={styles.kicker}>OWNER CONTROL</p>
+              <h2>John D. profile</h2>
+              <p>
+                Demo owner profile for customer records, approval control, and
+                customer follow-up oversight.
+              </p>
+            </div>
+
+            <button
+              className={styles.ghostButton}
+              type="button"
+              onClick={() => {
+                setOwnerPanelOpen(false);
+                setDemoNotice("Owner profile closed.");
+              }}
+            >
+              Close profile
+            </button>
+          </div>
+
+          <div className={styles.ownerGrid}>
+            <article>
+              <strong>Owner access</strong>
+              <span>Can review customer records and follow-up actions.</span>
+            </article>
+            <article>
+              <strong>Approval control</strong>
+              <span>VIP reviews, sensitive replies, and win-back actions stay owner-approved.</span>
+            </article>
+            <article>
+              <strong>Demo safety</strong>
+              <span>Local fake data only. No real customer records are created.</span>
+            </article>
+          </div>
+        </section>
+      )}
+
+      <div className={styles.demoNotice} role="status">
+        {demoNotice}
+      </div>
+
+      <section id="customer-results" className={styles.tablePanel}>
+        {selectedTab !== "All" && (
+          <div className={styles.segmentNotice}>
+            <strong>{selectedTab} customer view is active</strong>
+            <span>
+              Search and channel filters were cleared so this tab shows the correct {selectedTab.toLowerCase()} customer records.
+            </span>
+          </div>
+        )}
+
+        <div className={styles.tableHeader}>
+          <div className={styles.tabs}>
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                className={`${styles.tabButton} ${
+                  selectedTab === tab ? styles.tabActive : ""
+                }`}
+                type="button"
+                onClick={() => openCustomerTab(tab)}
               >
                 {tab}
-                <span>{tab === "All" ? counts.all : counts[tab]}</span>
+                <span>{tabCounts[tab]}</span>
               </button>
             ))}
           </div>
 
           <button
+            className={styles.clearButton}
             type="button"
-            onClick={() => setNotice("Customer table sorted by last activity.")}
-            className="customerRef-sort"
+            onClick={clearFilters}
+            disabled={!hasFilters}
           >
-            ↕ Sort: Last Activity⌄
+            {hasFilters ? "Clear filters" : "Filters clear"}
           </button>
         </div>
 
-        <div className="customerRef-tableWrap">
-          <table className="customerRef-table">
+        <div className={styles.tableScroll}>
+          <table className={styles.customerTable}>
             <thead>
               <tr>
                 <th>Name</th>
                 <th>Contact</th>
                 <th>Area</th>
-                <th>Customer Type</th>
+                <th>Source</th>
+                <th>Type</th>
                 <th>Last Service</th>
                 <th>Total Spend</th>
                 <th>Last Activity</th>
                 <th>Next Booking</th>
                 <th>Satisfaction</th>
-                <th>Owner</th>
+                <th>Risk</th>
                 <th>Actions</th>
               </tr>
             </thead>
 
             <tbody>
               {filteredCustomers.map((customer) => (
-                <tr key={customer.id}>
+                <tr
+                  key={customer.id}
+                  onClick={() => {
+                    setSelectedCustomer(customer);
+                    setDemoNotice(`${customer.name} record opened.`);
+                  }}
+                >
                   <td>
-                    <Link href={`/customers/${customer.slug}`} className="customerRef-name">
-                      <span>{customer.initials}</span>
-                      <strong>{customer.name}</strong>
-                    </Link>
+                    <button
+                      className={styles.customerName}
+                      type="button"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        setSelectedCustomer(customer);
+                        setDemoNotice(`${customer.name} record opened.`);
+                      }}
+                    >
+                      <span className={styles.avatar}>{customer.initials}</span>
+                      <span>
+                        <strong>{customer.name}</strong>
+                        <small>{customer.opportunity}</small>
+                      </span>
+                    </button>
                   </td>
-                  <td>
-                    <Link href="/messages" className="customerRef-link">
-                      ☎ {customer.contact}
-                    </Link>
-                  </td>
+
+                  <td>☎ {customer.phone}</td>
                   <td>{customer.area}</td>
                   <td>
-                    <span className={`customerRef-type type-${typeClass(customer.type)}`}>
-                      {customer.type}
+                    <span className={styles.channelPill}>{customer.channel}</span>
+                  </td>
+                  <td>
+                    <span
+                      className={`${styles.typeChip} ${
+                        typeStyles[customer.customerType]
+                      }`}
+                    >
+                      {customer.customerType}
                     </span>
                   </td>
-                  <td>{customer.lastService}</td>
-                  <td className="customerRef-spend">{customer.totalSpend}</td>
+                  <td>
+                    <strong>{customer.lastServiceDate}</strong>
+                    <small>{customer.lastService}</small>
+                  </td>
+                  <td className={styles.spendCell}>
+                    {formatCurrency(customer.totalSpend)}
+                  </td>
                   <td>{customer.lastActivity}</td>
                   <td>{customer.nextBooking}</td>
                   <td>
-                    <span className="customerRef-stars">{renderStars(customer.satisfaction)}</span>
+                    <span className={styles.stars}>
+                      {makeStars(customer.satisfaction)}
+                    </span>
                   </td>
                   <td>
-                    <Link href="/settings" className="customerRef-ownerMini">
-                      <span>{customer.owner.slice(0, 2)}</span>
-                      {customer.owner}
-                    </Link>
+                    <span className={`${styles.riskChip} ${riskStyles[customer.risk]}`}>
+                      {customer.risk}
+                    </span>
                   </td>
                   <td>
-                    <div className="customerRef-rowActions">
-                      <Link href="/messages">☰</Link>
-                      <Link href="/bookings">▣</Link>
+                    <div className={styles.rowActions}>
                       <button
                         type="button"
-                        onClick={() => setNotice(`${customer.name} actions opened.`)}
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          handleDemoAction("Customer record", customer);
+                        }}
                       >
-                        ⋮
+                        View
+                      </button>
+                      <button
+                        type="button"
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          handleDemoAction("Follow-up queue", customer);
+                        }}
+                      >
+                        Follow-up
                       </button>
                     </div>
                   </td>
@@ -400,51 +993,209 @@ export default function CustomersPage() {
             </tbody>
           </table>
 
-          {filteredCustomers.length === 0 ? (
-            <div className="customerRef-empty">
+          {filteredCustomers.length === 0 && (
+            <div className={styles.emptyState}>
               <strong>No customers found.</strong>
-              <p>Clear the search or switch back to All customers.</p>
+              <span>Try clearing filters or searching another customer.</span>
             </div>
-          ) : null}
+          )}
         </div>
 
-        <footer className="customerRef-footer">
-          <p>Showing 1 to {filteredCustomers.length} of 128 customers</p>
-
-          <div className="customerRef-pagination">
-            <button type="button" onClick={() => setNotice("Previous page selected.")}>‹</button>
-            <button type="button" className="active" onClick={() => setNotice("Page 1 selected.")}>1</button>
-            <button type="button" onClick={() => setNotice("Page 2 selected.")}>2</button>
-            <button type="button" onClick={() => setNotice("Page 3 selected.")}>3</button>
-            <button type="button" onClick={() => setNotice("Page 4 selected.")}>4</button>
-            <button type="button" onClick={() => setNotice("Page 5 selected.")}>5</button>
-            <span>...</span>
-            <button type="button" onClick={() => setNotice("Page 15 selected.")}>15</button>
-            <button type="button" onClick={() => setNotice("Next page selected.")}>›</button>
+        <div className={styles.tableFooter}>
+          <div>
+            <strong>
+              Showing {filteredCustomers.length} of {customers.length} demo
+              customers
+            </strong>
+            <span>{formatCurrency(visibleSpend)} visible customer value</span>
           </div>
 
-          <aside className="customerRef-types">
-            <div>
-              <h3>Customer Types</h3>
-              <small>ⓘ</small>
-            </div>
+          <div className={styles.pagination}>
+            <button type="button" onClick={() => setDemoNotice("Previous page demo action pressed.")}>
+              ‹
+            </button>
+            <button className={styles.pageActive} type="button">
+              1
+            </button>
+            <button type="button" onClick={() => setDemoNotice("Next page demo action pressed.")}>
+              ›
+            </button>
+          </div>
+        </div>
 
-            <div className="customerRef-typeStats">
-              <p><span className="active" /> Active <strong>46% (59)</strong></p>
-              <p><span className="vip" /> VIP <strong>17% (22)</strong></p>
-              <p><span className="repeat" /> Repeat <strong>33% (42)</strong></p>
-              <p><span className="new" /> New <strong>4% (5)</strong></p>
-            </div>
+        <div className={styles.auraStrip}>
+          <div className={styles.auraImageBox}>
+            <span>Aura</span>
+            <img
+              src="/brand/source/aura-assistant-transparent.png"
+              alt="Aura customer assistant"
+              onError={(event) => {
+                event.currentTarget.style.display = "none";
+              }}
+            />
+          </div>
 
-            <div className="customerRef-donut">
-              <strong>128</strong>
-              <span>Total</span>
-            </div>
-          </aside>
-        </footer>
-
-        <div className="customerRef-notice">{notice}</div>
+          <div>
+            <p className={styles.kicker}>AURA CUSTOMER WATCH</p>
+            <h3>Aura is watching repeat customers, VIP spend, and customers due for follow-up.</h3>
+            <p>
+              12 customers need a next-step reminder. 4 VIP customers are ready
+              for owner-approved review requests.
+            </p>
+          </div>
+        </div>
       </section>
+
+      {selectedCustomer && (
+        <section className={styles.recordPanel}>
+          <div className={styles.recordHeader}>
+            <div>
+              <p className={styles.kicker}>SELECTED CUSTOMER RECORD</p>
+              <h2>{selectedCustomer.name}</h2>
+              <p>{selectedCustomer.notes}</p>
+            </div>
+
+            <button
+              className={styles.ghostButton}
+              type="button"
+              onClick={() => {
+                setSelectedCustomer(null);
+                setDemoNotice("Customer record closed.");
+              }}
+            >
+              Close record
+            </button>
+          </div>
+
+          <div className={styles.recordGrid}>
+            <article>
+              <strong>{selectedCustomer.phone}</strong>
+              <span>Phone number</span>
+            </article>
+            <article>
+              <strong>{selectedCustomer.area}</strong>
+              <span>Area</span>
+            </article>
+            <article>
+              <strong>{selectedCustomer.channel}</strong>
+              <span>Lead source</span>
+            </article>
+            <article>
+              <strong>{formatCurrency(selectedCustomer.totalSpend)}</strong>
+              <span>Total spend</span>
+            </article>
+            <article>
+              <strong>{selectedCustomer.opportunity}</strong>
+              <span>Next best action</span>
+            </article>
+            <article>
+              <strong>{selectedCustomer.risk}</strong>
+              <span>Follow-up risk</span>
+            </article>
+          </div>
+        </section>
+      )}
+
+      <section className={styles.intelligencePanel}>
+        <div className={styles.intelligenceHeader}>
+          <div>
+            <p className={styles.kicker}>CUSTOMER INTELLIGENCE</p>
+            <h2>Customer Types</h2>
+            <p>
+              A sales-ready view of customer value, repeat-work potential, and
+              follow-up priority.
+            </p>
+          </div>
+
+          <span>128 total customer records</span>
+        </div>
+
+        <div className={styles.intelligenceGrid}>
+          <div className={styles.breakdownPanel}>
+            {portfolioBreakdown.map((segment) => (
+              <article className={styles.breakdownRow} key={segment.label}>
+                <div className={styles.breakdownLabel}>
+                  <strong>{segment.label}</strong>
+                  <span>
+                    {segment.count} customers · {segment.percentage}%
+                  </span>
+                </div>
+
+                <div className={styles.barTrack}>
+                  <div
+                    className={styles.barFill}
+                    style={{ width: `${segment.percentage}%` }}
+                  />
+                </div>
+
+                <div className={styles.breakdownValue}>
+                  <strong>{segment.value}</strong>
+                  <span>{segment.note}</span>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <aside className={styles.revenuePanel}>
+            <p className={styles.kicker}>REVENUE USEFULNESS</p>
+            <h3>What this proves to a business owner</h3>
+
+            <ul>
+              <li>Which customers are worth the most.</li>
+              <li>Who is likely to book again.</li>
+              <li>Who needs a reminder before the lead goes cold.</li>
+              <li>Where VIPs and repeat customers came from.</li>
+            </ul>
+          </aside>
+        </div>
+
+        <div className={styles.insightCards}>
+          <article>
+            <strong>68%</strong>
+            <span>returning rate</span>
+          </article>
+          <article>
+            <strong>£412</strong>
+            <span>average spend</span>
+          </article>
+          <article>
+            <strong>£31.5k</strong>
+            <span>VIP customer value</span>
+          </article>
+          <article>
+            <strong>12</strong>
+            <span>follow-up opportunities</span>
+          </article>
+        </div>
+      </section>
+
+      <section className={styles.auraBottomDock}>
+        <div className={styles.auraImageBox}>
+          <span>Aura</span>
+          <img
+            src="/brand/source/aura-assistant-transparent.png"
+            alt="Aura customer assistant"
+            onError={(event) => {
+              event.currentTarget.style.display = "none";
+            }}
+          />
+        </div>
+
+        <div>
+          <p className={styles.kicker}>AURA CUSTOMER WATCH</p>
+          <h3>Aura is watching repeat customers, VIP spend, and customers due for follow-up.</h3>
+          <p>
+            12 customers need a next-step reminder. 4 VIP customers are ready
+            for owner-approved review requests.
+          </p>
+        </div>
+      </section>
+
+      <p className={styles.safetyNote}>
+        Demo safety: fake data only, local UI actions only, no database, no
+        Supabase, no Stripe, no Twilio, no OpenAI API, no deployment, and no
+        real customer data.
+      </p>
     </main>
   );
 }

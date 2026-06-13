@@ -16206,3 +16206,490 @@ aside {
 }
 
 /* End Bookings Fill + Simple Summary v1 */
+
+/* Customers Actions Graph Aura v1 */
+.customerRef-sortSelect {
+  gap: 8px !important;
+}
+
+.customerRef-sortSelect select {
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  color: #f8fafc !important;
+  font: inherit !important;
+  font-weight: 900 !important;
+}
+
+.customerRef-footerPro {
+  grid-template-columns: minmax(190px, 0.75fr) minmax(330px, 1fr) minmax(360px, 0.95fr) !important;
+  gap: 18px !important;
+  align-items: center !important;
+  min-height: 178px !important;
+}
+
+.customerRef-footerMiddle {
+  display: grid !important;
+  grid-template-columns: auto minmax(150px, 190px) !important;
+  gap: 14px !important;
+  align-items: center !important;
+  justify-content: start !important;
+}
+
+.customerRef-pagination button:disabled {
+  opacity: 0.42 !important;
+  cursor: not-allowed !important;
+}
+
+.customerRef-auraFooterBot {
+  min-height: 96px !important;
+  display: grid !important;
+  grid-template-columns: 82px minmax(0, 1fr) !important;
+  gap: 10px !important;
+  align-items: center !important;
+  padding: 10px 12px !important;
+  border-radius: 18px !important;
+  text-decoration: none !important;
+  border: 1px solid rgba(212, 175, 55, 0.18) !important;
+  background:
+    radial-gradient(circle at left, rgba(46, 167, 255, 0.10), transparent 46%),
+    rgba(3, 8, 18, 0.24) !important;
+}
+
+.customerRef-auraFooterBot img {
+  width: 78px !important;
+  height: 78px !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.32)) !important;
+}
+
+.customerRef-auraFooterBot strong {
+  display: block !important;
+  color: #f8fafc !important;
+  font-size: 0.82rem !important;
+  line-height: 1.05 !important;
+}
+
+.customerRef-auraFooterBot small {
+  display: block !important;
+  margin-top: 4px !important;
+  color: rgba(226, 239, 255, 0.58) !important;
+  font-size: 0.68rem !important;
+}
+
+.customerRef-typesPro {
+  justify-self: stretch !important;
+  min-height: 154px !important;
+  max-width: none !important;
+  display: grid !important;
+  gap: 12px !important;
+  padding: 16px !important;
+  border-radius: 20px !important;
+  background:
+    radial-gradient(circle at top right, rgba(46, 167, 255, 0.10), transparent 36%),
+    radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.08), transparent 42%),
+    linear-gradient(145deg, rgba(8, 20, 38, 0.94), rgba(3, 8, 18, 0.98)) !important;
+}
+
+.customerRef-typesHeaderPro {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  align-items: start !important;
+}
+
+.customerRef-typesHeaderPro p {
+  margin: 0 0 5px !important;
+  color: #d4af37 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  font-size: 0.64rem !important;
+  font-weight: 950 !important;
+}
+
+.customerRef-typesHeaderPro h3 {
+  margin: 0 !important;
+  color: #f8fafc !important;
+  font-size: 1rem !important;
+}
+
+.customerRef-typesHeaderPro > span {
+  color: rgba(226, 239, 255, 0.56) !important;
+  font-size: 0.72rem !important;
+}
+
+.customerRef-typeBarsPro {
+  display: grid !important;
+  gap: 8px !important;
+}
+
+.customerRef-typeBarsPro div {
+  display: grid !important;
+  gap: 5px !important;
+}
+
+.customerRef-typeBarsPro span {
+  display: grid !important;
+  grid-template-columns: 10px minmax(0, 1fr) !important;
+  gap: 8px !important;
+  color: rgba(226, 239, 255, 0.70) !important;
+  font-size: 0.72rem !important;
+}
+
+.customerRef-typeBarsPro i {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 999px !important;
+  align-self: center !important;
+}
+
+.customerRef-typeBarsPro i.active { background: #41e0b0 !important; }
+.customerRef-typeBarsPro i.vip { background: #d4af37 !important; }
+.customerRef-typeBarsPro i.repeat { background: #2ea7ff !important; }
+.customerRef-typeBarsPro i.new { background: #4dd4ff !important; }
+
+.customerRef-typeBarsPro strong {
+  color: #f8fafc !important;
+  font-size: 0.74rem !important;
+}
+
+.customerRef-typeBarsPro b {
+  height: 6px !important;
+  display: block !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+  background: rgba(148, 163, 184, 0.11) !important;
+}
+
+.customerRef-typeBarsPro em {
+  display: block !important;
+  height: 100% !important;
+  border-radius: inherit !important;
+  background: linear-gradient(90deg, #2ea7ff, #d4af37) !important;
+}
+
+.customerRef-typeMiniStats {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 9px !important;
+}
+
+.customerRef-typeMiniStats span {
+  border: 1px solid rgba(148, 163, 184, 0.10) !important;
+  border-radius: 14px !important;
+  padding: 9px 10px !important;
+  background: rgba(3, 8, 18, 0.30) !important;
+}
+
+.customerRef-typeMiniStats strong {
+  display: block !important;
+  color: #f4d978 !important;
+  font-size: 0.95rem !important;
+}
+
+.customerRef-typeMiniStats small {
+  display: block !important;
+  margin-top: 3px !important;
+  color: rgba(226, 239, 255, 0.56) !important;
+  font-size: 0.64rem !important;
+}
+
+@media (max-width: 1280px) {
+  .customerRef-footerPro {
+    grid-template-columns: 1fr !important;
+  }
+
+  .customerRef-footerMiddle {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* End Customers Actions Graph Aura v1 */
+
+/* Customers Layout Cleanup v2 */
+
+/* Top controls: keep Add Customer, channels, search and owner on one clean row */
+.customerRef-topbar {
+  display: grid !important;
+  grid-template-columns: minmax(300px, 0.85fr) minmax(720px, 1.15fr) !important;
+  column-gap: 28px !important;
+  align-items: start !important;
+}
+
+.customerRef-actions {
+  display: grid !important;
+  grid-template-columns: auto auto minmax(300px, 360px) auto !important;
+  gap: 10px !important;
+  align-items: center !important;
+  justify-content: end !important;
+  width: 100% !important;
+  flex-wrap: nowrap !important;
+}
+
+.customerRef-actions .customerRef-addButton {
+  min-width: 150px !important;
+}
+
+.customerRef-actions .customerRef-darkButton {
+  min-width: 155px !important;
+}
+
+.customerRef-actions .customerRef-search {
+  min-width: 300px !important;
+  max-width: 360px !important;
+}
+
+.customerRef-actions .customerRef-owner {
+  min-width: 140px !important;
+  margin: 0 !important;
+}
+
+/* Footer: make number bar + Aura compact, and Customer Types professional */
+.customerRef-footerPro {
+  min-height: 230px !important;
+  display: grid !important;
+  grid-template-columns: minmax(360px, 0.9fr) minmax(460px, 1.1fr) !important;
+  grid-template-areas:
+    "meta types"
+    "middle types" !important;
+  gap: 16px 22px !important;
+  align-items: start !important;
+  padding: 18px 16px !important;
+}
+
+.customerRef-footerPro > p {
+  grid-area: meta !important;
+  align-self: center !important;
+  margin: 0 !important;
+}
+
+.customerRef-footerMiddle {
+  grid-area: middle !important;
+  display: grid !important;
+  grid-template-columns: auto 190px !important;
+  gap: 14px !important;
+  align-items: center !important;
+  justify-content: start !important;
+}
+
+/* Compact Aura card beside pagination, not a huge empty strip */
+.customerRef-auraFooterBot {
+  width: 185px !important;
+  min-height: 92px !important;
+  max-height: 96px !important;
+  display: grid !important;
+  grid-template-columns: 76px minmax(0, 1fr) !important;
+  gap: 9px !important;
+  align-items: center !important;
+  padding: 9px 11px !important;
+  border-radius: 18px !important;
+}
+
+.customerRef-auraFooterBot img {
+  width: 72px !important;
+  height: 72px !important;
+}
+
+.customerRef-auraFooterBot strong {
+  font-size: 0.82rem !important;
+}
+
+.customerRef-auraFooterBot small {
+  font-size: 0.66rem !important;
+}
+
+/* Customer Types card: remove empty space and use professional bars */
+.customerRef-typesPro {
+  grid-area: types !important;
+  width: 100% !important;
+  min-height: 205px !important;
+  max-width: none !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+  align-content: start !important;
+  padding: 18px !important;
+}
+
+.customerRef-typesHeaderPro {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: start !important;
+  gap: 14px !important;
+}
+
+.customerRef-typesHeaderPro h3 {
+  font-size: 1.05rem !important;
+}
+
+.customerRef-typeBarsPro {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 9px !important;
+}
+
+.customerRef-typeBarsPro div {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  grid-template-areas:
+    "label value"
+    "bar bar" !important;
+  gap: 5px 12px !important;
+  align-items: center !important;
+}
+
+.customerRef-typeBarsPro span {
+  grid-area: label !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  min-width: 0 !important;
+}
+
+.customerRef-typeBarsPro strong {
+  grid-area: value !important;
+  justify-self: end !important;
+  color: #f8fafc !important;
+  font-size: 0.78rem !important;
+}
+
+.customerRef-typeBarsPro b {
+  grid-area: bar !important;
+  width: 100% !important;
+  height: 7px !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+  background: rgba(148, 163, 184, 0.12) !important;
+}
+
+.customerRef-typeBarsPro em {
+  height: 100% !important;
+  display: block !important;
+  border-radius: inherit !important;
+  background: linear-gradient(90deg, #2ea7ff, #d4af37) !important;
+}
+
+.customerRef-typeMiniStats {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+}
+
+.customerRef-typeMiniStats span {
+  min-height: 54px !important;
+}
+
+/* Reduce huge empty table bottom slightly */
+.customerRef-card {
+  min-height: auto !important;
+}
+
+.customerRef-tableWrap {
+  min-height: 0 !important;
+}
+
+@media (max-width: 1280px) {
+  .customerRef-topbar,
+  .customerRef-actions,
+  .customerRef-footerPro,
+  .customerRef-footerMiddle {
+    grid-template-columns: 1fr !important;
+    grid-template-areas: none !important;
+  }
+
+  .customerRef-actions {
+    justify-content: start !important;
+  }
+
+  .customerRef-footerPro > p,
+  .customerRef-footerMiddle,
+  .customerRef-typesPro {
+    grid-area: auto !important;
+  }
+
+  .customerRef-auraFooterBot {
+    width: 190px !important;
+  }
+}
+/* End Customers Layout Cleanup v2 */
+
+
+/* =========================================================
+   AURA EXISTING BOT THEME — IMAGE TARGETED
+   No new panels.
+   No duplicate bots.
+   Only themes existing sections/cards that already contain Aura.
+   ========================================================= */
+
+/* Theme existing page-level Aura/Bee bot sections by detecting the Aura image */
+:where(section, article, aside):has(img[src*="aura-assistant"]),
+:where(section, article, aside):has(img[alt*="Aura" i]) {
+  border-color: rgba(255, 210, 74, 0.24) !important;
+  background:
+    radial-gradient(circle at 8% 25%, rgba(255, 210, 74, 0.14), transparent 30%),
+    radial-gradient(circle at 95% 10%, rgba(45, 196, 255, 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(8, 31, 55, 0.98), rgba(2, 10, 22, 0.99)) !important;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24) !important;
+}
+
+/* Theme common existing bot card class names where pages use divs instead of sections */
+:where(
+  [class*="aura" i],
+  [class*="assistant" i],
+  [class*="bot" i],
+  [class*="aiSuggestion" i],
+  [class*="aiSuggestions" i]
+):has(img[src*="aura-assistant"]),
+:where(
+  [class*="aura" i],
+  [class*="assistant" i],
+  [class*="bot" i],
+  [class*="aiSuggestion" i],
+  [class*="aiSuggestions" i]
+):has(img[alt*="Aura" i]) {
+  border-color: rgba(255, 210, 74, 0.24) !important;
+  background:
+    radial-gradient(circle at 8% 25%, rgba(255, 210, 74, 0.14), transparent 30%),
+    radial-gradient(circle at 95% 10%, rgba(45, 196, 255, 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(8, 31, 55, 0.98), rgba(2, 10, 22, 0.99)) !important;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24) !important;
+}
+
+/* Theme the image holder only — without changing layout */
+:where(div, figure):has(> img[src*="aura-assistant"]),
+:where(div, figure):has(> img[alt*="Aura" i]) {
+  border-color: rgba(45, 196, 255, 0.28) !important;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(45, 196, 255, 0.18), transparent 55%),
+    rgba(45, 196, 255, 0.08) !important;
+}
+
+/* Text colour inside existing bot sections */
+:where(section, article, aside):has(img[src*="aura-assistant"]) :where(h1, h2, h3, strong),
+:where(section, article, aside):has(img[alt*="Aura" i]) :where(h1, h2, h3, strong),
+:where([class*="aura" i], [class*="assistant" i], [class*="bot" i], [class*="aiSuggestion" i], [class*="aiSuggestions" i]):has(img[src*="aura-assistant"]) :where(h1, h2, h3, strong),
+:where([class*="aura" i], [class*="assistant" i], [class*="bot" i], [class*="aiSuggestion" i], [class*="aiSuggestions" i]):has(img[alt*="Aura" i]) :where(h1, h2, h3, strong) {
+  color: #fff8dd !important;
+}
+
+:where(section, article, aside):has(img[src*="aura-assistant"]) :where(p, span, small, li),
+:where(section, article, aside):has(img[alt*="Aura" i]) :where(p, span, small, li),
+:where([class*="aura" i], [class*="assistant" i], [class*="bot" i], [class*="aiSuggestion" i], [class*="aiSuggestions" i]):has(img[src*="aura-assistant"]) :where(p, span, small, li),
+:where([class*="aura" i], [class*="assistant" i], [class*="bot" i], [class*="aiSuggestion" i], [class*="aiSuggestions" i]):has(img[alt*="Aura" i]) :where(p, span, small, li) {
+  color: rgba(236, 244, 255, 0.74) !important;
+}
+
+/* Gold label/kicker styling inside existing bot sections */
+:where(section, article, aside):has(img[src*="aura-assistant"]) :where([class*="kicker" i], [class*="eyebrow" i]),
+:where(section, article, aside):has(img[alt*="Aura" i]) :where([class*="kicker" i], [class*="eyebrow" i]),
+:where([class*="aura" i], [class*="assistant" i], [class*="bot" i], [class*="aiSuggestion" i], [class*="aiSuggestions" i]):has(img[src*="aura-assistant"]) :where([class*="kicker" i], [class*="eyebrow" i]),
+:where([class*="aura" i], [class*="assistant" i], [class*="bot" i], [class*="aiSuggestion" i], [class*="aiSuggestions" i]):has(img[alt*="Aura" i]) :where([class*="kicker" i], [class*="eyebrow" i]) {
+  color: #ffd24a !important;
+  letter-spacing: 0.16em !important;
+}
+
+/* Make Aura image itself pop slightly, without changing its size */
+img[src*="aura-assistant"],
+img[alt*="Aura" i] {
+  filter: drop-shadow(0 18px 34px rgba(45, 196, 255, 0.2)) !important;
+}
+
