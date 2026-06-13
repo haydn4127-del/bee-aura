@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { FormEvent, useMemo, useState } from "react";
 
 type Channel = "WhatsApp" | "Facebook" | "Website" | "Email" | "Instagram" | "SMS" | "Phone";
 type ConversationStatus =
@@ -13,6 +13,7 @@ type ConversationStatus =
   | "Closed";
 type Priority = "Emergency" | "Today" | "Tomorrow" | "Later";
 type StatusTab = "All" | "Unread" | "Needs reply" | "Booked" | "Follow-up" | "Closed";
+type NewMessageChannel = "WhatsApp" | "SMS" | "Email";
 
 type Conversation = {
   id: string;
@@ -198,6 +199,112 @@ const baseConversations: Conversation[] = [
     ownerAction: "Ask for model and book installation",
     unread: false,
   },
+
+  {
+    id: "conv-james-wilson",
+    customerName: "James Wilson",
+    customerSlug: "james-wilson",
+    phone: "07912 345 678",
+    email: "james.wilson@example.com",
+    address: "Selly Oak, Birmingham",
+    channel: "WhatsApp",
+    status: "Booked",
+    priority: "Today",
+    enquiry: "Boiler installation",
+    lastMessage: "Can you confirm the engineer is still coming at 09:00?",
+    lastSeen: "4 min ago",
+    avgResponseMinutes: 2,
+    booking: "Today, 09:00 — boiler installation",
+    followUp: "Send ETA and engineer confirmation",
+    recentActivity: "Customer asked for booking confirmation",
+    estimatedValue: "£2,400",
+    ownerAction: "Confirm engineer ETA",
+    unread: true,
+  },
+  {
+    id: "conv-amelia-ward",
+    customerName: "Amelia Ward",
+    customerSlug: "amelia-ward",
+    phone: "07911 220 044",
+    email: "amelia.ward@example.com",
+    address: "Bournville, Birmingham",
+    channel: "Phone",
+    status: "Needs Reply",
+    priority: "Emergency",
+    enquiry: "Emergency boiler repair",
+    lastMessage: "Missed call captured. Customer has no heating and needs a same-day slot.",
+    lastSeen: "6 min ago",
+    avgResponseMinutes: 1,
+    booking: "No booking yet — emergency slot available",
+    followUp: "Call back and confirm postcode",
+    recentActivity: "Missed emergency call converted into inbox thread",
+    estimatedValue: "£180–£420",
+    ownerAction: "Call back urgently",
+    unread: true,
+  },
+  {
+    id: "conv-daniel-khan",
+    customerName: "Daniel Khan",
+    customerSlug: "daniel-khan",
+    phone: "07822 334 455",
+    email: "daniel.khan@example.com",
+    address: "Hall Green, Birmingham",
+    channel: "Website",
+    status: "Needs Reply",
+    priority: "Today",
+    enquiry: "Bathroom leak",
+    lastMessage: "I filled in the website form. The leak is getting worse under the bath.",
+    lastSeen: "16 min ago",
+    avgResponseMinutes: 5,
+    booking: "No booking yet — inspection slot needed",
+    followUp: "Ask for photos and offer next inspection slot",
+    recentActivity: "Website lead waiting for fast reply",
+    estimatedValue: "£250–£650",
+    ownerAction: "Qualify leak and offer booking",
+    unread: true,
+  },
+  {
+    id: "conv-lucas-green",
+    customerName: "Lucas Green",
+    customerSlug: "lucas-green",
+    phone: "07544 556 677",
+    email: "lucas.green@example.com",
+    address: "Erdington, Birmingham",
+    channel: "Facebook",
+    status: "Quote Sent",
+    priority: "Tomorrow",
+    enquiry: "Blocked drain",
+    lastMessage: "Thanks for the quote. Can you still do tomorrow around lunchtime?",
+    lastSeen: "28 min ago",
+    avgResponseMinutes: 6,
+    booking: "Quote sent — waiting for confirmation",
+    followUp: "Confirm tomorrow lunch slot and access details",
+    recentActivity: "Facebook enquiry moved from quote to booking decision",
+    estimatedValue: "£280",
+    ownerAction: "Confirm availability and convert quote",
+    unread: false,
+  },
+  {
+    id: "conv-priya-shah",
+    customerName: "Priya Shah",
+    customerSlug: "priya-shah",
+    phone: "07733 445 566",
+    email: "priya.shah@example.com",
+    address: "Sutton Coldfield, Birmingham",
+    channel: "Email",
+    status: "Follow-up",
+    priority: "Today",
+    enquiry: "Annual boiler service",
+    lastMessage: "Can you remind me what is included in the annual service?",
+    lastSeen: "42 min ago",
+    avgResponseMinutes: 7,
+    booking: "No booking yet — service information requested",
+    followUp: "Send service checklist and offer booking time",
+    recentActivity: "Annual service lead added to follow-up queue",
+    estimatedValue: "£140",
+    ownerAction: "Send service summary",
+    unread: false,
+  },
 ];
 
 const initialThreads: Record<string, ThreadMessage[]> = {
@@ -327,10 +434,97 @@ const initialThreads: Record<string, ThreadMessage[]> = {
       channel: "System",
     },
   ],
+
+  "conv-james-wilson": [
+    {
+      id: "james-wilson-1",
+      sender: "customer",
+      name: "James Wilson",
+      body: "Can you confirm the engineer is still coming at 09:00 for the boiler installation?",
+      time: "09:01",
+      channel: "WhatsApp",
+    },
+    {
+      id: "james-wilson-2",
+      sender: "system",
+      name: "Bee-Aura",
+      body: "Booking confirmation request detected. Suggested next step: confirm ETA and reassure the customer.",
+      time: "09:02",
+      channel: "System",
+    },
+  ],
+  "conv-amelia-ward": [
+    {
+      id: "amelia-1",
+      sender: "system",
+      name: "Bee-Aura",
+      body: "Missed emergency call captured. Amelia Ward has no heating and needs a same-day slot.",
+      time: "09:08",
+      channel: "System",
+    },
+  ],
+  "conv-daniel-khan": [
+    {
+      id: "daniel-1",
+      sender: "customer",
+      name: "Daniel Khan",
+      body: "I filled in the website form. The leak is getting worse under the bath. Can someone inspect it today?",
+      time: "09:12",
+      channel: "Website",
+    },
+    {
+      id: "daniel-2",
+      sender: "system",
+      name: "Bee-Aura",
+      body: "Bathroom leak lead detected. Ask for photos, postcode, and offer the next inspection slot.",
+      time: "09:13",
+      channel: "System",
+    },
+  ],
+  "conv-lucas-green": [
+    {
+      id: "lucas-1",
+      sender: "customer",
+      name: "Lucas Green",
+      body: "Thanks for the quote. Can you still do tomorrow around lunchtime?",
+      time: "08:59",
+      channel: "Facebook",
+    },
+    {
+      id: "lucas-2",
+      sender: "business",
+      name: "Sarah via Bee-Aura",
+      body: "Yes, we can hold a lunchtime slot tomorrow. Please confirm access and whether the blocked drain is outside or internal.",
+      time: "09:05",
+      channel: "Facebook",
+    },
+  ],
+  "conv-priya-shah": [
+    {
+      id: "priya-1",
+      sender: "customer",
+      name: "Priya Shah",
+      body: "Can you remind me what is included in the annual service?",
+      time: "08:44",
+      channel: "Email",
+    },
+    {
+      id: "priya-2",
+      sender: "system",
+      name: "Bee-Aura",
+      body: "Annual service follow-up detected. Suggested next step: send service checklist and offer booking time.",
+      time: "08:45",
+      channel: "System",
+    },
+  ],
 };
 
 const channelTabs: Array<"All" | Channel> = ["All", "WhatsApp", "Facebook", "Website", "Email", "Instagram", "Phone", "SMS"];
 const statusTabs: StatusTab[] = ["All", "Unread", "Needs reply", "Booked", "Follow-up", "Closed"];
+
+function messageSlugify(value: string) {
+  return value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
 
 function priorityClass(priority: Priority) {
   return priority.toLowerCase().replace(" ", "-");
@@ -342,6 +536,24 @@ function statusClass(status: ConversationStatus) {
 
 function channelClass(channel: "All" | Channel) {
   return `messagesV7-channelTab messagesV7-channel-${channel.toLowerCase()}`;
+}
+
+
+
+const knownCustomerRecordSlugs = new Set([
+  "tom-wilson",
+  "sarah-johnson",
+  "emma-davis",
+]);
+
+function customerRecordHref(conversation: Conversation) {
+  const searchableName = encodeURIComponent(conversation.customerName);
+
+  if (conversation.customerSlug && knownCustomerRecordSlugs.has(conversation.customerSlug)) {
+    return `/customers/${conversation.customerSlug}`;
+  }
+
+  return `/customers?search=${searchableName}`;
 }
 
 function makeSuggestedReply(conversation: Conversation) {
@@ -368,6 +580,15 @@ export default function MessagesPage() {
   const [statusTab, setStatusTab] = useState<StatusTab>("All");
   const [searchText, setSearchText] = useState("");
   const [composerText, setComposerText] = useState("");
+  const [showNewMessagePanel, setShowNewMessagePanel] = useState(false);
+  const [newMessageForm, setNewMessageForm] = useState({
+    channel: "WhatsApp" as NewMessageChannel,
+    customerName: "",
+    contact: "",
+    email: "",
+    enquiry: "",
+    message: "",
+  });
   const [, setActionNotice] = useState("Messages command centre ready.");
   const [activityItems, setActivityItems] = useState<ActivityItem[]>([
     {
@@ -416,6 +637,25 @@ export default function MessagesPage() {
     });
   }, [channelTab, conversations, searchText, statusTab]);
 
+  function submitInboxSearch(event?: React.FormEvent<HTMLFormElement>) {
+    event?.preventDefault();
+
+    const firstMatch = filteredConversations[0];
+
+    if (firstMatch) {
+      selectConversation(firstMatch);
+      pushActivity(`Search opened ${firstMatch.customerName}'s ${firstMatch.channel} thread.`);
+      return;
+    }
+
+    pushActivity("No matching inbox conversation found.");
+  }
+
+  function clearInboxSearch() {
+    setSearchText("");
+    pushActivity("Inbox search cleared.");
+  }
+
   const statusCounts = useMemo(() => {
     return conversations.reduce(
       (counts, conversation) => {
@@ -457,26 +697,58 @@ export default function MessagesPage() {
   }
 
   function startNewMessage() {
+    setShowNewMessagePanel(true);
+
+    window.setTimeout(() => {
+      document
+        .getElementById("messages-new-message-panel")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 60);
+
+    pushActivity("New message form opened.");
+  }
+
+  function updateNewMessageForm(field: keyof typeof newMessageForm, value: string) {
+    setNewMessageForm((current) => ({ ...current, [field]: value }));
+  }
+
+  function createNewMessage(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const cleanName = newMessageForm.customerName.trim();
+    const cleanContact = newMessageForm.contact.trim();
+    const cleanEmail = newMessageForm.email.trim();
+    const cleanEnquiry = newMessageForm.enquiry.trim();
+    const cleanMessage = newMessageForm.message.trim();
+
+    if (!cleanName || !cleanEnquiry || !cleanMessage) {
+      pushActivity("Add a customer name, enquiry and message before creating the thread.");
+      return;
+    }
+
     const newId = `new-demo-${Date.now()}`;
+    const firstName = cleanName.split(" ")[0] || "there";
+
     const newConversation: Conversation = {
       id: newId,
-      customerName: "New demo enquiry",
-      phone: "07--- --- ---",
-      email: "new.lead@example.com",
+      customerName: cleanName,
+      customerSlug: messageSlugify(cleanName),
+      phone: cleanContact || "07--- --- ---",
+      email: cleanEmail || "new.lead@example.com",
       address: "Birmingham, UK",
-      channel: "WhatsApp",
+      channel: newMessageForm.channel,
       status: "Needs Reply",
       priority: "Today",
-      enquiry: "New customer message",
-      lastMessage: "New message draft created by Bee-Aura.",
+      enquiry: cleanEnquiry,
+      lastMessage: cleanMessage,
       lastSeen: "Just now",
       avgResponseMinutes: 0,
       booking: "No booking yet — qualify the enquiry first",
-      followUp: "Ask for service type, postcode, and preferred time",
-      recentActivity: "New demo thread generated from the New Message button",
+      followUp: "Ask for postcode, preferred time and booking intent",
+      recentActivity: `New ${newMessageForm.channel} thread created from the inbox form`,
       estimatedValue: "To qualify",
       ownerAction: "Send first response",
-      unread: false,
+      unread: true,
     };
 
     setConversations((current) => [newConversation, ...current]);
@@ -484,20 +756,43 @@ export default function MessagesPage() {
       ...current,
       [newId]: [
         {
+          id: `${newId}-customer`,
+          sender: "customer",
+          name: cleanName,
+          body: cleanMessage,
+          time: "Just now",
+          channel: newMessageForm.channel,
+        },
+        {
           id: `${newId}-system`,
           sender: "system",
           name: "Bee-Aura",
-          body: "New demo message created. Use this to practise starting a fresh customer conversation.",
+          body: `New ${newMessageForm.channel} message created. Suggested next step: reply quickly, confirm service details, and move the enquiry toward a booking.`,
           time: "Just now",
           channel: "System",
         },
       ],
     }));
+
     setSelectedId(newId);
+    setChannelTab("All");
+    setStatusTab("All");
+    setSearchText("");
     setComposerText(
-      "Hi, thanks for contacting Northfield Home Services. Please send your postcode, the service you need, and your preferred time, and we will help you as quickly as possible.",
+      `Hi ${firstName}, thanks for contacting Northfield Home Services. We can help with your ${cleanEnquiry.toLowerCase()}. Please send your postcode and preferred time, and we will come back with the best available option.`,
     );
-    pushActivity("New message created and ready to send.");
+
+    setNewMessageForm({
+      channel: "WhatsApp",
+      customerName: "",
+      contact: "",
+      email: "",
+      enquiry: "",
+      message: "",
+    });
+
+    setShowNewMessagePanel(false);
+    pushActivity(`New ${newMessageForm.channel} thread created for ${cleanName}.`);
   }
 
   function updateSelectedConversation(update: Partial<Conversation>, notice: string) {
@@ -605,6 +900,90 @@ export default function MessagesPage() {
         </div>
       </section>
 
+      {showNewMessagePanel ? (
+        <section id="messages-new-message-panel" className="messagesV7-newMessagePanel">
+          <div className="messagesV7-newMessageHeader">
+            <div>
+              <p className="messagesV7-eyebrow">Create message</p>
+              <h2>Start a new customer conversation.</h2>
+              <span>Choose WhatsApp, SMS or Email and create a demo inbox thread.</span>
+            </div>
+
+            <button type="button" onClick={() => setShowNewMessagePanel(false)}>
+              Close
+            </button>
+          </div>
+
+          <form className="messagesV7-newMessageForm" onSubmit={createNewMessage}>
+            <label>
+              Message type
+              <select
+                value={newMessageForm.channel}
+                onChange={(event) => updateNewMessageForm("channel", event.target.value as NewMessageChannel)}
+              >
+                <option>WhatsApp</option>
+                <option>SMS</option>
+                <option>Email</option>
+              </select>
+            </label>
+
+            <label>
+              Customer name
+              <input
+                value={newMessageForm.customerName}
+                onChange={(event) => updateNewMessageForm("customerName", event.target.value)}
+                placeholder="Customer name"
+              />
+            </label>
+
+            <label>
+              Phone / contact
+              <input
+                value={newMessageForm.contact}
+                onChange={(event) => updateNewMessageForm("contact", event.target.value)}
+                placeholder="07..."
+              />
+            </label>
+
+            <label>
+              Email
+              <input
+                value={newMessageForm.email}
+                onChange={(event) => updateNewMessageForm("email", event.target.value)}
+                placeholder="customer@example.com"
+              />
+            </label>
+
+            <label>
+              Enquiry
+              <input
+                value={newMessageForm.enquiry}
+                onChange={(event) => updateNewMessageForm("enquiry", event.target.value)}
+                placeholder="Boiler repair, leak, booking question..."
+              />
+            </label>
+
+            <label className="messagesV7-newMessageText">
+              Message
+              <textarea
+                value={newMessageForm.message}
+                onChange={(event) => updateNewMessageForm("message", event.target.value)}
+                placeholder="Type the first customer message here..."
+              />
+            </label>
+
+            <div className="messagesV7-newMessageActions">
+              <button type="button" onClick={() => setShowNewMessagePanel(false)}>
+                Cancel
+              </button>
+              <button type="submit">
+                Create Thread
+              </button>
+            </div>
+          </form>
+        </section>
+      ) : null}
+
       <section className="messagesV7-kpiRow">
         <article>
           <span>Average response</span>
@@ -667,14 +1046,25 @@ export default function MessagesPage() {
           </div>
         </div>
 
-        <label className="messagesV7-search">
-          Search inbox
-          <input
-            value={searchText}
-            onChange={(event) => setSearchText(event.target.value)}
-            placeholder="Search name, phone, service, channel..."
-          />
-        </label>
+        <form className="messagesV7-search messagesV7-searchAction" onSubmit={submitInboxSearch}>
+          <span>Search Inbox</span>
+          <div className="messagesV7-searchBox">
+            <input
+              value={searchText}
+              onChange={(event) => setSearchText(event.target.value)}
+              placeholder="Search by customer, channel, phone or enquiry..."
+              aria-label="Search inbox"
+            />
+            {searchText ? (
+              <button type="button" onClick={clearInboxSearch} aria-label="Clear inbox search">
+                Clear
+              </button>
+            ) : null}
+            <button type="submit" aria-label="Open first matching conversation">
+              Search
+            </button>
+          </div>
+        </form>
       </section>
 
       <section className="messagesV7-shell">
@@ -742,7 +1132,7 @@ export default function MessagesPage() {
             </div>
             <div className="messagesV7-chatHeaderActions">
               {selectedConversation.customerSlug ? (
-                <Link href={`/customers/${selectedConversation.customerSlug}`}>Open Customer</Link>
+                <Link href={customerRecordHref(selectedConversation)}>Open Customer</Link>
               ) : (
                 <button
                   type="button"

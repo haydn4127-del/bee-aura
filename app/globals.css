@@ -15095,3 +15095,186 @@ aside {
   }
 }
 /* End Messages Search Inbox Fit Fix v1 */
+
+/* Messages New Message Panel v1 */
+.messagesV7-newMessagePanel {
+  border-radius: 24px !important;
+  border: 1px solid rgba(212, 175, 55, 0.22) !important;
+  background:
+    radial-gradient(circle at top right, rgba(212, 175, 55, 0.12), transparent 34%),
+    radial-gradient(circle at bottom left, rgba(46, 167, 255, 0.10), transparent 36%),
+    linear-gradient(145deg, rgba(8, 20, 38, 0.96), rgba(3, 8, 18, 0.98)) !important;
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.28) !important;
+  padding: 20px 22px !important;
+}
+
+.messagesV7-newMessageHeader {
+  display: flex !important;
+  align-items: start !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+  margin-bottom: 16px !important;
+}
+
+.messagesV7-newMessageHeader h2 {
+  margin: 0 0 6px !important;
+  color: #f8fafc !important;
+  font-size: 1.45rem !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.045em !important;
+}
+
+.messagesV7-newMessageHeader span {
+  color: rgba(226, 239, 255, 0.62) !important;
+  font-size: 0.84rem !important;
+}
+
+.messagesV7-newMessageHeader button,
+.messagesV7-newMessageActions button {
+  min-height: 38px !important;
+  border-radius: 999px !important;
+  padding: 0 15px !important;
+  font-weight: 900 !important;
+  cursor: pointer !important;
+}
+
+.messagesV7-newMessageHeader button,
+.messagesV7-newMessageActions button:first-child {
+  color: rgba(226, 239, 255, 0.82) !important;
+  background: rgba(3, 8, 18, 0.46) !important;
+  border: 1px solid rgba(148, 163, 184, 0.18) !important;
+}
+
+.messagesV7-newMessageActions button:last-child {
+  color: #07111d !important;
+  background: linear-gradient(135deg, #f4d978, #d4af37) !important;
+  border: 1px solid rgba(212, 175, 55, 0.52) !important;
+}
+
+.messagesV7-newMessageForm {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  align-items: end !important;
+}
+
+.messagesV7-newMessageForm label {
+  display: grid !important;
+  gap: 6px !important;
+  color: rgba(226, 239, 255, 0.74) !important;
+  font-size: 0.74rem !important;
+  font-weight: 850 !important;
+}
+
+.messagesV7-newMessageForm input,
+.messagesV7-newMessageForm select,
+.messagesV7-newMessageForm textarea {
+  min-width: 0 !important;
+  width: 100% !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(148, 163, 184, 0.18) !important;
+  background: rgba(3, 8, 18, 0.52) !important;
+  color: #f8fafc !important;
+  font: inherit !important;
+  outline: 0 !important;
+}
+
+.messagesV7-newMessageForm input,
+.messagesV7-newMessageForm select {
+  height: 42px !important;
+  padding: 0 12px !important;
+}
+
+.messagesV7-newMessageForm textarea {
+  min-height: 86px !important;
+  resize: vertical !important;
+  padding: 12px !important;
+}
+
+.messagesV7-newMessageText {
+  grid-column: 1 / -1 !important;
+}
+
+.messagesV7-newMessageActions {
+  grid-column: 1 / -1 !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+}
+
+@media (max-width: 1100px) {
+  .messagesV7-newMessageForm {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .messagesV7-newMessageHeader,
+  .messagesV7-newMessageActions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .messagesV7-newMessageForm {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* End Messages New Message Panel v1 */
+
+/* Messages Search Inbox Action v1 */
+.messagesV7-searchAction {
+  display: grid !important;
+  gap: 10px !important;
+  align-self: start !important;
+}
+
+.messagesV7-searchBox {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto auto !important;
+  gap: 8px !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: 42px !important;
+  padding: 6px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(148, 163, 184, 0.18) !important;
+  background: rgba(3, 8, 18, 0.46) !important;
+}
+
+.messagesV7-searchBox input {
+  min-width: 0 !important;
+  width: 100% !important;
+  height: 32px !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  color: #f8fafc !important;
+  padding: 0 8px !important;
+  font: inherit !important;
+}
+
+.messagesV7-searchBox input::placeholder {
+  color: rgba(226, 239, 255, 0.48) !important;
+}
+
+.messagesV7-searchBox button {
+  height: 32px !important;
+  border-radius: 999px !important;
+  padding: 0 12px !important;
+  border: 1px solid rgba(212, 175, 55, 0.28) !important;
+  background: rgba(212, 175, 55, 0.10) !important;
+  color: #f4d978 !important;
+  font-size: 0.72rem !important;
+  font-weight: 950 !important;
+  cursor: pointer !important;
+}
+
+.messagesV7-searchBox button[type="submit"] {
+  background: linear-gradient(135deg, #f4d978, #d4af37) !important;
+  color: #07111d !important;
+}
+
+.messagesV7-searchBox button:hover {
+  transform: translateY(-1px) !important;
+}
+/* End Messages Search Inbox Action v1 */
