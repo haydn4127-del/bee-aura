@@ -329,7 +329,7 @@ const initialThreads: Record<string, ThreadMessage[]> = {
   ],
 };
 
-const channelTabs: Array<"All" | Channel> = ["All", "WhatsApp", "Facebook", "Website", "Email", "Instagram", "SMS", "Phone"];
+const channelTabs: Array<"All" | Channel> = ["All", "WhatsApp", "Facebook", "Website", "Email", "Instagram", "Phone", "SMS"];
 const statusTabs: StatusTab[] = ["All", "Unread", "Needs reply", "Booked", "Follow-up", "Closed"];
 
 function priorityClass(priority: Priority) {
@@ -595,6 +595,12 @@ export default function MessagesPage() {
           </button>
           <Link href="/bookings" className="messagesV7-secondaryButton">
             View Bookings
+          </Link>
+
+          <Link href="/settings" className="messagesV7-ownerTab" aria-label="Open owner settings">
+            <span>JD</span>
+            <strong>John D.<small>Owner</small></strong>
+            <em>⌄</em>
           </Link>
         </div>
       </section>
@@ -889,7 +895,13 @@ export default function MessagesPage() {
         </article>
       </section>
 
-      <section className="messagesV7-brandBanner">
+      <section className="messagesV7-brandBanner messagesV7-brandBannerWithBot">
+        <Link href="/messages" className="messagesV7-brandBot" aria-label="Open Aura message assistant">
+          <img
+            src="/brand/source/aura-assistant-transparent.png"
+            alt="Aura Assistant"
+          />
+        </Link>
         <div>
           <p>From ping to paid job</p>
           <h2>Bee-Aura keeps every lead warm, every reply fast, and every booking under control.</h2>

@@ -14739,3 +14739,359 @@ aside {
   }
 }
 /* End Leads Top Controls One Row v3 */
+
+/* Messages Polish v1 */
+
+/* Slightly calmer spacing without changing the layout */
+.messagesV7-page {
+  gap: 12px !important;
+}
+
+.messagesV7-hero {
+  padding: 18px 22px !important;
+}
+
+.messagesV7-kpiRow {
+  gap: 12px !important;
+}
+
+.messagesV7-kpiRow article {
+  min-height: 92px !important;
+  padding: 16px 18px !important;
+}
+
+/* Cleaner tab panels */
+.messagesV7-tabsPanel {
+  padding: 15px 18px !important;
+}
+
+.messagesV7-tabRow {
+  gap: 9px !important;
+}
+
+.messagesV7-tabRow button {
+  min-height: 36px !important;
+  padding: 0 14px !important;
+  border-radius: 999px !important;
+}
+
+.messagesV7-tabRow button.isActive {
+  box-shadow:
+    0 0 0 2px rgba(46, 167, 255, 0.12),
+    inset 0 0 24px rgba(46, 167, 255, 0.10) !important;
+}
+
+/* Conversation list should feel more premium and clickable */
+.messagesV7-conversationCard {
+  border-radius: 18px !important;
+  padding: 14px !important;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease,
+    box-shadow 160ms ease !important;
+}
+
+.messagesV7-conversationCard:hover {
+  transform: translateY(-1px) !important;
+  border-color: rgba(46, 167, 255, 0.26) !important;
+  background:
+    radial-gradient(circle at top right, rgba(46, 167, 255, 0.10), transparent 42%),
+    rgba(3, 8, 18, 0.44) !important;
+}
+
+.messagesV7-conversationCard.isSelected {
+  border-color: rgba(46, 167, 255, 0.42) !important;
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+}
+
+/* Chat panel: clearer active conversation */
+.messagesV7-chatPanel {
+  background:
+    radial-gradient(circle at top right, rgba(46, 167, 255, 0.10), transparent 34%),
+    linear-gradient(145deg, rgba(8, 20, 38, 0.94), rgba(3, 8, 18, 0.98)) !important;
+}
+
+.messagesV7-thread {
+  border-radius: 22px !important;
+}
+
+/* Bottom cards: make each card clearer without redesigning */
+.messagesV7-bottomGrid {
+  gap: 12px !important;
+}
+
+.messagesV7-bottomGrid article {
+  border-radius: 18px !important;
+  min-height: 154px !important;
+}
+
+/* Keep the AI suggestions card premium */
+.messagesV7-aiCard {
+  border-color: rgba(212, 175, 55, 0.22) !important;
+  background:
+    radial-gradient(circle at top right, rgba(212, 175, 55, 0.14), transparent 42%),
+    linear-gradient(145deg, rgba(18, 16, 10, 0.52), rgba(3, 8, 18, 0.96)) !important;
+}
+
+/* End Messages Polish v1 */
+
+/* Messages Polish v2 */
+
+/* Make ALL channel tab writing white */
+.messagesV7-channel-all,
+.messagesV7-channel-all.isActive {
+  color: #f8fafc !important;
+}
+
+/* Owner profile tab in the top-right corner */
+.messagesV7-hero {
+  position: relative !important;
+}
+
+.messagesV7-heroActions {
+  padding-right: 165px !important;
+}
+
+.messagesV7-ownerTab {
+  position: absolute !important;
+  top: 18px !important;
+  right: 22px !important;
+  min-width: 145px !important;
+  height: 42px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  padding: 0 10px !important;
+  border-radius: 14px !important;
+  text-decoration: none !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(212, 175, 55, 0.32) !important;
+  background: rgba(3, 13, 27, 0.78) !important;
+}
+
+.messagesV7-ownerTab > span {
+  width: 32px !important;
+  height: 32px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 50% !important;
+  color: #07111d !important;
+  font-weight: 950 !important;
+  background: linear-gradient(135deg, #f5bc16, #29a8ff) !important;
+}
+
+.messagesV7-ownerTab strong {
+  display: grid !important;
+  line-height: 1.05 !important;
+  font-size: 0.8rem !important;
+}
+
+.messagesV7-ownerTab small {
+  color: #90a0b8 !important;
+  font-size: 0.66rem !important;
+  margin-top: 2px !important;
+}
+
+.messagesV7-ownerTab em {
+  margin-left: auto !important;
+  font-style: normal !important;
+  color: rgba(226, 239, 255, 0.72) !important;
+}
+
+/* Add Aura bot beside the bottom From Ping to Paid Job banner */
+.messagesV7-brandBannerWithBot {
+  display: grid !important;
+  grid-template-columns: 150px minmax(0, 1fr) minmax(360px, 0.9fr) !important;
+  gap: 22px !important;
+  align-items: center !important;
+}
+
+.messagesV7-brandBot {
+  display: grid !important;
+  place-items: center !important;
+  width: 140px !important;
+  height: 118px !important;
+  border-radius: 24px !important;
+  text-decoration: none !important;
+  background:
+    radial-gradient(circle at 50% 46%, rgba(46, 167, 255, 0.12), transparent 50%),
+    rgba(3, 8, 18, 0.18) !important;
+  border: 1px solid rgba(46, 167, 255, 0.12) !important;
+}
+
+.messagesV7-brandBot img {
+  width: 118px !important;
+  height: 118px !important;
+  object-fit: contain !important;
+  filter:
+    drop-shadow(0 18px 32px rgba(0, 0, 0, 0.34))
+    drop-shadow(0 0 18px rgba(46, 167, 255, 0.10)) !important;
+}
+
+.messagesV7-brandBot:hover img {
+  transform: translateY(-2px) !important;
+}
+
+@media (max-width: 1100px) {
+  .messagesV7-heroActions {
+    padding-right: 0 !important;
+  }
+
+  .messagesV7-ownerTab {
+    position: static !important;
+  }
+
+  .messagesV7-brandBannerWithBot {
+    grid-template-columns: 1fr !important;
+  }
+
+  .messagesV7-brandBot {
+    width: 140px !important;
+  }
+}
+/* End Messages Polish v2 */
+
+/* Messages All Tab White Fix v1 */
+.messagesV7-channel-all,
+.messagesV7-channel-all.isActive,
+.messagesV7-status-all,
+.messagesV7-status-all.isActive {
+  color: #f8fafc !important;
+}
+
+.messagesV7-channel-all *,
+.messagesV7-status-all * {
+  color: #f8fafc !important;
+}
+/* End Messages All Tab White Fix v1 */
+
+/* Messages All Tab White Fix v2 */
+
+/* Channel Tabs: All */
+.messagesV7-channel-all,
+.messagesV7-channel-all.isActive {
+  color: #f8fafc !important;
+}
+
+/* Status Tabs: first button is All */
+.messagesV7-tabsPanel .messagesV7-tabRow button:first-child,
+.messagesV7-tabsPanel .messagesV7-tabRow button:first-child.isActive {
+  color: #f8fafc !important;
+}
+
+/* Force text inside both All buttons white */
+.messagesV7-channel-all *,
+.messagesV7-tabsPanel .messagesV7-tabRow button:first-child * {
+  color: #f8fafc !important;
+}
+
+/* End Messages All Tab White Fix v2 */
+
+/* Messages Tab Panel Alignment v1 */
+
+/* Align Channel Tabs, Status Tabs and Search Inbox across the same top line */
+.messagesV7-tabsPanel {
+  display: grid !important;
+  grid-template-columns: minmax(380px, 1fr) minmax(430px, 1fr) minmax(300px, 0.82fr) !important;
+  gap: 28px !important;
+  align-items: start !important;
+}
+
+/* Make each section start at the same height */
+.messagesV7-tabsPanel > * {
+  align-self: start !important;
+}
+
+/* Keep the tab rows neat and consistent */
+.messagesV7-tabsPanel .messagesV7-tabRow {
+  align-items: center !important;
+  align-content: start !important;
+  margin-top: 10px !important;
+}
+
+/* Move Search Inbox up so it lines up with the other tab sections */
+.messagesV7-search {
+  align-self: start !important;
+  margin-top: 10px !important;
+}
+
+/* Keep Search Inbox heading aligned with Channel/Status headings */
+.messagesV7-search > span,
+.messagesV7-search label,
+.messagesV7-search p {
+  margin-top: 0 !important;
+}
+
+/* Stop Status Tabs from sitting lower than Channel Tabs */
+.messagesV7-tabsPanel > div:nth-child(2) {
+  margin-top: 0 !important;
+}
+
+/* Keep Search section on the same row */
+.messagesV7-tabsPanel > div:nth-child(3),
+.messagesV7-tabsPanel > label:nth-child(3) {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 1180px) {
+  .messagesV7-tabsPanel {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* End Messages Tab Panel Alignment v1 */
+
+/* Messages Search Inbox Fit Fix v1 */
+
+/* Keep Channel Tabs, Status Tabs and Search Inbox aligned but stop search being cut off */
+.messagesV7-tabsPanel {
+  grid-template-columns: minmax(520px, 1fr) minmax(520px, 1fr) minmax(280px, 340px) !important;
+  gap: 22px !important;
+  overflow: hidden !important;
+}
+
+.messagesV7-search {
+  width: 100% !important;
+  max-width: 340px !important;
+  min-width: 0 !important;
+  justify-self: end !important;
+  overflow: hidden !important;
+}
+
+.messagesV7-search input {
+  width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.messagesV7-search label,
+.messagesV7-search p,
+.messagesV7-search span {
+  max-width: 100% !important;
+}
+
+/* Keep tabs compact enough to fit cleanly */
+.messagesV7-tabsPanel .messagesV7-tabRow {
+  gap: 8px !important;
+}
+
+.messagesV7-tabsPanel .messagesV7-tabRow button {
+  padding-left: 13px !important;
+  padding-right: 13px !important;
+}
+
+@media (max-width: 1280px) {
+  .messagesV7-tabsPanel {
+    grid-template-columns: 1fr !important;
+    overflow: visible !important;
+  }
+
+  .messagesV7-search {
+    justify-self: stretch !important;
+    max-width: none !important;
+  }
+}
+/* End Messages Search Inbox Fit Fix v1 */
