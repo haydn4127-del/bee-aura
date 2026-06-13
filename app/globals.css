@@ -15278,3 +15278,931 @@ aside {
   transform: translateY(-1px) !important;
 }
 /* End Messages Search Inbox Action v1 */
+
+/* Bookings Clean Build v2 */
+.bkV2-page {
+  display: grid;
+  gap: 14px;
+  color: #f8fafc;
+}
+
+.bkV2-header {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(640px, 1.15fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.bkV2-title h1 {
+  margin: 0 0 5px;
+  color: #fff7d6;
+  font-size: clamp(1.9rem, 2.5vw, 2.55rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.bkV2-title p {
+  margin: 0;
+  max-width: 420px;
+  color: rgba(226, 239, 255, 0.62);
+}
+
+.bkV2-actions {
+  display: grid;
+  grid-template-columns: auto minmax(170px, 220px) minmax(260px, 340px) auto;
+  gap: 10px;
+  justify-content: end;
+  align-items: center;
+}
+
+.bkV2-primary,
+.bkV2-select,
+.bkV2-search,
+.bkV2-owner {
+  min-height: 42px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.bkV2-primary {
+  padding: 0 18px;
+  border: 1px solid rgba(255, 217, 104, 0.62);
+  color: #07111d;
+  background: linear-gradient(135deg, #f4d978, #f5a623);
+  cursor: pointer;
+}
+
+.bkV2-select {
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid rgba(46, 167, 255, 0.26);
+  background: rgba(3, 13, 27, 0.70);
+}
+
+.bkV2-select select {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: #f8fafc;
+  background: transparent;
+  font: inherit;
+  font-weight: 900;
+}
+
+.bkV2-search {
+  padding: 0 12px;
+  border: 1px solid rgba(46, 167, 255, 0.25);
+  background: rgba(3, 13, 27, 0.62);
+}
+
+.bkV2-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #f8fafc;
+  font: inherit;
+}
+
+.bkV2-search input::placeholder {
+  color: rgba(226, 239, 255, 0.50);
+}
+
+.bkV2-owner {
+  min-width: 142px;
+  gap: 9px;
+  padding: 0 10px;
+  text-decoration: none;
+  color: #f8fafc;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: rgba(3, 13, 27, 0.72);
+}
+
+.bkV2-owner > span {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #07111d;
+  font-weight: 950;
+  background: linear-gradient(135deg, #f4d978, #2ea7ff);
+}
+
+.bkV2-owner strong {
+  display: grid;
+  line-height: 1.05;
+}
+
+.bkV2-owner small {
+  color: rgba(226, 239, 255, 0.55);
+  font-size: 0.66rem;
+}
+
+.bkV2-create,
+.bkV2-card,
+.bkV2-stats article {
+  border: 1px solid rgba(46, 167, 255, 0.20);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at top right, rgba(46, 167, 255, 0.09), transparent 34%),
+    linear-gradient(145deg, rgba(8, 20, 38, 0.94), rgba(3, 8, 18, 0.98));
+}
+
+.bkV2-create {
+  padding: 18px;
+}
+
+.bkV2-create p,
+.bkV2-cardHeader p,
+.bkV2-aura p {
+  margin: 0 0 7px;
+  color: #d4af37;
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.bkV2-create h2,
+.bkV2-aura h2 {
+  margin: 0;
+  color: #f8fafc;
+  letter-spacing: -0.05em;
+}
+
+.bkV2-create span,
+.bkV2-aura span {
+  display: block;
+  margin-top: 8px;
+  color: rgba(226, 239, 255, 0.62);
+}
+
+.bkV2-create form {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+  align-items: end;
+}
+
+.bkV2-create label {
+  display: grid;
+  gap: 6px;
+  color: rgba(226, 239, 255, 0.72);
+  font-size: 0.74rem;
+  font-weight: 850;
+}
+
+.bkV2-create input,
+.bkV2-create select {
+  height: 40px;
+  min-width: 0;
+  border-radius: 12px;
+  padding: 0 11px;
+  color: #f8fafc;
+  background: rgba(3, 8, 18, 0.52);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.bkV2-createActions {
+  display: flex;
+  gap: 9px;
+}
+
+.bkV2-createActions button,
+.bkV2-detailActions button,
+.bkV2-detailActions a,
+.bkV2-auraButton {
+  min-height: 40px;
+  border-radius: 999px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bkV2-createActions button:first-child {
+  color: rgba(226, 239, 255, 0.82);
+  background: rgba(3, 8, 18, 0.46);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.bkV2-createActions button:last-child,
+.bkV2-detailActions button {
+  color: #07111d;
+  background: linear-gradient(135deg, #f4d978, #d4af37);
+  border: 0;
+}
+
+.bkV2-detailActions a,
+.bkV2-auraButton {
+  color: #f8fafc;
+  background: rgba(46, 167, 255, 0.10);
+  border: 1px solid rgba(46, 167, 255, 0.24);
+}
+
+.bkV2-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.bkV2-stats article {
+  min-height: 110px;
+  padding: 17px;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.bkV2-stats article > span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  color: #f4d978;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  background: rgba(3, 8, 18, 0.42);
+  font-weight: 950;
+}
+
+.bkV2-stats p {
+  margin: 0;
+  color: rgba(226, 239, 255, 0.62);
+  font-size: 0.78rem;
+}
+
+.bkV2-stats strong {
+  display: block;
+  color: #f8fafc;
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.bkV2-stats small {
+  color: #41e0b0;
+  font-weight: 900;
+}
+
+.bkV2-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(340px, 0.9fr);
+  gap: 14px;
+}
+
+.bkV2-card {
+  padding: 18px;
+}
+
+.bkV2-cardHeader {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.bkV2-cardHeader h2 {
+  margin: 0;
+  color: #fff7d6;
+  font-size: 1.08rem;
+}
+
+.bkV2-cardHeader span {
+  color: rgba(226, 239, 255, 0.55);
+  font-size: 0.78rem;
+}
+
+.bkV2-upcoming {
+  min-height: 560px;
+}
+
+.bkV2-tableHead,
+.bkV2-row {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) minmax(0, 1fr) 116px;
+  gap: 14px;
+  align-items: center;
+}
+
+.bkV2-tableHead {
+  padding: 0 10px 10px;
+  color: rgba(226, 239, 255, 0.52);
+  font-size: 0.68rem;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.10);
+}
+
+.bkV2-list {
+  display: grid;
+}
+
+.bkV2-row {
+  width: 100%;
+  min-height: 70px;
+  padding: 10px;
+  color: inherit;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+  cursor: pointer;
+}
+
+.bkV2-row:hover,
+.bkV2-row.isSelected {
+  background: rgba(46, 167, 255, 0.055);
+}
+
+.bkV2-date {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  border: 1px solid rgba(46, 167, 255, 0.22);
+  color: #bfe6ff;
+  background: rgba(46, 167, 255, 0.08);
+  font-size: 0.62rem;
+  line-height: 1;
+}
+
+.bkV2-row strong,
+.bkV2-timeRow b {
+  display: block;
+  color: #fff7d6;
+  font-size: 0.84rem;
+}
+
+.bkV2-row small,
+.bkV2-timeRow small {
+  color: rgba(226, 239, 255, 0.52);
+}
+
+.bkV2-status {
+  justify-self: start;
+  padding: 7px 10px;
+  border-radius: 9px;
+  font-size: 0.68rem;
+  font-weight: 950;
+  white-space: nowrap;
+}
+
+.bkV2-status.completed,
+.bkV2-status.confirmed {
+  color: #41e0b0;
+  background: rgba(65, 224, 176, 0.12);
+  border: 1px solid rgba(65, 224, 176, 0.24);
+}
+
+.bkV2-status.in-progress {
+  color: #6ab7ff;
+  background: rgba(46, 167, 255, 0.12);
+  border: 1px solid rgba(46, 167, 255, 0.24);
+}
+
+.bkV2-status.pending {
+  color: #f4d978;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.bkV2-linkButton {
+  display: block;
+  margin: 18px auto 0;
+  border: 0;
+  background: transparent;
+  color: #2ea7ff;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.bkV2-side {
+  display: grid;
+  gap: 14px;
+}
+
+.bkV2-timeline {
+  position: relative;
+  display: grid;
+  gap: 10px;
+}
+
+.bkV2-timeline::before {
+  content: "";
+  position: absolute;
+  left: 98px;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  background: rgba(47, 125, 246, 0.85);
+}
+
+.bkV2-timeRow {
+  position: relative;
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  min-height: 58px;
+  padding: 10px;
+  border-radius: 14px;
+  color: inherit;
+  background: rgba(46, 167, 255, 0.055);
+  border: 1px solid rgba(46, 167, 255, 0.12);
+  text-align: left;
+  cursor: pointer;
+}
+
+.bkV2-timeRow.isSelected {
+  border-color: rgba(212, 175, 55, 0.34);
+  background: rgba(212, 175, 55, 0.055);
+}
+
+.bkV2-timeRow > strong {
+  color: #9fd0ff;
+  font-size: 0.86rem;
+}
+
+.bkV2-healthBars {
+  display: grid;
+  gap: 12px;
+}
+
+.bkV2-healthBars div {
+  display: grid;
+  gap: 7px;
+}
+
+.bkV2-healthBars span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(226, 239, 255, 0.70);
+  font-size: 0.78rem;
+}
+
+.bkV2-healthBars i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.bkV2-healthBars .blue { background: #2ea7ff; }
+.bkV2-healthBars .gold { background: #d4af37; }
+.bkV2-healthBars .muted { background: rgba(148, 163, 184, 0.58); }
+
+.bkV2-healthBars strong {
+  color: #f8fafc;
+  font-size: 0.82rem;
+}
+
+.bkV2-healthBars b {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.12);
+}
+
+.bkV2-healthBars em {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #2ea7ff, #d4af37);
+}
+
+.bkV2-summaryStats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 16px;
+}
+
+.bkV2-summaryStats span,
+.bkV2-detailGrid p {
+  padding: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.10);
+  border-radius: 14px;
+  background: rgba(3, 8, 18, 0.30);
+}
+
+.bkV2-summaryStats strong {
+  display: block;
+  color: #f4d978;
+  font-size: 1rem;
+}
+
+.bkV2-summaryStats small,
+.bkV2-detailGrid span {
+  color: rgba(226, 239, 255, 0.54);
+  font-size: 0.68rem;
+}
+
+.bkV2-details,
+.bkV2-aura {
+  grid-column: 1 / -1;
+}
+
+.bkV2-customer {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(46, 167, 255, 0.07);
+  border: 1px solid rgba(46, 167, 255, 0.12);
+}
+
+.bkV2-customer > span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(46, 167, 255, 0.16);
+  color: #bfe6ff;
+  font-weight: 950;
+}
+
+.bkV2-customer a {
+  color: #2ea7ff;
+  font-weight: 950;
+  text-decoration: none;
+}
+
+.bkV2-detailGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.bkV2-detailGrid p {
+  margin: 0;
+}
+
+.bkV2-detailGrid strong {
+  display: block;
+  margin-top: 4px;
+  color: #fff7d6;
+  font-size: 0.78rem;
+}
+
+.bkV2-note,
+.bkV2-notice {
+  margin: 8px 0 0;
+  color: rgba(226, 239, 255, 0.62);
+  font-size: 0.8rem;
+}
+
+.bkV2-detailActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.bkV2-aura {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr) auto;
+  gap: 22px;
+  align-items: center;
+  min-height: 190px;
+}
+
+.bkV2-auraBot {
+  display: grid;
+  place-items: center;
+  width: 160px;
+  height: 150px;
+  border-radius: 24px;
+  text-decoration: none;
+  border: 1px solid rgba(46, 167, 255, 0.12);
+  background: rgba(3, 8, 18, 0.20);
+}
+
+.bkV2-auraBot img {
+  width: 132px;
+  height: 132px;
+  object-fit: contain;
+  filter: drop-shadow(0 22px 40px rgba(0, 0, 0, 0.34));
+}
+
+@media (max-width: 1180px) {
+  .bkV2-header,
+  .bkV2-actions,
+  .bkV2-stats,
+  .bkV2-grid,
+  .bkV2-detailGrid,
+  .bkV2-aura {
+    grid-template-columns: 1fr;
+  }
+}
+/* End Bookings Clean Build v2 */
+
+/* Bookings Clean Build v2 Tidy 1 */
+
+/* Stop KPI text from crashing, especially Revenue Booked */
+.bkV2-stats article {
+  grid-template-columns: 48px minmax(0, 1fr) !important;
+  align-items: center !important;
+  overflow: hidden !important;
+}
+
+.bkV2-stats article > div {
+  min-width: 0 !important;
+  display: grid !important;
+  gap: 4px !important;
+}
+
+.bkV2-stats p,
+.bkV2-stats strong,
+.bkV2-stats small {
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.bkV2-stats strong {
+  font-size: clamp(1.35rem, 1.8vw, 1.65rem) !important;
+  line-height: 1 !important;
+}
+
+.bkV2-stats small {
+  display: block !important;
+  font-size: 0.72rem !important;
+  line-height: 1.15 !important;
+  white-space: nowrap !important;
+}
+
+/* Fix Booking Details customer row spacing */
+.bkV2-customer {
+  grid-template-columns: 54px minmax(0, 1fr) auto !important;
+  gap: 16px !important;
+}
+
+.bkV2-customer > div {
+  min-width: 0 !important;
+  display: grid !important;
+  gap: 3px !important;
+}
+
+.bkV2-customer strong {
+  display: block !important;
+  color: #fff7d6 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.15 !important;
+}
+
+.bkV2-customer small {
+  display: block !important;
+  color: rgba(226, 239, 255, 0.58) !important;
+  font-size: 0.74rem !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+}
+
+.bkV2-customer a {
+  white-space: nowrap !important;
+}
+
+/* Add a little more breathing room to Booking Details */
+.bkV2-details {
+  padding: 20px !important;
+}
+
+.bkV2-detailGrid {
+  gap: 12px !important;
+}
+
+/* End Bookings Clean Build v2 Tidy 1 */
+
+/* Bookings Clean Build v2 Tidy 2 */
+
+/* Fix Revenue Booked truncation */
+.bkV2-stats article {
+  grid-template-columns: 42px minmax(0, 1fr) !important;
+  padding: 15px !important;
+}
+
+.bkV2-stats article:nth-child(4) strong {
+  font-size: clamp(1.2rem, 1.45vw, 1.42rem) !important;
+  letter-spacing: -0.04em !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+
+.bkV2-stats article:nth-child(4) small {
+  font-size: 0.68rem !important;
+}
+
+/* Fix upcoming bookings row email/status collision */
+.bkV2-tableHead,
+.bkV2-row {
+  grid-template-columns: 82px minmax(150px, 0.95fr) minmax(145px, 0.85fr) 106px !important;
+  gap: 12px !important;
+}
+
+.bkV2-row > span {
+  min-width: 0 !important;
+}
+
+.bkV2-row small {
+  display: block !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.bkV2-row .bkV2-status {
+  justify-self: end !important;
+  max-width: 104px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Slightly better row breathing */
+.bkV2-row {
+  min-height: 68px !important;
+}
+
+.bkV2-date {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+/* End Bookings Clean Build v2 Tidy 2 */
+
+/* Bookings List Extend + Top Tabs Shift v1 */
+
+/* Move top controls slightly right by giving the title area more breathing room */
+.bkV2-header {
+  grid-template-columns: minmax(330px, 0.95fr) minmax(620px, 1.05fr) !important;
+  column-gap: 32px !important;
+}
+
+.bkV2-title {
+  max-width: 430px !important;
+}
+
+.bkV2-actions {
+  justify-self: end !important;
+  transform: translateX(10px) !important;
+}
+
+/* Keep search from getting too wide after the shift */
+.bkV2-actions .bkV2-search {
+  max-width: 310px !important;
+}
+
+/* Extend the upcoming bookings list area properly */
+.bkV2-upcoming {
+  min-height: 660px !important;
+}
+
+.bkV2-list {
+  gap: 0 !important;
+}
+
+.bkV2-row {
+  min-height: 64px !important;
+}
+
+.bkV2-linkButton {
+  margin-top: 20px !important;
+}
+
+/* Keep the right-side panels balanced with the taller booking list */
+.bkV2-side {
+  align-content: start !important;
+}
+
+@media (max-width: 1180px) {
+  .bkV2-header {
+    grid-template-columns: 1fr !important;
+    column-gap: 0 !important;
+  }
+
+  .bkV2-actions {
+    transform: none !important;
+    justify-self: stretch !important;
+  }
+
+  .bkV2-actions .bkV2-search {
+    max-width: none !important;
+  }
+
+  .bkV2-upcoming {
+    min-height: auto !important;
+  }
+}
+/* End Bookings List Extend + Top Tabs Shift v1 */
+
+/* Bookings Fill + Simple Summary v1 */
+
+/* Fill the large empty booking-list gap with more real rows */
+.bkV2-upcoming {
+  min-height: 720px !important;
+}
+
+.bkV2-row {
+  min-height: 61px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+.bkV2-date {
+  width: 46px !important;
+  height: 46px !important;
+}
+
+.bkV2-linkButton {
+  margin-top: 16px !important;
+}
+
+/* Simplify Booking Summary so it feels calmer and more professional */
+.bkV2-summary {
+  background:
+    radial-gradient(circle at top right, rgba(46, 167, 255, 0.08), transparent 34%),
+    linear-gradient(145deg, rgba(7, 18, 34, 0.96), rgba(3, 8, 18, 0.98)) !important;
+}
+
+.bkV2-healthBars {
+  gap: 10px !important;
+}
+
+.bkV2-healthBars div {
+  padding: 10px 0 !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08) !important;
+}
+
+.bkV2-healthBars div:last-child {
+  border-bottom: 0 !important;
+}
+
+.bkV2-healthBars span {
+  display: grid !important;
+  grid-template-columns: 10px minmax(0, 1fr) auto !important;
+  gap: 8px !important;
+  align-items: center !important;
+  font-size: 0.76rem !important;
+}
+
+.bkV2-healthBars span::after {
+  content: attr(data-value);
+}
+
+.bkV2-healthBars i {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+.bkV2-healthBars strong {
+  color: rgba(248, 250, 252, 0.92) !important;
+  font-size: 0.8rem !important;
+  margin-top: 1px !important;
+}
+
+.bkV2-healthBars b {
+  height: 6px !important;
+  margin-top: 5px !important;
+  background: rgba(148, 163, 184, 0.10) !important;
+}
+
+.bkV2-healthBars em {
+  background: linear-gradient(90deg, #2ea7ff, #d4af37) !important;
+  opacity: 0.86 !important;
+}
+
+.bkV2-summaryStats {
+  margin-top: 14px !important;
+}
+
+.bkV2-summaryStats span {
+  padding: 9px 10px !important;
+}
+
+.bkV2-summaryStats strong {
+  font-size: 0.95rem !important;
+}
+
+/* Keep right column balanced with longer booking list */
+.bkV2-side {
+  align-content: start !important;
+}
+
+/* End Bookings Fill + Simple Summary v1 */
