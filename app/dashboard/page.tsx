@@ -394,12 +394,12 @@ export default function DashboardPage() {
           >
             <defs>
               <linearGradient id="leadGraphBlue6a" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0%" stopColor="rgba(46, 167, 255, 0.14)" />
-                <stop offset="100%" stopColor="rgba(46, 167, 255, 0)" />
+                <stop offset="0%" stopColor="rgba(45, 196, 255, 0.14)" />
+                <stop offset="100%" stopColor="rgba(45, 196, 255, 0)" />
               </linearGradient>
               <linearGradient id="leadGraphGreen6a" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0%" stopColor="rgba(212, 175, 55, 0.12)" />
-                <stop offset="100%" stopColor="rgba(212, 175, 55, 0)" />
+                <stop offset="0%" stopColor="rgba(255, 210, 74, 0.12)" />
+                <stop offset="100%" stopColor="rgba(255, 210, 74, 0)" />
               </linearGradient>
             </defs>
 
@@ -489,12 +489,12 @@ export default function DashboardPage() {
             >
               <defs>
                 <linearGradient id="bookingGraphGold6b" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="0%" stopColor="rgba(212, 175, 55, 0.13)" />
-                  <stop offset="100%" stopColor="rgba(212, 175, 55, 0)" />
+                  <stop offset="0%" stopColor="rgba(255, 210, 74, 0.13)" />
+                  <stop offset="100%" stopColor="rgba(255, 210, 74, 0)" />
                 </linearGradient>
                 <linearGradient id="bookingGraphBlue6b" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="0%" stopColor="rgba(46, 167, 255, 0.12)" />
-                  <stop offset="100%" stopColor="rgba(46, 167, 255, 0)" />
+                  <stop offset="0%" stopColor="rgba(45, 196, 255, 0.12)" />
+                  <stop offset="100%" stopColor="rgba(45, 196, 255, 0)" />
                 </linearGradient>
               </defs>
 

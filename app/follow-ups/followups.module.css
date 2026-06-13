@@ -1,0 +1,1230 @@
+.followUpsPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: #fff8dd;
+  font-size: 0.94rem;
+}
+
+.heroPanel,
+.tablePanel,
+.sideCard,
+.actionPanel,
+.selectedPanel {
+  border: 1px solid rgba(255, 199, 54, 0.2);
+  background:
+    radial-gradient(circle at top left, rgba(45, 196, 255, 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(8, 31, 55, 0.98), rgba(2, 10, 22, 0.99));
+  border-radius: 20px;
+  box-shadow: 0 22px 62px rgba(0, 0, 0, 0.28);
+}
+
+.heroPanel,
+.tablePanel,
+.sideCard,
+.actionPanel,
+.selectedPanel {
+  padding: 15px;
+}
+
+.heroTop {
+  display: grid;
+  grid-template-columns: minmax(300px, 410px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.kicker {
+  margin: 0 0 5px;
+  color: #ffd24a;
+  font-size: 0.64rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.titleBlock h1 {
+  margin: 0;
+  color: #fff8dd;
+  font-size: clamp(1.75rem, 2.8vw, 2.45rem);
+  line-height: 1;
+}
+
+.titleBlock p,
+.actionPanel p,
+.selectedPanel p {
+  margin: 8px 0 0;
+  color: rgba(236, 244, 255, 0.72);
+  font-size: 0.9rem;
+  line-height: 1.42;
+}
+
+.topControls {
+  display: grid;
+  grid-template-columns: 145px 128px minmax(220px, 1fr) 104px;
+  gap: 8px;
+  align-items: center;
+}
+
+.primaryButton,
+.ghostButton,
+.ownerChip,
+.metricCard,
+.tabButton,
+.rowButton,
+.sideTitle button,
+.priorityRow,
+.reminderRow,
+.outcomeList button,
+.pagination button {
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.primaryButton {
+  min-height: 40px;
+  padding: 0 13px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffe071, #ffb22f 52%, #ff8f1f);
+  color: #071522;
+  font-size: 0.8rem;
+  font-weight: 950;
+  box-shadow: 0 16px 34px rgba(255, 210, 74, 0.22);
+  white-space: nowrap;
+}
+
+.controlShell,
+.sortShell {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid rgba(255, 210, 74, 0.25);
+  border-radius: 12px;
+  background: rgba(4, 22, 41, 0.88);
+  padding: 0 10px;
+  overflow: hidden;
+}
+
+.controlShell span,
+.sortShell span {
+  flex: 0 0 auto;
+  color: rgba(255, 248, 221, 0.58);
+  font-size: 0.58rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.controlShell select,
+.controlShell input,
+.sortShell select,
+.demoForm input,
+.demoForm select {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fff8dd;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 820;
+}
+
+.controlShell option,
+.sortShell option,
+.demoForm option {
+  color: #071522;
+}
+
+.ownerChip {
+  min-height: 40px;
+  display: grid;
+  grid-template-columns: 30px auto;
+  column-gap: 7px;
+  align-items: center;
+  padding: 4px 8px;
+  border: 1px solid rgba(45, 196, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(6, 28, 52, 0.86);
+  color: #fff8dd;
+  text-align: left;
+}
+
+.ownerChip span {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  grid-row: span 2;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #eef7ff, #ffd24a);
+  color: #081726;
+  font-size: 0.7rem;
+  font-weight: 950;
+}
+
+.ownerChip strong {
+  font-size: 0.74rem;
+}
+
+.ownerChip small {
+  color: rgba(236, 244, 255, 0.58);
+  font-size: 0.62rem;
+}
+
+.metricGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.metricCard {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid rgba(45, 196, 255, 0.2);
+  border-radius: 16px;
+  background: rgba(1, 11, 22, 0.64);
+  color: inherit;
+  text-align: left;
+}
+
+.metricIcon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  flex: 0 0 44px;
+  place-items: center;
+  border: 1px solid rgba(255, 210, 74, 0.32);
+  border-radius: 50%;
+  background: rgba(255, 210, 74, 0.08);
+  color: #ffd24a;
+  font-size: 1rem;
+  font-weight: 950;
+}
+
+.metricCard p {
+  margin: 0;
+  color: rgba(236, 244, 255, 0.72);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.metricCard strong {
+  display: block;
+  margin-top: 3px;
+  color: #fff8dd;
+  font-size: 1.25rem;
+}
+
+.metricCard small {
+  display: block;
+  color: #31f2a1;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.actionPanel {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+}
+
+.actionPanel h2,
+.selectedPanel h2 {
+  margin: 0;
+  color: #fff8dd;
+  font-size: 1.25rem;
+}
+
+.demoForm {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.demoForm input,
+.demoForm select {
+  min-height: 38px;
+  border: 1px solid rgba(45, 196, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(1, 9, 18, 0.72);
+  padding: 0 10px;
+}
+
+.ghostButton {
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 210, 74, 0.34);
+  border-radius: 12px;
+  background: rgba(3, 17, 32, 0.72);
+  color: #fff8dd;
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.notice {
+  padding: 9px 11px;
+  border: 1px solid rgba(49, 242, 161, 0.3);
+  border-radius: 13px;
+  background: rgba(49, 242, 161, 0.09);
+  color: #ccffe6;
+  font-size: 0.8rem;
+  font-weight: 820;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 325px;
+  gap: 14px;
+  align-items: start;
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tabButton {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 10px;
+  border: 1px solid rgba(255, 210, 74, 0.22);
+  border-radius: 11px;
+  background: rgba(1, 12, 25, 0.75);
+  color: rgba(255, 248, 221, 0.86);
+  font-size: 0.76rem;
+  font-weight: 950;
+}
+
+.tabButton span {
+  min-width: 21px;
+  height: 21px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(45, 196, 255, 0.18);
+  color: #dff8ff;
+  font-size: 0.68rem;
+}
+
+.tabActive {
+  background: linear-gradient(135deg, #ffd24a, #ffb12b);
+  color: #071522;
+}
+
+.tabActive span {
+  background: rgba(4, 18, 31, 0.18);
+  color: #071522;
+}
+
+.sortShell {
+  width: 155px;
+}
+
+.tableScroll {
+  overflow-x: auto;
+  margin-top: 12px;
+  border: 1px solid rgba(45, 196, 255, 0.15);
+  border-radius: 16px;
+  background: rgba(1, 8, 17, 0.66);
+}
+
+.followUpTable {
+  width: 100%;
+  min-width: 950px;
+  border-collapse: collapse;
+}
+
+.followUpTable th {
+  padding: 10px 11px;
+  color: rgba(236, 244, 255, 0.58);
+  font-size: 0.62rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-align: left;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(45, 196, 255, 0.15);
+}
+
+.followUpTable td {
+  padding: 10px 11px;
+  color: rgba(255, 248, 221, 0.82);
+  border-bottom: 1px solid rgba(45, 196, 255, 0.09);
+  font-size: 0.78rem;
+  font-weight: 720;
+  vertical-align: middle;
+}
+
+.followUpTable td small {
+  display: block;
+  margin-top: 3px;
+  color: rgba(236, 244, 255, 0.52);
+  font-size: 0.64rem;
+}
+
+.followUpTable tr:hover {
+  background: rgba(45, 196, 255, 0.07);
+}
+
+.customerButton {
+  display: grid;
+  grid-template-columns: 30px auto;
+  column-gap: 8px;
+  align-items: center;
+  border: 0;
+  background: transparent;
+  color: #fff8dd;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+}
+
+.customerButton span {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  grid-row: span 2;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d9f5ff, #ffd24a);
+  color: #081726;
+  font-size: 0.68rem;
+  font-weight: 950;
+}
+
+.priorityChip,
+.statusChip {
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 8px;
+  border-radius: 8px;
+  font-size: 0.66rem;
+  font-weight: 950;
+}
+
+.priorityHigh,
+.statusOverdue {
+  border: 1px solid rgba(255, 112, 112, 0.36);
+  background: rgba(255, 112, 112, 0.1);
+  color: #ff9f9f;
+}
+
+.priorityMedium,
+.statusDue {
+  border: 1px solid rgba(255, 210, 74, 0.35);
+  background: rgba(255, 210, 74, 0.11);
+  color: #ffd24a;
+}
+
+.priorityLow,
+.statusScheduled {
+  border: 1px solid rgba(45, 196, 255, 0.32);
+  background: rgba(45, 196, 255, 0.11);
+  color: #53d9ff;
+}
+
+.statusCompleted {
+  border: 1px solid rgba(49, 242, 161, 0.32);
+  background: rgba(49, 242, 161, 0.11);
+  color: #31f2a1;
+}
+
+.rowButton {
+  min-height: 27px;
+  padding: 0 8px;
+  border: 1px solid rgba(45, 196, 255, 0.18);
+  border-radius: 10px;
+  background: rgba(3, 17, 32, 0.72);
+  color: #dff8ff;
+  font-size: 0.66rem;
+  font-weight: 850;
+}
+
+.tableFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding-top: 10px;
+  color: rgba(236, 244, 255, 0.62);
+  font-size: 0.78rem;
+}
+
+.pagination {
+  display: flex;
+  gap: 6px;
+}
+
+.pagination button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255, 210, 74, 0.22);
+  border-radius: 10px;
+  background: rgba(1, 12, 25, 0.78);
+  color: #fff8dd;
+  font-weight: 950;
+}
+
+.pageActive {
+  background: linear-gradient(135deg, #ffd24a, #ffb12b) !important;
+  color: #071522 !important;
+}
+
+.sideRail {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sideTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.sideTitle h3 {
+  margin: 0;
+  color: #fff8dd;
+  font-size: 1rem;
+}
+
+.sideTitle button {
+  background: transparent;
+  color: #2dc4ff;
+  font-size: 0.76rem;
+  font-weight: 850;
+}
+
+.priorityRow,
+.reminderRow,
+.outcomeList button {
+  width: 100%;
+  display: grid;
+  gap: 3px;
+  border: 0;
+  border-bottom: 1px solid rgba(45, 196, 255, 0.1);
+  background: transparent;
+  color: #fff8dd;
+  padding: 9px 0;
+  text-align: left;
+}
+
+.priorityRow {
+  grid-template-columns: 30px 1fr auto;
+  align-items: center;
+}
+
+.priorityRow span {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  grid-row: span 2;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 210, 74, 0.16);
+  color: #ffd24a;
+  font-weight: 950;
+}
+
+.priorityRow small,
+.reminderRow small {
+  color: rgba(236, 244, 255, 0.58);
+  font-size: 0.68rem;
+}
+
+.priorityRow em,
+.reminderRow em {
+  color: #ffd24a;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.reminderRow {
+  grid-template-columns: 45px 1fr auto;
+}
+
+.reminderRow span {
+  color: #2dc4ff;
+  font-weight: 950;
+}
+
+.outcomeList button {
+  grid-template-columns: 1fr auto;
+  color: rgba(236, 244, 255, 0.72);
+}
+
+.outcomeList strong {
+  color: #fff8dd;
+}
+
+.selectedGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 11px;
+}
+
+.selectedGrid article {
+  border: 1px solid rgba(45, 196, 255, 0.15);
+  border-radius: 13px;
+  background: rgba(1, 9, 18, 0.62);
+  padding: 10px;
+}
+
+.selectedGrid strong {
+  display: block;
+  color: #ffd24a;
+  font-size: 0.94rem;
+}
+
+.selectedGrid span {
+  display: block;
+  margin-top: 4px;
+  color: rgba(236, 244, 255, 0.58);
+  font-size: 0.68rem;
+}
+
+.emptyState {
+  display: grid;
+  place-items: center;
+  gap: 6px;
+  padding: 34px;
+  color: rgba(236, 244, 255, 0.68);
+}
+
+.safetyNote {
+  margin: 0;
+  color: rgba(236, 244, 255, 0.48);
+  font-size: 0.74rem;
+}
+
+@media (max-width: 1180px) {
+  .heroTop,
+  .mainGrid,
+  .actionPanel {
+    grid-template-columns: 1fr;
+  }
+
+  .topControls,
+  .demoForm,
+  .selectedGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .topControls,
+  .demoForm,
+  .selectedGrid,
+  .metricGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   FOLLOW-UPS FINAL VISUAL FINISH
+   - no redesign
+   - no new bot
+   - fix visible fit issues from screenshot
+   ========================================================= */
+
+/* Top controls: keep everything readable and inside the page */
+.topControls {
+  grid-template-columns: 150px 150px minmax(260px, 1fr) 118px !important;
+  gap: 9px !important;
+  align-items: start !important;
+}
+
+.controlShell {
+  min-width: 0 !important;
+}
+
+.controlShell select,
+.controlShell input {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.ownerChip {
+  min-width: 118px !important;
+  justify-self: end !important;
+}
+
+/* Make header feel calmer and closer to the polished Bookings/Customers scale */
+.heroPanel {
+  padding: 14px 15px !important;
+}
+
+.metricGrid {
+  margin-top: 13px !important;
+}
+
+.metricCard {
+  min-height: 78px !important;
+}
+
+/* Right rail polish */
+.sideRail {
+  gap: 12px !important;
+}
+
+.sideCard {
+  padding: 14px !important;
+  border-radius: 18px !important;
+}
+
+.sideTitle {
+  margin-bottom: 7px !important;
+}
+
+.sideTitle h3 {
+  font-size: 0.95rem !important;
+}
+
+.sideTitle button {
+  font-size: 0.72rem !important;
+}
+
+/* Today's Priorities: stop text from crowding */
+.priorityRow {
+  grid-template-columns: 28px minmax(0, 1fr) auto !important;
+  column-gap: 9px !important;
+  align-items: center !important;
+}
+
+.priorityRow span {
+  grid-column: 1 !important;
+  grid-row: 1 / span 2 !important;
+}
+
+.priorityRow strong {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  min-width: 0 !important;
+}
+
+.priorityRow small {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.priorityRow em {
+  grid-column: 3 !important;
+  grid-row: 1 / span 2 !important;
+  justify-self: end !important;
+  white-space: nowrap !important;
+}
+
+/* Upcoming Reminders: this is the main broken area from the screenshot */
+.reminderRow {
+  grid-template-columns: 68px minmax(0, 1fr) auto !important;
+  column-gap: 10px !important;
+  align-items: center !important;
+}
+
+.reminderRow span {
+  grid-column: 1 !important;
+  grid-row: 1 / span 2 !important;
+  color: #2dc4ff !important;
+  font-size: 0.76rem !important;
+  line-height: 1.1 !important;
+  font-weight: 950 !important;
+  white-space: normal !important;
+}
+
+.reminderRow strong {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  min-width: 0 !important;
+  color: #fff8dd !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.reminderRow small {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  min-width: 0 !important;
+  color: rgba(236, 244, 255, 0.58) !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.reminderRow em {
+  grid-column: 3 !important;
+  grid-row: 1 / span 2 !important;
+  justify-self: end !important;
+  color: #ffd24a !important;
+  font-style: normal !important;
+  font-weight: 950 !important;
+  white-space: nowrap !important;
+}
+
+/* Outcome rows: make them feel cleaner */
+.outcomeList button {
+  min-height: 34px !important;
+  align-items: center !important;
+}
+
+.outcomeList span,
+.outcomeList strong {
+  font-size: 0.82rem !important;
+}
+
+/* Selected follow-up panel: slightly calmer */
+.selectedPanel {
+  padding: 14px 15px !important;
+}
+
+.selectedPanel h2 {
+  font-size: 1.15rem !important;
+}
+
+.selectedGrid article {
+  padding: 9px 10px !important;
+}
+
+/* Responsive safety */
+@media (max-width: 1180px) {
+  .topControls {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .ownerChip {
+    justify-self: stretch !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .topControls,
+  .priorityRow,
+  .reminderRow {
+    grid-template-columns: 1fr !important;
+  }
+
+  .priorityRow span,
+  .priorityRow strong,
+  .priorityRow small,
+  .priorityRow em,
+  .reminderRow span,
+  .reminderRow strong,
+  .reminderRow small,
+  .reminderRow em {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    justify-self: start !important;
+  }
+}
+
+
+
+/* =========================================================
+   FOLLOW-UPS SEARCH FIT + TABS + AURA BOT
+   - search/top controls stay inside page
+   - tabs action correctly through JS
+   - local bottom-left Aura bot only on Follow-Ups
+   ========================================================= */
+
+.heroPanel {
+  overflow: hidden !important;
+}
+
+.heroTop {
+  grid-template-columns: minmax(300px, 390px) minmax(0, 1fr) !important;
+  gap: 16px !important;
+  align-items: start !important;
+}
+
+.topControls {
+  width: 100% !important;
+  max-width: 625px !important;
+  justify-self: end !important;
+  display: grid !important;
+  grid-template-columns: 138px 126px minmax(160px, 1fr) 108px !important;
+  gap: 8px !important;
+  align-items: center !important;
+  overflow: hidden !important;
+}
+
+.primaryButton,
+.controlShell,
+.ownerChip {
+  min-width: 0 !important;
+  min-height: 39px !important;
+}
+
+.primaryButton {
+  padding: 0 12px !important;
+  font-size: 0.78rem !important;
+}
+
+.controlShell {
+  padding: 0 8px !important;
+  gap: 6px !important;
+  overflow: hidden !important;
+}
+
+.controlShell span {
+  flex: 0 0 auto !important;
+  font-size: 0.56rem !important;
+}
+
+.controlShell select,
+.controlShell input {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  font-size: 0.72rem !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.searchShell {
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.searchShell input {
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.ownerChip {
+  width: 108px !important;
+  justify-self: end !important;
+  padding: 4px 7px !important;
+  overflow: hidden !important;
+}
+
+.ownerChip span {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.ownerChip strong {
+  font-size: 0.68rem !important;
+}
+
+.ownerChip small {
+  font-size: 0.58rem !important;
+}
+
+/* Make tab clicks feel obviously actioned */
+.tabButton {
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease !important;
+}
+
+.tabButton:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 210, 74, 0.42) !important;
+}
+
+.tabActive {
+  border-color: rgba(255, 210, 74, 0.72) !important;
+}
+
+/* Bottom-left Bee/Aura bot for Follow-Ups only */
+.auraFollowUpPanel {
+  width: min(100%, 620px);
+  align-self: flex-start;
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+  align-items: center;
+  gap: 18px;
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 210, 74, 0.24);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 8% 25%, rgba(255, 210, 74, 0.14), transparent 30%),
+    radial-gradient(circle at 95% 10%, rgba(45, 196, 255, 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(8, 31, 55, 0.98), rgba(2, 10, 22, 0.99));
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
+}
+
+.auraImageBox {
+  position: relative;
+  width: 104px;
+  height: 104px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(45, 196, 255, 0.28);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(45, 196, 255, 0.18), transparent 55%),
+    rgba(45, 196, 255, 0.08);
+}
+
+.auraImageBox img {
+  position: relative;
+  z-index: 2;
+  width: 98px;
+  height: 98px;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 34px rgba(45, 196, 255, 0.2));
+}
+
+.auraImageBox span {
+  position: absolute;
+  color: rgba(255, 210, 74, 0.35);
+  font-weight: 950;
+}
+
+.auraFollowUpPanel h3 {
+  margin: 0;
+  color: #fff8dd;
+  font-size: 1.04rem;
+  line-height: 1.3;
+}
+
+.auraFollowUpPanel p:not(.kicker) {
+  margin: 7px 0 0;
+  color: rgba(236, 244, 255, 0.74);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 1180px) {
+  .heroTop {
+    grid-template-columns: 1fr !important;
+  }
+
+  .topControls {
+    max-width: none !important;
+    justify-self: stretch !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .ownerChip {
+    width: 100% !important;
+    justify-self: stretch !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .topControls,
+  .auraFollowUpPanel {
+    grid-template-columns: 1fr !important;
+  }
+
+  .auraImageBox {
+    width: 96px;
+    height: 96px;
+  }
+
+  .auraImageBox img {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+
+/* =========================================================
+   FOLLOW-UPS TAB INFO BAR + AURA WIDTH FIX
+   ========================================================= */
+
+/* Make the active tab view obvious and place it above the follow-up columns */
+.activeSegmentBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  padding: 11px 13px;
+  border: 1px solid rgba(255, 210, 74, 0.22);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 210, 74, 0.1), transparent 34%),
+    rgba(1, 12, 25, 0.72);
+}
+
+.activeSegmentBar strong {
+  display: block;
+  color: #fff8dd;
+  font-size: 0.98rem;
+  line-height: 1.2;
+}
+
+.activeSegmentBar span {
+  display: block;
+  margin-top: 4px;
+  color: rgba(236, 244, 255, 0.68);
+  font-size: 0.78rem;
+  font-weight: 760;
+}
+
+.activeSegmentBar button {
+  min-height: 34px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(45, 196, 255, 0.22);
+  border-radius: 11px;
+  background: rgba(3, 17, 32, 0.72);
+  color: #dff8ff;
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: 900;
+  cursor: pointer;
+  padding: 0 12px;
+}
+
+/* Make Aura/Bee bot stretch neatly across the page */
+.auraFollowUpPanel {
+  width: 100% !important;
+  max-width: none !important;
+  align-self: stretch !important;
+  grid-template-columns: 128px minmax(0, 1fr) !important;
+  gap: 20px !important;
+  padding: 20px 22px !important;
+}
+
+.auraFollowUpPanel h3 {
+  max-width: 920px !important;
+  font-size: 1.12rem !important;
+}
+
+.auraFollowUpPanel p:not(.kicker) {
+  max-width: 940px !important;
+  font-size: 0.9rem !important;
+}
+
+/* Keep table columns close underneath the active view bar */
+.tableScroll {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 720px) {
+  .activeSegmentBar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .activeSegmentBar button {
+    width: 100%;
+  }
+
+  .auraFollowUpPanel {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+/* =========================================================
+   FOLLOW-UPS FINAL TABLE FIT PATCH
+   Keeps the table clean and stops the right side being cut off.
+   Rows are clickable, so separate Open/Value columns are not needed here.
+   ========================================================= */
+
+.mainGrid {
+  grid-template-columns: minmax(0, 1fr) 305px !important;
+  gap: 14px !important;
+}
+
+.tablePanel {
+  min-width: 0 !important;
+}
+
+.tableScroll {
+  overflow-x: hidden !important;
+}
+
+.followUpTable {
+  width: 100% !important;
+  min-width: 0 !important;
+  table-layout: fixed !important;
+}
+
+.followUpTable th,
+.followUpTable td {
+  padding: 9px 9px !important;
+  font-size: 0.74rem !important;
+}
+
+.followUpTable th:nth-child(1),
+.followUpTable td:nth-child(1) {
+  width: 25%;
+}
+
+.followUpTable th:nth-child(2),
+.followUpTable td:nth-child(2) {
+  width: 27%;
+}
+
+.followUpTable th:nth-child(3),
+.followUpTable td:nth-child(3) {
+  width: 11%;
+}
+
+.followUpTable th:nth-child(4),
+.followUpTable td:nth-child(4) {
+  width: 11%;
+}
+
+.followUpTable th:nth-child(5),
+.followUpTable td:nth-child(5) {
+  width: 13%;
+}
+
+.followUpTable th:nth-child(6),
+.followUpTable td:nth-child(6) {
+  width: 13%;
+}
+
+.followUpTable td,
+.followUpTable th {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.followUpTable td small {
+  max-width: 100% !important;
+}
+
+.priorityChip,
+.statusChip {
+  max-width: 100%;
+}
+
+@media (max-width: 1180px) {
+  .mainGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .tableScroll {
+    overflow-x: auto !important;
+  }
+
+  .followUpTable {
+    min-width: 760px !important;
+  }
+}

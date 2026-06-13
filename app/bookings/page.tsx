@@ -220,6 +220,20 @@ function customerRecordHref(booking: Booking) {
   return `/customers?search=${encodeURIComponent(booking.customer)}`;
 }
 
+
+const bookingPagePerformanceData = [
+  { day: "Mon", bookedHeight: 48, valueHeight: 42, x: 78 },
+  { day: "Tue", bookedHeight: 38, valueHeight: 22, x: 168 },
+  { day: "Wed", bookedHeight: 86, valueHeight: 64, x: 258 },
+  { day: "Thu", bookedHeight: 62, valueHeight: 48, x: 348 },
+  { day: "Fri", bookedHeight: 92, valueHeight: 76, x: 438 },
+  { day: "Sat", bookedHeight: 112, valueHeight: 105, x: 528 },
+  { day: "Sun", bookedHeight: 78, valueHeight: 92, x: 618 },
+];
+
+const bookingPageBookedLine = "78,132 168,142 258,88 348,118 438,76 528,54 618,96";
+const bookingPageValueLine = "78,146 168,152 258,112 348,124 438,88 528,66 618,80";
+
 export default function BookingsPage() {
   const [bookings, setBookings] = useState<Booking[]>(initialBookings);
   const [selectedId, setSelectedId] = useState(initialBookings[1].id);
@@ -490,36 +504,94 @@ export default function BookingsPage() {
             </div>
           </section>
 
-          <section className="bkV2-card bkV2-summary">
-            <div className="bkV2-cardHeader">
+          <section className="bkV2-bookingPerformancePanel">
+            <div className="bkV2-performanceHeader">
               <div>
-                <p>Booking health</p>
-                <h2>Booking Summary</h2>
+                <p className="bkV2-sectionEyebrow">Booking Performance</p>
+                <h2>Booking Performance</h2>
               </div>
-              <span>This Month</span>
+              <strong>Last 7 Days</strong>
             </div>
 
-            <div className="bkV2-healthBars">
-              <div>
-                <span><i className="blue" /> Confirmed</span>
-                <strong>42 · 70%</strong>
-                <b><em style={{ width: "70%" }} /></b>
-              </div>
-              <div>
-                <span><i className="gold" /> Pending</span>
-                <strong>12 · 20%</strong>
-                <b><em style={{ width: "20%" }} /></b>
-              </div>
-              <div>
-                <span><i className="muted" /> Cancelled</span>
-                <strong>6 · 10%</strong>
-                <b><em style={{ width: "10%" }} /></b>
-              </div>
+            <div className="bkV2-performanceLegend">
+              <span><i className="booked" /> Booked jobs</span>
+              <span><i className="value" /> Estimated value</span>
             </div>
 
-            <div className="bkV2-summaryStats">
-              <span><strong>92%</strong><small>attendance rate</small></span>
-              <span><strong>£4.2k</strong><small>booked value</small></span>
+            <div className="bkV2-performanceChart" aria-label="Booking performance chart for the last 7 days">
+              <svg viewBox="0 0 700 240" role="img">
+                <defs>
+                  <linearGradient id="bookingBarGold" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stopColor="#ffd24a" stopOpacity="0.82" />
+                    <stop offset="100%" stopColor="#ffd24a" stopOpacity="0.16" />
+                  </linearGradient>
+                  <linearGradient id="bookingBarBlue" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stopColor="#2dc4ff" stopOpacity="0.82" />
+                    <stop offset="100%" stopColor="#2dc4ff" stopOpacity="0.16" />
+                  </linearGradient>
+                </defs>
+
+                <g className="bkV2-chartGrid">
+                  <line x1="54" y1="44" x2="660" y2="44" />
+                  <line x1="54" y1="80" x2="660" y2="80" />
+                  <line x1="54" y1="116" x2="660" y2="116" />
+                  <line x1="54" y1="152" x2="660" y2="152" />
+                  <line x1="54" y1="188" x2="660" y2="188" />
+                </g>
+
+                <g className="bkV2-axisLabels">
+                  <text x="8" y="48">£5k</text>
+                  <text x="8" y="120">£3k</text>
+                  <text x="8" y="190">£1k</text>
+                </g>
+
+                {bookingPagePerformanceData.map((item) => (
+                  <g key={item.day}>
+                    <rect
+                      className="goldBar"
+                      x={item.x - 18}
+                      y={188 - item.bookedHeight}
+                      width="16"
+                      height={item.bookedHeight}
+                      rx="7"
+                    />
+                    <rect
+                      className="blueBar"
+                      x={item.x + 8}
+                      y={188 - item.valueHeight}
+                      width="16"
+                      height={item.valueHeight}
+                      rx="7"
+                    />
+                    <text className="dayLabel" x={item.x - 10} y="222">{item.day}</text>
+                  </g>
+                ))}
+
+                <polyline className="bookedLine" points={bookingPageBookedLine} />
+                <polyline className="valueLine" points={bookingPageValueLine} />
+
+                {bookingPagePerformanceData.map((item) => (
+                  <g key={`${item.day}-points`}>
+                    <circle className="bookedPoint" cx={item.x} cy={bookingPageBookedLine.split(" ")[bookingPagePerformanceData.indexOf(item)].split(",")[1]} r="4" />
+                    <circle className="valuePoint" cx={item.x} cy={bookingPageValueLine.split(" ")[bookingPagePerformanceData.indexOf(item)].split(",")[1]} r="4" />
+                  </g>
+                ))}
+              </svg>
+            </div>
+
+            <div className="bkV2-performanceStats">
+              <div>
+                <strong>82</strong>
+                <span>jobs booked</span>
+              </div>
+              <div>
+                <strong>£18.4k</strong>
+                <span>estimated value</span>
+              </div>
+              <div>
+                <strong>14</strong>
+                <span>today</span>
+              </div>
             </div>
           </section>
         </aside>

@@ -193,7 +193,7 @@ export default function ReviewsPage() {
         </div>
       </section>
 
-      <section className="reviewsRef-card reviewsRef-testimonials">
+      <section id="reviews-list" className="reviewsRef-card reviewsRef-testimonials">
         <div className="reviewsRef-sectionTitle">
           <h2>What Our Customers Say</h2>
           <p>Real feedback from real service customers.</p>
@@ -235,7 +235,7 @@ export default function ReviewsPage() {
             Every review reflects our commitment to quality workmanship, reliability and putting our
             customers first — every time.
           </span>
-          <Link href="/reviews">View All Reviews</Link>
+          <Link href="#reviews-list">View All Reviews</Link>
         </article>
 
         <div className="reviewsRef-sourceGrid">
@@ -254,6 +254,13 @@ export default function ReviewsPage() {
       </section>
 
       <section className="reviewsRef-cta">
+        <div className="reviewsRef-ctaBotWrap">
+          <img
+            className="reviewsRef-ctaBot"
+            src="/brand/source/aura-assistant-transparent.png"
+            alt="Bee-Aura AI assistant"
+          />
+        </div>
         <span>☆</span>
         <div>
           <h2>Ready to Collect More 5-Star Reviews?</h2>

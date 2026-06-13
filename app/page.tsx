@@ -182,8 +182,8 @@ export default function Home() {
                   <svg viewBox="0 0 320 180" role="img" aria-label="Demo enquiry trend chart">
                     <defs>
                       <linearGradient id="leadAreaFill" x1="0" x2="0" y1="0" y2="1">
-                        <stop offset="0%" stopColor="rgba(46,167,255,0.26)" />
-                        <stop offset="100%" stopColor="rgba(46,167,255,0.02)" />
+                        <stop offset="0%" stopColor="rgba(45, 196, 255, 0.26)" />
+                        <stop offset="100%" stopColor="rgba(45, 196, 255, 0.02)" />
                       </linearGradient>
                     </defs>
 
@@ -207,7 +207,7 @@ export default function Home() {
                     <polyline
                       points="50,118 84,101 118,104 152,81 186,84 220,68 254,70 288,52"
                       fill="none"
-                      stroke="#2ea7ff"
+                      stroke="#2dc4ff"
                       strokeWidth="4"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -221,7 +221,7 @@ export default function Home() {
                       strokeLinejoin="round"
                     />
 
-                    <circle cx="288" cy="52" r="4.2" fill="#2ea7ff" />
+                    <circle cx="288" cy="52" r="4.2" fill="#2dc4ff" />
                     <circle cx="288" cy="72" r="3.8" fill="#41e0b0" />
 
                     <text x="46" y="156" className="chart-x-label">Mon</text>
@@ -268,22 +268,22 @@ export default function Home() {
                     <text x="12" y="117" className="chart-axis-label">2</text>
 
                     <rect x="50" y="86" width="18" height="52" rx="5" fill="#b98a1f" />
-                    <rect x="84" y="72" width="18" height="66" rx="5" fill="#d4af37" />
+                    <rect x="84" y="72" width="18" height="66" rx="5" fill="#ffd24a" />
                     <rect x="118" y="93" width="18" height="45" rx="5" fill="#b98a1f" />
-                    <rect x="152" y="58" width="18" height="80" rx="5" fill="#d4af37" />
+                    <rect x="152" y="58" width="18" height="80" rx="5" fill="#ffd24a" />
                     <rect x="186" y="79" width="18" height="59" rx="5" fill="#b98a1f" />
-                    <rect x="220" y="51" width="18" height="87" rx="5" fill="#d4af37" />
+                    <rect x="220" y="51" width="18" height="87" rx="5" fill="#ffd24a" />
                     <rect x="254" y="66" width="18" height="72" rx="5" fill="#b98a1f" />
 
                     <polyline
                       points="59,97 93,101 127,90 161,78 195,82 229,64 263,58"
                       fill="none"
-                      stroke="#2ea7ff"
+                      stroke="#2dc4ff"
                       strokeWidth="3.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
-                    <circle cx="263" cy="58" r="4" fill="#2ea7ff" />
+                    <circle cx="263" cy="58" r="4" fill="#2dc4ff" />
 
                     <text x="47" y="156" className="chart-x-label">Mon</text>
                     <text x="81" y="156" className="chart-x-label">Tue</text>

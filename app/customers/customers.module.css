@@ -140,7 +140,7 @@
   background: linear-gradient(135deg, #ffe071, #ffb22f 52%, #ff8f1f);
   color: #071522;
   font-weight: 950;
-  box-shadow: 0 16px 34px rgba(255, 177, 40, 0.23);
+  box-shadow: 0 16px 34px rgba(255, 210, 74, 0.23);
   white-space: nowrap;
 }
 
@@ -378,7 +378,7 @@
 }
 
 .tabActive {
-  background: linear-gradient(135deg, #ffd24a, #ffae2f);
+  background: linear-gradient(135deg, #ffd24a, #ffb12b);
   color: #071522;
   box-shadow: 0 14px 32px rgba(255, 178, 48, 0.2);
 }
@@ -608,7 +608,7 @@
 }
 
 .pagination .pageActive {
-  background: linear-gradient(135deg, #ffd24a, #ffae2f);
+  background: linear-gradient(135deg, #ffd24a, #ffb12b);
   color: #071522;
 }
 
@@ -1570,3 +1570,56 @@
     grid-template-columns: 1fr !important;
   }
 }
+
+
+
+/* === CUSTOMER INITIAL BLACK TEXT PATCH START === */
+
+/*
+  Make the yellow customer name / initials icons readable.
+  Yellow circles should use dark navy text, not white.
+*/
+
+.avatar,
+.avatar *,
+.initial,
+.initial *,
+.initials,
+.initials *,
+.customerAvatar,
+.customerAvatar *,
+.customerInitial,
+.customerInitial *,
+.customerInitials,
+.customerInitials *,
+.nameAvatar,
+.nameAvatar *,
+.nameInitial,
+.nameInitial *,
+.nameInitials,
+.nameInitials *,
+.customerIcon,
+.customerIcon *,
+.nameIcon,
+.nameIcon * {
+  color: #041426 !important;
+  text-shadow: none !important;
+}
+
+/* Keep yellow initials crisp */
+.avatar,
+.initial,
+.initials,
+.customerAvatar,
+.customerInitial,
+.customerInitials,
+.nameAvatar,
+.nameInitial,
+.nameInitials,
+.customerIcon,
+.nameIcon {
+  font-weight: 900 !important;
+}
+
+ /* === CUSTOMER INITIAL BLACK TEXT PATCH END === */
+

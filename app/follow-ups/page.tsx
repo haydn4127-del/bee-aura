@@ -1,511 +1,709 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
+import styles from "./followups.module.css";
 
-type FollowStatus = "Due Today" | "Overdue" | "Scheduled" | "Completed" | "Waiting";
+type Status = "Due Today" | "Overdue" | "Scheduled" | "Completed";
+type Tab = "All" | Status;
+type Channel = "All Channels" | "Call" | "WhatsApp" | "SMS" | "Email";
 type Priority = "High" | "Medium" | "Low";
-type Channel = "Call" | "SMS" | "Email" | "WhatsApp";
+type SortMode = "Due Soonest" | "Priority" | "Customer" | "Status";
 
 type FollowUp = {
   id: string;
-  customer: string;
-  slug: string;
   initials: string;
-  service: string;
+  customer: string;
+  job: string;
   task: string;
-  note: string;
-  channel: Channel;
+  detail: string;
+  channel: Exclude<Channel, "All Channels">;
   priority: Priority;
-  dueTime: string;
-  dueDetail: string;
-  owner: string;
-  status: FollowStatus;
+  status: Status;
+  dueLabel: string;
+  dueSub: string;
+  dueRank: number;
+  value: number;
+  ownerNote: string;
 };
 
-const startingFollowUps: FollowUp[] = [
+const followUps: FollowUp[] = [
   {
-    id: "FU-1001",
-    customer: "Tom Wilson",
-    slug: "tom-wilson",
+    id: "tom-wilson",
     initials: "TW",
-    service: "Boiler Repair",
+    customer: "Tom Wilson",
+    job: "Boiler repair",
     task: "Quote Follow-Up",
-    note: "Sent quote yesterday",
+    detail: "Sent quote yesterday",
     channel: "Call",
     priority: "High",
-    dueTime: "Today, 10:00 AM",
-    dueDetail: "in 45m",
-    owner: "John D.",
     status: "Due Today",
+    dueLabel: "Today, 10:00",
+    dueSub: "in 45m",
+    dueRank: 1,
+    value: 450,
+    ownerNote: "Quote is warm. Call before the lead goes cold.",
   },
   {
-    id: "FU-1002",
-    customer: "Sarah Johnson",
-    slug: "sarah-johnson",
+    id: "sarah-johnson",
     initials: "SJ",
-    service: "Plumbing Leak",
+    customer: "Sarah Johnson",
+    job: "Plumbing leak",
     task: "Missed Call Callback",
-    note: "Called this morning",
+    detail: "Called this morning",
     channel: "Call",
     priority: "High",
-    dueTime: "Today, 11:00 AM",
-    dueDetail: "in 1h 45m",
-    owner: "John D.",
     status: "Due Today",
+    dueLabel: "Today, 11:00",
+    dueSub: "in 1h 45m",
+    dueRank: 2,
+    value: 320,
+    ownerNote: "Emergency-style lead. Confirm availability quickly.",
   },
   {
-    id: "FU-1003",
-    customer: "Emma Davis",
-    slug: "emma-davis",
+    id: "emma-davis",
     initials: "ED",
-    service: "Bathroom Renovation",
+    customer: "Emma Davis",
+    job: "Bathroom renovation",
     task: "Booking Reminder",
-    note: "Booking tomorrow 11 AM",
+    detail: "Booking tomorrow 11 AM",
     channel: "SMS",
     priority: "Medium",
-    dueTime: "Today, 2:00 PM",
-    dueDetail: "in 4h 45m",
-    owner: "Lucy C.",
     status: "Due Today",
+    dueLabel: "Today, 2:00 PM",
+    dueSub: "in 4h 45m",
+    dueRank: 3,
+    value: 6200,
+    ownerNote: "Reminder prevents no-show and protects high-value booking.",
   },
   {
-    id: "FU-1004",
-    customer: "Mike Thompson",
-    slug: "mike-thompson",
+    id: "mike-thompson",
     initials: "MT",
-    service: "Electrical Fault",
+    customer: "Mike Thompson",
+    job: "Electrical fault",
     task: "Quote Follow-Up",
-    note: "Sent quote 3 days ago",
+    detail: "Sent quote 3 days ago",
     channel: "Email",
     priority: "High",
-    dueTime: "Yesterday, 4:00 PM",
-    dueDetail: "18h overdue",
-    owner: "Adam H.",
     status: "Overdue",
+    dueLabel: "Yesterday, 4:00 PM",
+    dueSub: "18h overdue",
+    dueRank: 4,
+    value: 180,
+    ownerNote: "Overdue quote. Needs quick owner-approved nudge.",
   },
   {
-    id: "FU-1005",
-    customer: "James Brown",
-    slug: "james-brown",
+    id: "james-brown",
     initials: "JB",
-    service: "Drain Cleaning",
+    customer: "James Brown",
+    job: "Drain cleaning",
     task: "Invoice Reminder",
-    note: "Invoice sent 7 days ago",
+    detail: "Invoice sent 7 days ago",
     channel: "Email",
     priority: "Medium",
-    dueTime: "Yesterday, 10:00 PM",
-    dueDetail: "10h overdue",
-    owner: "John D.",
     status: "Overdue",
+    dueLabel: "Yesterday, 10:00 AM",
+    dueSub: "10h overdue",
+    dueRank: 5,
+    value: 220,
+    ownerNote: "Payment reminder should stay polite and professional.",
   },
   {
-    id: "FU-1006",
-    customer: "Olivia Smith",
-    slug: "olivia-smith",
+    id: "olivia-smith",
     initials: "OS",
-    service: "Thermostat Install",
+    customer: "Olivia Smith",
+    job: "Thermostat install",
     task: "Parts Update",
-    note: "Waiting on thermostat",
+    detail: "Waiting on thermostat",
     channel: "WhatsApp",
     priority: "Low",
-    dueTime: "Tomorrow, 9:00 AM",
-    dueDetail: "in 22h",
-    owner: "Lucy C.",
     status: "Scheduled",
+    dueLabel: "Tomorrow, 9:00 AM",
+    dueSub: "in 22h",
+    dueRank: 6,
+    value: 210,
+    ownerNote: "Keep customer updated before they chase.",
   },
   {
-    id: "FU-1007",
-    customer: "David Carter",
-    slug: "david-carter",
+    id: "david-carter",
     initials: "DC",
-    service: "Roof Repair",
+    customer: "David Carter",
+    job: "Roof repair",
     task: "Review Request",
-    note: "Job completed 2 days ago",
+    detail: "Job completed 2 days ago",
     channel: "SMS",
     priority: "Low",
-    dueTime: "Tomorrow, 3:00 PM",
-    dueDetail: "in 1d 16h",
-    owner: "Adam H.",
     status: "Scheduled",
+    dueLabel: "Tomorrow, 3:00 PM",
+    dueSub: "in 1d 16h",
+    dueRank: 7,
+    value: 1850,
+    ownerNote: "Good review candidate. Owner approval required.",
   },
   {
-    id: "FU-1008",
-    customer: "Charlotte Lee",
-    slug: "charlotte-lee",
+    id: "charlotte-lee",
     initials: "CL",
-    service: "Boiler Service",
+    customer: "Charlotte Lee",
+    job: "Boiler service",
     task: "Booking Confirmation",
-    note: "Service on May 22",
+    detail: "Service on May 22",
     channel: "WhatsApp",
     priority: "Low",
-    dueTime: "May 22, 9:00 AM",
-    dueDetail: "in 3d",
-    owner: "John D.",
     status: "Scheduled",
+    dueLabel: "May 22, 9:00 AM",
+    dueSub: "in 3d",
+    dueRank: 8,
+    value: 120,
+    ownerNote: "Confirmation message protects the diary.",
   },
   {
-    id: "FU-1009",
-    customer: "Ben Morris",
-    slug: "ben-morris",
+    id: "ben-morris",
     initials: "BM",
-    service: "Bathroom Leak",
+    customer: "Ben Morris",
+    job: "Bathroom leak",
     task: "Callback Completed",
-    note: "Spoke with customer",
+    detail: "Spoke with customer",
     channel: "Call",
     priority: "Low",
-    dueTime: "May 18, 11:00 AM",
-    dueDetail: "",
-    owner: "Lucy C.",
     status: "Completed",
+    dueLabel: "May 18, 11:00",
+    dueSub: "completed",
+    dueRank: 99,
+    value: 250,
+    ownerNote: "Completed follow-up. No action needed.",
   },
   {
-    id: "FU-1010",
-    customer: "Tina Shaw",
-    slug: "tina-shaw",
+    id: "tina-shaw",
     initials: "TS",
-    service: "Heating Check",
+    customer: "Tina Shaw",
+    job: "Heating check",
     task: "Awaiting Customer Reply",
-    note: "Sent message",
+    detail: "Sent message",
     channel: "WhatsApp",
     priority: "Low",
-    dueTime: "—",
-    dueDetail: "",
-    owner: "Adam H.",
-    status: "Waiting",
+    status: "Completed",
+    dueLabel: "—",
+    dueSub: "closed",
+    dueRank: 100,
+    value: 0,
+    ownerNote: "Closed until customer replies.",
   },
 ];
 
-const statCards = [
-  { icon: "▣", label: "Due Today", value: "18", change: "↓ 10% vs yesterday", tone: "gold" },
-  { icon: "◷", label: "Overdue", value: "7", change: "↓ 22% vs yesterday", tone: "red" },
-  { icon: "◷", label: "Scheduled", value: "36", change: "↑ 15% vs yesterday", tone: "blue" },
-  { icon: "✓", label: "Completed", value: "52", change: "↑ 18% vs yesterday", tone: "green" },
-];
+const tabs: Tab[] = ["All", "Due Today", "Overdue", "Scheduled", "Completed"];
+const channels: Channel[] = ["All Channels", "Call", "WhatsApp", "SMS", "Email"];
+const sortModes: SortMode[] = ["Due Soonest", "Priority", "Customer", "Status"];
 
-const tabs: Array<"All" | FollowStatus> = ["All", "Due Today", "Overdue", "Scheduled", "Completed"];
+const priorityRank: Record<Priority, number> = {
+  High: 1,
+  Medium: 2,
+  Low: 3,
+};
 
-const priorities = [
-  { number: 1, customer: "Tom Wilson", task: "Quote Follow-Up", channel: "Call", time: "10:00 AM" },
-  { number: 2, customer: "Sarah Johnson", task: "Missed Call Callback", channel: "Call", time: "11:00 AM" },
-  { number: 3, customer: "Emma Davis", task: "Booking Reminder", channel: "SMS", time: "2:00 PM" },
-  { number: 4, customer: "Mike Thompson", task: "Quote Follow-Up", channel: "Email", time: "Yesterday" },
-];
+const statusClass: Record<Status, string> = {
+  "Due Today": styles.statusDue,
+  Overdue: styles.statusOverdue,
+  Scheduled: styles.statusScheduled,
+  Completed: styles.statusCompleted,
+};
 
-const reminders = [
-  { date: "May 21", customer: "Olivia Smith", task: "Parts Update", channel: "WhatsApp", time: "9:00 AM" },
-  { date: "May 22", customer: "Charlotte Lee", task: "Booking Confirmation", channel: "WhatsApp", time: "9:00 AM" },
-  { date: "May 22", customer: "David Carter", task: "Review Request", channel: "SMS", time: "3:00 PM" },
-  { date: "May 23", customer: "James Brown", task: "Invoice Reminder", channel: "Email", time: "10:00 AM" },
-];
-
-function slugify(value: string) {
-  return value.toLowerCase().replace(/\s+/g, "-");
-}
-
-function channelIcon(channel: Channel | string) {
-  if (channel === "Call") return "☎";
-  if (channel === "SMS") return "☵";
-  if (channel === "Email") return "✉";
-  if (channel === "WhatsApp") return "◉";
-  return "•";
-}
+const priorityClass: Record<Priority, string> = {
+  High: styles.priorityHigh,
+  Medium: styles.priorityMedium,
+  Low: styles.priorityLow,
+};
 
 export default function FollowUpsPage() {
-  const [followUps, setFollowUps] = useState(startingFollowUps);
-  const [activeTab, setActiveTab] = useState<"All" | FollowStatus>("All");
-  const [search, setSearch] = useState("");
+  const [selectedTab, setSelectedTab] = useState<Tab>("All");
+  const [channel, setChannel] = useState<Channel>("All Channels");
+  const [sortMode, setSortMode] = useState<SortMode>("Due Soonest");
+  const [searchText, setSearchText] = useState("");
+  const [selectedFollowUp, setSelectedFollowUp] = useState<FollowUp>(followUps[0]);
+  const [newPanelOpen, setNewPanelOpen] = useState(false);
+  const [ownerOpen, setOwnerOpen] = useState(false);
   const [notice, setNotice] = useState("Follow-up command centre ready.");
 
   const counts = useMemo(() => {
-    return followUps.reduce(
-      (total, item) => {
-        total.all += 1;
-        total[item.status] += 1;
-        return total;
-      },
-      {
-        all: 0,
-        "Due Today": 0,
-        Overdue: 0,
-        Scheduled: 0,
-        Completed: 0,
-        Waiting: 0,
-      } as Record<"all" | FollowStatus, number>,
-    );
-  }, [followUps]);
+    return tabs.reduce((acc, tab) => {
+      acc[tab] = tab === "All" ? followUps.length : followUps.filter((item) => item.status === tab).length;
+      return acc;
+    }, {} as Record<Tab, number>);
+  }, []);
 
-  const filteredFollowUps = useMemo(() => {
-    const query = search.trim().toLowerCase();
+  const filtered = useMemo(() => {
+    const query = searchText.trim().toLowerCase();
 
-    return followUps.filter((item) => {
-      const tabMatch = activeTab === "All" || item.status === activeTab;
-      const searchMatch =
-        query.length === 0 ||
-        item.customer.toLowerCase().includes(query) ||
-        item.service.toLowerCase().includes(query) ||
-        item.task.toLowerCase().includes(query) ||
-        item.channel.toLowerCase().includes(query) ||
-        item.priority.toLowerCase().includes(query);
+    const result = followUps.filter((item) => {
+      const matchesTab = selectedTab === "All" || item.status === selectedTab;
+      const matchesChannel = channel === "All Channels" || item.channel === channel;
+      const text = [
+        item.customer,
+        item.job,
+        item.task,
+        item.detail,
+        item.channel,
+        item.priority,
+        item.status,
+        item.dueLabel,
+        item.ownerNote,
+      ].join(" ").toLowerCase();
 
-      return tabMatch && searchMatch;
+      return matchesTab && matchesChannel && (!query || text.includes(query));
     });
-  }, [activeTab, followUps, search]);
 
-  function addFollowUp() {
-    const demo: FollowUp = {
-      id: `FU-DEMO-${Date.now()}`,
-      customer: "New Demo Customer",
-      slug: "tom-wilson",
-      initials: "NC",
-      service: "New Enquiry",
-      task: "New Follow-Up",
-      note: "Created from demo button",
-      channel: "Call",
-      priority: "Medium",
-      dueTime: "Today, 5:00 PM",
-      dueDetail: "demo",
-      owner: "John D.",
-      status: "Due Today",
-    };
+    return [...result].sort((a, b) => {
+      if (sortMode === "Priority") return priorityRank[a.priority] - priorityRank[b.priority];
+      if (sortMode === "Customer") return a.customer.localeCompare(b.customer);
+      if (sortMode === "Status") return a.status.localeCompare(b.status);
+      return a.dueRank - b.dueRank;
+    });
+  }, [selectedTab, channel, sortMode, searchText]);
 
-    setFollowUps((current) => [demo, ...current]);
-    setActiveTab("All");
-    setNotice("New demo follow-up added to the table.");
+  function openTab(tab: Tab) {
+    const matches =
+      tab === "All"
+        ? followUps
+        : followUps.filter((item) => item.status === tab);
+
+    setSelectedTab(tab);
+    setSearchText("");
+    setChannel("All Channels");
+    setSortMode("Due Soonest");
+    setSelectedFollowUp(matches[0] ?? followUps[0]);
+
+    setNotice(
+      tab === "All"
+        ? `All follow-ups opened. Showing ${followUps.length} demo records.`
+        : `${tab} follow-ups opened. Showing ${matches.length} correct ${tab.toLowerCase()} record${
+            matches.length === 1 ? "" : "s"
+          }.`
+    );
+
+    window.setTimeout(() => {
+      document
+        .getElementById("follow-up-table")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 0);
   }
 
-  function markCompleted(id: string) {
-    setFollowUps((current) =>
-      current.map((item) => (item.id === id ? { ...item, status: "Completed" } : item)),
-    );
-    setNotice("Follow-up marked completed.");
+  function openQuickView(type: Tab) {
+    openTab(type);
+    window.setTimeout(() => {
+      document.getElementById("follow-up-table")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 0);
+  }
+
+  function openFollowUp(item: FollowUp, action = "Follow-up record opened") {
+    setSelectedFollowUp(item);
+    setNotice(`${action}: ${item.customer}.`);
   }
 
   return (
-    <main className="followRef-page">
-      <header className="followRef-topbar">
-        <div>
-          <h1>Follow-Ups</h1>
-          <p>Track callbacks, quote chases and reminders in one place.</p>
+    <main className={styles.followUpsPage}>
+      <section className={styles.heroPanel}>
+        <div className={styles.heroTop}>
+          <div className={styles.titleBlock}>
+            <p className={styles.kicker}>FOLLOW-UP COMMAND CENTRE</p>
+            <h1>Follow-Ups</h1>
+            <p>Track callbacks, quote chases, reminders and owner-approved next actions in one place.</p>
+          </div>
+
+          <div className={styles.topControls}>
+            <button
+              className={styles.primaryButton}
+              type="button"
+              onClick={() => {
+                setNewPanelOpen(true);
+                setOwnerOpen(false);
+                setNotice("New Follow-Up panel opened. Demo-only action.");
+              }}
+            >
+              + New Follow-Up
+            </button>
+
+            <label className={styles.controlShell}>
+              <span>Channel</span>
+              <select
+                value={channel}
+                onChange={(event) => {
+                  setChannel(event.target.value as Channel);
+                  setNotice(`Channel changed to ${event.target.value}.`);
+                }}
+              >
+                {channels.map((item) => (
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className={`${styles.controlShell} ${styles.searchShell}`}>
+              <span>Search</span>
+              <input
+                value={searchText}
+                onChange={(event) => {
+                  setSearchText(event.target.value);
+                  setNotice("Search is filtering follow-ups live.");
+                }}
+                placeholder="Search follow-ups..."
+              />
+            </label>
+
+            <button
+              className={styles.ownerChip}
+              type="button"
+              onClick={() => {
+                setOwnerOpen(true);
+                setNewPanelOpen(false);
+                setNotice("Owner control profile opened.");
+              }}
+            >
+              <span>JD</span>
+              <strong>John D.</strong>
+              <small>Owner</small>
+            </button>
+          </div>
         </div>
 
-        <div className="followRef-actions">
-          <button type="button" onClick={addFollowUp} className="followRef-addButton">
-            ＋ New Follow-Up
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              setActiveTab("All");
-              setSearch("");
-              setNotice("Follow-up filters cleared.");
-            }}
-            className="followRef-darkButton"
-          >
-            ▽ All Channels⌄
-          </button>
-          <label className="followRef-search">
-            <input
-              value={search}
-              onChange={(event) => setSearch(event.target.value)}
-              placeholder="Search follow-ups..."
-            />
-            <span>⌕</span>
-          </label>
-          <Link href="/settings" className="followRef-owner">
-            <span>JD</span>
-            <strong>John D.</strong>
-            <small>Owner</small>
-          </Link>
-        </div>
-      </header>
-
-      <section className="followRef-stats">
-        {statCards.map((card) => (
-          <article key={card.label} className={`followRef-stat followRef-stat-${card.tone}`}>
-            <span className="followRef-statIcon">{card.icon}</span>
+        <div className={styles.metricGrid}>
+          <button className={styles.metricCard} type="button" onClick={() => openQuickView("Due Today")}>
+            <span className={styles.metricIcon}>▣</span>
             <div>
-              <p>{card.label}</p>
-              <strong>{card.value}</strong>
-              <small>{card.change}</small>
+              <p>Due today</p>
+              <strong>18</strong>
+              <small>↓ 10% vs yesterday</small>
             </div>
-          </article>
-        ))}
+          </button>
+
+          <button className={styles.metricCard} type="button" onClick={() => openQuickView("Overdue")}>
+            <span className={styles.metricIcon}>◷</span>
+            <div>
+              <p>Overdue</p>
+              <strong>7</strong>
+              <small>↓ 22% vs yesterday</small>
+            </div>
+          </button>
+
+          <button className={styles.metricCard} type="button" onClick={() => openQuickView("Scheduled")}>
+            <span className={styles.metricIcon}>◴</span>
+            <div>
+              <p>Scheduled</p>
+              <strong>36</strong>
+              <small>↑ 15% vs yesterday</small>
+            </div>
+          </button>
+
+          <button className={styles.metricCard} type="button" onClick={() => openQuickView("Completed")}>
+            <span className={styles.metricIcon}>✓</span>
+            <div>
+              <p>Completed</p>
+              <strong>52</strong>
+              <small>↑ 18% vs yesterday</small>
+            </div>
+          </button>
+        </div>
       </section>
 
-      <section className="followRef-grid">
-        <section className="followRef-card followRef-mainTable">
-          <div className="followRef-tabsRow">
-            <div className="followRef-tabs">
+      {newPanelOpen && (
+        <section className={styles.actionPanel}>
+          <div>
+            <p className={styles.kicker}>DEMO ACTION</p>
+            <h2>Create demo follow-up</h2>
+            <p>This proves the action works locally. No backend, database, API or real customer data is touched.</p>
+          </div>
+
+          <div className={styles.demoForm}>
+            <input placeholder="Customer name" />
+            <input placeholder="Follow-up reason" />
+            <select defaultValue="Call">
+              <option>Call</option>
+              <option>WhatsApp</option>
+              <option>SMS</option>
+              <option>Email</option>
+            </select>
+            <button
+              className={styles.primaryButton}
+              type="button"
+              onClick={() => {
+                setNewPanelOpen(false);
+                setNotice("Demo follow-up saved locally. No database was touched.");
+              }}
+            >
+              Save Demo Follow-Up
+            </button>
+          </div>
+        </section>
+      )}
+
+      {ownerOpen && (
+        <section className={styles.actionPanel}>
+          <div>
+            <p className={styles.kicker}>OWNER CONTROL</p>
+            <h2>John D. follow-up control</h2>
+            <p>Owner keeps control of overdue callbacks, VIP review requests and sensitive follow-up messages.</p>
+          </div>
+
+          <button
+            className={styles.ghostButton}
+            type="button"
+            onClick={() => {
+              setOwnerOpen(false);
+              setNotice("Owner panel closed.");
+            }}
+          >
+            Close owner panel
+          </button>
+        </section>
+      )}
+
+      <div className={styles.notice}>{notice}</div>
+
+      <section className={styles.mainGrid}>
+        <section id="follow-up-table" className={styles.tablePanel}>
+          <div className={styles.tableHeader}>
+            <div className={styles.tabs}>
               {tabs.map((tab) => (
                 <button
                   key={tab}
                   type="button"
-                  onClick={() => {
-                    setActiveTab(tab);
-                    setNotice(`${tab} follow-ups selected.`);
-                  }}
-                  className={activeTab === tab ? "active" : ""}
+                  className={`${styles.tabButton} ${selectedTab === tab ? styles.tabActive : ""}`}
+                  onClick={() => openTab(tab)}
                 >
                   {tab}
-                  <span>{tab === "All" ? counts.all : counts[tab]}</span>
+                  <span>{counts[tab]}</span>
                 </button>
               ))}
             </div>
 
+            <label className={styles.sortShell}>
+              <span>Sort</span>
+              <select value={sortMode} onChange={(event) => setSortMode(event.target.value as SortMode)}>
+                {sortModes.map((mode) => (
+                  <option key={mode} value={mode}>
+                    {mode}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+
+          <div className={styles.activeSegmentBar}>
+            <div>
+              <p className={styles.kicker}>ACTIVE FOLLOW-UP VIEW</p>
+              <strong>
+                {selectedTab === "All" ? "All follow-ups" : `${selectedTab} follow-ups`}
+              </strong>
+              <span>
+                Showing {filtered.length} matching {filtered.length === 1 ? "record" : "records"} above the follow-up columns.
+              </span>
+            </div>
+
             <button
               type="button"
-              onClick={() => setNotice("Follow-ups sorted by due soonest.")}
-              className="followRef-sort"
+              onClick={() => {
+                setSelectedFollowUp(filtered[0] ?? followUps[0]);
+                setNotice(
+                  filtered[0]
+                    ? `${filtered[0].customer} opened from the active ${selectedTab.toLowerCase()} view.`
+                    : "No matching follow-up records in this view."
+                );
+              }}
             >
-              ↕ Sort: Due Soonest⌄
+              Open first record
             </button>
           </div>
 
-          <div className="followRef-tableWrap">
-            <table className="followRef-table">
+          <div className={styles.tableScroll}>
+            <table className={styles.followUpTable}>
               <thead>
                 <tr>
                   <th>Customer</th>
                   <th>Task</th>
                   <th>Channel</th>
                   <th>Priority</th>
-                  <th>Due Time</th>
-                  <th>Owner</th>
                   <th>Status</th>
-                  <th>Actions</th>
+                  <th>Due</th>
                 </tr>
               </thead>
 
               <tbody>
-                {filteredFollowUps.map((item) => (
-                  <tr key={item.id}>
+                {filtered.map((item) => (
+                  <tr key={item.id} onClick={() => openFollowUp(item)}>
                     <td>
-                      <Link href={`/customers/${item.slug}`} className="followRef-customer">
+                      <button className={styles.customerButton} type="button" onClick={() => openFollowUp(item)}>
                         <span>{item.initials}</span>
-                        <div>
-                          <strong>{item.customer}</strong>
-                          <small>{item.service}</small>
-                        </div>
-                      </Link>
+                        <strong>{item.customer}</strong>
+                        <small>{item.job}</small>
+                      </button>
                     </td>
                     <td>
-                      <strong className="followRef-task">{item.task}</strong>
-                      <small>{item.note}</small>
+                      <strong>{item.task}</strong>
+                      <small>{item.detail}</small>
                     </td>
+                    <td>{item.channel}</td>
                     <td>
-                      <Link href="/messages" className="followRef-channel">
-                        {channelIcon(item.channel)} {item.channel}
-                      </Link>
-                    </td>
-                    <td>
-                      <span className={`followRef-priority priority-${slugify(item.priority)}`}>
+                      <span className={`${styles.priorityChip} ${priorityClass[item.priority]}`}>
                         {item.priority}
                       </span>
                     </td>
                     <td>
-                      <strong className="followRef-due">{item.dueTime}</strong>
-                      {item.dueDetail ? <small>{item.dueDetail}</small> : null}
-                    </td>
-                    <td>
-                      <Link href="/settings" className="followRef-ownerMini">
-                        ♙ {item.owner}
-                      </Link>
-                    </td>
-                    <td>
-                      <span className={`followRef-status status-${slugify(item.status)}`}>
+                      <span className={`${styles.statusChip} ${statusClass[item.status]}`}>
                         {item.status}
                       </span>
                     </td>
                     <td>
-                      <div className="followRef-rowActions">
-                        <button type="button" onClick={() => markCompleted(item.id)}>↗</button>
-                        <button type="button" onClick={() => setNotice(`${item.customer} actions opened.`)}>⋮</button>
-                      </div>
+                      <strong>{item.dueLabel}</strong>
+                      <small>{item.dueSub}</small>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
+
+            {filtered.length === 0 && (
+              <div className={styles.emptyState}>
+                <strong>No follow-ups found.</strong>
+                <span>Clear filters or search another reminder.</span>
+              </div>
+            )}
           </div>
 
-          <footer className="followRef-footer">
-            <p>Showing 1 to {filteredFollowUps.length} of 86 follow-ups</p>
-
-            <div className="followRef-pagination">
-              <button type="button" onClick={() => setNotice("Previous page selected.")}>‹</button>
-              <button type="button" className="active" onClick={() => setNotice("Page 1 selected.")}>1</button>
-              <button type="button" onClick={() => setNotice("Page 2 selected.")}>2</button>
-              <button type="button" onClick={() => setNotice("Page 3 selected.")}>3</button>
-              <button type="button" onClick={() => setNotice("Page 4 selected.")}>4</button>
-              <button type="button" onClick={() => setNotice("Page 5 selected.")}>5</button>
-              <span>...</span>
-              <button type="button" onClick={() => setNotice("Page 9 selected.")}>9</button>
-              <button type="button" onClick={() => setNotice("Next page selected.")}>›</button>
+          <div className={styles.tableFooter}>
+            <span>
+              Showing {filtered.length} of {followUps.length} demo follow-ups
+            </span>
+            <div className={styles.pagination}>
+              <button type="button">‹</button>
+              <button className={styles.pageActive} type="button">1</button>
+              <button type="button">2</button>
+              <button type="button">3</button>
+              <button type="button">›</button>
             </div>
-          </footer>
-
-          <div className="followRef-notice">{notice}</div>
+          </div>
         </section>
 
-        <aside className="followRef-sideStack">
-          <section className="followRef-card followRef-priorities">
-            <div className="followRef-panelHeader">
-              <h2>◎ Today&apos;s Priorities</h2>
-              <Link href="/follow-ups">View all</Link>
+        <aside className={styles.sideRail}>
+          <article className={styles.sideCard}>
+            <div className={styles.sideTitle}>
+              <h3>Today&apos;s Priorities</h3>
+              <button type="button" onClick={() => openQuickView("Due Today")}>View all</button>
             </div>
 
-            <div className="followRef-priorityList">
-              {priorities.map((item) => (
-                <Link href="/messages" key={`${item.number}-${item.customer}`} className="followRef-priorityItem">
-                  <span>{item.number}</span>
-                  <div>
-                    <strong>{item.customer}</strong>
-                    <small>{item.task}</small>
-                  </div>
-                  <em>{channelIcon(item.channel)}</em>
-                  <b>{item.time}</b>
-                </Link>
-              ))}
-            </div>
-          </section>
+            {followUps.slice(0, 4).map((item, index) => (
+              <button
+                key={item.id}
+                className={styles.priorityRow}
+                type="button"
+                onClick={() => openFollowUp(item, "Priority opened")}
+              >
+                <span>{index + 1}</span>
+                <strong>{item.customer}</strong>
+                <small>{item.task}</small>
+                <em>{item.dueLabel.replace("Today, ", "")}</em>
+              </button>
+            ))}
+          </article>
 
-          <section className="followRef-card followRef-reminders">
-            <div className="followRef-panelHeader">
-              <h2>▣ Upcoming Reminders</h2>
-              <Link href="/bookings">View all</Link>
-            </div>
-
-            <div className="followRef-reminderList">
-              {reminders.map((item) => (
-                <Link href="/messages" key={`${item.date}-${item.customer}`} className="followRef-reminderItem">
-                  <span>{item.date}</span>
-                  <div>
-                    <strong>{item.customer}</strong>
-                    <small>{item.task}</small>
-                  </div>
-                  <em>{channelIcon(item.channel)}</em>
-                  <b>{item.time}</b>
-                </Link>
-              ))}
-            </div>
-          </section>
-
-          <section className="followRef-card followRef-outcomes">
-            <div className="followRef-panelHeader">
-              <h2>Follow-Up Outcomes</h2>
-              <span>This Month⌄</span>
+          <article className={styles.sideCard}>
+            <div className={styles.sideTitle}>
+              <h3>Upcoming Reminders</h3>
+              <button type="button" onClick={() => openQuickView("Scheduled")}>View all</button>
             </div>
 
-            <div className="followRef-outcomeList">
-              <p><span className="green">✓</span> Completed <strong>52 (43%)</strong></p>
-              <p><span className="blue">▣</span> Scheduled <strong>36 (30%)</strong></p>
-              <p><span className="red">◷</span> Overdue <strong>7 (6%)</strong></p>
-              <p><span className="gold">⌛</span> Waiting <strong>25 (21%)</strong></p>
+            {followUps.filter((item) => item.status === "Scheduled").map((item) => (
+              <button
+                key={item.id}
+                className={styles.reminderRow}
+                type="button"
+                onClick={() => openFollowUp(item, "Reminder opened")}
+              >
+                <span>{item.dueLabel.split(",")[0]}</span>
+                <strong>{item.customer}</strong>
+                <small>{item.task}</small>
+                <em>{item.channel}</em>
+              </button>
+            ))}
+          </article>
+
+          <article className={styles.sideCard}>
+            <div className={styles.sideTitle}>
+              <h3>Follow-Up Outcomes</h3>
+              <button type="button" onClick={() => setNotice("This month outcome filter opened. Demo action only.")}>This month</button>
             </div>
-          </section>
+
+            <div className={styles.outcomeList}>
+              <button type="button" onClick={() => openQuickView("Completed")}>
+                <span>✓ Completed</span>
+                <strong>52 (43%)</strong>
+              </button>
+              <button type="button" onClick={() => openQuickView("Scheduled")}>
+                <span>▣ Scheduled</span>
+                <strong>36 (30%)</strong>
+              </button>
+              <button type="button" onClick={() => openQuickView("Overdue")}>
+                <span>◷ Overdue</span>
+                <strong>7 (6%)</strong>
+              </button>
+              <button type="button" onClick={() => setNotice("Waiting follow-ups opened. Demo action only.")}>
+                <span>⌛ Waiting</span>
+                <strong>25 (21%)</strong>
+              </button>
+            </div>
+          </article>
         </aside>
       </section>
+
+      <section className={styles.selectedPanel}>
+        <div>
+          <p className={styles.kicker}>SELECTED FOLLOW-UP</p>
+          <h2>{selectedFollowUp.customer}</h2>
+          <p>{selectedFollowUp.ownerNote}</p>
+        </div>
+
+        <div className={styles.selectedGrid}>
+          <article>
+            <strong>{selectedFollowUp.task}</strong>
+            <span>Task</span>
+          </article>
+          <article>
+            <strong>{selectedFollowUp.channel}</strong>
+            <span>Channel</span>
+          </article>
+          <article>
+            <strong>{selectedFollowUp.priority}</strong>
+            <span>Priority</span>
+          </article>
+          <article>
+            <strong>{selectedFollowUp.dueLabel}</strong>
+            <span>Due time</span>
+          </article>
+        </div>
+      </section>
+
+      <section className={styles.auraFollowUpPanel}>
+        <div className={styles.auraImageBox}>
+          <span>Aura</span>
+          <img
+            src="/brand/source/aura-assistant-transparent.png"
+            alt="Aura AI follow-up assistant"
+            onError={(event) => {
+              event.currentTarget.style.display = "none";
+            }}
+          />
+        </div>
+
+        <div>
+          <p className={styles.kicker}>AURA FOLLOW-UP WATCH</p>
+          <h3>Aura is watching overdue callbacks, quote chases, and customer reminders before they go cold.</h3>
+          <p>
+            Owner control stays on: nothing is sent automatically. Bee-Aura only highlights the next best follow-up action.
+          </p>
+        </div>
+      </section>
+
+      <p className={styles.safetyNote}>
+        Demo only: fake data, local UI actions, no database, no Supabase, no Stripe, no Twilio, no OpenAI API and no real customer data.
+      </p>
     </main>
   );
 }
