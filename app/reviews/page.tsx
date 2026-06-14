@@ -607,15 +607,34 @@ export default function ReviewsPage() {
         </div>
 
         <div className={styles.sourceGrid}>
-          {sourceStats.map((source) => (
-            <article key={source.title} className={styles.sourceCard}>
-              <span>{source.icon}</span>
-              <h3>{source.title}</h3>
-              <strong>{source.score}</strong>
-              <small>{source.detail}</small>
-              <small>{source.trend}</small>
-            </article>
-          ))}
+          {sourceStats.map((source) => {
+            const matchingSource =
+              source.title === "SMS / WhatsApp"
+                ? "SMS"
+                : (source.title as SourceFilter);
+
+            const isActiveSource = sourceFilter === matchingSource;
+
+            return (
+              <button
+                key={source.title}
+                type="button"
+                className={`${styles.sourceCard} ${isActiveSource ? styles.sourceCardActive : ""}`}
+                onClick={() => {
+                  setSourceFilter(matchingSource);
+                  setSearchText("");
+                  setNotice(`${source.title} source performance opened. Review table filtered to matching demo records.`);
+                  scrollToTable();
+                }}
+              >
+                <span>{source.icon}</span>
+                <h3>{source.title}</h3>
+                <strong>{source.score}</strong>
+                <small>{source.detail}</small>
+                <small>{source.trend}</small>
+              </button>
+            );
+          })}
         </div>
       </section>
 
