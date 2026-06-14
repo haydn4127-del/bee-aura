@@ -17810,3 +17810,102 @@ main [class*="customer" i] [class*="customerIcon" i] * {
 
 /* === REVIEWS PAGE POLISH V2 END === */
 
+/* === BEE-AURA LAYOUT FIT PASS V1 === */
+/* Purpose:
+   Fix monitor/laptop layout fit without redesigning pages.
+   Keeps demo fake-data only. No integrations. No product feature changes.
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (min-width: 1181px) {
+  .app-shell {
+    width: 100%;
+    max-width: none !important;
+    grid-template-columns: 260px minmax(0, 1fr) !important;
+  }
+
+  .app-main {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding-left: clamp(18px, 1.5vw, 28px) !important;
+    padding-right: clamp(18px, 1.5vw, 28px) !important;
+    overflow-x: hidden;
+  }
+
+  .app-main > main,
+  .app-main > section,
+  .app-main > div {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .app-main main,
+  .app-main section,
+  .app-main article,
+  .app-main div {
+    min-width: 0;
+  }
+
+  .app-main [class*="page"],
+  .app-main [class*="Page"],
+  .app-main [class*="Ref-page"],
+  .app-main [class*="shell"],
+  .app-main [class*="Shell"] {
+    max-width: none !important;
+  }
+
+  .app-main [class*="header"],
+  .app-main [class*="Header"],
+  .app-main [class*="toolbar"],
+  .app-main [class*="Toolbar"],
+  .app-main [class*="control"],
+  .app-main [class*="Control"],
+  .app-main [class*="filter"],
+  .app-main [class*="Filter"] {
+    max-width: none !important;
+    min-width: 0;
+  }
+
+  .app-main input,
+  .app-main select,
+  .app-main textarea {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .app-main table {
+    width: 100%;
+  }
+
+  .app-main [class*="table"],
+  .app-main [class*="Table"],
+  .app-main [class*="list"],
+  .app-main [class*="List"] {
+    min-width: 0;
+  }
+}
+
+@media (min-width: 1600px) {
+  .app-main {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+}
+
