@@ -1011,15 +1011,7 @@ export default function CustomersPage() {
           </div>
 
           <div className={styles.pagination}>
-            <button type="button" onClick={() => setDemoNotice("Previous page demo action pressed.")}>
-              ‹
-            </button>
-            <button className={styles.pageActive} type="button">
-              1
-            </button>
-            <button type="button" onClick={() => setDemoNotice("Next page demo action pressed.")}>
-              ›
-            </button>
+            <span>Page 1 of 1</span>
           </div>
         </div>
 

@@ -1623,3 +1623,110 @@
 
  /* === CUSTOMER INITIAL BLACK TEXT PATCH END === */
 
+/* === CUSTOMERS TOOLBAR FIT PASS V1 === */
+/* Keeps Customers controls readable on wider screens.
+   No feature changes. No integrations. Fake-data demo only. */
+
+@media (min-width: 1181px) {
+  .customersPage .heroTop {
+    grid-template-columns: minmax(320px, 430px) minmax(0, 1fr) !important;
+    align-items: start !important;
+  }
+
+  .customersPage .headerTools {
+    width: 100% !important;
+    min-width: 0 !important;
+    justify-self: stretch !important;
+  }
+
+  .customersPage .commandBar {
+    width: 100% !important;
+    max-width: none !important;
+    grid-template-columns:
+      minmax(145px, auto)
+      minmax(150px, 0.35fr)
+      minmax(300px, 1fr)
+      minmax(150px, 0.35fr)
+      minmax(118px, auto) !important;
+    gap: 10px !important;
+  }
+
+  .customersPage .controlShell,
+  .customersPage .searchControl,
+  .customersPage .ownerChip {
+    min-width: 0 !important;
+  }
+
+  .customersPage .controlShell select,
+  .customersPage .controlShell input {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .customersPage .ownerChip {
+    min-width: 112px !important;
+  }
+}
+
+@media (max-width: 1380px) and (min-width: 1181px) {
+  .customersPage .heroTop {
+    grid-template-columns: 1fr !important;
+  }
+
+  .customersPage .commandBar {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .customersPage .ownerChip,
+  .customersPage .primaryButton {
+    width: 100% !important;
+  }
+}
+
+/* === CUSTOMERS FINAL TOOLBAR POLISH V1 === */
+/* Makes Customers top controls readable and less cramped.
+   CSS-only. Fake-data demo only. No feature/integration changes. */
+
+@media (min-width: 1181px) {
+  .customersPage .commandBar {
+    grid-template-columns:
+      minmax(155px, auto)
+      minmax(180px, 0.4fr)
+      minmax(330px, 1fr)
+      minmax(170px, 0.4fr)
+      minmax(125px, auto) !important;
+    gap: 12px !important;
+  }
+
+  .customersPage .controlShell {
+    overflow: visible !important;
+  }
+
+  .customersPage .controlShell select,
+  .customersPage .controlShell input {
+    min-width: 0 !important;
+    height: 36px !important;
+    font-size: 12px !important;
+    text-overflow: ellipsis;
+  }
+
+  .customersPage .searchControl input {
+    min-width: 280px !important;
+  }
+
+  .customersPage .ownerChip {
+    min-width: 122px !important;
+  }
+}
+
+@media (min-width: 1500px) {
+  .customersPage .commandBar {
+    grid-template-columns:
+      minmax(160px, auto)
+      minmax(210px, 0.42fr)
+      minmax(390px, 1fr)
+      minmax(190px, 0.42fr)
+      minmax(130px, auto) !important;
+  }
+}
+
