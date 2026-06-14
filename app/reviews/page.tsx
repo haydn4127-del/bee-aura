@@ -155,6 +155,9 @@ export default function ReviewsPage() {
   const [searchText, setSearchText] = useState("");
   const [selectedRecord, setSelectedRecord] = useState<ReviewRecord>(initialRecords[0]);
   const [requestPanelOpen, setRequestPanelOpen] = useState(false);
+  const [selectedActionMessage, setSelectedActionMessage] = useState(
+    "Select a review action to see the owner-controlled next step here."
+  );
   const [notice, setNotice] = useState("Review command centre ready.");
 
   const counts = useMemo(() => {
@@ -206,6 +209,11 @@ export default function ReviewsPage() {
     setSearchText("");
     setSourceFilter("All Sources");
     setSelectedRecord(matching[0] ?? records[0]);
+    setSelectedActionMessage(
+      matching[0]
+        ? `${matching[0].customer} is now selected from the ${tab.toLowerCase()} review view.`
+        : "No matching review record is available in this view."
+    );
     setNotice(
       tab === "All"
         ? `All review records opened. Showing ${records.length} demo records.`
@@ -216,7 +224,10 @@ export default function ReviewsPage() {
 
   function openRecord(record: ReviewRecord, action = "Review record opened") {
     setSelectedRecord(record);
-    setNotice(`${action}: ${record.customer}.`);
+    setSelectedActionMessage(
+      `${action}: ${record.customer}. Next step: ${record.nextAction}. Owner approval stays required.`
+    );
+    setNotice(`${action}: ${record.customer}. Selected review panel updated.`);
     scrollToSelected();
   }
 
@@ -243,6 +254,9 @@ export default function ReviewsPage() {
     setSourceFilter("All Sources");
     setSearchText("");
     setRequestPanelOpen(false);
+    setSelectedActionMessage(
+      "New demo review request created locally. It is now ready for owner approval. Nothing has been sent."
+    );
     setNotice("Demo review request created locally. Nothing was sent.");
     scrollToSelected();
   }
@@ -537,25 +551,45 @@ export default function ReviewsPage() {
             <div><strong>{selectedRecord.priority}</strong><small>Priority</small></div>
           </div>
 
+          <div className={styles.actionFeedback}>
+            <strong>Selected action</strong>
+            <span>{selectedActionMessage}</span>
+          </div>
+
           <div className={styles.selectedActions}>
             <button
               className={styles.demoButton}
               type="button"
-              onClick={() => setNotice(`Demo review request prepared for ${selectedRecord.customer}. Nothing sent.`)}
+              onClick={() => {
+                setSelectedActionMessage(
+                  `Review request prepared for ${selectedRecord.customer}. This is demo-only: nothing has been sent.`
+                );
+                setNotice(`Demo review request prepared for ${selectedRecord.customer}. Nothing sent.`);
+              }}
             >
               Prepare Review Request
             </button>
             <button
               className={styles.secondaryButton}
               type="button"
-              onClick={() => setNotice(`Owner reply draft opened for ${selectedRecord.customer}. Demo action only.`)}
+              onClick={() => {
+                setSelectedActionMessage(
+                  `Owner reply draft opened for ${selectedRecord.customer}. The owner would review and approve the wording before anything is posted.`
+                );
+                setNotice(`Owner reply draft opened for ${selectedRecord.customer}. Demo action only.`);
+              }}
             >
               Draft Owner Reply
             </button>
             <button
               className={styles.secondaryButton}
               type="button"
-              onClick={() => setNotice(`${selectedRecord.customer} marked for proof pack. Demo action only.`)}
+              onClick={() => {
+                setSelectedActionMessage(
+                  `${selectedRecord.customer} has been marked for the proof pack in this local demo view. No real data was changed.`
+                );
+                setNotice(`${selectedRecord.customer} marked for proof pack. Demo action only.`);
+              }}
             >
               Add to Proof Pack
             </button>
