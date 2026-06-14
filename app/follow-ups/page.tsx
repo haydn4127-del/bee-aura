@@ -477,7 +477,13 @@ export default function FollowUpsPage() {
 
             <label className={styles.sortShell}>
               <span>Sort</span>
-              <select value={sortMode} onChange={(event) => setSortMode(event.target.value as SortMode)}>
+              <select
+                value={sortMode}
+                onChange={(event) => {
+                  setSortMode(event.target.value as SortMode);
+                  setNotice(`Follow-ups sorted by ${event.target.value}.`);
+                }}
+              >
                 {sortModes.map((mode) => (
                   <option key={mode} value={mode}>
                     {mode}
@@ -573,11 +579,7 @@ export default function FollowUpsPage() {
               Showing {filtered.length} of {followUps.length} demo follow-ups
             </span>
             <div className={styles.pagination}>
-              <button type="button">‹</button>
-              <button className={styles.pageActive} type="button">1</button>
-              <button type="button">2</button>
-              <button type="button">3</button>
-              <button type="button">›</button>
+              <span>Page 1 of 1</span>
             </div>
           </div>
         </section>
