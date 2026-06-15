@@ -1,0 +1,1101 @@
+.activityPage {
+  width: 100%;
+  display: grid;
+  gap: 16px;
+  color: #f8fbff;
+}
+
+.heroPanel,
+.logPanel,
+.sidePanel,
+.selectedPanel,
+.auraPanel {
+  border: 1px solid rgba(48, 190, 255, 0.28);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top left, rgba(46, 212, 255, 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(8, 25, 45, 0.96), rgba(2, 9, 20, 0.98));
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.heroPanel {
+  padding: 20px;
+}
+
+.heroTop {
+  display: grid;
+  grid-template-columns: minmax(340px, 1fr) minmax(620px, auto);
+  gap: 18px;
+  align-items: start;
+}
+
+.kicker {
+  margin: 0 0 6px;
+  color: #ffd84d;
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.titleBlock h1 {
+  margin: 0;
+  color: #fff8dd;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 0.95;
+}
+
+.titleBlock p,
+.notice,
+.tableMeta,
+.sidePanel p,
+.selectedPanel p,
+.auraPanel p,
+.footerNote {
+  color: rgba(235, 247, 255, 0.82);
+}
+
+.titleBlock p {
+  margin: 9px 0 0;
+  max-width: 620px;
+  line-height: 1.45;
+}
+
+.commandBar {
+  display: grid;
+  grid-template-columns: 130px 145px minmax(260px, 1fr) 126px;
+  gap: 10px;
+  align-items: stretch;
+  width: min(100%, 680px);
+  justify-self: end;
+}
+
+.primaryButton,
+.selectControl,
+.searchBox,
+.ownerButton,
+.ghostButton,
+.rowButton,
+.sideButton {
+  min-height: 38px;
+  border: 1px solid rgba(255, 216, 77, 0.34);
+  border-radius: 999px;
+  background: rgba(5, 18, 34, 0.9);
+  color: #f8fbff;
+  font-size: 0.82rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, #ffd84d, #ffad28);
+  color: #151006;
+  border-color: rgba(255, 232, 130, 0.9);
+  box-shadow: 0 16px 34px rgba(255, 184, 44, 0.13);
+}
+
+.selectControl {
+  width: 100%;
+  padding: 0 14px;
+}
+
+.searchBox {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22px;
+  align-items: center;
+  padding: 0 12px;
+  min-width: 0;
+}
+
+.searchBox input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  outline: none;
+  font-weight: 800;
+}
+
+.searchBox input::placeholder {
+  color: rgba(235, 247, 255, 0.64);
+}
+
+.ownerButton {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+  padding: 0 10px;
+  text-align: left;
+}
+
+.ownerButton span {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffd84d, #58c8ff);
+  color: #06111f;
+  font-weight: 950;
+}
+
+.ownerButton strong,
+.ownerButton small {
+  display: block;
+  line-height: 1.05;
+}
+
+.ownerButton small {
+  color: rgba(235, 247, 255, 0.72);
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.kpiCard {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  border: 1px solid rgba(48, 190, 255, 0.26);
+  border-radius: 18px;
+  padding: 15px;
+  background:
+    radial-gradient(circle at left, rgba(48, 190, 255, 0.18), transparent 42%),
+    rgba(3, 12, 24, 0.68);
+}
+
+.kpiIcon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: rgba(48, 190, 255, 0.14);
+  color: #2ed4ff;
+  font-weight: 950;
+}
+
+.kpiCard p {
+  margin: 0;
+  color: rgba(235, 247, 255, 0.78);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.kpiCard strong {
+  display: block;
+  margin-top: 4px;
+  color: #fff8dd;
+  font-size: 1.5rem;
+}
+
+.kpiCard small {
+  color: rgba(235, 247, 255, 0.78);
+  font-weight: 800;
+}
+
+.notice {
+  border: 1px solid rgba(35, 220, 165, 0.38);
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: rgba(10, 91, 76, 0.54);
+  color: #dcfff6;
+  font-weight: 850;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 14px;
+  align-items: start;
+}
+
+.logPanel {
+  overflow: hidden;
+}
+
+.tableTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  padding: 14px;
+  border-bottom: 1px solid rgba(48, 190, 255, 0.18);
+}
+
+.tableTop h2 {
+  margin: 0;
+  color: #fff8dd;
+}
+
+.tableTop p {
+  margin: 4px 0 0;
+  color: rgba(235, 247, 255, 0.8);
+}
+
+.tableScroll {
+  overflow-x: auto;
+}
+
+.activityTable {
+  width: 100%;
+  min-width: 1080px;
+  border-collapse: collapse;
+}
+
+.activityTable th,
+.activityTable td {
+  border-bottom: 1px solid rgba(48, 190, 255, 0.13);
+  padding: 11px 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.activityTable th {
+  color: rgba(235, 247, 255, 0.82);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(48, 190, 255, 0.08);
+}
+
+.activityTable td {
+  color: #f6fbff;
+  font-weight: 800;
+}
+
+.activityTable small {
+  display: block;
+  margin-top: 3px;
+  color: rgba(235, 247, 255, 0.75);
+}
+
+.activityRow {
+  cursor: pointer;
+}
+
+.activityRowActive {
+  outline: 1px solid rgba(255, 216, 77, 0.42);
+  background:
+    radial-gradient(circle at left, rgba(255, 216, 77, 0.12), transparent 34%),
+    rgba(48, 190, 255, 0.08);
+}
+
+.eventCell {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 9px;
+  align-items: center;
+}
+
+.eventIcon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: rgba(48, 190, 255, 0.16);
+  color: #7ee7ff;
+}
+
+.categoryChip,
+.statusChip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  border-radius: 999px;
+  padding: 0 10px;
+  font-size: 0.72rem;
+  font-weight: 950;
+  border: 1px solid rgba(48, 190, 255, 0.25);
+  background: rgba(48, 190, 255, 0.12);
+  color: #65d9ff;
+}
+
+.statusGood {
+  color: #46ffc6;
+  border-color: rgba(35, 220, 165, 0.45);
+}
+
+.statusWarn {
+  color: #ffd84d;
+  border-color: rgba(255, 216, 77, 0.45);
+}
+
+.statusNew {
+  color: #58c8ff;
+}
+
+.sideRail {
+  display: grid;
+  gap: 14px;
+}
+
+.selectedPanel,
+.sidePanel {
+  padding: 16px;
+}
+
+.selectedPanel h2,
+.sidePanel h2 {
+  margin: 0;
+  color: #fff8dd;
+}
+
+.selectedPanel p {
+  margin: 8px 0 0;
+  line-height: 1.45;
+}
+
+.selectedGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.selectedGrid div {
+  border: 1px solid rgba(48, 190, 255, 0.18);
+  border-radius: 12px;
+  padding: 10px;
+  background: rgba(2, 10, 21, 0.62);
+}
+
+.selectedGrid strong {
+  display: block;
+  color: #ffd84d;
+}
+
+.selectedGrid small {
+  color: rgba(235, 247, 255, 0.76);
+}
+
+.sideList {
+  display: grid;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.sideButton {
+  width: 100%;
+  min-height: auto;
+  border-radius: 14px;
+  padding: 11px;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 10px;
+}
+
+.sideButton:hover,
+.ghostButton:hover,
+.rowButton:hover {
+  border-color: rgba(48, 190, 255, 0.65);
+  background: rgba(17, 50, 78, 0.92);
+}
+
+.sideButton span {
+  color: #7ee7ff;
+  font-weight: 900;
+}
+
+.sideButton strong {
+  display: block;
+  color: #fff8dd;
+}
+
+.sideButton small {
+  color: rgba(235, 247, 255, 0.78);
+}
+
+.auditList {
+  display: grid;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.auditList p {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) 20px;
+  gap: 8px;
+  align-items: center;
+  margin: 0;
+}
+
+.auditList span,
+.auditList strong {
+  color: #46ffc6;
+}
+
+.auditExplain {
+  margin-top: 12px;
+  border: 1px solid rgba(255, 216, 77, 0.24);
+  border-radius: 12px;
+  padding: 11px;
+  background: rgba(4, 14, 28, 0.72);
+}
+
+.auditExplain strong {
+  display: block;
+  color: #ffd84d;
+  margin-bottom: 5px;
+}
+
+.auditExplain span {
+  color: rgba(235, 247, 255, 0.82);
+  line-height: 1.4;
+}
+
+.ghostButton {
+  width: 100%;
+  margin-top: 12px;
+  min-height: 36px;
+}
+
+.auraPanel {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr) 260px;
+  gap: 22px;
+  align-items: center;
+  padding: 22px;
+  border-color: rgba(255, 216, 77, 0.32);
+}
+
+.botWrap {
+  display: grid;
+  place-items: center;
+  width: 145px;
+  min-height: 145px;
+  border: 1px solid rgba(255, 216, 77, 0.22);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at center, rgba(48, 190, 255, 0.18), transparent 55%),
+    rgba(3, 12, 24, 0.72);
+}
+
+.botWrap img {
+  width: 126px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.35));
+}
+
+.auraPanel h2 {
+  margin: 0;
+  color: #fff8dd;
+  font-size: 1.5rem;
+}
+
+.auraPanel p {
+  margin: 8px 0 0;
+  line-height: 1.5;
+}
+
+.auraList {
+  display: grid;
+  gap: 8px;
+  color: rgba(235, 247, 255, 0.86);
+  font-weight: 800;
+}
+
+.auraList span::before {
+  content: "• ";
+  color: #46ffc6;
+}
+
+.footerNote {
+  margin: -4px 0 0;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 1380px) {
+  .heroTop,
+  .mainGrid,
+  .auraPanel {
+    grid-template-columns: 1fr;
+  }
+
+  .commandBar {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .kpiGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sideRail {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .commandBar,
+  .kpiGrid,
+  .sideRail,
+  .selectedGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === ACTIVITY LOG AURA AND KPI ACTION FIX V1 === */
+/* Fixes Aura panel double-background feel and actions the KPI cards. */
+
+.kpiCard {
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+}
+
+.kpiCard:hover {
+  border-color: rgba(255, 216, 77, 0.52);
+  background:
+    radial-gradient(circle at left, rgba(255, 216, 77, 0.12), transparent 42%),
+    rgba(6, 22, 40, 0.82);
+  box-shadow:
+    0 18px 46px rgba(0, 0, 0, 0.28),
+    0 0 26px rgba(48, 190, 255, 0.1);
+}
+
+.kpiCard:focus-visible {
+  outline: 3px solid rgba(255, 216, 77, 0.32);
+  outline-offset: 3px;
+}
+
+.auraPanel {
+  grid-template-columns: 160px minmax(0, 1fr) !important;
+}
+
+.auraCopy {
+  min-width: 0;
+}
+
+.auraList {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 14px;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.auraList span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  width: fit-content;
+  border: 1px solid rgba(35, 220, 165, 0.28);
+  border-radius: 999px;
+  padding: 0 10px;
+  background: rgba(35, 220, 165, 0.08);
+  color: #dcfff6;
+  font-weight: 900;
+}
+
+.auraList span::before {
+  content: "•";
+  margin-right: 7px;
+  color: #46ffc6;
+}
+
+@media (max-width: 1380px) {
+  .auraPanel {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* === ACTIVITY LOG AURA TEXT BACKGROUND FIX V1 === */
+/* Removes the extra dark internal box from the Activity Log Aura panel.
+   Keeps one clean assistant panel background only. */
+
+.auraCopy,
+.auraCopy *,
+.auraList,
+.auraList * {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.auraCopy {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.auraList {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.auraList span {
+  background:
+    linear-gradient(135deg, rgba(35, 220, 165, 0.1), rgba(46, 212, 255, 0.06)) !important;
+  box-shadow: none !important;
+}
+
+/* === ACTIVITY LOG FINAL POLISH V1 === */
+/* Final fit/theme pass for Activity Log.
+   Keeps audit information. No data, API or integration changes. */
+
+.tableTop {
+  align-items: flex-start !important;
+}
+
+.tableTop .ghostButton {
+  width: auto !important;
+  min-width: 150px !important;
+  margin-top: 0 !important;
+  padding: 0 18px !important;
+  justify-self: end;
+}
+
+.kpiCard {
+  border-color: rgba(48, 190, 255, 0.32) !important;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.kpiCard:hover {
+  transform: translateY(-2px);
+}
+
+.kpiCard:active {
+  transform: translateY(0);
+}
+
+.kpiIcon {
+  box-shadow:
+    0 0 22px rgba(48, 190, 255, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.sidePanel,
+.selectedPanel {
+  background:
+    radial-gradient(circle at top right, rgba(46, 212, 255, 0.1), transparent 36%),
+    linear-gradient(135deg, rgba(8, 25, 45, 0.94), rgba(2, 9, 20, 0.98)) !important;
+}
+
+.sideButton {
+  border-color: rgba(48, 190, 255, 0.22) !important;
+  background:
+    linear-gradient(135deg, rgba(8, 28, 50, 0.84), rgba(2, 10, 21, 0.94)) !important;
+}
+
+.sideButton:hover {
+  border-color: rgba(255, 216, 77, 0.44) !important;
+}
+
+.auditList p {
+  color: rgba(235, 247, 255, 0.86) !important;
+}
+
+/* Clean Aura panel into one single assistant section */
+.auraPanel {
+  position: relative;
+  overflow: hidden;
+  grid-template-columns: 150px minmax(0, 1fr) !important;
+  background:
+    radial-gradient(circle at 12% 30%, rgba(46, 212, 255, 0.16), transparent 34%),
+    radial-gradient(circle at 88% 0%, rgba(255, 216, 77, 0.08), transparent 32%),
+    linear-gradient(135deg, rgba(12, 39, 62, 0.92), rgba(2, 9, 20, 0.98)) !important;
+}
+
+.auraPanel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(255, 216, 77, 0.06), transparent 42%);
+}
+
+.auraPanel > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* This removes the visible inner rectangle behind the text */
+.auraCopy,
+.auraCopy div,
+.auraCopy p,
+.auraCopy h2,
+.auraList {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.auraCopy {
+  padding: 0 !important;
+}
+
+.auraCopy h2 {
+  max-width: 920px;
+}
+
+.auraCopy p {
+  max-width: 960px;
+  color: rgba(235, 247, 255, 0.84) !important;
+}
+
+.auraList {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-top: 12px !important;
+  padding: 0 !important;
+}
+
+.auraList span {
+  min-height: 28px !important;
+  border: 1px solid rgba(35, 220, 165, 0.26) !important;
+  border-radius: 999px !important;
+  padding: 0 10px !important;
+  background:
+    linear-gradient(135deg, rgba(35, 220, 165, 0.1), rgba(46, 212, 255, 0.05)) !important;
+  color: #dcfff6 !important;
+  box-shadow: none !important;
+}
+
+.botWrap {
+  width: 132px !important;
+  min-height: 132px !important;
+  border-radius: 20px !important;
+}
+
+.botWrap img {
+  width: 116px !important;
+}
+
+.footerNote {
+  color: rgba(235, 247, 255, 0.72) !important;
+}
+
+@media (max-width: 1380px) {
+  .auraPanel {
+    grid-template-columns: 1fr !important;
+  }
+
+  .tableTop .ghostButton {
+    width: 100% !important;
+  }
+}
+
+/* === ACTIVITY LOG AURA CLEAN FINAL V2 === */
+/* Removes the remaining inner dark rectangle from Aura Audit Watch.
+   Keeps one clean assistant panel only. */
+
+.auraPanel {
+  overflow: hidden !important;
+  grid-template-columns: 150px minmax(0, 1fr) !important;
+  background:
+    radial-gradient(circle at 8% 45%, rgba(46, 212, 255, 0.15), transparent 32%),
+    radial-gradient(circle at 88% 10%, rgba(255, 216, 77, 0.07), transparent 34%),
+    linear-gradient(135deg, rgba(11, 38, 60, 0.94), rgba(2, 9, 20, 0.98)) !important;
+}
+
+.auraPanel::before,
+.auraPanel::after,
+.auraCopy::before,
+.auraCopy::after,
+.auraList::before,
+.auraList::after {
+  content: none !important;
+  display: none !important;
+}
+
+.auraCopy {
+  display: block !important;
+  background: none !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.auraCopy p,
+.auraCopy h2,
+.auraCopy .kicker {
+  background: none !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.auraList {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-top: 13px !important;
+  padding: 0 !important;
+  background: none !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.auraList span {
+  background: rgba(35, 220, 165, 0.08) !important;
+  border: 1px solid rgba(35, 220, 165, 0.28) !important;
+  box-shadow: none !important;
+}
+
+.botWrap {
+  background:
+    radial-gradient(circle at center, rgba(46, 212, 255, 0.16), transparent 56%),
+    rgba(2, 10, 21, 0.42) !important;
+}
+
+@media (max-width: 1380px) {
+  .auraPanel {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* === ACTIVITY LOG CUSTOMER GAP FIX V1 === */
+/* Renames actor area visually through markup and fills the bottom gap cleanly. */
+
+.auditSummaryStrip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 12px;
+  border-top: 1px solid rgba(48, 190, 255, 0.16);
+  background:
+    linear-gradient(135deg, rgba(8, 28, 50, 0.72), rgba(2, 10, 21, 0.92));
+}
+
+.auditSummaryStrip button {
+  min-height: 62px;
+  border: 1px solid rgba(48, 190, 255, 0.22);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at left, rgba(46, 212, 255, 0.12), transparent 42%),
+    rgba(3, 12, 24, 0.72);
+  color: #f8fbff;
+  text-align: left;
+  padding: 11px 12px;
+  cursor: pointer;
+}
+
+.auditSummaryStrip button:hover {
+  border-color: rgba(255, 216, 77, 0.46);
+  background:
+    radial-gradient(circle at left, rgba(255, 216, 77, 0.11), transparent 42%),
+    rgba(8, 28, 50, 0.86);
+}
+
+.auditSummaryStrip strong {
+  display: block;
+  color: #ffd84d;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.auditSummaryStrip span {
+  display: block;
+  margin-top: 5px;
+  color: rgba(235, 247, 255, 0.82);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+@media (max-width: 760px) {
+  .auditSummaryStrip {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === ACTIVITY LOG FINAL AURA FLATTEN V3 === */
+/* Final removal of the inner dark rectangle behind Aura text. */
+
+.auraPanel {
+  display: grid !important;
+  grid-template-columns: 150px minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 22px !important;
+  background:
+    radial-gradient(circle at 9% 45%, rgba(46, 212, 255, 0.16), transparent 32%),
+    radial-gradient(circle at 92% 0%, rgba(255, 216, 77, 0.08), transparent 34%),
+    linear-gradient(135deg, rgba(11, 38, 60, 0.94), rgba(2, 9, 20, 0.98)) !important;
+}
+
+.auraPanel::before,
+.auraPanel::after,
+.auraCopy::before,
+.auraCopy::after {
+  display: none !important;
+  content: none !important;
+}
+
+.auraCopy {
+  display: block !important;
+  background: transparent !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.auraCopy > * {
+  background: transparent !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.auraCopy h2 {
+  max-width: 980px !important;
+}
+
+.auraCopy p {
+  max-width: 980px !important;
+  color: rgba(235, 247, 255, 0.84) !important;
+}
+
+.auraList {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-top: 12px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.auraList span {
+  display: inline-flex !important;
+  align-items: center !important;
+  width: fit-content !important;
+  min-height: 28px !important;
+  border: 1px solid rgba(35, 220, 165, 0.28) !important;
+  border-radius: 999px !important;
+  padding: 0 10px !important;
+  background: rgba(35, 220, 165, 0.08) !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 1380px) {
+  .auraPanel {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* === ACTIVITY LOG CLEAN AURA BAR V1 === */
+/* Fresh class names so old Aura styles cannot create an inner dark box. */
+
+.auditAuraBar {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+  border: 1px solid rgba(255, 216, 77, 0.3);
+  border-radius: 18px;
+  padding: 18px;
+  background:
+    radial-gradient(circle at 7% 50%, rgba(46, 212, 255, 0.16), transparent 32%),
+    radial-gradient(circle at 92% 0%, rgba(255, 216, 77, 0.08), transparent 34%),
+    linear-gradient(135deg, rgba(11, 38, 60, 0.94), rgba(2, 9, 20, 0.98));
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.auditAuraBot {
+  display: grid;
+  place-items: center;
+  width: 120px;
+  min-height: 120px;
+  border: 1px solid rgba(255, 216, 77, 0.2);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at center, rgba(46, 212, 255, 0.16), transparent 56%),
+    rgba(2, 10, 21, 0.34);
+}
+
+.auditAuraBot img {
+  width: 108px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.34));
+}
+
+.auditAuraCopy {
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.auditAuraCopy h2 {
+  max-width: 980px;
+  margin: 0;
+  color: #fff8dd;
+  font-size: 1.45rem;
+  line-height: 1.15;
+}
+
+.auditAuraCopy p {
+  max-width: 980px;
+  margin: 8px 0 0;
+  color: rgba(235, 247, 255, 0.84);
+  line-height: 1.45;
+}
+
+.auditAuraChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.auditAuraChips span {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 28px;
+  border: 1px solid rgba(35, 220, 165, 0.28);
+  border-radius: 999px;
+  padding: 0 10px;
+  background: rgba(35, 220, 165, 0.08);
+  color: #dcfff6;
+  font-weight: 900;
+}
+
+.auditAuraChips span::before {
+  content: "•";
+  margin-right: 7px;
+  color: #46ffc6;
+}
+
+@media (max-width: 760px) {
+  .auditAuraBar {
+    grid-template-columns: 1fr;
+  }
+}
+
