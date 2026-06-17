@@ -17909,3 +17909,40 @@ body {
   }
 }
 
+
+/* === BEE-AURA COLOUR SYSTEM V1.0 TOKENS === */
+:root,
+:root[data-theme="bee-aura-dark"] {
+  --bg-main: #0B1220;
+  --bg-sidebar: #08101B;
+  --bg-card: #111827;
+  --bg-elevated: #172033;
+
+  --border-default: #50617D;
+  --border-strong: #5A6B88;
+
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-disabled: #73859B;
+
+  --brand-gold: #CFA43B;
+  --brand-gold-muted: #A38331;
+  --on-brand-gold: #0B1220;
+
+  --ai-blue: #4DA3FF;
+  --on-ai-blue: #0B1220;
+
+  --success: #22A06B;
+  --warning: #D97706;
+  --danger: #D95C63;
+
+  --surface-ai-subtle: rgba(77, 163, 255, 0.14);
+  --surface-success-subtle: rgba(34, 160, 107, 0.14);
+  --surface-warning-subtle: rgba(217, 119, 6, 0.16);
+  --surface-danger-subtle: rgba(217, 92, 99, 0.16);
+
+  --focus-ring: #FFFFFF;
+  --focus-ring-inset: #0B1220;
+}
+/* === END BEE-AURA COLOUR SYSTEM V1.0 TOKENS === */
