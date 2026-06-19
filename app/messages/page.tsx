@@ -58,7 +58,7 @@ const baseConversations: Conversation[] = [
     customerSlug: "sarah-johnson",
     phone: "07944 203 118",
     email: "sarah.johnson@example.com",
-    address: "Moseley, Birmingham",
+    address: "Didsbury, Manchester",
     channel: "WhatsApp",
     status: "Needs Reply",
     priority: "Emergency",
@@ -79,7 +79,7 @@ const baseConversations: Conversation[] = [
     customerSlug: "tom-wilson",
     phone: "07891 882 014",
     email: "tom.wilson@example.com",
-    address: "Solihull, Birmingham",
+    address: "Salford, Greater Manchester",
     channel: "Email",
     status: "Booked",
     priority: "Tomorrow",
@@ -100,7 +100,7 @@ const baseConversations: Conversation[] = [
     customerSlug: "emma-davis",
     phone: "07720 339 901",
     email: "emma.davis@example.com",
-    address: "Edgbaston, Birmingham",
+    address: "Stockport, Greater Manchester",
     channel: "SMS",
     status: "Follow-up",
     priority: "Today",
@@ -121,7 +121,7 @@ const baseConversations: Conversation[] = [
     customerSlug: "marc-patel",
     phone: "07900 442 712",
     email: "marc.patel@example.com",
-    address: "Harborne, Birmingham",
+    address: "Chorlton, Manchester",
     channel: "Phone",
     status: "Unread",
     priority: "Today",
@@ -142,7 +142,7 @@ const baseConversations: Conversation[] = [
     customerSlug: "olivia-brown",
     phone: "07855 734 620",
     email: "olivia.brown@example.com",
-    address: "Kings Heath, Birmingham",
+    address: "Didsbury, Manchester",
     channel: "Website",
     status: "Replied",
     priority: "Later",
@@ -163,7 +163,7 @@ const baseConversations: Conversation[] = [
     customerSlug: "daniel-price",
     phone: "07788 440 219",
     email: "daniel.price@example.com",
-    address: "Bearwood, Birmingham",
+    address: "Sale, Greater Manchester",
     channel: "Facebook",
     status: "Needs Reply",
     priority: "Today",
@@ -184,7 +184,7 @@ const baseConversations: Conversation[] = [
     customerSlug: "mia-green",
     phone: "07822 114 907",
     email: "mia.green@example.com",
-    address: "Jewellery Quarter, Birmingham",
+    address: "Ancoats, Manchester",
     channel: "Instagram",
     status: "Follow-up",
     priority: "Tomorrow",
@@ -206,7 +206,7 @@ const baseConversations: Conversation[] = [
     customerSlug: "james-wilson",
     phone: "07912 345 678",
     email: "james.wilson@example.com",
-    address: "Selly Oak, Birmingham",
+    address: "Oldham, Greater Manchester",
     channel: "WhatsApp",
     status: "Booked",
     priority: "Today",
@@ -227,7 +227,7 @@ const baseConversations: Conversation[] = [
     customerSlug: "amelia-ward",
     phone: "07911 220 044",
     email: "amelia.ward@example.com",
-    address: "Bournville, Birmingham",
+    address: "Prestwich, Greater Manchester",
     channel: "Phone",
     status: "Needs Reply",
     priority: "Emergency",
@@ -248,7 +248,7 @@ const baseConversations: Conversation[] = [
     customerSlug: "daniel-khan",
     phone: "07822 334 455",
     email: "daniel.khan@example.com",
-    address: "Hall Green, Birmingham",
+    address: "Altrincham, Greater Manchester",
     channel: "Website",
     status: "Needs Reply",
     priority: "Today",
@@ -269,7 +269,7 @@ const baseConversations: Conversation[] = [
     customerSlug: "lucas-green",
     phone: "07544 556 677",
     email: "lucas.green@example.com",
-    address: "Erdington, Birmingham",
+    address: "Salford, Greater Manchester",
     channel: "Facebook",
     status: "Follow-up",
     priority: "Tomorrow",
@@ -290,7 +290,7 @@ const baseConversations: Conversation[] = [
     customerSlug: "priya-shah",
     phone: "07733 445 566",
     email: "priya.shah@example.com",
-    address: "Sutton Coldfield, Birmingham",
+    address: "Stockport, Greater Manchester",
     channel: "Email",
     status: "Follow-up",
     priority: "Today",
@@ -421,7 +421,7 @@ const initialThreads: Record<string, ThreadMessage[]> = {
       id: "instagram-1",
       sender: "customer",
       name: "Mia Green",
-      body: "I messaged on Instagram about installing a smart thermostat. Do you cover Birmingham city centre?",
+      body: "I messaged on Instagram about installing a smart thermostat. Do you cover Manchester city centre?",
       time: "09:05",
       channel: "Instagram",
     },
@@ -558,7 +558,7 @@ function customerRecordHref(conversation: Conversation) {
 
 function makeSuggestedReply(conversation: Conversation) {
   if (conversation.priority === "Emergency") {
-    return `Hi ${conversation.customerName.split(" ")[0]}, thanks for messaging Northfield Home Services. We can help with the ${conversation.enquiry.toLowerCase()} today. Please confirm your postcode and whether someone is at the property now, and I will secure the next available engineer slot.`;
+    return `Hi ${conversation.customerName.split(" ")[0]}, thanks for messaging Manchester Home Services. We can help with the ${conversation.enquiry.toLowerCase()} today. Please confirm your postcode and whether someone is at the property now, and I will secure the next available engineer slot.`;
   }
 
   if (conversation.status === "Booked") {
@@ -569,7 +569,7 @@ function makeSuggestedReply(conversation: Conversation) {
     return `Hi ${conversation.customerName.split(" ")[0]}, thanks for the update. Please send the photo when ready and let us know your preferred access time. We can then confirm the best next slot for you.`;
   }
 
-  return `Hi ${conversation.customerName.split(" ")[0]}, thanks for contacting Northfield Home Services. We can help with your ${conversation.enquiry.toLowerCase()}. Please send your postcode and preferred time, and we will come back with the best available option.`;
+  return `Hi ${conversation.customerName.split(" ")[0]}, thanks for contacting Manchester Home Services. We can help with your ${conversation.enquiry.toLowerCase()}. Please send your postcode and preferred time, and we will come back with the best available option.`;
 }
 
 export default function MessagesPage() {
@@ -735,7 +735,7 @@ export default function MessagesPage() {
       customerSlug: messageSlugify(cleanName),
       phone: cleanContact || "07--- --- ---",
       email: cleanEmail || "new.lead@example.com",
-      address: "Birmingham, UK",
+      address: "Manchester, UK",
       channel: newMessageForm.channel,
       status: "Needs Reply",
       priority: "Today",
@@ -779,7 +779,7 @@ export default function MessagesPage() {
     setStatusTab("All");
     setSearchText("");
     setComposerText(
-      `Hi ${firstName}, thanks for contacting Northfield Home Services. We can help with your ${cleanEnquiry.toLowerCase()}. Please send your postcode and preferred time, and we will come back with the best available option.`,
+      `Hi ${firstName}, thanks for contacting Manchester Home Services. We can help with your ${cleanEnquiry.toLowerCase()}. Please send your postcode and preferred time, and we will come back with the best available option.`,
     );
 
     setNewMessageForm({
@@ -874,7 +874,7 @@ export default function MessagesPage() {
 
   return (
     <main className="messagesV7-page">
-      <section className="messagesV7-hero">
+<section className="messagesV7-hero">
         <div>
           <p className="messagesV7-eyebrow">Bee-Aura AI Inbox</p>
           <h1>Messages that turn into booked jobs.</h1>
@@ -892,13 +892,56 @@ export default function MessagesPage() {
             View Bookings
           </Link>
 
-          <Link href="/settings" className="messagesV7-ownerTab" aria-label="Open owner settings">
+          
+          <form className="baMessagesHeaderSearch" onSubmit={submitInboxSearch}>
+            <input
+              value={searchText}
+              onChange={(event) => setSearchText(event.target.value)}
+              placeholder="Search inbox..."
+              aria-label="Search inbox"
+            />
+            <button type="submit">Search</button>
+          </form>
+
+<Link href="/settings" className="messagesV7-ownerTab" aria-label="Open owner settings">
             <span>JD</span>
             <strong>John D.<small>Owner</small></strong>
             <em>⌄</em>
           </Link>
         </div>
       </section>
+<section className="baFlowStrip baFlowStrip--messages" aria-label="Turn each message into the next clear action.">
+        <div className="baFlowIntro">
+          <p>Reply to booking path</p>
+          <h2>Turn each message into the next clear action.</h2>
+          <span>The owner can approve a reply, open the booking, or schedule a follow-up from the same simple flow.</span>
+        </div>
+
+        <div className="baFlowCards">
+
+          <Link href="/messages?search=Sarah%20Johnson" className="baFlowCard">
+            <span>Now</span>
+            <strong>Approve reply</strong>
+            <small>Emergency boiler message waiting for owner approval.</small>
+            <em>Open inbox</em>
+          </Link>
+
+          <Link href="/bookings?search=Sarah%20Johnson" className="baFlowCard">
+            <span>14:30</span>
+            <strong>Check booking slot</strong>
+            <small>Sarah Johnson has a same-day emergency slot ready.</small>
+            <em>Open booking</em>
+          </Link>
+
+          <Link href="/follow-ups?search=Emma%20Davis" className="baFlowCard">
+            <span>16:00</span>
+            <strong>Set follow-up</strong>
+            <small>Emma Davis needs a reminder so the lead does not go cold.</small>
+            <em>Open task</em>
+          </Link>
+        </div>
+      </section>
+
 
       {showNewMessagePanel ? (
         <section id="messages-new-message-panel" className="messagesV7-newMessagePanel">
@@ -1046,25 +1089,7 @@ export default function MessagesPage() {
           </div>
         </div>
 
-        <form className="messagesV7-search messagesV7-searchAction" onSubmit={submitInboxSearch}>
-          <span>Search Inbox</span>
-          <div className="messagesV7-searchBox">
-            <input
-              value={searchText}
-              onChange={(event) => setSearchText(event.target.value)}
-              placeholder="Search by customer, channel, phone or enquiry..."
-              aria-label="Search inbox"
-            />
-            {searchText ? (
-              <button type="button" onClick={clearInboxSearch} aria-label="Clear inbox search">
-                Clear
-              </button>
-            ) : null}
-            <button type="submit" aria-label="Open first matching conversation">
-              Search
-            </button>
-          </div>
-        </form>
+        
       </section>
 
       <section className="messagesV7-shell">
@@ -1148,6 +1173,7 @@ export default function MessagesPage() {
             {selectedMessages.map((message) => (
               <div
                 key={message.id}
+                data-message-sender={message.sender}
                 className={`messagesV7-messageRow ${
                   message.sender === "business"
                     ? "isBusiness"

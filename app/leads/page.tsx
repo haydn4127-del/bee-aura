@@ -184,10 +184,13 @@ export default function LeadsPage() {
             <strong>⌕</strong>
           </label>
 
-          <Link href="/settings" className="lc-owner">
-            <span>JD</span>
-            <b>John D.<small>Owner</small></b>
-            <em>⌄</em>
+          <Link href="/settings" className="baLeadTopUser" aria-label="Open owner settings">
+            <span className="baLeadTopDot">JD</span>
+            <span className="baLeadTopCopy">
+              <strong>John D.</strong>
+              <small>Owner</small>
+            </span>
+            <span className="baLeadTopArrow">⌄</span>
           </Link>
         </div>
       </header>
