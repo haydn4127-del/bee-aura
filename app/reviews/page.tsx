@@ -1,5 +1,7 @@
 "use client";
 
+
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import styles from "./reviews.module.css";
 
@@ -270,7 +272,7 @@ export default function ReviewsPage() {
 
   return (
     <main className={styles.reviewsPage}>
-      <section className={styles.pageHero}>
+<section className={styles.pageHero}>
         <div className={styles.heroTop}>
           <div className={styles.titleBlock}>
             <p className={styles.kicker}>REVIEW COMMAND CENTRE</p>
@@ -332,12 +334,44 @@ export default function ReviewsPage() {
             >
               <span>JD</span>
               <div>
-                <strong>John D.</strong>
+                <strong>John D</strong>
                 <small>Owner</small>
               </div>
             </button>
           </div>
         </div>
+<section className="baFlowStrip baFlowStrip--reviews" aria-label="Turn good work into proof and trust.">
+        <div className="baFlowIntro">
+          <p>Review action path</p>
+          <h2>Turn good work into proof and trust.</h2>
+          <span>Review requests, owner replies and proof-pack items stay visible before anything is sent.</span>
+        </div>
+
+        <div className="baFlowCards">
+
+          <Link href="/reviews?status=ready" className="baFlowCard">
+            <span>Ready</span>
+            <strong>Request review</strong>
+            <small>Happy customer ready for owner-approved review request.</small>
+            <em>Open ready</em>
+          </Link>
+
+          <Link href="/messages?search=review" className="baFlowCard">
+            <span>Reply</span>
+            <strong>Draft owner reply</strong>
+            <small>Reviews needing response should be handled with care.</small>
+            <em>Open inbox</em>
+          </Link>
+
+          <Link href="/reviews?view=proof-pack" className="baFlowCard">
+            <span>Proof</span>
+            <strong>Build proof pack</strong>
+            <small>Strong reviews can support higher-value work.</small>
+            <em>Open proof</em>
+          </Link>
+        </div>
+      </section>
+
 
         <div className={styles.kpiGrid}>
           <article className={styles.kpiCard}>
@@ -385,7 +419,10 @@ export default function ReviewsPage() {
 
           <div className={styles.demoForm}>
             <input placeholder="Customer name" />
-            <select defaultValue="SMS">
+            <select
+              defaultValue="SMS"
+              onChange={(event) => setNotice(`Review request channel set to ${event.target.value}. Demo-only local selection.`)}
+            >
               <option>SMS</option>
               <option>WhatsApp</option>
               <option>Google</option>
@@ -414,7 +451,7 @@ export default function ReviewsPage() {
                   onClick={() => openTab(tab)}
                 >
                   {tab}
-                  <span>{counts[tab]}</span>
+                  <span data-review-tab-count="true">{counts[tab]}</span>
                 </button>
               ))}
             </div>
@@ -474,7 +511,7 @@ export default function ReviewsPage() {
                           openRecord(record);
                         }}
                       >
-                        <span className={styles.avatar}>{record.initials}</span>
+                        <span className={styles.avatar} data-review-customer-avatar="true">{record.initials}</span>
                         <div>
                           <strong>{record.customer}</strong>
                           <small>{record.area}</small>
@@ -485,13 +522,13 @@ export default function ReviewsPage() {
                       <strong>{record.job}</strong>
                       <small>{record.lastAction}</small>
                     </td>
-                    <td><span className={styles.sourceChip}>{record.source}</span></td>
+                    <td><span data-review-source={record.source.toLowerCase().replace(/[\s/]+/g, "-")}> {record.source}</span></td>
                     <td>
                       <span className={`${styles.statusChip} ${statusClass[record.status]}`}>
                         {record.status}
                       </span>
                     </td>
-                    <td>{ratingText(record.rating)}</td>
+                    <td><span className={styles.reviewRatingText}>{ratingText(record.rating)}</span></td>
                     <td>
                       <span className={`${styles.priorityChip} ${priorityClass[record.priority]}`}>
                         {record.priority}
@@ -510,7 +547,7 @@ export default function ReviewsPage() {
                             event.stopPropagation();
                             openRecord(record, "Review action opened");
                           }}
-                        >
+                         data-review-table-action="view">
                           View
                         </button>
                         <button
@@ -520,7 +557,7 @@ export default function ReviewsPage() {
                             event.stopPropagation();
                             openRecord(record, "Owner-approved review workflow opened");
                           }}
-                        >
+                         data-review-table-action="action">
                           Action
                         </button>
                       </div>
@@ -560,6 +597,7 @@ export default function ReviewsPage() {
             <button
               className={styles.demoButton}
               type="button"
+              data-review-action-tab="prepare-review-request"
               onClick={() => {
                 setSelectedActionMessage(
                   `Review request prepared for ${selectedRecord.customer}. This is demo-only: nothing has been sent.`
@@ -572,6 +610,7 @@ export default function ReviewsPage() {
             <button
               className={styles.secondaryButton}
               type="button"
+              data-review-action-tab="draft-owner-reply"
               onClick={() => {
                 setSelectedActionMessage(
                   `Owner reply draft opened for ${selectedRecord.customer}. The owner would review and approve the wording before anything is posted.`
@@ -584,6 +623,7 @@ export default function ReviewsPage() {
             <button
               className={styles.secondaryButton}
               type="button"
+              data-review-action-tab="add-to-proof-pack"
               onClick={() => {
                 setSelectedActionMessage(
                   `${selectedRecord.customer} has been marked for the proof pack in this local demo view. No real data was changed.`
