@@ -1,5 +1,7 @@
 "use client";
 
+
+import styles from "./bookings-layout-lock.module.css";
 import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 
@@ -44,7 +46,7 @@ const initialBookings: Booking[] = [
     slug: "tom-wilson",
     email: "tom.wilson@example.com",
     phone: "07891 882 014",
-    address: "Solihull, Birmingham",
+    address: "Salford, Greater Manchester",
     engineer: "Adam H.",
     status: "Completed",
     value: "£95",
@@ -60,7 +62,7 @@ const initialBookings: Booking[] = [
     slug: "sarah-johnson",
     email: "sarah.johnson@example.com",
     phone: "07944 203 118",
-    address: "Moseley, Birmingham",
+    address: "Didsbury, Manchester",
     engineer: "Lucy C.",
     status: "In Progress",
     value: "£420",
@@ -76,7 +78,7 @@ const initialBookings: Booking[] = [
     slug: "emma-davis",
     email: "emma.davis@example.com",
     phone: "07720 339 901",
-    address: "Edgbaston, Birmingham",
+    address: "Stockport, Greater Manchester",
     engineer: "John D.",
     status: "Pending",
     value: "£180",
@@ -92,7 +94,7 @@ const initialBookings: Booking[] = [
     slug: "david-clarke",
     email: "david.c@example.com",
     phone: "07888 223 344",
-    address: "Sutton Coldfield, Birmingham",
+    address: "Stockport, Greater Manchester",
     engineer: "Mike T.",
     status: "Confirmed",
     value: "£150",
@@ -108,7 +110,7 @@ const initialBookings: Booking[] = [
     slug: "ben-morris",
     email: "ben.m@example.com",
     phone: "07700 998 877",
-    address: "Harborne, Birmingham",
+    address: "Chorlton, Manchester",
     engineer: "James B.",
     status: "Confirmed",
     value: "£220",
@@ -124,7 +126,7 @@ const initialBookings: Booking[] = [
     slug: "amelia-ward",
     email: "amelia.ward@example.com",
     phone: "07911 220 044",
-    address: "Bournville, Birmingham",
+    address: "Prestwich, Greater Manchester",
     engineer: "John D.",
     status: "Pending",
     value: "£420",
@@ -140,7 +142,7 @@ const initialBookings: Booking[] = [
     slug: "daniel-khan",
     email: "daniel.khan@example.com",
     phone: "07822 334 455",
-    address: "Hall Green, Birmingham",
+    address: "Altrincham, Greater Manchester",
     engineer: "Lucy C.",
     status: "Confirmed",
     value: "£650",
@@ -156,7 +158,7 @@ const initialBookings: Booking[] = [
     slug: "lucas-green",
     email: "lucas.green@example.com",
     phone: "07544 556 677",
-    address: "Erdington, Birmingham",
+    address: "Salford, Greater Manchester",
     engineer: "James B.",
     status: "Confirmed",
     value: "£280",
@@ -173,7 +175,7 @@ const initialBookings: Booking[] = [
     slug: "priya-shah",
     email: "priya.shah@example.com",
     phone: "07733 445 566",
-    address: "Sutton Coldfield, Birmingham",
+    address: "Stockport, Greater Manchester",
     engineer: "Adam H.",
     status: "Pending",
     value: "£140",
@@ -189,7 +191,7 @@ const initialBookings: Booking[] = [
     slug: "lucas-green",
     email: "lucas.green@example.com",
     phone: "07544 556 677",
-    address: "Erdington, Birmingham",
+    address: "Salford, Greater Manchester",
     engineer: "James B.",
     status: "Confirmed",
     value: "£280",
@@ -308,7 +310,7 @@ export default function BookingsPage() {
       slug: slugify(form.customer.trim()),
       email: form.email.trim() || "customer@example.com",
       phone: form.phone.trim() || "07--- --- ---",
-      address: form.address.trim() || "Birmingham, UK",
+      address: form.address.trim() || "Manchester, UK",
       engineer: "John D.",
       status: "Pending",
       value: form.value.trim() || "£0",
@@ -340,7 +342,7 @@ export default function BookingsPage() {
   }
 
   return (
-    <main className="bkV2-page">
+    <main className={`${styles.bookingsLock} bkV2-page`}>
       <header className="bkV2-header">
         <div className="bkV2-title">
           <h1>Bookings</h1>
@@ -377,6 +379,52 @@ export default function BookingsPage() {
         </div>
       </header>
 
+      <section id="calendar" className="bkV2-calendar" aria-label="Booking calendar">
+        <div className="bkV2-calendarIntro">
+          <p>Booking calendar</p>
+          <h2>Owner-safe schedule for the week.</h2>
+          <span>Jobs, reminders and booking risks are grouped into a simple calendar strip before the detail view.</span>
+        </div>
+
+        <div className="bkV2-calendarDays">
+          <Link href="/bookings?search=Tom%20Wilson" className="bkV2-calendarDay isActive">
+            <span>Mon</span>
+            <strong>19</strong>
+            <small>6 jobs</small>
+            <em>Next: 09:00</em>
+          </Link>
+
+          <Link href="/bookings?search=Daniel%20Khan" className="bkV2-calendarDay">
+            <span>Tue</span>
+            <strong>20</strong>
+            <small>3 jobs</small>
+            <em>2 pending</em>
+          </Link>
+
+          <Link href="/follow-ups?search=Charlotte%20Lee" className="bkV2-calendarDay warning">
+            <span>Wed</span>
+            <strong>21</strong>
+            <small>4 reminders</small>
+            <em>Needs follow-up</em>
+          </Link>
+
+          <Link href="/reviews?search=Olivia%20Smith" className="bkV2-calendarDay">
+            <span>Thu</span>
+            <strong>22</strong>
+            <small>2 reviews</small>
+            <em>Proof pack</em>
+          </Link>
+
+          <Link href="/bookings" className="bkV2-calendarDay">
+            <span>Fri</span>
+            <strong>23</strong>
+            <small>5 jobs</small>
+            <em>Open diary</em>
+          </Link>
+        </div>
+      </section>
+
+
       {showCreatePanel ? (
         <section id="bkV2-create" className="bkV2-create">
           <div>
@@ -400,7 +448,7 @@ export default function BookingsPage() {
             <label>Time slot<input value={form.time} onChange={(event) => updateForm("time", event.target.value)} placeholder="Tomorrow, 10:00 AM – 11:00 AM" /></label>
             <label>Phone<input value={form.phone} onChange={(event) => updateForm("phone", event.target.value)} placeholder="07..." /></label>
             <label>Email<input value={form.email} onChange={(event) => updateForm("email", event.target.value)} placeholder="customer@example.com" /></label>
-            <label>Address<input value={form.address} onChange={(event) => updateForm("address", event.target.value)} placeholder="Birmingham, UK" /></label>
+            <label>Address<input value={form.address} onChange={(event) => updateForm("address", event.target.value)} placeholder="Manchester, UK" /></label>
             <label>Value<input value={form.value} onChange={(event) => updateForm("value", event.target.value)} placeholder="£250" /></label>
 
             <div className="bkV2-createActions">
@@ -412,14 +460,46 @@ export default function BookingsPage() {
       ) : null}
 
       <section className="bkV2-stats">
-        <article><span>BK</span><p>Today’s Bookings</p><strong>5</strong><small>↑ 25% vs yesterday</small></article>
-        <article><span>CF</span><p>Confirmed</p><strong>18</strong><small>↑ 12% vs yesterday</small></article>
-        <article><span>PD</span><p>Pending</p><strong>7</strong><small>↓ 8% vs yesterday</small></article>
-        <article><span>£</span><p>Revenue Booked</p><strong>£4,280</strong><small>↑ 16% vs yesterday</small></article>
+        <article>
+          <span>BK</span>
+          <div className="bkV2-statBody">
+            <p>Today’s Bookings</p>
+            <strong>5</strong>
+            <small>↑ 25% vs yesterday</small>
+          </div>
+        </article>
+
+        <article>
+          <span>CF</span>
+          <div className="bkV2-statBody">
+            <p>Confirmed</p>
+            <strong>18</strong>
+            <small>↑ 12% vs yesterday</small>
+          </div>
+        </article>
+
+        <article>
+          <span>PD</span>
+          <div className="bkV2-statBody">
+            <p>Pending</p>
+            <strong>7</strong>
+            <small>↓ 8% vs yesterday</small>
+          </div>
+        </article>
+
+        <article>
+          <span>£</span>
+          <div className="bkV2-statBody">
+            <p>Revenue Booked</p>
+            <strong>£4,280</strong>
+            <small>↑ 16% vs yesterday</small>
+          </div>
+        </article>
       </section>
 
       <section className="bkV2-grid">
-        <section className="bkV2-card bkV2-upcoming">
+        <div className="bkV2-mainColumn">
+          <section className="bkV2-card bkV2-upcoming">
           <div className="bkV2-cardHeader">
             <div>
               <p>Schedule control</p>
@@ -472,6 +552,45 @@ export default function BookingsPage() {
           </button>
         </section>
 
+          <section className="bkV2-card bkV2-details">
+          <div className="bkV2-cardHeader">
+            <div>
+              <p>Selected booking</p>
+              <h2>Booking Details</h2>
+            </div>
+            <span>{selected.id}</span>
+          </div>
+
+          <div className="bkV2-customer">
+            <span>{selected.customer.split(" ").map((part) => part[0]).join("")}</span>
+
+            <div>
+              <strong>{selected.customer}</strong>
+              <small>{selected.phone}</small>
+              <small>{selected.email}</small>
+            </div>
+
+            <Link href={customerRecordHref(selected)}>View CRM →</Link>
+          </div>
+
+          <div className="bkV2-detailGrid">
+            <p><span>Service type</span><strong>{selected.service}</strong></p>
+            <p><span>Engineer assigned</span><strong>{selected.engineer}</strong></p>
+            <p><span>Time slot</span><strong>{selected.time}</strong></p>
+            <p><span>Address</span><strong>{selected.address}</strong></p>
+            <p><span>Payment</span><strong>{selected.value} · {selected.status}</strong></p>
+          </div>
+
+          <p className="bkV2-note">{selected.notes}</p>
+          <p className="bkV2-notice">{notice}</p>
+
+          <div className="bkV2-detailActions">
+            <button type="button" onClick={confirmSelectedBooking}>Confirm Booking</button>
+            <Link href={`/messages?search=${encodeURIComponent(selected.customer)}`}>Message Customer</Link>
+          </div>
+        </section>
+        </div>
+
         <aside className="bkV2-side">
           <section className="bkV2-card bkV2-schedule">
             <div className="bkV2-cardHeader">
@@ -505,12 +624,12 @@ export default function BookingsPage() {
           </section>
 
           <section className="bkV2-bookingPerformancePanel">
-            <div className="bkV2-performanceHeader">
-              <div>
-                <p className="bkV2-sectionEyebrow">Booking Performance</p>
-                <h2>Booking Performance</h2>
+            <div className="bkV2-performanceHeader baBkgGraphTop">
+              <div className="baBkgGraphCopy">
+                <p className="bkV2-sectionEyebrow baBkgGraphKicker">Booking Performance</p>
+                <p className="baBkgGraphTitle">Booking Performance</p>
               </div>
-              <strong>Last 7 Days</strong>
+              <span className="baBkgGraphRange">Last 7 Days</span>
             </div>
 
             <div className="bkV2-performanceLegend">
@@ -595,46 +714,9 @@ export default function BookingsPage() {
             </div>
           </section>
         </aside>
+      </section>
 
-        <section className="bkV2-card bkV2-details">
-          <div className="bkV2-cardHeader">
-            <div>
-              <p>Selected booking</p>
-              <h2>Booking Details</h2>
-            </div>
-            <span>{selected.id}</span>
-          </div>
-
-          <div className="bkV2-customer">
-            <span>{selected.customer.split(" ").map((part) => part[0]).join("")}</span>
-
-            <div>
-              <strong>{selected.customer}</strong>
-              <small>{selected.phone}</small>
-              <small>{selected.email}</small>
-            </div>
-
-            <Link href={customerRecordHref(selected)}>View CRM →</Link>
-          </div>
-
-          <div className="bkV2-detailGrid">
-            <p><span>Service type</span><strong>{selected.service}</strong></p>
-            <p><span>Engineer assigned</span><strong>{selected.engineer}</strong></p>
-            <p><span>Time slot</span><strong>{selected.time}</strong></p>
-            <p><span>Address</span><strong>{selected.address}</strong></p>
-            <p><span>Payment</span><strong>{selected.value} · {selected.status}</strong></p>
-          </div>
-
-          <p className="bkV2-note">{selected.notes}</p>
-          <p className="bkV2-notice">{notice}</p>
-
-          <div className="bkV2-detailActions">
-            <button type="button" onClick={confirmSelectedBooking}>Confirm Booking</button>
-            <Link href={`/messages?search=${encodeURIComponent(selected.customer)}`}>Message Customer</Link>
-          </div>
-        </section>
-
-        <section className="bkV2-card bkV2-aura">
+      <section className="bkV2-card bkV2-aura">
           <Link href="/messages" className="bkV2-auraBot">
             <img src="/brand/source/aura-assistant-transparent.png" alt="Aura Assistant" />
           </Link>
@@ -647,7 +729,6 @@ export default function BookingsPage() {
 
           <Link href="/messages" className="bkV2-auraButton">Review booking messages →</Link>
         </section>
-      </section>
     </main>
   );
 }

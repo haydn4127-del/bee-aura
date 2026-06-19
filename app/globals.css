@@ -4852,15 +4852,6 @@ h1 {
 /* === End Bee-Aura Leads clean working standard v2 === */
 
 
-
-
-
-
-
-
-
-
-
 /* Bee-Aura Messages final standard v10 */
 .messagesV7-page {
   width: 100%;
@@ -5472,9 +5463,6 @@ h1 {
   }
 }
 /* End Bee-Aura Messages final standard v10 */
-
-
-
 
 
 /* Bee-Aura Bookings reference layout v3 */
@@ -16494,28 +16482,6 @@ h1 {
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24) !important;
 }
 
-/* Theme common existing bot card class names where pages use divs instead of sections */
-:where(
-  [class*="aura" i],
-  [class*="assistant" i],
-  [class*="bot" i],
-  [class*="aiSuggestion" i],
-  [class*="aiSuggestions" i]
-):has(img[src*="aura-assistant"]),
-:where(
-  [class*="aura" i],
-  [class*="assistant" i],
-  [class*="bot" i],
-  [class*="aiSuggestion" i],
-  [class*="aiSuggestions" i]
-):has(img[alt*="Aura" i]) {
-  border-color: rgba(255, 210, 74, 0.24) !important;
-  background:
-    radial-gradient(circle at 8% 25%, rgba(255, 210, 74, 0.14), transparent 30%),
-    radial-gradient(circle at 95% 10%, rgba(45, 196, 255, 0.12), transparent 34%),
-    linear-gradient(135deg, rgba(8, 31, 55, 0.98), rgba(2, 10, 22, 0.99)) !important;
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24) !important;
-}
 
 /* Theme the image holder only — without changing layout */
 :where(div, figure):has(> img[src*="aura-assistant"]),
@@ -16526,36 +16492,12 @@ h1 {
     rgba(45, 196, 255, 0.08) !important;
 }
 
-/* Text colour inside existing bot sections */
-:where(section, article, aside):has(img[src*="aura-assistant"]) :where(h1, h2, h3, strong),
-:where(section, article, aside):has(img[alt*="Aura" i]) :where(h1, h2, h3, strong),
-:where([class*="aura" i], [class*="assistant" i], [class*="bot" i], [class*="aiSuggestion" i], [class*="aiSuggestions" i]):has(img[src*="aura-assistant"]) :where(h1, h2, h3, strong),
-:where([class*="aura" i], [class*="assistant" i], [class*="bot" i], [class*="aiSuggestion" i], [class*="aiSuggestions" i]):has(img[alt*="Aura" i]) :where(h1, h2, h3, strong) {
-  color: #fff8dd !important;
-}
-
-:where(section, article, aside):has(img[src*="aura-assistant"]) :where(p, span, small, li),
-:where(section, article, aside):has(img[alt*="Aura" i]) :where(p, span, small, li),
-:where([class*="aura" i], [class*="assistant" i], [class*="bot" i], [class*="aiSuggestion" i], [class*="aiSuggestions" i]):has(img[src*="aura-assistant"]) :where(p, span, small, li),
-:where([class*="aura" i], [class*="assistant" i], [class*="bot" i], [class*="aiSuggestion" i], [class*="aiSuggestions" i]):has(img[alt*="Aura" i]) :where(p, span, small, li) {
-  color: rgba(236, 244, 255, 0.74) !important;
-}
-
-/* Gold label/kicker styling inside existing bot sections */
-:where(section, article, aside):has(img[src*="aura-assistant"]) :where([class*="kicker" i], [class*="eyebrow" i]),
-:where(section, article, aside):has(img[alt*="Aura" i]) :where([class*="kicker" i], [class*="eyebrow" i]),
-:where([class*="aura" i], [class*="assistant" i], [class*="bot" i], [class*="aiSuggestion" i], [class*="aiSuggestions" i]):has(img[src*="aura-assistant"]) :where([class*="kicker" i], [class*="eyebrow" i]),
-:where([class*="aura" i], [class*="assistant" i], [class*="bot" i], [class*="aiSuggestion" i], [class*="aiSuggestions" i]):has(img[alt*="Aura" i]) :where([class*="kicker" i], [class*="eyebrow" i]) {
-  color: #ffd24a !important;
-  letter-spacing: 0.16em !important;
-}
 
 /* Make Aura image itself pop slightly, without changing its size */
 img[src*="aura-assistant"],
 img[alt*="Aura" i] {
   filter: drop-shadow(0 18px 34px rgba(45, 196, 255, 0.2)) !important;
 }
-
 
 
 /* =========================================================
@@ -16607,53 +16549,6 @@ main :where(p, span, small, li) {
   color: var(--ba-muted);
 }
 
-main :where([class*="kicker" i], [class*="eyebrow" i]) {
-  color: var(--ba-gold) !important;
-  letter-spacing: 0.16em;
-}
-
-/* Shared premium panel feel */
-main :where(
-  section,
-  article,
-  aside,
-  [class*="panel" i],
-  [class*="card" i],
-  [class*="summary" i],
-  [class*="hero" i],
-  [class*="grid" i]
-) {
-  border-color: var(--ba-border-blue);
-}
-
-/* Stronger theme on obvious cards and panels only */
-main :where(
-  [class*="Panel" i],
-  [class*="Card" i],
-  [class*="panel" i],
-  [class*="card" i],
-  [class*="hero" i],
-  [class*="summary" i]
-) {
-  background:
-    radial-gradient(circle at top left, rgba(45, 196, 255, 0.11), transparent 34%),
-    linear-gradient(135deg, rgba(8, 31, 55, 0.96), rgba(2, 10, 22, 0.98)) !important;
-  border-color: var(--ba-border-blue) !important;
-  box-shadow: var(--ba-shadow);
-}
-
-/* Gold primary actions */
-main :where(
-  [class*="primary" i],
-  [class*="add" i],
-  [class*="book" i]
-) button,
-main :where(button[class*="primary" i], button[class*="add" i], a[class*="primary" i]) {
-  background: linear-gradient(135deg, #ffe071, #ffb22f 52%, #ff8f1f) !important;
-  color: #071522 !important;
-  border-color: rgba(255, 210, 74, 0.5) !important;
-  box-shadow: 0 16px 34px rgba(255, 210, 74, 0.22);
-}
 
 /* Inputs, selects, search bars */
 main :where(input, select, textarea) {
@@ -16684,24 +16579,6 @@ main :where(tbody tr:hover) {
   background: rgba(45, 196, 255, 0.07) !important;
 }
 
-/* Badges / chips / pills */
-main :where(
-  [class*="chip" i],
-  [class*="pill" i],
-  [class*="badge" i],
-  [class*="tag" i]
-) {
-  border-color: rgba(45, 196, 255, 0.24) !important;
-  background: rgba(45, 196, 255, 0.09) !important;
-}
-
-/* Selected nav / selected tabs should feel consistent */
-main :where(
-  [class*="active" i],
-  [class*="selected" i]
-) {
-  border-color: rgba(255, 210, 74, 0.38);
-}
 
 /* Aura / Bee bot theme only — existing bot sections only */
 :where(section, article, aside, div):has(img[src*="aura-assistant"]),
@@ -16725,17 +16602,6 @@ img[src*="aura-assistant"],
 img[alt*="Aura" i] {
   filter: drop-shadow(0 18px 34px rgba(45, 196, 255, 0.2)) !important;
 }
-
-/* Sidebar consistency */
-aside :where([class*="aura" i], [class*="health" i]) {
-  border-color: var(--ba-border-blue);
-}
-
-/* Safety text */
-main :where([class*="safety" i]) {
-  color: var(--ba-faint) !important;
-}
-
 
 
 /* === BEE-AURA FULL SYSTEM SYNC V5 START === */
@@ -16817,19 +16683,6 @@ main {
     linear-gradient(180deg, rgba(4, 20, 36, 0.36), rgba(2, 8, 18, 0.08)) !important;
 }
 
-/* SIDEBAR */
-aside,
-[class*="sidebar" i],
-[class*="sidenav" i],
-[class*="side-nav" i] {
-  background:
-    radial-gradient(circle at 30% 0%, rgba(45, 196, 255, 0.22), transparent 34%),
-    linear-gradient(180deg, rgba(8, 40, 68, 0.98), rgba(2, 8, 18, 0.98)) !important;
-  border-right: 1px solid rgba(255, 210, 74, 0.22) !important;
-  box-shadow:
-    0 0 34px rgba(45, 196, 255, 0.16),
-    inset -1px 0 0 rgba(45, 196, 255, 0.16) !important;
-}
 
 aside a,
 aside button,
@@ -16848,75 +16701,6 @@ nav a:hover {
     0 0 14px rgba(45, 196, 255, 0.08) !important;
 }
 
-/* ACTIVE SIDEBAR TAB ONLY */
-aside a[aria-current="page"],
-aside button[aria-current="page"],
-aside a[data-active="true"],
-aside button[data-active="true"],
-aside a[class*="active" i],
-aside button[class*="active" i] {
-  color: #041426 !important;
-  background: linear-gradient(135deg, #ffd24a, #ffb12b) !important;
-  border-color: rgba(255, 210, 74, 0.70) !important;
-  box-shadow:
-    0 0 24px rgba(255, 210, 74, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.28) !important;
-}
-
-/* PANELS / CARDS / BOXES */
-main section,
-main article,
-main [class*="card" i],
-main [class*="panel" i],
-main [class*="box" i],
-main [class*="tile" i],
-main [class*="widget" i],
-main [class*="summary" i],
-main [class*="metric" i],
-main [class*="kpi" i],
-main [class*="stat" i],
-main [class*="table" i],
-main [class*="queue" i] {
-  border-color: rgba(45, 196, 255, 0.24) !important;
-  box-shadow:
-    0 0 0 1px rgba(45, 196, 255, 0.06),
-    0 18px 46px rgba(0, 0, 0, 0.28),
-    0 0 26px rgba(45, 196, 255, 0.10),
-    inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
-}
-
-/* IMPORTANT FEATURE / AURA / SELECTED RECORD PANELS */
-main [class*="aura" i],
-main [class*="assistant" i],
-main [class*="selected" i],
-main [class*="record" i],
-main [class*="intelligence" i],
-main [class*="command" i],
-main [class*="health" i],
-main [class*="watch" i] {
-  border-color: rgba(255, 210, 74, 0.25) !important;
-  box-shadow:
-    0 0 0 1px rgba(255, 210, 74, 0.07),
-    0 0 32px rgba(45, 196, 255, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
-}
-
-/* TOP KPI BUBBLES — CUSTOMERS STYLE ACROSS LEADS / BOOKINGS / FOLLOW-UPS */
-main [class*="stat" i],
-main [class*="kpi" i],
-main [class*="metric" i] {
-  border-radius: 22px !important;
-  border-color: rgba(45, 196, 255, 0.28) !important;
-  background:
-    radial-gradient(circle at 16% 18%, rgba(45, 196, 255, 0.20), transparent 38%),
-    radial-gradient(circle at 88% 12%, rgba(255, 210, 74, 0.10), transparent 34%),
-    linear-gradient(135deg, rgba(8, 31, 55, 0.96), rgba(2, 10, 22, 0.98)) !important;
-  box-shadow:
-    0 0 0 1px rgba(45, 196, 255, 0.08),
-    0 18px 44px rgba(0, 0, 0, 0.28),
-    0 0 28px rgba(45, 196, 255, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
-}
 
 /* TEXT */
 h1,
@@ -16943,17 +16727,6 @@ small {
   color: var(--ba-text-soft) !important;
 }
 
-/* UPPERCASE LABELS */
-main [class*="eyebrow" i],
-main [class*="caption" i],
-main [class*="section-title" i],
-main [class*="sectionTitle" i],
-main [class*="label" i] {
-  color: #ffd24a !important;
-  letter-spacing: 0.15em !important;
-  text-transform: uppercase !important;
-  font-weight: 900 !important;
-}
 
 /* INPUTS / SEARCH / DROPDOWNS */
 input,
@@ -16983,36 +16756,6 @@ textarea::placeholder {
   color: rgba(226, 239, 255, 0.48) !important;
 }
 
-/* BUTTON BASE */
-button,
-a[role="button"],
-main [class*="button" i],
-main [class*="btn" i] {
-  border-radius: 16px !important;
-  font-weight: 800 !important;
-}
-
-/* PRIMARY ACTIONS */
-main header button:first-of-type,
-main [class*="toolbar" i] button:first-of-type,
-main [class*="actions" i] button:first-of-type,
-button[class*="add" i],
-button[class*="save" i],
-button[class*="export" i],
-button[class*="request" i],
-button[class*="confirm" i],
-button[class*="send" i],
-main [class*="primaryButton" i],
-main [class*="primary-button" i],
-main [class*="actionPrimary" i] {
-  background: linear-gradient(135deg, #ffd24a, #ffb12b) !important;
-  color: #041426 !important;
-  border-color: rgba(255, 210, 74, 0.68) !important;
-  box-shadow:
-    0 0 0 1px rgba(255, 210, 74, 0.18),
-    0 0 26px rgba(255, 210, 74, 0.24),
-    inset 0 1px 0 rgba(255, 255, 255, 0.28) !important;
-}
 
 /* TABLES */
 thead,
@@ -17031,65 +16774,13 @@ tbody tr:hover {
   background: rgba(45, 196, 255, 0.065) !important;
 }
 
-/* TABS / PILLS / BADGES */
-main [class*="tab" i],
-main [class*="pill" i],
-main [class*="badge" i],
-main [class*="tag" i],
-main [class*="status" i] {
-  border-color: rgba(45, 196, 255, 0.26) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 0 13px rgba(45, 196, 255, 0.08) !important;
-}
-
-/* ICON GLOW */
-svg,
-[class*="icon" i] {
-  filter:
-    drop-shadow(0 0 8px rgba(45, 196, 255, 0.32))
-    drop-shadow(0 0 4px rgba(255, 210, 74, 0.16));
-}
-
-/* VALUE HIGHLIGHTS */
-main [class*="value" i],
-main [class*="amount" i],
-main [class*="total" i] {
-  color: #ffd24a !important;
-}
-
-/* FOOTER / DEMO SAFETY */
-footer,
-[class*="footer" i],
-[class*="safety" i] {
-  color: rgba(226, 239, 255, 0.62) !important;
-}
 
 /* === BEE-AURA FULL SYSTEM SYNC V5 END === */
 
 
-
 /* === GLOBAL CUSTOMER INITIAL BLACK TEXT PATCH START === */
 
-/*
-  Fallback: customer table yellow initial/name icons use dark navy text.
-*/
-
-main [class*="customer" i] [class*="avatar" i],
-main [class*="customer" i] [class*="avatar" i] *,
-main [class*="customer" i] [class*="initial" i],
-main [class*="customer" i] [class*="initial" i] *,
-main [class*="customer" i] [class*="nameIcon" i],
-main [class*="customer" i] [class*="nameIcon" i] *,
-main [class*="customer" i] [class*="customerIcon" i],
-main [class*="customer" i] [class*="customerIcon" i] * {
-  color: #041426 !important;
-  text-shadow: none !important;
-  font-weight: 900 !important;
-}
-
 /* === GLOBAL CUSTOMER INITIAL BLACK TEXT PATCH END === */
-
 
 
 /* === BOOKING PERFORMANCE GRAPH PATCH START === */
@@ -17261,7 +16952,6 @@ main [class*="customer" i] [class*="customerIcon" i] * {
 }
 
 /* === BOOKING PERFORMANCE GRAPH PATCH END === */
-
 
 
 /* === REVIEWS PAGE POLISH V1 START === */
@@ -17500,7 +17190,6 @@ main [class*="customer" i] [class*="customerIcon" i] * {
 }
 
 /* === REVIEWS PAGE POLISH V1 END === */
-
 
 
 /* === REVIEWS PAGE POLISH V2 START === */
@@ -17863,25 +17552,6 @@ body {
     min-width: 0;
   }
 
-  .app-main [class*="page"],
-  .app-main [class*="Page"],
-  .app-main [class*="Ref-page"],
-  .app-main [class*="shell"],
-  .app-main [class*="Shell"] {
-    max-width: none !important;
-  }
-
-  .app-main [class*="header"],
-  .app-main [class*="Header"],
-  .app-main [class*="toolbar"],
-  .app-main [class*="Toolbar"],
-  .app-main [class*="control"],
-  .app-main [class*="Control"],
-  .app-main [class*="filter"],
-  .app-main [class*="Filter"] {
-    max-width: none !important;
-    min-width: 0;
-  }
 
   .app-main input,
   .app-main select,
@@ -17894,12 +17564,6 @@ body {
     width: 100%;
   }
 
-  .app-main [class*="table"],
-  .app-main [class*="Table"],
-  .app-main [class*="list"],
-  .app-main [class*="List"] {
-    min-width: 0;
-  }
 }
 
 @media (min-width: 1600px) {
@@ -17946,3 +17610,4028 @@ body {
   --focus-ring-inset: #0B1220;
 }
 /* === END BEE-AURA COLOUR SYSTEM V1.0 TOKENS === */
+
+
+/* === SETTINGS OWNER TAB FINAL FORCE FIX === */
+/* High-specificity override: force Settings owner to match Activity Log / Reviews dark owner pill. */
+
+main.settingsRef-page .settingsRef-topbar {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: start !important;
+  gap: 16px !important;
+}
+
+main.settingsRef-page .settingsRef-toolbar {
+  display: grid !important;
+  grid-template-columns: minmax(260px, 1fr) 126px !important;
+  gap: 10px !important;
+  align-items: stretch !important;
+  width: min(100%, 430px) !important;
+  justify-self: end !important;
+}
+
+main.settingsRef-page .settingsRef-search,
+main.settingsRef-page .settingsRef-toolbar .settingsRef-owner {
+  min-height: 38px !important;
+  height: 38px !important;
+  border: 1px solid rgba(255, 216, 77, 0.34) !important;
+  border-radius: 999px !important;
+  background: rgba(5, 18, 34, 0.9) !important;
+  color: #f8fbff !important;
+  font-size: 0.82rem !important;
+  font-weight: 900 !important;
+  box-shadow: none !important;
+}
+
+main.settingsRef-page .settingsRef-search {
+  display: grid !important;
+  grid-template-columns: 22px minmax(0, 1fr) !important;
+  align-items: center !important;
+  padding: 0 12px !important;
+  min-width: 0 !important;
+}
+
+main.settingsRef-page .settingsRef-search span {
+  color: rgba(235, 247, 255, 0.68) !important;
+  font-size: 0.9rem !important;
+}
+
+main.settingsRef-page .settingsRef-search input {
+  width: 100% !important;
+  min-width: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  outline: none !important;
+  font-weight: 800 !important;
+}
+
+main.settingsRef-page .settingsRef-search input::placeholder {
+  color: rgba(235, 247, 255, 0.64) !important;
+}
+
+main.settingsRef-page .settingsRef-toolbar .settingsRef-owner {
+  display: grid !important;
+  grid-template-columns: 32px minmax(0, 1fr) !important;
+  gap: 8px !important;
+  align-items: center !important;
+  padding: 0 10px !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+}
+
+main.settingsRef-page .settingsRef-toolbar .settingsRef-owner > span {
+  display: grid !important;
+  place-items: center !important;
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #ffd84d, #58c8ff) !important;
+  color: #06111f !important;
+  font-weight: 950 !important;
+  font-size: 0.76rem !important;
+  line-height: 1 !important;
+}
+
+main.settingsRef-page .settingsRef-toolbar .settingsRef-owner > div {
+  min-width: 0 !important;
+  display: block !important;
+}
+
+main.settingsRef-page .settingsRef-toolbar .settingsRef-owner strong,
+main.settingsRef-page .settingsRef-toolbar .settingsRef-owner small {
+  display: block !important;
+  line-height: 1.05 !important;
+}
+
+main.settingsRef-page .settingsRef-toolbar .settingsRef-owner strong {
+  color: #f8fbff !important;
+  font-size: 0.78rem !important;
+  font-weight: 950 !important;
+  white-space: nowrap !important;
+}
+
+main.settingsRef-page .settingsRef-toolbar .settingsRef-owner small {
+  color: rgba(235, 247, 255, 0.72) !important;
+  font-size: 0.66rem !important;
+  font-weight: 800 !important;
+}
+
+main.settingsRef-page .settingsRef-toolbar .settingsRef-owner:hover,
+main.settingsRef-page .settingsRef-search:hover {
+  border-color: rgba(48, 190, 255, 0.65) !important;
+  background: rgba(17, 50, 78, 0.92) !important;
+}
+
+/* Keep footer actions aligned with the accepted command-button style */
+main.settingsRef-page .settingsRef-primaryAction {
+  min-height: 38px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #ffd84d, #ffad28) !important;
+  color: #151006 !important;
+  border-color: rgba(255, 232, 130, 0.9) !important;
+  box-shadow: 0 16px 34px rgba(255, 184, 44, 0.13) !important;
+  font-weight: 950 !important;
+}
+
+main.settingsRef-page .settingsRef-resetAction {
+  min-height: 38px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 216, 77, 0.34) !important;
+  background: rgba(5, 18, 34, 0.9) !important;
+  color: #f8fbff !important;
+  font-weight: 900 !important;
+}
+
+@media (max-width: 960px) {
+  main.settingsRef-page .settingsRef-topbar {
+    grid-template-columns: 1fr !important;
+  }
+
+  main.settingsRef-page .settingsRef-toolbar {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    justify-self: stretch !important;
+  }
+}
+
+/* === END SETTINGS OWNER TAB FINAL FORCE FIX === */
+
+
+/* === BOOKINGS CHART MATCH DASHBOARD STYLE PASS === */
+/* Aligns the Bookings performance chart with the Dashboard chart language. */
+
+.bkV2-bookingPerformancePanel {
+  border: 1px solid rgba(45, 171, 226, 0.34) !important;
+  border-radius: 20px !important;
+  background:
+    radial-gradient(circle at 88% 0%, rgba(255, 216, 77, 0.08), transparent 30%),
+    radial-gradient(circle at 12% 8%, rgba(77, 163, 255, 0.09), transparent 32%),
+    linear-gradient(180deg, rgba(8, 31, 52, 0.96), rgba(3, 13, 25, 0.98)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 18px 50px rgba(0, 0, 0, 0.22) !important;
+  overflow: hidden !important;
+}
+
+.bkV2-performanceHeader {
+  padding: 22px 22px 12px !important;
+  border-bottom: 1px solid rgba(80, 97, 125, 0.42) !important;
+}
+
+.bkV2-sectionEyebrow {
+  color: #ffd84d !important;
+  letter-spacing: 0.16em !important;
+}
+
+.bkV2-performanceHeader h2 {
+  color: #f8fbff !important;
+  font-size: 1.45rem !important;
+  letter-spacing: -0.03em !important;
+}
+
+.bkV2-performanceHeader strong {
+  color: rgba(235, 247, 255, 0.78) !important;
+}
+
+.bkV2-performanceLegend {
+  padding: 12px 22px 0 !important;
+  display: flex !important;
+  gap: 18px !important;
+  align-items: center !important;
+}
+
+.bkV2-performanceLegend span {
+  color: rgba(235, 247, 255, 0.8) !important;
+  font-size: 0.82rem !important;
+  font-weight: 850 !important;
+}
+
+.bkV2-performanceLegend i {
+  width: 22px !important;
+  height: 4px !important;
+  border-radius: 999px !important;
+}
+
+.bkV2-performanceLegend .booked {
+  background: #ffd84d !important;
+  box-shadow: 0 0 16px rgba(255, 216, 77, 0.22) !important;
+}
+
+.bkV2-performanceLegend .value {
+  background: #4da3ff !important;
+  box-shadow: 0 0 16px rgba(77, 163, 255, 0.22) !important;
+}
+
+.bkV2-performanceChart {
+  margin: 18px 22px 18px !important;
+  padding: 14px !important;
+  border: 1px solid rgba(80, 97, 125, 0.34) !important;
+  border-radius: 18px !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(77, 163, 255, 0.09), transparent 34%),
+    linear-gradient(180deg, rgba(11, 24, 42, 0.92), rgba(3, 11, 22, 0.96)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    inset 0 -18px 40px rgba(0, 0, 0, 0.16) !important;
+}
+
+.bkV2-performanceChart svg {
+  width: 100% !important;
+  display: block !important;
+  overflow: visible !important;
+}
+
+.bkV2-chartGrid line {
+  stroke: rgba(203, 213, 225, 0.11) !important;
+  stroke-width: 1 !important;
+}
+
+.bkV2-axisLabels text,
+.bkV2-performanceChart .dayLabel {
+  fill: rgba(203, 213, 225, 0.62) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+}
+
+.bkV2-performanceChart .goldBar {
+  fill: url(#bookingBarGold) !important;
+  opacity: 0.92 !important;
+  filter: drop-shadow(0 0 8px rgba(255, 216, 77, 0.18)) !important;
+}
+
+.bkV2-performanceChart .blueBar {
+  fill: url(#bookingBarBlue) !important;
+  opacity: 0.82 !important;
+  filter: drop-shadow(0 0 8px rgba(77, 163, 255, 0.16)) !important;
+}
+
+.bkV2-performanceChart .bookedLine,
+.bkV2-performanceChart .valueLine {
+  fill: none !important;
+  stroke-width: 4 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+.bkV2-performanceChart .bookedLine {
+  stroke: #ffd84d !important;
+  filter: drop-shadow(0 0 6px rgba(255, 216, 77, 0.26)) !important;
+}
+
+.bkV2-performanceChart .valueLine {
+  stroke: #4da3ff !important;
+  filter: drop-shadow(0 0 6px rgba(77, 163, 255, 0.24)) !important;
+}
+
+.bkV2-performanceChart .bookedPoint {
+  fill: #ffd84d !important;
+  stroke: rgba(5, 18, 34, 0.96) !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 5px rgba(255, 216, 77, 0.28)) !important;
+}
+
+.bkV2-performanceChart .valuePoint {
+  fill: #4da3ff !important;
+  stroke: rgba(5, 18, 34, 0.96) !important;
+  stroke-width: 3 !important;
+  filter: drop-shadow(0 0 5px rgba(77, 163, 255, 0.28)) !important;
+}
+
+.bkV2-performanceStats {
+  padding: 0 22px 20px !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+}
+
+.bkV2-performanceStats div {
+  border: 1px solid rgba(80, 97, 125, 0.34) !important;
+  border-radius: 14px !important;
+  padding: 13px 14px !important;
+  background: rgba(5, 18, 34, 0.74) !important;
+}
+
+.bkV2-performanceStats strong {
+  color: #f8fbff !important;
+  font-size: 1.35rem !important;
+  letter-spacing: -0.04em !important;
+}
+
+.bkV2-performanceStats div:nth-child(2) strong {
+  color: #4da3ff !important;
+}
+
+.bkV2-performanceStats span {
+  color: rgba(203, 213, 225, 0.72) !important;
+  font-size: 0.82rem !important;
+}
+
+@media (max-width: 900px) {
+  .bkV2-performanceChart {
+    margin-inline: 14px !important;
+  }
+
+  .bkV2-performanceStats {
+    grid-template-columns: 1fr !important;
+    padding-inline: 14px !important;
+  }
+}
+
+/* === END BOOKINGS CHART MATCH DASHBOARD STYLE PASS === */
+
+/* BEE-AURA FINAL FLOW LOCK V5
+   One visual shell lock.
+   Exact component selectors only.
+   No class*= wildcards.
+   Purpose:
+   - consistent app-page headers/control bars
+   - consistent sidebar logo lockup
+   - consistent owner/profile pills
+   - consistent bottom Aura panels with large bot
+   - no clipped search/buttons/text
+*/
+
+/* ---------- Core page readability ---------- */
+
+:root {
+  --ba-deep: #0B1220;
+  --ba-sidebar: #08101B;
+  --ba-panel: #111827;
+  --ba-panel-2: #172033;
+  --ba-border: rgba(80, 97, 125, 0.72);
+  --ba-border-strong: rgba(90, 107, 136, 0.9);
+  --ba-gold: #CFA43B;
+  --ba-gold-bright: #FFD24A;
+  --ba-on-gold: #0B1220;
+  --ba-blue: #4DA3FF;
+  --ba-text: #F8FAFC;
+  --ba-text-2: #CBD5E1;
+  --ba-text-3: #94A3B8;
+  --ba-radius: 24px;
+  --ba-control-radius: 14px;
+  --ba-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  color: var(--ba-text);
+}
+
+/* ---------- Sidebar / top-left logo lockup ---------- */
+
+.sidebar-brand,
+.sidebar-brand-premium,
+.sidebar-brand-professional,
+.landing-brand,
+.landing-brand-lockup,
+.preview-brand,
+.preview-brand-premium {
+  min-height: 76px !important;
+  padding: 1rem !important;
+  border: 1px solid rgba(207, 164, 59, 0.48) !important;
+  border-radius: 0 !important;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(207, 164, 59, 0.2), transparent 38%),
+    linear-gradient(135deg, rgba(10, 20, 34, 0.98), rgba(3, 10, 18, 0.98)) !important;
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(77, 163, 255, 0.08) inset !important;
+}
+
+.sidebar-brand img,
+.sidebar-brand-premium img,
+.sidebar-brand-professional img,
+.landing-brand img,
+.landing-brand-lockup img,
+.preview-brand img,
+.preview-brand-premium img,
+.brand-mark img,
+.brand-aura-mark img,
+.brand-image-mark img,
+.brand-lockup-image img,
+.landing-brand-emblem img,
+.landing-brand-image-mark img {
+  width: 34px !important;
+  height: 34px !important;
+  max-width: 34px !important;
+  max-height: 34px !important;
+  object-fit: contain !important;
+  filter:
+    drop-shadow(0 0 14px rgba(207, 164, 59, 0.42))
+    drop-shadow(0 0 22px rgba(77, 163, 255, 0.2)) !important;
+}
+
+.sidebar-brand strong,
+.sidebar-brand-premium strong,
+.sidebar-brand-professional strong,
+.landing-brand strong,
+.landing-brand-title,
+.preview-brand strong {
+  color: var(--ba-text) !important;
+  font-size: 1rem !important;
+  letter-spacing: -0.025em !important;
+  text-shadow: 0 0 18px rgba(207, 164, 59, 0.18);
+}
+
+.sidebar-brand small,
+.sidebar-brand-premium small,
+.sidebar-brand-professional small,
+.landing-brand small,
+.landing-brand-subline,
+.preview-brand small {
+  color: rgba(203, 213, 225, 0.84) !important;
+  letter-spacing: 0.12em !important;
+}
+
+/* Do not box random brand text classes */
+.brand-label,
+.brand-subtitle,
+.landing-brand-title,
+.landing-brand-text,
+.landing-brand-subline,
+.preview-brand-copy,
+.preview-brand-image {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* ---------- Unified internal page headers ---------- */
+
+.lead-header,
+.messagesV7-hero,
+.bkV2-header,
+.settingsRef-header {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: start !important;
+  gap: 1rem !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+  padding: clamp(1rem, 1.35vw, 1.35rem) !important;
+  border: 1px solid rgba(77, 163, 255, 0.25) !important;
+  border-radius: var(--ba-radius) !important;
+  background:
+    radial-gradient(circle at 7% 0%, rgba(77, 163, 255, 0.13), transparent 34%),
+    linear-gradient(135deg, rgba(14, 36, 56, 0.98), rgba(5, 13, 27, 0.98)) !important;
+  box-shadow: 0 18px 58px rgba(0, 0, 0, 0.24) !important;
+}
+
+/* Dashboard has a command-bar, not a title hero. Keep it one clean row on desktop. */
+.command-header {
+  display: grid !important;
+  grid-template-columns: minmax(240px, 1.15fr) minmax(210px, 0.9fr) minmax(360px, 1.45fr) max-content !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+  padding: 1rem !important;
+  border: 1px solid rgba(207, 164, 59, 0.3) !important;
+  border-radius: var(--ba-radius) !important;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(207, 164, 59, 0.1), transparent 32%),
+    linear-gradient(135deg, rgba(8, 20, 36, 0.98), rgba(3, 10, 18, 0.98)) !important;
+  box-shadow: 0 18px 58px rgba(0, 0, 0, 0.24) !important;
+}
+
+.command-header > * {
+  min-width: 0 !important;
+}
+
+.lead-header h1,
+.messagesV7-hero h1,
+.bkV2-header h1,
+.settingsRef-header h1 {
+  color: var(--ba-text) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.045em !important;
+  margin: 0 !important;
+}
+
+.lead-header p,
+.messagesV7-hero p,
+.bkV2-header p,
+.settingsRef-header p {
+  color: var(--ba-text-2) !important;
+  line-height: 1.45 !important;
+  max-width: 860px !important;
+}
+
+/* ---------- Unified controls / search / buttons ---------- */
+
+.command-search,
+.lead-search-box,
+.lf-search,
+.messagesV7-search,
+.bkV2-search,
+.settingsRef-search {
+  min-width: min(100%, 260px) !important;
+  max-width: 100% !important;
+}
+
+.command-search,
+.command-search input,
+.command-header input,
+.command-header select,
+.lead-search-box,
+.lead-search-box input,
+.lead-header input,
+.lead-header select,
+.lf-search,
+.lf-search input,
+.messagesV7-search,
+.messagesV7-search input,
+.messagesV7-searchInput,
+.messagesV7-toolbar input,
+.messagesV7-toolbar select,
+.messagesV7-controlBar input,
+.messagesV7-controlBar select,
+.bkV2-search,
+.bkV2-search input,
+.bkV2-header input,
+.bkV2-header select,
+.settingsRef-search,
+.settingsRef-search input,
+.settingsRef-form input,
+.settingsRef-form select,
+.settingsRef-teamRow select {
+  min-height: 44px !important;
+  border-radius: var(--ba-control-radius) !important;
+  border-color: rgba(77, 163, 255, 0.28) !important;
+  background: rgba(2, 10, 20, 0.86) !important;
+  color: var(--ba-text) !important;
+  line-height: 1.2 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.command-actions,
+.lead-actions,
+.lead-toolbar,
+.lf-actions,
+.lf-toolbar,
+.messagesV7-actions,
+.messagesV7-toolbar,
+.messagesV7-controlBar,
+.messagesV7-tabs,
+.bkV2-actions,
+.bkV2-controls,
+.settingsRef-actions,
+.settingsRef-footerActions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 0.65rem !important;
+  flex-wrap: wrap !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+}
+
+.command-header button,
+.command-header a,
+.lead-header button,
+.lead-header a,
+.messagesV7-hero button,
+.messagesV7-hero a,
+.messagesV7-toolbar button,
+.messagesV7-toolbar a,
+.bkV2-header button,
+.bkV2-header a,
+.settingsRef-header button,
+.settingsRef-header a,
+.settingsRef-footerActions button {
+  min-height: 42px !important;
+  border-radius: var(--ba-control-radius) !important;
+  white-space: nowrap !important;
+}
+
+/* ---------- Unified owner/profile pill ---------- */
+
+.command-user,
+.lead-owner-card,
+.lf-owner,
+.messagesV7-ownerTab,
+.bkV2-owner,
+.settingsRef-owner {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.65rem !important;
+  min-height: 46px !important;
+  flex: 0 0 auto !important;
+  padding: 0.45rem 0.72rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(207, 164, 59, 0.48) !important;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.18), transparent 38%),
+    rgba(5, 13, 27, 0.94) !important;
+  color: var(--ba-text) !important;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.24) !important;
+}
+
+.command-user strong,
+.lead-owner-card strong,
+.lf-owner strong,
+.messagesV7-ownerTab strong,
+.bkV2-owner strong,
+.settingsRef-owner strong {
+  color: var(--ba-text) !important;
+  line-height: 1.05 !important;
+}
+
+.command-user small,
+.lead-owner-card small,
+.lf-owner small,
+.messagesV7-ownerTab small,
+.bkV2-owner small,
+.settingsRef-owner small {
+  display: block !important;
+  color: var(--ba-text-2) !important;
+  line-height: 1.05 !important;
+}
+
+/* Person / owner initials only. System/category icons stay semantic. */
+.command-avatar,
+.lead-owner-avatar,
+.lf-owner > span:first-child,
+.messagesV7-ownerTab > span:first-child,
+.bkV2-owner > span:first-child,
+.bkV2-customer > span:first-child,
+.settingsRef-teamIdentity > span,
+.settingsRef-owner > span:first-child {
+  display: grid !important;
+  place-items: center !important;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  border-radius: 999px !important;
+  background: var(--ba-gold) !important;
+  color: var(--ba-on-gold) !important;
+  border: 1px solid rgba(207, 164, 59, 0.86) !important;
+  box-shadow: 0 10px 26px rgba(207, 164, 59, 0.2) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+/* ---------- Tables / cards should show writing, not hide it ---------- */
+
+.command-card,
+.lead-card,
+.lf-card,
+.messagesV7-card,
+.bkV2-card,
+.settingsRef-card {
+  min-width: 0 !important;
+}
+
+.command-tableWrap,
+.lead-table-shell,
+.lf-tableWrap,
+.messagesV7-main,
+.bkV2-list,
+.settingsRef-grid {
+  min-width: 0 !important;
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+}
+
+.command-card p,
+.command-card small,
+.command-card span,
+.lead-card p,
+.lead-card small,
+.lead-card span,
+.lf-card p,
+.lf-card small,
+.lf-card span,
+.messagesV7-card p,
+.messagesV7-card small,
+.messagesV7-card span,
+.bkV2-card p,
+.bkV2-card small,
+.bkV2-card span,
+.settingsRef-card p,
+.settingsRef-card small,
+.settingsRef-card span {
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Unified bottom Aura panels ---------- */
+
+.command-assistant,
+.messagesV7-aura,
+.bkV2-aura,
+.settingsRef-aura {
+  width: 100% !important;
+  min-height: 260px !important;
+  margin-top: clamp(1.15rem, 2vw, 1.8rem) !important;
+  padding: clamp(1.15rem, 2vw, 1.65rem) !important;
+  border: 1px solid rgba(207, 164, 59, 0.38) !important;
+  border-radius: 28px !important;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(207, 164, 59, 0.2), transparent 34%),
+    radial-gradient(circle at 84% 0%, rgba(77, 163, 255, 0.13), transparent 36%),
+    linear-gradient(135deg, rgba(18, 43, 61, 0.96), rgba(5, 13, 27, 0.98)) !important;
+  box-shadow: var(--ba-shadow) !important;
+  overflow: visible !important;
+}
+
+.command-assistant {
+  display: grid !important;
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: clamp(1.4rem, 2.4vw, 2.5rem) !important;
+}
+
+.messagesV7-aura,
+.bkV2-aura {
+  display: grid !important;
+  grid-template-columns: minmax(220px, 270px) minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  gap: clamp(1.25rem, 2.2vw, 2.25rem) !important;
+}
+
+.settingsRef-aura {
+  display: grid !important;
+  grid-template-columns: minmax(240px, 290px) minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: clamp(1.35rem, 2.4vw, 2.5rem) !important;
+}
+
+.command-assistant-visual,
+.command-assistant-bot,
+.messagesV7-auraBot,
+.bkV2-auraBot,
+.settingsRef-auraBot {
+  display: grid !important;
+  place-items: center !important;
+  width: min(100%, 270px) !important;
+  min-height: 220px !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(207, 164, 59, 0.28) !important;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(77, 163, 255, 0.22), transparent 44%),
+    rgba(7, 18, 31, 0.8) !important;
+  overflow: hidden !important;
+}
+
+.command-assistant img,
+.command-assistant-visual img,
+.command-assistant-bot img,
+.messagesV7-aura img,
+.messagesV7-auraBot img,
+.bkV2-aura img,
+.bkV2-auraBot img,
+.settingsRef-aura img,
+.settingsRef-auraBot img,
+.settingsRef-aura > img {
+  display: block !important;
+  width: clamp(165px, 15vw, 230px) !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  filter:
+    drop-shadow(0 0 22px rgba(77, 163, 255, 0.3))
+    drop-shadow(0 20px 34px rgba(0, 0, 0, 0.34)) !important;
+}
+
+.command-assistant-content,
+.messagesV7-aura > div,
+.bkV2-aura > div,
+.settingsRef-auraCopy,
+.settingsRef-aura > div {
+  min-width: 0 !important;
+}
+
+.command-assistant .command-assistant-kicker,
+.messagesV7-aura > div > p:first-child,
+.bkV2-aura > div > p:first-child,
+.settingsRef-auraCopy > p:first-child,
+.settingsRef-aura > div > p:first-child {
+  color: var(--ba-gold-bright) !important;
+  font-size: 0.78rem !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  margin: 0 0 0.42rem !important;
+}
+
+.command-assistant h2,
+.messagesV7-aura h2,
+.bkV2-aura h2,
+.settingsRef-aura h2 {
+  color: var(--ba-text) !important;
+  font-size: clamp(1.65rem, 2.15vw, 2.45rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.045em !important;
+  margin: 0 !important;
+  max-width: 980px !important;
+}
+
+.command-assistant-content > p:not(.command-assistant-kicker),
+.messagesV7-aura > div > p:not(:first-child),
+.bkV2-aura > div > p:not(:first-child),
+.settingsRef-auraCopy > p:not(:first-child),
+.settingsRef-auraCopy span,
+.settingsRef-aura > div > span {
+  color: var(--ba-text-2) !important;
+  font-size: clamp(0.92rem, 0.9vw, 1rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  line-height: 1.55 !important;
+  margin-top: 0.65rem !important;
+  max-width: 1000px !important;
+}
+
+.command-assistant-insights,
+.settingsRef-auraActions,
+.settingsRef-auraChips {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.6rem !important;
+  margin-top: 1rem !important;
+  min-width: 0 !important;
+}
+
+.settingsRef-auraActions button,
+.settingsRef-auraChips span,
+.bkV2-auraButton,
+.messagesV7-aura a,
+.messagesV7-aura button {
+  min-height: 40px !important;
+  padding: 0.5rem 0.85rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(207, 164, 59, 0.42) !important;
+  background: rgba(5, 13, 27, 0.78) !important;
+  color: var(--ba-text) !important;
+  font-weight: 900 !important;
+  white-space: nowrap !important;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1380px) {
+  .command-header {
+    grid-template-columns: minmax(220px, 1fr) minmax(210px, 1fr) !important;
+  }
+
+  .command-search {
+    grid-column: 1 / -1;
+  }
+
+  .command-user {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 1180px) {
+  .lead-header,
+  .messagesV7-hero,
+  .bkV2-header,
+  .settingsRef-header,
+  .command-header,
+  .command-assistant,
+  .messagesV7-aura,
+  .bkV2-aura,
+  .settingsRef-aura {
+    grid-template-columns: 1fr !important;
+  }
+
+  .command-actions,
+  .lead-actions,
+  .lead-toolbar,
+  .lf-actions,
+  .lf-toolbar,
+  .messagesV7-actions,
+  .messagesV7-toolbar,
+  .messagesV7-controlBar,
+  .messagesV7-tabs,
+  .bkV2-actions,
+  .bkV2-controls,
+  .settingsRef-actions,
+  .settingsRef-footerActions {
+    justify-content: flex-start !important;
+  }
+
+  .command-assistant-visual,
+  .command-assistant-bot,
+  .messagesV7-auraBot,
+  .bkV2-auraBot,
+  .settingsRef-auraBot {
+    width: 100% !important;
+    min-height: 185px !important;
+  }
+}
+
+/* BEE-AURA PRODUCT FLOW V6
+   Product-flow layer:
+   - Dashboard gets an owner calendar/agenda spine.
+   - Bookings gets a simple calendar strip.
+   - Visible owner controls route somewhere useful.
+   - Exact selectors only; no class*= wildcards.
+*/
+
+.command-calendar,
+.bkV2-calendar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.75fr) minmax(0, 1.55fr) auto;
+  align-items: stretch;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: clamp(1rem, 1.5vw, 1.25rem);
+  border: 1px solid rgba(207, 164, 59, 0.34);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(207, 164, 59, 0.18), transparent 34%),
+    radial-gradient(circle at 84% 0%, rgba(77, 163, 255, 0.12), transparent 38%),
+    linear-gradient(135deg, rgba(17, 24, 39, 0.98), rgba(5, 13, 27, 0.98));
+  box-shadow: 0 18px 58px rgba(0, 0, 0, 0.24);
+  overflow: visible;
+}
+
+.command-calendar-copy,
+.bkV2-calendarIntro {
+  min-width: 0;
+}
+
+.command-calendar-copy p,
+.bkV2-calendarIntro p {
+  margin: 0 0 0.35rem;
+  color: #FFD24A;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.command-calendar-copy h2,
+.bkV2-calendarIntro h2 {
+  margin: 0;
+  color: #F8FAFC;
+  font-size: clamp(1.2rem, 1.6vw, 1.65rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
+.command-calendar-copy span,
+.bkV2-calendarIntro span {
+  display: block;
+  margin-top: 0.45rem;
+  color: #CBD5E1;
+  line-height: 1.5;
+}
+
+.command-calendar-events,
+.bkV2-calendarDays {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+  min-width: 0;
+}
+
+.bkV2-calendarDays {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.command-calendar-event,
+.bkV2-calendarDay {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: 0.4rem;
+  min-height: 112px;
+  padding: 0.8rem;
+  border: 1px solid rgba(77, 163, 255, 0.28);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(77, 163, 255, 0.12), transparent 36%),
+    rgba(2, 10, 20, 0.78);
+  color: #F8FAFC;
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.command-calendar-event:hover,
+.bkV2-calendarDay:hover {
+  transform: translateY(-1px);
+  border-color: rgba(207, 164, 59, 0.58);
+  background:
+    radial-gradient(circle at 12% 12%, rgba(207, 164, 59, 0.16), transparent 36%),
+    rgba(2, 10, 20, 0.86);
+}
+
+.command-calendar-event time,
+.bkV2-calendarDay > span {
+  color: #FFD24A;
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.command-calendar-event strong,
+.bkV2-calendarDay strong {
+  display: block;
+  color: #F8FAFC;
+  font-size: 0.96rem;
+  line-height: 1.15;
+}
+
+.command-calendar-event small,
+.bkV2-calendarDay small {
+  display: block;
+  margin-top: 0.2rem;
+  color: #CBD5E1;
+  line-height: 1.35;
+}
+
+.command-calendar-event em,
+.bkV2-calendarDay em {
+  align-self: end;
+  justify-self: start;
+  margin-top: 0.35rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgba(77, 163, 255, 0.24);
+  border-radius: 999px;
+  color: #4DA3FF;
+  background: rgba(77, 163, 255, 0.1);
+  font-style: normal;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.command-calendar-event.booking em,
+.bkV2-calendarDay.isActive em {
+  color: #0B1220;
+  background: #CFA43B;
+  border-color: rgba(207, 164, 59, 0.8);
+}
+
+.command-calendar-event.follow em,
+.bkV2-calendarDay.warning em {
+  color: #F8FAFC;
+  background: rgba(217, 119, 6, 0.22);
+  border-color: rgba(217, 119, 6, 0.54);
+}
+
+.command-calendar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  justify-content: center;
+  min-width: 170px;
+}
+
+.command-calendar-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(207, 164, 59, 0.38);
+  border-radius: 999px;
+  color: #F8FAFC;
+  background: rgba(5, 13, 27, 0.82);
+  text-decoration: none;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.command-user {
+  text-decoration: none;
+}
+
+@media (max-width: 1380px) {
+  .command-calendar,
+  .bkV2-calendar {
+    grid-template-columns: 1fr;
+  }
+
+  .command-calendar-events,
+  .bkV2-calendarDays {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .command-calendar-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  .command-calendar-events,
+  .bkV2-calendarDays {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* BEE-AURA PRODUCT FLOW V7
+   Simple product-flow system.
+   Exact selectors only.
+   No wildcard selectors.
+*/
+
+.baFlowStrip {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(250px, 0.65fr) minmax(0, 1.35fr);
+  align-items: stretch;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: clamp(1rem, 1.45vw, 1.25rem);
+  border: 1px solid rgba(207, 164, 59, 0.34);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(207, 164, 59, 0.16), transparent 34%),
+    radial-gradient(circle at 86% 0%, rgba(77, 163, 255, 0.10), transparent 38%),
+    linear-gradient(135deg, rgba(17, 24, 39, 0.98), rgba(5, 13, 27, 0.98));
+  box-shadow: 0 18px 58px rgba(0, 0, 0, 0.24);
+  overflow: visible;
+}
+
+.baFlowIntro {
+  min-width: 0;
+}
+
+.baFlowIntro p {
+  margin: 0 0 0.35rem;
+  color: #FFD24A;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.baFlowIntro h2 {
+  margin: 0;
+  color: #F8FAFC;
+  font-size: clamp(1.22rem, 1.65vw, 1.75rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
+.baFlowIntro span {
+  display: block;
+  margin-top: 0.45rem;
+  color: #CBD5E1;
+  line-height: 1.5;
+}
+
+.baFlowCards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+  min-width: 0;
+}
+
+.baFlowCard {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: 0.38rem;
+  min-height: 112px;
+  padding: 0.8rem;
+  border: 1px solid rgba(77, 163, 255, 0.28);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(77, 163, 255, 0.12), transparent 36%),
+    rgba(2, 10, 20, 0.78);
+  color: #F8FAFC;
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.baFlowCard:hover {
+  transform: translateY(-1px);
+  border-color: rgba(207, 164, 59, 0.58);
+  background:
+    radial-gradient(circle at 12% 12%, rgba(207, 164, 59, 0.16), transparent 36%),
+    rgba(2, 10, 20, 0.86);
+}
+
+.baFlowCard span {
+  color: #FFD24A;
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.baFlowCard strong {
+  display: block;
+  color: #F8FAFC;
+  font-size: 0.98rem;
+  line-height: 1.15;
+}
+
+.baFlowCard small {
+  display: block;
+  color: #CBD5E1;
+  line-height: 1.35;
+}
+
+.baFlowCard em {
+  align-self: end;
+  justify-self: start;
+  margin-top: 0.35rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgba(207, 164, 59, 0.55);
+  border-radius: 999px;
+  color: #0B1220;
+  background: #CFA43B;
+  font-style: normal;
+  font-size: 0.72rem;
+  font-weight: 950;
+}
+
+/* Keep Dashboard and Bookings calendar cards in the same product family */
+.command-calendar,
+.bkV2-calendar {
+  border-color: rgba(207, 164, 59, 0.34) !important;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(207, 164, 59, 0.16), transparent 34%),
+    radial-gradient(circle at 86% 0%, rgba(77, 163, 255, 0.10), transparent 38%),
+    linear-gradient(135deg, rgba(17, 24, 39, 0.98), rgba(5, 13, 27, 0.98)) !important;
+}
+
+/* Make owner/profile pill dark everywhere; only initials are yellow. */
+.command-user,
+.lead-owner-card,
+.lf-owner,
+.messagesV7-ownerTab,
+.bkV2-owner,
+.settingsRef-owner {
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(5, 13, 27, 0.94) !important;
+  border-color: rgba(207, 164, 59, 0.48) !important;
+  color: #F8FAFC !important;
+}
+
+.command-avatar,
+.lead-owner-avatar,
+.lf-owner > span:first-child,
+.messagesV7-ownerTab > span:first-child,
+.bkV2-owner > span:first-child,
+.bkV2-customer > span:first-child,
+.settingsRef-teamIdentity > span,
+.settingsRef-owner > span:first-child {
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+@media (max-width: 1180px) {
+  .baFlowStrip {
+    grid-template-columns: 1fr;
+  }
+
+  .baFlowCards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* BEE-AURA RESPONSIVE LOCK V8
+   Purpose:
+   Laptop and desktop must stay the same product.
+   Desktop/laptop resize should tighten spacing, not change personality.
+   Stack only below 980px.
+   Exact selectors only. No [class*=] wildcards.
+*/
+
+:root {
+  --ba-laptop-stack: 980px;
+}
+
+/* ---------- Core fit guards ---------- */
+
+.command-header,
+.lead-header,
+.messagesV7-hero,
+.bkV2-header,
+.settingsRef-header,
+.command-calendar,
+.bkV2-calendar,
+.baFlowStrip,
+.command-assistant,
+.messagesV7-aura,
+.bkV2-aura,
+.settingsRef-aura {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+}
+
+.command-header > *,
+.lead-header > *,
+.messagesV7-hero > *,
+.bkV2-header > *,
+.settingsRef-header > *,
+.command-calendar > *,
+.bkV2-calendar > *,
+.baFlowStrip > *,
+.command-assistant > *,
+.messagesV7-aura > *,
+.bkV2-aura > *,
+.settingsRef-aura > * {
+  min-width: 0 !important;
+}
+
+/* ---------- One desktop/laptop layout family: 981px and up ---------- */
+
+@media (min-width: 981px) {
+  /* Dashboard command bar stays a command bar on laptop and desktop */
+  .command-header {
+    display: grid !important;
+    grid-template-columns:
+      minmax(210px, 1fr)
+      minmax(210px, 0.85fr)
+      minmax(300px, 1.25fr)
+      max-content !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+  }
+
+  .command-header .command-search,
+  .command-search {
+    grid-column: auto !important;
+  }
+
+  .command-user {
+    justify-self: end !important;
+  }
+
+  /* Normal app page headers stay the same family */
+  .lead-header,
+  .messagesV7-hero,
+  .bkV2-header,
+  .settingsRef-header {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: start !important;
+    gap: 1rem !important;
+  }
+
+  .lead-actions,
+  .lead-toolbar,
+  .messagesV7-actions,
+  .messagesV7-toolbar,
+  .messagesV7-controlBar,
+  .bkV2-actions,
+  .bkV2-controls,
+  .settingsRef-actions,
+  .settingsRef-footerActions {
+    justify-content: flex-end !important;
+    flex-wrap: wrap !important;
+  }
+
+  /* Dashboard calendar stays horizontal on laptop */
+  .command-calendar {
+    display: grid !important;
+    grid-template-columns: minmax(245px, 0.72fr) minmax(0, 1.55fr) auto !important;
+    align-items: stretch !important;
+    gap: 0.85rem !important;
+  }
+
+  .command-calendar-events {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 0.65rem !important;
+  }
+
+  .command-calendar-actions {
+    min-width: 155px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Bookings calendar stays horizontal on laptop */
+  .bkV2-calendar {
+    display: grid !important;
+    grid-template-columns: minmax(250px, 0.62fr) minmax(0, 1.38fr) !important;
+    align-items: stretch !important;
+    gap: 0.85rem !important;
+  }
+
+  .bkV2-calendarDays {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 0.65rem !important;
+  }
+
+  /* If V7 action strips exist, keep them desktop-like on laptop too */
+  .baFlowStrip {
+    display: grid !important;
+    grid-template-columns: minmax(250px, 0.66fr) minmax(0, 1.34fr) !important;
+    align-items: stretch !important;
+    gap: 0.85rem !important;
+  }
+
+  .baFlowCards {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.65rem !important;
+  }
+
+  /* Aura panels stay recognisable across laptop/desktop */
+  .command-assistant {
+    display: grid !important;
+    grid-template-columns: minmax(230px, 320px) minmax(0, 1fr) !important;
+    align-items: center !important;
+    gap: clamp(1.1rem, 2vw, 2rem) !important;
+  }
+
+  .messagesV7-aura,
+  .bkV2-aura,
+  .settingsRef-aura {
+    display: grid !important;
+    grid-template-columns: minmax(210px, 270px) minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    gap: clamp(1rem, 1.8vw, 2rem) !important;
+  }
+
+  .settingsRef-aura {
+    grid-template-columns: minmax(220px, 280px) minmax(0, 1fr) !important;
+  }
+}
+
+/* ---------- Tight laptop refinement, same layout, less padding ---------- */
+
+@media (min-width: 981px) and (max-width: 1366px) {
+  .command-header,
+  .lead-header,
+  .messagesV7-hero,
+  .bkV2-header,
+  .settingsRef-header,
+  .command-calendar,
+  .bkV2-calendar,
+  .baFlowStrip,
+  .command-assistant,
+  .messagesV7-aura,
+  .bkV2-aura,
+  .settingsRef-aura {
+    padding: 0.95rem !important;
+  }
+
+  .command-header {
+    grid-template-columns:
+      minmax(190px, 0.95fr)
+      minmax(190px, 0.85fr)
+      minmax(260px, 1.1fr)
+      max-content !important;
+    gap: 0.6rem !important;
+  }
+
+  .command-calendar,
+  .bkV2-calendar,
+  .baFlowStrip {
+    gap: 0.65rem !important;
+  }
+
+  .command-calendar-event,
+  .bkV2-calendarDay,
+  .baFlowCard {
+    min-height: 98px !important;
+    padding: 0.68rem !important;
+  }
+
+  .command-calendar-copy h2,
+  .bkV2-calendarIntro h2,
+  .baFlowIntro h2 {
+    font-size: clamp(1.05rem, 1.35vw, 1.4rem) !important;
+  }
+
+  .command-calendar-event strong,
+  .bkV2-calendarDay strong,
+  .baFlowCard strong {
+    font-size: 0.88rem !important;
+  }
+
+  .command-calendar-event small,
+  .bkV2-calendarDay small,
+  .baFlowCard small {
+    font-size: 0.74rem !important;
+  }
+
+  .command-calendar-actions {
+    min-width: 135px !important;
+  }
+
+  .command-calendar-actions a {
+    padding-inline: 0.58rem !important;
+    font-size: 0.78rem !important;
+  }
+
+  .command-assistant-visual,
+  .command-assistant-bot,
+  .messagesV7-auraBot,
+  .bkV2-auraBot,
+  .settingsRef-auraBot {
+    min-height: 185px !important;
+  }
+
+  .command-assistant img,
+  .command-assistant-visual img,
+  .command-assistant-bot img,
+  .messagesV7-aura img,
+  .messagesV7-auraBot img,
+  .bkV2-aura img,
+  .bkV2-auraBot img,
+  .settingsRef-aura img,
+  .settingsRef-auraBot img {
+    width: clamp(145px, 13vw, 205px) !important;
+  }
+}
+
+/* ---------- Actual narrow layout only below 980px ---------- */
+
+@media (max-width: 980px) {
+  .command-header,
+  .lead-header,
+  .messagesV7-hero,
+  .bkV2-header,
+  .settingsRef-header,
+  .command-calendar,
+  .bkV2-calendar,
+  .baFlowStrip,
+  .command-assistant,
+  .messagesV7-aura,
+  .bkV2-aura,
+  .settingsRef-aura {
+    grid-template-columns: 1fr !important;
+  }
+
+  .command-calendar-events,
+  .bkV2-calendarDays,
+  .baFlowCards {
+    grid-template-columns: 1fr !important;
+  }
+
+  .command-calendar-actions {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+  }
+
+  .command-user {
+    justify-self: start !important;
+  }
+
+  .lead-actions,
+  .lead-toolbar,
+  .messagesV7-actions,
+  .messagesV7-toolbar,
+  .messagesV7-controlBar,
+  .bkV2-actions,
+  .bkV2-controls,
+  .settingsRef-actions,
+  .settingsRef-footerActions {
+    justify-content: flex-start !important;
+  }
+}
+
+/* ---------- Search/control stability ---------- */
+
+.command-search,
+.lead-search-box,
+.messagesV7-search,
+.bkV2-search,
+.settingsRef-search {
+  min-width: min(100%, 220px) !important;
+  max-width: 100% !important;
+}
+
+.command-search input,
+.lead-search-box input,
+.messagesV7-search input,
+.messagesV7-searchInput,
+.bkV2-search input,
+.settingsRef-search input {
+  width: 100% !important;
+  min-height: 42px !important;
+  line-height: 1.2 !important;
+}
+
+/* ---------- Owner profile stability ---------- */
+
+.command-user,
+.lead-owner-card,
+.lf-owner,
+.messagesV7-ownerTab,
+.bkV2-owner,
+.settingsRef-owner {
+  min-width: max-content !important;
+  max-width: 100% !important;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(5, 13, 27, 0.94) !important;
+  border-color: rgba(207, 164, 59, 0.48) !important;
+  color: #F8FAFC !important;
+  text-decoration: none !important;
+}
+
+.command-avatar,
+.lead-owner-avatar,
+.lf-owner > span:first-child,
+.messagesV7-ownerTab > span:first-child,
+.bkV2-owner > span:first-child,
+.bkV2-customer > span:first-child,
+.settingsRef-teamIdentity > span,
+.settingsRef-owner > span:first-child {
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+/* ---------- Table/list fit ---------- */
+
+.command-tableWrap,
+.lead-table-shell,
+.messagesV7-main,
+.bkV2-list,
+.settingsRef-grid {
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+}
+
+.command-card,
+.lead-card,
+.messagesV7-card,
+.bkV2-card,
+.settingsRef-card {
+  min-width: 0 !important;
+}
+
+.command-card *,
+.lead-card *,
+.messagesV7-card *,
+.bkV2-card *,
+.settingsRef-card * {
+  max-width: 100%;
+}
+
+/* BEE-AURA V9 EXACT PAGE-FLOW POLISH
+   Exact page-flow fixes only.
+   No [class*=] wildcard selectors.
+*/
+
+/* ---------- Homepage ---------- */
+
+.landing-pricing {
+  width: min(100%, 1120px);
+  margin: clamp(2rem, 5vw, 4rem) auto 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid rgba(207, 164, 59, 0.36);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(207, 164, 59, 0.16), transparent 34%),
+    radial-gradient(circle at 90% 0%, rgba(77, 163, 255, 0.12), transparent 36%),
+    linear-gradient(135deg, rgba(17, 24, 39, 0.98), rgba(5, 13, 27, 0.98));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.landing-pricing-copy p {
+  margin: 0 0 0.45rem;
+  color: #FFD24A;
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+}
+
+.landing-pricing-copy h2 {
+  max-width: 820px;
+  margin: 0;
+  color: #F8FAFC;
+  font-size: clamp(1.8rem, 3vw, 3.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.landing-pricing-copy span {
+  display: block;
+  max-width: 760px;
+  margin-top: 0.8rem;
+  color: #CBD5E1;
+  line-height: 1.55;
+}
+
+.landing-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.25rem;
+}
+
+.landing-pricing-grid article {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid rgba(77, 163, 255, 0.28);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 16% 0%, rgba(77, 163, 255, 0.12), transparent 36%),
+    rgba(2, 10, 20, 0.78);
+}
+
+.landing-pricing-grid article.is-featured {
+  border-color: rgba(207, 164, 59, 0.62);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(207, 164, 59, 0.18), transparent 36%),
+    rgba(2, 10, 20, 0.86);
+}
+
+.landing-pricing-grid p {
+  margin: 0;
+  color: #FFD24A;
+  font-size: 0.8rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.landing-pricing-grid h3 {
+  margin: 0.55rem 0;
+  color: #F8FAFC;
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  line-height: 1;
+}
+
+.landing-pricing-grid h3 span {
+  color: #CBD5E1;
+  font-size: 0.9rem;
+}
+
+.landing-pricing-grid small {
+  display: block;
+  color: #CBD5E1;
+  line-height: 1.5;
+}
+
+.preview-card,
+.preview-stat,
+.preview-metric,
+.preview-metric-card,
+.preview-command-card,
+.landing-preview-card,
+.landing-preview-stat,
+.landing-preview-metric {
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.preview-card h3,
+.preview-stat h3,
+.preview-metric h3,
+.preview-metric-card h3,
+.landing-preview-stat h3,
+.landing-preview-metric h3 {
+  font-size: clamp(1.25rem, 2.4vw, 2rem) !important;
+  line-height: 1.02 !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* ---------- Always keep page controls top-right on desktop/laptop ---------- */
+
+.lead-header,
+.messagesV7-hero,
+.bkV2-header,
+.settingsRef-header {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: start !important;
+  gap: 1rem !important;
+}
+
+.lead-actions,
+.lead-toolbar,
+.messagesV7-actions,
+.messagesV7-toolbar,
+.messagesV7-controlBar,
+.bkV2-actions,
+.bkV2-controls,
+.settingsRef-actions,
+.settingsRef-footerActions {
+  justify-content: flex-end !important;
+  align-items: flex-start !important;
+  flex-wrap: wrap !important;
+  margin-left: auto !important;
+}
+
+.messagesV7-ownerTab,
+.bkV2-owner,
+.lead-owner-card,
+.settingsRef-owner,
+.command-user {
+  justify-self: end !important;
+}
+
+/* Owner initials: yellow/black everywhere owner profile appears */
+.command-avatar,
+.lead-owner-avatar,
+.messagesV7-ownerTab > span:first-child,
+.bkV2-owner > span:first-child,
+.bkV2-customer > span:first-child,
+.settingsRef-owner > span:first-child,
+.settingsRef-owner .settingsRef-avatar,
+.settingsRef-owner .settingsRef-ownerAvatar,
+.settingsRef-owner .settingsRef-ownerInitials,
+.settingsRef-owner .settingsRef-initials,
+.settingsRef-teamIdentity > span {
+  display: grid !important;
+  place-items: center !important;
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+/* ---------- Shared tab/chip style ---------- */
+
+.lead-filter-button,
+.messagesV7-tabs button,
+.messagesV7-toolbar button,
+.messagesV7-controlBar button,
+.bkV2-calendarDay em,
+.bkV2-detailActions button,
+.bkV2-detailActions a,
+.command-calendar-event em,
+.command-calendar-actions a,
+.baFlowCard em {
+  border-radius: 999px !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.01em;
+}
+
+.messagesV7-tabs button:nth-of-type(1),
+.lead-filter-button:first-child {
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+}
+
+.messagesV7-tabs button:nth-of-type(2),
+.messagesV7-tabs button:nth-of-type(7) {
+  background: rgba(34, 160, 107, 0.22) !important;
+  color: #CFFFE8 !important;
+  border-color: rgba(34, 160, 107, 0.55) !important;
+}
+
+.messagesV7-tabs button:nth-of-type(3),
+.messagesV7-tabs button:nth-of-type(8),
+.messagesV7-tabs button:nth-of-type(10) {
+  background: rgba(77, 163, 255, 0.18) !important;
+  color: #DDF0FF !important;
+  border-color: rgba(77, 163, 255, 0.48) !important;
+}
+
+.messagesV7-tabs button:nth-of-type(4),
+.messagesV7-tabs button:nth-of-type(9),
+.bkV2-calendarDay.warning em {
+  background: rgba(217, 119, 6, 0.24) !important;
+  color: #FFF2D6 !important;
+  border-color: rgba(217, 119, 6, 0.58) !important;
+}
+
+.messagesV7-tabs button:nth-of-type(5),
+.messagesV7-tabs button:nth-of-type(6) {
+  background: rgba(157, 105, 255, 0.2) !important;
+  color: #F1E8FF !important;
+  border-color: rgba(157, 105, 255, 0.5) !important;
+}
+
+/* ---------- Dashboard Live Activity: remove text highlight slabs ---------- */
+
+.command-live mark,
+.command-live strong mark,
+.command-live small mark,
+.command-liveActivity mark,
+.command-liveActivity strong mark,
+.command-liveActivity small mark,
+.command-activity mark,
+.command-activity strong mark,
+.command-activity small mark,
+.command-feed mark,
+.command-feed strong mark,
+.command-feed small mark {
+  background: transparent !important;
+  box-shadow: none !important;
+  color: inherit !important;
+}
+
+.command-live p,
+.command-live small,
+.command-live strong,
+.command-liveActivity p,
+.command-liveActivity small,
+.command-liveActivity strong,
+.command-activity p,
+.command-activity small,
+.command-activity strong,
+.command-feed p,
+.command-feed small,
+.command-feed strong {
+  text-decoration: none !important;
+}
+
+/* ---------- Professional graph/card polish ---------- */
+
+.lead-outcomes,
+.lead-chart,
+.lead-graph,
+.lead-conversion,
+.lead-snapshot,
+.bkV2-chart,
+.bkV2-performance,
+.bkV2-performanceChart,
+.bkV2-chartPanel,
+.command-chart,
+.command-chartPanel {
+  border: 1px solid rgba(77, 163, 255, 0.28) !important;
+  border-radius: 24px !important;
+  background:
+    radial-gradient(circle at 14% 0%, rgba(77, 163, 255, 0.12), transparent 34%),
+    radial-gradient(circle at 90% 0%, rgba(207, 164, 59, 0.10), transparent 34%),
+    rgba(2, 10, 20, 0.76) !important;
+  box-shadow:
+    0 18px 58px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+
+.lead-outcomes svg,
+.lead-chart svg,
+.lead-graph svg,
+.lead-conversion svg,
+.lead-snapshot svg,
+.bkV2-chart svg,
+.bkV2-performance svg,
+.bkV2-performanceChart svg,
+.bkV2-chartPanel svg,
+.command-chart svg,
+.command-chartPanel svg {
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.24));
+}
+
+/* Review glow language applied to key cards across app */
+.command-calendar-event,
+.bkV2-calendarDay,
+.baFlowCard,
+.command-card,
+.bkV2-card,
+.messagesV7-card,
+.settingsRef-card {
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+}
+
+.command-calendar-event:hover,
+.bkV2-calendarDay:hover,
+.baFlowCard:hover {
+  border-color: rgba(207, 164, 59, 0.62) !important;
+  box-shadow:
+    0 20px 58px rgba(0, 0, 0, 0.28),
+    0 0 32px rgba(207, 164, 59, 0.10) !important;
+}
+
+/* ---------- Aura panels: stop squashing, keep same family ---------- */
+
+.command-assistant,
+.messagesV7-aura,
+.bkV2-aura,
+.settingsRef-aura {
+  min-height: 250px !important;
+  align-items: center !important;
+}
+
+.command-assistant h2,
+.messagesV7-aura h2,
+.bkV2-aura h2,
+.settingsRef-aura h2 {
+  max-width: 980px !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+.command-assistant p,
+.command-assistant span,
+.messagesV7-aura p,
+.messagesV7-aura span,
+.bkV2-aura p,
+.bkV2-aura span,
+.settingsRef-aura p,
+.settingsRef-aura span {
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+/* ---------- Laptop/desktop personality lock ---------- */
+
+@media (min-width: 981px) {
+  .messagesV7-hero,
+  .bkV2-header,
+  .settingsRef-header,
+  .lead-header {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+  }
+
+  .messagesV7-toolbar,
+  .messagesV7-controlBar,
+  .bkV2-controls,
+  .settingsRef-actions,
+  .lead-toolbar {
+    justify-content: flex-end !important;
+  }
+
+  .baFlowStrip {
+    margin-top: 1rem !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .landing-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lead-header,
+  .messagesV7-hero,
+  .bkV2-header,
+  .settingsRef-header {
+    grid-template-columns: 1fr !important;
+  }
+
+  .lead-actions,
+  .lead-toolbar,
+  .messagesV7-actions,
+  .messagesV7-toolbar,
+  .messagesV7-controlBar,
+  .bkV2-actions,
+  .bkV2-controls,
+  .settingsRef-actions,
+  .settingsRef-footerActions {
+    justify-content: flex-start !important;
+  }
+}
+
+/* BEE-AURA V10 EXACT PRODUCT POLISH
+   Exact cleanup only.
+   No broad [class*=] selectors.
+*/
+
+/* ---------- Homepage pipeline + pricing ---------- */
+
+.preview-card,
+.preview-stat,
+.preview-metric,
+.preview-metric-card,
+.preview-command-card,
+.landing-preview-card,
+.landing-preview-stat,
+.landing-preview-metric {
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.preview-card h3,
+.preview-stat h3,
+.preview-metric h3,
+.preview-metric-card h3,
+.landing-preview-stat h3,
+.landing-preview-metric h3 {
+  font-size: clamp(1.15rem, 2.05vw, 1.72rem) !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.preview-card p,
+.preview-stat p,
+.preview-metric p,
+.preview-metric-card p,
+.landing-preview-stat p,
+.landing-preview-metric p {
+  font-size: 0.72rem !important;
+  line-height: 1.1 !important;
+  white-space: normal !important;
+}
+
+.landing-pricing {
+  width: min(100%, 1120px);
+  margin: clamp(2rem, 5vw, 4rem) auto 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid rgba(207, 164, 59, 0.36);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(207, 164, 59, 0.16), transparent 34%),
+    radial-gradient(circle at 90% 0%, rgba(77, 163, 255, 0.12), transparent 36%),
+    linear-gradient(135deg, rgba(17, 24, 39, 0.98), rgba(5, 13, 27, 0.98));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.landing-pricing-grid article strong {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  margin: 0 0 0.55rem;
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(207, 164, 59, 0.16);
+  border: 1px solid rgba(207, 164, 59, 0.42);
+  color: #FFD24A;
+  font-weight: 950;
+}
+
+.landing-pricing-grid ul {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.landing-pricing-grid li {
+  color: #CBD5E1;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.landing-pricing-grid li::before {
+  content: "•";
+  color: #22A06B;
+  margin-right: 0.45rem;
+}
+
+/* ---------- Owner/profile identity lock ---------- */
+
+.command-avatar,
+.lead-owner-avatar,
+.messagesV7-ownerTab > span:first-child,
+.bkV2-owner > span:first-child,
+.settingsRef-owner > span:first-child,
+.settingsRef-teamIdentity > span,
+.bkV2-customer > span:first-child {
+  display: grid !important;
+  place-items: center !important;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  border-radius: 999px !important;
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border: 1px solid rgba(207, 164, 59, 0.86) !important;
+  box-shadow: 0 10px 26px rgba(207, 164, 59, 0.2) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+.command-user,
+.lead-owner-card,
+.messagesV7-ownerTab,
+.bkV2-owner,
+.settingsRef-owner {
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(5, 13, 27, 0.94) !important;
+  border-color: rgba(207, 164, 59, 0.48) !important;
+  color: #F8FAFC !important;
+}
+
+/* ---------- Dashboard: remove text slabs, unify icons ---------- */
+
+.dashboard-live-copy,
+.dashboard-live-copy strong,
+.dashboard-live-copy small,
+.dashboard-live-detail-row strong,
+.dashboard-live-detail-row small {
+  background: transparent !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+.dashboard-live-detail-row > span:first-child,
+.command-round-icon,
+.command-face,
+.command-initials {
+  display: grid !important;
+  place-items: center !important;
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+/* ---------- Messages: search belongs with Inbox, status tabs coloured ---------- */
+
+.messagesV7-search--global {
+  display: none !important;
+}
+
+.messagesV7-inboxSearchWrap {
+  margin-top: 0.7rem;
+}
+
+.messagesV7-search--inbox {
+  width: 100% !important;
+  min-width: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.55rem !important;
+  padding: 0.5rem !important;
+  border: 1px solid rgba(77, 163, 255, 0.28) !important;
+  border-radius: 999px !important;
+  background: rgba(2, 10, 20, 0.82) !important;
+}
+
+.messagesV7-search--inbox input {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 34px !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.messagesV7-tabs button,
+.messagesV7-statusTabs button,
+.messagesV7-channelTabs button {
+  border-radius: 999px !important;
+  font-weight: 900 !important;
+  min-height: 34px !important;
+}
+
+.messagesV7-statusTabs button:nth-of-type(1),
+.messagesV7-tabs button:nth-of-type(1) {
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+}
+
+.messagesV7-statusTabs button:nth-of-type(2),
+.messagesV7-tabs button:nth-of-type(8) {
+  background: rgba(217, 119, 6, 0.26) !important;
+  color: #FFF2D6 !important;
+  border-color: rgba(217, 119, 6, 0.58) !important;
+}
+
+.messagesV7-statusTabs button:nth-of-type(3),
+.messagesV7-tabs button:nth-of-type(9) {
+  background: rgba(217, 119, 6, 0.24) !important;
+  color: #FFF2D6 !important;
+  border-color: rgba(217, 119, 6, 0.58) !important;
+}
+
+.messagesV7-statusTabs button:nth-of-type(4),
+.messagesV7-tabs button:nth-of-type(10) {
+  background: rgba(34, 160, 107, 0.22) !important;
+  color: #CFFFE8 !important;
+  border-color: rgba(34, 160, 107, 0.55) !important;
+}
+
+.messagesV7-statusTabs button:nth-of-type(5),
+.messagesV7-tabs button:nth-of-type(11) {
+  background: rgba(77, 163, 255, 0.18) !important;
+  color: #DDF0FF !important;
+  border-color: rgba(77, 163, 255, 0.48) !important;
+}
+
+.messagesV7-statusTabs button:nth-of-type(6),
+.messagesV7-tabs button:nth-of-type(12) {
+  background: rgba(148, 163, 184, 0.16) !important;
+  color: #E2E8F0 !important;
+  border-color: rgba(148, 163, 184, 0.34) !important;
+}
+
+/* ---------- Bookings: owner/date/time icons and overlap ---------- */
+
+.bkV2-date,
+.bkV2-timeRow > strong,
+.bkV2-owner > span:first-child,
+.bkV2-customer > span:first-child {
+  display: grid !important;
+  place-items: center !important;
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+.bkV2-date strong,
+.bkV2-date em,
+.bkV2-date small,
+.bkV2-timeRow > strong,
+.bkV2-timeRow > strong * {
+  color: #0B1220 !important;
+}
+
+.bkV2-row,
+.bkV2-timeRow {
+  min-width: 0 !important;
+}
+
+.bkV2-row span,
+.bkV2-row strong,
+.bkV2-row small,
+.bkV2-timeRow span,
+.bkV2-timeRow b,
+.bkV2-timeRow small {
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+.bkV2-status,
+.bkV2-rowStatus,
+.bkV2-timeRow em,
+.bkV2-calendarDay em {
+  border-radius: 999px !important;
+  font-weight: 900 !important;
+}
+
+/* ---------- Charts / graph panels: more professional, same language ---------- */
+
+.lead-outcomes,
+.lead-chart,
+.lead-graph,
+.lead-conversion,
+.lead-snapshot,
+.bkV2-chart,
+.bkV2-performance,
+.bkV2-performanceChart,
+.bkV2-chartPanel,
+.command-chart,
+.command-chartPanel {
+  border: 1px solid rgba(77, 163, 255, 0.28) !important;
+  border-radius: 24px !important;
+  background:
+    radial-gradient(circle at 14% 0%, rgba(77, 163, 255, 0.12), transparent 34%),
+    radial-gradient(circle at 90% 0%, rgba(207, 164, 59, 0.10), transparent 34%),
+    linear-gradient(135deg, rgba(8, 20, 34, 0.92), rgba(2, 10, 20, 0.92)) !important;
+  box-shadow:
+    0 18px 58px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+
+/* ---------- Customers clean Aura replacement ---------- */
+
+.baCustomerAura {
+  display: grid;
+  grid-template-columns: minmax(250px, 310px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.25rem, 2.2vw, 2.25rem);
+  width: 100%;
+  min-height: 250px;
+  margin-top: clamp(1.15rem, 2vw, 1.8rem);
+  padding: clamp(1.15rem, 2vw, 1.65rem);
+  border: 1px solid rgba(207, 164, 59, 0.38);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(207, 164, 59, 0.2), transparent 34%),
+    radial-gradient(circle at 84% 0%, rgba(77, 163, 255, 0.13), transparent 36%),
+    linear-gradient(135deg, rgba(18, 43, 61, 0.96), rgba(5, 13, 27, 0.98));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+}
+
+.baCustomerAuraBot {
+  display: grid;
+  place-items: center;
+  width: min(100%, 290px);
+  min-height: 220px;
+  border-radius: 24px;
+  border: 1px solid rgba(207, 164, 59, 0.28);
+  background:
+    radial-gradient(circle at 50% 38%, rgba(77, 163, 255, 0.22), transparent 44%),
+    rgba(7, 18, 31, 0.8);
+}
+
+.baCustomerAuraBot img {
+  width: clamp(165px, 14vw, 230px);
+  height: auto;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 22px rgba(77, 163, 255, 0.3))
+    drop-shadow(0 20px 34px rgba(0, 0, 0, 0.34));
+}
+
+.baCustomerAuraCopy {
+  min-width: 0;
+}
+
+.baCustomerAuraCopy p {
+  margin: 0 0 0.42rem;
+  color: #FFD24A;
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+}
+
+.baCustomerAuraCopy h2 {
+  max-width: 980px;
+  margin: 0;
+  color: #F8FAFC;
+  font-size: clamp(1.65rem, 2.15vw, 2.45rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.baCustomerAuraCopy span {
+  display: block;
+  max-width: 980px;
+  margin-top: 0.65rem;
+  color: #CBD5E1;
+  line-height: 1.55;
+}
+
+.baCustomerAuraActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.baCustomerAuraActions a {
+  min-height: 40px;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(207, 164, 59, 0.42);
+  background: rgba(5, 13, 27, 0.78);
+  color: #F8FAFC;
+  font-weight: 900;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 980px) {
+  .baCustomerAura {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* BEE-AURA V11 PRECISION CORRECTION
+   Exact fixes only. No [class*=] selectors.
+*/
+
+/* ---------- Homepage pricing / preview metric fit ---------- */
+
+.preview-card,
+.preview-stat,
+.preview-metric,
+.preview-metric-card,
+.preview-command-card,
+.landing-preview-card,
+.landing-preview-stat,
+.landing-preview-metric {
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.preview-card h3,
+.preview-stat h3,
+.preview-metric h3,
+.preview-metric-card h3,
+.landing-preview-stat h3,
+.landing-preview-metric h3 {
+  max-width: 100% !important;
+  font-size: clamp(1.05rem, 1.8vw, 1.55rem) !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: clip !important;
+}
+
+.preview-card p,
+.preview-stat p,
+.preview-metric p,
+.preview-metric-card p,
+.landing-preview-stat p,
+.landing-preview-metric p {
+  font-size: 0.68rem !important;
+  line-height: 1.1 !important;
+}
+
+.landing-pricing-grid article strong {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  margin: 0 0 0.65rem;
+  padding: 0.32rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(207, 164, 59, 0.18);
+  border: 1px solid rgba(207, 164, 59, 0.52);
+  color: #FFD24A;
+  font-weight: 950;
+  box-shadow: 0 8px 22px rgba(207, 164, 59, 0.12);
+}
+
+.landing-pricing-grid ul {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.landing-pricing-grid li {
+  color: #CBD5E1;
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+.landing-pricing-grid li::before {
+  content: "•";
+  color: #22A06B;
+  margin-right: 0.45rem;
+}
+
+/* ---------- Owner profile icon lock: yellow avatar, dark pill ---------- */
+
+.command-user,
+.lead-owner-card,
+.messagesV7-ownerTab,
+.bkV2-owner,
+.settingsRef-owner,
+.lf-owner {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.62rem !important;
+  min-height: 44px !important;
+  padding: 0.42rem 0.68rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(207, 164, 59, 0.48) !important;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(5, 13, 27, 0.94) !important;
+  color: #F8FAFC !important;
+  text-decoration: none !important;
+  max-width: max-content !important;
+}
+
+.command-avatar,
+.lead-owner-avatar,
+.messagesV7-ownerTab > span:first-child,
+.bkV2-owner > span:first-child,
+.settingsRef-owner > span:first-child,
+.settingsRef-ownerInitials,
+.settingsRef-teamIdentity > span,
+.bkV2-customer > span:first-child,
+.lf-owner > span:first-child {
+  display: grid !important;
+  place-items: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  border-radius: 999px !important;
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border: 1px solid rgba(207, 164, 59, 0.86) !important;
+  box-shadow: 0 10px 24px rgba(207, 164, 59, 0.18) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+.command-user strong,
+.lead-owner-card strong,
+.messagesV7-ownerTab strong,
+.bkV2-owner strong,
+.settingsRef-owner strong,
+.lf-owner strong {
+  color: #F8FAFC !important;
+  line-height: 1.02 !important;
+  white-space: nowrap !important;
+}
+
+.command-user small,
+.lead-owner-card small,
+.messagesV7-ownerTab small,
+.bkV2-owner small,
+.settingsRef-owner small,
+.lf-owner small {
+  display: block !important;
+  color: #CBD5E1 !important;
+  line-height: 1.02 !important;
+  white-space: nowrap !important;
+}
+
+/* ---------- Messages search + status tabs ---------- */
+
+.messagesV7-inboxSearchWrap,
+.messagesV7-search--inbox {
+  display: none !important;
+}
+
+.messagesV7-search--global {
+  display: none !important;
+}
+
+.messagesV7-search--topbar,
+.messagesV7-actions .messagesV7-search,
+.messagesV7-hero .messagesV7-search {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.55rem !important;
+  width: min(100%, 300px) !important;
+  min-width: 240px !important;
+  max-width: 320px !important;
+  min-height: 42px !important;
+  padding: 0.38rem 0.5rem !important;
+  border: 1px solid rgba(77, 163, 255, 0.28) !important;
+  border-radius: 999px !important;
+  background: rgba(2, 10, 20, 0.86) !important;
+}
+
+.messagesV7-search--topbar input,
+.messagesV7-actions .messagesV7-search input,
+.messagesV7-hero .messagesV7-search input {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 32px !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: #F8FAFC !important;
+}
+
+.messagesV7-statusTabs button,
+.messagesV7-statusGroup button,
+.messagesV7-statusControls button,
+.messagesV7-statusFilters button,
+.messagesV7-tabs--status button {
+  min-height: 34px !important;
+  border-radius: 999px !important;
+  font-weight: 900 !important;
+}
+
+.messagesV7-statusTabs button:nth-child(1),
+.messagesV7-statusGroup button:nth-child(1),
+.messagesV7-statusControls button:nth-child(1),
+.messagesV7-statusFilters button:nth-child(1),
+.messagesV7-tabs--status button:nth-child(1) {
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+}
+
+.messagesV7-statusTabs button:nth-child(2),
+.messagesV7-statusGroup button:nth-child(2),
+.messagesV7-statusControls button:nth-child(2),
+.messagesV7-statusFilters button:nth-child(2),
+.messagesV7-tabs--status button:nth-child(2) {
+  background: rgba(217, 119, 6, 0.26) !important;
+  color: #FFF2D6 !important;
+  border-color: rgba(217, 119, 6, 0.58) !important;
+}
+
+.messagesV7-statusTabs button:nth-child(3),
+.messagesV7-statusGroup button:nth-child(3),
+.messagesV7-statusControls button:nth-child(3),
+.messagesV7-statusFilters button:nth-child(3),
+.messagesV7-tabs--status button:nth-child(3) {
+  background: rgba(217, 119, 6, 0.24) !important;
+  color: #FFF2D6 !important;
+  border-color: rgba(217, 119, 6, 0.58) !important;
+}
+
+.messagesV7-statusTabs button:nth-child(4),
+.messagesV7-statusGroup button:nth-child(4),
+.messagesV7-statusControls button:nth-child(4),
+.messagesV7-statusFilters button:nth-child(4),
+.messagesV7-tabs--status button:nth-child(4) {
+  background: rgba(34, 160, 107, 0.22) !important;
+  color: #CFFFE8 !important;
+  border-color: rgba(34, 160, 107, 0.55) !important;
+}
+
+.messagesV7-statusTabs button:nth-child(5),
+.messagesV7-statusGroup button:nth-child(5),
+.messagesV7-statusControls button:nth-child(5),
+.messagesV7-statusFilters button:nth-child(5),
+.messagesV7-tabs--status button:nth-child(5) {
+  background: rgba(77, 163, 255, 0.18) !important;
+  color: #DDF0FF !important;
+  border-color: rgba(77, 163, 255, 0.48) !important;
+}
+
+.messagesV7-statusTabs button:nth-child(6),
+.messagesV7-statusGroup button:nth-child(6),
+.messagesV7-statusControls button:nth-child(6),
+.messagesV7-statusFilters button:nth-child(6),
+.messagesV7-tabs--status button:nth-child(6) {
+  background: rgba(148, 163, 184, 0.16) !important;
+  color: #E2E8F0 !important;
+  border-color: rgba(148, 163, 184, 0.34) !important;
+}
+
+/* fallback when message status buttons are inside the second exact tab group */
+.messagesV7-filterGroup:nth-of-type(2) button:nth-child(1),
+.messagesV7-tabGroup:nth-of-type(2) button:nth-child(1) {
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+}
+
+.messagesV7-filterGroup:nth-of-type(2) button:nth-child(2),
+.messagesV7-tabGroup:nth-of-type(2) button:nth-child(2) {
+  background: rgba(217, 119, 6, 0.26) !important;
+  color: #FFF2D6 !important;
+}
+
+.messagesV7-filterGroup:nth-of-type(2) button:nth-child(3),
+.messagesV7-tabGroup:nth-of-type(2) button:nth-child(3) {
+  background: rgba(217, 119, 6, 0.24) !important;
+  color: #FFF2D6 !important;
+}
+
+.messagesV7-filterGroup:nth-of-type(2) button:nth-child(4),
+.messagesV7-tabGroup:nth-of-type(2) button:nth-child(4) {
+  background: rgba(34, 160, 107, 0.22) !important;
+  color: #CFFFE8 !important;
+}
+
+.messagesV7-filterGroup:nth-of-type(2) button:nth-child(5),
+.messagesV7-tabGroup:nth-of-type(2) button:nth-child(5) {
+  background: rgba(77, 163, 255, 0.18) !important;
+  color: #DDF0FF !important;
+}
+
+.messagesV7-filterGroup:nth-of-type(2) button:nth-child(6),
+.messagesV7-tabGroup:nth-of-type(2) button:nth-child(6) {
+  background: rgba(148, 163, 184, 0.16) !important;
+  color: #E2E8F0 !important;
+}
+
+/* ---------- Dashboard / Booking / Error icon colour consistency ---------- */
+
+.dashboard-live-detail-row > span:first-child,
+.command-round-icon,
+.command-face,
+.command-initials,
+.bkV2-date,
+.bkV2-timeRow > strong {
+  display: grid !important;
+  place-items: center !important;
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+.bkV2-date strong,
+.bkV2-date em,
+.bkV2-date small,
+.bkV2-timeRow > strong,
+.bkV2-timeRow > strong * {
+  color: #0B1220 !important;
+}
+
+/* ---------- Clean customer Aura replacement ---------- */
+
+.baCustomerAura {
+  display: grid;
+  grid-template-columns: minmax(250px, 310px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.25rem, 2.2vw, 2.25rem);
+  width: 100%;
+  min-height: 250px;
+  margin-top: clamp(1.15rem, 2vw, 1.8rem);
+  padding: clamp(1.15rem, 2vw, 1.65rem);
+  border: 1px solid rgba(207, 164, 59, 0.38);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(207, 164, 59, 0.2), transparent 34%),
+    radial-gradient(circle at 84% 0%, rgba(77, 163, 255, 0.13), transparent 36%),
+    linear-gradient(135deg, rgba(18, 43, 61, 0.96), rgba(5, 13, 27, 0.98));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+}
+
+.baCustomerAuraBot {
+  display: grid;
+  place-items: center;
+  width: min(100%, 290px);
+  min-height: 220px;
+  border-radius: 24px;
+  border: 1px solid rgba(207, 164, 59, 0.28);
+  background:
+    radial-gradient(circle at 50% 38%, rgba(77, 163, 255, 0.22), transparent 44%),
+    rgba(7, 18, 31, 0.8);
+}
+
+.baCustomerAuraBot img {
+  width: clamp(165px, 14vw, 230px);
+  height: auto;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 22px rgba(77, 163, 255, 0.3))
+    drop-shadow(0 20px 34px rgba(0, 0, 0, 0.34));
+}
+
+.baCustomerAuraCopy {
+  min-width: 0;
+}
+
+.baCustomerAuraCopy p {
+  margin: 0 0 0.42rem;
+  color: #FFD24A;
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.baCustomerAuraCopy h2 {
+  max-width: 980px;
+  margin: 0;
+  color: #F8FAFC;
+  font-size: clamp(1.65rem, 2.15vw, 2.45rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.baCustomerAuraCopy span {
+  display: block;
+  max-width: 980px;
+  margin-top: 0.65rem;
+  color: #CBD5E1;
+  line-height: 1.55;
+}
+
+.baCustomerAuraActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.baCustomerAuraActions a {
+  min-height: 40px;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(207, 164, 59, 0.42);
+  background: rgba(5, 13, 27, 0.78);
+  color: #F8FAFC;
+  font-weight: 900;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 980px) {
+  .baCustomerAura {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* BEE-AURA V12 LEADS OWNER PROFILE ONLY
+   Page: /leads only.
+   Fix: top-right owner profile avatar must match Dashboard.
+   No wildcard selectors. No other pages touched.
+*/
+
+html body main .lead-owner-card {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.62rem !important;
+  min-height: 44px !important;
+  max-width: max-content !important;
+  padding: 0.42rem 0.68rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(207, 164, 59, 0.48) !important;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(5, 13, 27, 0.94) !important;
+  color: #F8FAFC !important;
+  text-decoration: none !important;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.24) !important;
+}
+
+html body main .lead-owner-card .lead-owner-avatar,
+html body main .lead-owner-card > .lead-owner-avatar {
+  display: grid !important;
+  place-items: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  border-radius: 999px !important;
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border: 1px solid rgba(207, 164, 59, 0.86) !important;
+  box-shadow:
+    0 10px 24px rgba(207, 164, 59, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16) !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.02em !important;
+  text-shadow: none !important;
+}
+
+html body main .lead-owner-card .lead-owner-avatar *,
+html body main .lead-owner-card > .lead-owner-avatar * {
+  color: #0B1220 !important;
+  fill: #0B1220 !important;
+  stroke: #0B1220 !important;
+  text-shadow: none !important;
+}
+
+html body main .lead-owner-card strong {
+  color: #F8FAFC !important;
+  font-weight: 900 !important;
+  line-height: 1.02 !important;
+  white-space: nowrap !important;
+}
+
+html body main .lead-owner-card small {
+  display: block !important;
+  color: #CBD5E1 !important;
+  line-height: 1.02 !important;
+  white-space: nowrap !important;
+}
+
+html body main .lead-owner-card em {
+  margin-left: 0.12rem !important;
+  color: #CBD5E1 !important;
+  font-style: normal !important;
+}
+
+html body main .lead-owner-card:hover {
+  border-color: rgba(207, 164, 59, 0.72) !important;
+  box-shadow:
+    0 14px 38px rgba(0, 0, 0, 0.28),
+    0 0 26px rgba(207, 164, 59, 0.1) !important;
+}
+
+html body main .lead-owner-card:focus-visible {
+  outline: 2px solid rgba(207, 164, 59, 0.82) !important;
+  outline-offset: 3px !important;
+}
+
+
+
+/* BEE-AURA LEADS TOP USER DIRECT FIX
+   Page: /leads only.
+   Uses neutral class names so old owner/avatar/card CSS cannot override it.
+*/
+
+.baLeadTopUser {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  min-height: 44px !important;
+  width: auto !important;
+  max-width: max-content !important;
+  padding: 6px 11px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(207, 164, 59, 0.58) !important;
+  background: radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.18), transparent 38%), rgba(5, 13, 27, 0.96) !important;
+  color: #F8FAFC !important;
+  text-decoration: none !important;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.24) !important;
+}
+
+.baLeadTopDot {
+  display: grid !important;
+  place-items: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  border-radius: 999px !important;
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border: 1px solid rgba(207, 164, 59, 0.9) !important;
+  box-shadow: 0 10px 24px rgba(207, 164, 59, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.16) !important;
+  font-weight: 950 !important;
+  line-height: 1 !important;
+  text-shadow: none !important;
+}
+
+.baLeadTopCopy {
+  display: grid !important;
+  gap: 1px !important;
+}
+
+.baLeadTopCopy strong {
+  color: #F8FAFC !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.baLeadTopCopy small {
+  color: #CBD5E1 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.baLeadTopArrow {
+  color: #CBD5E1 !important;
+  font-style: normal !important;
+}
+
+
+/* BEE-AURA MESSAGES PAGE ONLY FIX CJS
+   Page: /messages only.
+   Exact fixes:
+   - top-right header search
+   - coloured status tabs
+   - tighter action strip
+   No other page touched.
+*/
+
+.baMessagesHeaderSearch {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  width: min(100%, 280px) !important;
+  min-width: 230px !important;
+  min-height: 42px !important;
+  padding: 0.34rem 0.42rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(77, 163, 255, 0.28) !important;
+  background: rgba(2, 10, 20, 0.88) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+}
+
+.baMessagesHeaderSearch input {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 32px !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  color: #F8FAFC !important;
+  font-size: 0.82rem !important;
+}
+
+.baMessagesHeaderSearch input::placeholder {
+  color: rgba(203, 213, 225, 0.62) !important;
+}
+
+.baMessagesHeaderSearch button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 32px !important;
+  padding: 0.35rem 0.72rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(207, 164, 59, 0.86) !important;
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  font-weight: 950 !important;
+  white-space: nowrap !important;
+}
+
+.messagesV7-heroActions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 0.65rem !important;
+  flex-wrap: wrap !important;
+  margin-left: auto !important;
+}
+
+.messagesV7-search--global,
+.messagesV7-search--inbox,
+.messagesV7-inboxSearchWrap {
+  display: none !important;
+}
+
+/* Status tabs are the second tab row inside the real Messages tab panel */
+.messagesV7-tabsPanel > div:nth-of-type(2) .messagesV7-tabRow button {
+  min-height: 36px !important;
+  border-radius: 999px !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.01em !important;
+  border: 1px solid rgba(77, 163, 255, 0.32) !important;
+}
+
+/* All */
+.messagesV7-tabsPanel > div:nth-of-type(2) .messagesV7-tabRow button:nth-child(1) {
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+}
+
+/* Unread */
+.messagesV7-tabsPanel > div:nth-of-type(2) .messagesV7-tabRow button:nth-child(2) {
+  background: rgba(77, 163, 255, 0.2) !important;
+  color: #DDF0FF !important;
+  border-color: rgba(77, 163, 255, 0.52) !important;
+}
+
+/* Needs reply */
+.messagesV7-tabsPanel > div:nth-of-type(2) .messagesV7-tabRow button:nth-child(3) {
+  background: rgba(217, 119, 6, 0.26) !important;
+  color: #FFF2D6 !important;
+  border-color: rgba(217, 119, 6, 0.6) !important;
+}
+
+/* Booked */
+.messagesV7-tabsPanel > div:nth-of-type(2) .messagesV7-tabRow button:nth-child(4) {
+  background: rgba(34, 160, 107, 0.24) !important;
+  color: #CFFFE8 !important;
+  border-color: rgba(34, 160, 107, 0.6) !important;
+}
+
+/* Follow-up */
+.messagesV7-tabsPanel > div:nth-of-type(2) .messagesV7-tabRow button:nth-child(5) {
+  background: rgba(157, 105, 255, 0.22) !important;
+  color: #F1E8FF !important;
+  border-color: rgba(157, 105, 255, 0.54) !important;
+}
+
+/* Closed */
+.messagesV7-tabsPanel > div:nth-of-type(2) .messagesV7-tabRow button:nth-child(6) {
+  background: rgba(148, 163, 184, 0.16) !important;
+  color: #E2E8F0 !important;
+  border-color: rgba(148, 163, 184, 0.36) !important;
+}
+
+.baFlowStrip--messages {
+  min-height: 116px !important;
+  padding: 0.85rem 1rem !important;
+  margin: 0.9rem 0 !important;
+  grid-template-columns: minmax(250px, 0.62fr) minmax(0, 1.38fr) !important;
+}
+
+.baFlowStrip--messages .baFlowIntro h2 {
+  font-size: clamp(1.2rem, 1.55vw, 1.62rem) !important;
+  line-height: 1.05 !important;
+}
+
+.baFlowStrip--messages .baFlowIntro span {
+  font-size: 0.86rem !important;
+}
+
+.baFlowStrip--messages .baFlowCard {
+  min-height: 88px !important;
+  padding: 0.65rem !important;
+}
+
+.baFlowStrip--messages .baFlowCard strong {
+  font-size: 0.9rem !important;
+}
+
+.baFlowStrip--messages .baFlowCard small {
+  font-size: 0.74rem !important;
+}
+
+@media (max-width: 1180px) {
+  .baMessagesHeaderSearch {
+    width: 100% !important;
+    max-width: 420px !important;
+  }
+
+  .messagesV7-heroActions {
+    justify-content: flex-start !important;
+  }
+
+  .baFlowStrip--messages {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =========================================================
+   BEE-AURA MESSAGES VISUAL POLISH PASS V1
+   Page: /messages only
+   Purpose:
+   - brighten white writing
+   - make channel/status tab text black
+   - make both "All" buttons yellow
+   - make conversations stand out more
+   - make New Message button match system yellow
+   ========================================================= */
+
+.messagesV7-page,
+.messagesV7-shell,
+.messagesV7-root,
+[class*="messagesV7"] {
+  --baMessageBright: #F8FAFC;
+  --baMessageSoft: rgba(241, 245, 249, 0.92);
+  --baMessageMute: rgba(226, 232, 240, 0.78);
+  --baBeeYellow: #F3C84B;
+  --baBeeYellowBorder: rgba(243, 200, 75, 0.88);
+  --baDarkText: #0B1220;
+}
+
+/* Brighter writing across the Messages page */
+[class*="messagesV7"] h1,
+[class*="messagesV7"] h2,
+[class*="messagesV7"] h3,
+[class*="messagesV7"] h4,
+[class*="messagesV7"] strong,
+[class*="messagesV7"] b {
+  color: #F8FAFC !important;
+}
+
+[class*="messagesV7"] p,
+[class*="messagesV7"] span,
+[class*="messagesV7"] small,
+[class*="messagesV7"] li,
+[class*="messagesV7"] label,
+[class*="messagesV7"] div {
+  color: rgba(241, 245, 249, 0.9);
+}
+
+/* Top-right hero actions */
+.messagesV7-heroActions > a,
+.messagesV7-heroActions > button,
+.messagesV7-heroActions .baMessagesHeaderSearch button {
+  font-weight: 900 !important;
+}
+
+/* New Message button = system yellow, not orange */
+.messagesV7-heroActions > *:first-child {
+  background: #F3C84B !important;
+  border: 1px solid rgba(243, 200, 75, 0.9) !important;
+  color: #0B1220 !important;
+  box-shadow: 0 8px 18px rgba(243, 200, 75, 0.18) !important;
+}
+
+/* Search button match */
+.baMessagesHeaderSearch button {
+  background: #F3C84B !important;
+  border-color: rgba(243, 200, 75, 0.9) !important;
+  color: #0B1220 !important;
+}
+
+/* Channel tabs = black text */
+.messagesV7-tabsPanel > div:nth-of-type(1) .messagesV7-tabRow button {
+  color: #0B1220 !important;
+  font-weight: 900 !important;
+}
+
+/* Status tabs = black text */
+.messagesV7-tabsPanel > div:nth-of-type(2) .messagesV7-tabRow button {
+  color: #0B1220 !important;
+  font-weight: 900 !important;
+}
+
+/* "All" button in channel tabs */
+.messagesV7-tabsPanel > div:nth-of-type(1) .messagesV7-tabRow button:first-child {
+  background: #F3C84B !important;
+  border-color: rgba(243, 200, 75, 0.9) !important;
+  color: #0B1220 !important;
+}
+
+/* "All" button in status tabs */
+.messagesV7-tabsPanel > div:nth-of-type(2) .messagesV7-tabRow button:first-child {
+  background: #F3C84B !important;
+  border-color: rgba(243, 200, 75, 0.9) !important;
+  color: #0B1220 !important;
+}
+
+/* Keep coloured status tabs but with stronger clarity */
+.messagesV7-tabsPanel > div:nth-of-type(2) .messagesV7-tabRow button:nth-child(2),
+.messagesV7-tabsPanel > div:nth-of-type(2) .messagesV7-tabRow button:nth-child(3),
+.messagesV7-tabsPanel > div:nth-of-type(2) .messagesV7-tabRow button:nth-child(4),
+.messagesV7-tabsPanel > div:nth-of-type(2) .messagesV7-tabRow button:nth-child(5),
+.messagesV7-tabsPanel > div:nth-of-type(2) .messagesV7-tabRow button:nth-child(6) {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08) !important;
+}
+
+/* Make live conversations stand out more */
+.messagesV7-conversationCard,
+.messagesV7-threadCard,
+.messagesV7-threadItem,
+.messagesV7-inboxCard,
+.messagesV7-liveInboxCard,
+.messagesV7-listCard,
+.messagesV7-conversationList article,
+.messagesV7-conversationList > div,
+.messagesV7-conversationList > li {
+  background: linear-gradient(180deg, rgba(11, 25, 43, 0.98), rgba(7, 16, 30, 0.96)) !important;
+  border: 1px solid rgba(77, 163, 255, 0.32) !important;
+  box-shadow:
+    0 0 0 1px rgba(10, 132, 255, 0.06),
+    0 10px 24px rgba(2, 8, 18, 0.32) !important;
+}
+
+.messagesV7-conversationCard:hover,
+.messagesV7-threadCard:hover,
+.messagesV7-threadItem:hover,
+.messagesV7-inboxCard:hover,
+.messagesV7-liveInboxCard:hover,
+.messagesV7-listCard:hover,
+.messagesV7-conversationList article:hover,
+.messagesV7-conversationList > div:hover,
+.messagesV7-conversationList > li:hover {
+  border-color: rgba(77, 163, 255, 0.48) !important;
+  box-shadow:
+    0 0 0 1px rgba(10, 132, 255, 0.09),
+    0 14px 28px rgba(2, 8, 18, 0.42) !important;
+}
+
+/* Stronger labels inside conversation area */
+.messagesV7-conversationCard strong,
+.messagesV7-threadCard strong,
+.messagesV7-threadItem strong,
+.messagesV7-inboxCard strong,
+.messagesV7-liveInboxCard strong,
+.messagesV7-listCard strong,
+.messagesV7-conversationList strong {
+  color: #FFFFFF !important;
+}
+
+.messagesV7-conversationCard p,
+.messagesV7-threadCard p,
+.messagesV7-threadItem p,
+.messagesV7-inboxCard p,
+.messagesV7-liveInboxCard p,
+.messagesV7-listCard p,
+.messagesV7-conversationList p,
+.messagesV7-conversationCard small,
+.messagesV7-threadCard small,
+.messagesV7-threadItem small,
+.messagesV7-inboxCard small,
+.messagesV7-liveInboxCard small,
+.messagesV7-listCard small,
+.messagesV7-conversationList small {
+  color: rgba(241, 245, 249, 0.88) !important;
+}
+
+/* Suggested reply / content panels slightly clearer */
+.messagesV7-replyBox,
+.messagesV7-composer,
+.messagesV7-messagePanel,
+.messagesV7-chatPanel,
+.messagesV7-contentCard {
+  border-color: rgba(77, 163, 255, 0.28) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04) !important;
+}
+
+/* Buttons across lower action area brighter */
+.messagesV7-page button,
+.messagesV7-shell button,
+.messagesV7-root button {
+  font-weight: 800;
+}
+
+/* =========================================================
+   BEE-AURA MESSAGES MICRO FIX
+   - channel tab font white
+   - yellow tabs same yellow as New Message
+   ========================================================= */
+
+.messagesV7-heroActions > *:first-child,
+.baMessagesHeaderSearch button,
+.messagesV7-tabsPanel > div:nth-of-type(1) .messagesV7-tabRow button:first-child,
+.messagesV7-tabsPanel > div:nth-of-type(2) .messagesV7-tabRow button:first-child {
+  background: #F3C84B !important;
+  border-color: #F3C84B !important;
+  color: #0B1220 !important;
+}
+
+/* Channel tabs = white text */
+.messagesV7-tabsPanel > div:nth-of-type(1) .messagesV7-tabRow button {
+  color: #F8FAFC !important;
+  font-weight: 800 !important;
+}
+
+/* Keep the yellow "All" channel tab dark text */
+.messagesV7-tabsPanel > div:nth-of-type(1) .messagesV7-tabRow button:first-child {
+  color: #0B1220 !important;
+}
+
+/* Keep the yellow "All" status tab dark text */
+.messagesV7-tabsPanel > div:nth-of-type(2) .messagesV7-tabRow button:first-child {
+  color: #0B1220 !important;
+}
+
+/* =========================================================
+   BEE-AURA MESSAGES CONVERSATION DEPTH FIX
+   Page: /messages only
+   Purpose:
+   - make Live Inbox conversations stand out
+   - make selected conversation obvious
+   - make WhatsApp conversation panel feel premium
+   ========================================================= */
+
+.messagesV7-listPanel,
+.messagesV7-chatPanel {
+  border: 1px solid rgba(77, 163, 255, 0.34) !important;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(77, 163, 255, 0.10), transparent 34%),
+    linear-gradient(180deg, rgba(8, 22, 38, 0.98), rgba(3, 10, 20, 0.98)) !important;
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+
+.messagesV7-panelHeader {
+  border-bottom: 1px solid rgba(77, 163, 255, 0.22) !important;
+  padding-bottom: 0.7rem !important;
+}
+
+.messagesV7-panelHeader h2,
+.messagesV7-chatHeader h2 {
+  color: #FFFFFF !important;
+  text-shadow: 0 0 18px rgba(77, 163, 255, 0.12) !important;
+}
+
+.messagesV7-conversationList {
+  gap: 0.85rem !important;
+}
+
+/* Conversation cards */
+.messagesV7-conversationCard {
+  position: relative !important;
+  border: 1px solid rgba(77, 163, 255, 0.28) !important;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(77, 163, 255, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(10, 26, 44, 0.98), rgba(4, 12, 24, 0.98)) !important;
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+}
+
+.messagesV7-conversationCard::before {
+  content: "";
+  position: absolute;
+  left: 0.65rem;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  width: 3px;
+  border-radius: 999px;
+  background: rgba(77, 163, 255, 0.42);
+}
+
+.messagesV7-conversationCard:hover {
+  transform: translateY(-1px);
+  border-color: rgba(77, 163, 255, 0.52) !important;
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.36),
+    0 0 28px rgba(77, 163, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.055) !important;
+}
+
+/* Selected conversation should be obvious */
+.messagesV7-conversationCard.isSelected {
+  border-color: rgba(207, 164, 59, 0.72) !important;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(207, 164, 59, 0.18), transparent 36%),
+    radial-gradient(circle at 95% 0%, rgba(77, 163, 255, 0.14), transparent 38%),
+    linear-gradient(180deg, rgba(15, 34, 53, 0.98), rgba(5, 14, 26, 0.98)) !important;
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.38),
+    0 0 32px rgba(207, 164, 59, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+
+.messagesV7-conversationCard.isSelected::before {
+  background: #CFA43B;
+  box-shadow: 0 0 16px rgba(207, 164, 59, 0.5);
+}
+
+.messagesV7-conversationCard strong {
+  color: #FFFFFF !important;
+  font-weight: 950 !important;
+}
+
+.messagesV7-conversationCard p {
+  color: rgba(248, 250, 252, 0.92) !important;
+  line-height: 1.35 !important;
+}
+
+.messagesV7-conversationCard small {
+  color: rgba(203, 213, 225, 0.86) !important;
+}
+
+/* Priority and status chips clearer */
+.messagesV7-priority,
+.messagesV7-status {
+  font-weight: 900 !important;
+  border-radius: 999px !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08) !important;
+}
+
+/* Main WhatsApp conversation panel */
+.messagesV7-chatPanel {
+  border-color: rgba(77, 163, 255, 0.38) !important;
+}
+
+.messagesV7-thread {
+  border: 1px solid rgba(77, 163, 255, 0.22) !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(77, 163, 255, 0.08), transparent 36%),
+    rgba(2, 10, 20, 0.72) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.035) !important;
+}
+
+/* Individual message bubbles */
+.messagesV7-messageRow {
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.22));
+}
+
+.messagesV7-messageRow > div,
+.messagesV7-messageRow article,
+.messagesV7-messageRow p {
+  border-color: rgba(77, 163, 255, 0.28) !important;
+}
+
+/* Suggested reply/composer clearer */
+.messagesV7-composer {
+  border: 1px solid rgba(77, 163, 255, 0.28) !important;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(77, 163, 255, 0.08), transparent 34%),
+    rgba(2, 10, 20, 0.84) !important;
+}
+
+.messagesV7-composer textarea,
+.messagesV7-composer input {
+  color: #F8FAFC !important;
+}
+
+.messagesV7-composerActions button {
+  font-weight: 900 !important;
+}
+
+/* =========================================================
+   BEE-AURA MESSAGES CHAT PANEL DEPTH FIX
+   Page: /messages only
+   Purpose:
+   - make selected conversation/chat area stand out
+   - keep Bee-Aura dark/gold/blue theme
+   - improve suggested reply and composer visibility
+   ========================================================= */
+
+.messagesV7-chatPanel {
+  position: relative !important;
+  border: 1px solid rgba(77, 163, 255, 0.46) !important;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(77, 163, 255, 0.14), transparent 32%),
+    radial-gradient(circle at 92% 0%, rgba(207, 164, 59, 0.1), transparent 32%),
+    linear-gradient(180deg, rgba(9, 24, 42, 0.98), rgba(3, 10, 20, 0.98)) !important;
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.38),
+    0 0 0 1px rgba(77, 163, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+}
+
+.messagesV7-chatPanel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #CFA43B, #4DA3FF, transparent);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.messagesV7-chatHeader {
+  padding-bottom: 0.9rem !important;
+  border-bottom: 1px solid rgba(77, 163, 255, 0.22) !important;
+}
+
+.messagesV7-chatHeader p,
+.messagesV7-chatHeader span,
+.messagesV7-chatHeader small {
+  color: rgba(226, 232, 240, 0.92) !important;
+}
+
+.messagesV7-chatHeader h2,
+.messagesV7-chatHeader strong {
+  color: #FFFFFF !important;
+  text-shadow: 0 0 18px rgba(77, 163, 255, 0.14) !important;
+}
+
+/* Thread frame */
+.messagesV7-thread {
+  border: 1px solid rgba(77, 163, 255, 0.34) !important;
+  border-radius: 24px !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(77, 163, 255, 0.1), transparent 36%),
+    rgba(1, 8, 17, 0.82) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.035),
+    0 16px 42px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* Message bubbles */
+.messagesV7-messageRow {
+  filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.28)) !important;
+}
+
+.messagesV7-messageRow > div,
+.messagesV7-messageRow article,
+.messagesV7-messageRow p {
+  border-color: rgba(77, 163, 255, 0.38) !important;
+}
+
+.messagesV7-messageRow.isCustomer > div,
+.messagesV7-messageRow.isCustomer article,
+.messagesV7-messageRow.isCustomer p {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.04), transparent 34%),
+    rgba(17, 24, 39, 0.94) !important;
+  border-color: rgba(148, 163, 184, 0.34) !important;
+}
+
+.messagesV7-messageRow.isSystem > div,
+.messagesV7-messageRow.isSystem article,
+.messagesV7-messageRow.isSystem p {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(77, 163, 255, 0.16), transparent 36%),
+    linear-gradient(135deg, rgba(8, 35, 58, 0.96), rgba(6, 18, 34, 0.96)) !important;
+  border-color: rgba(77, 163, 255, 0.52) !important;
+  box-shadow: 0 0 26px rgba(77, 163, 255, 0.08) !important;
+}
+
+.messagesV7-messageRow strong,
+.messagesV7-messageRow b {
+  color: #F8FAFC !important;
+  font-weight: 900 !important;
+}
+
+.messagesV7-messageRow span,
+.messagesV7-messageRow p,
+.messagesV7-messageRow small {
+  color: rgba(226, 232, 240, 0.92) !important;
+}
+
+/* Suggested reply / composer area */
+.messagesV7-composer {
+  margin-top: 1rem !important;
+  padding: 1rem !important;
+  border: 1px solid rgba(207, 164, 59, 0.32) !important;
+  border-radius: 20px !important;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(207, 164, 59, 0.12), transparent 30%),
+    linear-gradient(180deg, rgba(8, 18, 32, 0.98), rgba(2, 9, 18, 0.98)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 14px 34px rgba(0, 0, 0, 0.24) !important;
+}
+
+.messagesV7-composer > p,
+.messagesV7-composer > span,
+.messagesV7-composer label {
+  color: #FFD24A !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+.messagesV7-composer strong,
+.messagesV7-composer b {
+  color: #FFFFFF !important;
+}
+
+.messagesV7-composer textarea {
+  border: 1px solid rgba(77, 163, 255, 0.34) !important;
+  background: rgba(1, 8, 17, 0.88) !important;
+  color: #F8FAFC !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.035) !important;
+}
+
+.messagesV7-composer textarea::placeholder {
+  color: rgba(203, 213, 225, 0.58) !important;
+}
+
+.messagesV7-composerActions button {
+  border-radius: 999px !important;
+  font-weight: 900 !important;
+}
+
+.messagesV7-composerActions button:first-child,
+.messagesV7-composerActions button:last-child {
+  background: #F3C84B !important;
+  color: #0B1220 !important;
+  border-color: #F3C84B !important;
+  box-shadow: 0 8px 18px rgba(243, 200, 75, 0.14) !important;
+}
+
+/* =========================================================
+   BEE-AURA MESSAGES BUBBLE CORRECTION
+   Page: /messages only
+   Fix:
+   - customer message gets gold border/accent
+   - Bee-Aura/business replies are NOT yellow
+   - reply bubbles match dark blue AI theme
+   ========================================================= */
+
+/* Customer incoming message = gold edge, dark card */
+.messagesV7-messageRow.isCustomer > div,
+.messagesV7-messageRow.isCustomer article,
+.messagesV7-messageRow.isCustomer p {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(207, 164, 59, 0.12), transparent 36%),
+    linear-gradient(180deg, rgba(15, 25, 38, 0.96), rgba(6, 14, 26, 0.96)) !important;
+  border: 1px solid rgba(207, 164, 59, 0.62) !important;
+  color: #F8FAFC !important;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.32),
+    0 0 22px rgba(207, 164, 59, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+}
+
+/* Customer name/time text */
+.messagesV7-messageRow.isCustomer strong,
+.messagesV7-messageRow.isCustomer b {
+  color: #F8FAFC !important;
+}
+
+.messagesV7-messageRow.isCustomer span,
+.messagesV7-messageRow.isCustomer small {
+  color: rgba(226, 232, 240, 0.9) !important;
+}
+
+/* Bee-Aura / business reply = dark blue AI bubble, never yellow */
+.messagesV7-messageRow.isBusiness > div,
+.messagesV7-messageRow.isBusiness article,
+.messagesV7-messageRow.isBusiness p,
+.messagesV7-messageRow.isSystem > div,
+.messagesV7-messageRow.isSystem article,
+.messagesV7-messageRow.isSystem p {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(77, 163, 255, 0.18), transparent 38%),
+    linear-gradient(135deg, rgba(8, 35, 58, 0.96), rgba(6, 18, 34, 0.96)) !important;
+  border: 1px solid rgba(77, 163, 255, 0.52) !important;
+  color: #F8FAFC !important;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.32),
+    0 0 24px rgba(77, 163, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+}
+
+/* Force any accidental yellow bubble text/background back into theme */
+.messagesV7-thread .messagesV7-messageRow.isBusiness *,
+.messagesV7-thread .messagesV7-messageRow.isSystem * {
+  color: #F8FAFC !important;
+  text-shadow: none !important;
+}
+
+/* If older CSS made business reply yellow, override it */
+.messagesV7-thread .messagesV7-messageRow.isBusiness,
+.messagesV7-thread .messagesV7-messageRow.isSystem {
+  background: transparent !important;
+}
+
+/* Keep suggested reply box gold-accented but not overpowering */
+.messagesV7-composer {
+  border-color: rgba(207, 164, 59, 0.42) !important;
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.24),
+    0 0 22px rgba(207, 164, 59, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+
+/* =========================================================
+   BEE-AURA MESSAGES THREAD BUBBLE FINAL POLISH
+   Page: /messages only
+   Fix:
+   - customer/lead message gets suggested-reply style gold glow
+   - Bee-Aura reply stays dark blue
+   - remove ugly inner box around Bee-Aura reply text
+   ========================================================= */
+
+/* Customer / lead message bubble: dark card with gold edge like Suggested Reply */
+.messagesV7-thread .messagesV7-messageRow.isCustomer > div,
+.messagesV7-thread .messagesV7-messageRow.isCustomer > article,
+.messagesV7-thread .messagesV7-messageRow.isCustomer > p {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(207, 164, 59, 0.13), transparent 34%),
+    linear-gradient(180deg, rgba(12, 24, 38, 0.98), rgba(4, 12, 24, 0.98)) !important;
+  border: 1px solid rgba(207, 164, 59, 0.58) !important;
+  color: #F8FAFC !important;
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.34),
+    0 0 24px rgba(207, 164, 59, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+}
+
+/* Customer message text stays bright */
+.messagesV7-thread .messagesV7-messageRow.isCustomer strong,
+.messagesV7-thread .messagesV7-messageRow.isCustomer b {
+  color: #F8FAFC !important;
+}
+
+.messagesV7-thread .messagesV7-messageRow.isCustomer span,
+.messagesV7-thread .messagesV7-messageRow.isCustomer small,
+.messagesV7-thread .messagesV7-messageRow.isCustomer p {
+  color: rgba(226, 232, 240, 0.92) !important;
+}
+
+/* Bee-Aura / business reply bubble: dark blue AI style, not yellow */
+.messagesV7-thread .messagesV7-messageRow.isBusiness > div,
+.messagesV7-thread .messagesV7-messageRow.isBusiness > article,
+.messagesV7-thread .messagesV7-messageRow.isSystem > div,
+.messagesV7-thread .messagesV7-messageRow.isSystem > article {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(77, 163, 255, 0.17), transparent 36%),
+    linear-gradient(135deg, rgba(8, 35, 58, 0.98), rgba(5, 18, 34, 0.98)) !important;
+  border: 1px solid rgba(77, 163, 255, 0.52) !important;
+  color: #F8FAFC !important;
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.34),
+    0 0 24px rgba(77, 163, 255, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+}
+
+/* Remove the ugly inner text box inside Bee-Aura replies */
+.messagesV7-thread .messagesV7-messageRow.isBusiness > div > p,
+.messagesV7-thread .messagesV7-messageRow.isBusiness > article > p,
+.messagesV7-thread .messagesV7-messageRow.isSystem > div > p,
+.messagesV7-thread .messagesV7-messageRow.isSystem > article > p {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0.35rem 0 0 !important;
+  color: rgba(226, 232, 240, 0.92) !important;
+}
+
+/* If older CSS made a direct Bee-Aura reply paragraph into a yellow box, force it back blue */
+.messagesV7-thread .messagesV7-messageRow.isBusiness > p,
+.messagesV7-thread .messagesV7-messageRow.isSystem > p {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(77, 163, 255, 0.17), transparent 36%),
+    linear-gradient(135deg, rgba(8, 35, 58, 0.98), rgba(5, 18, 34, 0.98)) !important;
+  border: 1px solid rgba(77, 163, 255, 0.52) !important;
+  color: #F8FAFC !important;
+}
+
+/* Bee-Aura reply labels */
+.messagesV7-thread .messagesV7-messageRow.isBusiness strong,
+.messagesV7-thread .messagesV7-messageRow.isBusiness b,
+.messagesV7-thread .messagesV7-messageRow.isSystem strong,
+.messagesV7-thread .messagesV7-messageRow.isSystem b {
+  color: #F8FAFC !important;
+  font-weight: 900 !important;
+}
+
+/* Keep Suggested Reply as the gold-accent control area */
+.messagesV7-composer {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(207, 164, 59, 0.13), transparent 32%),
+    linear-gradient(180deg, rgba(8, 18, 32, 0.98), rgba(2, 9, 18, 0.98)) !important;
+  border: 1px solid rgba(207, 164, 59, 0.42) !important;
+}
+
+/* =========================================================
+   BEE-AURA MESSAGES: CUSTOMER BUBBLE GOLD DISTINCTION
+   Page: /messages only
+   ========================================================= */
+
+/* Customer / lead bubbles */
+.messagesV7-thread .messagesV7-messageRow.isCustomer > div,
+.messagesV7-thread .messagesV7-messageRow.isCustomer > article,
+.messagesV7-thread .messagesV7-messageRow.isCustomer > p {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(207, 164, 59, 0.14), transparent 34%),
+    linear-gradient(180deg, rgba(16, 24, 36, 0.98), rgba(6, 12, 22, 0.98)) !important;
+  border: 1px solid rgba(207, 164, 59, 0.52) !important;
+  box-shadow:
+    0 10px 26px rgba(0, 0, 0, 0.28),
+    0 0 18px rgba(207, 164, 59, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+  color: #F8FAFC !important;
+}
+
+/* Customer bubble text */
+.messagesV7-thread .messagesV7-messageRow.isCustomer strong,
+.messagesV7-thread .messagesV7-messageRow.isCustomer b {
+  color: #F8FAFC !important;
+}
+
+.messagesV7-thread .messagesV7-messageRow.isCustomer p,
+.messagesV7-thread .messagesV7-messageRow.isCustomer span,
+.messagesV7-thread .messagesV7-messageRow.isCustomer small {
+  color: rgba(226, 232, 240, 0.94) !important;
+}
+
+/* Keep Bee-Aura / business replies blue */
+.messagesV7-thread .messagesV7-messageRow.isBusiness > div,
+.messagesV7-thread .messagesV7-messageRow.isBusiness > article,
+.messagesV7-thread .messagesV7-messageRow.isBusiness > p,
+.messagesV7-thread .messagesV7-messageRow.isSystem > div,
+.messagesV7-thread .messagesV7-messageRow.isSystem > article,
+.messagesV7-thread .messagesV7-messageRow.isSystem > p {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(77, 163, 255, 0.16), transparent 34%),
+    linear-gradient(180deg, rgba(10, 34, 58, 0.98), rgba(5, 18, 34, 0.98)) !important;
+  border: 1px solid rgba(77, 163, 255, 0.44) !important;
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.24),
+    0 0 16px rgba(77, 163, 255, 0.08) !important;
+  color: #F8FAFC !important;
+}
+
+.messagesV7-thread .messagesV7-messageRow.isBusiness strong,
+.messagesV7-thread .messagesV7-messageRow.isBusiness b,
+.messagesV7-thread .messagesV7-messageRow.isSystem strong,
+.messagesV7-thread .messagesV7-messageRow.isSystem b {
+  color: #F8FAFC !important;
+}
+
+
+/* BEE-AURA MESSAGES REAL BUBBLE HOOK FIX
+   Page: /messages only.
+   Reliable fix using data-message-sender attributes.
+   Customer messages = gold glow.
+   Bee-Aura/business/system replies = blue AI bubble.
+*/
+
+/* Customer / lead message row wrapper */
+.messagesV7-thread [data-message-sender="customer"] {
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.30)) !important;
+}
+
+/* Customer / lead message bubble */
+.messagesV7-thread [data-message-sender="customer"] > div,
+.messagesV7-thread [data-message-sender="customer"] > article,
+.messagesV7-thread [data-message-sender="customer"] > p {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(207, 164, 59, 0.15), transparent 34%),
+    linear-gradient(180deg, rgba(15, 24, 38, 0.98), rgba(5, 12, 24, 0.98)) !important;
+  border: 1px solid rgba(207, 164, 59, 0.64) !important;
+  color: #F8FAFC !important;
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.34),
+    0 0 24px rgba(207, 164, 59, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+}
+
+/* Customer text */
+.messagesV7-thread [data-message-sender="customer"] strong,
+.messagesV7-thread [data-message-sender="customer"] b {
+  color: #F8FAFC !important;
+  font-weight: 900 !important;
+}
+
+.messagesV7-thread [data-message-sender="customer"] span,
+.messagesV7-thread [data-message-sender="customer"] small,
+.messagesV7-thread [data-message-sender="customer"] p {
+  color: rgba(226, 232, 240, 0.94) !important;
+}
+
+/* Bee-Aura / business replies */
+.messagesV7-thread [data-message-sender="business"],
+.messagesV7-thread [data-message-sender="system"] {
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.28)) !important;
+}
+
+.messagesV7-thread [data-message-sender="business"] > div,
+.messagesV7-thread [data-message-sender="business"] > article,
+.messagesV7-thread [data-message-sender="business"] > p,
+.messagesV7-thread [data-message-sender="system"] > div,
+.messagesV7-thread [data-message-sender="system"] > article,
+.messagesV7-thread [data-message-sender="system"] > p {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(77, 163, 255, 0.17), transparent 34%),
+    linear-gradient(180deg, rgba(9, 34, 58, 0.98), rgba(5, 18, 34, 0.98)) !important;
+  border: 1px solid rgba(77, 163, 255, 0.54) !important;
+  color: #F8FAFC !important;
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.32),
+    0 0 22px rgba(77, 163, 255, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+}
+
+/* Remove ugly inner box around Bee-Aura reply text */
+.messagesV7-thread [data-message-sender="business"] > div > p,
+.messagesV7-thread [data-message-sender="business"] > article > p,
+.messagesV7-thread [data-message-sender="system"] > div > p,
+.messagesV7-thread [data-message-sender="system"] > article > p {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0.35rem 0 0 !important;
+  color: rgba(226, 232, 240, 0.94) !important;
+}
+
+/* Suggested Reply stays gold-accented */
+.messagesV7-composer {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(207, 164, 59, 0.13), transparent 32%),
+    linear-gradient(180deg, rgba(8, 18, 32, 0.98), rgba(2, 9, 18, 0.98)) !important;
+  border: 1px solid rgba(207, 164, 59, 0.42) !important;
+}
+

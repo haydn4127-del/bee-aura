@@ -1,0 +1,1175 @@
+
+.bookingsLock {
+  width: 100%;
+}
+
+/* Header stays compact and aligned */
+.bookingsLock :global(.bkV2-header) {
+  padding: 1rem 1.15rem !important;
+  border-color: rgba(77, 163, 255, 0.24) !important;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(77, 163, 255, 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(10, 26, 44, 0.98), rgba(4, 12, 24, 0.98)) !important;
+}
+
+.bookingsLock :global(.bkV2-actions) {
+  align-items: center !important;
+  gap: 0.55rem !important;
+}
+
+.bookingsLock :global(.bkV2-primary) {
+  background: #F3C84B !important;
+  border-color: #F3C84B !important;
+  color: #0B1220 !important;
+  box-shadow: 0 10px 22px rgba(243, 200, 75, 0.14) !important;
+}
+
+/* Owner pill */
+.bookingsLock :global(.bkV2-owner) {
+  min-width: 132px !important;
+  max-width: 146px !important;
+  height: 42px !important;
+  padding: 0 10px !important;
+  gap: 8px !important;
+  border: 1px solid rgba(207, 164, 59, 0.48) !important;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(5, 13, 27, 0.96) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.26) !important;
+}
+
+.bookingsLock :global(.bkV2-owner > span) {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  border-radius: 999px !important;
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border: 1px solid rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  box-shadow: 0 10px 22px rgba(207, 164, 59, 0.18) !important;
+}
+
+.bookingsLock :global(.bkV2-owner strong) {
+  color: #F8FAFC !important;
+  font-weight: 900 !important;
+  line-height: 1.02 !important;
+}
+
+.bookingsLock :global(.bkV2-owner small) {
+  color: #CBD5E1 !important;
+  font-weight: 700 !important;
+}
+
+/* Calendar strip */
+.bookingsLock :global(.bkV2-calendar) {
+  padding: 1rem !important;
+  border-color: rgba(207, 164, 59, 0.30) !important;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(207, 164, 59, 0.11), transparent 32%),
+    radial-gradient(circle at 88% 0%, rgba(77, 163, 255, 0.10), transparent 34%),
+    linear-gradient(135deg, rgba(13, 24, 38, 0.98), rgba(5, 13, 27, 0.98)) !important;
+}
+
+.bookingsLock :global(.bkV2-calendarDay) {
+  min-height: 82px !important;
+  padding: 0.72rem !important;
+  border: 1px solid rgba(77, 163, 255, 0.24) !important;
+  background:
+    radial-gradient(circle at 14% 0%, rgba(77, 163, 255, 0.10), transparent 36%),
+    linear-gradient(180deg, rgba(7, 19, 34, 0.98), rgba(3, 10, 20, 0.98)) !important;
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.20),
+    inset 0 1px 0 rgba(255,255,255,0.035) !important;
+}
+
+.bookingsLock :global(.bkV2-calendarDay.isActive),
+.bookingsLock :global(.bkV2-calendarDay:hover) {
+  border-color: rgba(207, 164, 59, 0.54) !important;
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.28),
+    0 0 18px rgba(207, 164, 59, 0.08) !important;
+}
+
+.bookingsLock :global(.bkV2-calendarDay span) {
+  color: #FFD24A !important;
+  font-weight: 950 !important;
+}
+
+.bookingsLock :global(.bkV2-calendarDay em) {
+  background: rgba(207, 164, 59, 0.16) !important;
+  color: #FFD24A !important;
+  border: 1px solid rgba(207, 164, 59, 0.42) !important;
+  font-weight: 900 !important;
+}
+
+/* Main layout: this is the actual structure fix */
+.bookingsLock :global(.bkV2-grid) {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.4fr) minmax(340px, 0.9fr) !important;
+  align-items: start !important;
+  gap: 1rem !important;
+}
+
+/* Stop the left card from stretching down with empty space */
+.bookingsLock :global(.bkV2-upcoming) {
+  display: block !important;
+  align-self: start !important;
+  justify-self: stretch !important;
+  height: auto !important;
+  min-height: unset !important;
+  max-height: fit-content !important;
+  block-size: fit-content !important;
+  padding-bottom: 0.9rem !important;
+  overflow: hidden !important;
+}
+
+.bookingsLock :global(.bkV2-upcoming::before),
+.bookingsLock :global(.bkV2-upcoming::after) {
+  display: none !important;
+  content: none !important;
+}
+
+.bookingsLock :global(.bkV2-upcoming .bkV2-cardHeader) {
+  margin-bottom: 0.55rem !important;
+}
+
+.bookingsLock :global(.bkV2-tableHead) {
+  min-height: 30px !important;
+  align-items: center !important;
+}
+
+.bookingsLock :global(.bkV2-row) {
+  min-height: 50px !important;
+  padding-block: 0.45rem !important;
+}
+
+.bookingsLock :global(.bkV2-row:hover),
+.bookingsLock :global(.bkV2-row.isSelected) {
+  background:
+    radial-gradient(circle at 0% 50%, rgba(207, 164, 59, 0.07), transparent 36%),
+    rgba(77, 163, 255, 0.045) !important;
+  border-color: rgba(207, 164, 59, 0.20) !important;
+}
+
+/* Date marker: calm premium */
+.bookingsLock :global(.bkV2-date) {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 12px !important;
+  background:
+    radial-gradient(circle at 30% 18%, rgba(207, 164, 59, 0.16), transparent 34%),
+    linear-gradient(180deg, rgba(10, 24, 38, 0.98), rgba(4, 12, 24, 0.98)) !important;
+  color: #FFD24A !important;
+  border: 1px solid rgba(207, 164, 59, 0.48) !important;
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.22),
+    0 0 12px rgba(207, 164, 59, 0.08) !important;
+}
+
+.bookingsLock :global(.bkV2-date strong),
+.bookingsLock :global(.bkV2-date em),
+.bookingsLock :global(.bkV2-date small) {
+  color: #FFD24A !important;
+  font-weight: 950 !important;
+}
+
+/* Right column */
+.bookingsLock :global(.bkV2-side) {
+  display: grid !important;
+  gap: 1rem !important;
+  align-self: start !important;
+}
+
+.bookingsLock :global(.bkV2-schedule) {
+  align-self: start !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+/* Remove the blurry vertical timeline lines */
+.bookingsLock :global(.bkV2-timeline) {
+  position: relative !important;
+  display: grid !important;
+  gap: 0.62rem !important;
+}
+
+.bookingsLock :global(.bkV2-timeline)::before,
+.bookingsLock :global(.bkV2-timeRow)::before,
+.bookingsLock :global(.bkV2-timeRow)::after {
+  display: none !important;
+  content: none !important;
+  opacity: 0 !important;
+}
+
+/* Today's schedule rows: sit neatly */
+.bookingsLock :global(.bkV2-timeRow) {
+  display: grid !important;
+  grid-template-columns: 76px minmax(0, 1fr) max-content !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  min-height: 54px !important;
+  padding: 0.62rem 0.7rem !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(77, 163, 255, 0.22) !important;
+  background:
+    radial-gradient(circle at 0% 50%, rgba(77, 163, 255, 0.08), transparent 32%),
+    rgba(3, 12, 24, 0.84) !important;
+}
+
+.bookingsLock :global(.bkV2-timeRow > strong) {
+  min-width: 72px !important;
+  height: 30px !important;
+  border-radius: 9px !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  background:
+    radial-gradient(circle at 30% 18%, rgba(207, 164, 59, 0.16), transparent 34%),
+    linear-gradient(180deg, rgba(10, 24, 38, 0.98), rgba(4, 12, 24, 0.98)) !important;
+  color: #FFD24A !important;
+  border: 1px solid rgba(207, 164, 59, 0.48) !important;
+  font-weight: 950 !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18) !important;
+}
+
+.bookingsLock :global(.bkV2-timeRow:hover),
+.bookingsLock :global(.bkV2-timeRow.isSelected) {
+  background:
+    radial-gradient(circle at 0% 50%, rgba(207, 164, 59, 0.08), transparent 36%),
+    rgba(77, 163, 255, 0.05) !important;
+  border-color: rgba(207, 164, 59, 0.24) !important;
+}
+
+.bookingsLock :global(.bkV2-timeRow b) {
+  color: #F8FAFC !important;
+}
+
+.bookingsLock :global(.bkV2-timeRow small) {
+  color: rgba(203, 213, 225, 0.78) !important;
+}
+
+.bookingsLock :global(.bkV2-status),
+.bookingsLock :global(.bkV2-rowStatus),
+.bookingsLock :global(.bkV2-timeRow em) {
+  border-radius: 999px !important;
+  font-weight: 900 !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06) !important;
+}
+
+/* Performance panel */
+.bookingsLock :global(.bkV2-bookingPerformancePanel) {
+  align-self: start !important;
+  padding: 1.05rem !important;
+  border: 1px solid rgba(77, 163, 255, 0.34) !important;
+  background:
+    radial-gradient(circle at 14% 0%, rgba(77, 163, 255, 0.14), transparent 34%),
+    radial-gradient(circle at 88% 12%, rgba(207, 164, 59, 0.08), transparent 34%),
+    linear-gradient(180deg, rgba(9, 27, 46, 0.98), rgba(3, 12, 24, 0.98)) !important;
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.34),
+    0 0 24px rgba(77, 163, 255, 0.08),
+    inset 0 1px 0 rgba(255,255,255,0.045) !important;
+}
+
+.bookingsLock :global(.bkV2-performanceHeader) {
+  border-bottom: 1px solid rgba(77, 163, 255, 0.22) !important;
+  padding-bottom: 0.6rem !important;
+  margin-bottom: 0.7rem !important;
+}
+
+.bookingsLock :global(.bkV2-sectionEyebrow) {
+  color: #FFD24A !important;
+  letter-spacing: 0.18em !important;
+}
+
+.bookingsLock :global(.bkV2-performanceHeader h2) {
+  color: #F8FAFC !important;
+  text-shadow: 0 0 18px rgba(77, 163, 255, 0.10) !important;
+}
+
+.bookingsLock :global(.bkV2-performanceLegend span) {
+  color: rgba(248, 250, 252, 0.88) !important;
+  font-weight: 800 !important;
+}
+
+.bookingsLock :global(.bkV2-bookingPerformancePanel svg) {
+  width: 100% !important;
+  max-height: 235px !important;
+  border: 1px solid rgba(77, 163, 255, 0.24) !important;
+  border-radius: 18px !important;
+  background:
+    radial-gradient(circle at 70% 0%, rgba(77, 163, 255, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(6, 20, 36, 0.98), rgba(2, 8, 18, 0.98)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.04),
+    0 12px 30px rgba(0, 0, 0, 0.26) !important;
+}
+
+.bookingsLock :global(.bkV2-chartGrid line) {
+  stroke: rgba(226, 232, 240, 0.11) !important;
+}
+
+/* Selected booking */
+.bookingsLock :global(.bkV2-customer > span) {
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+}
+
+/* Bottom Aura */
+.bookingsLock :global(.bkV2-aura) {
+  border-color: rgba(207, 164, 59, 0.30) !important;
+  background:
+    radial-gradient(circle at 8% 14%, rgba(207, 164, 59, 0.12), transparent 34%),
+    radial-gradient(circle at 86% 0%, rgba(77, 163, 255, 0.11), transparent 36%),
+    linear-gradient(135deg, rgba(18, 43, 61, 0.96), rgba(5, 13, 27, 0.98)) !important;
+}
+
+@media (max-width: 1100px) {
+  .bookingsLock :global(.bkV2-grid) {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =========================================================
+   BEE-AURA BOOKINGS FINAL POLISH
+   - Revenue booked card text cleanup
+   - Blue/white date + time chips
+========================================================= */
+
+/* KPI row tidy */
+.bookingsLock :global(.bkV2-kpiRow) {
+  align-items: stretch !important;
+}
+
+.bookingsLock :global(.bkV2-kpiRow > *) {
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.bookingsLock :global(.bkV2-kpiRow > * strong),
+.bookingsLock :global(.bkV2-kpiRow > * b),
+.bookingsLock :global(.bkV2-kpiRow > * h2),
+.bookingsLock :global(.bkV2-kpiRow > * h3) {
+  line-height: 1.02 !important;
+}
+
+.bookingsLock :global(.bkV2-kpiRow > * small),
+.bookingsLock :global(.bkV2-kpiRow > * span),
+.bookingsLock :global(.bkV2-kpiRow > * p),
+.bookingsLock :global(.bkV2-kpiRow > * em) {
+  white-space: normal !important;
+  line-height: 1.15 !important;
+}
+
+/* Revenue booked card specifically */
+.bookingsLock :global(.bkV2-kpiRow > :nth-child(4)) {
+  min-width: 0 !important;
+}
+
+.bookingsLock :global(.bkV2-kpiRow > :nth-child(4) strong),
+.bookingsLock :global(.bkV2-kpiRow > :nth-child(4) b),
+.bookingsLock :global(.bkV2-kpiRow > :nth-child(4) h2),
+.bookingsLock :global(.bkV2-kpiRow > :nth-child(4) h3) {
+  font-size: 2rem !important;
+  line-height: 1 !important;
+  display: block !important;
+}
+
+.bookingsLock :global(.bkV2-kpiRow > :nth-child(4) small),
+.bookingsLock :global(.bkV2-kpiRow > :nth-child(4) p),
+.bookingsLock :global(.bkV2-kpiRow > :nth-child(4) span),
+.bookingsLock :global(.bkV2-kpiRow > :nth-child(4) em) {
+  display: block !important;
+  margin-top: 0.18rem !important;
+  white-space: normal !important;
+}
+
+/* Upcoming bookings date badge - switch to signature blue/white */
+.bookingsLock :global(.bkV2-date) {
+  background:
+    radial-gradient(circle at 30% 18%, rgba(77, 163, 255, 0.16), transparent 34%),
+    linear-gradient(180deg, rgba(14, 38, 63, 0.98), rgba(6, 22, 40, 0.98)) !important;
+  color: #F8FAFC !important;
+  border: 1px solid rgba(77, 163, 255, 0.52) !important;
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.22),
+    0 0 14px rgba(77, 163, 255, 0.10) !important;
+}
+
+.bookingsLock :global(.bkV2-date strong),
+.bookingsLock :global(.bkV2-date em),
+.bookingsLock :global(.bkV2-date small) {
+  color: #F8FAFC !important;
+}
+
+/* Today schedule time chip - switch to signature blue/white */
+.bookingsLock :global(.bkV2-timeRow > strong) {
+  background:
+    radial-gradient(circle at 30% 18%, rgba(77, 163, 255, 0.18), transparent 34%),
+    linear-gradient(180deg, rgba(14, 38, 63, 0.98), rgba(6, 22, 40, 0.98)) !important;
+  color: #F8FAFC !important;
+  border: 1px solid rgba(77, 163, 255, 0.52) !important;
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.18),
+    0 0 14px rgba(77, 163, 255, 0.10) !important;
+}
+
+.bookingsLock :global(.bkV2-timeRow:hover > strong),
+.bookingsLock :global(.bkV2-timeRow.isSelected > strong) {
+  background:
+    radial-gradient(circle at 30% 18%, rgba(104, 190, 255, 0.18), transparent 34%),
+    linear-gradient(180deg, rgba(20, 56, 88, 0.98), rgba(8, 28, 49, 0.98)) !important;
+  border-color: rgba(104, 190, 255, 0.62) !important;
+  color: #F8FAFC !important;
+}
+
+
+/* =========================================================
+   BEE-AURA BOOKINGS KPI OVERLAP FIX
+   Page: /bookings only
+   Fix: revenue/value text must stack cleanly, not overlap change text
+========================================================= */
+
+/* Catch the real KPI row/card naming used on Bookings */
+.bookingsLock :global(.bkV2-kpi),
+.bookingsLock :global(.bkV2-stat),
+.bookingsLock :global(.bkV2-summaryCard),
+.bookingsLock :global(.bkV2-metricCard) {
+  min-width: 0 !important;
+  overflow: hidden !important;
+  display: grid !important;
+  grid-template-columns: 52px minmax(0, 1fr) !important;
+  grid-template-rows: auto auto auto !important;
+  align-items: center !important;
+  align-content: center !important;
+  column-gap: 0.8rem !important;
+  row-gap: 0.18rem !important;
+}
+
+/* Icon stays on the left */
+.bookingsLock :global(.bkV2-kpi > span:first-child),
+.bookingsLock :global(.bkV2-stat > span:first-child),
+.bookingsLock :global(.bkV2-summaryCard > span:first-child),
+.bookingsLock :global(.bkV2-metricCard > span:first-child) {
+  grid-column: 1 !important;
+  grid-row: 1 / 4 !important;
+}
+
+/* Label/value/change sit in their own column */
+.bookingsLock :global(.bkV2-kpi > *:not(:first-child)),
+.bookingsLock :global(.bkV2-stat > *:not(:first-child)),
+.bookingsLock :global(.bkV2-summaryCard > *:not(:first-child)),
+.bookingsLock :global(.bkV2-metricCard > *:not(:first-child)) {
+  grid-column: 2 !important;
+  min-width: 0 !important;
+}
+
+/* Big values */
+.bookingsLock :global(.bkV2-kpi strong),
+.bookingsLock :global(.bkV2-kpi b),
+.bookingsLock :global(.bkV2-kpi h2),
+.bookingsLock :global(.bkV2-kpi h3),
+.bookingsLock :global(.bkV2-stat strong),
+.bookingsLock :global(.bkV2-stat b),
+.bookingsLock :global(.bkV2-stat h2),
+.bookingsLock :global(.bkV2-stat h3),
+.bookingsLock :global(.bkV2-summaryCard strong),
+.bookingsLock :global(.bkV2-summaryCard b),
+.bookingsLock :global(.bkV2-summaryCard h2),
+.bookingsLock :global(.bkV2-summaryCard h3),
+.bookingsLock :global(.bkV2-metricCard strong),
+.bookingsLock :global(.bkV2-metricCard b),
+.bookingsLock :global(.bkV2-metricCard h2),
+.bookingsLock :global(.bkV2-metricCard h3) {
+  display: block !important;
+  max-width: 100% !important;
+  font-size: clamp(1.65rem, 2vw, 2.15rem) !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: clip !important;
+}
+
+/* Change text under the value */
+.bookingsLock :global(.bkV2-kpi small),
+.bookingsLock :global(.bkV2-kpi em),
+.bookingsLock :global(.bkV2-kpi p),
+.bookingsLock :global(.bkV2-stat small),
+.bookingsLock :global(.bkV2-stat em),
+.bookingsLock :global(.bkV2-stat p),
+.bookingsLock :global(.bkV2-summaryCard small),
+.bookingsLock :global(.bkV2-summaryCard em),
+.bookingsLock :global(.bkV2-summaryCard p),
+.bookingsLock :global(.bkV2-metricCard small),
+.bookingsLock :global(.bkV2-metricCard em),
+.bookingsLock :global(.bkV2-metricCard p) {
+  display: block !important;
+  margin-top: 0.12rem !important;
+  font-size: 0.68rem !important;
+  line-height: 1.15 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+}
+
+/* Revenue card extra safety */
+.bookingsLock :global(.bkV2-kpiRow > :nth-child(4)),
+.bookingsLock :global(.bkV2-stats > :nth-child(4)),
+.bookingsLock :global(.bkV2-summaryGrid > :nth-child(4)),
+.bookingsLock :global(.bkV2-metrics > :nth-child(4)) {
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.bookingsLock :global(.bkV2-kpiRow > :nth-child(4) strong),
+.bookingsLock :global(.bkV2-stats > :nth-child(4) strong),
+.bookingsLock :global(.bkV2-summaryGrid > :nth-child(4) strong),
+.bookingsLock :global(.bkV2-metrics > :nth-child(4) strong) {
+  font-size: clamp(1.55rem, 1.85vw, 2rem) !important;
+}
+
+/* =========================================================
+   BEE-AURA BOOKINGS REAL KPI FIX
+   Page: /bookings only
+   Real class: .bkV2-stats article
+   Fix: Revenue Booked amount and % text must not overlap
+========================================================= */
+
+.bookingsLock :global(.bkV2-stats) {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 0.85rem !important;
+  align-items: stretch !important;
+}
+
+.bookingsLock :global(.bkV2-stats article) {
+  min-width: 0 !important;
+  min-height: 108px !important;
+  display: grid !important;
+  grid-template-columns: 46px minmax(0, 1fr) !important;
+  grid-template-rows: auto auto auto !important;
+  align-content: center !important;
+  align-items: center !important;
+  column-gap: 0.8rem !important;
+  row-gap: 0.18rem !important;
+  overflow: hidden !important;
+}
+
+.bookingsLock :global(.bkV2-stats article > span:first-child) {
+  grid-column: 1 !important;
+  grid-row: 1 / 4 !important;
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  align-self: center !important;
+}
+
+.bookingsLock :global(.bkV2-stats article > div) {
+  grid-column: 2 !important;
+  grid-row: 1 / 4 !important;
+  min-width: 0 !important;
+  display: grid !important;
+  gap: 0.22rem !important;
+  align-content: center !important;
+}
+
+.bookingsLock :global(.bkV2-stats article p) {
+  margin: 0 !important;
+  max-width: 100% !important;
+  color: rgba(226, 232, 240, 0.78) !important;
+  font-size: 0.74rem !important;
+  line-height: 1.1 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+
+.bookingsLock :global(.bkV2-stats article strong) {
+  display: block !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  color: #F8FAFC !important;
+  font-size: clamp(1.45rem, 1.65vw, 1.85rem) !important;
+  line-height: 1 !important;
+  letter-spacing: -0.035em !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: clip !important;
+}
+
+.bookingsLock :global(.bkV2-stats article small) {
+  display: block !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  color: #41E0B0 !important;
+  font-size: 0.66rem !important;
+  line-height: 1.12 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+
+/* Revenue Booked card gets slightly smaller value text because it has the longest number */
+.bookingsLock :global(.bkV2-stats article:nth-child(4) strong) {
+  font-size: clamp(1.28rem, 1.45vw, 1.6rem) !important;
+  letter-spacing: -0.045em !important;
+}
+
+.bookingsLock :global(.bkV2-stats article:nth-child(4) small) {
+  font-size: 0.62rem !important;
+  line-height: 1.12 !important;
+}
+
+/* =========================================================
+   BEE-AURA BOOKINGS TEXT CLARITY + ACTION VISIBILITY
+   Page: /bookings only
+   Purpose:
+   - make writing clearer / brighter
+   - keep labels readable
+   - fix KPI overlap using real .bkV2-stats classes
+   - make clickable tabs/actions visually obvious
+========================================================= */
+
+/* Main text clarity */
+.bookingsLock :global(.bkV2-page),
+.bookingsLock :global(.bkV2-page h1),
+.bookingsLock :global(.bkV2-page h2),
+.bookingsLock :global(.bkV2-page h3),
+.bookingsLock :global(.bkV2-page strong),
+.bookingsLock :global(.bkV2-page b) {
+  color: #F8FAFC !important;
+}
+
+.bookingsLock :global(.bkV2-page p),
+.bookingsLock :global(.bkV2-page span),
+.bookingsLock :global(.bkV2-page small),
+.bookingsLock :global(.bkV2-page em),
+.bookingsLock :global(.bkV2-page label),
+.bookingsLock :global(.bkV2-page td),
+.bookingsLock :global(.bkV2-page th) {
+  color: rgba(241, 245, 249, 0.88) !important;
+}
+
+/* Muted labels still readable, not dull grey */
+.bookingsLock :global(.bkV2-title p),
+.bookingsLock :global(.bkV2-cardHeader p),
+.bookingsLock :global(.bkV2-performanceHeader p),
+.bookingsLock :global(.bkV2-detailGrid span),
+.bookingsLock :global(.bkV2-tableHead span),
+.bookingsLock :global(.bkV2-row small),
+.bookingsLock :global(.bkV2-timeRow small) {
+  color: rgba(226, 232, 240, 0.82) !important;
+}
+
+/* Real KPI structure: stop Revenue Booked overlap */
+.bookingsLock :global(.bkV2-stats) {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 0.85rem !important;
+  align-items: stretch !important;
+}
+
+.bookingsLock :global(.bkV2-stats article) {
+  min-width: 0 !important;
+  min-height: 108px !important;
+  display: grid !important;
+  grid-template-columns: 46px minmax(0, 1fr) !important;
+  align-items: center !important;
+  column-gap: 0.8rem !important;
+  overflow: hidden !important;
+}
+
+.bookingsLock :global(.bkV2-stats article > span:first-child) {
+  grid-column: 1 !important;
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  align-self: center !important;
+}
+
+.bookingsLock :global(.bkV2-stats article > div) {
+  grid-column: 2 !important;
+  min-width: 0 !important;
+  display: grid !important;
+  gap: 0.22rem !important;
+  align-content: center !important;
+}
+
+.bookingsLock :global(.bkV2-stats article p) {
+  margin: 0 !important;
+  color: rgba(226, 232, 240, 0.86) !important;
+  font-size: 0.74rem !important;
+  line-height: 1.12 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+}
+
+.bookingsLock :global(.bkV2-stats article strong) {
+  display: block !important;
+  margin: 0 !important;
+  color: #F8FAFC !important;
+  font-size: clamp(1.42rem, 1.65vw, 1.82rem) !important;
+  line-height: 1 !important;
+  letter-spacing: -0.035em !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: clip !important;
+}
+
+.bookingsLock :global(.bkV2-stats article small) {
+  display: block !important;
+  margin: 0 !important;
+  color: #41E0B0 !important;
+  font-size: 0.64rem !important;
+  line-height: 1.14 !important;
+  white-space: normal !important;
+}
+
+/* Revenue card specifically */
+.bookingsLock :global(.bkV2-stats article:nth-child(4) strong) {
+  font-size: clamp(1.22rem, 1.42vw, 1.54rem) !important;
+  letter-spacing: -0.05em !important;
+}
+
+.bookingsLock :global(.bkV2-stats article:nth-child(4) small) {
+  font-size: 0.6rem !important;
+  line-height: 1.12 !important;
+}
+
+/* Actioned / clickable controls: make obvious */
+.bookingsLock :global(a),
+.bookingsLock :global(button),
+.bookingsLock :global(select) {
+  cursor: pointer !important;
+}
+
+.bookingsLock :global(a:hover),
+.bookingsLock :global(button:hover) {
+  filter: brightness(1.08) !important;
+}
+
+.bookingsLock :global(a:focus-visible),
+.bookingsLock :global(button:focus-visible),
+.bookingsLock :global(select:focus-visible),
+.bookingsLock :global(input:focus-visible) {
+  outline: 2px solid rgba(243, 200, 75, 0.9) !important;
+  outline-offset: 3px !important;
+}
+
+/* Calendar/day tabs and action chips */
+.bookingsLock :global(.bkV2-calendarDay),
+.bookingsLock :global(.bkV2-row),
+.bookingsLock :global(.bkV2-timeRow) {
+  transition:
+    transform 140ms ease,
+    border-color 140ms ease,
+    background 140ms ease,
+    box-shadow 140ms ease !important;
+}
+
+.bookingsLock :global(.bkV2-calendarDay:hover),
+.bookingsLock :global(.bkV2-row:hover),
+.bookingsLock :global(.bkV2-timeRow:hover) {
+  transform: translateY(-1px) !important;
+}
+
+/* Blue/white date and time chips */
+.bookingsLock :global(.bkV2-date),
+.bookingsLock :global(.bkV2-timeRow > strong) {
+  background:
+    radial-gradient(circle at 30% 18%, rgba(77, 163, 255, 0.18), transparent 34%),
+    linear-gradient(180deg, rgba(14, 38, 63, 0.98), rgba(6, 22, 40, 0.98)) !important;
+  color: #F8FAFC !important;
+  border: 1px solid rgba(77, 163, 255, 0.52) !important;
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.18),
+    0 0 14px rgba(77, 163, 255, 0.10) !important;
+}
+
+.bookingsLock :global(.bkV2-date strong),
+.bookingsLock :global(.bkV2-date em),
+.bookingsLock :global(.bkV2-date small),
+.bookingsLock :global(.bkV2-timeRow > strong) {
+  color: #F8FAFC !important;
+}
+
+/* Keep status chips readable */
+.bookingsLock :global(.bkV2-status.completed),
+.bookingsLock :global(.bkV2-status.confirmed) {
+  color: #CFFFE8 !important;
+}
+
+.bookingsLock :global(.bkV2-status.in-progress) {
+  color: #DDF0FF !important;
+}
+
+.bookingsLock :global(.bkV2-status.pending) {
+  color: #FFF2D6 !important;
+}
+
+/* =========================================================
+   BEE-AURA BOOKINGS KPI MARKUP FIX
+   Page: /bookings only
+   Uses real .bkV2-statBody wrapper
+========================================================= */
+
+.bookingsLock :global(.bkV2-stats article) {
+  display: grid !important;
+  grid-template-columns: 46px minmax(0, 1fr) !important;
+  align-items: center !important;
+  column-gap: 0.8rem !important;
+  min-height: 108px !important;
+  overflow: hidden !important;
+}
+
+.bookingsLock :global(.bkV2-stats article > span:first-child) {
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+}
+
+.bookingsLock :global(.bkV2-statBody) {
+  grid-column: 2 !important;
+  min-width: 0 !important;
+  display: grid !important;
+  gap: 0.24rem !important;
+  align-content: center !important;
+}
+
+.bookingsLock :global(.bkV2-statBody p) {
+  margin: 0 !important;
+  color: rgba(248, 250, 252, 0.9) !important;
+  font-size: 0.74rem !important;
+  line-height: 1.12 !important;
+}
+
+.bookingsLock :global(.bkV2-statBody strong) {
+  display: block !important;
+  margin: 0 !important;
+  color: #FFFFFF !important;
+  font-size: clamp(1.55rem, 1.7vw, 1.9rem) !important;
+  line-height: 1 !important;
+  letter-spacing: -0.035em !important;
+  white-space: nowrap !important;
+}
+
+.bookingsLock :global(.bkV2-statBody small) {
+  display: block !important;
+  margin: 0 !important;
+  color: #41E0B0 !important;
+  font-size: 0.66rem !important;
+  line-height: 1.12 !important;
+  white-space: normal !important;
+}
+
+.bookingsLock :global(.bkV2-stats article:nth-child(4) .bkV2-statBody strong) {
+  font-size: clamp(1.34rem, 1.5vw, 1.65rem) !important;
+}
+
+/* Keep page text clear */
+.bookingsLock :global(.bkV2-page h1),
+.bookingsLock :global(.bkV2-page h2),
+.bookingsLock :global(.bkV2-page h3),
+.bookingsLock :global(.bkV2-page strong),
+.bookingsLock :global(.bkV2-page b) {
+  color: #FFFFFF !important;
+}
+
+.bookingsLock :global(.bkV2-page p),
+.bookingsLock :global(.bkV2-page span),
+.bookingsLock :global(.bkV2-page small),
+.bookingsLock :global(.bkV2-page em) {
+  color: rgba(241, 245, 249, 0.9) !important;
+}
+
+/* =========================================================
+   BEE-AURA BOOKINGS PERFORMANCE HEADER FIX
+   Page: /bookings only
+   Fix:
+   - Booking Performance header too large
+   - Last 7 Days too large
+   - Eyebrow too spaced out
+========================================================= */
+
+.bookingsLock :global(.bkV2-performanceHeader) {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+  padding-bottom: 0.7rem !important;
+  margin-bottom: 0.75rem !important;
+  border-bottom: 1px solid rgba(77, 163, 255, 0.22) !important;
+}
+
+.bookingsLock :global(.bkV2-performanceHeader > div) {
+  display: grid !important;
+  gap: 0.28rem !important;
+  min-width: 0 !important;
+}
+
+.bookingsLock :global(.bkV2-sectionEyebrow) {
+  margin: 0 !important;
+  color: #FFD24A !important;
+  font-size: 0.68rem !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+}
+
+.bookingsLock :global(.bkV2-performanceHeader h2) {
+  margin: 0 !important;
+  color: #F8FAFC !important;
+  font-size: clamp(1.15rem, 1.35vw, 1.45rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.035em !important;
+  text-shadow: none !important;
+}
+
+.bookingsLock :global(.bkV2-performanceHeader > strong) {
+  flex: 0 0 auto !important;
+  align-self: flex-start !important;
+  margin-top: 0.05rem !important;
+  color: rgba(241, 245, 249, 0.82) !important;
+  font-size: 0.82rem !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+  white-space: nowrap !important;
+  letter-spacing: 0 !important;
+}
+
+/* Keep the graph panel compact below the corrected header */
+.bookingsLock :global(.bkV2-performanceLegend) {
+  margin-top: 0.35rem !important;
+  margin-bottom: 0.6rem !important;
+}
+
+.bookingsLock :global(.bkV2-bookingPerformancePanel svg) {
+  margin-top: 0.35rem !important;
+}
+
+
+/* =========================================================
+   BEE-AURA BOOKINGS GRAPH HEADER HARD FIX
+   Page: /bookings only
+   Fix: Booking Performance title/range was too large.
+========================================================= */
+
+.bookingsLock :global(.baBkgGraphTop) {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+  padding: 0 0 0.65rem !important;
+  margin: 0 0 0.75rem !important;
+  border-bottom: 1px solid rgba(77, 163, 255, 0.22) !important;
+}
+
+.bookingsLock :global(.baBkgGraphCopy) {
+  display: grid !important;
+  gap: 0.26rem !important;
+  min-width: 0 !important;
+}
+
+.bookingsLock :global(.baBkgGraphKicker) {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #FFD24A !important;
+  font-size: 0.68rem !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+.bookingsLock :global(.baBkgGraphTitle) {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #F8FAFC !important;
+  font-size: 1.18rem !important;
+  line-height: 1.05 !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.035em !important;
+  text-shadow: none !important;
+}
+
+.bookingsLock :global(.baBkgGraphRange) {
+  flex: 0 0 auto !important;
+  align-self: flex-start !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: rgba(241, 245, 249, 0.82) !important;
+  font-size: 0.8rem !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+  white-space: nowrap !important;
+  letter-spacing: 0 !important;
+}
+
+/* =========================================================
+   BEE-AURA BOOKINGS GRAPH HEADER NEUTRAL ELEMENT FIX
+   Page: /bookings only
+   Fix: old global h2/strong rules cannot control this header anymore
+========================================================= */
+
+.bookingsLock :global(.bkV2-performanceHeader.baBkgGraphTop) {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 0.8rem !important;
+  padding: 0 0 0.55rem !important;
+  margin: 0 0 0.65rem !important;
+  border-bottom: 1px solid rgba(77, 163, 255, 0.22) !important;
+}
+
+.bookingsLock :global(.baBkgGraphCopy) {
+  display: grid !important;
+  gap: 0.22rem !important;
+  min-width: 0 !important;
+}
+
+.bookingsLock :global(p.baBkgGraphKicker) {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #FFD24A !important;
+  font-size: 0.62rem !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+}
+
+.bookingsLock :global(p.baBkgGraphTitle) {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #F8FAFC !important;
+  font-size: 1rem !important;
+  line-height: 1.05 !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.025em !important;
+  text-shadow: none !important;
+}
+
+.bookingsLock :global(span.baBkgGraphRange) {
+  flex: 0 0 auto !important;
+  align-self: flex-start !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: rgba(241, 245, 249, 0.78) !important;
+  font-size: 0.72rem !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+  white-space: nowrap !important;
+}
+
+/* =========================================================
+   BEE-AURA BOOKINGS GRAPH HEADER NEUTRAL ELEMENT FIX
+   Page: /bookings only
+   Fix: old global h2/strong rules cannot control this header anymore
+========================================================= */
+
+.bookingsLock :global(.bkV2-performanceHeader.baBkgGraphTop) {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 0.8rem !important;
+  padding: 0 0 0.55rem !important;
+  margin: 0 0 0.65rem !important;
+  border-bottom: 1px solid rgba(77, 163, 255, 0.22) !important;
+}
+
+.bookingsLock :global(.baBkgGraphCopy) {
+  display: grid !important;
+  gap: 0.22rem !important;
+  min-width: 0 !important;
+}
+
+.bookingsLock :global(p.baBkgGraphKicker) {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #FFD24A !important;
+  font-size: 0.62rem !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+}
+
+.bookingsLock :global(p.baBkgGraphTitle) {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #F8FAFC !important;
+  font-size: 1rem !important;
+  line-height: 1.05 !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.025em !important;
+  text-shadow: none !important;
+}
+
+.bookingsLock :global(span.baBkgGraphRange) {
+  flex: 0 0 auto !important;
+  align-self: flex-start !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: rgba(241, 245, 249, 0.78) !important;
+  font-size: 0.72rem !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+  white-space: nowrap !important;
+}
+
+
+/* =========================================================
+   BEE-AURA BOOKINGS REAL TWO COLUMN LAYOUT FIX
+   Page: /bookings only
+   Real fix:
+   - left column = Upcoming + Selected Booking
+   - right column = Today + Graph
+   - Aura sits below grid full width
+========================================================= */
+
+.bookingsLock :global(.bkV2-grid) {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.42fr) minmax(340px, 0.9fr) !important;
+  grid-template-areas: none !important;
+  align-items: start !important;
+  gap: 1rem !important;
+}
+
+.bookingsLock :global(.bkV2-mainColumn) {
+  display: grid !important;
+  gap: 1rem !important;
+  align-content: start !important;
+  align-self: start !important;
+  min-width: 0 !important;
+}
+
+.bookingsLock :global(.bkV2-mainColumn .bkV2-upcoming),
+.bookingsLock :global(.bkV2-mainColumn .bkV2-details) {
+  grid-area: auto !important;
+  align-self: start !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.bookingsLock :global(.bkV2-side) {
+  grid-area: auto !important;
+  display: grid !important;
+  gap: 1rem !important;
+  align-self: start !important;
+  min-width: 0 !important;
+}
+
+.bookingsLock :global(.bkV2-aura) {
+  grid-area: auto !important;
+  margin-top: 1rem !important;
+}
+
+@media (max-width: 1100px) {
+  .bookingsLock :global(.bkV2-grid) {
+    grid-template-columns: 1fr !important;
+  }
+}
