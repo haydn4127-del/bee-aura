@@ -1730,3 +1730,1438 @@
   }
 }
 
+
+/* === CUSTOMERS FINAL BUTTON FIT PASS === */
+.customersPage td:last-child,
+.customersPage th:last-child {
+  min-width: 104px;
+  white-space: nowrap;
+}
+
+.customersPage td:last-child button,
+.customersPage td:last-child a {
+  min-width: 54px;
+  white-space: nowrap;
+  line-height: 1.05;
+  padding-inline: 10px;
+}
+
+.customersPage td:last-child {
+  overflow: visible;
+}
+
+.ownerChip span,
+.customerAvatar,
+.avatar,
+.initials,
+.initialBadge {
+  background: linear-gradient(135deg, #ffd84d 0%, #ffb12b 58%, #58c8ff 100%) !important;
+  color: #06111f !important;
+  border-color: rgba(255, 232, 130, 0.82) !important;
+  font-weight: 950 !important;
+}
+/* === END CUSTOMERS FINAL BUTTON FIT PASS === */
+
+
+/* === BEE-AURA CUSTOMERS ALIGNMENT PASS V1 === */
+td:last-child,
+th:last-child {
+  min-width: 116px;
+  white-space: nowrap;
+}
+
+td:last-child button,
+td:last-child a {
+  min-width: 52px;
+  white-space: nowrap;
+  line-height: 1.05;
+}
+
+.avatar,
+.initials,
+.customerAvatar {
+  background: linear-gradient(135deg, #ffd84d 0%, #f5c84c 50%, #ffb52b 100%) !important;
+  color: #08101b !important;
+  border: 1px solid rgba(255, 232, 130, 0.88) !important;
+  font-weight: 900 !important;
+}
+/* === END BEE-AURA CUSTOMERS ALIGNMENT PASS V1 === */
+
+/* === BEE-AURA CUSTOMERS FINAL FIT V2 === */
+.customersPage td:nth-child(3),
+.customersPage th:nth-child(3) {
+  min-width: 86px;
+  white-space: nowrap;
+}
+
+.customersPage td:last-child,
+.customersPage th:last-child {
+  min-width: 122px;
+  white-space: nowrap;
+}
+
+.customersPage td:last-child button,
+.customersPage td:last-child a {
+  min-width: 62px;
+  white-space: nowrap !important;
+  line-height: 1.05;
+  padding-inline: 10px;
+}
+
+.ownerChip > span:first-child,
+.avatar,
+.initials,
+.initialBadge,
+.customerAvatar {
+  background: linear-gradient(135deg, #ffd84d 0%, #f5c84c 52%, #ffb52b 100%) !important;
+  color: #08101b !important;
+  border: 1px solid rgba(255, 232, 130, 0.88) !important;
+  font-weight: 950 !important;
+}
+/* === END BEE-AURA CUSTOMERS FINAL FIT V2 === */
+
+/* === BEE-AURA CUSTOMERS OWNER INITIALS FINAL V3 === */
+.ownerChip > span:first-child,
+.avatar,
+.initials,
+.initialBadge,
+.customerAvatar {
+  background: linear-gradient(135deg, #ffd84d 0%, #f5c84c 56%, #ffad28 100%) !important;
+  color: #08101b !important;
+  border: 1px solid rgba(255, 232, 130, 0.9) !important;
+  font-weight: 950 !important;
+}
+
+.customersPage td:nth-child(3),
+.customersPage th:nth-child(3) {
+  min-width: 86px;
+  white-space: nowrap;
+}
+
+.customersPage td:last-child,
+.customersPage th:last-child {
+  min-width: 122px;
+  white-space: nowrap;
+}
+
+.customersPage td:last-child button,
+.customersPage td:last-child a {
+  min-width: 62px;
+  white-space: nowrap !important;
+  line-height: 1.05;
+  padding-inline: 10px;
+}
+/* === END BEE-AURA CUSTOMERS OWNER INITIALS FINAL V3 === */
+
+/* BEE-AURA FINAL FLOW LOCK V5: module-local generated lock for app/customers/customers.module.css */
+
+.customersPage {
+width: 100%;
+  max-width: none;
+  color: var(--text-primary, #F8FAFC);
+}
+
+
+
+
+
+
+
+
+.avatar,
+.customerAvatar,
+.customerInitials,
+.initials,
+.nameAvatar,
+.nameInitials,
+.ownerChip {
+display: grid;
+  place-items: center;
+  background: var(--brand-gold, #CFA43B) !important;
+  color: var(--on-brand-gold, #0B1220) !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+
+.rowActions {
+display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.45rem;
+  flex-wrap: nowrap;
+  min-width: max-content;
+}
+
+
+
+.rowActions button,
+.rowActions a {
+  white-space: nowrap;
+}
+
+
+.auraStrip {
+display: grid;
+  grid-template-columns: minmax(220px, 270px) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(1.25rem, 2.2vw, 2.25rem);
+  width: 100%;
+  min-height: 260px;
+  margin-top: clamp(1.15rem, 2vw, 1.8rem);
+  padding: clamp(1.15rem, 2vw, 1.65rem);
+  border: 1px solid rgba(207, 164, 59, 0.38);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(207, 164, 59, 0.2), transparent 34%),
+    radial-gradient(circle at 84% 0%, rgba(77, 163, 255, 0.13), transparent 36%),
+    linear-gradient(135deg, rgba(18, 43, 61, 0.96), rgba(5, 13, 27, 0.98));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+  overflow: visible;
+}
+
+
+.auraBottomDock,
+.auraImageBox {
+display: grid;
+  place-items: center;
+  width: min(100%, 270px);
+  min-height: 220px;
+  border-radius: 24px;
+  border: 1px solid rgba(207, 164, 59, 0.28);
+  background:
+    radial-gradient(circle at 50% 38%, rgba(77, 163, 255, 0.22), transparent 44%),
+    rgba(7, 18, 31, 0.8);
+  overflow: hidden;
+}
+
+
+
+.auraStrip img,
+.auraBottomDock img,
+.auraImageBox img {
+  display: block;
+  width: clamp(165px, 15vw, 230px);
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 22px rgba(77, 163, 255, 0.3))
+    drop-shadow(0 20px 34px rgba(0, 0, 0, 0.34));
+}
+
+.auraStrip h2 {
+  color: var(--text-primary, #F8FAFC);
+  font-size: clamp(1.45rem, 2.05vw, 2.35rem);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+.auraStrip p,
+.auraStrip span,
+.auraStrip small {
+  overflow-wrap: anywhere;
+}
+
+
+@media (max-width: 1180px) {
+
+
+
+  .auraStrip {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* BEE-AURA PRODUCT FLOW V7: customers owner + Aura consistency */
+.ownerChip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.65rem !important;
+  min-height: 46px !important;
+  padding: 0.45rem 0.72rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(207, 164, 59, 0.48) !important;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(5, 13, 27, 0.94) !important;
+  color: #F8FAFC !important;
+}
+
+.ownerChip > span:first-child,
+.customerAvatar,
+.customerInitials,
+.nameAvatar,
+.nameInitials,
+.avatar,
+.initials {
+  display: grid !important;
+  place-items: center !important;
+  background: var(--brand-gold, #CFA43B) !important;
+  color: var(--on-brand-gold, #0B1220) !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+.ownerChip strong,
+.ownerChip small {
+  color: #F8FAFC !important;
+}
+
+.auraStrip {
+  display: grid !important;
+  grid-template-columns: minmax(220px, 270px) minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  gap: clamp(1.25rem, 2.2vw, 2.25rem) !important;
+  min-height: 250px !important;
+  padding: clamp(1.15rem, 2vw, 1.65rem) !important;
+}
+
+.auraImageBox,
+.auraBottomDock {
+  display: grid !important;
+  place-items: center !important;
+  width: min(100%, 260px) !important;
+  min-height: 210px !important;
+}
+
+.auraImageBox img,
+.auraBottomDock img,
+.auraStrip img {
+  width: clamp(160px, 14vw, 220px) !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+/* BEE-AURA RESPONSIVE LOCK V8: CSS-module responsive consistency */
+
+@media (min-width: 981px) {
+  .header,
+  .hero,
+  .topbar,
+  .pageHeader {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: start !important;
+    gap: 1rem !important;
+  }
+
+  .headerActions,
+  .topActions,
+  .toolbar,
+  .controls,
+  .filterBar,
+  .filters,
+  .actionsBar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 0.65rem !important;
+    flex-wrap: wrap !important;
+    min-width: 0 !important;
+  }
+
+  .auraStrip,
+  .auraFollowUpPanel,
+  .auraPanel,
+  .auditAuraBar {
+    display: grid !important;
+    grid-template-columns: minmax(210px, 270px) minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    gap: clamp(1rem, 1.8vw, 2rem) !important;
+    min-height: 250px !important;
+  }
+
+  .auraImageBox,
+  .auraBottomDock,
+  .botWrap,
+  .auditAuraBot {
+    width: min(100%, 260px) !important;
+    min-height: 200px !important;
+  }
+}
+
+@media (min-width: 981px) and (max-width: 1366px) {
+  .header,
+  .hero,
+  .topbar,
+  .pageHeader,
+  .auraStrip,
+  .auraFollowUpPanel,
+  .auraPanel,
+  .auditAuraBar {
+    padding: 0.95rem !important;
+  }
+
+  .auraImageBox,
+  .auraBottomDock,
+  .botWrap,
+  .auditAuraBot {
+    min-height: 185px !important;
+  }
+
+  .auraImageBox img,
+  .auraBottomDock img,
+  .botWrap img,
+  .auditAuraBot img,
+  .auraStrip img,
+  .auraFollowUpPanel img,
+  .auraPanel img,
+  .auditAuraBar img {
+    width: clamp(145px, 13vw, 205px) !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .header,
+  .hero,
+  .topbar,
+  .pageHeader,
+  .auraStrip,
+  .auraFollowUpPanel,
+  .auraPanel,
+  .auditAuraBar {
+    grid-template-columns: 1fr !important;
+  }
+
+  .headerActions,
+  .topActions,
+  .toolbar,
+  .controls,
+  .filterBar,
+  .filters,
+  .actionsBar {
+    justify-content: flex-start !important;
+  }
+}
+
+.ownerChip,
+.ownerButton {
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(5, 13, 27, 0.94) !important;
+  border-color: rgba(207, 164, 59, 0.48) !important;
+  color: #F8FAFC !important;
+}
+
+.ownerChip > span:first-child,
+.ownerButton > span:first-child,
+.customerAvatar,
+.customerInitials,
+.nameAvatar,
+.nameInitials,
+.avatar,
+.initials {
+  background: var(--brand-gold, #CFA43B) !important;
+  color: var(--on-brand-gold, #0B1220) !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+/* BEE-AURA V9 EXACT PAGE-FLOW POLISH: customers exact page polish */
+
+.header,
+.hero,
+.topbar,
+.pageHeader {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: start !important;
+  gap: 1rem !important;
+}
+
+.headerActions,
+.topActions,
+.toolbar,
+.controls,
+.filterBar,
+.filters,
+.actionsBar {
+  justify-content: flex-end !important;
+  align-items: flex-start !important;
+  margin-left: auto !important;
+}
+
+.ownerChip {
+  justify-self: end !important;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(5, 13, 27, 0.94) !important;
+  border-color: rgba(207, 164, 59, 0.48) !important;
+  color: #F8FAFC !important;
+}
+
+.ownerChip > span:first-child,
+.customerAvatar,
+.customerInitials,
+.nameAvatar,
+.nameInitials,
+.avatar,
+.initials {
+  background: var(--brand-gold, #CFA43B) !important;
+  color: var(--on-brand-gold, #0B1220) !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+.tab,
+.filterButton,
+.channelPill,
+.statusPill,
+.priorityPill,
+.sourcePill,
+.chip,
+.pill {
+  border-radius: 999px !important;
+  font-weight: 900 !important;
+}
+
+.auraStrip {
+  display: grid !important;
+  grid-template-columns: minmax(250px, 310px) minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: clamp(1.25rem, 2.2vw, 2.25rem) !important;
+  min-height: 250px !important;
+  padding: clamp(1.15rem, 2vw, 1.65rem) !important;
+}
+
+.auraStrip > * {
+  min-width: 0 !important;
+}
+
+.auraImageBox,
+.auraBottomDock {
+  display: grid !important;
+  place-items: center !important;
+  width: min(100%, 290px) !important;
+  min-height: 220px !important;
+}
+
+.auraImageBox img,
+.auraBottomDock img,
+.auraStrip img {
+  width: clamp(165px, 14vw, 230px) !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+.auraStrip h2,
+.auraStrip p,
+.auraStrip span,
+.auraStrip small,
+.auraStrip strong {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  max-width: 980px !important;
+}
+
+@media (max-width: 980px) {
+  .header,
+  .hero,
+  .topbar,
+  .pageHeader,
+  .auraStrip {
+    grid-template-columns: 1fr !important;
+  }
+
+  .headerActions,
+  .topActions,
+  .toolbar,
+  .controls,
+  .filterBar,
+  .filters,
+  .actionsBar {
+    justify-content: flex-start !important;
+  }
+}
+
+/* BEE-AURA V10 EXACT PRODUCT POLISH: customers exact module cleanup */
+
+.auraStrip {
+  display: none !important;
+}
+
+.ownerChip {
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(5, 13, 27, 0.94) !important;
+  border-color: rgba(207, 164, 59, 0.48) !important;
+  color: #F8FAFC !important;
+}
+
+.ownerChip > span:first-child,
+.customerAvatar,
+.customerInitials,
+.nameAvatar,
+.nameInitials,
+.avatar,
+.initials {
+  display: grid !important;
+  place-items: center !important;
+  background: var(--brand-gold, #CFA43B) !important;
+  color: var(--on-brand-gold, #0B1220) !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+/* BEE-AURA V11 PRECISION CORRECTION: remove old squashed customer Aura and lock owner initials */
+
+.auraStrip,
+.auraPanel,
+.footerAura,
+.watchPanel {
+  display: none !important;
+}
+
+.ownerChip {
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(5, 13, 27, 0.94) !important;
+  border-color: rgba(207, 164, 59, 0.48) !important;
+  color: #F8FAFC !important;
+}
+
+.ownerChip > span:first-child,
+.customerAvatar,
+.customerInitials,
+.nameAvatar,
+.nameInitials,
+.avatar,
+.initials {
+  display: grid !important;
+  place-items: center !important;
+  background: var(--brand-gold, #CFA43B) !important;
+  color: var(--on-brand-gold, #0B1220) !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+
+/* =========================================================
+   CUSTOMERS RESTORED TABLE POLISH
+   Page: /customers only
+   Purpose: make restored customer table visible, clean and actioned.
+========================================================= */
+
+.tablePanel {
+  display: block !important;
+}
+
+.tableHeader h2 {
+  margin: 0 !important;
+  color: #ffffff !important;
+  font-size: clamp(1.35rem, 1.8vw, 1.8rem) !important;
+  line-height: 1.05 !important;
+}
+
+.tableHeader p {
+  color: rgba(241, 245, 249, 0.82) !important;
+}
+
+.customerTable th {
+  color: rgba(241, 245, 249, 0.82) !important;
+}
+
+.customerTable td {
+  color: rgba(248, 250, 252, 0.92) !important;
+}
+
+.customerTable td strong {
+  color: #ffffff !important;
+}
+
+.customerTable td small {
+  color: rgba(203, 213, 225, 0.78) !important;
+}
+
+.rowSelected {
+  background:
+    radial-gradient(circle at 0% 50%, rgba(207, 164, 59, 0.08), transparent 36%),
+    rgba(77, 163, 255, 0.055) !important;
+}
+
+.customerName {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 0.55rem;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.customerName > span {
+  grid-row: 1 / 3;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #cfa43b;
+  color: #0b1220;
+  font-weight: 950;
+}
+
+.customerName strong,
+.customerName small {
+  min-width: 0;
+}
+
+.sourceBadge,
+.typeBadge,
+.riskBadge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0.22rem 0.52rem;
+  border-radius: 999px;
+  border: 1px solid rgba(77, 163, 255, 0.28);
+  background: rgba(77, 163, 255, 0.1);
+  color: #eaf6ff !important;
+  font-size: 0.72rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.riskBadge {
+  border-color: rgba(207, 164, 59, 0.36);
+  background: rgba(207, 164, 59, 0.12);
+  color: #fff2d6 !important;
+}
+
+.rowActions {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.rowActions button {
+  min-height: 30px;
+  padding: 0 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(77, 163, 255, 0.32);
+  background: rgba(7, 22, 39, 0.95);
+  color: #f8fafc;
+  font-weight: 900;
+}
+
+.rowActions button:first-child {
+  background: #f3c84b;
+  border-color: #f3c84b;
+  color: #0b1220;
+}
+
+.tableFooter {
+  color: rgba(241, 245, 249, 0.84) !important;
+}
+
+.tableFooter strong {
+  color: #ffffff !important;
+}
+
+.tableFooter span {
+  color: rgba(203, 213, 225, 0.82) !important;
+}
+
+.pagination button {
+  cursor: pointer;
+}
+
+.emptyState p {
+  color: rgba(203, 213, 225, 0.82) !important;
+}
+
+/* =========================================================
+   CUSTOMERS TRAFFIC-LIGHT RISK BADGES
+   Page: /customers only
+   Low = green, Medium = amber, High = red
+========================================================= */
+
+.riskBadge[data-risk="low"] {
+  color: #CFFFE8 !important;
+  border-color: rgba(34, 160, 107, 0.62) !important;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(34, 160, 107, 0.18), transparent 38%),
+    rgba(34, 160, 107, 0.12) !important;
+  box-shadow:
+    0 0 14px rgba(34, 160, 107, 0.10),
+    inset 0 1px 0 rgba(255,255,255,0.06) !important;
+}
+
+.riskBadge[data-risk="medium"] {
+  color: #FFF2D6 !important;
+  border-color: rgba(217, 119, 6, 0.66) !important;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(217, 119, 6, 0.20), transparent 38%),
+    rgba(217, 119, 6, 0.14) !important;
+  box-shadow:
+    0 0 14px rgba(217, 119, 6, 0.10),
+    inset 0 1px 0 rgba(255,255,255,0.06) !important;
+}
+
+.riskBadge[data-risk="high"] {
+  color: #FFE1E4 !important;
+  border-color: rgba(217, 92, 99, 0.70) !important;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(217, 92, 99, 0.22), transparent 38%),
+    rgba(217, 92, 99, 0.15) !important;
+  box-shadow:
+    0 0 14px rgba(217, 92, 99, 0.11),
+    inset 0 1px 0 rgba(255,255,255,0.06) !important;
+}
+
+/* =========================================================
+   CUSTOMERS BRIGHTER RISK + SOURCE BADGES
+   Page: /customers only
+   Purpose:
+   - brighter traffic-light risk badges
+   - brighter source/channel badges
+========================================================= */
+
+/* Risk badges — brighter traffic-light colours */
+.riskBadge[data-risk="low"] {
+  color: #7CFFB2 !important;
+  border-color: rgba(34, 197, 94, 0.9) !important;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(34, 197, 94, 0.34), transparent 42%),
+    rgba(34, 197, 94, 0.18) !important;
+  box-shadow:
+    0 0 18px rgba(34, 197, 94, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+.riskBadge[data-risk="medium"] {
+  color: #FFD66B !important;
+  border-color: rgba(245, 158, 11, 0.95) !important;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(245, 158, 11, 0.36), transparent 42%),
+    rgba(245, 158, 11, 0.2) !important;
+  box-shadow:
+    0 0 18px rgba(245, 158, 11, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+.riskBadge[data-risk="high"] {
+  color: #FF8A95 !important;
+  border-color: rgba(248, 113, 113, 0.95) !important;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(248, 113, 113, 0.38), transparent 42%),
+    rgba(248, 113, 113, 0.22) !important;
+  box-shadow:
+    0 0 18px rgba(248, 113, 113, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Source/channel badges — brighter and easier to scan */
+.sourceBadge {
+  font-weight: 950 !important;
+  border-width: 1px !important;
+  box-shadow:
+    0 0 14px rgba(77, 163, 255, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+.sourceBadge[data-source="whatsapp"] {
+  color: #7CFFB2 !important;
+  border-color: rgba(34, 197, 94, 0.8) !important;
+  background: rgba(34, 197, 94, 0.18) !important;
+}
+
+.sourceBadge[data-source="website"] {
+  color: #7DD3FC !important;
+  border-color: rgba(56, 189, 248, 0.82) !important;
+  background: rgba(56, 189, 248, 0.18) !important;
+}
+
+.sourceBadge[data-source="email"] {
+  color: #C4B5FD !important;
+  border-color: rgba(168, 85, 247, 0.82) !important;
+  background: rgba(168, 85, 247, 0.18) !important;
+}
+
+.sourceBadge[data-source="facebook"] {
+  color: #93C5FD !important;
+  border-color: rgba(59, 130, 246, 0.84) !important;
+  background: rgba(59, 130, 246, 0.18) !important;
+}
+
+.sourceBadge[data-source="instagram"] {
+  color: #F0ABFC !important;
+  border-color: rgba(217, 70, 239, 0.82) !important;
+  background: rgba(217, 70, 239, 0.18) !important;
+}
+
+.sourceBadge[data-source="phone"] {
+  color: #67E8F9 !important;
+  border-color: rgba(6, 182, 212, 0.82) !important;
+  background: rgba(6, 182, 212, 0.18) !important;
+}
+
+.sourceBadge[data-source="sms"] {
+  color: #FDE68A !important;
+  border-color: rgba(234, 179, 8, 0.82) !important;
+  background: rgba(234, 179, 8, 0.18) !important;
+}
+
+/* =========================================================
+   CUSTOMERS FINAL FIT + YELLOW BUTTON POLISH
+   Page: /customers only
+   Purpose:
+   - stop header/table info overhanging
+   - make + Add Customer match Bee-Aura yellow theme
+   - keep page clean, premium and readable
+========================================================= */
+
+/* Page containment */
+.customersPage,
+.heroPanel,
+.tablePanel,
+.recordPanel,
+.intelligencePanel {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+/* Header layout should never hang off the page */
+.heroTop {
+  display: grid !important;
+  grid-template-columns: minmax(260px, 0.48fr) minmax(0, 1.52fr) !important;
+  align-items: start !important;
+  gap: 1rem !important;
+}
+
+.titleBlock {
+  min-width: 0 !important;
+}
+
+.headerTools,
+.commandBar {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.commandBar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex-wrap: wrap !important;
+  gap: 0.58rem !important;
+}
+
+/* Yellow system button — matches approved pages */
+.heroPanel .primaryButton,
+.commandBar .primaryButton {
+  background: #F3C84B !important;
+  border: 1px solid #F3C84B !important;
+  color: #0B1220 !important;
+  box-shadow:
+    0 12px 26px rgba(243, 200, 75, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
+  font-weight: 950 !important;
+  white-space: nowrap !important;
+}
+
+.heroPanel .primaryButton:hover,
+.commandBar .primaryButton:hover {
+  filter: brightness(1.04) !important;
+  box-shadow:
+    0 14px 30px rgba(243, 200, 75, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28) !important;
+}
+
+/* Header controls fit cleanly */
+.controlShell,
+.searchControl,
+.ownerChip {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.controlShell {
+  overflow: hidden !important;
+}
+
+.controlShell select,
+.controlShell input {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  text-overflow: ellipsis !important;
+}
+
+.searchControl {
+  flex: 1 1 260px !important;
+  max-width: 430px !important;
+}
+
+.ownerChip {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+}
+
+/* Metric cards: no text hanging */
+.metricGrid,
+.metricCard,
+.metricCard > div {
+  min-width: 0 !important;
+}
+
+.metricCard {
+  overflow: hidden !important;
+}
+
+.metricCard p,
+.metricCard small,
+.metricCard strong {
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Table remains readable and scroll-safe */
+.tablePanel {
+  overflow: hidden !important;
+}
+
+.tableScroll {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  max-width: 100% !important;
+}
+
+.customerTable {
+  width: 100% !important;
+  min-width: 1180px !important;
+  table-layout: fixed !important;
+}
+
+.customerTable th,
+.customerTable td {
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.customerTable td {
+  white-space: nowrap !important;
+}
+
+/* Let name + service detail breathe instead of breaking */
+.customerName,
+.customerName strong,
+.customerName small {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.customerName strong,
+.customerName small,
+.customerTable td small {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Action buttons fit and stay clickable */
+.rowActions {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 0.4rem !important;
+  max-width: 100% !important;
+}
+
+.rowActions button {
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  padding-inline: 0.62rem !important;
+}
+
+/* Badges fit cleanly */
+.sourceBadge,
+.typeBadge,
+.riskBadge {
+  max-width: 100% !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Selected record fields do not overhang */
+.recordGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+.recordGrid article,
+.recordGrid strong,
+.recordGrid span {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.recordGrid strong,
+.recordGrid span {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Intelligence panel stays contained */
+.intelligenceGrid,
+.breakdownPanel,
+.revenuePanel {
+  min-width: 0 !important;
+}
+
+.intelligencePanel {
+  overflow: hidden !important;
+}
+
+/* Bottom Aura panel containment */
+.baCustomerAura,
+.baCustomerAuraCopy {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.baCustomerAuraCopy h2,
+.baCustomerAuraCopy span {
+  max-width: 100% !important;
+}
+
+/* Responsive safety */
+@media (max-width: 1180px) {
+  .heroTop {
+    grid-template-columns: 1fr !important;
+  }
+
+  .commandBar {
+    justify-content: flex-start !important;
+  }
+
+  .searchControl {
+    max-width: 100% !important;
+  }
+
+  .recordGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .recordGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .customerTable {
+    min-width: 1050px !important;
+  }
+}
+
+/* =========================================================
+   CUSTOMERS FINAL TABLE READABILITY FIX
+   Page: /customers only
+   Purpose:
+   - stop customer names being over-truncated
+   - keep table contained
+   - keep badges/actions fitting
+========================================================= */
+
+/* Give the customer table enough internal width without breaking the page */
+.customerTable {
+  min-width: 1260px !important;
+  table-layout: fixed !important;
+}
+
+/* Column widths: make the Name column useful again */
+.customerTable th:nth-child(1),
+.customerTable td:nth-child(1) {
+  width: 170px !important;
+}
+
+.customerTable th:nth-child(2),
+.customerTable td:nth-child(2) {
+  width: 122px !important;
+}
+
+.customerTable th:nth-child(3),
+.customerTable td:nth-child(3) {
+  width: 86px !important;
+}
+
+.customerTable th:nth-child(4),
+.customerTable td:nth-child(4) {
+  width: 92px !important;
+}
+
+.customerTable th:nth-child(5),
+.customerTable td:nth-child(5) {
+  width: 82px !important;
+}
+
+.customerTable th:nth-child(6),
+.customerTable td:nth-child(6) {
+  width: 120px !important;
+}
+
+.customerTable th:nth-child(7),
+.customerTable td:nth-child(7) {
+  width: 90px !important;
+}
+
+.customerTable th:nth-child(8),
+.customerTable td:nth-child(8) {
+  width: 92px !important;
+}
+
+.customerTable th:nth-child(9),
+.customerTable td:nth-child(9) {
+  width: 108px !important;
+}
+
+.customerTable th:nth-child(10),
+.customerTable td:nth-child(10) {
+  width: 96px !important;
+}
+
+.customerTable th:nth-child(11),
+.customerTable td:nth-child(11) {
+  width: 84px !important;
+}
+
+.customerTable th:nth-child(12),
+.customerTable td:nth-child(12) {
+  width: 108px !important;
+}
+
+/* Customer name cell: show the real name, not ugly ellipsis */
+.customerName {
+  grid-template-columns: 32px minmax(0, 1fr) !important;
+  gap: 0.5rem !important;
+  align-items: center !important;
+}
+
+.customerName strong {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  line-height: 1.08 !important;
+  color: #ffffff !important;
+}
+
+.customerName small {
+  max-width: 110px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Keep normal cells tidy */
+.customerTable td:not(:first-child) {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Keep badges readable but contained */
+.sourceBadge,
+.typeBadge,
+.riskBadge {
+  max-width: 82px !important;
+  justify-content: center !important;
+}
+
+/* Keep actions neat */
+.rowActions {
+  width: 100% !important;
+  justify-content: flex-start !important;
+}
+
+.rowActions button {
+  min-height: 28px !important;
+  padding-inline: 0.55rem !important;
+  font-size: 0.68rem !important;
+}
+
+/* =========================================================
+   CUSTOMERS COLOURED TYPE BADGES + FINAL FIT SAFETY
+   Page: /customers only
+   Purpose:
+   - make Type column easier to scan
+   - VIP = gold
+   - keep all badge text inside the table
+========================================================= */
+
+/* Type badge base */
+.typeBadge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 24px !important;
+  max-width: 82px !important;
+  padding: 0.22rem 0.52rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(77, 163, 255, 0.32) !important;
+  background: rgba(77, 163, 255, 0.12) !important;
+  color: #eaf6ff !important;
+  font-size: 0.7rem !important;
+  font-weight: 950 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  box-shadow:
+    0 0 14px rgba(77, 163, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+/* VIP = Bee-Aura gold */
+.typeBadge[data-type="vip"] {
+  color: #0B1220 !important;
+  border-color: rgba(243, 200, 75, 0.95) !important;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.32), transparent 42%),
+    linear-gradient(135deg, #F3C84B, #D99A17) !important;
+  box-shadow:
+    0 0 18px rgba(243, 200, 75, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
+}
+
+/* Repeat = bright teal/green */
+.typeBadge[data-type="repeat"] {
+  color: #9FFFE0 !important;
+  border-color: rgba(45, 212, 191, 0.82) !important;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(45, 212, 191, 0.30), transparent 42%),
+    rgba(20, 184, 166, 0.18) !important;
+  box-shadow:
+    0 0 16px rgba(45, 212, 191, 0.18),
+    inset 0 1px 0 rgba(255,255,255,0.08) !important;
+}
+
+/* Active = clean green */
+.typeBadge[data-type="active"] {
+  color: #7CFFB2 !important;
+  border-color: rgba(34, 197, 94, 0.82) !important;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(34, 197, 94, 0.28), transparent 42%),
+    rgba(34, 197, 94, 0.17) !important;
+  box-shadow:
+    0 0 16px rgba(34, 197, 94, 0.16),
+    inset 0 1px 0 rgba(255,255,255,0.08) !important;
+}
+
+/* New = signature blue */
+.typeBadge[data-type="new"] {
+  color: #7DD3FC !important;
+  border-color: rgba(56, 189, 248, 0.86) !important;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(56, 189, 248, 0.30), transparent 42%),
+    rgba(56, 189, 248, 0.18) !important;
+  box-shadow:
+    0 0 16px rgba(56, 189, 248, 0.18),
+    inset 0 1px 0 rgba(255,255,255,0.08) !important;
+}
+
+/* Inactive = calm grey/slate */
+.typeBadge[data-type="inactive"] {
+  color: #CBD5E1 !important;
+  border-color: rgba(148, 163, 184, 0.55) !important;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(148, 163, 184, 0.20), transparent 42%),
+    rgba(148, 163, 184, 0.12) !important;
+  box-shadow:
+    0 0 12px rgba(148, 163, 184, 0.10),
+    inset 0 1px 0 rgba(255,255,255,0.06) !important;
+}
+
+/* Final badge containment */
+.sourceBadge,
+.typeBadge,
+.riskBadge {
+  vertical-align: middle !important;
+  max-width: 86px !important;
+}
+
+/* Keep Type and Source columns clear but contained */
+.customerTable th:nth-child(4),
+.customerTable td:nth-child(4),
+.customerTable th:nth-child(5),
+.customerTable td:nth-child(5),
+.customerTable th:nth-child(11),
+.customerTable td:nth-child(11) {
+  text-align: left !important;
+  overflow: hidden !important;
+}
+
+/* Prevent action buttons or badges flowing out of the page */
+.customerTable td,
+.customerTable th,
+.rowActions,
+.rowActions button {
+  min-width: 0 !important;
+}
+
+.rowActions {
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+.rowActions button {
+  max-width: 72px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* =========================================================
+   CUSTOMERS ACTION COLUMN READABILITY FIX
+   Page: /customers only
+   Fix:
+   - action buttons must show full text
+   - no half-visible View / Follow-up labels
+========================================================= */
+
+/* Give Actions column enough room */
+.customerTable th:nth-child(12),
+.customerTable td:nth-child(12) {
+  width: 142px !important;
+  min-width: 142px !important;
+  max-width: 142px !important;
+  overflow: visible !important;
+}
+
+/* Keep actions side-by-side and readable */
+.rowActions {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 0.5rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+/* Stop button text being cut */
+.rowActions button {
+  width: auto !important;
+  min-width: 52px !important;
+  max-width: none !important;
+  min-height: 28px !important;
+  padding: 0 0.62rem !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  font-size: 0.68rem !important;
+  line-height: 1 !important;
+}
+
+/* Make the table slightly wider internally so the page stays contained but actions fit */
+.customerTable {
+  min-width: 1300px !important;
+}

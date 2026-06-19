@@ -1,5 +1,7 @@
 "use client";
 
+
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import styles from "./customers.module.css";
 
@@ -527,7 +529,7 @@ export default function CustomersPage() {
 
   return (
     <main className={styles.customersPage}>
-      <section className={styles.heroPanel}>
+<section className={styles.heroPanel}>
         <div className={styles.heroTop}>
           <div className={styles.titleBlock}>
             <p className={styles.kicker}>CUSTOMER COMMAND CENTRE</p>
@@ -663,6 +665,38 @@ export default function CustomersPage() {
           </article>
         </div>
       </section>
+<section className="baFlowStrip baFlowStrip--customers" aria-label="Know who to contact, book or recover next.">
+        <div className="baFlowIntro">
+          <p>Customer action path</p>
+          <h2>Know who to contact, book or recover next.</h2>
+          <span>Customer records should explain the next best move without making staff search through the table.</span>
+        </div>
+
+        <div className="baFlowCards">
+
+          <Link href="/customers/sarah-johnson" className="baFlowCard">
+            <span>Repeat</span>
+            <strong>Open Sarah Johnson</strong>
+            <small>Repeat customer with another booking opportunity.</small>
+            <em>View record</em>
+          </Link>
+
+          <Link href="/bookings?search=Emma%20Davis" className="baFlowCard">
+            <span>VIP</span>
+            <strong>Book Emma Davis</strong>
+            <small>High-value customer ready for owner-approved booking action.</small>
+            <em>Open booking</em>
+          </Link>
+
+          <Link href="/follow-ups?search=Tom%20Wilson" className="baFlowCard">
+            <span>Due</span>
+            <strong>Follow up Tom Wilson</strong>
+            <small>Warm lead needs a simple callback before it cools.</small>
+            <em>Open task</em>
+          </Link>
+        </div>
+      </section>
+
 
       {addPanelOpen && (
         <section className={styles.addPanel}>
@@ -850,195 +884,142 @@ export default function CustomersPage() {
         {demoNotice}
       </div>
 
-      <section id="customer-results" className={styles.tablePanel}>
-        {selectedTab !== "All" && (
-          <div className={styles.segmentNotice}>
-            <strong>{selectedTab} customer view is active</strong>
-            <span>
-              Search and channel filters were cleared so this tab shows the correct {selectedTab.toLowerCase()} customer records.
-            </span>
-          </div>
-        )}
-
+      <section id="customer-results" className={styles.tablePanel} data-customer-table-restored="true">
         <div className={styles.tableHeader}>
-          <div className={styles.tabs}>
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                className={`${styles.tabButton} ${
-                  selectedTab === tab ? styles.tabActive : ""
-                }`}
-                type="button"
-                onClick={() => openCustomerTab(tab)}
-              >
-                {tab}
-                <span>{tabCounts[tab]}</span>
-              </button>
-            ))}
+          <div>
+            <p className={styles.kicker}>CUSTOMER RECORDS</p>
+            <h2>Customer records</h2>
+            <p>
+              Showing {filteredCustomers.length} of {customers.length} demo customers.
+            </p>
           </div>
 
           <button
             className={styles.clearButton}
             type="button"
-            onClick={clearFilters}
             disabled={!hasFilters}
+            onClick={clearFilters}
           >
             {hasFilters ? "Clear filters" : "Filters clear"}
           </button>
         </div>
 
-        <div className={styles.tableScroll}>
-          <table className={styles.customerTable}>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Contact</th>
-                <th>Area</th>
-                <th>Source</th>
-                <th>Type</th>
-                <th>Last Service</th>
-                <th>Total Spend</th>
-                <th>Last Activity</th>
-                <th>Next Booking</th>
-                <th>Satisfaction</th>
-                <th>Risk</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
+        <div className={styles.tabs} aria-label="Customer record filters">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              type="button"
+              className={[styles.tabButton, selectedTab === tab ? styles.tabActive : ""]
+                .filter(Boolean)
+                .join(" ")}
+              onClick={() => openCustomerTab(tab)}
+            >
+              {tab}
+              <span>{tabCounts[tab]}</span>
+            </button>
+          ))}
+        </div>
 
-            <tbody>
-              {filteredCustomers.map((customer) => (
-                <tr
-                  key={customer.id}
-                  onClick={() => {
-                    setSelectedCustomer(customer);
-                    setDemoNotice(`${customer.name} record opened.`);
-                  }}
-                >
-                  <td>
-                    <button
-                      className={styles.customerName}
-                      type="button"
-                      onClick={(event) => {
-                        event.stopPropagation();
-                        setSelectedCustomer(customer);
-                        setDemoNotice(`${customer.name} record opened.`);
-                      }}
+        {filteredCustomers.length > 0 ? (
+          <>
+            <div className={styles.tableScroll}>
+              <table className={styles.customerTable}>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Area</th>
+                    <th>Source</th>
+                    <th>Type</th>
+                    <th>Last service</th>
+                    <th>Total spend</th>
+                    <th>Last activity</th>
+                    <th>Next booking</th>
+                    <th>Satisfaction</th>
+                    <th>Risk</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {filteredCustomers.map((customer) => (
+                    <tr
+                      key={customer.id}
+                      className={selectedCustomer?.id === customer.id ? styles.rowSelected : ""}
                     >
-                      <span className={styles.avatar}>{customer.initials}</span>
-                      <span>
-                        <strong>{customer.name}</strong>
-                        <small>{customer.opportunity}</small>
-                      </span>
-                    </button>
-                  </td>
-
-                  <td>☎ {customer.phone}</td>
-                  <td>{customer.area}</td>
-                  <td>
-                    <span className={styles.channelPill}>{customer.channel}</span>
-                  </td>
-                  <td>
-                    <span
-                      className={`${styles.typeChip} ${
-                        typeStyles[customer.customerType]
-                      }`}
-                    >
-                      {customer.customerType}
-                    </span>
-                  </td>
-                  <td>
-                    <strong>{customer.lastServiceDate}</strong>
-                    <small>{customer.lastService}</small>
-                  </td>
-                  <td className={styles.spendCell}>
-                    {formatCurrency(customer.totalSpend)}
-                  </td>
-                  <td>{customer.lastActivity}</td>
-                  <td>{customer.nextBooking}</td>
-                  <td>
-                    <span className={styles.stars}>
-                      {makeStars(customer.satisfaction)}
-                    </span>
-                  </td>
-                  <td>
-                    <span className={`${styles.riskChip} ${riskStyles[customer.risk]}`}>
-                      {customer.risk}
-                    </span>
-                  </td>
-                  <td>
-                    <div className={styles.rowActions}>
-                      <button
-                        type="button"
-                        onClick={(event) => {
-                          event.stopPropagation();
-                          handleDemoAction("Customer record", customer);
-                        }}
-                      >
-                        View
-                      </button>
-                      <button
-                        type="button"
-                        onClick={(event) => {
-                          event.stopPropagation();
-                          handleDemoAction("Follow-up queue", customer);
-                        }}
-                      >
-                        Follow-up
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-
-          {filteredCustomers.length === 0 && (
-            <div className={styles.emptyState}>
-              <strong>No customers found.</strong>
-              <span>Try clearing filters or searching another customer.</span>
+                      <td>
+                        <Link
+                          href={"/customers/" + customer.id}
+                          className={styles.customerName}
+                          onClick={() => {
+                            setSelectedCustomer(customer);
+                            setDemoNotice(customer.name + " record opened.");
+                          }}
+                        >
+                          <span>{customer.initials}</span>
+                          <strong>{customer.name}</strong>
+                          <small>{customer.opportunity}</small>
+                        </Link>
+                      </td>
+                      <td>
+                        {customer.phone}
+                      </td>
+                      <td>{customer.area}</td>
+                      <td><span className={styles.sourceBadge} data-source={customer.channel.toLowerCase()}>{customer.channel}</span></td>
+                      <td><span className={styles.typeBadge} data-type={customer.customerType.toLowerCase()}>{customer.customerType}</span></td>
+                      <td>
+                        <strong>{customer.lastServiceDate}</strong>
+                        <small>{customer.lastService}</small>
+                      </td>
+                      <td>{formatCurrency(customer.totalSpend)}</td>
+                      <td>{customer.lastActivity}</td>
+                      <td>{customer.nextBooking}</td>
+                      <td>{makeStars(customer.satisfaction)}</td>
+                      <td><span className={styles.riskBadge} data-risk={customer.risk.toLowerCase()}>{customer.risk}</span></td>
+                      <td>
+                        <div className={styles.rowActions}>
+                          <button
+                            type="button"
+                            onClick={() => handleDemoAction("Customer record", customer)}
+                          >
+                            View
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => handleDemoAction("Follow-up action", customer)}
+                          >
+                            Follow-up
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-          )}
-        </div>
 
-        <div className={styles.tableFooter}>
-          <div>
-            <strong>
-              Showing {filteredCustomers.length} of {customers.length} demo
-              customers
-            </strong>
-            <span>{formatCurrency(visibleSpend)} visible customer value</span>
-          </div>
+            <div className={styles.tableFooter}>
+              <div>
+                <strong>Showing {filteredCustomers.length} of {customers.length} demo customers</strong>
+                <span>{formatCurrency(visibleSpend)} visible customer value</span>
+              </div>
 
-          <div className={styles.pagination}>
-            <span>Page 1 of 1</span>
+              <div className={styles.pagination}>
+                <button type="button" aria-label="Previous page">‹</button>
+                <button type="button" className={styles.pageActive}>1</button>
+                <button type="button" aria-label="Next page">›</button>
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className={styles.emptyState}>
+            <strong>No customers found.</strong>
+            <p>Clear filters or search again to show demo customer records.</p>
           </div>
-        </div>
-
-        <div className={styles.auraStrip}>
-          <div className={styles.auraImageBox}>
-            <span>Aura</span>
-            <img
-              src="/brand/source/aura-assistant-transparent.png"
-              alt="Aura customer assistant"
-              onError={(event) => {
-                event.currentTarget.style.display = "none";
-              }}
-            />
-          </div>
-
-          <div>
-            <p className={styles.kicker}>AURA CUSTOMER WATCH</p>
-            <h3>Aura is watching repeat customers, VIP spend, and customers due for follow-up.</h3>
-            <p>
-              12 customers need a next-step reminder. 4 VIP customers are ready
-              for owner-approved review requests.
-            </p>
-          </div>
-        </div>
+        )}
       </section>
 
-      {selectedCustomer && (
+{selectedCustomer && (
         <section className={styles.recordPanel}>
           <div className={styles.recordHeader}>
             <div>
@@ -1160,34 +1141,31 @@ export default function CustomersPage() {
           </article>
         </div>
       </section>
-
-      <section className={styles.auraBottomDock}>
-        <div className={styles.auraImageBox}>
-          <span>Aura</span>
-          <img
-            src="/brand/source/aura-assistant-transparent.png"
-            alt="Aura customer assistant"
-            onError={(event) => {
-              event.currentTarget.style.display = "none";
-            }}
-          />
-        </div>
-
-        <div>
-          <p className={styles.kicker}>AURA CUSTOMER WATCH</p>
-          <h3>Aura is watching repeat customers, VIP spend, and customers due for follow-up.</h3>
-          <p>
-            12 customers need a next-step reminder. 4 VIP customers are ready
-            for owner-approved review requests.
-          </p>
-        </div>
-      </section>
-
-      <p className={styles.safetyNote}>
+<p className={styles.safetyNote}>
         Demo safety: fake data only, local UI actions only, no database, no
         Supabase, no Stripe, no Twilio, no OpenAI API, no deployment, and no
         real customer data.
       </p>
-    </main>
+      <section className="baCustomerAura" aria-label="Bee-Aura Customer Watch">
+        <div className="baCustomerAuraBot" aria-hidden="true">
+          <img src="/brand/source/aura-assistant-transparent.png" alt="" />
+        </div>
+
+        <div className="baCustomerAuraCopy">
+          <p>AURA CUSTOMER WATCH</p>
+          <h2>Aura keeps customer records, VIP spend and follow-ups easy to act on.</h2>
+          <span>
+            Customer records show who to contact, who is ready to book and which warm opportunities need owner-approved follow-up.
+          </span>
+
+          <div className="baCustomerAuraActions">
+            <Link href="/customers?filter=repeat">Review repeat customers</Link>
+            <Link href="/bookings">Open booking calendar</Link>
+            <Link href="/follow-ups">Open follow-up queue</Link>
+          </div>
+        </div>
+      </section>
+
+</main>
   );
 }
