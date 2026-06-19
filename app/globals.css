@@ -21635,3 +21635,26 @@ html body main .lead-owner-card:focus-visible {
   border: 1px solid rgba(207, 164, 59, 0.42) !important;
 }
 
+
+/* =========================================================
+   BEE-AURA SIDEBAR BRAND BRIGHTNESS LOCK
+   Shared brand text only
+   Purpose: make top-left BEE-AURA brand easier to see
+========================================================= */
+
+.baSidebarBrandBright,
+.baSidebarBrandBright.baSidebarBrandBright {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.16),
+    0 0 18px rgba(77, 163, 255, 0.12) !important;
+  font-weight: 950 !important;
+}
+
+.baSidebarSubBright,
+.baSidebarSubBright.baSidebarSubBright {
+  color: rgba(248, 250, 252, 0.92) !important;
+  opacity: 1 !important;
+  letter-spacing: 0.14em !important;
+}

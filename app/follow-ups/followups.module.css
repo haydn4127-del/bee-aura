@@ -1228,3 +1228,935 @@
     min-width: 760px !important;
   }
 }
+
+
+/* === FOLLOWUPS FINAL IDENTITY CHIP PASS === */
+.ownerChip span,
+.avatar,
+.initials,
+.initialBadge {
+  background: linear-gradient(135deg, #ffd84d 0%, #ffb12b 58%, #58c8ff 100%) !important;
+  color: #06111f !important;
+  border-color: rgba(255, 232, 130, 0.82) !important;
+  font-weight: 950 !important;
+}
+/* === END FOLLOWUPS FINAL IDENTITY CHIP PASS === */
+
+
+/* === BEE-AURA FOLLOWUPS ALIGNMENT PASS V1 === */
+.avatar,
+.initials,
+.initialBadge {
+  background: linear-gradient(135deg, #ffd84d 0%, #f5c84c 50%, #ffb52b 100%) !important;
+  color: #08101b !important;
+  border: 1px solid rgba(255, 232, 130, 0.88) !important;
+  font-weight: 900 !important;
+}
+/* === END BEE-AURA FOLLOWUPS ALIGNMENT PASS V1 === */
+
+/* === BEE-AURA FOLLOWUPS FINAL FIT V2 === */
+.ownerChip > span:first-child,
+.avatar,
+.initials,
+.initialBadge {
+  background: linear-gradient(135deg, #ffd84d 0%, #f5c84c 52%, #ffb52b 100%) !important;
+  color: #08101b !important;
+  border: 1px solid rgba(255, 232, 130, 0.88) !important;
+  font-weight: 950 !important;
+}
+/* === END BEE-AURA FOLLOWUPS FINAL FIT V2 === */
+
+/* === BEE-AURA FOLLOWUPS OWNER INITIALS FINAL V3 === */
+.ownerChip > span:first-child,
+.avatar,
+.initials,
+.initialBadge {
+  background: linear-gradient(135deg, #ffd84d 0%, #f5c84c 56%, #ffad28 100%) !important;
+  color: #08101b !important;
+  border: 1px solid rgba(255, 232, 130, 0.9) !important;
+  font-weight: 950 !important;
+}
+/* === END BEE-AURA FOLLOWUPS OWNER INITIALS FINAL V3 === */
+
+/* BEE-AURA FINAL FLOW LOCK V5: module-local generated lock for app/follow-ups/followups.module.css */
+
+
+
+
+
+
+
+
+
+.avatar,
+.initials,
+.ownerChip {
+display: grid;
+  place-items: center;
+  background: var(--brand-gold, #CFA43B) !important;
+  color: var(--on-brand-gold, #0B1220) !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+
+
+
+
+
+.auraFollowUpPanel {
+display: grid;
+  grid-template-columns: minmax(220px, 270px) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(1.25rem, 2.2vw, 2.25rem);
+  width: 100%;
+  min-height: 260px;
+  margin-top: clamp(1.15rem, 2vw, 1.8rem);
+  padding: clamp(1.15rem, 2vw, 1.65rem);
+  border: 1px solid rgba(207, 164, 59, 0.38);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(207, 164, 59, 0.2), transparent 34%),
+    radial-gradient(circle at 84% 0%, rgba(77, 163, 255, 0.13), transparent 36%),
+    linear-gradient(135deg, rgba(18, 43, 61, 0.96), rgba(5, 13, 27, 0.98));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+  overflow: visible;
+}
+
+
+.auraImageBox {
+display: grid;
+  place-items: center;
+  width: min(100%, 270px);
+  min-height: 220px;
+  border-radius: 24px;
+  border: 1px solid rgba(207, 164, 59, 0.28);
+  background:
+    radial-gradient(circle at 50% 38%, rgba(77, 163, 255, 0.22), transparent 44%),
+    rgba(7, 18, 31, 0.8);
+  overflow: hidden;
+}
+
+
+
+.auraFollowUpPanel img,
+.auraImageBox img {
+  display: block;
+  width: clamp(165px, 15vw, 230px);
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 22px rgba(77, 163, 255, 0.3))
+    drop-shadow(0 20px 34px rgba(0, 0, 0, 0.34));
+}
+
+.auraFollowUpPanel h2 {
+  color: var(--text-primary, #F8FAFC);
+  font-size: clamp(1.45rem, 2.05vw, 2.35rem);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+.auraFollowUpPanel p,
+.auraFollowUpPanel span,
+.auraFollowUpPanel small {
+  overflow-wrap: anywhere;
+}
+
+
+@media (max-width: 1180px) {
+
+
+
+  .auraFollowUpPanel {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* BEE-AURA PRODUCT FLOW V7: follow-ups owner + Aura consistency */
+.ownerChip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.65rem !important;
+  min-height: 46px !important;
+  padding: 0.45rem 0.72rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(207, 164, 59, 0.48) !important;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(5, 13, 27, 0.94) !important;
+  color: #F8FAFC !important;
+}
+
+.ownerChip > span:first-child,
+.avatar,
+.initials {
+  display: grid !important;
+  place-items: center !important;
+  background: var(--brand-gold, #CFA43B) !important;
+  color: var(--on-brand-gold, #0B1220) !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+.ownerChip strong,
+.ownerChip small {
+  color: #F8FAFC !important;
+}
+
+.auraFollowUpPanel {
+  display: grid !important;
+  grid-template-columns: minmax(220px, 270px) minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  gap: clamp(1.25rem, 2.2vw, 2.25rem) !important;
+  min-height: 250px !important;
+  padding: clamp(1.15rem, 2vw, 1.65rem) !important;
+}
+
+.auraImageBox {
+  display: grid !important;
+  place-items: center !important;
+  width: min(100%, 260px) !important;
+  min-height: 210px !important;
+}
+
+.auraImageBox img,
+.auraFollowUpPanel img {
+  width: clamp(160px, 14vw, 220px) !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+/* BEE-AURA RESPONSIVE LOCK V8: CSS-module responsive consistency */
+
+@media (min-width: 981px) {
+  .header,
+  .hero,
+  .topbar,
+  .pageHeader {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: start !important;
+    gap: 1rem !important;
+  }
+
+  .headerActions,
+  .topActions,
+  .toolbar,
+  .controls,
+  .filterBar,
+  .filters,
+  .actionsBar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 0.65rem !important;
+    flex-wrap: wrap !important;
+    min-width: 0 !important;
+  }
+
+  .auraStrip,
+  .auraFollowUpPanel,
+  .auraPanel,
+  .auditAuraBar {
+    display: grid !important;
+    grid-template-columns: minmax(210px, 270px) minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    gap: clamp(1rem, 1.8vw, 2rem) !important;
+    min-height: 250px !important;
+  }
+
+  .auraImageBox,
+  .auraBottomDock,
+  .botWrap,
+  .auditAuraBot {
+    width: min(100%, 260px) !important;
+    min-height: 200px !important;
+  }
+}
+
+@media (min-width: 981px) and (max-width: 1366px) {
+  .header,
+  .hero,
+  .topbar,
+  .pageHeader,
+  .auraStrip,
+  .auraFollowUpPanel,
+  .auraPanel,
+  .auditAuraBar {
+    padding: 0.95rem !important;
+  }
+
+  .auraImageBox,
+  .auraBottomDock,
+  .botWrap,
+  .auditAuraBot {
+    min-height: 185px !important;
+  }
+
+  .auraImageBox img,
+  .auraBottomDock img,
+  .botWrap img,
+  .auditAuraBot img,
+  .auraStrip img,
+  .auraFollowUpPanel img,
+  .auraPanel img,
+  .auditAuraBar img {
+    width: clamp(145px, 13vw, 205px) !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .header,
+  .hero,
+  .topbar,
+  .pageHeader,
+  .auraStrip,
+  .auraFollowUpPanel,
+  .auraPanel,
+  .auditAuraBar {
+    grid-template-columns: 1fr !important;
+  }
+
+  .headerActions,
+  .topActions,
+  .toolbar,
+  .controls,
+  .filterBar,
+  .filters,
+  .actionsBar {
+    justify-content: flex-start !important;
+  }
+}
+
+.ownerChip,
+.ownerButton {
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(5, 13, 27, 0.94) !important;
+  border-color: rgba(207, 164, 59, 0.48) !important;
+  color: #F8FAFC !important;
+}
+
+.ownerChip > span:first-child,
+.ownerButton > span:first-child,
+.customerAvatar,
+.customerInitials,
+.nameAvatar,
+.nameInitials,
+.avatar,
+.initials {
+  background: var(--brand-gold, #CFA43B) !important;
+  color: var(--on-brand-gold, #0B1220) !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+/* BEE-AURA V9 EXACT PAGE-FLOW POLISH: follow-ups exact page polish */
+
+.header,
+.hero,
+.topbar,
+.pageHeader {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: start !important;
+  gap: 1rem !important;
+}
+
+.headerActions,
+.topActions,
+.toolbar,
+.controls,
+.filterBar,
+.filters,
+.actionsBar {
+  justify-content: flex-end !important;
+  align-items: flex-start !important;
+  margin-left: auto !important;
+}
+
+.ownerChip {
+  justify-self: end !important;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(5, 13, 27, 0.94) !important;
+  border-color: rgba(207, 164, 59, 0.48) !important;
+  color: #F8FAFC !important;
+}
+
+.ownerChip > span:first-child,
+.avatar,
+.initials {
+  background: var(--brand-gold, #CFA43B) !important;
+  color: var(--on-brand-gold, #0B1220) !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+.tab,
+.filterButton,
+.channelPill,
+.statusPill,
+.priorityPill,
+.sourcePill,
+.chip,
+.pill {
+  border-radius: 999px !important;
+  font-weight: 900 !important;
+}
+
+.auraFollowUpPanel {
+  display: grid !important;
+  grid-template-columns: minmax(250px, 310px) minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: clamp(1.25rem, 2.2vw, 2.25rem) !important;
+  min-height: 250px !important;
+}
+
+.auraImageBox {
+  display: grid !important;
+  place-items: center !important;
+  width: min(100%, 290px) !important;
+  min-height: 220px !important;
+}
+
+.auraImageBox img,
+.auraFollowUpPanel img {
+  width: clamp(165px, 14vw, 230px) !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 980px) {
+  .header,
+  .hero,
+  .topbar,
+  .pageHeader,
+  .auraFollowUpPanel {
+    grid-template-columns: 1fr !important;
+  }
+
+  .headerActions,
+  .topActions,
+  .toolbar,
+  .controls,
+  .filterBar,
+  .filters,
+  .actionsBar {
+    justify-content: flex-start !important;
+  }
+}
+
+/* BEE-AURA V10 EXACT PRODUCT POLISH: follow-ups exact module cleanup */
+
+.ownerChip {
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(5, 13, 27, 0.94) !important;
+  border-color: rgba(207, 164, 59, 0.48) !important;
+  color: #F8FAFC !important;
+}
+
+.ownerChip > span:first-child,
+.avatar,
+.initials {
+  display: grid !important;
+  place-items: center !important;
+  background: var(--brand-gold, #CFA43B) !important;
+  color: var(--on-brand-gold, #0B1220) !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+/* BEE-AURA V11 PRECISION CORRECTION: follow-up owner profile consistency */
+
+.ownerChip {
+  max-width: max-content !important;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(5, 13, 27, 0.94) !important;
+  border-color: rgba(207, 164, 59, 0.48) !important;
+  color: #F8FAFC !important;
+}
+
+.ownerChip > span:first-child,
+.avatar,
+.initials {
+  display: grid !important;
+  place-items: center !important;
+  background: var(--brand-gold, #CFA43B) !important;
+  color: var(--on-brand-gold, #0B1220) !important;
+  border-color: rgba(207, 164, 59, 0.86) !important;
+  font-weight: 950 !important;
+  text-shadow: none !important;
+}
+
+.ownerChip strong,
+.ownerChip small {
+  max-width: 82px !important;
+  white-space: normal !important;
+  line-height: 1.05 !important;
+}
+
+
+/* =========================================================
+   FOLLOW-UPS HEADER OWNER LOCK V1
+   Page: /follow-ups only
+   Purpose:
+   - make top controls sit cleanly
+   - make + New Follow-Up use Bee-Aura yellow
+   - make owner profile match approved pages
+   - no table/layout restructure
+========================================================= */
+
+.topControls {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex-wrap: wrap !important;
+  gap: 0.58rem !important;
+}
+
+/* Yellow system button */
+.topControls .primaryButton,
+.heroPanel .primaryButton {
+  min-height: 42px !important;
+  padding: 0 16px !important;
+  border: 1px solid #F3C84B !important;
+  border-radius: 999px !important;
+  background: #F3C84B !important;
+  color: #0B1220 !important;
+  font-weight: 950 !important;
+  white-space: nowrap !important;
+  box-shadow:
+    0 12px 26px rgba(243, 200, 75, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
+}
+
+.topControls .primaryButton:hover,
+.heroPanel .primaryButton:hover {
+  filter: brightness(1.04) !important;
+  box-shadow:
+    0 14px 30px rgba(243, 200, 75, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28) !important;
+}
+
+/* Header controls fit cleanly */
+.controlShell,
+.searchShell {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+.controlShell {
+  min-height: 42px !important;
+  border-color: rgba(77, 163, 255, 0.28) !important;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(77, 163, 255, 0.12), transparent 34%),
+    rgba(5, 13, 27, 0.96) !important;
+}
+
+.searchShell {
+  flex: 1 1 250px !important;
+  max-width: 370px !important;
+}
+
+.controlShell span {
+  color: rgba(241, 245, 249, 0.72) !important;
+  font-weight: 900 !important;
+}
+
+.controlShell select,
+.controlShell input {
+  min-width: 0 !important;
+  color: #F8FAFC !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Owner profile matches approved system style */
+.ownerChip {
+  flex: 0 0 auto !important;
+  min-width: 132px !important;
+  max-width: 146px !important;
+  min-height: 42px !important;
+  height: 42px !important;
+  display: grid !important;
+  grid-template-columns: 32px minmax(0, 1fr) !important;
+  grid-template-rows: auto auto !important;
+  column-gap: 8px !important;
+  align-items: center !important;
+  padding: 0 10px !important;
+  border: 1px solid rgba(207, 164, 59, 0.52) !important;
+  border-radius: 999px !important;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(5, 13, 27, 0.96) !important;
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.26),
+    0 0 18px rgba(207, 164, 59, 0.08) !important;
+  overflow: hidden !important;
+}
+
+.ownerChip span {
+  grid-column: 1 !important;
+  grid-row: 1 / 3 !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  border-radius: 999px !important;
+  display: grid !important;
+  place-items: center !important;
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border: 1px solid rgba(207, 164, 59, 0.86) !important;
+  font-size: 0.7rem !important;
+  font-weight: 950 !important;
+  box-shadow: 0 10px 22px rgba(207, 164, 59, 0.18) !important;
+}
+
+.ownerChip strong {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  min-width: 0 !important;
+  color: #F8FAFC !important;
+  font-size: 0.74rem !important;
+  font-weight: 950 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.ownerChip small {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  min-width: 0 !important;
+  color: rgba(203, 213, 225, 0.78) !important;
+  font-size: 0.62rem !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 1180px) {
+  .topControls {
+    justify-content: flex-start !important;
+  }
+
+  .searchShell {
+    max-width: 100% !important;
+  }
+}
+
+
+/* =========================================================
+   FOLLOW-UPS LOCKED OWNER PROFILE FINAL
+   Page: /follow-ups only
+   Purpose:
+   - owner profile matches approved pages
+   - text is brighter and easier to read
+   - no table/layout changes
+========================================================= */
+
+.followOwnerLock {
+  flex: 0 0 auto !important;
+  width: 148px !important;
+  height: 42px !important;
+  display: grid !important;
+  grid-template-columns: 32px minmax(0, 1fr) 12px !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 0 10px !important;
+  border: 1px solid rgba(207, 164, 59, 0.58) !important;
+  border-radius: 999px !important;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(207, 164, 59, 0.18), transparent 38%),
+    linear-gradient(180deg, rgba(8, 18, 32, 0.98), rgba(2, 9, 18, 0.98)) !important;
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.28),
+    0 0 18px rgba(207, 164, 59, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+}
+
+.followOwnerAvatar {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 999px !important;
+  background: #CFA43B !important;
+  color: #0B1220 !important;
+  border: 1px solid rgba(255, 216, 77, 0.72) !important;
+  font-size: 0.72rem !important;
+  font-weight: 950 !important;
+  line-height: 1 !important;
+  box-shadow:
+    0 0 16px rgba(207, 164, 59, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+.followOwnerText {
+  min-width: 0 !important;
+  display: grid !important;
+  gap: 2px !important;
+  align-content: center !important;
+  text-align: left !important;
+}
+
+.followOwnerText strong {
+  display: block !important;
+  max-width: 100% !important;
+  color: #FFFFFF !important;
+  font-size: 0.76rem !important;
+  font-weight: 950 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.followOwnerText small {
+  display: block !important;
+  max-width: 100% !important;
+  color: rgba(226, 232, 240, 0.86) !important;
+  font-size: 0.62rem !important;
+  font-weight: 850 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.followOwnerChevron {
+  color: rgba(255, 216, 77, 0.88) !important;
+  font-size: 0.72rem !important;
+  font-weight: 950 !important;
+  line-height: 1 !important;
+}
+
+/* Follow-Ups text clarity */
+.followUpsPage h1,
+.followUpsPage h2,
+.followUpsPage h3,
+.followUpsPage strong,
+.followUpsPage b {
+  color: #FFFFFF !important;
+}
+
+.followUpsPage p,
+.followUpsPage span,
+.followUpsPage small,
+.followUpsPage td,
+.followUpsPage th,
+.followUpsPage label {
+  color: rgba(241, 245, 249, 0.9) !important;
+}
+
+.followOwnerLock:focus-visible {
+  outline: 2px solid rgba(243, 200, 75, 0.9) !important;
+  outline-offset: 3px !important;
+}
+
+/* =========================================================
+   FOLLOW-UPS BRIGHT COLOURED TABS RESTORE
+   Page: /follow-ups only
+   Purpose:
+   - restore strong tab colours after text clarity pass
+   - Due Today = gold/amber
+   - Overdue = red
+   - Scheduled = blue
+   - Completed = green
+========================================================= */
+
+/* Base tab visibility */
+.tabButton {
+  color: #F8FAFC !important;
+  border-width: 1px !important;
+  font-weight: 950 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 0 12px rgba(77,163,255,0.06) !important;
+}
+
+.tabButton span {
+  color: #F8FAFC !important;
+  font-weight: 950 !important;
+}
+
+/* All tab */
+.tabButton[data-follow-tab="all"] {
+  border-color: rgba(243, 200, 75, 0.78) !important;
+  background: rgba(243, 200, 75, 0.16) !important;
+  color: #FFE8A3 !important;
+}
+
+.tabActive[data-follow-tab="all"] {
+  background: #F3C84B !important;
+  border-color: #F3C84B !important;
+  color: #0B1220 !important;
+}
+
+.tabActive[data-follow-tab="all"] span {
+  background: rgba(11, 18, 32, 0.16) !important;
+  color: #0B1220 !important;
+}
+
+/* Due Today = amber */
+.tabButton[data-follow-tab="due-today"],
+.statusChip[data-follow-status="due-today"] {
+  border-color: rgba(243, 200, 75, 0.82) !important;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(243, 200, 75, 0.28), transparent 42%),
+    rgba(243, 200, 75, 0.14) !important;
+  color: #FFE8A3 !important;
+  box-shadow: 0 0 14px rgba(243, 200, 75, 0.14) !important;
+}
+
+.tabButton[data-follow-tab="due-today"] span {
+  background: rgba(243, 200, 75, 0.24) !important;
+  color: #FFE8A3 !important;
+}
+
+.tabActive[data-follow-tab="due-today"] {
+  background: linear-gradient(135deg, #F3C84B, #D99A17) !important;
+  color: #0B1220 !important;
+}
+
+.tabActive[data-follow-tab="due-today"] span {
+  background: rgba(11, 18, 32, 0.16) !important;
+  color: #0B1220 !important;
+}
+
+/* Overdue = red */
+.tabButton[data-follow-tab="overdue"],
+.statusChip[data-follow-status="overdue"] {
+  border-color: rgba(248, 113, 113, 0.88) !important;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(248, 113, 113, 0.32), transparent 42%),
+    rgba(248, 113, 113, 0.15) !important;
+  color: #FFB4BC !important;
+  box-shadow: 0 0 14px rgba(248, 113, 113, 0.15) !important;
+}
+
+.tabButton[data-follow-tab="overdue"] span {
+  background: rgba(248, 113, 113, 0.24) !important;
+  color: #FFB4BC !important;
+}
+
+/* Scheduled = blue */
+.tabButton[data-follow-tab="scheduled"],
+.statusChip[data-follow-status="scheduled"] {
+  border-color: rgba(56, 189, 248, 0.88) !important;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(56, 189, 248, 0.30), transparent 42%),
+    rgba(56, 189, 248, 0.14) !important;
+  color: #8BE4FF !important;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.14) !important;
+}
+
+.tabButton[data-follow-tab="scheduled"] span {
+  background: rgba(56, 189, 248, 0.24) !important;
+  color: #8BE4FF !important;
+}
+
+/* Completed = green */
+.tabButton[data-follow-tab="completed"],
+.statusChip[data-follow-status="completed"] {
+  border-color: rgba(34, 197, 94, 0.86) !important;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(34, 197, 94, 0.30), transparent 42%),
+    rgba(34, 197, 94, 0.14) !important;
+  color: #7CFFB2 !important;
+  box-shadow: 0 0 14px rgba(34, 197, 94, 0.14) !important;
+}
+
+.tabButton[data-follow-tab="completed"] span {
+  background: rgba(34, 197, 94, 0.24) !important;
+  color: #7CFFB2 !important;
+}
+
+/* Top metric cards get matching colour identity */
+.metricCard[data-follow-metric="due-today"] .metricIcon {
+  border-color: rgba(243, 200, 75, 0.75) !important;
+  color: #FFE8A3 !important;
+  background: rgba(243, 200, 75, 0.14) !important;
+}
+
+.metricCard[data-follow-metric="overdue"] .metricIcon {
+  border-color: rgba(248, 113, 113, 0.78) !important;
+  color: #FFB4BC !important;
+  background: rgba(248, 113, 113, 0.14) !important;
+}
+
+.metricCard[data-follow-metric="scheduled"] .metricIcon {
+  border-color: rgba(56, 189, 248, 0.78) !important;
+  color: #8BE4FF !important;
+  background: rgba(56, 189, 248, 0.14) !important;
+}
+
+.metricCard[data-follow-metric="completed"] .metricIcon {
+  border-color: rgba(34, 197, 94, 0.78) !important;
+  color: #7CFFB2 !important;
+  background: rgba(34, 197, 94, 0.14) !important;
+}
+
+/* Keep chip text readable after broad text clarity rules */
+.priorityChip,
+.statusChip,
+.tabButton,
+.tabButton span {
+  text-shadow: none !important;
+}
+
+/* =========================================================
+   FOLLOW-UPS INITIALS READABILITY FIX
+   Page: /follow-ups only
+   Purpose:
+   - customer initials white circles with black text
+   - owner JD initials black
+   - keep Follow-Ups text bright
+========================================================= */
+
+/* Table customer initials: white background, black initials */
+.followUpsPage .customerButton > span {
+  background: #F3C84B !important;
+  color: #071522 !important;
+  border: 1px solid rgba(255, 216, 77, 0.88) !important;
+  box-shadow:
+    0 0 16px rgba(243, 200, 75, 0.20),
+    inset 0 1px 0 rgba(255,255,255,0.28) !important;
+  font-weight: 950 !important;
+}
+
+/* Owner profile initials: black JD text */
+.followUpsPage .followOwnerAvatar {
+  background: #F3C84B !important;
+  color: #071522 !important;
+  border: 1px solid rgba(255, 216, 77, 0.82) !important;
+  font-weight: 950 !important;
+}
+
+/* Keep owner name/profile text bright */
+.followUpsPage .followOwnerText strong {
+  color: #FFFFFF !important;
+}
+
+.followUpsPage .followOwnerText small {
+  color: rgba(248, 250, 252, 0.9) !important;
+}
+
+.followUpsPage .followOwnerChevron {
+  color: #F3C84B !important;
+}

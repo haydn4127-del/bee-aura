@@ -1,5 +1,7 @@
 "use client";
 
+
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import styles from "./followups.module.css";
 
@@ -299,7 +301,7 @@ export default function FollowUpsPage() {
 
   return (
     <main className={styles.followUpsPage}>
-      <section className={styles.heroPanel}>
+<section className={styles.heroPanel}>
         <div className={styles.heroTop}>
           <div className={styles.titleBlock}>
             <p className={styles.kicker}>FOLLOW-UP COMMAND CENTRE</p>
@@ -350,23 +352,27 @@ export default function FollowUpsPage() {
             </label>
 
             <button
-              className={styles.ownerChip}
+              className={styles.followOwnerLock}
               type="button"
+              aria-label="Open owner control profile"
               onClick={() => {
                 setOwnerOpen(true);
                 setNewPanelOpen(false);
                 setNotice("Owner control profile opened.");
               }}
             >
-              <span>JD</span>
-              <strong>John D.</strong>
-              <small>Owner</small>
+              <span className={styles.followOwnerAvatar}>JD</span>
+              <span className={styles.followOwnerText}>
+                <strong>John D.</strong>
+                <small>Owner</small>
+              </span>
+              <span className={styles.followOwnerChevron}>⌄</span>
             </button>
           </div>
         </div>
 
         <div className={styles.metricGrid}>
-          <button className={styles.metricCard} type="button" onClick={() => openQuickView("Due Today")}>
+          <button className={styles.metricCard} data-follow-metric="due-today" type="button" onClick={() => openQuickView("Due Today")}>
             <span className={styles.metricIcon}>▣</span>
             <div>
               <p>Due today</p>
@@ -375,7 +381,7 @@ export default function FollowUpsPage() {
             </div>
           </button>
 
-          <button className={styles.metricCard} type="button" onClick={() => openQuickView("Overdue")}>
+          <button className={styles.metricCard} data-follow-metric="overdue" type="button" onClick={() => openQuickView("Overdue")}>
             <span className={styles.metricIcon}>◷</span>
             <div>
               <p>Overdue</p>
@@ -384,7 +390,7 @@ export default function FollowUpsPage() {
             </div>
           </button>
 
-          <button className={styles.metricCard} type="button" onClick={() => openQuickView("Scheduled")}>
+          <button className={styles.metricCard} data-follow-metric="scheduled" type="button" onClick={() => openQuickView("Scheduled")}>
             <span className={styles.metricIcon}>◴</span>
             <div>
               <p>Scheduled</p>
@@ -393,7 +399,7 @@ export default function FollowUpsPage() {
             </div>
           </button>
 
-          <button className={styles.metricCard} type="button" onClick={() => openQuickView("Completed")}>
+          <button className={styles.metricCard} data-follow-metric="completed" type="button" onClick={() => openQuickView("Completed")}>
             <span className={styles.metricIcon}>✓</span>
             <div>
               <p>Completed</p>
@@ -403,6 +409,38 @@ export default function FollowUpsPage() {
           </button>
         </div>
       </section>
+<section className="baFlowStrip baFlowStrip--follow-ups" aria-label="Chase the right lead at the right time.">
+        <div className="baFlowIntro">
+          <p>Follow-up action path</p>
+          <h2>Chase the right lead at the right time.</h2>
+          <span>Due, overdue and scheduled follow-ups are grouped into simple owner-safe next steps.</span>
+        </div>
+
+        <div className="baFlowCards">
+
+          <Link href="/follow-ups?status=due" className="baFlowCard">
+            <span>Today</span>
+            <strong>Due today</strong>
+            <small>Call-back and quote follow-ups that need action today.</small>
+            <em>Open due list</em>
+          </Link>
+
+          <Link href="/follow-ups?status=overdue" className="baFlowCard">
+            <span>Risk</span>
+            <strong>Overdue leads</strong>
+            <small>Leads at risk of going cold need owner visibility first.</small>
+            <em>Open risk</em>
+          </Link>
+
+          <Link href="/bookings" className="baFlowCard">
+            <span>Diary</span>
+            <strong>Convert to booking</strong>
+            <small>Move warm follow-ups into the booking calendar.</small>
+            <em>Open calendar</em>
+          </Link>
+        </div>
+      </section>
+
 
       {newPanelOpen && (
         <section className={styles.actionPanel}>
@@ -415,7 +453,10 @@ export default function FollowUpsPage() {
           <div className={styles.demoForm}>
             <input placeholder="Customer name" />
             <input placeholder="Follow-up reason" />
-            <select defaultValue="Call">
+            <select
+              defaultValue="Call"
+              onChange={(event) => setNotice(`New follow-up channel set to ${event.target.value}. Demo-only local selection.`)}
+            >
               <option>Call</option>
               <option>WhatsApp</option>
               <option>SMS</option>
@@ -467,6 +508,7 @@ export default function FollowUpsPage() {
                   key={tab}
                   type="button"
                   className={`${styles.tabButton} ${selectedTab === tab ? styles.tabActive : ""}`}
+                  data-follow-tab={tab.toLowerCase().replace(/\s+/g, "-")}
                   onClick={() => openTab(tab)}
                 >
                   {tab}
@@ -553,7 +595,7 @@ export default function FollowUpsPage() {
                       </span>
                     </td>
                     <td>
-                      <span className={`${styles.statusChip} ${statusClass[item.status]}`}>
+                      <span className={`${styles.statusChip} ${statusClass[item.status]}`} data-follow-status={item.status.toLowerCase().replace(/\s+/g, "-")}>
                         {item.status}
                       </span>
                     </td>
