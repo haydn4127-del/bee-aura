@@ -1,5 +1,7 @@
 "use client";
 
+
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import styles from "./activity-log.module.css";
 
@@ -267,7 +269,7 @@ export default function ActivityLogPage() {
 
   return (
     <main className={styles.activityPage}>
-      <section className={styles.heroPanel}>
+<section className={styles.heroPanel}>
         <div className={styles.heroTop}>
           <div className={styles.titleBlock}>
             <p className={styles.kicker}>ACTIVITY COMMAND CENTRE</p>
@@ -301,7 +303,7 @@ export default function ActivityLogPage() {
               ))}
             </select>
 
-            <label className={styles.searchBox}>
+            <label className={styles.searchBox} data-activity-search-top="true">
               <input
                 value={search}
                 onChange={(event) => {
@@ -315,6 +317,7 @@ export default function ActivityLogPage() {
 
             <button
               className={styles.ownerButton}
+              data-activity-owner-button="true"
               type="button"
               onClick={() => {
                 setAuditOpen(true);
@@ -323,7 +326,7 @@ export default function ActivityLogPage() {
             >
               <span>JD</span>
               <div>
-                <strong>John D.</strong>
+                <strong>John D</strong>
                 <small>Owner</small>
               </div>
             </button>
@@ -348,6 +351,38 @@ export default function ActivityLogPage() {
           ))}
         </div>
       </section>
+<section className="baFlowStrip baFlowStrip--activity" aria-label="Every action should prove what happened.">
+        <div className="baFlowIntro">
+          <p>Audit action path</p>
+          <h2>Every action should prove what happened.</h2>
+          <span>Owners need a simple trail of leads, replies, bookings, reviews and system changes.</span>
+        </div>
+
+        <div className="baFlowCards">
+
+          <Link href="/activity-log" className="baFlowCard">
+            <span>Now</span>
+            <strong>Review latest events</strong>
+            <small>See what changed and who triggered it.</small>
+            <em>Open audit</em>
+          </Link>
+
+          <Link href="/error-log" className="baFlowCard">
+            <span>Risk</span>
+            <strong>Check system alerts</strong>
+            <small>Recovery items should not hide in the background.</small>
+            <em>Open errors</em>
+          </Link>
+
+          <Link href="/customers/sarah-johnson" className="baFlowCard">
+            <span>Trail</span>
+            <strong>Open customer trail</strong>
+            <small>Connect the audit event to the customer record.</small>
+            <em>Open customer</em>
+          </Link>
+        </div>
+      </section>
+
 
       <div className={styles.notice}>{notice}</div>
 
@@ -373,7 +408,7 @@ export default function ActivityLogPage() {
                   <th>Event</th>
                   <th>Details</th>
                   <th>Category</th>
-                  <th>Customer</th>
+                  <th>Actor</th>
                   <th>Status</th>
                 </tr>
               </thead>
@@ -464,7 +499,7 @@ export default function ActivityLogPage() {
             <div className={styles.selectedGrid}>
               <div><strong>Today, {selectedActivity.time}</strong><small>Date / Time</small></div>
               <div><strong>{selectedActivity.category}</strong><small>Category</small></div>
-              <div><strong>{selectedActivity.actor}</strong><small>Customer</small></div>
+              <div><strong>{selectedActivity.actor}</strong><small>Actor</small></div>
               <div><strong>{selectedActivity.status}</strong><small>Status</small></div>
             </div>
           </section>
@@ -505,7 +540,6 @@ export default function ActivityLogPage() {
                 <p key={check}>
                   <span>✓</span>
                   {check}
-                  <strong>✓</strong>
                 </p>
               ))}
             </div>
