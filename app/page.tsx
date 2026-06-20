@@ -35,7 +35,7 @@ const previewStats = [
   ["New Enquiries", "482", "+10% this week"],
   ["Avg. Response", "2m 48s", "21% faster"],
   ["Bookings Today", "14", "+27% vs yesterday"],
-  ["Open Pipeline", "£84,350", "+17% this week"],
+  ["Pipeline", "£84k", "+17% this week"],
 ];
 
 export default function Home() {
@@ -56,7 +56,6 @@ export default function Home() {
 
         <div className="landing-nav-links">
           <Link href="/dashboard">Dashboard</Link>
-          <a href="#platform">Platform</a>
           <a href="#features">Features</a>
           <a href="#how-it-works">How It Works</a>
           <a href="#pricing">Pricing</a>
@@ -134,10 +133,10 @@ export default function Home() {
               </div>
               <span className="active">Overview</span>
               <span>Leads</span>
-              <span>Conversations</span>
+              <span>Messages</span>
               <span>Bookings</span>
               <span>Follow-Ups</span>
-              <span>Reports</span>
+              <span>Reviews</span>
               <span>Settings</span>
             </aside>
 
@@ -145,7 +144,7 @@ export default function Home() {
               <div className="preview-topbar">
                 <div>
                   <p>Command view</p>
-                  <strong>Northfield Home Services</strong>
+                  <strong>Manchester Home Services</strong>
                 </div>
 
                 <div className="preview-date-block">
@@ -164,9 +163,9 @@ export default function Home() {
                 ))}
               </div>
 
-              <div className="preview-chart-grid">
-                <div className="preview-chart-card preview-chart-card-pro">
-                  <div className="chart-card-header chart-card-header-pro">
+              <div className="preview-chart-grid preview-chart-grid-final">
+                <div className="preview-chart-card preview-chart-card-final home-final-chart-card home-final-chart-card-enquiries">
+                  <div className="chart-card-header chart-card-header-pro home-final-chart-header">
                     <div>
                       <span>Enquiry trend</span>
                       <small>Last 7 days</small>
@@ -174,129 +173,162 @@ export default function Home() {
                     <strong>482</strong>
                   </div>
 
-                  <div className="chart-legend">
-                    <span><i className="legend-dot legend-blue" /> Leads</span>
-                    <span><i className="legend-dot legend-green" /> Follow-up recovered</span>
+                  <div className="chart-legend chart-legend-pro home-final-chart-legend">
+                    <span><i className="legend-dot legend-blue" /> Qualified enquiries</span>
+                    <span><i className="legend-dot legend-gold" /> Owner priority</span>
                   </div>
 
-                  <svg viewBox="0 0 320 180" role="img" aria-label="Demo enquiry trend chart">
+                  <svg className="home-final-chart home-final-chart-enquiries" viewBox="0 0 520 300" role="img" aria-label="Professional enquiry trend chart">
                     <defs>
-                      <linearGradient id="leadAreaFill" x1="0" x2="0" y1="0" y2="1">
-                        <stop offset="0%" stopColor="rgba(45, 196, 255, 0.26)" />
-                        <stop offset="100%" stopColor="rgba(45, 196, 255, 0.02)" />
+                      <linearGradient id="homeFinalEnquiryAreaV2" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0%" stopColor="rgba(76, 166, 255, 0.32)" />
+                        <stop offset="70%" stopColor="rgba(76, 166, 255, 0.08)" />
+                        <stop offset="100%" stopColor="rgba(76, 166, 255, 0)" />
                       </linearGradient>
+                      <linearGradient id="homeFinalEnquiryLineV2" x1="0" x2="1" y1="0" y2="0">
+                        <stop offset="0%" stopColor="#4da3ff" />
+                        <stop offset="55%" stopColor="#7dc8ff" />
+                        <stop offset="100%" stopColor="#f4c94a" />
+                      </linearGradient>
+                      <filter id="homeFinalLineGlowV2" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="2.2" result="blur" />
+                        <feMerge>
+                          <feMergeNode in="blur" />
+                          <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                      </filter>
                     </defs>
 
-                    <line x1="38" y1="28" x2="38" y2="138" stroke="rgba(148,163,184,0.18)" />
-                    <line x1="38" y1="138" x2="302" y2="138" stroke="rgba(148,163,184,0.18)" />
+                    <rect className="home-final-plot-bg" x="46" y="30" width="426" height="204" rx="18" />
+                    <g className="home-final-grid">
+                      <line x1="62" y1="62" x2="452" y2="62" />
+                      <line x1="62" y1="102" x2="452" y2="102" />
+                      <line x1="62" y1="142" x2="452" y2="142" />
+                      <line x1="62" y1="182" x2="452" y2="182" />
+                      <line x1="62" y1="222" x2="452" y2="222" />
+                    </g>
 
-                    <line x1="38" y1="38" x2="302" y2="38" stroke="rgba(148,163,184,0.08)" />
-                    <line x1="38" y1="63" x2="302" y2="63" stroke="rgba(148,163,184,0.08)" />
-                    <line x1="38" y1="88" x2="302" y2="88" stroke="rgba(148,163,184,0.08)" />
-                    <line x1="38" y1="113" x2="302" y2="113" stroke="rgba(148,163,184,0.08)" />
+                    <g className="home-final-axis-labels">
+                      <text x="20" y="66">500</text>
+                      <text x="20" y="146">250</text>
+                      <text x="28" y="226">0</text>
+                      <text x="62" y="260">Mon</text>
+                      <text x="126" y="260">Tue</text>
+                      <text x="190" y="260">Wed</text>
+                      <text x="254" y="260">Thu</text>
+                      <text x="318" y="260">Fri</text>
+                      <text x="382" y="260">Sat</text>
+                      <text x="438" y="260">Sun</text>
+                    </g>
 
-                    <text x="10" y="42" className="chart-axis-label">90</text>
-                    <text x="10" y="67" className="chart-axis-label">70</text>
-                    <text x="10" y="92" className="chart-axis-label">50</text>
-                    <text x="10" y="117" className="chart-axis-label">30</text>
+                    <path className="home-final-area-blue" d="M70 206 C104 178 120 166 142 172 C178 182 190 134 220 128 C248 122 266 150 294 138 C328 123 340 84 374 76 C406 68 420 48 452 44 L452 222 L70 222 Z" />
+                    <path className="home-final-line-blue" d="M70 206 C104 178 120 166 142 172 C178 182 190 134 220 128 C248 122 266 150 294 138 C328 123 340 84 374 76 C406 68 420 48 452 44" filter="url(#homeFinalLineGlowV2)" />
 
-                    <path
-                      d="M50 118 L84 101 L118 104 L152 81 L186 84 L220 68 L254 70 L288 52 L288 138 L50 138 Z"
-                      fill="url(#leadAreaFill)"
-                    />
-                    <polyline
-                      points="50,118 84,101 118,104 152,81 186,84 220,68 254,70 288,52"
-                      fill="none"
-                      stroke="#2dc4ff"
-                      strokeWidth="4"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <polyline
-                      points="50,125 84,116 118,108 152,101 186,94 220,86 254,83 288,72"
-                      fill="none"
-                      stroke="#41e0b0"
-                      strokeWidth="3.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
+                    <g className="home-final-dot-row">
+                      <circle cx="70" cy="206" r="4" />
+                      <circle cx="142" cy="172" r="4" />
+                      <circle cx="220" cy="128" r="4" />
+                      <circle cx="294" cy="138" r="4" />
+                      <circle cx="374" cy="76" r="4" />
+                      <circle className="home-final-dot-active" cx="452" cy="44" r="6" />
+                    </g>
 
-                    <circle cx="288" cy="52" r="4.2" fill="#2dc4ff" />
-                    <circle cx="288" cy="72" r="3.8" fill="#41e0b0" />
-
-                    <text x="46" y="156" className="chart-x-label">Mon</text>
-                    <text x="81" y="156" className="chart-x-label">Tue</text>
-                    <text x="115" y="156" className="chart-x-label">Wed</text>
-                    <text x="149" y="156" className="chart-x-label">Thu</text>
-                    <text x="184" y="156" className="chart-x-label">Fri</text>
-                    <text x="219" y="156" className="chart-x-label">Sat</text>
-                    <text x="253" y="156" className="chart-x-label">Sun</text>
+                    <g className="home-final-callout">
+                      <rect x="346" y="72" width="92" height="38" rx="13" />
+                      <text x="360" y="96">+10%</text>
+                    </g>
                   </svg>
 
-                  <div className="preview-chart-foot">
-                    <span>Captured demand rising</span>
-                    <b>+18% vs prior week</b>
+                  <div className="preview-chart-foot preview-chart-foot-final home-final-chart-foot">
+                    <span>+10% vs prior week</span>
+                    <b>482 total</b>
                   </div>
                 </div>
 
-                <div className="preview-chart-card preview-chart-card-pro">
-                  <div className="chart-card-header chart-card-header-pro">
+                <div className="preview-chart-card preview-chart-card-final home-final-chart-card home-final-chart-card-bookings">
+                  <div className="chart-card-header chart-card-header-pro home-final-chart-header">
                     <div>
                       <span>Bookings & revenue</span>
-                      <small>Week to date</small>
+                      <small>Week vs prior week</small>
                     </div>
                     <strong>14</strong>
                   </div>
 
-                  <div className="chart-legend">
-                    <span><i className="legend-dot legend-gold" /> Bookings</span>
-                    <span><i className="legend-dot legend-blue" /> Revenue trend</span>
+                  <div className="chart-legend chart-legend-pro home-final-chart-legend">
+                    <span><i className="legend-dot legend-blue" /> Bookings</span>
+                    <span><i className="legend-dot legend-gold" /> Revenue</span>
                   </div>
 
-                  <svg viewBox="0 0 320 180" role="img" aria-label="Demo bookings and revenue chart">
-                    <line x1="38" y1="28" x2="38" y2="138" stroke="rgba(148,163,184,0.18)" />
-                    <line x1="38" y1="138" x2="302" y2="138" stroke="rgba(148,163,184,0.18)" />
+                  <svg className="home-final-chart home-final-chart-bookings" viewBox="0 0 520 300" role="img" aria-label="Professional bookings and revenue chart">
+                    <defs>
+                      <linearGradient id="homeFinalBookingBarV2" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0%" stopColor="rgba(82, 171, 255, 0.88)" />
+                        <stop offset="100%" stopColor="rgba(82, 171, 255, 0.18)" />
+                      </linearGradient>
+                      <linearGradient id="homeFinalRevenueBarV2" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0%" stopColor="rgba(244, 201, 74, 0.92)" />
+                        <stop offset="100%" stopColor="rgba(244, 201, 74, 0.18)" />
+                      </linearGradient>
+                      <linearGradient id="homeFinalRevenueLineV2" x1="0" x2="1" y1="0" y2="0">
+                        <stop offset="0%" stopColor="#f4c94a" />
+                        <stop offset="100%" stopColor="#ffffff" />
+                      </linearGradient>
+                    </defs>
 
-                    <line x1="38" y1="38" x2="302" y2="38" stroke="rgba(148,163,184,0.08)" />
-                    <line x1="38" y1="63" x2="302" y2="63" stroke="rgba(148,163,184,0.08)" />
-                    <line x1="38" y1="88" x2="302" y2="88" stroke="rgba(148,163,184,0.08)" />
-                    <line x1="38" y1="113" x2="302" y2="113" stroke="rgba(148,163,184,0.08)" />
+                    <rect className="home-final-plot-bg" x="46" y="30" width="426" height="204" rx="18" />
+                    <g className="home-final-grid">
+                      <line x1="62" y1="62" x2="452" y2="62" />
+                      <line x1="62" y1="102" x2="452" y2="102" />
+                      <line x1="62" y1="142" x2="452" y2="142" />
+                      <line x1="62" y1="182" x2="452" y2="182" />
+                      <line x1="62" y1="222" x2="452" y2="222" />
+                    </g>
 
-                    <text x="12" y="42" className="chart-axis-label">8</text>
-                    <text x="12" y="67" className="chart-axis-label">6</text>
-                    <text x="12" y="92" className="chart-axis-label">4</text>
-                    <text x="12" y="117" className="chart-axis-label">2</text>
+                    <g className="home-final-axis-labels">
+                      <text x="16" y="66">£90k</text>
+                      <text x="16" y="146">£45k</text>
+                      <text x="30" y="226">£0</text>
+                      <text x="70" y="260">M</text>
+                      <text x="130" y="260">T</text>
+                      <text x="190" y="260">W</text>
+                      <text x="250" y="260">T</text>
+                      <text x="310" y="260">F</text>
+                      <text x="370" y="260">S</text>
+                      <text x="430" y="260">S</text>
+                    </g>
 
-                    <rect x="50" y="86" width="18" height="52" rx="5" fill="#b98a1f" />
-                    <rect x="84" y="72" width="18" height="66" rx="5" fill="#ffd24a" />
-                    <rect x="118" y="93" width="18" height="45" rx="5" fill="#b98a1f" />
-                    <rect x="152" y="58" width="18" height="80" rx="5" fill="#ffd24a" />
-                    <rect x="186" y="79" width="18" height="59" rx="5" fill="#b98a1f" />
-                    <rect x="220" y="51" width="18" height="87" rx="5" fill="#ffd24a" />
-                    <rect x="254" y="66" width="18" height="72" rx="5" fill="#b98a1f" />
+                    <g className="home-final-bars">
+                      <rect className="home-final-bar-blue" x="74" y="176" width="18" height="46" rx="6" />
+                      <rect className="home-final-bar-gold" x="96" y="162" width="18" height="60" rx="6" />
 
-                    <polyline
-                      points="59,97 93,101 127,90 161,78 195,82 229,64 263,58"
-                      fill="none"
-                      stroke="#2dc4ff"
-                      strokeWidth="3.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <circle cx="263" cy="58" r="4" fill="#2dc4ff" />
+                      <rect className="home-final-bar-blue" x="134" y="158" width="18" height="64" rx="6" />
+                      <rect className="home-final-bar-gold" x="156" y="136" width="18" height="86" rx="6" />
 
-                    <text x="47" y="156" className="chart-x-label">Mon</text>
-                    <text x="81" y="156" className="chart-x-label">Tue</text>
-                    <text x="115" y="156" className="chart-x-label">Wed</text>
-                    <text x="149" y="156" className="chart-x-label">Thu</text>
-                    <text x="183" y="156" className="chart-x-label">Fri</text>
-                    <text x="217" y="156" className="chart-x-label">Sat</text>
-                    <text x="251" y="156" className="chart-x-label">Sun</text>
+                      <rect className="home-final-bar-blue" x="194" y="146" width="18" height="76" rx="6" />
+                      <rect className="home-final-bar-gold" x="216" y="118" width="18" height="104" rx="6" />
+
+                      <rect className="home-final-bar-blue" x="254" y="128" width="18" height="94" rx="6" />
+                      <rect className="home-final-bar-gold" x="276" y="100" width="18" height="122" rx="6" />
+
+                      <rect className="home-final-bar-blue" x="314" y="106" width="18" height="116" rx="6" />
+                      <rect className="home-final-bar-gold" x="336" y="82" width="18" height="140" rx="6" />
+
+                      <rect className="home-final-bar-blue" x="374" y="94" width="18" height="128" rx="6" />
+                      <rect className="home-final-bar-gold" x="396" y="66" width="18" height="156" rx="6" />
+                    </g>
+
+                    <path className="home-final-revenue-line" d="M83 178 C132 158 162 150 205 130 C248 110 278 100 323 84 C366 70 402 58 438 44" />
+                    <circle className="home-final-revenue-dot" cx="438" cy="44" r="6" />
+
+                    <g className="home-final-callout">
+                      <rect x="336" y="80" width="102" height="38" rx="13" />
+                      <text x="350" y="104">£84k</text>
+                    </g>
                   </svg>
 
-                  <div className="preview-chart-foot">
-                    <span>Booked jobs strengthening</span>
-                    <b>Revenue trend improving</b>
+                  <div className="preview-chart-foot preview-chart-foot-final home-final-chart-foot">
+                    <span>14 booked</span>
+                    <b>£84k revenue</b>
                   </div>
                 </div>
               </div>
@@ -356,9 +388,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="landing-system-panel landing-system-panel-clean" id="about">
-        <div className="landing-system-copy">
-          <h2>BEE-AURA AI SYSTEMS for service business leads</h2>
+      <section className="landing-system-panel landing-system-panel-clean landing-system-panel-final" id="about">
+        <div className="landing-system-copy landing-system-copy-final">
+          <p className="landing-section-kicker">BEE-AURA AI SYSTEMS</p>
+          <h2>
+            Lead recovery control for
+            <span>service businesses.</span>
+          </h2>
           <h3>One system for enquiries, replies, bookings and follow-up control.</h3>
           <p>
             Bee-Aura gives service businesses a structured AI-ready operating layer,
@@ -371,7 +407,68 @@ export default function Home() {
             </Link>
           </div>
         </div>
+
+        <div className="landing-system-brand-display landing-system-brand-display-final" aria-label="Bee-Aura AI Systems symbol">
+          <img
+            src="/brand/source/bee-aura-symbol.svg"
+            alt="Bee-Aura symbol"
+            className="landing-system-brand-symbol landing-system-brand-symbol-final"
+          />
+        </div>
       </section>
+      <section id="pricing" className="landing-pricing" aria-label="Bee-Aura demo pricing">
+        <div className="landing-pricing-copy">
+          <p>PRICING PREVIEW</p>
+          <h2>Simple monthly pricing with clear setup fees.</h2>
+          <span>
+            Demo pricing only. Bee-Aura is shown here as a fake-data operating system with no payments, no live integrations and no customer-impacting actions.
+          </span>
+        </div>
+
+        <div className="landing-pricing-grid">
+          <article>
+            <p>Starter</p>
+            <h3>£149<span>/mo</span></h3>
+            <strong>Setup from £299</strong>
+            <small>For small service teams that need basic lead capture, inbox visibility and follow-up control.</small>
+            <ul>
+              <li>Lead capture dashboard</li>
+              <li>Smart inbox overview</li>
+              <li>Basic follow-up queue</li>
+              <li>Owner-safe demo actions</li>
+            </ul>
+          </article>
+
+          <article className="is-featured">
+            <p>Growth</p>
+            <h3>£299<span>/mo</span></h3>
+            <strong>Setup from £499</strong>
+            <small>For growing service teams that need bookings, reminders, review requests and owner approval.</small>
+            <ul>
+              <li>Booking command view</li>
+              <li>Reply and review approval</li>
+              <li>Daily calendar / action path</li>
+              <li>Lead recovery reporting</li>
+            </ul>
+          </article>
+
+          <article>
+            <p>Owner OS</p>
+            <h3>£499<span>/mo</span></h3>
+            <strong>Setup from £799</strong>
+            <small>For teams that want full command visibility, recovery oversight and audit-ready action tracking.</small>
+            <ul>
+              <li>Full operating dashboard</li>
+              <li>Audit and error visibility</li>
+              <li>Priority recovery queue</li>
+              <li>Multi-page owner control view</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+
+
     </main>
   );
 }

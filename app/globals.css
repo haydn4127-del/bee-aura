@@ -22025,3 +22025,500 @@ html body main .lead-owner-card:focus-visible {
   place-items: center !important;
   box-sizing: border-box !important;
 }
+
+
+
+/* =========================================================
+   HOME FINAL VISUAL LOCK V3
+   Page: / only
+   Purpose:
+   - bigger real Bee-Aura symbol, no writing underneath
+   - professional non-cartoon dashboard preview graphs
+   - brighter white writing
+========================================================= */
+
+/* Brighter landing text */
+.landing-page h1,
+.landing-page h2,
+.landing-page h3,
+.landing-page strong,
+.landing-page b,
+.landing-page .landing-brand-title,
+.landing-page .landing-hero-subheading {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+.landing-page p,
+.landing-page small,
+.landing-page .landing-feature p,
+.landing-page .landing-step p,
+.landing-page .landing-system-copy p,
+.landing-page .landing-pricing-copy span {
+  color: rgba(248, 250, 252, 0.90) !important;
+}
+
+/* Lower logo section */
+.landing-page .landing-system-panel.landing-system-panel-clean {
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.88fr) minmax(390px, 0.84fr) !important;
+  gap: clamp(42px, 6vw, 92px) !important;
+  align-items: center !important;
+  min-height: 430px !important;
+}
+
+.landing-page .landing-system-panel-clean .landing-system-copy {
+  min-width: 0 !important;
+  max-width: 650px !important;
+}
+
+.landing-page .landing-system-panel-clean .landing-system-brand-display {
+  justify-self: center !important;
+  align-self: center !important;
+  width: 100% !important;
+  max-width: 520px !important;
+  min-height: 340px !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.landing-page .landing-system-panel-clean .landing-system-brand-display::before,
+.landing-page .landing-system-panel-clean .landing-system-brand-display::after {
+  display: none !important;
+  content: none !important;
+}
+
+.landing-page .landing-system-panel-clean .landing-system-brand-lockup {
+  display: none !important;
+}
+
+.landing-page .landing-system-panel-clean .landing-system-brand-symbol {
+  width: min(430px, 92%) !important;
+  max-height: 340px !important;
+  object-fit: contain !important;
+  filter:
+    drop-shadow(0 0 38px rgba(77, 163, 255, 0.26))
+    drop-shadow(0 0 28px rgba(243, 200, 75, 0.18)) !important;
+}
+
+/* Professional dashboard preview graph cards */
+.preview-chart-card-final {
+  min-height: 270px !important;
+  padding: 14px !important;
+  border-color: rgba(77, 163, 255, 0.30) !important;
+  background:
+    radial-gradient(circle at top right, rgba(77, 163, 255, 0.12), transparent 42%),
+    linear-gradient(180deg, rgba(4, 17, 34, 0.86), rgba(1, 7, 16, 0.96)) !important;
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255,255,255,0.05) !important;
+}
+
+.preview-chart-card-final .chart-card-header span,
+.preview-chart-card-final .chart-card-header strong {
+  color: #FFFFFF !important;
+}
+
+.preview-chart-card-final .chart-card-header small {
+  color: rgba(248, 250, 252, 0.72) !important;
+}
+
+.home-pro-chart {
+  width: 100% !important;
+  height: 175px !important;
+  display: block !important;
+  margin-top: 9px !important;
+  border: 1px solid rgba(77, 163, 255, 0.12) !important;
+  border-radius: 16px !important;
+  background:
+    radial-gradient(circle at top right, rgba(77, 163, 255, 0.08), transparent 42%),
+    linear-gradient(180deg, rgba(4, 17, 34, 0.88), rgba(1, 7, 16, 0.96)) !important;
+}
+
+.home-pro-grid line {
+  stroke: rgba(148, 163, 184, 0.14) !important;
+  stroke-width: 1 !important;
+}
+
+.home-pro-axis text {
+  fill: rgba(248, 250, 252, 0.62) !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+}
+
+.home-pro-area-blue {
+  fill: url(#homeFinalLeadArea) !important;
+}
+
+.home-pro-line-blue {
+  fill: none !important;
+  stroke: #4DA3FF !important;
+  stroke-width: 4 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+.home-pro-line-gold {
+  fill: none !important;
+  stroke: #F3C84B !important;
+  stroke-width: 4 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+.home-pro-dot-blue {
+  fill: #4DA3FF !important;
+  stroke: rgba(255,255,255,0.85) !important;
+  stroke-width: 1.25 !important;
+}
+
+.home-pro-dot-gold {
+  fill: #F3C84B !important;
+  stroke: rgba(255,255,255,0.82) !important;
+  stroke-width: 1.2 !important;
+}
+
+.home-pro-dot-blue.is-final,
+.home-pro-dot-gold.is-final {
+  filter: drop-shadow(0 0 8px currentColor) !important;
+}
+
+.preview-chart-foot-final {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  align-items: center !important;
+  margin-top: 10px !important;
+}
+
+.preview-chart-foot-final span {
+  color: #F3C84B !important;
+  -webkit-text-fill-color: #F3C84B !important;
+  font-weight: 950 !important;
+}
+
+.preview-chart-foot-final b {
+  color: #4DA3FF !important;
+  -webkit-text-fill-color: #4DA3FF !important;
+  font-weight: 950 !important;
+}
+
+.preview-chart-card-bookings .preview-chart-foot-final b {
+  color: #F3C84B !important;
+  -webkit-text-fill-color: #F3C84B !important;
+}
+
+@media (max-width: 900px) {
+  .landing-page .landing-system-panel.landing-system-panel-clean {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+
+  .landing-page .landing-system-panel-clean .landing-system-brand-display {
+    margin-top: 26px !important;
+    min-height: 260px !important;
+  }
+}
+
+
+/* ===== HOME FINAL CLEAN VISUAL PASS START ===== */
+/* Scope: Home page only. Do not use this block for locked app pages. */
+
+.landing-page-polish-v4 {
+  color: #f8fbff;
+}
+
+.landing-page-polish-v4 h1,
+.landing-page-polish-v4 h2,
+.landing-page-polish-v4 h3,
+.landing-page-polish-v4 .landing-brand-title,
+.landing-page-polish-v4 .preview-content h3,
+.landing-page-polish-v4 .preview-stat strong,
+.landing-page-polish-v4 .chart-card-header strong {
+  color: #ffffff;
+  text-shadow: 0 0 22px rgba(255, 255, 255, 0.08);
+}
+
+.landing-page-polish-v4 p,
+.landing-page-polish-v4 .landing-feature p,
+.landing-page-polish-v4 .landing-step p,
+.landing-page-polish-v4 .landing-system-copy p,
+.landing-page-polish-v4 .landing-pricing-copy span {
+  color: rgba(246, 250, 255, 0.9);
+}
+
+.landing-page-polish-v4 .landing-hero-copy h2,
+.landing-page-polish-v4 .landing-system-copy h3 {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.landing-page-polish-v4 .preview-chart-grid-final {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+.landing-page-polish-v4 .home-final-chart-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 292px;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background:
+    radial-gradient(circle at 80% 12%, rgba(77, 163, 255, 0.13), transparent 34%),
+    linear-gradient(145deg, rgba(6, 15, 30, 0.98), rgba(7, 20, 39, 0.94));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 22px 50px rgba(0, 0, 0, 0.24);
+}
+
+.landing-page-polish-v4 .home-final-chart-card-bookings {
+  background:
+    radial-gradient(circle at 78% 14%, rgba(244, 201, 74, 0.13), transparent 34%),
+    linear-gradient(145deg, rgba(6, 15, 30, 0.98), rgba(7, 20, 39, 0.94));
+}
+
+.landing-page-polish-v4 .home-final-chart-header {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 10px;
+}
+
+.landing-page-polish-v4 .home-final-chart-header span {
+  color: #ffffff;
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+}
+
+.landing-page-polish-v4 .home-final-chart-header small {
+  color: rgba(226, 239, 255, 0.64);
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  font-size: 0.58rem;
+}
+
+.landing-page-polish-v4 .home-final-chart-header strong {
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.landing-page-polish-v4 .home-final-chart-legend {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 6px;
+  color: rgba(238, 246, 255, 0.76);
+  font-size: 0.62rem;
+}
+
+.landing-page-polish-v4 .home-final-chart {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 170px;
+  overflow: visible;
+  margin-top: 2px;
+}
+
+.landing-page-polish-v4 .home-final-plot-bg {
+  fill: rgba(4, 11, 23, 0.54);
+  stroke: rgba(148, 163, 184, 0.12);
+  stroke-width: 1;
+}
+
+.landing-page-polish-v4 .home-final-grid line {
+  stroke: rgba(148, 163, 184, 0.16);
+  stroke-width: 1;
+  stroke-dasharray: 4 10;
+}
+
+.landing-page-polish-v4 .home-final-axis-labels text {
+  fill: rgba(226, 239, 255, 0.46);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.landing-page-polish-v4 .home-final-area-blue {
+  fill: url(#homeFinalEnquiryAreaV2);
+}
+
+.landing-page-polish-v4 .home-final-line-blue {
+  fill: none;
+  stroke: url(#homeFinalEnquiryLineV2);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.landing-page-polish-v4 .home-final-dot-row circle {
+  fill: #071525;
+  stroke: #7ec8ff;
+  stroke-width: 2.5;
+}
+
+.landing-page-polish-v4 .home-final-dot-row .home-final-dot-active {
+  fill: #f4c94a;
+  stroke: rgba(255, 255, 255, 0.95);
+  filter: drop-shadow(0 0 14px rgba(244, 201, 74, 0.52));
+}
+
+.landing-page-polish-v4 .home-final-bars rect {
+  filter: drop-shadow(0 12px 16px rgba(0, 0, 0, 0.22));
+}
+
+.landing-page-polish-v4 .home-final-bar-blue {
+  fill: url(#homeFinalBookingBarV2);
+}
+
+.landing-page-polish-v4 .home-final-bar-gold {
+  fill: url(#homeFinalRevenueBarV2);
+}
+
+.landing-page-polish-v4 .home-final-revenue-line {
+  fill: none;
+  stroke: url(#homeFinalRevenueLineV2);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 12px rgba(244, 201, 74, 0.28));
+}
+
+.landing-page-polish-v4 .home-final-revenue-dot {
+  fill: #f4c94a;
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 14px rgba(244, 201, 74, 0.48));
+}
+
+.landing-page-polish-v4 .home-final-callout rect {
+  fill: rgba(3, 10, 22, 0.82);
+  stroke: rgba(244, 201, 74, 0.28);
+}
+
+.landing-page-polish-v4 .home-final-callout text {
+  fill: #ffffff;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.landing-page-polish-v4 .home-final-chart-foot {
+  position: relative;
+  z-index: 2;
+  margin-top: 4px;
+  color: rgba(238, 246, 255, 0.72);
+  font-size: 0.66rem;
+}
+
+.landing-page-polish-v4 .home-final-chart-foot b {
+  color: #f4c94a;
+  font-weight: 950;
+}
+
+.landing-page-polish-v4 .landing-system-panel-final {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+  align-items: center;
+  gap: clamp(34px, 5vw, 90px);
+  min-height: 520px;
+  padding: clamp(44px, 5vw, 72px);
+  border: 1px solid rgba(244, 201, 74, 0.24);
+  background:
+    radial-gradient(circle at 78% 50%, rgba(77, 163, 255, 0.14), transparent 32%),
+    radial-gradient(circle at 16% 10%, rgba(244, 201, 74, 0.11), transparent 28%),
+    linear-gradient(135deg, rgba(10, 30, 50, 0.86), rgba(3, 11, 24, 0.96) 56%, rgba(7, 24, 39, 0.92));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 34px 90px rgba(0, 0, 0, 0.34);
+}
+
+.landing-page-polish-v4 .landing-section-kicker {
+  margin: 0 0 12px;
+  color: #f4c94a !important;
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.landing-page-polish-v4 .landing-system-copy-final h2 {
+  max-width: 680px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(3rem, 5vw, 5.9rem);
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+}
+
+.landing-page-polish-v4 .landing-system-copy-final h2 span {
+  display: block;
+}
+
+.landing-page-polish-v4 .landing-system-copy-final h3 {
+  max-width: 640px;
+  margin: 26px 0 0;
+  font-size: clamp(1.15rem, 1.4vw, 1.55rem);
+  line-height: 1.24;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+}
+
+.landing-page-polish-v4 .landing-system-copy-final p:not(.landing-section-kicker) {
+  max-width: 620px;
+  margin-top: 22px;
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.landing-page-polish-v4 .landing-system-brand-display-final {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(390px, 100%);
+  min-height: 340px;
+  padding: 0;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.landing-page-polish-v4 .landing-system-brand-symbol-final {
+  display: block;
+  width: min(350px, 100%);
+  height: auto;
+  filter:
+    drop-shadow(0 0 34px rgba(77, 163, 255, 0.28))
+    drop-shadow(0 22px 46px rgba(0, 0, 0, 0.34));
+}
+
+@media (max-width: 1100px) {
+  .landing-page-polish-v4 .preview-chart-grid-final {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-page-polish-v4 .landing-system-panel-final {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .landing-page-polish-v4 .landing-system-brand-display-final {
+    justify-self: start;
+    min-height: 240px;
+  }
+
+  .landing-page-polish-v4 .landing-system-brand-symbol-final {
+    width: min(280px, 80vw);
+  }
+}
+/* ===== HOME FINAL CLEAN VISUAL PASS END ===== */
