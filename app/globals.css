@@ -21658,3 +21658,370 @@ html body main .lead-owner-card:focus-visible {
   opacity: 1 !important;
   letter-spacing: 0.14em !important;
 }
+
+/* =========================================================
+   DASHBOARD ERROR-LOG THEME SYNC V1
+   Page: /dashboard only
+   Purpose:
+   - sync dashboard with Error Log subtle premium card theme
+   - dark navy base, white text, yellow owner/action, subtle blue/green/gold cards
+========================================================= */
+
+.command-dashboard {
+  color: #F8FAFC !important;
+}
+
+/* Top owner profile */
+.command-dashboard .command-user {
+  border: 1px solid rgba(207, 164, 59, 0.58) !important;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(207, 164, 59, 0.16), transparent 36%),
+    rgba(3, 12, 24, 0.96) !important;
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.24),
+    0 0 18px rgba(207, 164, 59, 0.08) !important;
+}
+
+.command-dashboard .command-avatar {
+  background: #F3C84B !important;
+  color: #071522 !important;
+  -webkit-text-fill-color: #071522 !important;
+  border: 1px solid rgba(255, 216, 77, 0.88) !important;
+  font-weight: 950 !important;
+}
+
+.command-dashboard .command-user strong {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  font-weight: 950 !important;
+}
+
+.command-dashboard .command-user small {
+  color: rgba(248, 250, 252, 0.88) !important;
+  -webkit-text-fill-color: rgba(248, 250, 252, 0.88) !important;
+}
+
+/* Notification badge */
+.command-dashboard .command-bell {
+  border-color: rgba(243, 200, 75, 0.75) !important;
+  background: rgba(243, 200, 75, 0.14) !important;
+  color: #F3C84B !important;
+}
+
+/* Search button stays Bee-Aura yellow with black text */
+.command-dashboard .command-search button {
+  background: #F3C84B !important;
+  border-color: rgba(243, 200, 75, 0.96) !important;
+  color: #071522 !important;
+  -webkit-text-fill-color: #071522 !important;
+  font-weight: 950 !important;
+}
+
+/* Search shell cleaner */
+.command-dashboard .command-search {
+  border-color: rgba(77, 163, 255, 0.28) !important;
+  background: rgba(3, 12, 24, 0.96) !important;
+}
+
+.command-dashboard .command-search input {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+.command-dashboard .command-search input::placeholder {
+  color: rgba(248, 250, 252, 0.72) !important;
+}
+
+/* KPI cards follow Error Log subtle premium colour system */
+.command-dashboard .command-kpi {
+  border-color: rgba(77, 163, 255, 0.22) !important;
+  background:
+    radial-gradient(circle at left, rgba(77, 163, 255, 0.13), transparent 42%),
+    rgba(3, 12, 24, 0.72) !important;
+}
+
+.command-dashboard .command-kpi-blue {
+  border-color: rgba(77, 163, 255, 0.30) !important;
+}
+
+.command-dashboard .command-kpi-green {
+  border-color: rgba(34, 160, 107, 0.38) !important;
+  background:
+    radial-gradient(circle at left, rgba(34, 160, 107, 0.14), transparent 42%),
+    rgba(3, 12, 24, 0.72) !important;
+}
+
+.command-dashboard .command-kpi-gold {
+  border-color: rgba(207, 164, 59, 0.40) !important;
+  background:
+    radial-gradient(circle at left, rgba(207, 164, 59, 0.13), transparent 42%),
+    rgba(3, 12, 24, 0.72) !important;
+}
+
+.command-dashboard .command-kpi-icon {
+  background: rgba(77, 163, 255, 0.16) !important;
+  color: #8BE4FF !important;
+  border-color: rgba(77, 163, 255, 0.26) !important;
+}
+
+.command-dashboard .command-kpi-green .command-kpi-icon {
+  background: rgba(34, 160, 107, 0.16) !important;
+  color: #7CFFB2 !important;
+}
+
+.command-dashboard .command-kpi-gold .command-kpi-icon {
+  background: rgba(207, 164, 59, 0.16) !important;
+  color: #F3C84B !important;
+}
+
+/* Brighten dashboard text */
+.command-dashboard h1,
+.command-dashboard h2,
+.command-dashboard h3,
+.command-dashboard strong {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+
+.command-dashboard p,
+.command-dashboard small,
+.command-dashboard span {
+  color: rgba(248, 250, 252, 0.86);
+}
+
+/* Keep yellow labels/buttons black where needed */
+.command-dashboard a[class*="button"],
+.command-dashboard button {
+  font-weight: 900;
+}
+
+/* =========================================================
+   DASHBOARD NOTIFICATION BADGE BLACK NUMBER LOCK
+   Page: /dashboard only
+   Purpose:
+   - notification number beside owner profile must be black
+   - keep Bee-Aura yellow badge styling
+========================================================= */
+
+.command-dashboard .command-bell,
+.command-dashboard .command-bell.command-bell {
+  background: #F3C84B !important;
+  border: 1px solid rgba(255, 216, 77, 0.92) !important;
+  color: #071522 !important;
+  -webkit-text-fill-color: #071522 !important;
+  box-shadow:
+    0 0 14px rgba(243, 200, 75, 0.2),
+    inset 0 1px 0 rgba(255,255,255,0.28) !important;
+}
+
+.command-dashboard .command-bell strong,
+.command-dashboard .command-bell * {
+  color: #071522 !important;
+  -webkit-text-fill-color: #071522 !important;
+  font-weight: 950 !important;
+}
+
+/* Make actioned date tab feel clickable but still premium */
+.command-dashboard .command-date-select {
+  cursor: pointer !important;
+}
+
+.command-dashboard .command-date-select:hover {
+  border-color: rgba(243, 200, 75, 0.46) !important;
+  box-shadow: 0 0 16px rgba(243, 200, 75, 0.08) !important;
+}
+
+/* =========================================================
+   DASHBOARD HEADER SIZE MATCH POLISH V1
+   Page: /dashboard only
+   Purpose:
+   - keep preferred dashboard layout
+   - make top header controls match the rest of Bee-Aura
+   - same height, radius, owner profile size, search sizing
+========================================================= */
+
+.command-dashboard .command-topbar {
+  min-height: 54px !important;
+  display: grid !important;
+  grid-template-columns:
+    minmax(210px, 1fr)
+    minmax(250px, 1.05fr)
+    minmax(340px, 1.35fr)
+    148px !important;
+  gap: 10px !important;
+  align-items: center !important;
+}
+
+.command-dashboard .command-business-select,
+.command-dashboard .command-date-select,
+.command-dashboard .command-search,
+.command-dashboard .command-user {
+  height: 44px !important;
+  min-height: 44px !important;
+  border-radius: 999px !important;
+  background: rgba(3, 12, 24, 0.98) !important;
+  border: 1px solid rgba(77, 163, 255, 0.24) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 10px 24px rgba(0, 0, 0, 0.18) !important;
+}
+
+/* Match the cleaner search style used across approved pages */
+.command-dashboard .command-search {
+  grid-template-columns: minmax(0, 1fr) 78px !important;
+  overflow: hidden !important;
+  border-color: rgba(207, 164, 59, 0.34) !important;
+}
+
+.command-dashboard .command-search input {
+  height: 100% !important;
+  min-width: 0 !important;
+  padding: 0 13px !important;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  font-size: 0.78rem !important;
+  font-weight: 850 !important;
+}
+
+.command-dashboard .command-search input::placeholder {
+  color: rgba(248, 250, 252, 0.74) !important;
+  -webkit-text-fill-color: rgba(248, 250, 252, 0.74) !important;
+}
+
+.command-dashboard .command-search button {
+  width: 70px !important;
+  height: 34px !important;
+  min-height: 34px !important;
+  margin-right: 5px !important;
+  border-radius: 999px !important;
+  background: #F3C84B !important;
+  border: 1px solid rgba(243, 200, 75, 0.96) !important;
+  color: #071522 !important;
+  -webkit-text-fill-color: #071522 !important;
+  font-size: 0.72rem !important;
+  font-weight: 950 !important;
+}
+
+/* Owner profile now matches the newer page standard */
+.command-dashboard .command-user {
+  width: 148px !important;
+  max-width: 148px !important;
+  min-width: 148px !important;
+  display: grid !important;
+  grid-template-columns: 34px minmax(0, 1fr) 10px !important;
+  gap: 8px !important;
+  align-items: center !important;
+  padding: 0 10px !important;
+  border-color: rgba(207, 164, 59, 0.58) !important;
+  background:
+    radial-gradient(circle at 14% 10%, rgba(207, 164, 59, 0.16), transparent 38%),
+    rgba(3, 12, 24, 0.98) !important;
+}
+
+.command-dashboard .command-user .command-avatar {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  border-radius: 999px !important;
+  background: #F3C84B !important;
+  color: #071522 !important;
+  -webkit-text-fill-color: #071522 !important;
+  border: 1px solid rgba(255, 216, 77, 0.9) !important;
+  font-size: 0.72rem !important;
+  font-weight: 950 !important;
+}
+
+.command-dashboard .command-user strong {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  font-size: 0.76rem !important;
+  font-weight: 950 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.command-dashboard .command-user small {
+  color: rgba(248, 250, 252, 0.88) !important;
+  -webkit-text-fill-color: rgba(248, 250, 252, 0.88) !important;
+  font-size: 0.62rem !important;
+  font-weight: 850 !important;
+  line-height: 1 !important;
+}
+
+/* Keep notification badge removed/hidden if any old CSS or markup returns */
+.command-dashboard .command-bell {
+  display: none !important;
+}
+
+/* Match selector/date control text size */
+.command-dashboard .command-business-select,
+.command-dashboard .command-date-select {
+  padding: 0 13px !important;
+  color: rgba(248, 250, 252, 0.9) !important;
+  -webkit-text-fill-color: rgba(248, 250, 252, 0.9) !important;
+  font-size: 0.76rem !important;
+  font-weight: 850 !important;
+}
+
+.command-dashboard .command-business-select span,
+.command-dashboard .command-date-select span {
+  color: #F3C84B !important;
+  -webkit-text-fill-color: #F3C84B !important;
+}
+
+@media (max-width: 1280px) {
+  .command-dashboard .command-topbar {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .command-dashboard .command-user {
+    width: 148px !important;
+    justify-self: end !important;
+  }
+}
+
+/* =========================================================
+   DASHBOARD SEARCH BUTTON CONTAINMENT FIX
+   Page: /dashboard only
+   Purpose:
+   - keep yellow Search button fully inside search bar
+   - stop button/tab hanging out
+========================================================= */
+
+.command-dashboard .command-search {
+  position: relative !important;
+  display: block !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  padding: 0 84px 0 0 !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  border-radius: 999px !important;
+}
+
+.command-dashboard .command-search input {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  padding: 0 14px !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+}
+
+.command-dashboard .command-search button {
+  position: absolute !important;
+  top: 50% !important;
+  right: 5px !important;
+  transform: translateY(-50%) !important;
+  width: 74px !important;
+  height: 34px !important;
+  min-height: 34px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 999px !important;
+  display: grid !important;
+  place-items: center !important;
+  box-sizing: border-box !important;
+}

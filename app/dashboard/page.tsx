@@ -30,7 +30,7 @@ const kpis = [
     value: "14",
     change: "+27%",
     detail: "vs yesterday",
-    tone: "purple",
+    tone: "blue",
   },
   {
     href: "/leads",
@@ -67,7 +67,7 @@ const liveActivity = [
     detail: "Emily Davis • Bathroom Renovation",
     time: "2m ago",
     href: "/bookings?search=Emily%20Davis%20Bathroom%20Renovation",
-    tone: "purple",
+    tone: "blue",
   },
   {
     icon: "FU",
@@ -119,7 +119,7 @@ const followUps = [
   ["NH", "Natalie Hall", "Kitchen Fitting", "Tomorrow"],
 ];
 
-function Sparkline({ tone = "blue" }: { tone?: "blue" | "gold" | "green" | "purple" }) {
+function Sparkline({ tone = "blue" }: { tone?: "blue" | "gold" | "green"  }) {
   return (
     <svg className={`command-spark command-spark-${tone}`} viewBox="0 0 120 38" aria-hidden="true">
       <polyline points="4,30 18,24 32,26 46,20 60,18 74,12 88,16 104,9 116,11" />
@@ -142,7 +142,7 @@ function KpiCard({
   value: string;
   change: string;
   detail: string;
-  tone: "blue" | "gold" | "green" | "purple";
+  tone: "blue" | "gold" | "green" ;
 }) {
   return (
     <Link href={href} className={`command-kpi command-kpi-${tone}`}>
@@ -275,15 +275,19 @@ export default function DashboardPage() {
       <header className="command-topbar">
         <Link href="/settings" className="command-business-select">
           <span>⌂</span>
-          Northfield Home Services
+          Manchester Home Services
           <small>⌄</small>
         </Link>
 
-        <div className="command-date-select">
+        <Link
+          href="/activity-log?search=10%20May%20to%2016%20May%202025"
+          className="command-date-select"
+          aria-label="Open activity log for 10 May to 16 May 2025"
+        >
           <span>▣</span>
           10 May – 16 May 2025
           <small>⌄</small>
-        </div>
+        </Link>
 
         <form className="command-search dashboard-search-active" onSubmit={handleDashboardSearch}>
           <input
@@ -295,16 +299,70 @@ export default function DashboardPage() {
           <button type="submit">Search</button>
         </form>
 
-        <div className="command-user">
-          <span className="command-bell"><strong>4</strong></span>
-          <span className="command-avatar">JC</span>
+        <Link href="/settings" className="command-user" aria-label="Open owner settings">
+          <span className="command-avatar">JD</span>
           <div>
-            <strong>James Carter</strong>
+            <strong>John D</strong>
             <small>Owner</small>
           </div>
           <span>⌄</span>
-        </div>
+        </Link>
       </header>
+
+      <section className="command-calendar" aria-label="Owner calendar and next actions">
+        <div className="command-calendar-copy">
+          <p>Owner calendar</p>
+          <h2>Today’s bookings, follow-ups and replies in one view.</h2>
+          <span>
+            A simple daily run sheet for the owner: see the next job, the next reply and the next follow-up without hunting through every page.
+          </span>
+        </div>
+
+        <div className="command-calendar-events" aria-label="Today’s demo schedule">
+          <Link href="/bookings?search=Tom%20Wilson" className="command-calendar-event booking">
+            <time dateTime="2025-05-19T09:00">09:00</time>
+            <span>
+              <strong>Boiler service</strong>
+              <small>Tom Wilson · confirmed visit</small>
+            </span>
+            <em>Open booking</em>
+          </Link>
+
+          <Link href="/bookings?search=Sarah%20Johnson" className="command-calendar-event booking">
+            <time dateTime="2025-05-19T11:30">11:30</time>
+            <span>
+              <strong>Bathroom renovation</strong>
+              <small>Sarah Johnson · confirm engineer ETA</small>
+            </span>
+            <em>Open job</em>
+          </Link>
+
+          <Link href="/messages?search=Sarah%20Johnson" className="command-calendar-event message">
+            <time dateTime="2025-05-19T14:30">14:30</time>
+            <span>
+              <strong>Reply approval</strong>
+              <small>Emergency boiler message waiting</small>
+            </span>
+            <em>Open inbox</em>
+          </Link>
+
+          <Link href="/follow-ups?search=Emma%20Davis" className="command-calendar-event follow">
+            <time dateTime="2025-05-19T16:00">16:00</time>
+            <span>
+              <strong>Follow-up due</strong>
+              <small>Emma Davis · booking reminder</small>
+            </span>
+            <em>Open task</em>
+          </Link>
+        </div>
+
+        <div className="command-calendar-actions" aria-label="Calendar shortcuts">
+          <Link href="/bookings">Booking calendar</Link>
+          <Link href="/follow-ups">Follow-up queue</Link>
+          <Link href="/messages">Inbox actions</Link>
+        </div>
+      </section>
+
 
       <section className="command-dashboard-grid">
         <Panel title="Live Activity" badge="● Live" href="/activity-log">
@@ -375,7 +433,7 @@ export default function DashboardPage() {
               value={kpi.value}
               change={kpi.change}
               detail={kpi.detail}
-              tone={kpi.tone as "blue" | "gold" | "green" | "purple"}
+              tone={kpi.tone as "blue" | "gold" | "green" }
             />
           ))}
         </div>
