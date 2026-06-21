@@ -27,19 +27,19 @@ type Lead = {
 };
 
 const initialLeads: Lead[] = [
-  { name: "Tom Wilson", slug: "tom-wilson", enquiry: "Boiler repair", contact: "07912 345678", source: "Google", status: "New", urgency: "High", date: "19 May 2025", dateKey: 20250519, value: "£450", lastActivity: "2m ago", nextFollowUp: "Tomorrow, 10:00 AM", owner: "John D." },
-  { name: "Sarah Johnson", slug: "sarah-johnson", enquiry: "Plumbing leak", contact: "07845 678912", source: "WhatsApp", status: "Contacted", urgency: "Medium", date: "18 May 2025", dateKey: 20250518, value: "£320", lastActivity: "15m ago", nextFollowUp: "Today, 2:00 PM", owner: "John D." },
+  { name: "Tom Wilson", slug: "tom-wilson", enquiry: "Boiler repair", contact: "07912 345678", source: "Google", status: "New", urgency: "High", date: "19 May 2025", dateKey: 20250519, value: "£450", lastActivity: "2m ago", nextFollowUp: "Tomorrow, 10:00 AM", owner: "John D" },
+  { name: "Sarah Johnson", slug: "sarah-johnson", enquiry: "Plumbing leak", contact: "07845 678912", source: "WhatsApp", status: "Contacted", urgency: "Medium", date: "18 May 2025", dateKey: 20250518, value: "£320", lastActivity: "15m ago", nextFollowUp: "Today, 2:00 PM", owner: "John D" },
   { name: "Emma Davis", slug: "emma-davis", enquiry: "Bathroom renovation", contact: "07955 789123", source: "Referral", status: "Quote Sent", urgency: "High", date: "18 May 2025", dateKey: 20250518, value: "£6,200", lastActivity: "1h ago", nextFollowUp: "Tomorrow, 11:00 AM", owner: "Lucy C." },
   { name: "Mike Thompson", slug: "mike-thompson", enquiry: "Electrical fault", contact: "07798 123456", source: "Google", status: "Follow-Up", urgency: "Critical", date: "17 May 2025", dateKey: 20250517, value: "£180", lastActivity: "2h ago", nextFollowUp: "Today, 4:00 PM", owner: "Adam H." },
-  { name: "James Brown", slug: "james-brown", enquiry: "Drain clearance", contact: "07534 567890", source: "Facebook", status: "New", urgency: "High", date: "17 May 2025", dateKey: 20250517, value: "£220", lastActivity: "3h ago", nextFollowUp: "Tomorrow, 9:30 AM", owner: "John D." },
+  { name: "James Brown", slug: "james-brown", enquiry: "Drain clearance", contact: "07534 567890", source: "Facebook", status: "New", urgency: "High", date: "17 May 2025", dateKey: 20250517, value: "£220", lastActivity: "3h ago", nextFollowUp: "Tomorrow, 9:30 AM", owner: "John D" },
   { name: "Olivia Smith", slug: "olivia-smith", enquiry: "Thermostat install", contact: "07766 445566", source: "Website", status: "Contacted", urgency: "Normal", date: "16 May 2025", dateKey: 20250516, value: "£210", lastActivity: "5h ago", nextFollowUp: "Tomorrow, 1:00 PM", owner: "Lucy C." },
-  { name: "David Clarke", slug: "david-clarke", enquiry: "Roof repair", contact: "07888 223344", source: "Referral", status: "Referral", urgency: "Medium", date: "16 May 2025", dateKey: 20250516, value: "£1,850", lastActivity: "1d ago", nextFollowUp: "—", owner: "John D." },
+  { name: "David Clarke", slug: "david-clarke", enquiry: "Roof repair", contact: "07888 223344", source: "Referral", status: "Referral", urgency: "Medium", date: "16 May 2025", dateKey: 20250516, value: "£1,850", lastActivity: "1d ago", nextFollowUp: "—", owner: "John D" },
   { name: "Charlotte Lee", slug: "charlotte-lee", enquiry: "Boiler service", contact: "07890 112233", source: "Google", status: "Referral", urgency: "Normal", date: "15 May 2025", dateKey: 20250515, value: "£120", lastActivity: "2d ago", nextFollowUp: "—", owner: "Adam H." },
   { name: "Ben Morris", slug: "ben-morris", enquiry: "Bathroom leak", contact: "07700 998877", source: "Website", status: "Follow-Up", urgency: "High", date: "15 May 2025", dateKey: 20250515, value: "£250", lastActivity: "2d ago", nextFollowUp: "Today, 11:00 AM", owner: "Lucy C." },
-  { name: "Amelia Ward", slug: "amelia-ward", enquiry: "Emergency boiler repair", contact: "07911 220044", source: "Google", status: "New", urgency: "Critical", date: "15 May 2025", dateKey: 20250515, value: "£420", lastActivity: "2d ago", nextFollowUp: "Today, 3:30 PM", owner: "John D." },
+  { name: "Amelia Ward", slug: "amelia-ward", enquiry: "Emergency boiler repair", contact: "07911 220044", source: "Google", status: "New", urgency: "Critical", date: "15 May 2025", dateKey: 20250515, value: "£420", lastActivity: "2d ago", nextFollowUp: "Today, 3:30 PM", owner: "John D" },
   { name: "Daniel Khan", slug: "daniel-khan", enquiry: "Bathroom leak", contact: "07822 334455", source: "Website", status: "Contacted", urgency: "High", date: "14 May 2025", dateKey: 20250514, value: "£650", lastActivity: "3d ago", nextFollowUp: "Tomorrow, 9:00 AM", owner: "Lucy C." },
   { name: "Priya Shah", slug: "priya-shah", enquiry: "Annual boiler service", contact: "07733 445566", source: "Referral", status: "Follow-Up", urgency: "Medium", date: "14 May 2025", dateKey: 20250514, value: "£140", lastActivity: "3d ago", nextFollowUp: "Today, 5:00 PM", owner: "Adam H." },
-  { name: "Lucas Green", slug: "lucas-green", enquiry: "Blocked drain", contact: "07544 556677", source: "Facebook", status: "Quote Sent", urgency: "High", date: "13 May 2025", dateKey: 20250513, value: "£280", lastActivity: "4d ago", nextFollowUp: "Tomorrow, 12:00 PM", owner: "John D." },
+  { name: "Lucas Green", slug: "lucas-green", enquiry: "Blocked drain", contact: "07544 556677", source: "Facebook", status: "Quote Sent", urgency: "High", date: "13 May 2025", dateKey: 20250513, value: "£280", lastActivity: "4d ago", nextFollowUp: "Tomorrow, 12:00 PM", owner: "John D" },
 ];
 
 function slugify(value: string) {
@@ -128,7 +128,7 @@ export default function LeadsPage() {
         value: form.value.trim() || "£0",
         lastActivity: "Just now",
         nextFollowUp: "Today, 4:00 PM",
-        owner: "John D.",
+        owner: "John D",
       },
       ...current,
     ]);
@@ -187,7 +187,7 @@ export default function LeadsPage() {
           <Link href="/settings" className="baLeadTopUser" aria-label="Open owner settings">
             <span className="baLeadTopDot">JD</span>
             <span className="baLeadTopCopy">
-              <strong>John D.</strong>
+              <strong>John D</strong>
               <small>Owner</small>
             </span>
             <span className="baLeadTopArrow">⌄</span>
@@ -287,7 +287,19 @@ export default function LeadsPage() {
                   <td><Link className="lc-link strong" href={customerRoute(lead)}>{lead.name}</Link></td>
                   <td><Link className="lc-link" href="/bookings">{lead.enquiry}</Link></td>
                   <td><Link className="lc-link muted" href={customerRoute(lead)}>☎ {lead.contact}</Link></td>
-                  <td><Link href="/leads" className={`lc-source lc-source-${classSlug(lead.source)}`}>{lead.source}</Link></td>
+                  <td>
+                      <button
+                        type="button"
+                        className={`lc-source lc-source-${classSlug(lead.source)}`}
+                        aria-pressed={sourceFilter === lead.source}
+                        onClick={() => {
+                          setSourceFilter(lead.source);
+                          setSearchText("");
+                        }}
+                      >
+                        {lead.source}
+                      </button>
+                    </td>
                   <td><Link href={statusRoute(lead.status)} className={`lc-status lc-status-${classSlug(lead.status)}`}>{lead.status}</Link></td>
                   <td><Link href="/follow-ups" className={`lc-urgency lc-urgency-${classSlug(lead.urgency)}`}>{lead.urgency}</Link></td>
                   <td>{lead.date}</td>
@@ -310,15 +322,15 @@ export default function LeadsPage() {
         <div className="lc-insights">
           <article>
             <strong>Urgent lead focus</strong>
-            <span>{leads.filter((lead) => lead.urgency === "Critical").length} critical leads need action</span>
+            <span>{visibleLeads.filter((lead) => lead.urgency === "Critical").length} critical leads need action</span>
           </article>
           <article>
             <strong>Quotes to chase</strong>
-            <span>{leads.filter((lead) => lead.status === "Quote Sent").length} quotes are waiting on replies</span>
+            <span>{visibleLeads.filter((lead) => lead.status === "Quote Sent").length} quotes are waiting on replies</span>
           </article>
           <article>
             <strong>Follow-up discipline</strong>
-            <span>{leads.filter((lead) => lead.status === "Follow-Up").length} leads need follow-up</span>
+            <span>{visibleLeads.filter((lead) => lead.status === "Follow-Up").length} leads need follow-up</span>
           </article>
         </div>
 
