@@ -851,7 +851,7 @@ export default function MessagesPage() {
     pushActivity(`Copied phone number for ${selectedConversation.customerName}.`);
   }
 
-  function useReplyTemplate(template: "fast" | "booking" | "followup") {
+  function loadReplyTemplate(template: "fast" | "booking" | "followup") {
     if (template === "fast") {
       setComposerText(makeSuggestedReply(selectedConversation));
       pushActivity("Fast reply template loaded into the message box.");
@@ -1205,13 +1205,13 @@ export default function MessagesPage() {
             />
 
             <div className="messagesV7-composerActions">
-              <button type="button" onClick={() => useReplyTemplate("fast")}>
+              <button type="button" onClick={() => loadReplyTemplate("fast")}>
                 Load Fast Reply
               </button>
-              <button type="button" onClick={() => useReplyTemplate("booking")}>
+              <button type="button" onClick={() => loadReplyTemplate("booking")}>
                 Load Booking Reply
               </button>
-              <button type="button" onClick={() => useReplyTemplate("followup")}>
+              <button type="button" onClick={() => loadReplyTemplate("followup")}>
                 Load Follow-Up
               </button>
               <button

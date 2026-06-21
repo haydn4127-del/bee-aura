@@ -1005,9 +1005,27 @@ export default function CustomersPage() {
               </div>
 
               <div className={styles.pagination}>
-                <button type="button" aria-label="Previous page">‹</button>
-                <button type="button" className={styles.pageActive}>1</button>
-                <button type="button" aria-label="Next page">›</button>
+                <button
+                    type="button"
+                    aria-label="Previous page"
+                    onClick={() => window.alert("There is only one page of demo customers.")}
+                  >
+                    ‹
+                  </button>
+                <button
+                    type="button"
+                    className={styles.pageActive}
+                    onClick={() => window.alert("Page 1 is already selected.")}
+                  >
+                    1
+                  </button>
+                <button
+                    type="button"
+                    aria-label="Next page"
+                    onClick={() => window.alert("There is only one page of demo customers.")}
+                  >
+                    ›
+                  </button>
               </div>
             </div>
           </>

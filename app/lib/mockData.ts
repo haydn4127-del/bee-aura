@@ -1,8 +1,8 @@
 /**
  * Bee-Aura Mock Data
  * Central source of truth for all fake demo data
- * Business: Northfield Home Services, Birmingham UK
- * Owner: Marcus Northfield
+ * Business: Manchester Home Services, Manchester UK
+ * Owner: John D.
  */
 
 // ============================================================================
@@ -125,11 +125,11 @@ export interface DashboardSummary {
 // ============================================================================
 
 export const mockBusiness: Business = {
-  name: "Northfield Home Services",
-  owner: "Marcus Northfield",
+  name: "Manchester Home Services",
+  owner: "John D.",
   coordinator: "Sarah",
   contact: "+44 121 555 0200",
-  location: "Birmingham, UK",
+  location: "Manchester, UK",
   timezone: "GMT",
   services: [
     "Emergency boiler repair",

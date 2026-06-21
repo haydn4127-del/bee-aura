@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
 
 type MemberRole = "Owner" | "Admin" | "Staff";
@@ -15,10 +14,10 @@ type TeamMember = {
 type ToggleMap = Record<string, boolean>;
 
 const initialBusinessProfile = {
-  businessName: "Northfield Home Services",
-  contactEmail: "hello@northfieldhomes.com",
+  businessName: "Manchester Home Services",
+  contactEmail: "hello@manchesterhomeservices.co.uk",
   phoneNumber: "+44 7588 123 4567",
-  serviceArea: "Northfield, Birmingham and surrounding areas",
+  serviceArea: "Manchester, Salford, Stockport and surrounding areas",
   businessHours: "Mon - Fri 8:00 AM - 6:00 PM",
 };
 
@@ -52,20 +51,20 @@ const initialSecurity: ToggleMap = {
 const initialTeam: TeamMember[] = [
   {
     id: "TM-1",
-    name: "John D.",
-    email: "john@northfieldhomes.com",
+    name: "John D",
+    email: "john@manchesterhomeservices.co.uk",
     role: "Owner",
   },
   {
     id: "TM-2",
     name: "Sarah J.",
-    email: "sarah@northfieldhomes.com",
+    email: "sarah@manchesterhomeservices.co.uk",
     role: "Admin",
   },
   {
     id: "TM-3",
     name: "Tom W.",
-    email: "tom@northfieldhomes.com",
+    email: "tom@manchesterhomeservices.co.uk",
     role: "Staff",
   },
 ];
@@ -160,7 +159,7 @@ export default function SettingsPage() {
       {
         id: `TM-${Date.now()}`,
         name: `New Member ${count}`,
-        email: `member${count}@northfieldhomes.com`,
+        email: `member${count}@manchesterhomeservices.co.uk`,
         role: "Staff",
       },
     ]);
@@ -197,12 +196,17 @@ export default function SettingsPage() {
               placeholder="Search settings..."
             />
           </label>
-
-          <Link href="/settings" className="settingsRef-owner">
-            <span>JD</span>
-            <strong>John D.</strong>
-            <small>Owner</small>
-          </Link>
+          <button
+            type="button"
+            className="settingsRef-owner"
+            onClick={() => setNotice("Owner settings profile opened. Demo action only.")}
+          >
+            <span className="settingsRef-ownerInitials">JD</span>
+            <div>
+              <strong>John D</strong>
+              <small>Owner</small>
+            </div>
+          </button>
         </div>
       </header>
 
@@ -634,6 +638,33 @@ export default function SettingsPage() {
           </button>
         </div>
       </footer>
+
+      <section className="settingsRef-aura" aria-label="Bee-Aura Settings Watch">
+        <div className="settingsRef-auraBot" aria-hidden="true">
+          <img src="/brand/source/aura-assistant-transparent.png" alt="" />
+        </div>
+
+        <div className="settingsRef-auraCopy">
+          <p>AURA SETTINGS WATCH</p>
+          <h2>Aura keeps business controls, channels and owner approval aligned.</h2>
+          <span>
+            Bee-Aura watches demo settings, team permissions and automation controls so the owner can see what is switched on before anything affects leads, replies or bookings.
+          </span>
+
+          <div className="settingsRef-auraActions">
+            <button type="button" onClick={() => setNotice("Settings control review opened. Demo action only.")}>
+              Review controls
+            </button>
+            <button type="button" onClick={() => setNotice("Owner approval rules highlighted. Demo action only.")}>
+              Owner approval
+            </button>
+            <button type="button" onClick={() => setNotice("Automation safety controls highlighted. Demo action only.")}>
+              Automation safety
+            </button>
+          </div>
+        </div>
+      </section>
+
 
       <div className="settingsRef-notice">{notice}</div>
     </main>

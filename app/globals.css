@@ -22522,3 +22522,122 @@ html body main .lead-owner-card:focus-visible {
   }
 }
 /* ===== HOME FINAL CLEAN VISUAL PASS END ===== */
+
+
+/* ===== SETTINGS FINAL DEMO POLISH START ===== */
+/* Scope: Settings page polish only. Keeps locked page layouts untouched. */
+
+main[class*="settingsRef"] {
+  color: #f8fbff;
+}
+
+main[class*="settingsRef"] h1,
+main[class*="settingsRef"] h2,
+main[class*="settingsRef"] h3,
+main[class*="settingsRef"] strong,
+main[class*="settingsRef"] label {
+  color: #ffffff;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.08);
+}
+
+main[class*="settingsRef"] p,
+main[class*="settingsRef"] span,
+main[class*="settingsRef"] small {
+  color: rgba(238, 246, 255, 0.82);
+}
+
+main[class*="settingsRef"] input,
+main[class*="settingsRef"] select,
+main[class*="settingsRef"] textarea {
+  color: #ffffff;
+}
+
+main[class*="settingsRef"] input::placeholder {
+  color: rgba(226, 239, 255, 0.72);
+}
+
+main[class*="settingsRef"] button,
+main[class*="settingsRef"] select,
+main[class*="settingsRef"] input {
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease,
+    opacity 160ms ease;
+}
+
+main[class*="settingsRef"] button:hover,
+main[class*="settingsRef"] select:hover,
+main[class*="settingsRef"] input:hover {
+  border-color: rgba(244, 201, 74, 0.62);
+  box-shadow:
+    0 0 0 1px rgba(244, 201, 74, 0.12),
+    0 12px 30px rgba(0, 0, 0, 0.24);
+}
+
+main[class*="settingsRef"] button:hover {
+  transform: translateY(-1px);
+}
+
+main[class*="settingsRef"] button:active {
+  transform: translateY(0);
+}
+
+main[class*="settingsRef"] .settingsRef-owner {
+  background: linear-gradient(135deg, #f4c94a 0%, #d8a92e 55%, #b98718 100%) !important;
+  border: 1px solid rgba(255, 230, 140, 0.72) !important;
+  color: #06101d !important;
+  box-shadow:
+    0 0 0 1px rgba(244, 201, 74, 0.16),
+    0 14px 34px rgba(244, 201, 74, 0.18);
+}
+
+main[class*="settingsRef"] .settingsRef-owner:hover {
+  background: linear-gradient(135deg, #ffd95c 0%, #efbd38 55%, #c9931f 100%) !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 236, 160, 0.24),
+    0 18px 42px rgba(244, 201, 74, 0.28);
+}
+
+main[class*="settingsRef"] .settingsRef-owner strong,
+main[class*="settingsRef"] .settingsRef-owner small {
+  color: #06101d !important;
+  text-shadow: none !important;
+}
+
+main[class*="settingsRef"] .settingsRef-ownerInitials {
+  background: #06101d !important;
+  color: #f4c94a !important;
+  border: 1px solid rgba(6, 16, 29, 0.8);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+main[class*="settingsRef"] .settingsRef-auraActions button:hover,
+main[class*="settingsRef"] .settingsRef-actions button:hover,
+main[class*="settingsRef"] .settingsRef-saveButton:hover,
+main[class*="settingsRef"] .settingsRef-resetButton:hover {
+  background: linear-gradient(135deg, #f4c94a, #d8a92e);
+  color: #06101d;
+  border-color: rgba(255, 230, 140, 0.8);
+}
+
+main[class*="settingsRef"] .settingsRef-auraActions button:hover *,
+main[class*="settingsRef"] .settingsRef-actions button:hover * {
+  color: #06101d;
+}
+
+main[class*="settingsRef"] [role="switch"]:hover,
+main[class*="settingsRef"] button[aria-pressed]:hover,
+main[class*="settingsRef"] .settingsRef-toggle:hover {
+  filter: brightness(1.1);
+  box-shadow:
+    0 0 0 1px rgba(244, 201, 74, 0.22),
+    0 0 22px rgba(244, 201, 74, 0.16);
+}
+
+main[class*="settingsRef"] section:hover {
+  border-color: rgba(244, 201, 74, 0.22);
+}
+/* ===== SETTINGS FINAL DEMO POLISH END ===== */

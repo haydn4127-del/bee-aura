@@ -507,7 +507,7 @@ export default function ActivityLogPage() {
           <section className={styles.sidePanel}>
             <div className={styles.tableTop}>
               <div>
-                <p className={styles.kicker}>TODAY'S HIGHLIGHTS</p>
+                <p className={styles.kicker}>TODAY&apos;S HIGHLIGHTS</p>
                 <h2>Priority events</h2>
               </div>
               <button className={styles.ghostButton} type="button" onClick={showAllActivity}>View all</button>
