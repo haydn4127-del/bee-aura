@@ -922,7 +922,6 @@
   outline-offset: 3px;
 }
 
-
 /* === REVIEWS FINAL IDENTITY CHIP PASS === */
 .ownerButton span,
 .avatar,
@@ -934,7 +933,6 @@
   font-weight: 950 !important;
 }
 /* === END REVIEWS FINAL IDENTITY CHIP PASS === */
-
 
 /* === BEE-AURA REVIEWS ALIGNMENT PASS V1 === */
 .avatar,
@@ -973,14 +971,6 @@
 
 /* BEE-AURA FINAL FLOW LOCK V5: module-local generated lock for app/reviews/reviews.module.css */
 
-
-
-
-
-
-
-
-
 .avatar,
 .initials,
 .ownerButton {
@@ -992,11 +982,6 @@ display: grid;
   font-weight: 950 !important;
   text-shadow: none !important;
 }
-
-
-
-
-
 
 .auraPanel {
 display: grid;
@@ -1017,7 +1002,6 @@ display: grid;
   overflow: visible;
 }
 
-
 .botWrap {
 display: grid;
   place-items: center;
@@ -1030,8 +1014,6 @@ display: grid;
     rgba(7, 18, 31, 0.8);
   overflow: hidden;
 }
-
-
 
 .auraPanel img,
 .botWrap img {
@@ -1058,10 +1040,7 @@ display: grid;
   overflow-wrap: anywhere;
 }
 
-
 @media (max-width: 1180px) {
-
-
 
   .auraPanel {
     grid-template-columns: 1fr;
@@ -1446,7 +1425,6 @@ display: grid;
     rgba(2, 10, 20, 0.78) !important;
 }
 
-
 /* =========================================================
    REVIEWS ROW DETAIL POLISH V1
    Page: /reviews only
@@ -1538,7 +1516,6 @@ display: grid;
   color: #071522;
 }
 
-
 /* =========================================================
    REVIEWS FINAL BUTTON TEXT AND INITIALS LOCK
    Page: /reviews only
@@ -1569,7 +1546,7 @@ main.reviewsPage [data-review-customer-avatar="true"] {
 }
 
 /* Right-side selected action buttons: yellow with BLACK text */
-main.reviewsPage button[data-review-action-tab] {
+main.reviewsPage .selectedActions button[data-review-action-tab] {
   min-height: 38px !important;
   width: 100% !important;
   border: 1px solid rgba(243, 200, 75, 0.95) !important;
@@ -1585,18 +1562,17 @@ main.reviewsPage button[data-review-action-tab] {
     inset 0 1px 0 rgba(255,255,255,0.28) !important;
 }
 
-main.reviewsPage button[data-review-action-tab] *,
-main.reviewsPage button[data-review-action-tab] strong,
-main.reviewsPage button[data-review-action-tab] span,
-main.reviewsPage button[data-review-action-tab] small {
+main.reviewsPage .selectedActions button[data-review-action-tab] *,
+main.reviewsPage .selectedActions button[data-review-action-tab] strong,
+main.reviewsPage .selectedActions button[data-review-action-tab] span,
+main.reviewsPage .selectedActions button[data-review-action-tab] small {
   color: #071522 !important;
   -webkit-text-fill-color: #071522 !important;
 }
 
-main.reviewsPage button[data-review-action-tab]:hover {
+main.reviewsPage .selectedActions button[data-review-action-tab]:hover {
   filter: brightness(1.04) !important;
 }
-
 
 /* =========================================================
    REVIEWS TABLE ACTION COLOUR AND TAB COUNT LOCK
@@ -1741,3 +1717,635 @@ main.reviewsPage button[data-review-table-action="action"] {
     linear-gradient(180deg, rgba(10, 45, 84, 1), rgba(3, 21, 44, 1)) !important;
   border-color: rgba(107, 190, 255, 1) !important;
 }
+
+/* ===== REVIEWS ALIGNMENT PASS v1 START ===== */
+/* Scope: Reviews page only. */
+
+/* Bright text standard */
+.reviewsPage h1,
+.reviewsPage h2,
+.reviewsPage h3,
+.reviewsPage strong,
+.reviewsPage b,
+.tablePanel h2,
+.reviewTable th,
+.reviewTable td,
+.selectedPanel h2,
+.selectedMeta strong,
+.sourcePanel h2,
+.sourceCard h3,
+.sourceCard strong,
+.auraPanel h2 {
+  color: #ffffff !important;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.08);
+}
+
+.reviewsPage p,
+.reviewsPage small,
+.reviewsPage span,
+.reviewsPage em,
+.reviewsPage li,
+.tableIntro span,
+.reviewTable td small,
+.selectedPanel p,
+.selectedMeta small,
+.actionFeedback span,
+.sourceCopy,
+.sourceCard small,
+.auraPanel p,
+.auraList span,
+.footerNote {
+  color: rgba(246, 250, 255, 0.9) !important;
+}
+
+.reviewsPage input,
+.reviewsPage select,
+.reviewsPage textarea {
+  color: #ffffff !important;
+}
+
+.reviewsPage input::placeholder {
+  color: rgba(246, 250, 255, 0.72) !important;
+}
+
+/* Owner profile: yellow/black initials, no dot/extra mark */
+.ownerButton {
+  border-color: rgba(244, 201, 74, 0.58) !important;
+}
+
+.ownerButton::before,
+.ownerButton::after {
+  display: none !important;
+  content: none !important;
+}
+
+.ownerButton > span:first-child {
+  background: linear-gradient(135deg, #f4c94a 0%, #d8a92e 62%, #b98718 100%) !important;
+  color: #06101d !important;
+  border: 1px solid rgba(255, 231, 143, 0.88) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 10px 24px rgba(244, 201, 74, 0.18) !important;
+  font-weight: 950 !important;
+}
+
+.ownerButton strong {
+  color: #ffffff !important;
+}
+
+.ownerButton small {
+  color: rgba(246, 250, 255, 0.84) !important;
+}
+
+/* Hover and selected states */
+.reviewsPage button,
+.reviewsPage a,
+.reviewsPage input,
+.tablePanel,
+.reviewTable tbody tr,
+.tabButton,
+.customerButton,
+.rowButton,
+.selectedMeta div,
+.sourceCard,
+.auraList span {
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    filter 160ms ease;
+}
+
+.reviewsPage button:hover,
+.reviewsPage a:hover,
+.reviewsPage input:hover,
+.reviewTable tbody tr:hover,
+.tabButton:hover,
+.customerButton:hover,
+.rowButton:hover,
+.selectedMeta div:hover,
+.sourceCard:hover,
+.auraList span:hover {
+  border-color: rgba(244, 201, 74, 0.44) !important;
+  box-shadow:
+    0 0 0 1px rgba(244, 201, 74, 0.1),
+    0 14px 34px rgba(0, 0, 0, 0.24);
+}
+
+.reviewsPage button:hover,
+.reviewsPage a:hover,
+.tabButton:hover,
+.customerButton:hover,
+.rowButton:hover,
+.sourceCard:hover {
+  transform: translateY(-1px);
+}
+
+/* Review tabs: selected/hover should be obvious */
+.tabButton:hover,
+.tabActive,
+.tabButton[aria-pressed="true"] {
+  background: linear-gradient(135deg, #f4c94a 0%, #d8a92e 62%, #b98718 100%) !important;
+  border-color: rgba(255, 231, 143, 0.86) !important;
+  color: #06101d !important;
+  font-weight: 900 !important;
+  text-shadow: none !important;
+}
+
+.tabButton:hover span,
+.tabActive span,
+.tabButton[aria-pressed="true"] span {
+  color: #06101d !important;
+}
+
+/* Rating text remains Bee-Aura gold */
+.reviewRatingText {
+  color: #f4c94a !important;
+  font-weight: 900 !important;
+  text-shadow:
+    0 0 12px rgba(244, 201, 74, 0.18),
+    0 0 22px rgba(244, 201, 74, 0.1) !important;
+}
+
+/* Selected review record meta boxes: blue like the left-side/table system tabs */
+.selectedMeta div {
+  border-color: rgba(77, 163, 255, 0.36) !important;
+  background:
+    linear-gradient(135deg, rgba(77, 163, 255, 0.16), rgba(7, 18, 32, 0.94)) !important;
+}
+
+.selectedMeta div:hover {
+  border-color: rgba(77, 163, 255, 0.66) !important;
+  background:
+    linear-gradient(135deg, rgba(77, 163, 255, 0.24), rgba(7, 18, 32, 0.94)) !important;
+}
+
+/* Selected review record 3 action buttons: blue action tabs, not yellow */
+.selectedActions button[data-review-action-tab] {
+  background:
+    linear-gradient(135deg, rgba(77, 163, 255, 0.34), rgba(7, 18, 32, 0.96)) !important;
+  border: 1px solid rgba(77, 163, 255, 0.72) !important;
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  text-shadow: none !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 0 1px rgba(77, 163, 255, 0.10),
+    0 12px 28px rgba(0, 0, 0, 0.22) !important;
+}
+
+.selectedActions button[data-review-action-tab] *,
+.selectedActions button[data-review-action-tab] span,
+.selectedActions button[data-review-action-tab] strong,
+.selectedActions button[data-review-action-tab] small {
+  color: #ffffff !important;
+}
+
+.selectedActions button[data-review-action-tab]:hover {
+  background:
+    linear-gradient(135deg, rgba(77, 163, 255, 0.48), rgba(7, 18, 32, 0.96)) !important;
+  border-color: rgba(77, 163, 255, 0.9) !important;
+  box-shadow:
+    0 0 0 1px rgba(77, 163, 255, 0.18),
+    0 0 26px rgba(77, 163, 255, 0.18),
+    0 16px 36px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* Source cards: selected/active clarity */
+.sourceCardActive,
+.sourceCard:hover {
+  border-color: rgba(244, 201, 74, 0.48) !important;
+  box-shadow:
+    0 0 0 1px rgba(244, 201, 74, 0.12),
+    0 0 26px rgba(244, 201, 74, 0.12),
+    0 16px 38px rgba(0, 0, 0, 0.24) !important;
+}
+
+/* ===== REVIEWS ALIGNMENT PASS v1 END ===== */
+
+/* ===== REVIEWS MATCH LOCKED PAGE STYLE START ===== */
+
+/* Search: remove inner input-box look */
+.searchBox {
+  background: rgba(5, 14, 30, 0.84) !important;
+  border: 1px solid rgba(73, 166, 255, 0.28) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 10px 26px rgba(0, 0, 0, 0.22) !important;
+}
+
+.searchBox::before,
+.searchBox::after {
+  content: none !important;
+  display: none !important;
+}
+
+.searchBox input,
+.searchBox input:focus,
+.searchBox input:focus-visible {
+  background: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  color: rgba(255, 255, 255, 0.94) !important;
+}
+
+/* KPI cards: locked-page Bee-Aura style */
+.statStrip article,
+.statStrip > * {
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 78px !important;
+  padding: 16px 18px !important;
+  border-radius: 18px !important;
+  background:
+    linear-gradient(180deg, rgba(8, 21, 42, 0.98), rgba(3, 10, 22, 0.99)) !important;
+  border: 1px solid rgba(48, 144, 218, 0.36) !important;
+  border-left: 3px solid rgba(247, 199, 79, 0.7) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.045),
+    0 10px 24px rgba(0, 0, 0, 0.22) !important;
+}
+
+.statStrip article::before,
+.statStrip > *::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 0 auto 0 !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, rgba(247, 199, 79, 0.78), rgba(73, 166, 255, 0.22), transparent) !important;
+  opacity: 0.75 !important;
+}
+
+.statStrip article::after,
+.statStrip > *::after {
+  content: none !important;
+  display: none !important;
+}
+
+.statStrip article:hover,
+.statStrip > *:hover {
+  transform: translateY(-1px) !important;
+  border-color: rgba(247, 199, 79, 0.38) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 12px 28px rgba(0, 0, 0, 0.26) !important;
+}
+
+.statStrip article span:first-child,
+.statStrip > * span:first-child {
+  color: #f7c74f !important;
+  background: rgba(247, 199, 79, 0.12) !important;
+  border: 1px solid rgba(247, 199, 79, 0.24) !important;
+  box-shadow: none !important;
+}
+
+.statStrip article strong,
+.statStrip > * strong,
+.statStrip article h3,
+.statStrip > * h3 {
+  color: rgba(255, 255, 255, 0.96) !important;
+  text-shadow: none !important;
+}
+
+.statStrip article small,
+.statStrip > * small {
+  color: rgba(226, 236, 255, 0.74) !important;
+}
+
+/* Rating column: force gold/yellow back */
+.reviewRatingText,
+.reviewRatingText *,
+tbody .reviewRatingText,
+td .reviewRatingText {
+  color: #f7c74f !important;
+  -webkit-text-fill-color: #f7c74f !important;
+  font-weight: 900 !important;
+  text-shadow: 0 0 10px rgba(247, 199, 79, 0.14) !important;
+}
+
+/* Priority: traffic-light only */
+.priorityChip {
+  font-weight: 900 !important;
+  box-shadow: none !important;
+}
+
+.priorityHigh,
+.priorityUrgent,
+.priorityChip[class*="High"],
+.priorityChip[class*="high"],
+.priorityChip[class*="Urgent"],
+.priorityChip[class*="urgent"] {
+  color: #ffd6d6 !important;
+  background: rgba(239, 68, 68, 0.16) !important;
+  border-color: rgba(239, 68, 68, 0.52) !important;
+}
+
+.priorityMedium,
+.priorityChip[class*="Medium"],
+.priorityChip[class*="medium"] {
+  color: #ffe5a6 !important;
+  background: rgba(245, 158, 11, 0.16) !important;
+  border-color: rgba(245, 158, 11, 0.52) !important;
+}
+
+.priorityLow,
+.priorityChip[class*="Low"],
+.priorityChip[class*="low"] {
+  color: #c9f7df !important;
+  background: rgba(34, 197, 94, 0.14) !important;
+  border-color: rgba(34, 197, 94, 0.44) !important;
+}
+
+/* Selected Review Record: clean normal panel */
+.selectedMeta {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+}
+
+.selectedMeta div {
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 54px !important;
+  padding: 10px 12px !important;
+  border-radius: 13px !important;
+  background: rgba(5, 14, 30, 0.9) !important;
+  border: 1px solid rgba(73, 166, 255, 0.24) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+}
+
+.selectedMeta div::before,
+.selectedMeta div::after {
+  content: none !important;
+  display: none !important;
+}
+
+.selectedMeta div:hover {
+  transform: translateY(-1px) !important;
+  border-color: rgba(247, 199, 79, 0.34) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 10px 24px rgba(0, 0, 0, 0.2) !important;
+}
+
+.selectedMeta div strong {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-size: 0.86rem !important;
+  line-height: 1.15 !important;
+  text-shadow: none !important;
+}
+
+.selectedMeta div small {
+  color: rgba(226, 236, 255, 0.72) !important;
+  font-size: 0.68rem !important;
+}
+
+.selectedMeta div:nth-child(3) strong {
+  color: #f7c74f !important;
+  -webkit-text-fill-color: #f7c74f !important;
+}
+
+.selectedMeta + div {
+  background: rgba(5, 14, 30, 0.88) !important;
+  border: 1px solid rgba(247, 199, 79, 0.28) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+}
+
+.selectedMeta + div::before,
+.selectedMeta + div::after {
+  content: none !important;
+  display: none !important;
+}
+
+.selectedMeta ~ button,
+.selectedMeta ~ * button {
+  min-height: 36px !important;
+  padding: 10px 14px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, #ffd85f, #f4bf32) !important;
+  color: #03101f !important;
+  border: 1px solid rgba(255, 233, 150, 0.65) !important;
+  box-shadow: 0 8px 18px rgba(247, 199, 79, 0.13) !important;
+}
+
+/* Review Source Performance: source-coded accents, controlled not rainbow */
+.sourceGrid .sourceCard {
+  --source-rgb: 247, 199, 79;
+  --source-accent: #f7c74f;
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 136px !important;
+  padding: 16px !important;
+  border-radius: 16px !important;
+  background:
+    linear-gradient(180deg, rgba(9, 22, 45, 0.98), rgba(5, 13, 28, 0.99)) !important;
+  border: 1px solid rgba(var(--source-rgb), 0.38) !important;
+  border-left: 3px solid rgba(var(--source-rgb), 0.76) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.045),
+    0 10px 24px rgba(0, 0, 0, 0.2) !important;
+}
+
+.sourceGrid .sourceCard:nth-child(1) {
+  --source-rgb: 247, 199, 79;
+  --source-accent: #f7c74f;
+}
+
+.sourceGrid .sourceCard:nth-child(2) {
+  --source-rgb: 59, 130, 246;
+  --source-accent: #60a5fa;
+}
+
+.sourceGrid .sourceCard:nth-child(3) {
+  --source-rgb: 56, 189, 248;
+  --source-accent: #38bdf8;
+}
+
+.sourceGrid .sourceCard:nth-child(4) {
+  --source-rgb: 34, 197, 94;
+  --source-accent: #22c55e;
+}
+
+.sourceGrid .sourceCard::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 0 auto 0 !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, rgba(var(--source-rgb), 0.9), rgba(73, 166, 255, 0.18), transparent) !important;
+  opacity: 0.72 !important;
+}
+
+.sourceGrid .sourceCard::after {
+  content: none !important;
+  display: none !important;
+}
+
+.sourceGrid .sourceCard:hover,
+.sourceGrid .sourceCardActive {
+  transform: translateY(-1px) !important;
+  border-color: rgba(var(--source-rgb), 0.6) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 12px 28px rgba(0, 0, 0, 0.24),
+    0 0 0 1px rgba(var(--source-rgb), 0.08) !important;
+}
+
+.sourceGrid .sourceCard > span:first-child {
+  color: var(--source-accent) !important;
+  background: rgba(var(--source-rgb), 0.12) !important;
+  border: 1px solid rgba(var(--source-rgb), 0.34) !important;
+  box-shadow: none !important;
+}
+
+.sourceGrid .sourceCard h3 {
+  color: rgba(255, 255, 255, 0.96) !important;
+  text-shadow: none !important;
+}
+
+.sourceGrid .sourceCard strong {
+  color: var(--source-accent) !important;
+  -webkit-text-fill-color: var(--source-accent) !important;
+  background: rgba(var(--source-rgb), 0.1) !important;
+  border: 1px solid rgba(var(--source-rgb), 0.28) !important;
+  box-shadow: none !important;
+}
+
+.sourceGrid .sourceCard small {
+  color: rgba(226, 236, 255, 0.72) !important;
+}
+
+.sourceGrid .sourceCard small:last-child {
+  color: rgba(226, 236, 255, 0.86) !important;
+  background: rgba(var(--source-rgb), 0.1) !important;
+  border: 1px solid rgba(var(--source-rgb), 0.26) !important;
+}
+
+/* ===== REVIEWS MATCH LOCKED PAGE STYLE END ===== */
+
+/* ===== REVIEWS SELECTED RECORD COLOUR LOCK START ===== */
+
+/* Selected Review Record: colour-coded cards matching Reviews table/source theme */
+.selectedMetaCard,
+.selectedMeta div {
+  --meta-rgb: 73, 166, 255;
+  --meta-accent: #49a6ff;
+  position: relative !important;
+  overflow: hidden !important;
+  background:
+    linear-gradient(180deg, rgba(7, 18, 36, 0.96), rgba(3, 10, 22, 0.98)) !important;
+  border: 1px solid rgba(var(--meta-rgb), 0.38) !important;
+  border-left: 3px solid rgba(var(--meta-rgb), 0.78) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 8px 18px rgba(0, 0, 0, 0.18) !important;
+}
+
+.selectedMetaCard::before,
+.selectedMeta div::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 0 auto 0 !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, rgba(var(--meta-rgb), 0.9), rgba(73, 166, 255, 0.16), transparent) !important;
+  opacity: 0.68 !important;
+}
+
+.selectedMetaCard::after,
+.selectedMeta div::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Fallback by position, plus dynamic data-tone when JSX update applies */
+.selectedMeta div:nth-child(1),
+.selectedMetaCard[data-tone*="status-received"],
+.selectedMetaCard[data-tone*="status-ready"],
+.selectedMetaCard[data-tone*="status-sent"] {
+  --meta-rgb: 34, 197, 94;
+  --meta-accent: #22c55e;
+}
+
+.selectedMetaCard[data-tone*="status-needs-reply"] {
+  --meta-rgb: 245, 158, 11;
+  --meta-accent: #f7c74f;
+}
+
+.selectedMeta div:nth-child(2),
+.selectedMetaCard[data-tone*="source-google"] {
+  --meta-rgb: 247, 199, 79;
+  --meta-accent: #f7c74f;
+}
+
+.selectedMetaCard[data-tone*="source-facebook"] {
+  --meta-rgb: 59, 130, 246;
+  --meta-accent: #60a5fa;
+}
+
+.selectedMetaCard[data-tone*="source-website"] {
+  --meta-rgb: 56, 189, 248;
+  --meta-accent: #38bdf8;
+}
+
+.selectedMetaCard[data-tone*="source-sms"],
+.selectedMetaCard[data-tone*="source-whatsapp"],
+.selectedMetaCard[data-tone*="source-sms-whatsapp"] {
+  --meta-rgb: 34, 197, 94;
+  --meta-accent: #22c55e;
+}
+
+.selectedMeta div:nth-child(3),
+.selectedMetaCard[data-tone="rating"] {
+  --meta-rgb: 247, 199, 79;
+  --meta-accent: #f7c74f;
+}
+
+.selectedMeta div:nth-child(4),
+.selectedMetaCard[data-tone*="priority-low"] {
+  --meta-rgb: 34, 197, 94;
+  --meta-accent: #22c55e;
+}
+
+.selectedMetaCard[data-tone*="priority-medium"] {
+  --meta-rgb: 245, 158, 11;
+  --meta-accent: #f7c74f;
+}
+
+.selectedMetaCard[data-tone*="priority-high"],
+.selectedMetaCard[data-tone*="priority-urgent"] {
+  --meta-rgb: 239, 68, 68;
+  --meta-accent: #ef4444;
+}
+
+.selectedMetaCard:hover,
+.selectedMeta div:hover {
+  transform: translateY(-1px) !important;
+  border-color: rgba(var(--meta-rgb), 0.58) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.065),
+    0 10px 24px rgba(0, 0, 0, 0.22),
+    0 0 0 1px rgba(var(--meta-rgb), 0.08) !important;
+}
+
+.selectedMetaCard strong,
+.selectedMeta div strong {
+  color: var(--meta-accent) !important;
+  -webkit-text-fill-color: var(--meta-accent) !important;
+  text-shadow: none !important;
+}
+
+.selectedMetaCard small,
+.selectedMeta div small {
+  color: rgba(226, 236, 255, 0.76) !important;
+}
+
+/* Keep the selected action panel separate from the four colour-coded meta cards */
+.selectedMeta + div {
+  background: rgba(5, 14, 30, 0.88) !important;
+  border: 1px solid rgba(247, 199, 79, 0.28) !important;
+  border-left: 1px solid rgba(247, 199, 79, 0.28) !important;
+}
+
+/* ===== REVIEWS SELECTED RECORD COLOUR LOCK END ===== */

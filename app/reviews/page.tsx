@@ -447,6 +447,7 @@ export default function ReviewsPage() {
                 <button
                   key={tab}
                   type="button"
+                  aria-pressed={selectedTab === tab}
                   className={`${styles.tabButton} ${selectedTab === tab ? styles.tabActive : ""}`}
                   onClick={() => openTab(tab)}
                 >
