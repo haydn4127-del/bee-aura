@@ -22524,120 +22524,188 @@ html body main .lead-owner-card:focus-visible {
 /* ===== HOME FINAL CLEAN VISUAL PASS END ===== */
 
 
-/* ===== SETTINGS FINAL DEMO POLISH START ===== */
-/* Scope: Settings page polish only. Keeps locked page layouts untouched. */
 
-main[class*="settingsRef"] {
+
+/* ===== SETTINGS FINAL FINISH PASS START ===== */
+/* Scope: Settings page only. Exact selectors, no broad app-wide patching. */
+
+.settingsRef-page {
   color: #f8fbff;
 }
 
-main[class*="settingsRef"] h1,
-main[class*="settingsRef"] h2,
-main[class*="settingsRef"] h3,
-main[class*="settingsRef"] strong,
-main[class*="settingsRef"] label {
-  color: #ffffff;
+.settingsRef-page h1,
+.settingsRef-page h2,
+.settingsRef-page h3,
+.settingsRef-page strong,
+.settingsRef-page label,
+.settingsRef-page .settingsRef-cardHeader h2,
+.settingsRef-page .settingsRef-toggleRow strong,
+.settingsRef-page .settingsRef-teamIdentity strong {
+  color: #ffffff !important;
   text-shadow: 0 0 18px rgba(255, 255, 255, 0.08);
 }
 
-main[class*="settingsRef"] p,
-main[class*="settingsRef"] span,
-main[class*="settingsRef"] small {
-  color: rgba(238, 246, 255, 0.82);
+.settingsRef-page p,
+.settingsRef-page small,
+.settingsRef-page .settingsRef-footerNote,
+.settingsRef-page .settingsRef-auraCopy span,
+.settingsRef-page .settingsRef-form label > span,
+.settingsRef-page .settingsRef-toggleRow small,
+.settingsRef-page .settingsRef-teamIdentity small {
+  color: rgba(246, 250, 255, 0.9) !important;
 }
 
-main[class*="settingsRef"] input,
-main[class*="settingsRef"] select,
-main[class*="settingsRef"] textarea {
-  color: #ffffff;
+.settingsRef-page input,
+.settingsRef-page select,
+.settingsRef-page textarea {
+  color: #ffffff !important;
 }
 
-main[class*="settingsRef"] input::placeholder {
-  color: rgba(226, 239, 255, 0.72);
+.settingsRef-page input::placeholder {
+  color: rgba(246, 250, 255, 0.72) !important;
 }
 
-main[class*="settingsRef"] button,
-main[class*="settingsRef"] select,
-main[class*="settingsRef"] input {
+/* Exact hover/highlight behaviour for Settings controls. */
+.settingsRef-page button,
+.settingsRef-page input,
+.settingsRef-page select,
+.settingsRef-page textarea {
   transition:
     transform 160ms ease,
     box-shadow 160ms ease,
     border-color 160ms ease,
     background 160ms ease,
     color 160ms ease,
-    opacity 160ms ease;
+    filter 160ms ease;
 }
 
-main[class*="settingsRef"] button:hover,
-main[class*="settingsRef"] select:hover,
-main[class*="settingsRef"] input:hover {
-  border-color: rgba(244, 201, 74, 0.62);
+.settingsRef-page button:hover,
+.settingsRef-page input:hover,
+.settingsRef-page select:hover,
+.settingsRef-page textarea:hover {
+  border-color: rgba(244, 201, 74, 0.72) !important;
   box-shadow:
-    0 0 0 1px rgba(244, 201, 74, 0.12),
-    0 12px 30px rgba(0, 0, 0, 0.24);
+    0 0 0 1px rgba(244, 201, 74, 0.16),
+    0 14px 34px rgba(0, 0, 0, 0.24);
 }
 
-main[class*="settingsRef"] button:hover {
+.settingsRef-page button:hover {
   transform: translateY(-1px);
 }
 
-main[class*="settingsRef"] button:active {
+.settingsRef-page button:active {
   transform: translateY(0);
 }
 
-main[class*="settingsRef"] .settingsRef-owner {
-  background: linear-gradient(135deg, #f4c94a 0%, #d8a92e 55%, #b98718 100%) !important;
-  border: 1px solid rgba(255, 230, 140, 0.72) !important;
-  color: #06101d !important;
+/* Owner profile: dark premium pill with Bee-Aura yellow initials. */
+.settingsRef-page .settingsRef-toolbar .settingsRef-owner {
+  background:
+    linear-gradient(135deg, rgba(7, 18, 32, 0.96), rgba(3, 10, 20, 0.94)) !important;
+  border: 1px solid rgba(244, 201, 74, 0.62) !important;
+  color: #ffffff !important;
   box-shadow:
-    0 0 0 1px rgba(244, 201, 74, 0.16),
-    0 14px 34px rgba(244, 201, 74, 0.18);
+    0 0 0 1px rgba(244, 201, 74, 0.1),
+    0 14px 34px rgba(0, 0, 0, 0.26) !important;
 }
 
-main[class*="settingsRef"] .settingsRef-owner:hover {
-  background: linear-gradient(135deg, #ffd95c 0%, #efbd38 55%, #c9931f 100%) !important;
+.settingsRef-page .settingsRef-toolbar .settingsRef-owner:hover {
+  border-color: rgba(255, 222, 96, 0.86) !important;
   box-shadow:
-    0 0 0 1px rgba(255, 236, 160, 0.24),
-    0 18px 42px rgba(244, 201, 74, 0.28);
+    0 0 0 1px rgba(244, 201, 74, 0.2),
+    0 18px 42px rgba(244, 201, 74, 0.18) !important;
 }
 
-main[class*="settingsRef"] .settingsRef-owner strong,
-main[class*="settingsRef"] .settingsRef-owner small {
+.settingsRef-page .settingsRef-toolbar .settingsRef-ownerInitials,
+.settingsRef-page .settingsRef-toolbar .settingsRef-owner > span:first-child {
+  background: linear-gradient(135deg, #f4c94a 0%, #d8a92e 62%, #b98718 100%) !important;
   color: #06101d !important;
+  border: 1px solid rgba(255, 231, 143, 0.9) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 10px 24px rgba(244, 201, 74, 0.24) !important;
+}
+
+.settingsRef-page .settingsRef-toolbar .settingsRef-owner strong {
+  color: #ffffff !important;
+}
+
+.settingsRef-page .settingsRef-toolbar .settingsRef-owner small {
+  color: rgba(246, 250, 255, 0.84) !important;
+}
+
+/* Team initials remain Bee-Aura yellow/black and readable. */
+.settingsRef-page .settingsRef-teamIdentity > span {
+  background: linear-gradient(135deg, #f4c94a, #d8a92e) !important;
+  color: #06101d !important;
+  border: 1px solid rgba(255, 231, 143, 0.82) !important;
+}
+
+/* Gold action buttons. */
+.settingsRef-page .settingsRef-primaryAction,
+.settingsRef-page .settingsRef-secondaryAction,
+.settingsRef-page .settingsRef-resetAction,
+.settingsRef-page .settingsRef-auraActions button {
+  background: linear-gradient(135deg, #f4c94a 0%, #d8a92e 62%, #b98718 100%) !important;
+  border: 1px solid rgba(255, 231, 143, 0.82) !important;
+  color: #06101d !important;
+  font-weight: 900 !important;
   text-shadow: none !important;
 }
 
-main[class*="settingsRef"] .settingsRef-ownerInitials {
-  background: #06101d !important;
-  color: #f4c94a !important;
-  border: 1px solid rgba(6, 16, 29, 0.8);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
-main[class*="settingsRef"] .settingsRef-auraActions button:hover,
-main[class*="settingsRef"] .settingsRef-actions button:hover,
-main[class*="settingsRef"] .settingsRef-saveButton:hover,
-main[class*="settingsRef"] .settingsRef-resetButton:hover {
-  background: linear-gradient(135deg, #f4c94a, #d8a92e);
-  color: #06101d;
-  border-color: rgba(255, 230, 140, 0.8);
-}
-
-main[class*="settingsRef"] .settingsRef-auraActions button:hover *,
-main[class*="settingsRef"] .settingsRef-actions button:hover * {
-  color: #06101d;
-}
-
-main[class*="settingsRef"] [role="switch"]:hover,
-main[class*="settingsRef"] button[aria-pressed]:hover,
-main[class*="settingsRef"] .settingsRef-toggle:hover {
-  filter: brightness(1.1);
+.settingsRef-page .settingsRef-primaryAction:hover,
+.settingsRef-page .settingsRef-secondaryAction:hover,
+.settingsRef-page .settingsRef-resetAction:hover,
+.settingsRef-page .settingsRef-auraActions button:hover,
+.settingsRef-page .settingsRef-auraActions button.is-active {
+  background: linear-gradient(135deg, #ffdc62 0%, #efbd38 60%, #c9931f 100%) !important;
+  color: #06101d !important;
   box-shadow:
     0 0 0 1px rgba(244, 201, 74, 0.22),
-    0 0 22px rgba(244, 201, 74, 0.16);
+    0 18px 42px rgba(244, 201, 74, 0.24) !important;
 }
 
-main[class*="settingsRef"] section:hover {
-  border-color: rgba(244, 201, 74, 0.22);
+.settingsRef-page .settingsRef-auraActions button.is-active {
+  outline: 2px solid rgba(255, 246, 190, 0.3);
 }
-/* ===== SETTINGS FINAL DEMO POLISH END ===== */
+
+/* Selected Aura detail box. */
+.settingsRef-page .settingsRef-auraDetail {
+  margin-top: 18px;
+  max-width: 780px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(244, 201, 74, 0.28);
+  background:
+    linear-gradient(135deg, rgba(244, 201, 74, 0.1), rgba(77, 163, 255, 0.06)),
+    rgba(5, 14, 27, 0.58);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.settingsRef-page .settingsRef-auraDetail strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #ffffff !important;
+  font-size: 1rem;
+}
+
+.settingsRef-page .settingsRef-auraDetail span {
+  display: block;
+  color: rgba(246, 250, 255, 0.88) !important;
+  line-height: 1.55;
+}
+
+/* Toggle hover cue without changing toggle logic. */
+.settingsRef-page .settingsRef-toggle:hover {
+  filter: brightness(1.08);
+  box-shadow:
+    0 0 0 1px rgba(244, 201, 74, 0.2),
+    0 0 22px rgba(244, 201, 74, 0.16) !important;
+}
+
+.settingsRef-page .settingsRef-card:hover,
+.settingsRef-page .settingsRef-aura:hover {
+  border-color: rgba(244, 201, 74, 0.28) !important;
+}
+
+/* ===== SETTINGS FINAL FINISH PASS END ===== */
+

@@ -12,6 +12,7 @@ type TeamMember = {
 };
 
 type ToggleMap = Record<string, boolean>;
+type AuraFocus = "controls" | "approval" | "safety";
 
 const initialBusinessProfile = {
   businessName: "Manchester Home Services",
@@ -57,17 +58,32 @@ const initialTeam: TeamMember[] = [
   },
   {
     id: "TM-2",
-    name: "Sarah J.",
+    name: "Sarah J",
     email: "sarah@manchesterhomeservices.co.uk",
     role: "Admin",
   },
   {
     id: "TM-3",
-    name: "Tom W.",
+    name: "Tom W",
     email: "tom@manchesterhomeservices.co.uk",
     role: "Staff",
   },
 ];
+
+const auraFocusDetails: Record<AuraFocus, { title: string; body: string }> = {
+  controls: {
+    title: "Settings control review selected",
+    body: "Shows the owner which business profile, channel, notification and security controls are switched on before the demo system is used.",
+  },
+  approval: {
+    title: "Owner approval selected",
+    body: "Highlights the approval layer for sensitive automations, so the owner understands what requires sign-off before action is taken.",
+  },
+  safety: {
+    title: "Automation safety selected",
+    body: "Shows the safety layer around AI replies, missed-call recovery, booking confirmations and review request automation.",
+  },
+};
 
 function SettingToggle({
   checked,
@@ -99,8 +115,9 @@ export default function SettingsPage() {
   const [team, setTeam] = useState(initialTeam);
   const [search, setSearch] = useState("");
   const [notice, setNotice] = useState(
-    "Your settings are automatically saved in this demo environment."
+    "Demo settings update this page only. Live settings would control channels, roles and automations across the system."
   );
+  const [auraFocus, setAuraFocus] = useState<AuraFocus>("controls");
 
   const visibleCards = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -176,7 +193,13 @@ export default function SettingsPage() {
     setDateFormat("MM/DD/YYYY");
     setTeam(initialTeam);
     setSearch("");
+    setAuraFocus("controls");
     setNotice("Settings reset back to demo defaults.");
+  }
+
+  function selectAuraFocus(focus: AuraFocus) {
+    setAuraFocus(focus);
+    setNotice(auraFocusDetails[focus].title);
   }
 
   return (
@@ -618,7 +641,7 @@ export default function SettingsPage() {
       </section>
 
       <footer className="settingsRef-footerBar">
-        <div className="settingsRef-footerNote">♡ Your settings are automatically saved.</div>
+        <div className="settingsRef-footerNote">♡ Demo settings update this page only. In the live product, these controls would apply across channels, roles and automations.</div>
 
         <div className="settingsRef-footerActions">
           <button
@@ -631,7 +654,7 @@ export default function SettingsPage() {
 
           <button
             type="button"
-            className="settingsRef-resetAction"
+            className="settingsRef-primaryAction"
             onClick={resetDefaults}
           >
             ↺ Reset to Defaults
@@ -651,16 +674,36 @@ export default function SettingsPage() {
             Bee-Aura watches demo settings, team permissions and automation controls so the owner can see what is switched on before anything affects leads, replies or bookings.
           </span>
 
-          <div className="settingsRef-auraActions">
-            <button type="button" onClick={() => setNotice("Settings control review opened. Demo action only.")}>
+          <div className="settingsRef-auraActions" role="tablist" aria-label="Aura Settings Watch controls">
+            <button
+              type="button"
+              className={auraFocus === "controls" ? "is-active" : ""}
+              onClick={() => selectAuraFocus("controls")}
+              aria-pressed={auraFocus === "controls"}
+            >
               Review controls
             </button>
-            <button type="button" onClick={() => setNotice("Owner approval rules highlighted. Demo action only.")}>
+            <button
+              type="button"
+              className={auraFocus === "approval" ? "is-active" : ""}
+              onClick={() => selectAuraFocus("approval")}
+              aria-pressed={auraFocus === "approval"}
+            >
               Owner approval
             </button>
-            <button type="button" onClick={() => setNotice("Automation safety controls highlighted. Demo action only.")}>
+            <button
+              type="button"
+              className={auraFocus === "safety" ? "is-active" : ""}
+              onClick={() => selectAuraFocus("safety")}
+              aria-pressed={auraFocus === "safety"}
+            >
               Automation safety
             </button>
+          </div>
+
+          <div className="settingsRef-auraDetail">
+            <strong>{auraFocusDetails[auraFocus].title}</strong>
+            <span>{auraFocusDetails[auraFocus].body}</span>
           </div>
         </div>
       </section>
