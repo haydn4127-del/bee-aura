@@ -480,7 +480,7 @@ export default function FollowUpsPage() {
         <section className={styles.actionPanel}>
           <div>
             <p className={styles.kicker}>OWNER CONTROL</p>
-            <h2>John D. follow-up control</h2>
+            <h2>John D follow-up control</h2>
             <p>Owner keeps control of overdue callbacks, VIP review requests and sensitive follow-up messages.</p>
           </div>
 
@@ -507,6 +507,7 @@ export default function FollowUpsPage() {
                 <button
                   key={tab}
                   type="button"
+                  aria-pressed={selectedTab === tab}
                   className={`${styles.tabButton} ${selectedTab === tab ? styles.tabActive : ""}`}
                   data-follow-tab={tab.toLowerCase().replace(/\s+/g, "-")}
                   onClick={() => openTab(tab)}
@@ -588,7 +589,14 @@ export default function FollowUpsPage() {
                       <strong>{item.task}</strong>
                       <small>{item.detail}</small>
                     </td>
-                    <td>{item.channel}</td>
+                    <td>
+                      <span
+                        className={styles.channelChip}
+                        data-follow-channel={item.channel.toLowerCase().replace(/\s+/g, "-")}
+                      >
+                        {item.channel}
+                      </span>
+                    </td>
                     <td>
                       <span className={`${styles.priorityChip} ${priorityClass[item.priority]}`}>
                         {item.priority}
