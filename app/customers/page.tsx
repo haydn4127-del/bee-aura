@@ -620,7 +620,7 @@ export default function CustomersPage() {
                 }}
               >
                 <span>JD</span>
-                <strong>John D.</strong>
+                <strong>John D</strong>
                 <small>Owner</small>
               </button>
             </div>
@@ -844,7 +844,7 @@ export default function CustomersPage() {
           <div className={styles.panelHeader}>
             <div>
               <p className={styles.kicker}>OWNER CONTROL</p>
-              <h2>John D. profile</h2>
+              <h2>John D profile</h2>
               <p>
                 Demo owner profile for customer records, approval control, and
                 customer follow-up oversight.
@@ -909,6 +909,7 @@ export default function CustomersPage() {
             <button
               key={tab}
               type="button"
+              aria-pressed={selectedTab === tab}
               className={[styles.tabButton, selectedTab === tab ? styles.tabActive : ""]
                 .filter(Boolean)
                 .join(" ")}

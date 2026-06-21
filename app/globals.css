@@ -23580,3 +23580,46 @@ body main.bkV2-page .bkV2-date small {
 }
 
 /* ===== BOOKINGS DATE TIME GOLD FINAL END ===== */
+
+/* ===== CUSTOMERS AURA ACTIONS FINAL START ===== */
+/* Scope: Customers page global Aura panel only. */
+
+.baCustomerAura h2,
+.baCustomerAura strong {
+  color: #ffffff !important;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.08);
+}
+
+.baCustomerAura p,
+.baCustomerAura span {
+  color: rgba(246, 250, 255, 0.9) !important;
+}
+
+.baCustomerAuraActions a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 38px !important;
+  padding: 10px 14px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #f4c94a 0%, #d8a92e 62%, #b98718 100%) !important;
+  border: 1px solid rgba(255, 231, 143, 0.86) !important;
+  color: #06101d !important;
+  font-weight: 900 !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.baCustomerAuraActions a:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #ffdc62 0%, #efbd38 60%, #c9931f 100%) !important;
+  box-shadow:
+    0 0 0 1px rgba(244, 201, 74, 0.18),
+    0 14px 34px rgba(244, 201, 74, 0.18) !important;
+}
+
+/* ===== CUSTOMERS AURA ACTIONS FINAL END ===== */
