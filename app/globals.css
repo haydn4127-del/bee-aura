@@ -22709,3 +22709,131 @@ html body main .lead-owner-card:focus-visible {
 
 /* ===== SETTINGS FINAL FINISH PASS END ===== */
 
+
+
+/* ===== HOME ALIGNMENT PASS v1 START ===== */
+/* Scope: Home page only. Final page-alignment fixes. */
+
+.landing-page-polish-v4,
+.landing-page-polish-v4 .landing-dashboard-preview,
+.landing-page-polish-v4 .preview-content {
+  color: #f8fbff;
+}
+
+.landing-page-polish-v4 h1,
+.landing-page-polish-v4 h2,
+.landing-page-polish-v4 h3,
+.landing-page-polish-v4 strong,
+.landing-page-polish-v4 b,
+.landing-page-polish-v4 .landing-brand-title,
+.landing-page-polish-v4 .landing-hero-subheading,
+.landing-page-polish-v4 .preview-content h3,
+.landing-page-polish-v4 .preview-stat strong,
+.landing-page-polish-v4 .chart-card-header span,
+.landing-page-polish-v4 .chart-card-header strong,
+.landing-page-polish-v4 .landing-step strong,
+.landing-page-polish-v4 .landing-feature strong {
+  color: #ffffff !important;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.08);
+}
+
+.landing-page-polish-v4 p,
+.landing-page-polish-v4 small,
+.landing-page-polish-v4 .landing-hero-text,
+.landing-page-polish-v4 .landing-feature p,
+.landing-page-polish-v4 .landing-step p,
+.landing-page-polish-v4 .landing-system-copy p,
+.landing-page-polish-v4 .landing-pricing-copy span,
+.landing-page-polish-v4 .preview-chart-foot span {
+  color: rgba(246, 250, 255, 0.9) !important;
+}
+
+.landing-page-polish-v4 .preview-sidebar a {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.08);
+  color: rgba(246, 250, 255, 0.72);
+  font-size: 0.82rem;
+  font-weight: 850;
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.landing-page-polish-v4 .preview-sidebar a:hover {
+  transform: translateX(2px);
+  color: #ffffff;
+  border-color: rgba(244, 201, 74, 0.48);
+  background:
+    linear-gradient(135deg, rgba(244, 201, 74, 0.14), rgba(77, 163, 255, 0.08));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 12px 28px rgba(0, 0, 0, 0.24);
+}
+
+.landing-page-polish-v4 .preview-sidebar a.active {
+  color: #06101d;
+  border-color: rgba(255, 231, 143, 0.86);
+  background: linear-gradient(135deg, #f4c94a 0%, #d8a92e 62%, #b98718 100%);
+  box-shadow:
+    0 0 0 1px rgba(244, 201, 74, 0.16),
+    0 14px 34px rgba(244, 201, 74, 0.18);
+}
+
+.landing-page-polish-v4 .landing-nav-links a,
+.landing-page-polish-v4 .landing-button,
+.landing-page-polish-v4 .landing-trust-row span,
+.landing-page-polish-v4 .preview-stat,
+.landing-page-polish-v4 .home-final-chart-card,
+.landing-page-polish-v4 .landing-feature,
+.landing-page-polish-v4 .landing-step {
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.landing-page-polish-v4 .landing-nav-links a:hover,
+.landing-page-polish-v4 .landing-button:hover,
+.landing-page-polish-v4 .landing-trust-row span:hover,
+.landing-page-polish-v4 .preview-stat:hover,
+.landing-page-polish-v4 .home-final-chart-card:hover,
+.landing-page-polish-v4 .landing-feature:hover,
+.landing-page-polish-v4 .landing-step:hover {
+  border-color: rgba(244, 201, 74, 0.36) !important;
+  box-shadow:
+    0 0 0 1px rgba(244, 201, 74, 0.1),
+    0 16px 38px rgba(0, 0, 0, 0.24);
+}
+
+.landing-page-polish-v4 .landing-button:hover,
+.landing-page-polish-v4 .preview-stat:hover,
+.landing-page-polish-v4 .home-final-chart-card:hover,
+.landing-page-polish-v4 .landing-feature:hover,
+.landing-page-polish-v4 .landing-step:hover {
+  transform: translateY(-2px);
+}
+
+.landing-page-polish-v4 .landing-nav-links a:hover {
+  color: #ffffff;
+  background: rgba(244, 201, 74, 0.1);
+}
+
+.landing-page-polish-v4 .landing-button-primary {
+  color: #06101d !important;
+}
+
+.landing-page-polish-v4 .landing-button-outline,
+.landing-page-polish-v4 .landing-button-ghost {
+  color: #ffffff !important;
+}
+/* ===== HOME ALIGNMENT PASS v1 END ===== */

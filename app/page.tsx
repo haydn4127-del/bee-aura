@@ -131,13 +131,27 @@ export default function Home() {
                   <small>AI SYSTEMS</small>
                 </div>
               </div>
-              <span className="active">Overview</span>
-              <span>Leads</span>
-              <span>Messages</span>
-              <span>Bookings</span>
-              <span>Follow-Ups</span>
-              <span>Reviews</span>
-              <span>Settings</span>
+              <Link href="/dashboard" className="active" aria-label="Open dashboard overview">
+                Overview
+              </Link>
+              <Link href="/leads" aria-label="Open leads page">
+                Leads
+              </Link>
+              <Link href="/messages" aria-label="Open messages page">
+                Messages
+              </Link>
+              <Link href="/bookings" aria-label="Open bookings page">
+                Bookings
+              </Link>
+              <Link href="/follow-ups" aria-label="Open follow-ups page">
+                Follow-Ups
+              </Link>
+              <Link href="/reviews" aria-label="Open reviews page">
+                Reviews
+              </Link>
+              <Link href="/settings" aria-label="Open settings page">
+                Settings
+              </Link>
             </aside>
 
             <section className="preview-content">
