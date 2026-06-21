@@ -3353,3 +3353,221 @@ display: grid;
 }
 
 /* ===== CUSTOMERS ALIGNMENT PASS v1 END ===== */
+
+/* ===== CUSTOMERS FINAL CORRECTION v1 START ===== */
+/* Scope: Customers page only. */
+
+/* Total spend column: Bee-Aura yellow value styling */
+.customerTable td:nth-child(7),
+.customerTable td:nth-child(7) strong,
+.customerTable td:nth-child(7) span {
+  color: #f4c94a !important;
+  font-weight: 900 !important;
+  text-shadow:
+    0 0 12px rgba(244, 201, 74, 0.18),
+    0 0 22px rgba(244, 201, 74, 0.1) !important;
+}
+
+/* Satisfaction stars: yellow and clearer */
+.customerTable td:nth-child(10) {
+  color: #f4c94a !important;
+  font-weight: 900 !important;
+  letter-spacing: 1px !important;
+  text-shadow:
+    0 0 12px rgba(244, 201, 74, 0.2),
+    0 0 24px rgba(244, 201, 74, 0.12) !important;
+}
+
+/* Top command centre stat cards: stronger coloured glow, like Error Log cards */
+.statsGrid article,
+.stats article,
+.metricGrid article,
+.summaryGrid article,
+.kpiGrid article,
+.customerStats article,
+.heroStats article,
+.customersPage > section:first-of-type article {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(244, 201, 74, 0.26) !important;
+  background:
+    linear-gradient(135deg, rgba(15, 30, 52, 0.82), rgba(5, 14, 27, 0.92)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 0 0 1px rgba(244, 201, 74, 0.08),
+    0 18px 44px rgba(0, 0, 0, 0.28) !important;
+}
+
+.statsGrid article::before,
+.stats article::before,
+.metricGrid article::before,
+.summaryGrid article::before,
+.kpiGrid article::before,
+.customerStats article::before,
+.heroStats article::before,
+.customersPage > section:first-of-type article::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 22%, rgba(244, 201, 74, 0.18), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(77, 163, 255, 0.12), transparent 38%);
+  opacity: 0.95;
+}
+
+.statsGrid article:hover,
+.stats article:hover,
+.metricGrid article:hover,
+.summaryGrid article:hover,
+.kpiGrid article:hover,
+.customerStats article:hover,
+.heroStats article:hover,
+.customersPage > section:first-of-type article:hover {
+  border-color: rgba(244, 201, 74, 0.48) !important;
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px rgba(244, 201, 74, 0.14),
+    0 0 26px rgba(244, 201, 74, 0.16),
+    0 20px 48px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Selected customer record cards: yellow hover/selected feel */
+.recordGrid article {
+  border-color: rgba(244, 201, 74, 0.18) !important;
+  background:
+    linear-gradient(135deg, rgba(12, 26, 45, 0.86), rgba(5, 14, 27, 0.94)) !important;
+}
+
+.recordGrid article:first-child,
+.recordGrid article:hover {
+  border-color: rgba(244, 201, 74, 0.58) !important;
+  background:
+    linear-gradient(135deg, rgba(244, 201, 74, 0.14), rgba(77, 163, 255, 0.06)),
+    rgba(8, 20, 36, 0.96) !important;
+  box-shadow:
+    0 0 0 1px rgba(244, 201, 74, 0.12),
+    0 14px 34px rgba(0, 0, 0, 0.24) !important;
+}
+
+.recordGrid article:first-child span,
+.recordGrid article:hover span {
+  color: rgba(255, 244, 204, 0.92) !important;
+}
+
+.recordGrid article:first-child strong,
+.recordGrid article:hover strong {
+  color: #f4c94a !important;
+}
+
+/* Customer Intelligence: less stretched, better structure */
+.intelligencePanel {
+  padding: 24px !important;
+}
+
+.intelligenceGrid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 340px) !important;
+  gap: 18px !important;
+  align-items: stretch !important;
+}
+
+.breakdownPanel {
+  display: grid !important;
+  gap: 12px !important;
+}
+
+.breakdownRow {
+  display: grid !important;
+  grid-template-columns: minmax(150px, 220px) minmax(220px, 1fr) minmax(140px, 180px) !important;
+  align-items: center !important;
+  gap: 16px !important;
+  padding: 14px 16px !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(80, 97, 125, 0.5) !important;
+  background:
+    linear-gradient(135deg, rgba(15, 30, 52, 0.72), rgba(5, 14, 27, 0.88)) !important;
+}
+
+.breakdownRow:hover {
+  border-color: rgba(244, 201, 74, 0.4) !important;
+  background:
+    linear-gradient(135deg, rgba(244, 201, 74, 0.1), rgba(77, 163, 255, 0.06)),
+    rgba(8, 20, 36, 0.94) !important;
+}
+
+.breakdownLabel strong,
+.breakdownValue strong {
+  color: #ffffff !important;
+}
+
+.breakdownLabel span,
+.breakdownValue span {
+  color: rgba(246, 250, 255, 0.82) !important;
+}
+
+.barTrack {
+  min-height: 8px !important;
+  border-radius: 999px !important;
+  background: rgba(80, 97, 125, 0.38) !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.32) !important;
+}
+
+.barFill {
+  min-height: 8px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, #4da3ff, #f4c94a) !important;
+  box-shadow: 0 0 18px rgba(244, 201, 74, 0.18) !important;
+}
+
+.revenuePanel {
+  padding: 20px !important;
+  border-radius: 18px !important;
+  border-color: rgba(244, 201, 74, 0.24) !important;
+  background:
+    linear-gradient(135deg, rgba(244, 201, 74, 0.08), rgba(5, 14, 27, 0.92)) !important;
+}
+
+.revenuePanel h3 {
+  color: #ffffff !important;
+  font-size: 1.05rem !important;
+  line-height: 1.15 !important;
+}
+
+.revenuePanel li {
+  color: rgba(246, 250, 255, 0.88) !important;
+  line-height: 1.45 !important;
+}
+
+.insightCards {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  margin-top: 18px !important;
+}
+
+.insightCards article {
+  border-color: rgba(244, 201, 74, 0.18) !important;
+  background:
+    linear-gradient(135deg, rgba(15, 30, 52, 0.74), rgba(5, 14, 27, 0.9)) !important;
+}
+
+.insightCards article:hover {
+  border-color: rgba(244, 201, 74, 0.42) !important;
+}
+
+@media (max-width: 1200px) {
+  .intelligenceGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .breakdownRow {
+    grid-template-columns: 1fr !important;
+  }
+
+  .insightCards {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* ===== CUSTOMERS FINAL CORRECTION v1 END ===== */
