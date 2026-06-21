@@ -63,14 +63,14 @@ const baseConversations: Conversation[] = [
     status: "Needs Reply",
     priority: "Emergency",
     enquiry: "Emergency boiler repair",
-    lastMessage: "Can someone come today? The boiler has stopped and we have no hot water.",
+    lastMessage: "Auto first reply sent. Waiting for postcode and access confirmation.",
     lastSeen: "2 min ago",
     avgResponseMinutes: 2,
     booking: "Today, 14:30 — emergency boiler repair",
     followUp: "Confirm engineer ETA within 10 minutes",
-    recentActivity: "AI flagged this as emergency heating lead",
+    recentActivity: "Safe first response sent automatically by Bee-Aura",
     estimatedValue: "£180–£350",
-    ownerAction: "Approve fast reply and confirm slot",
+    ownerAction: "Review postcode reply and confirm engineer slot",
     unread: true,
   },
   {
@@ -321,9 +321,17 @@ const initialThreads: Record<string, ThreadMessage[]> = {
       id: "sarah-2",
       sender: "system",
       name: "Bee-Aura",
-      body: "Emergency heating lead detected. Suggested next step: confirm availability, collect postcode, and offer today slot.",
+      body: "Emergency heating lead detected. Safe first response sent automatically. Owner reviews the booking slot after postcode/access confirmation.",
       time: "09:15",
       channel: "System",
+    },
+    {
+      id: "sarah-auto-reply",
+      sender: "business",
+      name: "Bee-Aura Auto Reply",
+      body: "Hi Sarah, thanks for messaging Manchester Home Services. We can help with the emergency boiler repair today. Please send your postcode and confirm someone is at the property now, and we will secure the next available engineer slot.",
+      time: "09:16",
+      channel: "WhatsApp",
     },
   ],
   "conv-tom": [
@@ -905,7 +913,7 @@ export default function MessagesPage() {
 
 <Link href="/settings" className="messagesV7-ownerTab" aria-label="Open owner settings">
             <span>JD</span>
-            <strong>John D.<small>Owner</small></strong>
+            <strong>John D<small>Owner</small></strong>
             <em>⌄</em>
           </Link>
         </div>
@@ -921,8 +929,8 @@ export default function MessagesPage() {
 
           <Link href="/messages?search=Sarah%20Johnson" className="baFlowCard">
             <span>Now</span>
-            <strong>Approve reply</strong>
-            <small>Emergency boiler message waiting for owner approval.</small>
+            <strong>Auto reply sent</strong>
+            <small>Safe first response sent. Waiting for postcode.</small>
             <em>Open inbox</em>
           </Link>
 
@@ -1194,7 +1202,7 @@ export default function MessagesPage() {
 
           <div className="messagesV7-composer">
             <div>
-              <p>Suggested reply</p>
+              <p>Auto reply sent</p>
               <strong>{suggestedReply}</strong>
             </div>
 
