@@ -374,7 +374,7 @@ export default function BookingsPage() {
 
           <Link href="/settings" className="bkV2-owner">
             <span>JD</span>
-            <strong>John D.<small>Owner</small></strong>
+            <strong>John D<small>Owner</small></strong>
           </Link>
         </div>
       </header>

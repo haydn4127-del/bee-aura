@@ -23290,3 +23290,293 @@ main.command-dashboard.command-dashboard-polish-v1 input:focus-visible {
 }
 
 /* ===== MESSAGES VISUAL FINAL PASS END ===== */
+
+/* ===== BOOKINGS ALIGNMENT PASS v1 START ===== */
+/* Scope: Bookings page only. Exact bkV2 selectors. */
+
+.bkV2-page h1,
+.bkV2-page h2,
+.bkV2-page h3,
+.bkV2-page strong,
+.bkV2-page b,
+.bkV2-page .bkV2-title h1,
+.bkV2-page .bkV2-cardHeader h2,
+.bkV2-page .bkV2-row strong,
+.bkV2-page .bkV2-timeRow b,
+.bkV2-page .bkV2-detailGrid strong,
+.bkV2-page .bkV2-customer strong,
+.bkV2-page .bkV2-performanceStats strong {
+  color: #ffffff !important;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.08);
+}
+
+.bkV2-page p,
+.bkV2-page small,
+.bkV2-page span,
+.bkV2-page em,
+.bkV2-page .bkV2-title p,
+.bkV2-page .bkV2-cardHeader p,
+.bkV2-page .bkV2-cardHeader span,
+.bkV2-page .bkV2-row small,
+.bkV2-page .bkV2-timeRow small,
+.bkV2-page .bkV2-detailGrid span,
+.bkV2-page .bkV2-note,
+.bkV2-page .bkV2-notice,
+.bkV2-page .bkV2-aura span,
+.bkV2-page .bkV2-performanceLegend span,
+.bkV2-page .bkV2-performanceStats span {
+  color: rgba(246, 250, 255, 0.9) !important;
+}
+
+.bkV2-page input,
+.bkV2-page select {
+  color: #ffffff !important;
+}
+
+.bkV2-page input::placeholder {
+  color: rgba(246, 250, 255, 0.72) !important;
+}
+
+/* Remove inner boxes inside All Services and Search Bookings controls. */
+.bkV2-page .bkV2-select select,
+.bkV2-page .bkV2-search input {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.bkV2-page .bkV2-select,
+.bkV2-page .bkV2-search {
+  overflow: hidden;
+}
+
+.bkV2-page .bkV2-select span {
+  color: #f4c94a !important;
+}
+
+/* Owner profile: remove punctuation effect and keep JD yellow/black. */
+.bkV2-page .bkV2-owner {
+  border-color: rgba(244, 201, 74, 0.58) !important;
+}
+
+.bkV2-page .bkV2-owner::before,
+.bkV2-page .bkV2-owner::after {
+  display: none !important;
+  content: none !important;
+}
+
+.bkV2-page .bkV2-owner > span:first-child {
+  background: linear-gradient(135deg, #f4c94a 0%, #d8a92e 62%, #b98718 100%) !important;
+  color: #06101d !important;
+  border: 1px solid rgba(255, 231, 143, 0.88) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 10px 24px rgba(244, 201, 74, 0.18) !important;
+  font-weight: 950 !important;
+}
+
+.bkV2-page .bkV2-owner strong {
+  color: #ffffff !important;
+}
+
+.bkV2-page .bkV2-owner small {
+  color: rgba(246, 250, 255, 0.84) !important;
+}
+
+/* Hover/selected/action states. */
+.bkV2-page button,
+.bkV2-page a,
+.bkV2-page input,
+.bkV2-page select,
+.bkV2-page .bkV2-stat,
+.bkV2-page .bkV2-stats article,
+.bkV2-page .bkV2-card,
+.bkV2-page .bkV2-row,
+.bkV2-page .bkV2-timeRow,
+.bkV2-page .bkV2-calendarDay,
+.bkV2-page .bkV2-performanceStats div,
+.bkV2-page .bkV2-detailGrid p {
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    filter 160ms ease;
+}
+
+.bkV2-page button:hover,
+.bkV2-page a:hover,
+.bkV2-page input:hover,
+.bkV2-page select:hover,
+.bkV2-page .bkV2-stats article:hover,
+.bkV2-page .bkV2-card:hover,
+.bkV2-page .bkV2-row:hover,
+.bkV2-page .bkV2-timeRow:hover,
+.bkV2-page .bkV2-calendarDay:hover,
+.bkV2-page .bkV2-performanceStats div:hover,
+.bkV2-page .bkV2-detailGrid p:hover {
+  border-color: rgba(244, 201, 74, 0.44) !important;
+  box-shadow:
+    0 0 0 1px rgba(244, 201, 74, 0.1),
+    0 14px 34px rgba(0, 0, 0, 0.24);
+}
+
+.bkV2-page button:hover,
+.bkV2-page a:hover,
+.bkV2-page .bkV2-row:hover,
+.bkV2-page .bkV2-timeRow:hover,
+.bkV2-page .bkV2-calendarDay:hover {
+  transform: translateY(-1px);
+}
+
+.bkV2-page .bkV2-row.isSelected,
+.bkV2-page .bkV2-timeRow.isSelected,
+.bkV2-page .bkV2-calendarDay.isActive {
+  border-color: rgba(244, 201, 74, 0.72) !important;
+  background:
+    linear-gradient(135deg, rgba(244, 201, 74, 0.14), rgba(77, 163, 255, 0.08)),
+    rgba(8, 20, 36, 0.94) !important;
+  box-shadow:
+    0 0 0 1px rgba(244, 201, 74, 0.16),
+    0 16px 38px rgba(0, 0, 0, 0.24) !important;
+}
+
+/* Date/time blocks on the left: gold outline glow. */
+.bkV2-page .bkV2-date,
+.bkV2-page .bkV2-timeRow > strong {
+  border: 1px solid rgba(244, 201, 74, 0.62) !important;
+  background:
+    radial-gradient(circle at 35% 15%, rgba(255, 220, 98, 0.18), transparent 55%),
+    rgba(7, 18, 32, 0.96) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 0 0 1px rgba(244, 201, 74, 0.12),
+    0 0 22px rgba(244, 201, 74, 0.12) !important;
+}
+
+.bkV2-page .bkV2-date strong,
+.bkV2-page .bkV2-date em,
+.bkV2-page .bkV2-date small,
+.bkV2-page .bkV2-timeRow > strong {
+  color: #ffffff !important;
+  text-align: center !important;
+  line-height: 1.05 !important;
+}
+
+/* Today schedule status chips: straight, centred, readable. */
+.bkV2-page .bkV2-timeRow .bkV2-status,
+.bkV2-page .bkV2-row .bkV2-status,
+.bkV2-page .bkV2-calendarDay em {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 28px !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  padding: 8px 10px !important;
+}
+
+/* Booking Details: make text/fields clean white and strong. */
+.bkV2-page .bkV2-details,
+.bkV2-page .bkV2-detailGrid p,
+.bkV2-page .bkV2-customer,
+.bkV2-page .bkV2-note,
+.bkV2-page .bkV2-notice {
+  color: #ffffff !important;
+}
+
+.bkV2-page .bkV2-detailGrid strong {
+  color: #ffffff !important;
+}
+
+.bkV2-page .bkV2-detailGrid span {
+  color: rgba(246, 250, 255, 0.82) !important;
+}
+
+/* Aura bot/action area: yellow action tab/button background. */
+.bkV2-page .bkV2-auraButton,
+.bkV2-page .bkV2-detailActions button,
+.bkV2-page .bkV2-createActions button:last-child,
+.bkV2-page .bkV2-primary {
+  background: linear-gradient(135deg, #f4c94a 0%, #d8a92e 62%, #b98718 100%) !important;
+  border-color: rgba(255, 231, 143, 0.86) !important;
+  color: #06101d !important;
+  font-weight: 900 !important;
+  text-shadow: none !important;
+}
+
+.bkV2-page .bkV2-auraButton:hover,
+.bkV2-page .bkV2-detailActions button:hover,
+.bkV2-page .bkV2-createActions button:last-child:hover,
+.bkV2-page .bkV2-primary:hover {
+  background: linear-gradient(135deg, #ffdc62 0%, #efbd38 60%, #c9931f 100%) !important;
+  color: #06101d !important;
+}
+
+/* Keyboard/focus visibility. */
+.bkV2-page a:focus-visible,
+.bkV2-page button:focus-visible,
+.bkV2-page input:focus-visible,
+.bkV2-page select:focus-visible {
+  outline: 2px solid rgba(244, 201, 74, 0.74);
+  outline-offset: 3px;
+}
+
+/* ===== BOOKINGS ALIGNMENT PASS v1 END ===== */
+
+
+
+
+/* ===== BOOKINGS DATE TIME GOLD FINAL START ===== */
+/* Scope: Bookings page only. Make date/time boxes visibly Bee-Aura gold. */
+
+body main.bkV2-page .bkV2-row .bkV2-date,
+body main.bkV2-page .bkV2-list .bkV2-date,
+body main.bkV2-page .bkV2-timeRow > strong,
+body main.bkV2-page .bkV2-timeline .bkV2-timeRow > strong {
+  border: 2px solid rgba(244, 201, 74, 0.82) !important;
+  outline: 1px solid rgba(255, 231, 143, 0.22) !important;
+  background:
+    radial-gradient(circle at 35% 18%, rgba(255, 220, 98, 0.22), transparent 52%),
+    linear-gradient(135deg, rgba(244, 201, 74, 0.18), rgba(7, 18, 32, 0.96)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 0 0 1px rgba(244, 201, 74, 0.18),
+    0 0 22px rgba(244, 201, 74, 0.32),
+    0 12px 28px rgba(0, 0, 0, 0.24) !important;
+}
+
+body main.bkV2-page .bkV2-row.isSelected .bkV2-date,
+body main.bkV2-page .bkV2-timeRow.isSelected > strong {
+  border-color: rgba(255, 220, 98, 0.96) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 0 0 1px rgba(255, 231, 143, 0.24),
+    0 0 28px rgba(244, 201, 74, 0.44),
+    0 14px 34px rgba(0, 0, 0, 0.28) !important;
+}
+
+body main.bkV2-page .bkV2-date strong,
+body main.bkV2-page .bkV2-date em,
+body main.bkV2-page .bkV2-date small,
+body main.bkV2-page .bkV2-timeRow > strong {
+  color: #ffffff !important;
+  text-align: center !important;
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.1) !important;
+}
+
+body main.bkV2-page .bkV2-date strong,
+body main.bkV2-page .bkV2-timeRow > strong {
+  font-weight: 950 !important;
+}
+
+body main.bkV2-page .bkV2-date em,
+body main.bkV2-page .bkV2-date small {
+  color: rgba(255, 244, 204, 0.92) !important;
+}
+
+/* ===== BOOKINGS DATE TIME GOLD FINAL END ===== */
