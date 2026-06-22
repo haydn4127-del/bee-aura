@@ -467,7 +467,7 @@ export default function FollowUpsPage() {
               type="button"
               onClick={() => {
                 setNewPanelOpen(false);
-                setNotice("Demo follow-up saved locally. No database was touched.");
+                setNotice("Sample follow-up saved for this interactive demo.");
               }}
             >
               Save Demo Follow-Up
@@ -754,7 +754,7 @@ export default function FollowUpsPage() {
       </section>
 
       <p className={styles.safetyNote}>
-        Demo only: fake data, local UI actions, no database, no Supabase, no Stripe, no Twilio, no OpenAI API and no real customer data.
+        Interactive demo — sample data only. No live customer data, messages, payments or integrations are connected.
       </p>
     </main>
   );

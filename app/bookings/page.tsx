@@ -430,7 +430,7 @@ export default function BookingsPage() {
           <div>
             <p>Create booking</p>
             <h2>Add a new appointment</h2>
-            <span>Demo only. This creates a temporary booking in the page.</span>
+            <span>Interactive demo — this adds a sample booking for preview only.</span>
           </div>
 
           <form onSubmit={createBooking}>

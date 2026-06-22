@@ -199,7 +199,7 @@ export default function LeadsPage() {
         <section className="lc-create">
           <div>
             <h2>Add new lead</h2>
-            <p>Demo only. This creates a temporary lead in the table.</p>
+            <p>Interactive demo — this adds a sample lead for preview only.</p>
           </div>
 
           <form onSubmit={addLead}>

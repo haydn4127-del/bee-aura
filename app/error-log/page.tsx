@@ -715,7 +715,7 @@ export default function ErrorLogPage() {
       </section>
 
       <p className={styles.footerNote}>
-        Demo safety: fake data only, local UI actions only, no database, no Supabase, no Stripe, no Twilio, no OpenAI API, no deployment, and no real customer data.
+        Interactive demo — sample data only. No live customer data, messages, payments or integrations are connected.
       </p>
     </main>
   );

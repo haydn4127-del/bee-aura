@@ -475,7 +475,7 @@ export default function CustomersPage() {
       opportunity: "Needs first follow-up",
       notes:
         form.notes.trim() ||
-        "Demo-only customer added locally. No database, API, or real data was touched.",
+        "Sample customer added for this interactive demo. No live customer records are created.",
     };
 
     setCustomers((current) => [newCustomer, ...current]);
@@ -874,7 +874,7 @@ export default function CustomersPage() {
             </article>
             <article>
               <strong>Demo safety</strong>
-              <span>Local fake data only. No real customer records are created.</span>
+              <span>Sample data only. No live customer records are created.</span>
             </article>
           </div>
         </section>
@@ -1161,9 +1161,7 @@ export default function CustomersPage() {
         </div>
       </section>
 <p className={styles.safetyNote}>
-        Demo safety: fake data only, local UI actions only, no database, no
-        Supabase, no Stripe, no Twilio, no OpenAI API, no deployment, and no
-        real customer data.
+        Interactive demo — sample data only. No live customer data, messages, payments or integrations are connected.
       </p>
       <section className="baCustomerAura" aria-label="Bee-Aura Customer Watch">
         <div className="baCustomerAuraBot" aria-hidden="true">
