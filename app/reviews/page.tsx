@@ -583,10 +583,34 @@ export default function ReviewsPage() {
           <p>{selectedRecord.reviewText}</p>
 
           <div className={styles.selectedMeta}>
-            <div><strong>{selectedRecord.status}</strong><small>Status</small></div>
-            <div><strong>{selectedRecord.source}</strong><small>Source</small></div>
-            <div><strong>{ratingText(selectedRecord.rating)}</strong><small>Rating</small></div>
-            <div><strong>{selectedRecord.priority}</strong><small>Priority</small></div>
+            <div
+              className={styles.selectedMetaCard}
+              data-tone={`status-${selectedRecord.status.toLowerCase().replace(/\s+/g, "-")}`}
+            >
+              <strong>{selectedRecord.status}</strong>
+              <small>Status</small>
+            </div>
+            <div
+              className={styles.selectedMetaCard}
+              data-tone={`source-${selectedRecord.source.toLowerCase().replace(/[\s/]+/g, "-")}`}
+            >
+              <strong>{selectedRecord.source}</strong>
+              <small>Source</small>
+            </div>
+            <div
+              className={styles.selectedMetaCard}
+              data-tone={selectedRecord.rating ? "rating-scored" : "rating-pending"}
+            >
+              <strong>{ratingText(selectedRecord.rating)}</strong>
+              <small>Rating</small>
+            </div>
+            <div
+              className={styles.selectedMetaCard}
+              data-tone={`priority-${selectedRecord.priority.toLowerCase()}`}
+            >
+              <strong>{selectedRecord.priority}</strong>
+              <small>Priority</small>
+            </div>
           </div>
 
           <div className={styles.actionFeedback}>

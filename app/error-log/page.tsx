@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { type CSSProperties, useMemo, useState } from "react";
 import styles from "./error-log.module.css";
 
 type Severity = "Critical" | "High" | "Medium" | "Low";
@@ -173,6 +173,40 @@ function toneForSeverity(severity: string) {
   if (severity === "Low") return "success";
   return "neutral";
 }
+
+
+// ===== ERROR LOG SELECTED DETAIL COLOUR HELPERS START =====
+function errorDetailTone(tone: string) {
+  if (tone === "time" || tone === "eta") return { rgb: "77, 163, 255", accent: "#4da3ff" };
+  if (tone === "owner") return { rgb: "207, 164, 59", accent: "#f7c74f" };
+
+  if (tone === "source-whatsapp") return { rgb: "34, 197, 94", accent: "#22c55e" };
+  if (tone === "source-payments") return { rgb: "217, 92, 99", accent: "#ff7b82" };
+  if (tone === "source-bookings" || tone === "source-email" || tone === "source-call-tracking") return { rgb: "77, 163, 255", accent: "#4da3ff" };
+  if (tone === "source-bee-aura-ai") return { rgb: "207, 164, 59", accent: "#f7c74f" };
+
+  if (tone === "severity-critical") return { rgb: "217, 92, 99", accent: "#ff7b82" };
+  if (tone === "severity-high") return { rgb: "207, 164, 59", accent: "#f7c74f" };
+  if (tone === "severity-medium") return { rgb: "77, 163, 255", accent: "#4da3ff" };
+  if (tone === "severity-low") return { rgb: "34, 197, 94", accent: "#22c55e" };
+
+  if (tone === "status-open") return { rgb: "217, 92, 99", accent: "#ff7b82" };
+  if (tone === "status-investigating") return { rgb: "207, 164, 59", accent: "#f7c74f" };
+  if (tone === "status-retrying") return { rgb: "77, 163, 255", accent: "#4da3ff" };
+  if (tone === "status-resolved") return { rgb: "34, 197, 94", accent: "#22c55e" };
+
+  return { rgb: "207, 164, 59", accent: "#f7c74f" };
+}
+
+function errorDetailStyle(tone: string): CSSProperties {
+  const detail = errorDetailTone(tone);
+
+  return {
+    "--error-detail-rgb": detail.rgb,
+    "--error-detail-accent": detail.accent,
+  } as CSSProperties;
+}
+// ===== ERROR LOG SELECTED DETAIL COLOUR HELPERS END =====
 
 export default function ErrorLogPage() {
   const [errors, setErrors] = useState(errorsSeed);
@@ -531,30 +565,24 @@ export default function ErrorLogPage() {
           <p>{selected.impact}</p>
 
           <div className={styles.selectedGrid}>
-            <article>
-              <strong>{selected.time}</strong>
-              <span>Date / Time</span>
-            </article>
-            <article>
-              <strong>{selected.source}</strong>
-              <span>Source</span>
-            </article>
-            <article>
-              <strong>{selected.severity}</strong>
-              <span>Severity</span>
-            </article>
-            <article>
-              <strong>{selected.status}</strong>
-              <span>Status</span>
-            </article>
-            <article>
-              <strong>{selected.owner}</strong>
-              <span>Owner</span>
-            </article>
-            <article>
-              <strong>{selected.eta}</strong>
-              <span>ETA</span>
-            </article>
+            {[
+              { label: "Date / Time", value: selected.time, tone: "time" },
+              { label: "Source", value: selected.source, tone: `source-${token(selected.source)}` },
+              { label: "Severity", value: selected.severity, tone: `severity-${token(selected.severity)}` },
+              { label: "Status", value: selected.status, tone: `status-${token(selected.status)}` },
+              { label: "Owner", value: selected.owner, tone: "owner" },
+              { label: "ETA", value: selected.eta, tone: "eta" },
+            ].map((detail) => (
+              <div
+                key={detail.label}
+                className={styles.errorDetailItem}
+                style={errorDetailStyle(detail.tone)}
+              >
+                <span className={styles.errorDetailStrip} aria-hidden="true" />
+                <strong className={styles.errorDetailValue}>{detail.value}</strong>
+                <span className={styles.errorDetailLabel}>{detail.label}</span>
+              </div>
+            ))}
           </div>
 
           <div className={styles.recoveryStep}>

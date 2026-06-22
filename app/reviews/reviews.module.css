@@ -2349,3 +2349,182 @@ td .reviewRatingText {
 }
 
 /* ===== REVIEWS SELECTED RECORD COLOUR LOCK END ===== */
+
+/* ===== REVIEWS ACTION PATH BUTTON TEXT LOCK START ===== */
+
+/* Reviews action path: keep the section exactly as-is, only make gold pill text black */
+.reviewsPage :global(.baFlowCard em),
+.reviewsPage :global(.baFlowCard a),
+.reviewsPage :global(.baFlowCard button) {
+  color: #06111f !important;
+  -webkit-text-fill-color: #06111f !important;
+  text-shadow: none !important;
+  font-weight: 900 !important;
+}
+
+/* Keep normal card headings/body white on the dark cards */
+.reviewsPage :global(.baFlowCard span),
+.reviewsPage :global(.baFlowCard strong),
+.reviewsPage :global(.baFlowCard small) {
+  text-shadow: none !important;
+}
+
+/* ===== REVIEWS ACTION PATH BUTTON TEXT LOCK END ===== */
+
+/* ===== REVIEWS KPI YELLOW THEME LOCK START ===== */
+
+/* Reviews KPI cards: dark cards, white text, Bee-Aura yellow theme accents */
+.kpiCard {
+  border-color: rgba(207, 164, 59, 0.42) !important;
+  border-left: 3px solid rgba(207, 164, 59, 0.86) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 12px 28px rgba(0, 0, 0, 0.24),
+    0 0 0 1px rgba(207, 164, 59, 0.06) !important;
+}
+
+.kpiCard::before {
+  background: linear-gradient(90deg, rgba(207, 164, 59, 0.86), rgba(77, 163, 255, 0.16), transparent) !important;
+  opacity: 0.8 !important;
+}
+
+.kpiIcon {
+  color: #06111f !important;
+  -webkit-text-fill-color: #06111f !important;
+  background: linear-gradient(180deg, #ffd95f, #d9ad32) !important;
+  border: 1px solid rgba(255, 226, 128, 0.72) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 8px 18px rgba(207, 164, 59, 0.18) !important;
+  text-shadow: none !important;
+}
+
+/* Keep KPI writing white on the dark card */
+.kpiCard p,
+.kpiCard strong,
+.kpiCard small {
+  color: rgba(248, 250, 252, 0.96) !important;
+  -webkit-text-fill-color: currentColor !important;
+  text-shadow: none !important;
+}
+
+.kpiCard small {
+  color: rgba(226, 236, 255, 0.78) !important;
+}
+
+/* ===== REVIEWS KPI YELLOW THEME LOCK END ===== */
+
+/* ===== REVIEWS SELECTED RECORD DYNAMIC COLOUR LOCK START ===== */
+
+/* Selected Review Record: colours now follow the selected contact/record data */
+.selectedMeta .selectedMetaCard {
+  --meta-rgb: 73, 166, 255;
+  --meta-accent: #49a6ff;
+}
+
+.selectedMeta .selectedMetaCard[data-tone="status-received"] {
+  --meta-rgb: 34, 197, 94;
+  --meta-accent: #22c55e;
+}
+
+.selectedMeta .selectedMetaCard[data-tone="status-ready"] {
+  --meta-rgb: 247, 199, 79;
+  --meta-accent: #f7c74f;
+}
+
+.selectedMeta .selectedMetaCard[data-tone="status-sent"] {
+  --meta-rgb: 73, 166, 255;
+  --meta-accent: #49a6ff;
+}
+
+.selectedMeta .selectedMetaCard[data-tone="status-needs-reply"] {
+  --meta-rgb: 239, 68, 68;
+  --meta-accent: #ef4444;
+}
+
+.selectedMeta .selectedMetaCard[data-tone="source-google"] {
+  --meta-rgb: 247, 199, 79;
+  --meta-accent: #f7c74f;
+}
+
+.selectedMeta .selectedMetaCard[data-tone="source-facebook"] {
+  --meta-rgb: 59, 130, 246;
+  --meta-accent: #60a5fa;
+}
+
+.selectedMeta .selectedMetaCard[data-tone="source-website"] {
+  --meta-rgb: 56, 189, 248;
+  --meta-accent: #38bdf8;
+}
+
+.selectedMeta .selectedMetaCard[data-tone="source-whatsapp"] {
+  --meta-rgb: 34, 197, 94;
+  --meta-accent: #22c55e;
+}
+
+.selectedMeta .selectedMetaCard[data-tone="source-sms"],
+.selectedMeta .selectedMetaCard[data-tone="source-sms-whatsapp"] {
+  --meta-rgb: 247, 199, 79;
+  --meta-accent: #f7c74f;
+}
+
+.selectedMeta .selectedMetaCard[data-tone="rating-scored"] {
+  --meta-rgb: 247, 199, 79;
+  --meta-accent: #f7c74f;
+}
+
+.selectedMeta .selectedMetaCard[data-tone="rating-pending"] {
+  --meta-rgb: 73, 166, 255;
+  --meta-accent: #49a6ff;
+}
+
+.selectedMeta .selectedMetaCard[data-tone="priority-low"] {
+  --meta-rgb: 34, 197, 94;
+  --meta-accent: #22c55e;
+}
+
+.selectedMeta .selectedMetaCard[data-tone="priority-medium"] {
+  --meta-rgb: 247, 199, 79;
+  --meta-accent: #f7c74f;
+}
+
+.selectedMeta .selectedMetaCard[data-tone="priority-high"] {
+  --meta-rgb: 239, 68, 68;
+  --meta-accent: #ef4444;
+}
+
+.selectedMeta .selectedMetaCard strong {
+  color: var(--meta-accent) !important;
+  -webkit-text-fill-color: var(--meta-accent) !important;
+}
+
+/* ===== REVIEWS SELECTED RECORD DYNAMIC COLOUR LOCK END ===== */
+
+/* ===== REVIEWS NEEDS REPLY CHIP WRAP LOCK START ===== */
+
+/* Reviews table: stop "Needs Reply" status chip wrapping onto two lines */
+.statusChip,
+.statusReply {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  line-height: 1 !important;
+}
+
+.statusReply {
+  min-width: 82px !important;
+  padding-inline: 10px !important;
+}
+
+/* Give the status column enough breathing room without redesigning the table */
+.reviewTable th:nth-child(4),
+.reviewTable td:nth-child(4),
+.table th:nth-child(4),
+.table td:nth-child(4) {
+  min-width: 92px !important;
+}
+
+/* ===== REVIEWS NEEDS REPLY CHIP WRAP LOCK END ===== */

@@ -3030,7 +3030,6 @@ h1 {
 }
 /* === End Dashboard 12-column exact layout patch v5 === */
 
-
 /* === Bee-Aura Leads page clean v2 === */
 .leads-board {
   width: 100%;
@@ -3527,7 +3526,6 @@ h1 {
   margin-top: 12px;
 }
 /* === End Sidebar Bee bot visual upgrade v1 === */
-
 
 /* === Bee-Aura Leads clean final layout v14 === */
 
@@ -4851,7 +4849,6 @@ h1 {
 
 /* === End Bee-Aura Leads clean working standard v2 === */
 
-
 /* Bee-Aura Messages final standard v10 */
 .messagesV7-page {
   width: 100%;
@@ -5463,7 +5460,6 @@ h1 {
   }
 }
 /* End Bee-Aura Messages final standard v10 */
-
 
 /* Bee-Aura Bookings reference layout v3 */
 .bookingRef-page {
@@ -6098,7 +6094,6 @@ h1 {
 }
 /* End Bee-Aura Bookings reference layout v3 */
 
-
 /* Bee-Aura Customers reference layout v1 */
 .customerRef-page {
   width: 100%;
@@ -6609,7 +6604,6 @@ h1 {
   }
 }
 /* End Bee-Aura Customers reference layout v1 */
-
 
 /* Bee-Aura Follow-Ups reference layout v1 */
 .followRef-page {
@@ -7190,7 +7184,6 @@ h1 {
 }
 /* End Bee-Aura Follow-Ups reference layout v1 */
 
-
 /* Bee-Aura Reviews reference layout v1 */
 .reviewsRef-page {
   width: 100%;
@@ -7755,7 +7748,6 @@ h1 {
 }
 /* End Bee-Aura Reviews reference layout v1 */
 
-
 /* Bee-Aura Activity Log reference layout v1 */
 .activityRef-page {
   width: 100%;
@@ -8242,7 +8234,6 @@ h1 {
   }
 }
 /* End Bee-Aura Activity Log reference layout v1 */
-
 
 /* Bee-Aura Error Log reference layout v1 */
 .errorRef-page {
@@ -8846,7 +8837,6 @@ h1 {
 }
 /* End Bee-Aura Error Log reference layout v1 */
 
-
 /* Bee-Aura Settings reference layout v1 */
 .settingsRef-page {
   width: 100%;
@@ -9185,7 +9175,6 @@ h1 {
 }
 /* End Bee-Aura Settings reference layout v1 */
 
-
 /* Bee-Aura Sidebar professional cleanup v2 */
 .sidebar-professional {
   background:
@@ -9320,7 +9309,6 @@ h1 {
   text-decoration: none;
 }
 /* End Bee-Aura Sidebar professional cleanup v2 */
-
 
 /* Bee-Aura premium brand assets v1 */
 .sidebar-premium {
@@ -10031,7 +10019,6 @@ h1 {
   }
 }
 /* End Home Page Polish v2 */
-
 
 /* Home Page Polish v3 */
 .landing-page-polish-v3 {
@@ -16463,7 +16450,6 @@ h1 {
 }
 /* End Customers Layout Cleanup v2 */
 
-
 /* =========================================================
    AURA EXISTING BOT THEME — IMAGE TARGETED
    No new panels.
@@ -16482,7 +16468,6 @@ h1 {
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24) !important;
 }
 
-
 /* Theme the image holder only — without changing layout */
 :where(div, figure):has(> img[src*="aura-assistant"]),
 :where(div, figure):has(> img[alt*="Aura" i]) {
@@ -16492,13 +16477,11 @@ h1 {
     rgba(45, 196, 255, 0.08) !important;
 }
 
-
 /* Make Aura image itself pop slightly, without changing its size */
 img[src*="aura-assistant"],
 img[alt*="Aura" i] {
   filter: drop-shadow(0 18px 34px rgba(45, 196, 255, 0.2)) !important;
 }
-
 
 /* =========================================================
    BEE-AURA GLOBAL THEME LOCK
@@ -16549,7 +16532,6 @@ main :where(p, span, small, li) {
   color: var(--ba-muted);
 }
 
-
 /* Inputs, selects, search bars */
 main :where(input, select, textarea) {
   background: rgba(1, 10, 22, 0.72) !important;
@@ -16579,7 +16561,6 @@ main :where(tbody tr:hover) {
   background: rgba(45, 196, 255, 0.07) !important;
 }
 
-
 /* Aura / Bee bot theme only — existing bot sections only */
 :where(section, article, aside, div):has(img[src*="aura-assistant"]),
 :where(section, article, aside, div):has(img[alt*="Aura" i]) {
@@ -16602,7 +16583,6 @@ img[src*="aura-assistant"],
 img[alt*="Aura" i] {
   filter: drop-shadow(0 18px 34px rgba(45, 196, 255, 0.2)) !important;
 }
-
 
 /* === BEE-AURA FULL SYSTEM SYNC V5 START === */
 
@@ -16683,7 +16663,6 @@ main {
     linear-gradient(180deg, rgba(4, 20, 36, 0.36), rgba(2, 8, 18, 0.08)) !important;
 }
 
-
 aside a,
 aside button,
 nav a {
@@ -16700,7 +16679,6 @@ nav a:hover {
     inset 0 0 18px rgba(45, 196, 255, 0.10),
     0 0 14px rgba(45, 196, 255, 0.08) !important;
 }
-
 
 /* TEXT */
 h1,
@@ -16726,7 +16704,6 @@ li,
 small {
   color: var(--ba-text-soft) !important;
 }
-
 
 /* INPUTS / SEARCH / DROPDOWNS */
 input,
@@ -16756,7 +16733,6 @@ textarea::placeholder {
   color: rgba(226, 239, 255, 0.48) !important;
 }
 
-
 /* TABLES */
 thead,
 th {
@@ -16774,14 +16750,11 @@ tbody tr:hover {
   background: rgba(45, 196, 255, 0.065) !important;
 }
 
-
 /* === BEE-AURA FULL SYSTEM SYNC V5 END === */
-
 
 /* === GLOBAL CUSTOMER INITIAL BLACK TEXT PATCH START === */
 
 /* === GLOBAL CUSTOMER INITIAL BLACK TEXT PATCH END === */
-
 
 /* === BOOKING PERFORMANCE GRAPH PATCH START === */
 
@@ -16952,7 +16925,6 @@ tbody tr:hover {
 }
 
 /* === BOOKING PERFORMANCE GRAPH PATCH END === */
-
 
 /* === REVIEWS PAGE POLISH V1 START === */
 
@@ -17190,7 +17162,6 @@ tbody tr:hover {
 }
 
 /* === REVIEWS PAGE POLISH V1 END === */
-
 
 /* === REVIEWS PAGE POLISH V2 START === */
 
@@ -17552,7 +17523,6 @@ body {
     min-width: 0;
   }
 
-
   .app-main input,
   .app-main select,
   .app-main textarea {
@@ -17572,7 +17542,6 @@ body {
     padding-right: 32px !important;
   }
 }
-
 
 /* === BEE-AURA COLOUR SYSTEM V1.0 TOKENS === */
 :root,
@@ -17610,7 +17579,6 @@ body {
   --focus-ring-inset: #0B1220;
 }
 /* === END BEE-AURA COLOUR SYSTEM V1.0 TOKENS === */
-
 
 /* === SETTINGS OWNER TAB FINAL FORCE FIX === */
 /* High-specificity override: force Settings owner to match Activity Log / Reviews dark owner pill. */
@@ -17758,7 +17726,6 @@ main.settingsRef-page .settingsRef-resetAction {
 }
 
 /* === END SETTINGS OWNER TAB FINAL FORCE FIX === */
-
 
 /* === BOOKINGS CHART MATCH DASHBOARD STYLE PASS === */
 /* Aligns the Bookings performance chart with the Dashboard chart language. */
@@ -20590,8 +20557,6 @@ html body main .lead-owner-card:focus-visible {
   outline-offset: 3px !important;
 }
 
-
-
 /* BEE-AURA LEADS TOP USER DIRECT FIX
    Page: /leads only.
    Uses neutral class names so old owner/avatar/card CSS cannot override it.
@@ -20652,7 +20617,6 @@ html body main .lead-owner-card:focus-visible {
   color: #CBD5E1 !important;
   font-style: normal !important;
 }
-
 
 /* BEE-AURA MESSAGES PAGE ONLY FIX CJS
    Page: /messages only.
@@ -21550,7 +21514,6 @@ html body main .lead-owner-card:focus-visible {
   color: #F8FAFC !important;
 }
 
-
 /* BEE-AURA MESSAGES REAL BUBBLE HOOK FIX
    Page: /messages only.
    Reliable fix using data-message-sender attributes.
@@ -21634,7 +21597,6 @@ html body main .lead-owner-card:focus-visible {
     linear-gradient(180deg, rgba(8, 18, 32, 0.98), rgba(2, 9, 18, 0.98)) !important;
   border: 1px solid rgba(207, 164, 59, 0.42) !important;
 }
-
 
 /* =========================================================
    BEE-AURA SIDEBAR BRAND BRIGHTNESS LOCK
@@ -22026,8 +21988,6 @@ html body main .lead-owner-card:focus-visible {
   box-sizing: border-box !important;
 }
 
-
-
 /* =========================================================
    HOME FINAL VISUAL LOCK V3
    Page: / only
@@ -22225,7 +22185,6 @@ html body main .lead-owner-card:focus-visible {
     min-height: 260px !important;
   }
 }
-
 
 /* ===== HOME FINAL CLEAN VISUAL PASS START ===== */
 /* Scope: Home page only. Do not use this block for locked app pages. */
@@ -22523,9 +22482,6 @@ html body main .lead-owner-card:focus-visible {
 }
 /* ===== HOME FINAL CLEAN VISUAL PASS END ===== */
 
-
-
-
 /* ===== SETTINGS FINAL FINISH PASS START ===== */
 /* Scope: Settings page only. Exact selectors, no broad app-wide patching. */
 
@@ -22709,8 +22665,6 @@ html body main .lead-owner-card:focus-visible {
 
 /* ===== SETTINGS FINAL FINISH PASS END ===== */
 
-
-
 /* ===== HOME ALIGNMENT PASS v1 START ===== */
 /* Scope: Home page only. Final page-alignment fixes. */
 
@@ -22837,7 +22791,6 @@ html body main .lead-owner-card:focus-visible {
   color: #ffffff !important;
 }
 /* ===== HOME ALIGNMENT PASS v1 END ===== */
-
 
 /* ===== DASHBOARD ALIGNMENT PASS v1 START ===== */
 /* Scope: Dashboard only. Visual/action polish without changing locked layout. */
@@ -22993,7 +22946,6 @@ main.command-dashboard.command-dashboard-polish-v1 input:focus-visible {
 
 /* ===== DASHBOARD ALIGNMENT PASS v1 END ===== */
 
-
 /* ===== LEADS ALIGNMENT PASS v1 START ===== */
 /* Scope: Leads page only. */
 
@@ -23147,7 +23099,6 @@ main.command-dashboard.command-dashboard-polish-v1 input:focus-visible {
 }
 
 /* ===== LEADS ALIGNMENT PASS v1 END ===== */
-
 
 /* ===== MESSAGES VISUAL FINAL PASS START ===== */
 /* Scope: Messages page only. */
@@ -23528,9 +23479,6 @@ main.command-dashboard.command-dashboard-polish-v1 input:focus-visible {
 
 /* ===== BOOKINGS ALIGNMENT PASS v1 END ===== */
 
-
-
-
 /* ===== BOOKINGS DATE TIME GOLD FINAL START ===== */
 /* Scope: Bookings page only. Make date/time boxes visibly Bee-Aura gold. */
 
@@ -23623,3 +23571,36 @@ body main.bkV2-page .bkV2-date small {
 }
 
 /* ===== CUSTOMERS AURA ACTIONS FINAL END ===== */
+
+/* ===== MESSAGES REPLY PATH BUTTON TEXT LOCK START ===== */
+
+/* Messages page only: Reply to Booking Path yellow pills use black text */
+.messages-page .baFlowCard em,
+.messages-page .baFlowCard em *,
+.messages-page .baFlowCard button,
+.messages-page .baFlowCard a {
+  color: #06111f !important;
+  -webkit-text-fill-color: #06111f !important;
+  text-shadow: none !important;
+  font-weight: 900 !important;
+}
+
+/* Keep normal dark-card text white */
+.messages-page .baFlowCard span,
+.messages-page .baFlowCard strong,
+.messages-page .baFlowCard small {
+  text-shadow: none !important;
+}
+
+/* Fallback if Messages page wrapper uses main class instead of .messages-page */
+main[class*="messages"] .baFlowCard em,
+main[class*="messages"] .baFlowCard em *,
+main[class*="messages"] .baFlowCard button,
+main[class*="messages"] .baFlowCard a {
+  color: #06111f !important;
+  -webkit-text-fill-color: #06111f !important;
+  text-shadow: none !important;
+  font-weight: 900 !important;
+}
+
+/* ===== MESSAGES REPLY PATH BUTTON TEXT LOCK END ===== */

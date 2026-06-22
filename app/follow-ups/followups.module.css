@@ -845,8 +845,6 @@
   }
 }
 
-
-
 /* =========================================================
    FOLLOW-UPS SEARCH FIT + TABS + AURA BOT
    - search/top controls stay inside page
@@ -1048,7 +1046,6 @@
   }
 }
 
-
 /* =========================================================
    FOLLOW-UPS TAB INFO BAR + AURA WIDTH FIX
    ========================================================= */
@@ -1137,7 +1134,6 @@
     grid-template-columns: 1fr !important;
   }
 }
-
 
 /* =========================================================
    FOLLOW-UPS FINAL TABLE FIT PATCH
@@ -1229,7 +1225,6 @@
   }
 }
 
-
 /* === FOLLOWUPS FINAL IDENTITY CHIP PASS === */
 .ownerChip span,
 .avatar,
@@ -1241,7 +1236,6 @@
   font-weight: 950 !important;
 }
 /* === END FOLLOWUPS FINAL IDENTITY CHIP PASS === */
-
 
 /* === BEE-AURA FOLLOWUPS ALIGNMENT PASS V1 === */
 .avatar,
@@ -1280,14 +1274,6 @@
 
 /* BEE-AURA FINAL FLOW LOCK V5: module-local generated lock for app/follow-ups/followups.module.css */
 
-
-
-
-
-
-
-
-
 .avatar,
 .initials,
 .ownerChip {
@@ -1299,11 +1285,6 @@ display: grid;
   font-weight: 950 !important;
   text-shadow: none !important;
 }
-
-
-
-
-
 
 .auraFollowUpPanel {
 display: grid;
@@ -1324,7 +1305,6 @@ display: grid;
   overflow: visible;
 }
 
-
 .auraImageBox {
 display: grid;
   place-items: center;
@@ -1337,8 +1317,6 @@ display: grid;
     rgba(7, 18, 31, 0.8);
   overflow: hidden;
 }
-
-
 
 .auraFollowUpPanel img,
 .auraImageBox img {
@@ -1365,10 +1343,7 @@ display: grid;
   overflow-wrap: anywhere;
 }
 
-
 @media (max-width: 1180px) {
-
-
 
   .auraFollowUpPanel {
     grid-template-columns: 1fr;
@@ -1706,7 +1681,6 @@ display: grid;
   line-height: 1.05 !important;
 }
 
-
 /* =========================================================
    FOLLOW-UPS HEADER OWNER LOCK V1
    Page: /follow-ups only
@@ -1858,7 +1832,6 @@ display: grid;
     max-width: 100% !important;
   }
 }
-
 
 /* =========================================================
    FOLLOW-UPS LOCKED OWNER PROFILE FINAL
@@ -2384,7 +2357,6 @@ display: grid;
 
 /* ===== FOLLOWUPS ALIGNMENT PASS v1 END ===== */
 
-
 /* ===== FOLLOWUPS CHANNEL CHIPS ONLY START ===== */
 /* Scope: Follow-Ups channel column only. */
 
@@ -2432,7 +2404,6 @@ display: grid;
 }
 
 /* ===== FOLLOWUPS CHANNEL CHIPS ONLY END ===== */
-
 
 /* ===== FOLLOWUPS CHANNEL REMINDER MICRO FIX START ===== */
 /* Scope: Follow-Ups only. Only fixes Call channel chip and Upcoming Reminder date chips. */
@@ -2483,3 +2454,202 @@ display: grid;
 }
 
 /* ===== FOLLOWUPS CHANNEL REMINDER MICRO FIX END ===== */
+
+/* ===== FOLLOW-UPS ACTION PATH BUTTON TEXT LOCK START ===== */
+
+/* Follow-Ups action path: keep section as-is, only make gold pill text black */
+.followUpsPage :global(.baFlowCard em),
+.followUpsPage :global(.baFlowCard em *),
+.followUpsPage :global(.baFlowCard .button),
+.followUpsPage :global(.baFlowCard button) {
+  color: #06111f !important;
+  -webkit-text-fill-color: #06111f !important;
+  text-shadow: none !important;
+  font-weight: 900 !important;
+}
+
+/* Keep normal dark-card headings/body white */
+.followUpsPage :global(.baFlowCard span),
+.followUpsPage :global(.baFlowCard strong),
+.followUpsPage :global(.baFlowCard small) {
+  text-shadow: none !important;
+}
+
+/* ===== FOLLOW-UPS ACTION PATH BUTTON TEXT LOCK END ===== */
+
+/* ===== FOLLOW-UPS SIGNATURE KPI COLOUR LOCK START ===== */
+
+/* Follow-Ups KPI cards: signature semantic colour coding, dark cards stay premium */
+.metricCard {
+  --metric-rgb: 77, 163, 255;
+  --metric-accent: #4da3ff;
+  position: relative !important;
+  overflow: hidden !important;
+  background:
+    linear-gradient(180deg, rgba(8, 20, 39, 0.96), rgba(4, 12, 27, 0.98)) !important;
+  border: 1px solid rgba(var(--metric-rgb), 0.38) !important;
+  border-left: 3px solid rgba(var(--metric-rgb), 0.9) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 12px 28px rgba(0, 0, 0, 0.24),
+    0 0 0 1px rgba(var(--metric-rgb), 0.05) !important;
+}
+
+.metricCard::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 0 auto 0 !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, rgba(var(--metric-rgb), 0.9), rgba(77, 163, 255, 0.14), transparent) !important;
+  opacity: 0.82 !important;
+}
+
+.metricCard[data-follow-metric="due-today"] {
+  --metric-rgb: 207, 164, 59;
+  --metric-accent: #f7c74f;
+}
+
+.metricCard[data-follow-metric="overdue"] {
+  --metric-rgb: 217, 92, 99;
+  --metric-accent: #ff7b82;
+}
+
+.metricCard[data-follow-metric="scheduled"] {
+  --metric-rgb: 77, 163, 255;
+  --metric-accent: #4da3ff;
+}
+
+.metricCard[data-follow-metric="completed"] {
+  --metric-rgb: 34, 197, 94;
+  --metric-accent: #22c55e;
+}
+
+.metricIcon {
+  color: var(--metric-accent) !important;
+  -webkit-text-fill-color: var(--metric-accent) !important;
+  background: rgba(var(--metric-rgb), 0.14) !important;
+  border: 1px solid rgba(var(--metric-rgb), 0.58) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 8px 18px rgba(var(--metric-rgb), 0.14) !important;
+  text-shadow: none !important;
+}
+
+.metricCard p,
+.metricCard strong,
+.metricCard small {
+  text-shadow: none !important;
+}
+
+.metricCard p {
+  color: rgba(248, 250, 252, 0.9) !important;
+}
+
+.metricCard strong {
+  color: rgba(255, 255, 255, 0.98) !important;
+}
+
+.metricCard small {
+  color: rgba(226, 236, 255, 0.78) !important;
+}
+
+.metricCard:hover {
+  transform: translateY(-1px) !important;
+  border-color: rgba(var(--metric-rgb), 0.62) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.065),
+    0 14px 32px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(var(--metric-rgb), 0.08) !important;
+}
+
+/* ===== FOLLOW-UPS SIGNATURE KPI COLOUR LOCK END ===== */
+
+/* ===== FOLLOW-UPS SIGNATURE BLUE TABS LOCK START ===== */
+
+/* Follow-Ups filter tabs only:
+   default = Bee-Aura blue/white,
+   selected/clicked = yellow with black text.
+   Do not colour tabs red/green/gold by status. */
+
+.followUpsPage [role="tablist"] button,
+.followUpsPage button[aria-pressed],
+.followUpsPage .statusPill,
+.followUpsPage .tabButton,
+.followUpsPage .filterButton,
+.followUpsPage .segmentButton {
+  background:
+    linear-gradient(180deg, rgba(8, 24, 46, 0.96), rgba(4, 13, 30, 0.98)) !important;
+  color: rgba(248, 250, 252, 0.94) !important;
+  -webkit-text-fill-color: rgba(248, 250, 252, 0.94) !important;
+  border: 1px solid rgba(77, 163, 255, 0.52) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 8px 18px rgba(0, 0, 0, 0.18) !important;
+  text-shadow: none !important;
+}
+
+/* Count bubbles inside inactive tabs */
+.followUpsPage [role="tablist"] button span,
+.followUpsPage button[aria-pressed] span,
+.followUpsPage .statusPill span,
+.followUpsPage .tabButton span,
+.followUpsPage .filterButton span,
+.followUpsPage .segmentButton span {
+  background: rgba(77, 163, 255, 0.22) !important;
+  color: rgba(248, 250, 252, 0.96) !important;
+  -webkit-text-fill-color: rgba(248, 250, 252, 0.96) !important;
+  border: 1px solid rgba(77, 163, 255, 0.22) !important;
+  text-shadow: none !important;
+}
+
+/* Selected/clicked tab = Bee-Aura yellow button with black text */
+.followUpsPage [role="tablist"] button[aria-pressed="true"],
+.followUpsPage button[aria-pressed="true"],
+.followUpsPage .statusPill.is-active,
+.followUpsPage .statusPill.active,
+.followUpsPage .tabButton.is-active,
+.followUpsPage .tabButton.active,
+.followUpsPage .filterButton.is-active,
+.followUpsPage .filterButton.active,
+.followUpsPage .segmentButton.is-active,
+.followUpsPage .segmentButton.active {
+  background: linear-gradient(180deg, #ffd95f, #d9ad32) !important;
+  color: #06111f !important;
+  -webkit-text-fill-color: #06111f !important;
+  border: 1px solid rgba(255, 226, 128, 0.76) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 10px 22px rgba(207, 164, 59, 0.18) !important;
+  text-shadow: none !important;
+}
+
+/* Count bubble inside selected tab */
+.followUpsPage [role="tablist"] button[aria-pressed="true"] span,
+.followUpsPage button[aria-pressed="true"] span,
+.followUpsPage .statusPill.is-active span,
+.followUpsPage .statusPill.active span,
+.followUpsPage .tabButton.is-active span,
+.followUpsPage .tabButton.active span,
+.followUpsPage .filterButton.is-active span,
+.followUpsPage .filterButton.active span,
+.followUpsPage .segmentButton.is-active span,
+.followUpsPage .segmentButton.active span {
+  background: rgba(6, 17, 31, 0.18) !important;
+  color: #06111f !important;
+  -webkit-text-fill-color: #06111f !important;
+  border: 1px solid rgba(6, 17, 31, 0.16) !important;
+  text-shadow: none !important;
+}
+
+/* Hover stays blue unless selected */
+.followUpsPage [role="tablist"] button:hover,
+.followUpsPage button[aria-pressed]:hover,
+.followUpsPage .statusPill:hover,
+.followUpsPage .tabButton:hover,
+.followUpsPage .filterButton:hover,
+.followUpsPage .segmentButton:hover {
+  border-color: rgba(77, 163, 255, 0.76) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ===== FOLLOW-UPS SIGNATURE BLUE TABS LOCK END ===== */

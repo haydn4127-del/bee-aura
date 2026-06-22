@@ -1105,3 +1105,296 @@
   color: #071522 !important;
   -webkit-text-fill-color: #071522 !important;
 }
+
+/* ===== ERROR LOG KPI SIGNATURE COLOUR LOCK START ===== */
+
+/* Error Log top KPI cards only:
+   Open Errors = gold priority,
+   Critical Alerts = red risk,
+   Recovered Today = green success,
+   System Health = blue system.
+   Keep dark cards and white writing. */
+
+.kpiCard,
+.metricCard,
+.statCard,
+.summaryCard {
+  --err-kpi-rgb: 77, 163, 255;
+  --err-kpi-accent: #4da3ff;
+  position: relative !important;
+  overflow: hidden !important;
+  background:
+    linear-gradient(180deg, rgba(8, 20, 39, 0.96), rgba(4, 12, 27, 0.98)) !important;
+  border: 1px solid rgba(var(--err-kpi-rgb), 0.42) !important;
+  border-left: 3px solid rgba(var(--err-kpi-rgb), 0.9) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 12px 28px rgba(0, 0, 0, 0.24),
+    0 0 0 1px rgba(var(--err-kpi-rgb), 0.05) !important;
+}
+
+.kpiCard::before,
+.metricCard::before,
+.statCard::before,
+.summaryCard::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 0 auto 0 !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, rgba(var(--err-kpi-rgb), 0.9), rgba(77, 163, 255, 0.14), transparent) !important;
+  opacity: 0.82 !important;
+}
+
+/* Fallback by card order if the component has no data-tone */
+.kpiCard:nth-child(1),
+.metricCard:nth-child(1),
+.statCard:nth-child(1),
+.summaryCard:nth-child(1) {
+  --err-kpi-rgb: 207, 164, 59;
+  --err-kpi-accent: #f7c74f;
+}
+
+.kpiCard:nth-child(2),
+.metricCard:nth-child(2),
+.statCard:nth-child(2),
+.summaryCard:nth-child(2) {
+  --err-kpi-rgb: 217, 92, 99;
+  --err-kpi-accent: #ff7b82;
+}
+
+.kpiCard:nth-child(3),
+.metricCard:nth-child(3),
+.statCard:nth-child(3),
+.summaryCard:nth-child(3) {
+  --err-kpi-rgb: 34, 197, 94;
+  --err-kpi-accent: #22c55e;
+}
+
+.kpiCard:nth-child(4),
+.metricCard:nth-child(4),
+.statCard:nth-child(4),
+.summaryCard:nth-child(4) {
+  --err-kpi-rgb: 77, 163, 255;
+  --err-kpi-accent: #4da3ff;
+}
+
+/* Data-tone support if the page already uses it */
+.kpiCard[data-tone="warning"],
+.kpiCard[data-tone="open"],
+.metricCard[data-tone="warning"],
+.metricCard[data-tone="open"],
+.statCard[data-tone="warning"],
+.statCard[data-tone="open"],
+.summaryCard[data-tone="warning"],
+.summaryCard[data-tone="open"] {
+  --err-kpi-rgb: 207, 164, 59;
+  --err-kpi-accent: #f7c74f;
+}
+
+.kpiCard[data-tone="danger"],
+.kpiCard[data-tone="critical"],
+.metricCard[data-tone="danger"],
+.metricCard[data-tone="critical"],
+.statCard[data-tone="danger"],
+.statCard[data-tone="critical"],
+.summaryCard[data-tone="danger"],
+.summaryCard[data-tone="critical"] {
+  --err-kpi-rgb: 217, 92, 99;
+  --err-kpi-accent: #ff7b82;
+}
+
+.kpiCard[data-tone="success"],
+.kpiCard[data-tone="recovered"],
+.metricCard[data-tone="success"],
+.metricCard[data-tone="recovered"],
+.statCard[data-tone="success"],
+.statCard[data-tone="recovered"],
+.summaryCard[data-tone="success"],
+.summaryCard[data-tone="recovered"] {
+  --err-kpi-rgb: 34, 197, 94;
+  --err-kpi-accent: #22c55e;
+}
+
+.kpiCard[data-tone="blue"],
+.kpiCard[data-tone="system"],
+.metricCard[data-tone="blue"],
+.metricCard[data-tone="system"],
+.statCard[data-tone="blue"],
+.statCard[data-tone="system"],
+.summaryCard[data-tone="blue"],
+.summaryCard[data-tone="system"] {
+  --err-kpi-rgb: 77, 163, 255;
+  --err-kpi-accent: #4da3ff;
+}
+
+/* KPI icons/badges */
+.kpiIcon,
+.metricIcon,
+.statIcon,
+.summaryIcon,
+.kpiCard > span:first-child,
+.metricCard > span:first-child,
+.statCard > span:first-child,
+.summaryCard > span:first-child {
+  color: var(--err-kpi-accent) !important;
+  -webkit-text-fill-color: var(--err-kpi-accent) !important;
+  background: rgba(var(--err-kpi-rgb), 0.14) !important;
+  border: 1px solid rgba(var(--err-kpi-rgb), 0.58) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 8px 18px rgba(var(--err-kpi-rgb), 0.14) !important;
+  text-shadow: none !important;
+}
+
+/* Keep KPI card writing white on dark navy */
+.kpiCard p,
+.kpiCard strong,
+.kpiCard small,
+.metricCard p,
+.metricCard strong,
+.metricCard small,
+.statCard p,
+.statCard strong,
+.statCard small,
+.summaryCard p,
+.summaryCard strong,
+.summaryCard small {
+  text-shadow: none !important;
+}
+
+.kpiCard strong,
+.metricCard strong,
+.statCard strong,
+.summaryCard strong {
+  color: rgba(255, 255, 255, 0.98) !important;
+}
+
+.kpiCard p,
+.metricCard p,
+.statCard p,
+.summaryCard p {
+  color: rgba(248, 250, 252, 0.9) !important;
+}
+
+.kpiCard small,
+.metricCard small,
+.statCard small,
+.summaryCard small {
+  color: rgba(226, 236, 255, 0.78) !important;
+}
+
+/* ===== ERROR LOG KPI SIGNATURE COLOUR LOCK END ===== */
+
+/* ===== ERROR LOG FILTERS RESOLVE SIGNATURE LOCK START ===== */
+
+/* Error Log filters: inactive = blue/white, selected = yellow/black */
+.filterButton,
+.filterButton[data-tone],
+.filterButton[data-tone="danger"],
+.filterButton[data-tone="warning"],
+.filterButton[data-tone="blue"],
+.filterButton[data-tone="success"] {
+  background:
+    linear-gradient(180deg, rgba(8, 24, 46, 0.96), rgba(4, 13, 30, 0.98)) !important;
+  color: rgba(248, 250, 252, 0.94) !important;
+  -webkit-text-fill-color: rgba(248, 250, 252, 0.94) !important;
+  border: 1px solid rgba(77, 163, 255, 0.52) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 8px 18px rgba(0, 0, 0, 0.18) !important;
+  text-shadow: none !important;
+}
+
+.activeFilter,
+.filterButton.activeFilter,
+.filterButton[data-tone].activeFilter {
+  background: linear-gradient(180deg, #ffd95f, #d9ad32) !important;
+  color: #06111f !important;
+  -webkit-text-fill-color: #06111f !important;
+  border: 1px solid rgba(255, 226, 128, 0.76) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 10px 22px rgba(207, 164, 59, 0.18) !important;
+  text-shadow: none !important;
+}
+
+/* Resolve buttons: blue/white. View buttons stay yellow/black. */
+.queuePanel td:last-child button:first-child {
+  background: linear-gradient(180deg, #ffd95f, #d9ad32) !important;
+  color: #06111f !important;
+  -webkit-text-fill-color: #06111f !important;
+  border: 1px solid rgba(255, 226, 128, 0.76) !important;
+  text-shadow: none !important;
+}
+
+.queuePanel td:last-child button:last-child {
+  background:
+    linear-gradient(180deg, rgba(8, 24, 46, 0.98), rgba(4, 13, 30, 0.99)) !important;
+  color: rgba(248, 250, 252, 0.96) !important;
+  -webkit-text-fill-color: rgba(248, 250, 252, 0.96) !important;
+  border: 1px solid rgba(77, 163, 255, 0.62) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 8px 18px rgba(0, 0, 0, 0.2) !important;
+  text-shadow: none !important;
+}
+
+/* ===== ERROR LOG FILTERS RESOLVE SIGNATURE LOCK END ===== */
+
+/* ===== ERROR LOG SELECTED INCIDENT FINAL REBUILD LOCK START ===== */
+
+/* Final selected incident detail cards. Colours come from selected incident data in page.tsx. */
+.errorDetailItem {
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  min-height: 76px !important;
+  padding: 14px 16px 14px 20px !important;
+  border-radius: 14px !important;
+  background:
+    linear-gradient(180deg, rgba(7, 18, 36, 0.98), rgba(3, 10, 22, 0.99)) !important;
+  border: 1px solid rgba(var(--error-detail-rgb), 0.58) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 10px 22px rgba(0, 0, 0, 0.22),
+    0 0 0 1px rgba(var(--error-detail-rgb), 0.1) !important;
+}
+
+.errorDetailStrip {
+  position: absolute !important;
+  inset: 0 auto 0 0 !important;
+  width: 3px !important;
+  background: var(--error-detail-accent) !important;
+  box-shadow: 0 0 10px rgba(var(--error-detail-rgb), 0.22) !important;
+}
+
+.errorDetailItem::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 0 auto 0 !important;
+  height: 1px !important;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(var(--error-detail-rgb), 1),
+      rgba(var(--error-detail-rgb), 0.22),
+      transparent
+    ) !important;
+}
+
+.errorDetailValue {
+  color: var(--error-detail-accent) !important;
+  -webkit-text-fill-color: var(--error-detail-accent) !important;
+  text-shadow: none !important;
+}
+
+.errorDetailLabel {
+  color: rgba(226, 236, 255, 0.78) !important;
+  -webkit-text-fill-color: rgba(226, 236, 255, 0.78) !important;
+  text-shadow: none !important;
+}
+
+/* ===== ERROR LOG SELECTED INCIDENT FINAL REBUILD LOCK END ===== */
