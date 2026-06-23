@@ -66,7 +66,7 @@ const initialBookings: Booking[] = [
     engineer: "Lucy C.",
     status: "In Progress",
     value: "£420",
-    notes: "Customer came through WhatsApp. Keep updates clear and confirm next visit.",
+    notes: "Aura prepared this booking from the customer conversation. Owner can accept the slot or request missing details.",
   },
   {
     id: "BKG-1003",
@@ -346,7 +346,7 @@ export default function BookingsPage() {
       <header className="bkV2-header">
         <div className="bkV2-title">
           <h1>Bookings</h1>
-          <p>Manage appointments, schedules and customer visits in one place.</p>
+          <p>Aura prepares bookings, monitors confirmations and keeps the owner focused on appointments that need approval.</p>
         </div>
 
         <div className="bkV2-actions">
@@ -585,7 +585,7 @@ export default function BookingsPage() {
           <p className="bkV2-notice">{notice}</p>
 
           <div className="bkV2-detailActions">
-            <button type="button" onClick={confirmSelectedBooking}>Confirm Booking</button>
+            <button type="button" onClick={confirmSelectedBooking}>Accept Prepared Booking</button>
             <Link href={`/messages?search=${encodeURIComponent(selected.customer)}`}>Message Customer</Link>
           </div>
         </section>

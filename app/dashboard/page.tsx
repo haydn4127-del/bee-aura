@@ -8,7 +8,7 @@ const kpis = [
   {
     href: "/leads",
     icon: "LC",
-    label: "Leads Captured",
+    label: "Aura Leads Captured",
     value: "482",
     change: "+10%",
     detail: "vs last 7 days",
@@ -17,7 +17,7 @@ const kpis = [
   {
     href: "/messages",
     icon: "RT",
-    label: "Avg. Response Time",
+    label: "Avg. Aura Response",
     value: "2m 48s",
     change: "21% faster",
     detail: "vs last 7 days",
@@ -26,7 +26,7 @@ const kpis = [
   {
     href: "/bookings",
     icon: "BK",
-    label: "Bookings Today",
+    label: "Bookings Prepared",
     value: "14",
     change: "+27%",
     detail: "vs yesterday",
@@ -35,7 +35,7 @@ const kpis = [
   {
     href: "/leads",
     icon: "£",
-    label: "Pipeline Value",
+    label: "Value Protected",
     value: "£84,350",
     change: "▲ 17%",
     detail: "vs last 7 days",
@@ -44,7 +44,7 @@ const kpis = [
   {
     href: "/follow-ups",
     icon: "FU",
-    label: "Follow-Ups Due",
+    label: "Follow-Ups Chased",
     value: "23",
     change: "+15%",
     detail: "vs yesterday",
@@ -312,9 +312,9 @@ export default function DashboardPage() {
       <section className="command-calendar" aria-label="Owner calendar and next actions">
         <div className="command-calendar-copy">
           <p>Owner calendar</p>
-          <h2>Today’s bookings, follow-ups and replies in one view.</h2>
+          <h2>Aura has prepared today’s bookings, replies and follow-ups.</h2>
           <span>
-            A simple daily run sheet for the owner: see the next job, the next reply and the next follow-up without hunting through every page.
+            Aura has handled the routine lead recovery work. The owner only reviews prepared bookings, approvals and exceptions.
           </span>
         </div>
 
@@ -810,7 +810,7 @@ export default function DashboardPage() {
               <li>Send review request to Sarah T. after the completed job.</li>
             </ul>
 
-            <Link href="/follow-ups">Review Priority Tasks</Link>
+            <Link href="/follow-ups">Review Owner Approvals</Link>
           </div>
         </section>
       </section>

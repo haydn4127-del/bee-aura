@@ -154,12 +154,12 @@ export default function LeadsPage() {
       <header className="leads-clean-header">
         <div>
           <h1>Leads</h1>
-          <p>Manage, track and convert every enquiry in one place.</p>
+          <p>Aura captures, qualifies and prepares every enquiry for the next best action.</p>
         </div>
 
         <div className="leads-clean-controls">
           <button className="lc-add" type="button" onClick={() => setIsAddingLead(true)}>
-            <span>＋</span> Add Lead
+            <span>＋</span> Manual Lead Override
           </button>
 
           <label className="lc-control">

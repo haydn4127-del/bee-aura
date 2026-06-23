@@ -748,7 +748,7 @@ export default function FollowUpsPage() {
           <p className={styles.kicker}>AURA FOLLOW-UP WATCH</p>
           <h3>Aura is watching overdue callbacks, quote chases, and customer reminders before they go cold.</h3>
           <p>
-            Owner control stays on: nothing is sent automatically. Bee-Aura only highlights the next best follow-up action.
+            Aura automatically sends safe follow-ups using approved rules. Quotes, complaints, cancellations and risky replies are escalated for owner approval.
           </p>
         </div>
       </section>

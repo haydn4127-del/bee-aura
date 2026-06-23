@@ -291,7 +291,7 @@ export default function ReviewsPage() {
                 setNotice("Review request panel opened. Demo-only local action.");
               }}
             >
-              + Request Review
+              + Send Review Request
             </button>
 
             <select
@@ -344,7 +344,7 @@ export default function ReviewsPage() {
         <div className="baFlowIntro">
           <p>Review action path</p>
           <h2>Turn good work into proof and trust.</h2>
-          <span>Review requests, owner replies and proof-pack items stay visible before anything is sent.</span>
+          <span>Aura can send approved review requests automatically, while replies, complaints and sensitive responses stay owner-controlled.</span>
         </div>
 
         <div className="baFlowCards">
@@ -712,7 +712,7 @@ export default function ReviewsPage() {
           <p className={styles.kicker}>AURA REVIEW WATCH</p>
           <h2>Aura is watching happy customers, review requests, and replies that need owner approval.</h2>
           <p>
-            Nothing is posted or sent automatically. Bee-Aura highlights the next review action so the owner can protect trust and collect better proof.
+            Aura can send approved review requests automatically after completed jobs. Review replies, complaints and sensitive responses require owner approval.
           </p>
         </div>
 

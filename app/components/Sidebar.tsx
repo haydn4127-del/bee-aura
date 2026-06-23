@@ -57,10 +57,9 @@ export default function Sidebar() {
           <div className="sidebar-control-copy">
             <p className="status-title">AURA CONTROL</p>
             <p className="status-text">
-              AI is watching replies, leads and follow-ups. Nothing is sent without
-              owner approval.
+              Aura handles safe replies, lead capture and follow-ups automatically. Owner approval is required for bookings, quotes, complaints and risky actions.
             </p>
-            <p className="status-note">Safe assist mode</p>
+            <p className="status-note">Aura Automation Active</p>
           </div>
         </div>
       </div>

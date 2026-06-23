@@ -77,7 +77,7 @@ export default function Home() {
           <p className="landing-eyebrow">AI lead control for UK service businesses</p>
           <h1>Turn More Enquiries Into Booked Jobs</h1>
           <h2 className="landing-hero-subheading">
-            Stop missed leads. Speed up replies. Keep every opportunity moving.
+            Aura replies, qualifies enquiries, prepares bookings and keeps every opportunity moving.
           </h2>
           <div className="landing-hero-ai-brief">
             <img
@@ -409,7 +409,7 @@ export default function Home() {
             Lead recovery control for
             <span>service businesses.</span>
           </h2>
-          <h3>One system for enquiries, replies, bookings and follow-up control.</h3>
+          <h3>One automation command centre for enquiries, replies, bookings and follow-up recovery.</h3>
           <p>
             Bee-Aura gives service businesses a structured AI-ready operating layer,
             helping teams move faster without losing owner control or visibility.

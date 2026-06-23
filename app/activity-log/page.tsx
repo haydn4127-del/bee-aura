@@ -52,13 +52,13 @@ const activityItems: ActivityItem[] = [
   {
     id: "ACT-1002",
     time: "10:04 AM",
-    event: "AI Reply Drafted",
-    details: "Drafted introductory response for Sarah Johnson.",
+    event: "Safe Auto Reply Sent",
+    details: "Safe first response sent automatically for Sarah Johnson.",
     category: "AI Action",
     actor: "Bee-Aura AI",
     status: "Completed",
     icon: "AI",
-    ownerNote: "AI drafted only. Owner approval remains required before sending.",
+    ownerNote: "Safe automation completed and logged for owner visibility.",
   },
   {
     id: "ACT-1003",
@@ -129,13 +129,13 @@ const activityItems: ActivityItem[] = [
   {
     id: "ACT-1009",
     time: "08:00 AM",
-    event: "AI Reply Drafted",
-    details: "Drafted response to Lucy C.'s email about timeline and materials.",
+    event: "Safe Auto Reply Sent",
+    details: "Safe reply sent to Lucy C. about timeline and materials.",
     category: "AI Action",
     actor: "Bee-Aura AI",
     status: "Completed",
     icon: "AI",
-    ownerNote: "AI work remains visible and owner-controlled.",
+    ownerNote: "AI work remains visible with owner approval kept for risky actions.",
   },
   {
     id: "ACT-1010",

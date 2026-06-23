@@ -367,7 +367,7 @@ export default function CustomersPage() {
   const [addPanelOpen, setAddPanelOpen] = useState(false);
   const [ownerPanelOpen, setOwnerPanelOpen] = useState(false);
   const [demoNotice, setDemoNotice] = useState(
-    "Customers page ready: filters, search, sorting, customer records, and demo actions are active."
+    "Aura customer intelligence active: repeat customers, VIP spend and follow-up opportunities are being monitored."
   );
   const [form, setForm] = useState({
     name: "",
@@ -534,10 +534,7 @@ export default function CustomersPage() {
           <div className={styles.titleBlock}>
             <p className={styles.kicker}>CUSTOMER COMMAND CENTRE</p>
             <h1>Customers</h1>
-            <p>
-              Manage repeat customers, VIP spend, customer history, and
-              follow-up opportunities across Manchester and Greater Manchester.
-            </p>
+            <p>Aura tracks customer history, repeat-work opportunities and follow-up signals automatically.</p>
           </div>
 
           <div className={styles.headerTools}>

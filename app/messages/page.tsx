@@ -922,7 +922,7 @@ export default function MessagesPage() {
         <div className="baFlowIntro">
           <p>Reply to booking path</p>
           <h2>Turn each message into the next clear action.</h2>
-          <span>The owner can approve a reply, open the booking, or schedule a follow-up from the same simple flow.</span>
+          <span>Aura handles the safe conversation flow, gathers missing details and prepares the next action for owner approval when needed.</span>
         </div>
 
         <div className="baFlowCards">
@@ -1214,20 +1214,20 @@ export default function MessagesPage() {
 
             <div className="messagesV7-composerActions">
               <button type="button" onClick={() => loadReplyTemplate("fast")}>
-                Load Fast Reply
+                Continue Aura Intake
               </button>
               <button type="button" onClick={() => loadReplyTemplate("booking")}>
-                Load Booking Reply
+                Prepare Booking
               </button>
               <button type="button" onClick={() => loadReplyTemplate("followup")}>
-                Load Follow-Up
+                Continue Follow-Up
               </button>
               <button
                 type="button"
                 className="messagesV7-primaryButton"
                 onClick={() => sendMessage(suggestedReply, "Message sent")}
               >
-                Send Reply
+                Approve & Send
               </button>
             </div>
           </div>
@@ -1313,7 +1313,7 @@ export default function MessagesPage() {
               type="button"
               onClick={() => sendMessage(makeSuggestedReply(selectedConversation), "AI suggestion sent")}
             >
-              Send AI suggestion
+              Approve AI Suggestion
             </button>
           </div>
         </article>
