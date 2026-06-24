@@ -23814,3 +23814,263 @@ main[class*="messages"] .baFlowCard a {
 }
 
 /* ===== BEE-AURA PHONE OWNER PREVIEW V1 END ===== */
+
+
+/* ===== BEE-AURA ROOT MOBILE PREVIEW FIX START ===== */
+
+.home-demo-shell {
+  display: contents;
+}
+
+@media (max-width: 767px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .home-demo-shell:not(.mobile-full-demo-open) {
+    display: none !important;
+  }
+
+  .home-demo-shell.mobile-full-demo-open {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .mobile-owner-preview {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  .mobile-owner-preview__shell,
+  .mobile-owner-preview__hero,
+  .mobile-owner-preview__status,
+  .mobile-owner-preview__grid,
+  .mobile-owner-preview__actions,
+  .mobile-owner-preview__footer {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ===== BEE-AURA ROOT MOBILE PREVIEW FIX END ===== */
+
+
+/* ===== BEE-AURA TURN PHONE SCREEN ONLY v1 START ===== */
+
+.phone-turn-gate {
+  display: none;
+}
+
+.home-demo-shell {
+  display: contents;
+}
+
+.mobile-owner-preview:not(.is-active) {
+  display: none !important;
+}
+
+@media (max-width: 767px) and (orientation: portrait) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .app-shell:not(.mobile-full-demo-open),
+  .home-demo-shell:not(.mobile-full-demo-open) {
+    display: none !important;
+  }
+
+  .phone-turn-gate:not(.is-hidden) {
+    display: flex !important;
+    min-height: 100vh;
+    width: 100%;
+    padding: 18px;
+    color: var(--ba-text);
+    background:
+      radial-gradient(circle at 12% 0%, rgba(255, 210, 74, 0.18), transparent 34%),
+      radial-gradient(circle at 100% 18%, rgba(45, 196, 255, 0.16), transparent 30%),
+      linear-gradient(180deg, #050914 0%, #08111f 58%, #050914 100%);
+    overflow-x: hidden;
+  }
+
+  .phone-turn-gate__shell {
+    width: min(100%, 440px);
+    margin: 0 auto;
+    display: grid;
+    gap: 18px;
+    align-content: center;
+  }
+
+  .phone-turn-gate__brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border: 1px solid rgba(255, 210, 74, 0.24);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.045);
+  }
+
+  .phone-turn-gate__brand img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .phone-turn-gate__brand p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 0.84rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+  }
+
+  .phone-turn-gate__brand span {
+    display: block;
+    margin-top: 3px;
+    color: var(--ba-gold);
+    font-size: 0.82rem;
+    font-weight: 800;
+  }
+
+  .phone-turn-gate__visual {
+    min-height: 160px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    border-radius: 30px;
+    border: 1px solid rgba(77, 163, 255, 0.18);
+    background:
+      linear-gradient(135deg, rgba(77, 163, 255, 0.12), transparent 48%),
+      rgba(255, 255, 255, 0.045);
+  }
+
+  .phone-turn-gate__phone {
+    width: 74px;
+    height: 122px;
+    border: 3px solid rgba(255, 210, 74, 0.92);
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 38px rgba(255, 210, 74, 0.18);
+  }
+
+  .phone-turn-gate__phone span {
+    width: 34px;
+    height: 5px;
+    border-radius: 999px;
+    background: rgba(255, 210, 74, 0.8);
+  }
+
+  .phone-turn-gate__arrow {
+    position: absolute;
+    right: 28%;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    color: #07111d;
+    background: var(--ba-gold);
+    font-size: 1.8rem;
+    font-weight: 900;
+  }
+
+  .phone-turn-gate__hero {
+    padding: 22px;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background:
+      linear-gradient(135deg, rgba(255, 210, 74, 0.12), transparent 45%),
+      rgba(255, 255, 255, 0.055);
+  }
+
+  .phone-turn-gate__hero p {
+    margin: 0 0 10px;
+    color: var(--ba-gold);
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .phone-turn-gate__hero h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(2rem, 11vw, 3.35rem);
+    line-height: 0.95;
+    letter-spacing: -0.08em;
+  }
+
+  .phone-turn-gate__hero span {
+    display: block;
+    margin-top: 14px;
+    color: rgba(245, 249, 255, 0.78);
+    font-size: 0.98rem;
+    line-height: 1.62;
+  }
+
+  .phone-turn-gate__actions {
+    display: grid;
+    gap: 10px;
+  }
+
+  .phone-turn-gate__actions button,
+  .phone-turn-gate__actions a {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 0 18px;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .phone-turn-gate__actions button:first-child {
+    background: var(--ba-gold);
+    color: #07111d;
+  }
+
+  .phone-turn-gate__actions button:nth-child(2),
+  .phone-turn-gate__actions a {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+  }
+
+  .phone-turn-gate__footer {
+    margin: 0;
+    color: rgba(245, 249, 255, 0.58);
+    font-size: 0.76rem;
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  .mobile-owner-preview.is-active {
+    display: flex !important;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 932px) and (orientation: landscape) {
+  .phone-turn-gate {
+    display: none !important;
+  }
+
+  .mobile-owner-preview:not(.is-active) {
+    display: none !important;
+  }
+}
+
+/* ===== BEE-AURA TURN PHONE SCREEN ONLY v1 END ===== */
