@@ -55,7 +55,7 @@ export default function Home() {
         </Link>
 
         <div className="landing-nav-links">
-          <Link href="/dashboard">Dashboard</Link>
+          <Link href="/dashboard">Today</Link>
           <a href="#features">Features</a>
           <a href="#how-it-works">How It Works</a>
           <a href="#pricing">Pricing</a>
@@ -67,7 +67,7 @@ export default function Home() {
             Login
           </Link>
           <Link href="/dashboard" className="landing-button landing-button-primary">
-            Book a Demo
+            Enter Demo
           </Link>
         </div>
       </nav>
@@ -75,9 +75,9 @@ export default function Home() {
       <section className="landing-hero" id="platform">
         <div className="landing-hero-copy">
           <p className="landing-eyebrow">AI lead control for UK service businesses</p>
-          <h1>Turn More Enquiries Into Booked Jobs</h1>
+          <h1>Open Today. See What Needs Doing.</h1>
           <h2 className="landing-hero-subheading">
-            Aura replies, qualifies enquiries, prepares bookings and keeps every opportunity moving.
+            Today shows urgent leads, replies, jobs and approvals in one simple queue.
           </h2>
           <div className="landing-hero-ai-brief">
             <img
@@ -100,7 +100,7 @@ export default function Home() {
               href="/dashboard"
               className="landing-button landing-button-primary landing-button-large"
             >
-              View Demo
+              Enter Today
             </Link>
             <a
               href="#how-it-works"
@@ -132,7 +132,7 @@ export default function Home() {
                 </div>
               </div>
               <Link href="/dashboard" className="active" aria-label="Open dashboard overview">
-                Overview
+                Today
               </Link>
               <Link href="/leads" aria-label="Open leads page">
                 Leads
@@ -157,7 +157,7 @@ export default function Home() {
             <section className="preview-content">
               <div className="preview-topbar">
                 <div>
-                  <p>Command view</p>
+                  <p>Today view</p>
                   <strong>Manchester Home Services</strong>
                 </div>
 

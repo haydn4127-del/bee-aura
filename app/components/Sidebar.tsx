@@ -4,18 +4,47 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/dashboard", label: "Dashboard" },
-  { href: "/leads", label: "Leads" },
-  { href: "/messages", label: "Messages" },
-  { href: "/bookings", label: "Bookings" },
-  { href: "/customers", label: "Customers" },
-  { href: "/follow-ups", label: "Follow-Ups" },
-  { href: "/reviews", label: "Reviews" },
-  { href: "/activity-log", label: "Activity Log" },
-  { href: "/error-log", label: "Error Log" },
-  { href: "/settings", label: "Settings" },
+  {
+    href: "/dashboard",
+    label: "Today",
+    detail: "Daily action queue",
+    matches: ["/", "/dashboard"],
+  },
+  {
+    href: "/messages",
+    label: "Inbox",
+    detail: "Leads + replies",
+    matches: ["/messages", "/leads"],
+  },
+  {
+    href: "/bookings",
+    label: "Jobs",
+    detail: "Bookings + follow-ups",
+    matches: ["/bookings", "/follow-ups"],
+  },
+  {
+    href: "/customers",
+    label: "Customers",
+    detail: "People + records",
+    matches: ["/customers"],
+  },
+  {
+    href: "/settings",
+    label: "More / Admin",
+    detail: "Reviews, logs, settings",
+    matches: ["/reviews", "/activity-log", "/error-log", "/settings"],
+  },
 ];
+
+function isActiveRoute(pathname: string, matches: readonly string[]) {
+  return matches.some((match) => {
+    if (match === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === match || pathname.startsWith(`${match}/`);
+  });
+}
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -30,17 +59,18 @@ export default function Sidebar() {
         </div>
       </div>
 
-      <nav className="sidebar-nav">
+      <nav className="sidebar-nav" aria-label="Bee-Aura simplified navigation">
         {navItems.map((item) => {
-          const isActive = pathname === item.href;
+          const isActive = isActiveRoute(pathname, item.matches);
 
           return (
             <Link
               key={item.href}
               href={item.href}
-              className={`sidebar-link ${isActive ? "active" : ""}`}
+              className={`sidebar-link sidebar-link-simplified ${isActive ? "active" : ""}`}
             >
-              {item.label}
+              <span>{item.label}</span>
+              <small>{item.detail}</small>
             </Link>
           );
         })}
@@ -55,19 +85,31 @@ export default function Sidebar() {
           />
 
           <div className="sidebar-control-copy">
-            <p className="status-title">AURA CONTROL</p>
+            <p className="status-title">AURA WATCH</p>
             <p className="status-text">
-              Aura handles safe replies, lead capture and follow-ups automatically. Owner approval is required for bookings, quotes, complaints and risky actions.
+              Aura watches Today, Inbox and Jobs for missed replies, urgent leads, follow-ups and owner approvals.
             </p>
-            <p className="status-note">Aura Automation Active</p>
+            <p className="status-note">Owner approval stays visible</p>
           </div>
         </div>
       </div>
 
+      <div className="sidebar-status sidebar-admin-depth">
+        <p className="status-title">More / Admin</p>
+        <p className="status-text">Deeper proof and system control stay available without crowding the daily view.</p>
+
+        <div className="sidebar-admin-links">
+          <Link href="/reviews">Reviews</Link>
+          <Link href="/activity-log">System history</Link>
+          <Link href="/error-log">Needs fixing</Link>
+          <Link href="/settings">Settings</Link>
+        </div>
+      </div>
+
       <div className="sidebar-status">
-        <p className="status-title">System health</p>
-        <p className="status-text">Demo system online.</p>
-        <p className="status-note">Fake data only</p>
+        <p className="status-title">Demo status</p>
+        <p className="status-text">Interactive sample-data demo.</p>
+        <p className="status-note">No live data connected</p>
       </div>
     </aside>
   );

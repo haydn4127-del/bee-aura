@@ -24074,3 +24074,65 @@ main[class*="messages"] .baFlowCard a {
 }
 
 /* ===== BEE-AURA TURN PHONE SCREEN ONLY v1 END ===== */
+
+/* ===== BEE-AURA TODAY-FIRST SIMPLIFIED NAV v1 START ===== */
+
+.sidebar-link-simplified {
+  display: flex !important;
+  min-height: 54px;
+  flex-direction: column;
+  align-items: flex-start !important;
+  justify-content: center;
+  gap: 3px;
+}
+
+.sidebar-link-simplified span {
+  color: inherit;
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.sidebar-link-simplified small {
+  color: rgba(245, 249, 255, 0.58);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.sidebar-link-simplified.active small {
+  color: rgba(7, 17, 29, 0.72);
+}
+
+.sidebar-admin-depth {
+  display: grid;
+  gap: 10px;
+}
+
+.sidebar-admin-links {
+  display: grid;
+  gap: 7px;
+}
+
+.sidebar-admin-links a {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 999px;
+  padding: 0 11px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background: rgba(255, 255, 255, 0.045);
+  color: rgba(245, 249, 255, 0.78);
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.sidebar-admin-links a:hover {
+  border-color: rgba(255, 210, 74, 0.32);
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+/* ===== BEE-AURA TODAY-FIRST SIMPLIFIED NAV v1 END ===== */
