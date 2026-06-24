@@ -5,22 +5,22 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
   {
-    href: "/dashboard",
+    href: "/today",
     label: "Today",
     detail: "Daily action queue",
-    matches: ["/", "/dashboard"],
+    matches: ["/", "/today", "/dashboard"],
   },
   {
-    href: "/messages",
+    href: "/inbox",
     label: "Inbox",
     detail: "Leads + replies",
-    matches: ["/messages", "/leads"],
+    matches: ["/inbox", "/messages", "/leads"],
   },
   {
-    href: "/bookings",
+    href: "/jobs",
     label: "Jobs",
     detail: "Bookings + follow-ups",
-    matches: ["/bookings", "/follow-ups"],
+    matches: ["/jobs", "/bookings", "/follow-ups"],
   },
   {
     href: "/customers",
@@ -29,10 +29,10 @@ const navItems = [
     matches: ["/customers"],
   },
   {
-    href: "/settings",
+    href: "/more",
     label: "More / Admin",
     detail: "Reviews, logs, settings",
-    matches: ["/reviews", "/activity-log", "/error-log", "/settings"],
+    matches: ["/more", "/reviews", "/activity-log", "/error-log", "/settings"],
   },
 ];
 

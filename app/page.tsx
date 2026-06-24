@@ -55,7 +55,7 @@ export default function Home() {
         </Link>
 
         <div className="landing-nav-links">
-          <Link href="/dashboard">Today</Link>
+          <Link href="/today">Today</Link>
           <a href="#features">Features</a>
           <a href="#how-it-works">How It Works</a>
           <a href="#pricing">Pricing</a>
@@ -66,7 +66,7 @@ export default function Home() {
           <Link href="/settings" className="landing-button landing-button-ghost">
             Login
           </Link>
-          <Link href="/dashboard" className="landing-button landing-button-primary">
+          <Link href="/today" className="landing-button landing-button-primary">
             Enter Demo
           </Link>
         </div>
@@ -97,7 +97,7 @@ export default function Home() {
 
           <div className="landing-hero-actions">
             <Link
-              href="/dashboard"
+              href="/today"
               className="landing-button landing-button-primary landing-button-large"
             >
               Enter Today
@@ -131,22 +131,22 @@ export default function Home() {
                   <small>AI SYSTEMS</small>
                 </div>
               </div>
-              <Link href="/dashboard" className="active" aria-label="Open dashboard overview">
+              <Link href="/today" className="active" aria-label="Open dashboard overview">
                 Today
               </Link>
               <Link href="/leads" aria-label="Open leads page">
                 Leads
               </Link>
-              <Link href="/messages" aria-label="Open messages page">
+              <Link href="/inbox" aria-label="Open messages page">
                 Messages
               </Link>
-              <Link href="/bookings" aria-label="Open bookings page">
+              <Link href="/jobs" aria-label="Open bookings page">
                 Bookings
               </Link>
-              <Link href="/follow-ups" aria-label="Open follow-ups page">
+              <Link href="/jobs" aria-label="Open follow-ups page">
                 Follow-Ups
               </Link>
-              <Link href="/reviews" aria-label="Open reviews page">
+              <Link href="/more" aria-label="Open reviews page">
                 Reviews
               </Link>
               <Link href="/settings" aria-label="Open settings page">
@@ -416,7 +416,7 @@ export default function Home() {
           </p>
 
           <div className="landing-hero-actions">
-            <Link href="/dashboard" className="landing-button landing-button-primary">
+            <Link href="/today" className="landing-button landing-button-primary">
               Open Demo Dashboard
             </Link>
           </div>
