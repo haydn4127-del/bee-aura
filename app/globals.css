@@ -24438,3 +24438,2453 @@ main[class*="messages"] .baFlowCard a {
 }
 
 /* ===== BEE-AURA SIMPLIFIED FRONT DOORS v1 END ===== */
+
+/* ===== BEE-AURA THREE AI DEMOS v1 START ===== */
+
+.threeDemoPage {
+  min-height: 100vh;
+  padding: 32px;
+  color: #f8fafc;
+}
+
+.threeDemoHero,
+.threeDemoMain,
+.threeDemoAura,
+.teamDemoCard,
+.controlCentreCard {
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background:
+    radial-gradient(circle at top left, rgba(77, 163, 255, 0.14), transparent 34%),
+    linear-gradient(145deg, rgba(17, 24, 39, 0.96), rgba(8, 16, 27, 0.98));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+}
+
+.threeDemoHero {
+  border-radius: 28px;
+  padding: 34px;
+  display: grid;
+  gap: 16px;
+}
+
+.threeDemoHero h1 {
+  max-width: 920px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 4.35rem);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+}
+
+.threeDemoHero p {
+  max-width: 800px;
+  margin: 0;
+  color: rgba(226, 232, 240, 0.86);
+  line-height: 1.65;
+}
+
+.threeDemoGrid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 370px;
+  gap: 18px;
+  align-items: start;
+}
+
+.threeDemoMain,
+.threeDemoAura {
+  border-radius: 26px;
+  padding: 22px;
+}
+
+.threeDemoAura {
+  position: sticky;
+  top: 24px;
+  display: grid;
+  gap: 14px;
+}
+
+.threeDemoAura img {
+  width: 128px;
+  height: auto;
+  filter: drop-shadow(0 24px 34px rgba(77, 163, 255, 0.28));
+}
+
+.threeDemoAura h2 {
+  margin: 0;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+}
+
+.threeDemoAura p {
+  margin: 0;
+  color: rgba(226, 232, 240, 0.78);
+  line-height: 1.58;
+}
+
+.teamDemoBoard,
+.controlCentreGrid {
+  display: grid;
+  gap: 14px;
+}
+
+.teamDemoBoard {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.teamDemoCard,
+.controlCentreCard {
+  border-radius: 22px;
+  padding: 18px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.teamDemoCard span,
+.controlCentreCard span {
+  color: #f7d675;
+  font-weight: 950;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.teamDemoCard h3,
+.controlCentreCard strong {
+  display: block;
+  margin: 8px 0;
+  color: #ffffff;
+}
+
+.teamDemoCard p,
+.controlCentreCard p {
+  color: rgba(226, 232, 240, 0.76);
+  line-height: 1.5;
+}
+
+.teamDemoCard strong {
+  color: #4da3ff;
+}
+
+.controlCentreGrid {
+  margin-top: 18px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.controlCentreCard strong {
+  font-size: 2rem;
+  letter-spacing: -0.05em;
+}
+
+.controlCentreCard em {
+  color: #f7d675;
+  font-style: normal;
+  font-weight: 950;
+}
+
+@media (max-width: 1180px) {
+  .threeDemoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .threeDemoAura {
+    position: static;
+  }
+
+  .controlCentreGrid,
+  .teamDemoBoard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .threeDemoPage {
+    padding: 18px;
+  }
+
+  .threeDemoHero,
+  .threeDemoMain,
+  .threeDemoAura {
+    border-radius: 22px;
+    padding: 20px;
+  }
+
+  .controlCentreGrid,
+  .teamDemoBoard {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== BEE-AURA THREE AI DEMOS v1 END ===== */
+
+/* ===== BEE-AURA TRUE THREE PACKAGE DEMOS v1 START ===== */
+
+.demoChooserPage,
+.packagePage {
+  min-height: 100vh;
+  padding: 32px;
+  color: #f8fafc;
+}
+
+.demoChooserNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+.demoChooserNavLinks {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.demoChooserNavLinks a,
+.packageTopNav a {
+  text-decoration: none;
+}
+
+.demoChooserNavLinks a {
+  border-radius: 999px;
+  padding: 10px 14px;
+  color: rgba(248, 250, 252, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.045);
+  font-weight: 900;
+}
+
+.demoChooserHero,
+.demoChooserProof,
+.demoChooserCard,
+.packageHero,
+.packageMain,
+.packageAura,
+.packageStat,
+.packageActionCard {
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background:
+    radial-gradient(circle at top left, rgba(207, 164, 59, 0.13), transparent 34%),
+    linear-gradient(145deg, rgba(17, 24, 39, 0.96), rgba(8, 16, 27, 0.98));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+}
+
+.demoChooserHero,
+.packageHero {
+  border-radius: 30px;
+  padding: 34px;
+}
+
+.demoChooserHero h1,
+.packageHero h1 {
+  max-width: 980px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2.1rem, 4.3vw, 4.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+}
+
+.demoChooserHero p,
+.packageHero p,
+.demoChooserProof p {
+  max-width: 820px;
+  color: rgba(226, 232, 240, 0.84);
+  line-height: 1.65;
+}
+
+.demoChooserGrid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.demoChooserCard {
+  border-radius: 26px;
+  padding: 24px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.demoChooserCard span,
+.demoChooserCard em {
+  color: #f7d675;
+  font-weight: 950;
+  font-style: normal;
+}
+
+.demoChooserCard h2 {
+  margin: 10px 0;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+}
+
+.demoChooserCard p,
+.demoChooserCard li {
+  color: rgba(226, 232, 240, 0.78);
+  line-height: 1.52;
+}
+
+.demoChooserCard strong {
+  color: #4da3ff;
+}
+
+.demoChooserProof {
+  margin-top: 18px;
+  border-radius: 26px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+
+.demoChooserProof img {
+  width: 112px;
+  height: auto;
+  filter: drop-shadow(0 22px 34px rgba(77, 163, 255, 0.25));
+}
+
+.demoChooserProof h2 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.packageHeroTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.packageBrain {
+  min-width: 250px;
+  border-radius: 22px;
+  padding: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid rgba(77, 163, 255, 0.2);
+  background: rgba(77, 163, 255, 0.07);
+}
+
+.packageBrain img {
+  width: 56px;
+  height: auto;
+}
+
+.packageBrain strong,
+.packageBrain span {
+  display: block;
+}
+
+.packageBrain strong {
+  color: #ffffff;
+}
+
+.packageBrain span {
+  color: rgba(226, 232, 240, 0.68);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.packageHeroActions,
+.packageTopNav {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.packageHeroActions a,
+.packageTopNav a {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0 15px;
+  font-weight: 950;
+}
+
+.packageHeroActions a:first-child {
+  background: #cfa43b;
+  color: #07111d;
+}
+
+.packageHeroActions a:last-child,
+.packageTopNav a {
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.packageTopNav a {
+  min-height: 52px;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 150px;
+}
+
+.packageTopNav span,
+.packageTopNav small {
+  display: block;
+}
+
+.packageTopNav small {
+  color: rgba(226, 232, 240, 0.62);
+  font-size: 0.72rem;
+}
+
+.packageStats {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.packageStat {
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.packageStat span,
+.packageStat small {
+  display: block;
+  color: rgba(226, 232, 240, 0.7);
+  font-weight: 800;
+}
+
+.packageStat strong {
+  display: block;
+  margin: 8px 0 3px;
+  color: #ffffff;
+  font-size: 1.7rem;
+  letter-spacing: -0.05em;
+}
+
+.packageGrid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 18px;
+  align-items: start;
+}
+
+.packageMain,
+.packageAura {
+  border-radius: 26px;
+  padding: 22px;
+}
+
+.packageCards {
+  display: grid;
+  gap: 12px;
+}
+
+.packageActionCard {
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.packageActionCard h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+}
+
+.packageActionCard p {
+  margin: 0 0 14px;
+  color: rgba(226, 232, 240, 0.76);
+  line-height: 1.52;
+}
+
+.packageTone-urgent,
+.packageTone-danger {
+  border-color: rgba(217, 92, 99, 0.42);
+}
+
+.packageTone-approval,
+.packageTone-proof {
+  border-color: rgba(207, 164, 59, 0.42);
+}
+
+.packageTone-job,
+.packageTone-team {
+  border-color: rgba(77, 163, 255, 0.38);
+}
+
+.packageTone-control {
+  border-color: rgba(34, 160, 107, 0.36);
+}
+
+.packageAura {
+  position: sticky;
+  top: 24px;
+  display: grid;
+  gap: 14px;
+}
+
+.packageAura img {
+  width: 126px;
+  height: auto;
+  filter: drop-shadow(0 24px 34px rgba(77, 163, 255, 0.28));
+}
+
+.packageAura h2 {
+  margin: 0;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+}
+
+.packageAura p {
+  color: rgba(226, 232, 240, 0.78);
+  line-height: 1.58;
+}
+
+.packageSolo .packageHero,
+.packageSolo .packageMain,
+.packageSolo .packageAura,
+.packageSolo .packageStat,
+.packageSolo .packageActionCard {
+  background:
+    radial-gradient(circle at top left, rgba(207, 164, 59, 0.14), transparent 34%),
+    linear-gradient(145deg, rgba(17, 24, 39, 0.96), rgba(8, 16, 27, 0.98));
+}
+
+.packageTeam .packageHero,
+.packageTeam .packageMain,
+.packageTeam .packageAura,
+.packageTeam .packageStat,
+.packageTeam .packageActionCard {
+  background:
+    radial-gradient(circle at top left, rgba(77, 163, 255, 0.16), transparent 34%),
+    linear-gradient(145deg, rgba(17, 24, 39, 0.96), rgba(8, 16, 27, 0.98));
+}
+
+.packageControl .packageHero,
+.packageControl .packageMain,
+.packageControl .packageAura,
+.packageControl .packageStat,
+.packageControl .packageActionCard {
+  background:
+    radial-gradient(circle at top left, rgba(34, 160, 107, 0.14), transparent 34%),
+    linear-gradient(145deg, rgba(17, 24, 39, 0.96), rgba(8, 16, 27, 0.98));
+}
+
+@media (max-width: 1180px) {
+  .demoChooserGrid,
+  .packageStats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .packageGrid,
+  .packageHeroTop,
+  .demoChooserProof {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .packageAura {
+    position: static;
+  }
+}
+
+@media (max-width: 760px) {
+  .demoChooserPage,
+  .packagePage {
+    padding: 18px;
+  }
+
+  .demoChooserGrid,
+  .packageStats {
+    grid-template-columns: 1fr;
+  }
+
+  .demoChooserHero,
+  .demoChooserCard,
+  .demoChooserProof,
+  .packageHero,
+  .packageMain,
+  .packageAura {
+    border-radius: 22px;
+    padding: 20px;
+  }
+
+  .demoChooserNav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .packageBrain {
+    min-width: 0;
+  }
+}
+
+/* ===== BEE-AURA TRUE THREE PACKAGE DEMOS v1 END ===== */
+
+/* ===== BEE-AURA THREE DEMO PACKAGE IDENTITY v2 START ===== */
+
+.demoIdentityPage {
+  min-height: 100vh;
+  padding: 32px;
+  color: #f8fafc;
+}
+
+/* SOLO: phone-first owner experience */
+
+.soloIdentityHero {
+  min-height: calc(100vh - 64px);
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+  gap: 34px;
+  align-items: center;
+}
+
+.soloPhoneMock {
+  overflow: hidden;
+  border-radius: 38px;
+  padding: 18px;
+  min-height: 720px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    radial-gradient(circle at 30% 0%, rgba(207, 164, 59, 0.24), transparent 34%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(3, 7, 18, 0.98));
+  box-shadow: 0 32px 110px rgba(0, 0, 0, 0.38);
+}
+
+.soloPhoneTop,
+.soloBottomNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.soloPhoneTop span {
+  color: rgba(226, 232, 240, 0.64);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+}
+
+.soloPhoneTop strong {
+  color: #f7d675;
+}
+
+.soloPhoneSummary {
+  margin: 26px 0;
+  border-radius: 28px;
+  padding: 22px;
+  background: rgba(207, 164, 59, 0.12);
+  border: 1px solid rgba(207, 164, 59, 0.22);
+}
+
+.soloPhoneSummary p,
+.soloPhoneSummary span {
+  margin: 0;
+  display: block;
+  color: rgba(226, 232, 240, 0.76);
+  font-weight: 800;
+}
+
+.soloPhoneSummary strong {
+  display: block;
+  margin: 5px 0;
+  color: #ffffff;
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: -0.08em;
+}
+
+.soloPhoneCards {
+  display: grid;
+  gap: 12px;
+}
+
+.soloPhoneCard {
+  border-radius: 24px;
+  padding: 17px;
+  color: inherit;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.soloPhoneCard span {
+  color: #f7d675;
+  font-size: 0.72rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.soloPhoneCard h3 {
+  margin: 8px 0 6px;
+  color: #ffffff;
+}
+
+.soloPhoneCard p,
+.soloPhoneCard small {
+  color: rgba(226, 232, 240, 0.72);
+  line-height: 1.45;
+}
+
+.soloBottomNav {
+  margin-top: 18px;
+  border-radius: 999px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.soloBottomNav a {
+  color: rgba(248, 250, 252, 0.76);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.soloIdentityCopy {
+  border-radius: 34px;
+  padding: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background:
+    radial-gradient(circle at top left, rgba(207, 164, 59, 0.16), transparent 34%),
+    linear-gradient(145deg, rgba(17, 24, 39, 0.96), rgba(8, 16, 27, 0.98));
+}
+
+.soloIdentityCopy h1 {
+  margin: 0;
+  max-width: 820px;
+  color: #ffffff;
+  font-size: clamp(2.1rem, 4.6vw, 5.2rem);
+  line-height: 0.92;
+  letter-spacing: -0.075em;
+}
+
+.soloIdentityCopy p {
+  max-width: 720px;
+  color: rgba(226, 232, 240, 0.82);
+  line-height: 1.65;
+}
+
+.soloIdentityActions,
+.teamHeroActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.soloIdentityActions a,
+.teamHeroActions a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0 16px;
+  font-weight: 950;
+  text-decoration: none;
+}
+
+.soloIdentityActions a:first-child,
+.teamHeroActions a:first-child {
+  background: #cfa43b;
+  color: #07111d;
+}
+
+.soloIdentityActions a:last-child,
+.teamHeroActions a:last-child {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.soloAuraNote {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-radius: 24px;
+  padding: 16px;
+  background: rgba(77, 163, 255, 0.08);
+  border: 1px solid rgba(77, 163, 255, 0.16);
+}
+
+.soloAuraNote img {
+  width: 70px;
+  height: auto;
+}
+
+.soloAuraNote strong,
+.soloAuraNote span {
+  display: block;
+}
+
+.soloAuraNote strong {
+  color: #ffffff;
+}
+
+.soloAuraNote span {
+  color: rgba(226, 232, 240, 0.72);
+}
+
+/* TEAM: board / assignment experience */
+
+.teamIdentityHero {
+  border-radius: 30px;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 22px;
+  align-items: start;
+  border: 1px solid rgba(77, 163, 255, 0.18);
+  background:
+    radial-gradient(circle at top left, rgba(77, 163, 255, 0.18), transparent 34%),
+    linear-gradient(145deg, rgba(17, 24, 39, 0.96), rgba(8, 16, 27, 0.98));
+}
+
+.teamIdentityHero h1,
+.controlCommandHero h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2rem, 4.2vw, 4.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+}
+
+.teamIdentityHero p,
+.controlCommandHero p {
+  max-width: 760px;
+  color: rgba(226, 232, 240, 0.82);
+  line-height: 1.65;
+}
+
+.teamWorkloadSummary,
+.controlAuraCommand {
+  border-radius: 26px;
+  padding: 20px;
+  display: grid;
+  gap: 10px;
+  background: rgba(77, 163, 255, 0.09);
+  border: 1px solid rgba(77, 163, 255, 0.2);
+}
+
+.teamWorkloadSummary img,
+.controlAuraCommand img {
+  width: 92px;
+  height: auto;
+}
+
+.teamWorkloadSummary strong,
+.controlAuraCommand strong {
+  color: #ffffff;
+}
+
+.teamWorkloadSummary span,
+.controlAuraCommand span {
+  color: rgba(226, 232, 240, 0.72);
+  line-height: 1.45;
+}
+
+.teamBoard {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.teamColumn {
+  min-height: 520px;
+  border-radius: 26px;
+  padding: 16px;
+  background: rgba(8, 16, 27, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.teamColumnHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.teamColumnHeader span {
+  color: #ffffff;
+  font-weight: 950;
+}
+
+.teamColumnHeader strong {
+  display: inline-flex;
+  min-width: 32px;
+  min-height: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: #07111d;
+  background: #cfa43b;
+}
+
+.teamTaskCard {
+  border-radius: 20px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.teamTaskCard h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+}
+
+.teamTaskCard p {
+  color: rgba(226, 232, 240, 0.72);
+  line-height: 1.45;
+}
+
+.teamTaskActions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.teamTaskActions a {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0 12px;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.teamTaskActions a:first-child {
+  background: #4da3ff;
+  color: #07111d;
+}
+
+.teamTaskActions a:last-child {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.teamDifferenceStrip {
+  margin-top: 18px;
+  border-radius: 22px;
+  padding: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: rgba(77, 163, 255, 0.07);
+  border: 1px solid rgba(77, 163, 255, 0.16);
+}
+
+.teamDifferenceStrip a {
+  color: #f7d675;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+/* CONTROL: premium command centre */
+
+.controlCommandHero {
+  border-radius: 30px;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 22px;
+  align-items: start;
+  border: 1px solid rgba(34, 160, 107, 0.18);
+  background:
+    radial-gradient(circle at top left, rgba(34, 160, 107, 0.16), transparent 34%),
+    linear-gradient(145deg, rgba(17, 24, 39, 0.96), rgba(8, 16, 27, 0.98));
+}
+
+.controlMetricGrid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.controlMetricCard,
+.controlReportPanel,
+.controlMiniPanel {
+  border-radius: 24px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background:
+    radial-gradient(circle at top right, rgba(34, 160, 107, 0.12), transparent 34%),
+    rgba(8, 16, 27, 0.78);
+}
+
+.controlMetricCard span,
+.controlMetricCard small {
+  color: rgba(226, 232, 240, 0.7);
+  font-weight: 800;
+}
+
+.controlMetricCard strong {
+  display: block;
+  margin: 8px 0;
+  color: #ffffff;
+  font-size: 2rem;
+  letter-spacing: -0.06em;
+}
+
+.controlDashboardGrid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.controlPanelHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.controlPanelHeader h2 {
+  margin: 0;
+  color: #ffffff;
+  letter-spacing: -0.05em;
+}
+
+.controlPanelHeader a {
+  color: #f7d675;
+  font-weight: 950;
+  text-decoration: none;
+}
+
+.controlBars {
+  margin-top: 24px;
+  display: grid;
+  gap: 18px;
+}
+
+.controlBars div {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+}
+
+.controlBars span {
+  color: rgba(226, 232, 240, 0.74);
+  font-weight: 900;
+}
+
+.controlBars i {
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #4da3ff, #f7d675);
+  box-shadow: 0 0 22px rgba(77, 163, 255, 0.28);
+}
+
+.controlPanelStack {
+  display: grid;
+  gap: 12px;
+}
+
+.controlMiniPanel {
+  color: inherit;
+  text-decoration: none;
+}
+
+.controlMiniPanel span,
+.controlMiniPanel strong {
+  color: #f7d675;
+  font-weight: 950;
+}
+
+.controlMiniPanel p {
+  color: rgba(226, 232, 240, 0.76);
+  line-height: 1.45;
+}
+
+.controlDeepLinks {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.controlDeepLinks a {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0 15px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 950;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 1180px) {
+  .soloIdentityHero,
+  .teamIdentityHero,
+  .controlCommandHero,
+  .controlDashboardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .soloPhoneMock {
+    max-width: 430px;
+    min-height: 640px;
+  }
+
+  .teamBoard,
+  .controlMetricGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .demoIdentityPage {
+    padding: 18px;
+  }
+
+  .soloIdentityCopy,
+  .teamIdentityHero,
+  .controlCommandHero,
+  .teamColumn,
+  .controlMetricCard,
+  .controlReportPanel,
+  .controlMiniPanel {
+    border-radius: 22px;
+    padding: 20px;
+  }
+
+  .soloPhoneMock {
+    min-height: auto;
+    border-radius: 28px;
+  }
+
+  .teamBoard,
+  .controlMetricGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .controlBars div {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== BEE-AURA THREE DEMO PACKAGE IDENTITY v2 END ===== */
+
+/* ===== BEE-AURA SOLO JOURNEY FIX v1 START ===== */
+
+.soloJourneyPage {
+  min-height: 100vh;
+  padding: 32px;
+  color: #f8fafc;
+}
+
+.soloJourneyHero {
+  min-height: calc(100vh - 64px);
+  display: grid;
+  grid-template-columns: minmax(300px, 430px) minmax(0, 1fr);
+  gap: 34px;
+  align-items: center;
+}
+
+.soloOwnerPhone {
+  overflow: hidden;
+  border-radius: 38px;
+  padding: 18px;
+  min-height: 720px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    radial-gradient(circle at 32% 0%, rgba(207, 164, 59, 0.24), transparent 34%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(3, 7, 18, 0.98));
+  box-shadow: 0 32px 110px rgba(0, 0, 0, 0.38);
+}
+
+.soloOwnerPhoneTop,
+.soloOwnerBottomNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.soloOwnerPhoneTop span {
+  color: rgba(226, 232, 240, 0.64);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+}
+
+.soloOwnerPhoneTop strong {
+  color: #f7d675;
+}
+
+.soloOwnerSummary {
+  margin: 26px 0;
+  border-radius: 28px;
+  padding: 22px;
+  background: rgba(207, 164, 59, 0.12);
+  border: 1px solid rgba(207, 164, 59, 0.22);
+}
+
+.soloOwnerSummary span,
+.soloOwnerSummary p {
+  margin: 0;
+  display: block;
+  color: rgba(226, 232, 240, 0.76);
+  font-weight: 800;
+}
+
+.soloOwnerSummary strong {
+  display: block;
+  margin: 5px 0;
+  color: #ffffff;
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: -0.08em;
+}
+
+.soloOwnerActionList,
+.soloTodayQueue,
+.soloInboxStack {
+  display: grid;
+  gap: 12px;
+}
+
+.soloOwnerAction,
+.soloTodayCard,
+.soloInboxItem,
+.soloJobCard,
+.soloCustomerCard,
+.soloHiddenPanel,
+.soloActionBrain {
+  border-radius: 24px;
+  padding: 18px;
+  color: inherit;
+  text-decoration: none;
+  background: rgba(10, 18, 32, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.soloOwnerAction span,
+.soloTodayCard span,
+.soloInboxItem span,
+.soloJobCard span,
+.soloCustomerCard span {
+  color: #f7d675;
+  font-size: 0.72rem;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.soloOwnerAction h3,
+.soloTodayCard h2,
+.soloInboxItem h2,
+.soloJobCard h2,
+.soloCustomerCard h2,
+.soloHiddenPanel h2,
+.soloActionBrain h2 {
+  margin: 8px 0 6px;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+}
+
+.soloOwnerAction p,
+.soloOwnerAction small,
+.soloTodayCard p,
+.soloTodayCard small,
+.soloInboxItem p,
+.soloInboxItem small,
+.soloJobCard p,
+.soloHiddenPanel p,
+.soloHiddenPanel li,
+.soloActionBrain p,
+.soloCustomerCard p,
+.soloCustomerCard small {
+  color: rgba(226, 232, 240, 0.74);
+  line-height: 1.48;
+}
+
+.soloOwnerBottomNav {
+  margin-top: 18px;
+  border-radius: 999px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.soloOwnerBottomNav a {
+  color: rgba(248, 250, 252, 0.76);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.soloOwnerCopy,
+.soloTodayHero,
+.soloSplitHero,
+.soloHiddenHero {
+  border-radius: 34px;
+  padding: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background:
+    radial-gradient(circle at top left, rgba(207, 164, 59, 0.16), transparent 34%),
+    linear-gradient(145deg, rgba(17, 24, 39, 0.96), rgba(8, 16, 27, 0.98));
+}
+
+.soloOwnerCopy h1,
+.soloTodayHero h1,
+.soloSplitHero h1,
+.soloHiddenHero h1 {
+  margin: 0;
+  max-width: 820px;
+  color: #ffffff;
+  font-size: clamp(2.1rem, 4.6vw, 5.1rem);
+  line-height: 0.93;
+  letter-spacing: -0.075em;
+}
+
+.soloOwnerCopy p,
+.soloTodayHero p,
+.soloSplitHero p,
+.soloHiddenHero p {
+  max-width: 760px;
+  color: rgba(226, 232, 240, 0.82);
+  line-height: 1.65;
+}
+
+.soloOwnerActions,
+.soloTodayActions,
+.soloInboxActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.soloOwnerActions a,
+.soloTodayActions a,
+.soloInboxActions a,
+.soloSplitHero > a {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0 15px;
+  font-weight: 950;
+  text-decoration: none;
+}
+
+.soloOwnerActions a:first-child,
+.soloTodayActions a:first-child,
+.soloInboxActions a:first-child,
+.soloSplitHero > a {
+  background: #cfa43b;
+  color: #07111d;
+}
+
+.soloOwnerActions a:last-child,
+.soloTodayActions a:last-child,
+.soloInboxActions a:last-child {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.soloOwnerAura {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-radius: 24px;
+  padding: 16px;
+  background: rgba(77, 163, 255, 0.08);
+  border: 1px solid rgba(77, 163, 255, 0.16);
+}
+
+.soloOwnerAura img,
+.soloActionBrain img {
+  width: 74px;
+  height: auto;
+}
+
+.soloOwnerAura strong,
+.soloOwnerAura span {
+  display: block;
+}
+
+.soloOwnerAura strong {
+  color: #ffffff;
+}
+
+.soloOwnerAura span {
+  color: rgba(226, 232, 240, 0.72);
+}
+
+.soloTodayHero,
+.soloSplitHero,
+.soloHiddenHero {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.soloTodayHero aside,
+.soloHiddenBadge {
+  min-width: 260px;
+  display: grid;
+  gap: 8px;
+  border-radius: 24px;
+  padding: 18px;
+  background: rgba(207, 164, 59, 0.1);
+  border: 1px solid rgba(207, 164, 59, 0.24);
+}
+
+.soloTodayHero aside strong,
+.soloHiddenBadge strong {
+  color: #ffffff;
+}
+
+.soloTodayHero aside span,
+.soloHiddenBadge span {
+  color: rgba(226, 232, 240, 0.72);
+  font-weight: 850;
+}
+
+.soloTodayLayout,
+.soloHiddenGrid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 18px;
+  align-items: start;
+}
+
+.soloTodayCard {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 16px;
+}
+
+.soloTodayNumber {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: #07111d;
+  background: #cfa43b;
+  font-weight: 950;
+}
+
+.soloActionBrain {
+  position: sticky;
+  top: 24px;
+  display: grid;
+  gap: 12px;
+  border-color: rgba(77, 163, 255, 0.2);
+  background:
+    radial-gradient(circle at top left, rgba(77, 163, 255, 0.14), transparent 34%),
+    rgba(8, 16, 27, 0.82);
+}
+
+.soloInboxItem {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+}
+
+.soloJobsGrid,
+.soloCustomerGrid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.soloJobCard strong {
+  display: block;
+  color: #f7d675;
+}
+
+.soloCustomerCard {
+  display: flex;
+  gap: 14px;
+}
+
+.soloCustomerAvatar {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: #07111d;
+  background: #cfa43b;
+  font-weight: 950;
+}
+
+.soloCustomerAvatarLarge {
+  width: 88px;
+  height: 88px;
+  font-size: 1.4rem;
+}
+
+.soloCustomerFacts {
+  display: grid;
+  gap: 10px;
+}
+
+.soloCustomerFacts div {
+  border-radius: 16px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.soloCustomerFacts dt {
+  color: rgba(226, 232, 240, 0.62);
+  font-weight: 850;
+}
+
+.soloCustomerFacts dd {
+  margin: 3px 0 0;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.soloTone-urgent {
+  border-color: rgba(217, 92, 99, 0.42);
+}
+
+.soloTone-approval {
+  border-color: rgba(207, 164, 59, 0.42);
+}
+
+.soloTone-follow {
+  border-color: rgba(77, 163, 255, 0.38);
+}
+
+.soloTone-review {
+  border-color: rgba(34, 160, 107, 0.36);
+}
+
+@media (max-width: 1180px) {
+  .soloJourneyHero,
+  .soloTodayLayout,
+  .soloHiddenGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .soloOwnerPhone {
+    max-width: 430px;
+  }
+
+  .soloActionBrain {
+    position: static;
+  }
+}
+
+@media (max-width: 760px) {
+  .soloJourneyPage {
+    padding: 18px;
+  }
+
+  .soloOwnerPhone {
+    min-height: auto;
+    border-radius: 28px;
+  }
+
+  .soloOwnerCopy,
+  .soloTodayHero,
+  .soloSplitHero,
+  .soloHiddenHero,
+  .soloOwnerAction,
+  .soloTodayCard,
+  .soloInboxItem,
+  .soloJobCard,
+  .soloCustomerCard,
+  .soloHiddenPanel,
+  .soloActionBrain {
+    border-radius: 22px;
+    padding: 20px;
+  }
+
+  .soloTodayHero,
+  .soloSplitHero,
+  .soloHiddenHero,
+  .soloInboxItem {
+    display: grid;
+  }
+
+  .soloJobsGrid,
+  .soloCustomerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .soloTodayCard {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== BEE-AURA SOLO JOURNEY FIX v1 END ===== */
+
+/* ===== BEE-AURA HOME SALES WARMTH v2 START ===== */
+
+.demoChooserHeroSales {
+  position: relative;
+  overflow: hidden;
+}
+
+.demoChooserHeroSales::after {
+  content: "";
+  position: absolute;
+  inset: auto 32px 26px auto;
+  width: 220px;
+  height: 220px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(207, 164, 59, 0.16), transparent 68%);
+  pointer-events: none;
+}
+
+.demoChooserHeroActions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.demoChooserHeroActions a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0 17px;
+  font-weight: 950;
+  text-decoration: none;
+}
+
+.demoChooserHeroActions a:first-child {
+  color: #07111d;
+  background: #cfa43b;
+  box-shadow: 0 18px 36px rgba(207, 164, 59, 0.18);
+}
+
+.demoChooserHeroActions a:not(:first-child) {
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.demoChooserPromiseRow {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.demoChooserPromiseRow span {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0 13px;
+  color: rgba(248, 250, 252, 0.86);
+  background: rgba(77, 163, 255, 0.08);
+  border: 1px solid rgba(77, 163, 255, 0.18);
+  font-size: 0.8rem;
+  font-weight: 850;
+}
+
+.demoChooserCardSales {
+  display: grid;
+  gap: 12px;
+}
+
+.demoCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.demoCardTop small {
+  color: rgba(226, 232, 240, 0.58);
+  font-size: 0.76rem;
+  font-weight: 850;
+}
+
+.demoCardLabel {
+  color: #f7d675;
+  font-weight: 950;
+}
+
+.demoCardFit {
+  color: #4da3ff !important;
+  font-weight: 950;
+}
+
+.demoCardPromise {
+  margin: 0;
+  color: rgba(248, 250, 252, 0.82) !important;
+  font-weight: 750;
+}
+
+.demoCardCta {
+  margin-top: 4px;
+  color: #f7d675 !important;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.demoChooserProofSales {
+  align-items: center;
+}
+
+.demoChooserProofGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.demoChooserProofGrid span {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0 13px;
+  color: #dffdf3;
+  background: rgba(21, 188, 133, 0.1);
+  border: 1px solid rgba(21, 188, 133, 0.18);
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.demoSafetyNote {
+  margin-top: 14px !important;
+  color: rgba(226, 232, 240, 0.66) !important;
+  font-size: 0.86rem;
+}
+
+/* ===== BEE-AURA HOME SALES WARMTH v2 END ===== */
+
+/* ===== BEE-AURA TEAM PACKAGE REBUILD v1 START ===== */
+
+.teamPackagePage {
+  min-height: 100vh;
+  padding: 32px;
+  color: #f8fafc;
+}
+
+.teamHeroV2,
+.teamPageHeaderV2,
+.teamStatsV2 article,
+.teamLaneV2,
+.teamWorkCardV2,
+.teamAssignmentCardV2,
+.teamApprovalCardV2,
+.teamCustomerCardV2,
+.teamDetailPanelV2,
+.teamActionBadgeV2 {
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background:
+    radial-gradient(circle at top left, rgba(77, 163, 255, 0.15), transparent 34%),
+    linear-gradient(145deg, rgba(17, 24, 39, 0.96), rgba(8, 16, 27, 0.98));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+}
+
+.teamHeroV2,
+.teamPageHeaderV2 {
+  border-radius: 30px;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 22px;
+  align-items: start;
+}
+
+.teamHeroV2 h1,
+.teamPageHeaderV2 h1 {
+  margin: 0;
+  max-width: 900px;
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+}
+
+.teamHeroV2 p,
+.teamPageHeaderV2 p {
+  max-width: 760px;
+  color: rgba(226, 232, 240, 0.82);
+  line-height: 1.65;
+}
+
+.teamHeroActionsV2,
+.teamCardActionsV2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.teamHeroActionsV2 a,
+.teamCardActionsV2 a,
+.teamPageHeaderV2 > a {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0 15px;
+  font-weight: 950;
+  text-decoration: none;
+}
+
+.teamHeroActionsV2 a:first-child,
+.teamCardActionsV2 a:first-child,
+.teamPageHeaderV2 > a {
+  color: #07111d;
+  background: #4da3ff;
+}
+
+.teamHeroActionsV2 a:last-child,
+.teamCardActionsV2 a:last-child {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.teamAuraSummaryV2 {
+  border-radius: 24px;
+  padding: 18px;
+  display: grid;
+  gap: 10px;
+  background: rgba(77, 163, 255, 0.09);
+  border: 1px solid rgba(77, 163, 255, 0.2);
+}
+
+.teamAuraSummaryV2 img {
+  width: 92px;
+  height: auto;
+}
+
+.teamAuraSummaryV2 strong {
+  color: #ffffff;
+}
+
+.teamAuraSummaryV2 span {
+  color: rgba(226, 232, 240, 0.72);
+  line-height: 1.45;
+}
+
+.teamStatsV2 {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.teamStatsV2 article {
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.teamStatsV2 span,
+.teamStatsV2 small {
+  display: block;
+  color: rgba(226, 232, 240, 0.72);
+  font-weight: 850;
+}
+
+.teamStatsV2 strong {
+  display: block;
+  margin: 7px 0 3px;
+  color: #ffffff;
+  font-size: 1.8rem;
+  letter-spacing: -0.06em;
+}
+
+.teamBoardV2 {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+
+.teamLaneV2 {
+  min-height: 520px;
+  border-radius: 26px;
+  padding: 16px;
+}
+
+.teamLaneHeaderV2 {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.teamLaneHeaderV2 span {
+  color: #ffffff;
+  font-weight: 950;
+}
+
+.teamLaneHeaderV2 strong {
+  min-width: 34px;
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: #07111d;
+  background: #4da3ff;
+}
+
+.teamLane-approval .teamLaneHeaderV2 strong {
+  background: #cfa43b;
+}
+
+.teamLane-unassigned .teamLaneHeaderV2 strong {
+  background: #ffb45c;
+}
+
+.teamWorkCardV2,
+.teamAssignmentCardV2,
+.teamApprovalCardV2,
+.teamCustomerCardV2 {
+  border-radius: 22px;
+  padding: 17px;
+  margin-bottom: 12px;
+}
+
+.teamWorkCardV2 small,
+.teamAssignmentCardV2 span,
+.teamApprovalCardV2 span,
+.teamCustomerCardV2 span {
+  color: #f7d675;
+  font-size: 0.75rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.teamWorkCardV2 h2,
+.teamAssignmentCardV2 h2,
+.teamApprovalCardV2 h2,
+.teamCustomerCardV2 h2,
+.teamDetailPanelV2 h2 {
+  margin: 8px 0;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+}
+
+.teamWorkCardV2 p,
+.teamAssignmentCardV2 p,
+.teamApprovalCardV2 p,
+.teamCustomerCardV2 p,
+.teamCustomerCardV2 small,
+.teamDetailPanelV2 p,
+.teamDetailPanelV2 li {
+  color: rgba(226, 232, 240, 0.76);
+  line-height: 1.5;
+}
+
+.teamAssignmentGridV2,
+.teamApprovalStackV2,
+.teamCustomerGridV2,
+.teamDetailGridV2 {
+  margin-top: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.teamAssignmentGridV2 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.teamApprovalStackV2 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.teamCustomerGridV2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.teamCustomerCardV2 {
+  display: flex;
+  gap: 14px;
+}
+
+.teamAvatarV2 {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: #07111d;
+  background: #4da3ff;
+  font-weight: 950;
+}
+
+.teamAvatarLargeV2 {
+  width: 88px;
+  height: 88px;
+  font-size: 1.35rem;
+}
+
+.teamDetailGridV2 {
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+}
+
+.teamDetailPanelV2,
+.teamActionBadgeV2 {
+  border-radius: 24px;
+  padding: 22px;
+}
+
+.teamActionBadgeV2 span,
+.teamActionBadgeV2 strong {
+  display: block;
+}
+
+.teamActionBadgeV2 span {
+  color: rgba(226, 232, 240, 0.72);
+  font-weight: 850;
+}
+
+.teamActionBadgeV2 strong {
+  color: #ffffff;
+  margin-top: 5px;
+  font-size: 1.2rem;
+}
+
+.teamFactsV2 {
+  display: grid;
+  gap: 10px;
+}
+
+.teamFactsV2 div {
+  border-radius: 16px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.teamFactsV2 dt {
+  color: rgba(226, 232, 240, 0.64);
+  font-weight: 850;
+}
+
+.teamFactsV2 dd {
+  margin: 3px 0 0;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+@media (max-width: 1180px) {
+  .teamHeroV2,
+  .teamPageHeaderV2,
+  .teamDetailGridV2 {
+    grid-template-columns: 1fr;
+  }
+
+  .teamBoardV2,
+  .teamAssignmentGridV2,
+  .teamApprovalStackV2,
+  .teamStatsV2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .teamPackagePage {
+    padding: 18px;
+  }
+
+  .teamHeroV2,
+  .teamPageHeaderV2,
+  .teamStatsV2 article,
+  .teamLaneV2,
+  .teamWorkCardV2,
+  .teamAssignmentCardV2,
+  .teamApprovalCardV2,
+  .teamCustomerCardV2,
+  .teamDetailPanelV2 {
+    border-radius: 22px;
+    padding: 20px;
+  }
+
+  .teamBoardV2,
+  .teamAssignmentGridV2,
+  .teamApprovalStackV2,
+  .teamCustomerGridV2,
+  .teamStatsV2 {
+    grid-template-columns: 1fr;
+  }
+
+  .teamCustomerCardV2 {
+    display: grid;
+  }
+}
+
+/* ===== BEE-AURA TEAM PACKAGE REBUILD v1 END ===== */
+
+/* ===== BEE-AURA TEAM SAME-THEME CORRECTION v2 START ===== */
+
+.teamPackageV3 {
+  min-height: 100vh;
+  padding: 32px;
+  color: #f8fafc;
+}
+
+.teamHeroV3,
+.teamHeaderV3,
+.teamStatsV3 article,
+.teamLaneV3,
+.teamCardV3,
+.teamAssignmentRowV3,
+.teamApprovalCardV3,
+.teamCustomerCardV3,
+.teamDetailPanelV3,
+.teamBadgeV3 {
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background:
+    radial-gradient(circle at top left, rgba(207, 164, 59, 0.12), transparent 34%),
+    linear-gradient(145deg, rgba(17, 24, 39, 0.96), rgba(8, 16, 27, 0.98));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+}
+
+.teamHeroV3,
+.teamHeaderV3 {
+  border-radius: 30px;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 22px;
+  align-items: start;
+}
+
+.teamHeroV3 h1,
+.teamHeaderV3 h1 {
+  max-width: 920px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+}
+
+.teamHeroV3 p,
+.teamHeaderV3 p {
+  max-width: 760px;
+  color: rgba(226, 232, 240, 0.82);
+  line-height: 1.65;
+}
+
+.teamAuraV3,
+.teamBadgeV3 {
+  border-radius: 24px;
+  padding: 18px;
+  display: grid;
+  gap: 10px;
+  background:
+    radial-gradient(circle at top left, rgba(77, 163, 255, 0.12), transparent 42%),
+    rgba(8, 16, 27, 0.82);
+  border-color: rgba(77, 163, 255, 0.18);
+}
+
+.teamAuraV3 img {
+  width: 92px;
+  height: auto;
+}
+
+.teamAuraV3 strong,
+.teamBadgeV3 strong {
+  color: #ffffff;
+}
+
+.teamAuraV3 span,
+.teamBadgeV3 span {
+  color: rgba(226, 232, 240, 0.72);
+  line-height: 1.45;
+}
+
+.teamActionsV3,
+.teamButtonRowV3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.teamActionsV3 a,
+.teamButtonRowV3 a,
+.teamHeaderV3 > a {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0 15px;
+  font-weight: 950;
+  text-decoration: none;
+}
+
+.teamActionsV3 a:first-child,
+.teamButtonRowV3 a:first-child,
+.teamHeaderV3 > a {
+  background: #cfa43b;
+  color: #07111d;
+  box-shadow: 0 16px 34px rgba(207, 164, 59, 0.13);
+}
+
+.teamActionsV3 a:last-child,
+.teamButtonRowV3 a:last-child {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.teamStatsV3 {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.teamStatsV3 article {
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.teamStatsV3 span,
+.teamStatsV3 small {
+  display: block;
+  color: rgba(226, 232, 240, 0.72);
+  font-weight: 850;
+}
+
+.teamStatsV3 strong {
+  display: block;
+  margin: 7px 0 3px;
+  color: #ffffff;
+  font-size: 1.8rem;
+  letter-spacing: -0.06em;
+}
+
+.teamBoardV3,
+.teamQueueLayoutV3 {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+
+.teamLaneV3 {
+  min-height: 520px;
+  border-radius: 26px;
+  padding: 16px;
+}
+
+.teamLaneHeaderV3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.teamLaneHeaderV3 span {
+  color: #ffffff;
+  font-weight: 950;
+}
+
+.teamLaneHeaderV3 strong {
+  min-width: 34px;
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: #07111d;
+  background: #cfa43b;
+}
+
+.teamCardV3,
+.teamAssignmentRowV3,
+.teamApprovalCardV3,
+.teamCustomerCardV3 {
+  border-radius: 22px;
+  padding: 17px;
+  margin-bottom: 12px;
+}
+
+.teamCardV3 small,
+.teamAssignmentRowV3 span,
+.teamApprovalCardV3 span,
+.teamCustomerCardV3 span {
+  color: #f7d675;
+  font-size: 0.75rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.teamCardV3 h2,
+.teamAssignmentRowV3 h2,
+.teamApprovalCardV3 h2,
+.teamCustomerCardV3 h2,
+.teamDetailPanelV3 h2 {
+  margin: 8px 0;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+}
+
+.teamCardV3 p,
+.teamAssignmentRowV3 p,
+.teamApprovalCardV3 p,
+.teamCustomerCardV3 p,
+.teamCustomerCardV3 small,
+.teamDetailPanelV3 p,
+.teamDetailPanelV3 li {
+  color: rgba(226, 232, 240, 0.76);
+  line-height: 1.5;
+}
+
+.teamAssignmentListV3,
+.teamApprovalDeskV3,
+.teamCustomerGridV3,
+.teamDetailGridV3 {
+  margin-top: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.teamAssignmentListV3 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.teamApprovalDeskV3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.teamCustomerGridV3 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.teamCustomerCardV3 {
+  display: flex;
+  gap: 14px;
+}
+
+.teamAvatarV3 {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: #07111d;
+  background: #cfa43b;
+  font-weight: 950;
+}
+
+.teamAvatarLargeV3 {
+  width: 88px;
+  height: 88px;
+  font-size: 1.35rem;
+}
+
+.teamDetailGridV3 {
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+}
+
+.teamDetailPanelV3,
+.teamBadgeV3 {
+  border-radius: 24px;
+  padding: 22px;
+}
+
+.teamFactsV3 {
+  display: grid;
+  gap: 10px;
+}
+
+.teamFactsV3 div {
+  border-radius: 16px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.teamFactsV3 dt {
+  color: rgba(226, 232, 240, 0.64);
+  font-weight: 850;
+}
+
+.teamFactsV3 dd {
+  margin: 3px 0 0;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+@media (max-width: 1180px) {
+  .teamHeroV3,
+  .teamHeaderV3,
+  .teamDetailGridV3 {
+    grid-template-columns: 1fr;
+  }
+
+  .teamBoardV3,
+  .teamQueueLayoutV3,
+  .teamAssignmentListV3,
+  .teamApprovalDeskV3,
+  .teamStatsV3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .teamPackageV3 {
+    padding: 18px;
+  }
+
+  .teamHeroV3,
+  .teamHeaderV3,
+  .teamStatsV3 article,
+  .teamLaneV3,
+  .teamCardV3,
+  .teamAssignmentRowV3,
+  .teamApprovalCardV3,
+  .teamCustomerCardV3,
+  .teamDetailPanelV3 {
+    border-radius: 22px;
+    padding: 20px;
+  }
+
+  .teamBoardV3,
+  .teamQueueLayoutV3,
+  .teamAssignmentListV3,
+  .teamApprovalDeskV3,
+  .teamCustomerGridV3,
+  .teamStatsV3 {
+    grid-template-columns: 1fr;
+  }
+
+  .teamCustomerCardV3 {
+    display: grid;
+  }
+}
+
+/* ===== BEE-AURA TEAM SAME-THEME CORRECTION v2 END ===== */
