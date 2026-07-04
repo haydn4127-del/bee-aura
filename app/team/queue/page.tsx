@@ -3,39 +3,61 @@ import { teamLanes } from "../teamData";
 
 export default function TeamQueuePage() {
   return (
-    <main className="teamPackagePage teamPackageV3">
-      <section className="teamHeaderV3">
+    <main className="teamOpsV4">
+      <section className="teamPageHeaderV4">
         <div>
-          <p className="simpleEyebrow">TEAM SHARED QUEUE</p>
+          <p className="teamEyebrowV4">SHARED QUEUE</p>
           <h1>Everything the team needs to pick up next.</h1>
           <p>
-            The shared queue keeps unassigned work, active tasks and owner checks in
-            one tidy place. No digging, no guessing, no “I thought you had it”.
+            Work is grouped by ownership: unassigned, with the team, or waiting for
+            the owner. Aura keeps the next move visible.
           </p>
         </div>
-        <Link href="/team">Back to Team Home</Link>
+        <Link className="teamSecondaryActionV4" href="/team">
+          Back to Team Home
+        </Link>
       </section>
 
-      <section className="teamQueueLayoutV3">
+      <section className="teamQueueBoardV4">
         {teamLanes.map((lane) => (
-          <div key={lane.lane} className="teamLaneV3">
-            <div className="teamLaneHeaderV3">
-              <span>{lane.lane}</span>
+          <article key={lane.lane} className="teamQueueLaneV4">
+            <div className="teamLaneHeadV4">
+              <div>
+                <span>{lane.lane}</span>
+                <p>{lane.summary}</p>
+              </div>
               <strong>{lane.count}</strong>
             </div>
 
             {lane.items.map((item) => (
-              <article key={item.slug} className="teamCardV3">
-                <small>{item.owner}</small>
+              <div key={item.slug} className={`teamQueueCardV4 teamTone-${item.tone}V4`}>
+                <div className="teamCardMetaV4">
+                  <span>{item.priority}</span>
+                  <small>{item.age}</small>
+                </div>
                 <h2>{item.title}</h2>
                 <p>{item.detail}</p>
-                <div className="teamButtonRowV3">
+                <dl className="teamCardFactsV4">
+                  <div>
+                    <dt>Customer</dt>
+                    <dd>{item.customer}</dd>
+                  </div>
+                  <div>
+                    <dt>Owner</dt>
+                    <dd>{item.owner}</dd>
+                  </div>
+                  <div>
+                    <dt>Aura move</dt>
+                    <dd>{item.auraMove}</dd>
+                  </div>
+                </dl>
+                <div className="teamButtonRowV4">
                   <Link href={item.href}>{item.action}</Link>
                   <Link href={item.customerHref}>Customer context</Link>
                 </div>
-              </article>
+              </div>
             ))}
-          </div>
+          </article>
         ))}
       </section>
     </main>

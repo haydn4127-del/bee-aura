@@ -1,115 +1,121 @@
 import Link from "next/link";
+import { ControlCentreNav } from "./ControlCentreNav";
+import {
+  commandFocus,
+  commandStats,
+  controlDeepThinking,
+  reportCards,
+  systemPulse,
+} from "./controlCentreData";
 
-const metrics = [
-  [
-    "Money at risk",
-    "£1,180",
-    "Recoverable today"
-  ],
-  [
-    "Proof ready",
-    "6",
-    "Reviews/cases"
-  ],
-  [
-    "System issue",
-    "1",
-    "Needs fixing"
-  ],
-  [
-    "AI reports",
-    "3",
-    "Prepared"
-  ]
-] as const;
-const panels = [
-  [
-    "Performance",
-    "Web enquiries are slower this week. Aura recommends priority routing.",
-    "/control-centre/reports"
-  ],
-  [
-    "Proof Pack",
-    "Completed jobs and reviews are ready for proof-backed sales material.",
-    "/control-centre/proof"
-  ],
-  [
-    "Needs Fixing",
-    "One route failed and has been surfaced before becoming a silent issue.",
-    "/control-centre/system"
-  ],
-  [
-    "Permissions",
-    "Owner approval rules and team permissions are visible in admin.",
-    "/control-centre/settings"
-  ]
-] as const;
+const thinking = controlDeepThinking.command;
 
-export default function ControlCentreDemoPage() {
+export default function ControlCentrePage() {
   return (
-    <main className="demoIdentityPage controlIdentityPage">
-      <section className="controlCommandHero">
-        <div>
-          <p className="simpleEyebrow">CONTROL CENTRE DEMO</p>
-          <h1>Premium AI command for the full business.</h1>
+    <main className="controlCentreV4">
+      <section className="controlHeroV4">
+        <div className="controlHeroCopyV4">
+          <p className="controlEyebrowV4">CONTROL CENTRE DEMO</p>
+          <h1>Aura reads the whole day and turns it into owner decisions.</h1>
           <p>
-            Control Centre is the deepest Bee-Aura demo. It keeps the power of the original
-            system but presents it as reporting, proof, system health and owner control.
+            The Control Centre shows what is live, what is protected, what needs
+            fixing and what the owner should improve next. One AI brain, made simple.
           </p>
+          <div className="controlHeroActionsV4">
+            <Link className="controlPrimaryActionV4" href="/control-centre/overview">
+              Open business overview
+            </Link>
+            <Link className="controlSecondaryActionV4" href="/control-centre/system">
+              Review needs fixing
+            </Link>
+          </div>
         </div>
 
-        <div className="controlAuraCommand">
-          <img src="/brand/source/aura-assistant-transparent.png" alt="Aura assistant" />
-          <strong>Aura Control Mode</strong>
-          <span>Watching performance, proof, approvals and system issues.</span>
-        </div>
+        <aside className="controlBrainPanelV4" aria-label="Aura executive brief">
+          <div className="controlBrainTopV4">
+            <span className="controlBluePulseV4" />
+            <div>
+              <strong>Aura Executive Brief</strong>
+              <p>Healthy today. Two owner checks need attention.</p>
+            </div>
+          </div>
+
+          <div className={`controlThinkingNoteV5 controlTone-${thinking.tone}V4`}>
+            <span>{thinking.label}</span>
+            <strong>{thinking.title}</strong>
+            <p>{thinking.ownerPlain}</p>
+          </div>
+
+          <ul className="controlPulseListV4">
+            {systemPulse.map((item) => (
+              <li key={item.label} className={`controlTone-${item.tone}V4`}>
+                <span>{item.label}</span>
+                <strong>{item.value}</strong>
+                <small>{item.detail}</small>
+              </li>
+            ))}
+          </ul>
+        </aside>
       </section>
 
-      <section className="controlMetricGrid">
-        {metrics.map(([label, value, detail]) => (
-          <article className="controlMetricCard" key={label}>
-            <span>{label}</span>
-            <strong>{value}</strong>
-            <small>{detail}</small>
+      <ControlCentreNav active="/control-centre" />
+
+      <section className={`controlThinkingStripV5 controlTone-${thinking.tone}V4`}>
+        <div>
+          <span>{thinking.label}</span>
+          <h2>{thinking.lead}</h2>
+          <p>{thinking.ownerPlain}</p>
+        </div>
+        <ul>
+          {thinking.aiWork.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <Link href={thinking.href}>{thinking.nextAction}</Link>
+      </section>
+
+      <section className="controlStatGridV4" aria-label="Control Centre status">
+        {commandStats.map((stat) => (
+          <article key={stat.label} className={`controlStatCardV4 controlTone-${stat.tone}V4`}>
+            <span>{stat.label}</span>
+            <strong>{stat.value}</strong>
+            <p>{stat.detail}</p>
           </article>
         ))}
       </section>
 
-      <section className="controlDashboardGrid">
-        <div className="controlReportPanel">
-          <div className="controlPanelHeader">
-            <div>
-              <p className="simpleEyebrow">AI BUSINESS REPORT</p>
-              <h2>Aura found slower web enquiry replies this week.</h2>
-            </div>
-            <Link href="/control-centre/reports">Open reports</Link>
+      <section className="controlCommandGridV4">
+        <div className="controlFocusStackV4">
+          <div className="controlSectionHeadV4">
+            <p className="controlEyebrowV4">TODAY'S COMMAND LIST</p>
+            <h2>What the owner should look at first.</h2>
           </div>
 
-          <div className="controlBars" aria-label="Demo response performance">
-            <div><span>Calls</span><i style={{ width: "86%" }} /></div>
-            <div><span>Website</span><i style={{ width: "52%" }} /></div>
-            <div><span>WhatsApp</span><i style={{ width: "74%" }} /></div>
-            <div><span>Reviews</span><i style={{ width: "68%" }} /></div>
-          </div>
-        </div>
-
-        <div className="controlPanelStack">
-          {panels.map(([title, detail, href]) => (
-            <Link href={href} className="controlMiniPanel" key={title}>
-              <span>{title}</span>
-              <p>{detail}</p>
-              <strong>Open →</strong>
-            </Link>
+          {commandFocus.map((item) => (
+            <article key={item.title} className={`controlFocusCardV4 controlTone-${item.tone}V4`}>
+              <div>
+                <span>{item.label}</span>
+                <h3>{item.title}</h3>
+                <p>{item.detail}</p>
+              </div>
+              <Link href={item.href}>{item.action}</Link>
+            </article>
           ))}
         </div>
-      </section>
 
-      <section className="controlDeepLinks">
-        <Link href="/control-centre/overview">Overview</Link>
-        <Link href="/control-centre/reports">Reports</Link>
-        <Link href="/control-centre/proof">Proof</Link>
-        <Link href="/control-centre/system">System</Link>
-        <Link href="/control-centre/settings">Settings</Link>
+        <aside className="controlReportPreviewV4">
+          <p className="controlEyebrowV4">REPORT SIGNALS</p>
+          <h2>Proof that the system is doing useful work.</h2>
+          <div className="controlMiniReportListV4">
+            {reportCards.slice(0, 3).map((report) => (
+              <Link key={report.title} href={report.href} className={`controlTone-${report.tone}V4`}>
+                <span>{report.label}</span>
+                <strong>{report.title}</strong>
+                <small>{report.score}% signal strength</small>
+              </Link>
+            ))}
+          </div>
+        </aside>
       </section>
     </main>
   );

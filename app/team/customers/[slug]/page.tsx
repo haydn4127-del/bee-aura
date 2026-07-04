@@ -19,39 +19,56 @@ export default async function TeamCustomerDetailPage({
   }
 
   return (
-    <main className="teamPackagePage teamPackageV3">
-      <section className="teamHeaderV3">
+    <main className="teamOpsV4">
+      <section className="teamCustomerHeroV4">
+        <div className="teamCustomerBadgeV4">{customer.initials}</div>
         <div>
-          <p className="simpleEyebrow">TEAM CUSTOMER CONTEXT</p>
+          <p className="teamEyebrowV4">{customer.status}</p>
           <h1>{customer.name}</h1>
           <p>{customer.detail}</p>
         </div>
-
-        <div className="teamAvatarV3 teamAvatarLargeV3">{customer.initials}</div>
+        <Link className="teamSecondaryActionV4" href="/team/customers">
+          Back to customers
+        </Link>
       </section>
 
-      <section className="teamDetailGridV3">
-        <article className="teamDetailPanelV3">
-          <p className="simpleEyebrow">TEAM VIEW</p>
+      <section className="teamDetailGridV4">
+        <article className="teamDetailCardV4">
           <h2>Who owns it and what happens next?</h2>
-          <dl className="teamFactsV3">
-            <div><dt>Status</dt><dd>{customer.status}</dd></div>
-            <div><dt>Owner</dt><dd>{customer.owner}</dd></div>
-            <div><dt>Next action</dt><dd>{customer.nextAction}</dd></div>
+          <dl className="teamDetailFactsV4">
+            <div>
+              <dt>Owner</dt>
+              <dd>{customer.owner}</dd>
+            </div>
+            <div>
+              <dt>Last touch</dt>
+              <dd>{customer.lastTouch}</dd>
+            </div>
+            <div>
+              <dt>Next action</dt>
+              <dd>{customer.nextAction}</dd>
+            </div>
           </dl>
-
-          <div className="teamButtonRowV3">
+          <div className="teamButtonRowV4">
             <Link href={customer.actionHref}>Open action</Link>
-            <Link href="/team/customers">Back to customers</Link>
+            <Link href="/team/queue">Shared queue</Link>
           </div>
         </article>
 
-        <aside className="teamDetailPanelV3">
-          <p className="simpleEyebrow">AURA TEAM CONTEXT</p>
+        <article className="teamDetailCardV4">
           <h2>No repeat questions. No lost handovers.</h2>
+          <ul className="teamContextListV4">
+            {customer.teamContext.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
+
+        <aside className="teamResultCardV4">
+          <span>Safety note</span>
+          <strong>{customer.caution}</strong>
           <p>
-            Aura keeps the useful customer context visible so the team can pick up
-            the work without starting from scratch.
+            Aura helps the team move faster, but customer-facing decisions stay controlled.
           </p>
         </aside>
       </section>

@@ -44,7 +44,7 @@ export default function SoloTodayPage() {
           <p className="simpleEyebrow">AURA THINKING</p>
           <h2>“I found the warm leads and prepared the safest next move.”</h2>
           <p>
-            Aura can prepare safe replies and friendly nudges. Prices, bookings and sensitive messages still need your say-so.
+            Aura can handle safe discovery replies and friendly nudges. Prices, bookings, promises and sensitive messages still need your approval.
           </p>
         </aside>
       </section>

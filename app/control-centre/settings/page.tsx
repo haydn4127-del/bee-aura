@@ -1,115 +1,96 @@
 import Link from "next/link";
+import { ControlCentreNav } from "../ControlCentreNav";
+import { controlDeepThinking, conversationRules, permissionRows, settingsSections } from "../controlCentreData";
 
-const metrics = [
-  [
-    "Money at risk",
-    "£1,180",
-    "Recoverable today"
-  ],
-  [
-    "Proof ready",
-    "6",
-    "Reviews/cases"
-  ],
-  [
-    "System issue",
-    "1",
-    "Needs fixing"
-  ],
-  [
-    "AI reports",
-    "3",
-    "Prepared"
-  ]
-] as const;
-const panels = [
-  [
-    "Performance",
-    "Web enquiries are slower this week. Aura recommends priority routing.",
-    "/control-centre/reports"
-  ],
-  [
-    "Proof Pack",
-    "Completed jobs and reviews are ready for proof-backed sales material.",
-    "/control-centre/proof"
-  ],
-  [
-    "Needs Fixing",
-    "One route failed and has been surfaced before becoming a silent issue.",
-    "/control-centre/system"
-  ],
-  [
-    "Permissions",
-    "Owner approval rules and team permissions are visible in admin.",
-    "/control-centre/settings"
-  ]
-] as const;
+const thinking = controlDeepThinking.settings;
 
-export default function ControlCentreDemoPage() {
+export default function ControlCentreSettingsPage() {
   return (
-    <main className="demoIdentityPage controlIdentityPage">
-      <section className="controlCommandHero">
+    <main className="controlCentreV4">
+      <section className="controlPageHeaderV4">
         <div>
-          <p className="simpleEyebrow">CONTROL SETTINGS</p>
-          <h1>Permissions, owner approvals and admin control.</h1>
+          <p className="controlEyebrowV4">SETTINGS</p>
+          <h1>Set the guardrails. Let Aura do the sorting.</h1>
           <p>
-            Control Centre is the deepest Bee-Aura demo. It keeps the power of the original
-            system but presents it as reporting, proof, system health and owner control.
+            Settings are the owner’s safety rules for the AI brain: what Aura can
+            prepare, what the team can touch and what must wait for approval.
           </p>
         </div>
-
-        <div className="controlAuraCommand">
-          <img src="/brand/source/aura-assistant-transparent.png" alt="Aura assistant" />
-          <strong>Aura Control Mode</strong>
-          <span>Watching performance, proof, approvals and system issues.</span>
-        </div>
+        <Link className="controlSecondaryActionV4" href="/control-centre/system">
+          Back to system
+        </Link>
       </section>
 
-      <section className="controlMetricGrid">
-        {metrics.map(([label, value, detail]) => (
-          <article className="controlMetricCard" key={label}>
-            <span>{label}</span>
-            <strong>{value}</strong>
-            <small>{detail}</small>
+      <ControlCentreNav active="/control-centre/settings" />
+
+      <section className={`controlThinkingStripV5 controlTone-${thinking.tone}V4`}>
+        <div>
+          <span>{thinking.label}</span>
+          <h2>{thinking.title}</h2>
+          <p>{thinking.ownerPlain}</p>
+        </div>
+        <ul>
+          {thinking.aiWork.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <Link href={thinking.href}>{thinking.nextAction}</Link>
+      </section>
+
+      <section className="controlSettingsGridV4">
+        {settingsSections.map((section) => (
+          <article key={section.title} className={`controlSettingCardV4 controlTone-${section.tone}V4`}>
+            <span>{section.label}</span>
+            <h2>{section.title}</h2>
+            <p>{section.detail}</p>
+            <ul>
+              {section.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
           </article>
         ))}
       </section>
 
-      <section className="controlDashboardGrid">
-        <div className="controlReportPanel">
-          <div className="controlPanelHeader">
-            <div>
-              <p className="simpleEyebrow">AI BUSINESS REPORT</p>
-              <h2>Aura found slower web enquiry replies this week.</h2>
-            </div>
-            <Link href="/control-centre/reports">Open reports</Link>
-          </div>
-
-          <div className="controlBars" aria-label="Demo response performance">
-            <div><span>Calls</span><i style={{ width: "86%" }} /></div>
-            <div><span>Website</span><i style={{ width: "52%" }} /></div>
-            <div><span>WhatsApp</span><i style={{ width: "74%" }} /></div>
-            <div><span>Reviews</span><i style={{ width: "68%" }} /></div>
-          </div>
-        </div>
-
-        <div className="controlPanelStack">
-          {panels.map(([title, detail, href]) => (
-            <Link href={href} className="controlMiniPanel" key={title}>
-              <span>{title}</span>
-              <p>{detail}</p>
-              <strong>Open →</strong>
-            </Link>
-          ))}
-        </div>
+      <section className="controlSettingsGridV4">
+        {conversationRules.map((rule) => (
+          <article key={rule.title} className={`controlSettingCardV4 controlTone-${rule.tone}V4`}>
+            <span>{rule.label}</span>
+            <h2>{rule.title}</h2>
+            <p>{rule.detail}</p>
+            <ul>
+              {rule.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
       </section>
 
-      <section className="controlDeepLinks">
-        <Link href="/control-centre/overview">Overview</Link>
-        <Link href="/control-centre/reports">Reports</Link>
-        <Link href="/control-centre/proof">Proof</Link>
-        <Link href="/control-centre/system">System</Link>
-        <Link href="/control-centre/settings">Settings</Link>
+      <section className="controlPermissionPanelV4">
+        <div className="controlSectionHeadV4">
+          <p className="controlEyebrowV4">TEAM PERMISSIONS</p>
+          <h2>Everyone gets useful access. Risky decisions stay locked.</h2>
+        </div>
+
+        <div className="controlPermissionRowsV4">
+          {permissionRows.map((row) => (
+            <article key={row.role} className={`controlPermissionRowV4 controlTone-${row.tone}V4`}>
+              <strong>{row.role}</strong>
+              <span>{row.can}</span>
+              <small>{row.guardrail}</small>
+            </article>
+          ))}
+        </div>
+
+        <div className="controlHeroActionsV4">
+          <Link className="controlPrimaryActionV4" href="/control-centre/proof">
+            Check proof pack
+          </Link>
+          <Link className="controlSecondaryActionV4" href="/control-centre/reports">
+            Open reports
+          </Link>
+        </div>
       </section>
     </main>
   );

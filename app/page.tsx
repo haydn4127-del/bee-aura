@@ -78,9 +78,7 @@ export default function Home() {
           what needs attention next.
         </p>
         <p>
-          These are three different ways to use the same Aura AI brain. Pick the
-          demo that matches how the business works today — one owner, shared team,
-          or full command view.
+          Same Aura AI brain. Three ways to use it. Pick the demo that matches how the business works today: one owner, shared team, or full command view.
         </p>
 
         <div className="demoChooserHeroActions">

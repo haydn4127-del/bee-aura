@@ -26888,3 +26888,1831 @@ main[class*="messages"] .baFlowCard a {
 }
 
 /* ===== BEE-AURA TEAM SAME-THEME CORRECTION v2 END ===== */
+
+/* === Bee-Aura Team Demo V4 start === */
+.teamOpsV4 {
+  --teamV4-gold: #f7c84b;
+  --teamV4-gold-strong: #f5b52e;
+  --teamV4-gold-soft: rgba(247, 200, 75, 0.14);
+  --teamV4-ink: #f8fafc;
+  --teamV4-muted: rgba(248, 250, 252, 0.7);
+  --teamV4-soft: rgba(248, 250, 252, 0.08);
+  --teamV4-line: rgba(248, 250, 252, 0.14);
+  --teamV4-panel: rgba(7, 12, 24, 0.86);
+  --teamV4-ai: #2dc4ff;
+  --teamV4-good: #4ade80;
+  --teamV4-warn: #f59e0b;
+  --teamV4-danger: #fb7185;
+
+  min-height: 100vh;
+  padding: 48px clamp(18px, 4vw, 64px) 72px;
+  color: var(--teamV4-ink);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(247, 200, 75, 0.16), transparent 28%),
+    radial-gradient(circle at 82% 4%, rgba(45, 196, 255, 0.1), transparent 24%),
+    linear-gradient(180deg, #070b16 0%, #050813 54%, #03050c 100%);
+}
+
+.teamOpsV4 a {
+  text-decoration: none;
+}
+
+.teamHeroV4,
+.teamPanelGridV4,
+.teamApprovalLayoutV4,
+.teamActionSplitV4,
+.teamDetailGridV4 {
+  display: grid;
+  gap: 22px;
+}
+
+.teamHeroV4 {
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+  align-items: stretch;
+  margin-bottom: 22px;
+}
+
+.teamHeroCopyV4,
+.teamControlCardV4,
+.teamStatCardV4,
+.teamLaneV4,
+.teamQueueLaneV4,
+.teamQueueCardV4,
+.teamAssignmentRowV4,
+.teamApprovalCardV4,
+.teamSafetyPanelV4,
+.teamCustomerCardV4,
+.teamDetailCardV4,
+.teamResultCardV4,
+.teamOwnerPanelV4 {
+  border: 1px solid var(--teamV4-line);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(14px);
+}
+
+.teamHeroCopyV4,
+.teamControlCardV4,
+.teamOwnerPanelV4,
+.teamSafetyPanelV4,
+.teamDetailCardV4,
+.teamResultCardV4 {
+  border-radius: 28px;
+  padding: clamp(22px, 4vw, 40px);
+}
+
+.teamHeroCopyV4 h1,
+.teamPageHeaderV4 h1,
+.teamCustomerHeroV4 h1 {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(2.1rem, 5vw, 4.8rem);
+  line-height: 0.96;
+  letter-spacing: -0.07em;
+}
+
+.teamHeroCopyV4 p,
+.teamPageHeaderV4 p,
+.teamCustomerHeroV4 p,
+.teamOwnerPanelV4 p,
+.teamSafetyPanelV4 p,
+.teamResultCardV4 p {
+  max-width: 760px;
+  color: var(--teamV4-muted);
+  line-height: 1.7;
+}
+
+.teamEyebrowV4,
+.teamCardMetaV4 span,
+.teamAiPillV4,
+.teamResultCardV4 span,
+.teamMiniListV4 span {
+  color: var(--teamV4-gold);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.teamHeroActionsV4,
+.teamButtonRowV4,
+.teamAssignmentActionsV4 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.teamPrimaryActionV4,
+.teamSecondaryActionV4,
+.teamGhostActionV4,
+.teamButtonRowV4 a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border-radius: 999px;
+  padding: 0 18px;
+  font-weight: 900;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.teamPrimaryActionV4,
+.teamButtonRowV4 a:first-child {
+  color: #171007;
+  background: linear-gradient(135deg, var(--teamV4-gold), var(--teamV4-gold-strong));
+  box-shadow: 0 16px 38px rgba(247, 200, 75, 0.24);
+}
+
+.teamSecondaryActionV4,
+.teamGhostActionV4,
+.teamButtonRowV4 a:last-child {
+  color: var(--teamV4-ink);
+  border: 1px solid rgba(247, 200, 75, 0.34);
+  background: rgba(247, 200, 75, 0.07);
+}
+
+.teamPrimaryActionV4:hover,
+.teamSecondaryActionV4:hover,
+.teamGhostActionV4:hover,
+.teamButtonRowV4 a:hover {
+  transform: translateY(-1px);
+}
+
+.teamControlTopV4 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.teamControlTopV4 strong {
+  display: block;
+  font-size: 1.05rem;
+}
+
+.teamControlTopV4 p {
+  margin: 4px 0 0;
+  color: var(--teamV4-muted);
+}
+
+.teamPulseV4 {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--teamV4-ai);
+  box-shadow: 0 0 0 8px rgba(45, 196, 255, 0.1);
+}
+
+.teamControlListV4,
+.teamStepListV4,
+.teamContextListV4,
+.teamSafetyPanelV4 ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.teamControlListV4 li,
+.teamStepListV4 li,
+.teamContextListV4 li,
+.teamSafetyPanelV4 li {
+  border-radius: 18px;
+  border: 1px solid var(--teamV4-line);
+  background: rgba(255, 255, 255, 0.055);
+  padding: 14px;
+}
+
+.teamControlListV4 strong,
+.teamControlListV4 small {
+  display: block;
+}
+
+.teamControlListV4 small {
+  margin-top: 4px;
+  color: var(--teamV4-muted);
+  line-height: 1.55;
+}
+
+.teamStatGridV4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.teamStatCardV4 {
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.teamStatCardV4 span,
+.teamStatCardV4 small {
+  display: block;
+  color: var(--teamV4-muted);
+}
+
+.teamStatCardV4 strong {
+  display: block;
+  margin: 10px 0 4px;
+  color: var(--teamV4-gold);
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
+
+.teamPanelGridV4 {
+  grid-template-columns: minmax(0, 1fr) 360px;
+  align-items: start;
+}
+
+.teamSectionHeadV4 {
+  margin: 4px 0 18px;
+}
+
+.teamSectionHeadV4 h2,
+.teamOwnerPanelV4 h2,
+.teamSafetyPanelV4 h2,
+.teamDetailCardV4 h2 {
+  margin: 8px 0 0;
+  font-size: clamp(1.4rem, 3vw, 2.25rem);
+  letter-spacing: -0.04em;
+}
+
+.teamBoardGridV4,
+.teamQueueBoardV4,
+.teamCustomerGridV4 {
+  display: grid;
+  gap: 16px;
+}
+
+.teamBoardGridV4,
+.teamQueueBoardV4 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.teamLaneV4,
+.teamQueueLaneV4 {
+  border-radius: 24px;
+  padding: 16px;
+}
+
+.teamLaneHeadV4 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.teamLaneHeadV4 span {
+  color: var(--teamV4-gold);
+  font-weight: 900;
+}
+
+.teamLaneHeadV4 p {
+  margin: 4px 0 0;
+  color: var(--teamV4-muted);
+  line-height: 1.5;
+}
+
+.teamLaneHeadV4 strong {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  color: #171007;
+  background: var(--teamV4-gold);
+}
+
+.teamCardV4,
+.teamQueueCardV4 {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid var(--teamV4-line);
+  background: rgba(3, 7, 18, 0.58);
+  padding: 16px;
+}
+
+.teamCardV4 + .teamCardV4,
+.teamQueueCardV4 + .teamQueueCardV4 {
+  margin-top: 12px;
+}
+
+.teamCardV4::before,
+.teamQueueCardV4::before,
+.teamAssignmentRowV4::before,
+.teamApprovalCardV4::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--teamV4-gold);
+}
+
+.teamTone-ownerV4::before {
+  background: var(--teamV4-warn);
+}
+
+.teamTone-duplicateV4::before {
+  background: var(--teamV4-danger);
+}
+
+.teamTone-handoverV4::before {
+  background: var(--teamV4-good);
+}
+
+.teamTone-followupV4::before {
+  background: var(--teamV4-ai);
+}
+
+.teamCardMetaV4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.teamCardMetaV4 small {
+  color: var(--teamV4-muted);
+  font-weight: 800;
+}
+
+.teamCardV4 h3,
+.teamQueueCardV4 h2,
+.teamAssignmentMainV4 h2,
+.teamApprovalCardV4 h2,
+.teamCustomerCardV4 h2 {
+  margin: 0;
+  letter-spacing: -0.035em;
+}
+
+.teamCardV4 p,
+.teamQueueCardV4 p,
+.teamAssignmentMainV4 p,
+.teamApprovalCardV4 p,
+.teamCustomerCardV4 p {
+  color: var(--teamV4-muted);
+  line-height: 1.6;
+}
+
+.teamCardOwnerV4,
+.teamAssignmentReasonV4,
+.teamApprovalHoldV4,
+.teamCustomerMiniV4 {
+  border-radius: 16px;
+  border: 1px solid rgba(247, 200, 75, 0.22);
+  background: var(--teamV4-gold-soft);
+  padding: 12px;
+}
+
+.teamCardOwnerV4 span,
+.teamAssignmentReasonV4 span,
+.teamApprovalHoldV4 span,
+.teamCustomerMiniV4 span {
+  display: block;
+  color: var(--teamV4-gold);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.teamCardOwnerV4 small,
+.teamCustomerMiniV4 small {
+  display: block;
+  margin-top: 4px;
+  color: var(--teamV4-muted);
+}
+
+.teamCardFactsV4,
+.teamDetailFactsV4 {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0 0;
+}
+
+.teamCardFactsV4 div,
+.teamDetailFactsV4 div {
+  display: grid;
+  gap: 4px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.055);
+  padding: 12px;
+}
+
+.teamCardFactsV4 dt,
+.teamDetailFactsV4 dt {
+  color: var(--teamV4-gold);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.teamCardFactsV4 dd,
+.teamDetailFactsV4 dd {
+  margin: 0;
+  color: var(--teamV4-ink);
+}
+
+.teamPageHeaderV4,
+.teamCustomerHeroV4 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 22px;
+  margin-bottom: 24px;
+}
+
+.teamAssignmentDeskV4,
+.teamApprovalStackV4 {
+  display: grid;
+  gap: 14px;
+}
+
+.teamAssignmentRowV4 {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr) 190px;
+  gap: 18px;
+  align-items: center;
+  border-radius: 24px;
+  padding: 18px;
+}
+
+.teamAssignmentOwnerV4 span,
+.teamAssignmentOwnerV4 small {
+  display: block;
+  color: var(--teamV4-muted);
+}
+
+.teamAssignmentOwnerV4 strong {
+  display: block;
+  margin: 6px 0;
+  color: var(--teamV4-gold);
+  font-size: 1.2rem;
+}
+
+.teamAssignmentActionsV4 {
+  justify-content: flex-end;
+  margin-top: 0;
+}
+
+.teamApprovalLayoutV4,
+.teamActionSplitV4,
+.teamDetailGridV4 {
+  grid-template-columns: minmax(0, 1fr) 360px;
+  align-items: start;
+}
+
+.teamActionSplitV4 {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) 360px;
+}
+
+.teamApprovalCardV4 {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: 22px;
+}
+
+.teamAiPillV4 {
+  display: inline-flex;
+  width: fit-content;
+  border: 1px solid rgba(45, 196, 255, 0.28);
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: var(--teamV4-ai);
+  background: rgba(45, 196, 255, 0.08);
+}
+
+.teamResultCardV4 strong {
+  display: block;
+  margin: 12px 0;
+  color: var(--teamV4-gold);
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+
+.teamMiniListV4 {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.teamMiniListV4 a {
+  display: block;
+  border-radius: 18px;
+  border: 1px solid var(--teamV4-line);
+  background: rgba(255, 255, 255, 0.055);
+  padding: 14px;
+}
+
+.teamMiniListV4 strong,
+.teamMiniListV4 small {
+  display: block;
+}
+
+.teamMiniListV4 small {
+  margin-top: 4px;
+  color: var(--teamV4-muted);
+}
+
+.teamCustomerGridV4 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.teamCustomerCardV4 {
+  border-radius: 24px;
+  padding: 20px;
+}
+
+.teamCustomerBadgeV4 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 14px;
+  border-radius: 18px;
+  color: #171007;
+  background: linear-gradient(135deg, var(--teamV4-gold), var(--teamV4-gold-strong));
+  font-weight: 950;
+  letter-spacing: -0.04em;
+}
+
+.teamCustomerHeroV4 {
+  align-items: center;
+  border-radius: 28px;
+  border: 1px solid var(--teamV4-line);
+  background: rgba(255, 255, 255, 0.055);
+  padding: clamp(18px, 4vw, 34px);
+}
+
+@media (max-width: 1100px) {
+  .teamHeroV4,
+  .teamPanelGridV4,
+  .teamApprovalLayoutV4,
+  .teamActionSplitV4,
+  .teamDetailGridV4 {
+    grid-template-columns: 1fr;
+  }
+
+  .teamBoardGridV4,
+  .teamQueueBoardV4,
+  .teamCustomerGridV4 {
+    grid-template-columns: 1fr;
+  }
+
+  .teamAssignmentRowV4 {
+    grid-template-columns: 1fr;
+  }
+
+  .teamAssignmentActionsV4 {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 720px) {
+  .teamOpsV4 {
+    padding: 28px 14px 48px;
+  }
+
+  .teamPageHeaderV4,
+  .teamCustomerHeroV4 {
+    flex-direction: column;
+  }
+
+  .teamStatGridV4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .teamHeroCopyV4,
+  .teamControlCardV4,
+  .teamOwnerPanelV4,
+  .teamSafetyPanelV4,
+  .teamDetailCardV4,
+  .teamResultCardV4 {
+    border-radius: 22px;
+    padding: 20px;
+  }
+}
+/* === Bee-Aura Team Demo V4 end === */
+
+/* === Bee-Aura Team Blue Polish V5 start === */
+.teamOpsV4 {
+  --teamV5-blue: #2dc4ff;
+  --teamV5-blue-strong: #0a84ff;
+  --teamV5-blue-soft: rgba(45, 196, 255, 0.12);
+  --teamV5-blue-line: rgba(45, 196, 255, 0.34);
+  --teamV5-blue-glow: rgba(45, 196, 255, 0.2);
+  --teamV5-card: rgba(13, 29, 50, 0.9);
+  --teamV5-card-bright: rgba(18, 41, 68, 0.94);
+  --teamV5-field: rgba(15, 33, 57, 0.92);
+  --teamV5-field-hover: rgba(20, 48, 78, 0.96);
+  --teamV5-white: #ffffff;
+  --teamV5-copy: rgba(255, 255, 255, 0.86);
+  --teamV5-muted: rgba(255, 255, 255, 0.74);
+}
+
+.teamOpsV4 :is(h1, h2, h3) {
+  color: var(--teamV5-white);
+  text-shadow: 0 14px 46px rgba(255, 255, 255, 0.08);
+}
+
+.teamOpsV4 :is(p, small, li, dd) {
+  color: var(--teamV5-copy);
+}
+
+.teamOpsV4 :is(strong, dt) {
+  color: var(--teamV5-white);
+}
+
+.teamOpsV4 .teamHeroCopyV4 p,
+.teamOpsV4 .teamPageHeaderV4 p,
+.teamOpsV4 .teamCustomerHeroV4 p,
+.teamOpsV4 .teamOwnerPanelV4 p,
+.teamOpsV4 .teamSafetyPanelV4 p,
+.teamOpsV4 .teamResultCardV4 p,
+.teamOpsV4 .teamCardV4 p,
+.teamOpsV4 .teamQueueCardV4 p,
+.teamOpsV4 .teamAssignmentMainV4 p,
+.teamOpsV4 .teamApprovalCardV4 p,
+.teamOpsV4 .teamCustomerCardV4 p {
+  color: var(--teamV5-copy);
+}
+
+.teamOpsV4 .teamEyebrowV4 {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--teamV5-white);
+}
+
+.teamOpsV4 .teamEyebrowV4::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--teamV5-blue);
+  box-shadow: 0 0 0 7px rgba(45, 196, 255, 0.09), 0 0 24px rgba(45, 196, 255, 0.42);
+}
+
+.teamOpsV4 .teamHeroCopyV4,
+.teamOpsV4 .teamControlCardV4,
+.teamOpsV4 .teamStatCardV4,
+.teamOpsV4 .teamLaneV4,
+.teamOpsV4 .teamQueueLaneV4,
+.teamOpsV4 .teamQueueCardV4,
+.teamOpsV4 .teamAssignmentRowV4,
+.teamOpsV4 .teamApprovalCardV4,
+.teamOpsV4 .teamSafetyPanelV4,
+.teamOpsV4 .teamCustomerCardV4,
+.teamOpsV4 .teamDetailCardV4,
+.teamOpsV4 .teamResultCardV4,
+.teamOpsV4 .teamOwnerPanelV4,
+.teamOpsV4 .teamCustomerHeroV4 {
+  background:
+    linear-gradient(180deg, rgba(21, 47, 75, 0.86), rgba(8, 22, 40, 0.92));
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.teamOpsV4 .teamCardV4,
+.teamOpsV4 .teamQueueCardV4 {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(45, 196, 255, 0.08), transparent 34%),
+    linear-gradient(180deg, rgba(9, 20, 36, 0.98), rgba(4, 13, 25, 0.98));
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.teamOpsV4 .teamCardOwnerV4,
+.teamOpsV4 .teamAssignmentReasonV4,
+.teamOpsV4 .teamApprovalHoldV4,
+.teamOpsV4 .teamCustomerMiniV4,
+.teamOpsV4 .teamCardFactsV4 div,
+.teamOpsV4 .teamDetailFactsV4 div,
+.teamOpsV4 .teamControlListV4 li,
+.teamOpsV4 .teamStepListV4 li,
+.teamOpsV4 .teamContextListV4 li,
+.teamOpsV4 .teamSafetyPanelV4 li {
+  background:
+    linear-gradient(180deg, var(--teamV5-field), rgba(9, 23, 42, 0.96));
+  border-color: var(--teamV5-blue-line);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 10px 28px rgba(0, 0, 0, 0.16);
+}
+
+.teamOpsV4 .teamCardOwnerV4 span,
+.teamOpsV4 .teamAssignmentReasonV4 span,
+.teamOpsV4 .teamApprovalHoldV4 span,
+.teamOpsV4 .teamCustomerMiniV4 span,
+.teamOpsV4 .teamCardFactsV4 dt,
+.teamOpsV4 .teamDetailFactsV4 dt {
+  color: var(--teamV4-gold);
+}
+
+.teamOpsV4 .teamCardOwnerV4 small,
+.teamOpsV4 .teamCustomerMiniV4 small {
+  color: var(--teamV5-muted);
+}
+
+.teamOpsV4 .teamCardMetaV4 span,
+.teamOpsV4 .teamAiPillV4,
+.teamOpsV4 .teamMiniListV4 span {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border: 1px solid var(--teamV5-blue-line);
+  border-radius: 999px;
+  padding: 5px 9px;
+  color: var(--teamV5-blue);
+  background: rgba(45, 196, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.teamOpsV4 .teamCardMetaV4 small {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.teamOpsV4 .teamSecondaryActionV4,
+.teamOpsV4 .teamGhostActionV4,
+.teamOpsV4 .teamButtonRowV4 a:last-child {
+  color: var(--teamV5-white);
+  border-color: rgba(45, 196, 255, 0.52);
+  background:
+    linear-gradient(135deg, rgba(45, 196, 255, 0.14), rgba(45, 196, 255, 0.045));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 12px 28px rgba(45, 196, 255, 0.08);
+}
+
+.teamOpsV4 .teamPrimaryActionV4,
+.teamOpsV4 .teamButtonRowV4 a:first-child {
+  color: #0b0f16;
+}
+
+.teamOpsV4 .teamPulseV4 {
+  background: var(--teamV5-blue);
+  box-shadow:
+    0 0 0 8px rgba(45, 196, 255, 0.12),
+    0 0 26px rgba(45, 196, 255, 0.5);
+}
+
+.teamOpsV4 :is(
+  .teamCardV4,
+  .teamQueueCardV4,
+  .teamAssignmentRowV4,
+  .teamApprovalCardV4,
+  .teamCustomerCardV4,
+  .teamDetailCardV4,
+  .teamResultCardV4,
+  .teamControlListV4 li,
+  .teamStepListV4 li,
+  .teamContextListV4 li,
+  .teamSafetyPanelV4 li,
+  .teamMiniListV4 a
+) {
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+.teamOpsV4 :is(
+  .teamCardV4,
+  .teamQueueCardV4,
+  .teamAssignmentRowV4,
+  .teamApprovalCardV4,
+  .teamCustomerCardV4,
+  .teamDetailCardV4,
+  .teamResultCardV4,
+  .teamMiniListV4 a
+):hover {
+  transform: translateY(-3px);
+  border-color: rgba(45, 196, 255, 0.52);
+  background:
+    radial-gradient(circle at 92% 0%, rgba(45, 196, 255, 0.14), transparent 36%),
+    linear-gradient(180deg, rgba(24, 52, 82, 0.96), rgba(7, 19, 35, 0.98));
+  box-shadow:
+    0 24px 70px rgba(45, 196, 255, 0.14),
+    0 24px 70px rgba(0, 0, 0, 0.32);
+}
+
+.teamOpsV4 :is(
+  .teamCardOwnerV4,
+  .teamAssignmentReasonV4,
+  .teamApprovalHoldV4,
+  .teamCustomerMiniV4,
+  .teamCardFactsV4 div,
+  .teamDetailFactsV4 div,
+  .teamControlListV4 li,
+  .teamStepListV4 li,
+  .teamContextListV4 li,
+  .teamSafetyPanelV4 li
+):hover {
+  background:
+    linear-gradient(180deg, var(--teamV5-field-hover), rgba(12, 30, 54, 0.98));
+  border-color: rgba(45, 196, 255, 0.62);
+  box-shadow:
+    0 0 0 1px rgba(45, 196, 255, 0.18),
+    0 16px 34px rgba(45, 196, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.teamOpsV4 .teamButtonRowV4 a:hover,
+.teamOpsV4 .teamSecondaryActionV4:hover,
+.teamOpsV4 .teamGhostActionV4:hover {
+  border-color: rgba(45, 196, 255, 0.78);
+  box-shadow:
+    0 0 0 1px rgba(45, 196, 255, 0.2),
+    0 16px 36px rgba(45, 196, 255, 0.16);
+}
+
+.teamOpsV4 .teamPrimaryActionV4:hover,
+.teamOpsV4 .teamButtonRowV4 a:first-child:hover {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 18px 42px rgba(247, 200, 75, 0.34);
+}
+
+.teamOpsV4 a:focus-visible {
+  outline: 3px solid rgba(45, 196, 255, 0.72);
+  outline-offset: 3px;
+}
+
+/* Sidebar / package tab hover accent.
+   Gold still owns the selected state. Blue just wakes the tab on hover/focus. */
+a[href="/team"],
+a[href="/team/queue"],
+a[href="/team/assignments"],
+a[href="/team/approvals"],
+a[href="/team/customers"],
+a[href="/control-centre"] {
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+a[href="/team"]:hover,
+a[href="/team/queue"]:hover,
+a[href="/team/assignments"]:hover,
+a[href="/team/approvals"]:hover,
+a[href="/team/customers"]:hover,
+a[href="/control-centre"]:hover,
+a[href="/team"]:focus-visible,
+a[href="/team/queue"]:focus-visible,
+a[href="/team/assignments"]:focus-visible,
+a[href="/team/approvals"]:focus-visible,
+a[href="/team/customers"]:focus-visible,
+a[href="/control-centre"]:focus-visible {
+  border-color: rgba(45, 196, 255, 0.62) !important;
+  box-shadow:
+    0 0 0 1px rgba(45, 196, 255, 0.18),
+    0 14px 32px rgba(45, 196, 255, 0.12);
+}
+
+/* Make the customer initials feel sharper and less flat. */
+.teamOpsV4 .teamCustomerBadgeV4 {
+  box-shadow:
+    0 12px 30px rgba(247, 200, 75, 0.24),
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset;
+}
+
+.teamOpsV4 .teamCustomerCardV4:hover .teamCustomerBadgeV4 {
+  box-shadow:
+    0 14px 34px rgba(247, 200, 75, 0.28),
+    0 0 0 2px rgba(45, 196, 255, 0.38) inset;
+}
+
+/* Slightly brighter lane counters and stat numbers. */
+.teamOpsV4 .teamLaneHeadV4 strong,
+.teamOpsV4 .teamStatCardV4 strong {
+  text-shadow: 0 0 22px rgba(247, 200, 75, 0.28);
+}
+
+/* Keep red/green/amber status bars, but let blue carry the AI/system flavour. */
+.teamOpsV4 .teamTone-followupV4::before {
+  background: var(--teamV5-blue);
+  box-shadow: 0 0 22px rgba(45, 196, 255, 0.42);
+}
+
+@media (max-width: 720px) {
+  .teamOpsV4 .teamCardMetaV4 {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+/* === Bee-Aura Team Blue Polish V5 end === */
+
+/* === Bee-Aura Control Centre V4 start === */
+.controlCentreV4 {
+  --controlV4-gold: #f7c84b;
+  --controlV4-gold-strong: #f5b52e;
+  --controlV4-blue: #2dc4ff;
+  --controlV4-blue-strong: #0a84ff;
+  --controlV4-green: #4ade80;
+  --controlV4-amber: #f59e0b;
+  --controlV4-red: #fb7185;
+  --controlV4-white: #ffffff;
+  --controlV4-copy: rgba(255, 255, 255, 0.86);
+  --controlV4-muted: rgba(255, 255, 255, 0.68);
+  --controlV4-line: rgba(255, 255, 255, 0.16);
+  --controlV4-blue-line: rgba(45, 196, 255, 0.34);
+  --controlV4-panel: rgba(12, 29, 49, 0.92);
+  --controlV4-panel-bright: rgba(18, 42, 70, 0.94);
+  --controlV4-deep: rgba(4, 13, 25, 0.98);
+
+  min-height: 100vh;
+  padding: 46px clamp(18px, 4vw, 64px) 72px;
+  color: var(--controlV4-white);
+  background:
+    radial-gradient(circle at 16% 10%, rgba(247, 200, 75, 0.13), transparent 28%),
+    radial-gradient(circle at 84% 4%, rgba(45, 196, 255, 0.14), transparent 30%),
+    linear-gradient(180deg, #071525 0%, #030b15 58%, #02060e 100%);
+}
+
+.controlCentreV4 a {
+  text-decoration: none;
+}
+
+.controlCentreV4 :is(h1, h2, h3) {
+  color: var(--controlV4-white);
+  text-shadow: 0 14px 46px rgba(255, 255, 255, 0.08);
+}
+
+.controlCentreV4 :is(p, li, small, span, dd) {
+  color: var(--controlV4-copy);
+}
+
+.controlHeroV4,
+.controlCommandGridV4,
+.controlTwoColumnV4 {
+  display: grid;
+  gap: 22px;
+}
+
+.controlHeroV4 {
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  align-items: stretch;
+  margin-bottom: 18px;
+}
+
+.controlHeroCopyV4,
+.controlBrainPanelV4,
+.controlStatCardV4,
+.controlFocusCardV4,
+.controlReportPreviewV4,
+.controlInsightCardV4,
+.controlReportCardV4,
+.controlProofCardV4,
+.controlTimelineItemV4,
+.controlSystemCardV4,
+.controlSettingCardV4,
+.controlPermissionPanelV4,
+.controlPermissionRowV4 {
+  border: 1px solid var(--controlV4-line);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(45, 196, 255, 0.08), transparent 34%),
+    linear-gradient(180deg, var(--controlV4-panel), rgba(7, 18, 34, 0.96));
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(14px);
+}
+
+.controlHeroCopyV4,
+.controlBrainPanelV4,
+.controlReportPreviewV4,
+.controlInsightCardV4,
+.controlPermissionPanelV4 {
+  border-radius: 30px;
+  padding: clamp(22px, 4vw, 42px);
+}
+
+.controlHeroCopyV4 h1,
+.controlPageHeaderV4 h1 {
+  max-width: 940px;
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4.9rem);
+  line-height: 0.96;
+  letter-spacing: -0.075em;
+}
+
+.controlHeroCopyV4 p,
+.controlPageHeaderV4 p,
+.controlReportPreviewV4 p {
+  max-width: 780px;
+  line-height: 1.7;
+  color: var(--controlV4-copy);
+}
+
+.controlEyebrowV4 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--controlV4-white);
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.controlEyebrowV4::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--controlV4-blue);
+  box-shadow:
+    0 0 0 8px rgba(45, 196, 255, 0.1),
+    0 0 26px rgba(45, 196, 255, 0.48);
+}
+
+.controlHeroActionsV4 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.controlPrimaryActionV4,
+.controlSecondaryActionV4,
+.controlFocusCardV4 a,
+.controlReportCardV4 a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border-radius: 999px;
+  padding: 0 18px;
+  font-weight: 950;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.controlPrimaryActionV4,
+.controlFocusCardV4 a,
+.controlReportCardV4 a {
+  color: #080d14;
+  background: linear-gradient(135deg, var(--controlV4-gold), var(--controlV4-gold-strong));
+  box-shadow: 0 18px 42px rgba(247, 200, 75, 0.24);
+}
+
+.controlSecondaryActionV4 {
+  color: var(--controlV4-white);
+  border: 1px solid var(--controlV4-blue-line);
+  background: linear-gradient(135deg, rgba(45, 196, 255, 0.14), rgba(45, 196, 255, 0.045));
+}
+
+.controlPrimaryActionV4:hover,
+.controlSecondaryActionV4:hover,
+.controlFocusCardV4 a:hover,
+.controlReportCardV4 a:hover {
+  transform: translateY(-2px);
+}
+
+.controlSecondaryActionV4:hover {
+  border-color: rgba(45, 196, 255, 0.72);
+  box-shadow: 0 18px 38px rgba(45, 196, 255, 0.15);
+}
+
+.controlBrainTopV4 {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.controlBrainTopV4 strong {
+  display: block;
+  color: var(--controlV4-white);
+}
+
+.controlBrainTopV4 p {
+  margin: 4px 0 0;
+  color: var(--controlV4-copy);
+}
+
+.controlBluePulseV4 {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--controlV4-blue);
+  box-shadow:
+    0 0 0 9px rgba(45, 196, 255, 0.11),
+    0 0 30px rgba(45, 196, 255, 0.52);
+}
+
+.controlPulseListV4,
+.controlInsightCardV4 ul,
+.controlSettingCardV4 ul {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.controlPulseListV4 li,
+.controlInsightCardV4 li,
+.controlSettingCardV4 li {
+  border: 1px solid rgba(45, 196, 255, 0.24);
+  border-radius: 18px;
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(16, 36, 62, 0.94), rgba(8, 20, 38, 0.98));
+}
+
+.controlPulseListV4 span,
+.controlInsightCardV4 > span,
+.controlReportCardTopV4 span,
+.controlProofCardV4 span,
+.controlSystemCardV4 span,
+.controlSettingCardV4 span,
+.controlFocusCardV4 span,
+.controlMiniReportListV4 span {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border: 1px solid var(--controlV4-blue-line);
+  border-radius: 999px;
+  padding: 5px 9px;
+  color: var(--controlV4-blue);
+  background: rgba(45, 196, 255, 0.1);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.controlPulseListV4 strong,
+.controlPulseListV4 small {
+  display: block;
+}
+
+.controlPulseListV4 strong {
+  margin-top: 8px;
+}
+
+.controlPulseListV4 small {
+  margin-top: 4px;
+  color: var(--controlV4-muted);
+  line-height: 1.5;
+}
+
+.controlTabsV4 {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  margin: 18px 0 22px;
+}
+
+.controlTabsV4 a {
+  border: 1px solid rgba(45, 196, 255, 0.22);
+  border-radius: 18px;
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(12, 29, 49, 0.88), rgba(6, 17, 32, 0.94));
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.controlTabsV4 a span,
+.controlTabsV4 a small {
+  display: block;
+}
+
+.controlTabsV4 a span {
+  color: var(--controlV4-white);
+  font-weight: 950;
+}
+
+.controlTabsV4 a small {
+  margin-top: 3px;
+  color: var(--controlV4-muted);
+  font-size: 0.74rem;
+}
+
+.controlTabsV4 a:hover,
+.controlTabsV4 a:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(45, 196, 255, 0.62);
+  box-shadow: 0 18px 38px rgba(45, 196, 255, 0.14);
+}
+
+.controlTabsV4 a.isActive {
+  border-color: rgba(247, 200, 75, 0.62);
+  background:
+    radial-gradient(circle at 90% 0%, rgba(45, 196, 255, 0.15), transparent 34%),
+    linear-gradient(135deg, rgba(247, 200, 75, 0.22), rgba(12, 29, 49, 0.94));
+  box-shadow:
+    0 0 0 1px rgba(247, 200, 75, 0.18),
+    0 20px 42px rgba(247, 200, 75, 0.11);
+}
+
+.controlStatGridV4,
+.controlOverviewGridV4,
+.controlReportsGridV4,
+.controlProofGridV4,
+.controlSystemGridV4,
+.controlSettingsGridV4 {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.controlStatGridV4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.controlOverviewGridV4,
+.controlSettingsGridV4 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.controlReportsGridV4,
+.controlProofGridV4,
+.controlSystemGridV4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.controlStatCardV4,
+.controlReportCardV4,
+.controlProofCardV4,
+.controlSystemCardV4,
+.controlSettingCardV4 {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: 20px;
+}
+
+.controlStatCardV4::before,
+.controlFocusCardV4::before,
+.controlReportCardV4::before,
+.controlProofCardV4::before,
+.controlTimelineItemV4::before,
+.controlSystemCardV4::before,
+.controlSettingCardV4::before,
+.controlPermissionRowV4::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--controlV4-gold);
+}
+
+.controlTone-blueV4::before {
+  background: var(--controlV4-blue);
+  box-shadow: 0 0 22px rgba(45, 196, 255, 0.38);
+}
+
+.controlTone-greenV4::before {
+  background: var(--controlV4-green);
+}
+
+.controlTone-amberV4::before {
+  background: var(--controlV4-amber);
+}
+
+.controlTone-redV4::before {
+  background: var(--controlV4-red);
+}
+
+.controlStatCardV4 span {
+  display: block;
+  color: var(--controlV4-muted);
+  font-weight: 850;
+}
+
+.controlStatCardV4 strong {
+  display: block;
+  margin: 10px 0 6px;
+  color: var(--controlV4-gold);
+  font-size: 2.2rem;
+  letter-spacing: -0.05em;
+}
+
+.controlStatCardV4 p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.controlCommandGridV4,
+.controlTwoColumnV4 {
+  grid-template-columns: minmax(0, 1fr) 380px;
+  align-items: start;
+}
+
+.controlFocusStackV4 {
+  display: grid;
+  gap: 14px;
+}
+
+.controlSectionHeadV4 {
+  margin-bottom: 4px;
+}
+
+.controlSectionHeadV4 h2,
+.controlReportPreviewV4 h2,
+.controlInsightCardV4 h2,
+.controlPermissionPanelV4 h2 {
+  margin: 8px 0 0;
+  color: var(--controlV4-white);
+  font-size: clamp(1.35rem, 3vw, 2.25rem);
+  letter-spacing: -0.045em;
+}
+
+.controlFocusCardV4 {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  border-radius: 24px;
+  padding: 20px;
+}
+
+.controlFocusCardV4 h3 {
+  margin: 12px 0 8px;
+  font-size: 1.35rem;
+  letter-spacing: -0.035em;
+}
+
+.controlFocusCardV4 p {
+  max-width: 760px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.controlReportPreviewV4 {
+  position: sticky;
+  top: 24px;
+}
+
+.controlMiniReportListV4,
+.controlBarListV4,
+.controlPermissionRowsV4 {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.controlMiniReportListV4 a,
+.controlBarCardV4,
+.controlPermissionRowV4 {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  border: 1px solid rgba(45, 196, 255, 0.24);
+  border-radius: 18px;
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(16, 36, 62, 0.94), rgba(8, 20, 38, 0.98));
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.controlMiniReportListV4 strong,
+.controlMiniReportListV4 small,
+.controlBarCardV4 strong,
+.controlBarCardV4 small {
+  display: block;
+}
+
+.controlMiniReportListV4 strong,
+.controlBarCardV4 strong {
+  margin-top: 8px;
+  color: var(--controlV4-white);
+}
+
+.controlMiniReportListV4 small,
+.controlBarCardV4 small {
+  margin-top: 4px;
+  color: var(--controlV4-muted);
+}
+
+.controlPageHeaderV4 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 22px;
+  margin-bottom: 20px;
+}
+
+.controlInsightCardV4 {
+  position: relative;
+  overflow: hidden;
+}
+
+.controlInsightCardV4 ul {
+  margin-top: 18px;
+}
+
+.controlInsightCardV4 li strong,
+.controlInsightCardV4 li small {
+  display: block;
+}
+
+.controlInsightCardV4 li strong {
+  color: var(--controlV4-white);
+}
+
+.controlInsightCardV4 li small {
+  margin-top: 4px;
+  color: var(--controlV4-muted);
+}
+
+.controlReportCardTopV4 {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.controlReportCardTopV4 strong {
+  color: var(--controlV4-gold);
+  font-size: 1.45rem;
+}
+
+.controlReportCardV4 h2,
+.controlProofCardV4 h2,
+.controlSystemCardV4 h2,
+.controlSettingCardV4 h2 {
+  margin: 14px 0 8px;
+  font-size: 1.35rem;
+  letter-spacing: -0.035em;
+}
+
+.controlReportCardV4 p,
+.controlProofCardV4 p,
+.controlSystemCardV4 p,
+.controlSettingCardV4 p {
+  line-height: 1.6;
+}
+
+.controlBarTrackV4 {
+  overflow: hidden;
+  height: 10px;
+  margin: 16px 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.controlBarTrackV4 i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--controlV4-gold), var(--controlV4-blue));
+  box-shadow: 0 0 22px rgba(45, 196, 255, 0.22);
+}
+
+.controlProofCardV4 strong {
+  display: inline-flex;
+  margin-top: 8px;
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: #08111c;
+  background: var(--controlV4-gold);
+}
+
+.controlTimelineV4 {
+  display: grid;
+  gap: 14px;
+}
+
+.controlTimelineItemV4 {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  border-radius: 24px;
+  padding: 18px;
+}
+
+.controlTimelineItemV4 time {
+  display: inline-flex;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 8px 10px;
+  color: #08111c;
+  background: var(--controlV4-gold);
+  font-weight: 950;
+}
+
+.controlTimelineItemV4 h3 {
+  margin: 0 0 6px;
+}
+
+.controlTimelineItemV4 p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.controlSettingCardV4 ul {
+  margin-top: 16px;
+}
+
+.controlPermissionPanelV4 {
+  margin-top: 22px;
+}
+
+.controlPermissionRowV4 {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr) 260px;
+  gap: 16px;
+  align-items: center;
+  border-radius: 20px;
+  padding: 16px;
+}
+
+.controlPermissionRowV4 strong {
+  color: var(--controlV4-gold);
+  font-size: 1.1rem;
+}
+
+.controlPermissionRowV4 span {
+  color: var(--controlV4-white);
+}
+
+.controlPermissionRowV4 small {
+  color: var(--controlV4-muted);
+}
+
+.controlCentreV4 :is(
+  .controlStatCardV4,
+  .controlFocusCardV4,
+  .controlReportPreviewV4,
+  .controlInsightCardV4,
+  .controlReportCardV4,
+  .controlProofCardV4,
+  .controlTimelineItemV4,
+  .controlSystemCardV4,
+  .controlSettingCardV4,
+  .controlPermissionRowV4,
+  .controlPulseListV4 li
+) {
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.controlCentreV4 :is(
+  .controlStatCardV4,
+  .controlFocusCardV4,
+  .controlInsightCardV4,
+  .controlReportCardV4,
+  .controlProofCardV4,
+  .controlTimelineItemV4,
+  .controlSystemCardV4,
+  .controlSettingCardV4,
+  .controlPermissionRowV4,
+  .controlMiniReportListV4 a,
+  .controlBarCardV4,
+  .controlPulseListV4 li
+):hover {
+  transform: translateY(-3px);
+  border-color: rgba(45, 196, 255, 0.56);
+  background:
+    radial-gradient(circle at 96% 0%, rgba(45, 196, 255, 0.15), transparent 34%),
+    linear-gradient(180deg, var(--controlV4-panel-bright), rgba(8, 20, 38, 0.98));
+  box-shadow:
+    0 24px 70px rgba(45, 196, 255, 0.13),
+    0 24px 70px rgba(0, 0, 0, 0.34);
+}
+
+.controlCentreV4 a:focus-visible {
+  outline: 3px solid rgba(45, 196, 255, 0.72);
+  outline-offset: 3px;
+}
+
+@media (max-width: 1200px) {
+  .controlHeroV4,
+  .controlCommandGridV4,
+  .controlTwoColumnV4 {
+    grid-template-columns: 1fr;
+  }
+
+  .controlReportPreviewV4 {
+    position: static;
+  }
+
+  .controlReportsGridV4,
+  .controlProofGridV4,
+  .controlSystemGridV4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .controlOverviewGridV4,
+  .controlSettingsGridV4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 820px) {
+  .controlCentreV4 {
+    padding: 28px 14px 48px;
+  }
+
+  .controlPageHeaderV4 {
+    flex-direction: column;
+  }
+
+  .controlTabsV4,
+  .controlStatGridV4,
+  .controlReportsGridV4,
+  .controlProofGridV4,
+  .controlSystemGridV4 {
+    grid-template-columns: 1fr;
+  }
+
+  .controlFocusCardV4,
+  .controlPermissionRowV4,
+  .controlTimelineItemV4 {
+    grid-template-columns: 1fr;
+  }
+
+  .controlHeroCopyV4,
+  .controlBrainPanelV4,
+  .controlReportPreviewV4,
+  .controlInsightCardV4,
+  .controlPermissionPanelV4 {
+    border-radius: 22px;
+    padding: 20px;
+  }
+}
+/* === Bee-Aura Control Centre V4 end === */
+
+/* === Bee-Aura Control Centre AI Message V5 start === */
+.controlThinkingStripV5,
+.controlThinkingNoteV5 {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(45, 196, 255, 0.34);
+  background:
+    radial-gradient(circle at 96% 0%, rgba(45, 196, 255, 0.16), transparent 34%),
+    linear-gradient(180deg, rgba(18, 42, 70, 0.96), rgba(7, 18, 34, 0.98));
+  box-shadow:
+    0 22px 60px rgba(45, 196, 255, 0.11),
+    0 22px 60px rgba(0, 0, 0, 0.28);
+}
+
+.controlThinkingStripV5 {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.75fr) auto;
+  gap: 18px;
+  align-items: center;
+  margin: 0 0 22px;
+  border-radius: 26px;
+  padding: 20px;
+}
+
+.controlThinkingStripV5::before,
+.controlThinkingNoteV5::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--controlV4-blue);
+  box-shadow: 0 0 24px rgba(45, 196, 255, 0.42);
+}
+
+.controlThinkingStripV5 span,
+.controlThinkingNoteV5 span {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border: 1px solid var(--controlV4-blue-line);
+  border-radius: 999px;
+  padding: 5px 9px;
+  color: var(--controlV4-blue);
+  background: rgba(45, 196, 255, 0.1);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.controlThinkingStripV5 h2,
+.controlThinkingNoteV5 strong {
+  display: block;
+  margin: 12px 0 8px;
+  color: var(--controlV4-white);
+  letter-spacing: -0.035em;
+}
+
+.controlThinkingStripV5 h2 {
+  font-size: clamp(1.25rem, 2.2vw, 2rem);
+  line-height: 1.05;
+}
+
+.controlThinkingNoteV5 strong {
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.controlThinkingStripV5 p,
+.controlThinkingNoteV5 p {
+  margin: 0;
+  color: var(--controlV4-copy);
+  line-height: 1.6;
+}
+
+.controlThinkingStripV5 ul {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.controlThinkingStripV5 li {
+  border: 1px solid rgba(45, 196, 255, 0.24);
+  border-radius: 14px;
+  padding: 10px 12px;
+  color: rgba(255, 255, 255, 0.86);
+  background: rgba(5, 17, 32, 0.72);
+}
+
+.controlThinkingStripV5 a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 999px;
+  padding: 0 18px;
+  color: #08111c;
+  background: linear-gradient(135deg, var(--controlV4-gold), var(--controlV4-gold-strong));
+  font-weight: 950;
+  box-shadow: 0 18px 38px rgba(247, 200, 75, 0.24);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.controlThinkingStripV5 a:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 20px 42px rgba(247, 200, 75, 0.32);
+}
+
+.controlThinkingNoteV5 {
+  margin-bottom: 14px;
+  border-radius: 20px;
+  padding: 16px;
+}
+
+.controlThinkingStripV5.controlTone-goldV4::before,
+.controlThinkingNoteV5.controlTone-goldV4::before {
+  background: var(--controlV4-gold);
+}
+
+.controlThinkingStripV5.controlTone-greenV4::before,
+.controlThinkingNoteV5.controlTone-greenV4::before {
+  background: var(--controlV4-green);
+}
+
+.controlThinkingStripV5.controlTone-amberV4::before,
+.controlThinkingNoteV5.controlTone-amberV4::before {
+  background: var(--controlV4-amber);
+}
+
+.controlThinkingStripV5.controlTone-redV4::before,
+.controlThinkingNoteV5.controlTone-redV4::before {
+  background: var(--controlV4-red);
+}
+
+@media (max-width: 1100px) {
+  .controlThinkingStripV5 {
+    grid-template-columns: 1fr;
+  }
+
+  .controlThinkingStripV5 a {
+    width: fit-content;
+  }
+}
+/* === Bee-Aura Control Centre AI Message V5 end === */
