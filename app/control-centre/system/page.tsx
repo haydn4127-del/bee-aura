@@ -59,8 +59,8 @@ export default function ControlCentreSystemPage() {
           <p className="controlEyebrowV4">SYSTEM STATUS</p>
           <h2>Aura is active, but still owner-controlled.</h2>
           <p>
-            Aura can keep safe discovery moving. Anything that promises a time,
-            price, booking or sensitive outcome stays held until the right person says yes.
+            Aura prepares, prioritises and organises the work. Anything that sends live,
+            promises a time, gives a price, confirms a booking or handles something sensitive stays held until the right person says yes.
           </p>
           <div className="controlHeroActionsV4">
             <Link className="controlPrimaryActionV4" href="/control-centre/proof">

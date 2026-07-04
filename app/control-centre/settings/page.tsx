@@ -13,7 +13,7 @@ export default function ControlCentreSettingsPage() {
           <h1>Set the guardrails. Let Aura do the sorting.</h1>
           <p>
             Settings are the owner’s safety rules for the AI brain: what Aura can
-            prepare, what the team can touch and what must wait for approval.
+            prepare, what customer context the team can use and what must wait for approval.
           </p>
         </div>
         <Link className="controlSecondaryActionV4" href="/control-centre/system">

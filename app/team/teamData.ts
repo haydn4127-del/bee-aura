@@ -289,7 +289,7 @@ export const teamActions: TeamAction[] = [
       "Send or assign it.",
       "Bring the owner in if the reply becomes sensitive.",
     ],
-    ownerLine: "Team and Aura can handle safe discovery. Owner joins if a promise, complaint, booking or price comes up.",
+    ownerLine: "Aura prepares the customer context and reply draft. Owner joins if a promise, complaint, booking or price comes up.",
     result: "The follow-up stays warm instead of vanishing into the day.",
     backHref: "/team/queue",
     customerHref: "/team/customers/mr-patel",

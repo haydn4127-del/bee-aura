@@ -98,7 +98,7 @@ export const controlDeepThinking = {
       "The owner should see which settings protect the business and which small fixes make the whole setup calmer.",
     aiWork: [
       "Flags gaps in business hours, permissions and reply rules.",
-      "Lets safe discovery continue while holding commitments until approval is clear.",
+      "Keeps reply drafts, customer context and owner checks tied together.",
       "Shows fixes before they become customer-facing problems.",
       "Checks the guardrails behind the AI brain.",
     ],
@@ -112,7 +112,7 @@ export const controlDeepThinking = {
     lead:
       "Settings should not feel like a technical cupboard. They are the owner’s safety rules for the AI brain.",
     ownerPlain:
-      "Aura can handle safe discovery replies once the rules are enabled. The owner approves anything that makes a promise.",
+      "Aura prepares replies, ranks leads and organises customer context. The owner approves anything that leaves the business or makes a promise.",
     aiWork: [
       "Keeps quotes, bookings, payments and complaints approval-led.",
       "Lets the team prepare useful work without taking risky decisions.",
@@ -135,7 +135,7 @@ export const commandStats = [
   {
     label: "Commitments held safely",
     value: "5",
-    detail: "Aura kept simple discovery moving, then held anything that makes a promise.",
+    detail: "Aura prepared reply drafts and held anything that makes a promise.",
     tone: "amber" as ControlTone,
   },
   {
@@ -185,8 +185,8 @@ export const commandFocus = [
 export const systemPulse = [
   {
     label: "Aura summary",
-    value: "Healthy, with two commitment checks",
-    detail: "Aura can handle safe discovery, while commitments still wait for approval.",
+    value: "Healthy, with two owner checks",
+    detail: "Aura has organised the day, with commitments still waiting for owner approval.",
     tone: "blue" as ControlTone,
   },
   {
@@ -428,21 +428,21 @@ export const settingsSections = [
 
 export const conversationRules = [
   {
-    title: "Safe discovery replies",
-    label: "Aura can handle",
-    detail: "Aura can greet, ask useful questions, collect details and keep a vague enquiry moving.",
+    title: "Reply drafts and customer context",
+    label: "Aura prepares",
+    detail: "Aura prepares the next best reply and customer questions so the owner or team does not start from a blank screen.",
     points: [
-      "Ask what the customer needs.",
-      "Ask for location, photos or preferred timing.",
-      "Confirm the message was received.",
-      "No price, booking, refund or promise included.",
+      "Summarise what the customer needs.",
+      "Suggest missing details such as location, photos or preferred timing.",
+      "Prepare a warm first reply.",
+      "Avoid price, booking, refund or promise unless approved.",
     ],
     tone: "blue" as ControlTone,
   },
   {
-    title: "Commitment replies",
+    title: "Owner approval replies",
     label: "Owner approval",
-    detail: "Anything that commits the business waits for the owner or approved manager.",
+    detail: "Anything that leaves the business or creates a commitment waits for approval.",
     points: [
       "Prices and quotes.",
       "Booking confirmations.",
