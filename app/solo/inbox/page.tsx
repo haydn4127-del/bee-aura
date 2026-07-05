@@ -1,40 +1,21 @@
-import Link from "next/link";
-import { soloActions } from "../soloData";
-
-const inboxActions = soloActions.filter((action) =>
-  ["call-back-sarah", "approve-first-reply"].includes(action.slug)
-);
+import { recoveryCases } from "../../recovery/recoveryData";
+import { CaseCard, RecoveryLayout, styles } from "../../recovery/RecoveryUi";
 
 export default function SoloInboxPage() {
   return (
-    <main className="soloJourneyPage">
-      <section className="soloSplitHero">
+    <RecoveryLayout>
+      <section className={styles.header}>
         <div>
-          <p className="simpleEyebrow">SOLO INBOX</p>
-          <h1>Fresh leads and replies, without the faff.</h1>
-          <p>
-            Inbox shows fresh enquiries, safe reply drafts and anything that needs your say-so.
-          </p>
+          <p className={styles.eyebrow}>INBOX RECOVERY</p>
+          <h1>Messages become decisions, not clutter.</h1>
+          <p>Inbox items are shown only when they need a safe next move, callback, owner approval or proof.</p>
         </div>
-        <Link href="/solo/today">Back to Today</Link>
       </section>
-
-      <section className="soloInboxStack">
-        {inboxActions.map((action) => (
-          <article key={action.slug} className={`soloInboxItem soloTone-${action.tone}`}>
-            <div>
-              <span>{action.status}</span>
-              <h2>{action.title}</h2>
-              <p>{action.detail}</p>
-              <small>{action.value} · {action.meta}</small>
-            </div>
-            <div className="soloInboxActions">
-              <Link href={action.actionHref}>{action.actionLabel}</Link>
-              <Link href={action.customerHref}>Customer</Link>
-            </div>
-          </article>
+      <section className={styles.list}>
+        {recoveryCases.filter((item) => ["Web form", "SMS", "Email", "Missed call + voicemail", "WhatsApp + voicemail"].some((channel) => item.channel.includes(channel))).map((item, index) => (
+          <CaseCard key={item.slug} item={item} index={index} />
         ))}
       </section>
-    </main>
+    </RecoveryLayout>
   );
 }

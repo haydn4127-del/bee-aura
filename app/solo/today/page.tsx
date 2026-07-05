@@ -1,53 +1,55 @@
-import Link from "next/link";
-import { soloActions } from "../soloData";
+import { recoveryCases } from "../../recovery/recoveryData";
+import { CaseCard, RecoveryLayout, styles } from "../../recovery/RecoveryUi";
 
 export default function SoloTodayPage() {
   return (
-    <main className="soloJourneyPage">
-      <section className="soloTodayHero">
+    <RecoveryLayout>
+      <section className={styles.header}>
         <div>
-          <p className="simpleEyebrow">SOLO TODAY</p>
-          <h1>Do these first.</h1>
+          <p className={styles.eyebrow}>SOLO TODAY</p>
+          <h1>Enquiries that need a decision.</h1>
           <p>
-            A solo service owner does not need loads of tabs. Today shows what Aura has found,
-            prepared and ranked so the next move is obvious.
+            Sorted by risk, not noise. Each case shows what came in, why it matters,
+            what was prepared or held and what decision is next.
           </p>
         </div>
-        <aside>
-          <strong>3 urgent actions</strong>
-          <span>2 AI drafts ready</span>
-          <span>1 follow-up could recover work</span>
+        <aside className={styles.headerAside}>
+          <strong>{recoveryCases.length} cases surfaced</strong>
+          <span>4 owner checks</span>
+          <span>2 proof gaps to close</span>
         </aside>
       </section>
 
-      <section className="soloTodayLayout">
-        <div className="soloTodayQueue">
-          {soloActions.map((action, index) => (
-            <article key={action.slug} className={`soloTodayCard soloTone-${action.tone}`}>
-              <div className="soloTodayNumber">{index + 1}</div>
-              <div>
-                <span>{action.status}</span>
-                <h2>{action.title}</h2>
-                <p>{action.detail}</p>
-                <small>{action.value} · {action.meta}</small>
-                <div className="soloTodayActions">
-                  <Link href={action.actionHref}>{action.actionLabel}</Link>
-                  <Link href={action.customerHref}>View customer</Link>
-                </div>
-              </div>
-            </article>
+      <section className={styles.split}>
+        <div className={styles.list}>
+          {recoveryCases.map((item, index) => (
+            <CaseCard key={item.slug} item={item} index={index} />
           ))}
         </div>
 
-        <aside className="soloActionBrain">
-          <img src="/brand/source/aura-assistant-transparent.png" alt="Aura assistant" />
-          <p className="simpleEyebrow">AURA THINKING</p>
-          <h2>“I found the warm leads and prepared the safest next move.”</h2>
-          <p>
-            Aura prepares safe reply drafts, friendly nudges and customer context. Live replies, prices, bookings, promises and sensitive messages still need your approval.
-          </p>
+        <aside className={styles.sticky}>
+          <p className={styles.eyebrow}>DECISION STACK</p>
+          <h2>Bee-Aura shows what should not be guessed.</h2>
+          <div className={styles.stack}>
+            <article>
+              <span>What came in</span>
+              <strong>Urgent, vague, duplicated or cooling customer signal.</strong>
+            </article>
+            <article>
+              <span>Why it matters</span>
+              <strong>Timing, price, responsibility or safety can be risky.</strong>
+            </article>
+            <article>
+              <span>What is held</span>
+              <strong>Risky wording waits for the owner or engineer.</strong>
+            </article>
+            <article>
+              <span>What proof records</span>
+              <strong>Message, risk, draft, decision and outcome.</strong>
+            </article>
+          </div>
         </aside>
       </section>
-    </main>
+    </RecoveryLayout>
   );
 }

@@ -1,0 +1,604 @@
+.page {
+  min-height: 100vh;
+  padding: clamp(18px, 2vw, 30px);
+  color: #eef8ff;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(42, 192, 225, 0.16), transparent 30rem),
+    radial-gradient(circle at 88% 8%, rgba(246, 196, 68, 0.08), transparent 24rem),
+    linear-gradient(180deg, #061827 0%, #02070d 100%);
+}
+
+.canvas {
+  width: min(1500px, 100%);
+  margin: 0 auto;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 260px;
+  padding: 14px 18px;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(246, 196, 68, 0.28);
+  background: rgba(2, 9, 16, 0.76);
+}
+
+.brand img {
+  width: 28px;
+  height: 28px;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  font-weight: 950;
+  letter-spacing: 0.04em;
+}
+
+.brand small {
+  margin-top: 3px;
+  color: rgba(238, 248, 255, 0.58);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.nav a,
+.secondary,
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  font-weight: 950;
+  text-decoration: none;
+}
+
+.nav a,
+.secondary {
+  color: #e5f8ff;
+  border: 1px solid rgba(82, 213, 255, 0.24);
+  background: rgba(9, 26, 42, 0.8);
+}
+
+.primary {
+  color: #04111b;
+  background: #f6c444;
+  box-shadow: 0 14px 34px rgba(246, 196, 68, 0.18);
+}
+
+.hero,
+.panel,
+.caseHero,
+.controlHero,
+.playbookHero {
+  border: 1px solid rgba(82, 213, 255, 0.18);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(246, 196, 68, 0.08), transparent 16rem),
+    linear-gradient(145deg, rgba(12, 34, 54, 0.94), rgba(3, 10, 17, 0.96));
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.26);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.72fr);
+  gap: 22px;
+  padding: clamp(24px, 3vw, 44px);
+}
+
+.copy h1,
+.header h1,
+.playbookHero h1 {
+  margin: 10px 0 18px;
+  color: #fff;
+  font-size: clamp(54px, 7vw, 120px);
+  line-height: 0.86;
+  letter-spacing: -0.085em;
+}
+
+.copy p,
+.header p,
+.card p,
+.caseCard p,
+.panel p,
+.playbookHero p,
+.detailText {
+  color: rgba(238, 248, 255, 0.72);
+  line-height: 1.55;
+}
+
+.eyebrow,
+.kicker,
+.card span,
+.caseCard span,
+.metric span,
+.timeline time,
+.guardrail span,
+.playbookGrid span,
+.factLabel {
+  color: #4bd7ff;
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.actions,
+.pills,
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.pills span,
+.chips span {
+  padding: 8px 11px;
+  border: 1px solid rgba(82, 213, 255, 0.18);
+  border-radius: 999px;
+  color: #dff7ff;
+  background: rgba(13, 38, 60, 0.72);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.flagship {
+  position: relative;
+  padding: 26px;
+  border: 1px solid rgba(82, 213, 255, 0.18);
+  border-radius: 24px;
+  background: rgba(3, 12, 22, 0.74);
+}
+
+.flagship::before,
+.caseCard::before,
+.queueItem::before,
+.laneCard::before,
+.guardrail::before {
+  content: "";
+  position: absolute;
+  inset: 16px auto 16px 0;
+  width: 4px;
+  border-radius: 999px;
+  background: #4bd7ff;
+}
+
+.flagship h2,
+.caseCard h2,
+.panel h2,
+.card h2,
+.sticky h2,
+.laneCard h2,
+.guardrail h2 {
+  margin: 8px 0 12px;
+  color: #fff;
+  font-size: clamp(26px, 3vw, 46px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.factStack,
+.stack {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.fact,
+.stack article {
+  padding: 12px;
+  border: 1px solid rgba(82, 213, 255, 0.14);
+  border-radius: 14px;
+  background: rgba(2, 8, 14, 0.58);
+}
+
+.fact strong,
+.stack strong {
+  display: block;
+  margin-top: 3px;
+  color: #fff;
+}
+
+.modeGrid,
+.pillarGrid,
+.metricGrid,
+.verticalGrid,
+.weeklyGrid,
+.guardrailGrid,
+.playbookGrid,
+.caseGrid {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.modeGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pillarGrid,
+.verticalGrid,
+.guardrailGrid,
+.caseGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.metricGrid,
+.weeklyGrid,
+.playbookGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.card,
+.metric,
+.guardrail,
+.caseCard,
+.lane,
+.sticky,
+.timelineEvent,
+.compareCard {
+  position: relative;
+  border: 1px solid rgba(82, 213, 255, 0.16);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 88% 6%, rgba(246, 196, 68, 0.08), transparent 12rem),
+    linear-gradient(180deg, rgba(12, 34, 54, 0.84), rgba(3, 10, 17, 0.94));
+}
+
+.card,
+.metric,
+.guardrail,
+.caseCard,
+.sticky,
+.compareCard {
+  padding: 18px;
+}
+
+.card {
+  min-height: 220px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.card strong,
+.guardrail strong {
+  display: block;
+  margin-top: 14px;
+  padding: 10px;
+  border-radius: 14px;
+  color: #06111a;
+  background: #f6c444;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: clamp(22px, 3vw, 38px);
+  border-radius: 28px;
+  border: 1px solid rgba(82, 213, 255, 0.18);
+  background: linear-gradient(145deg, rgba(12, 34, 54, 0.9), rgba(3, 10, 17, 0.96));
+}
+
+.header h1 {
+  max-width: 980px;
+  font-size: clamp(48px, 5.8vw, 88px);
+}
+
+.headerAside {
+  min-width: 230px;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(246, 196, 68, 0.24);
+  background: rgba(246, 196, 68, 0.08);
+}
+
+.headerAside strong,
+.headerAside span {
+  display: block;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(330px, 0.38fr);
+  gap: 16px;
+  margin-top: 16px;
+  align-items: start;
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+}
+
+.queueItem {
+  position: relative;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(82, 213, 255, 0.14);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(10, 28, 45, 0.88), rgba(3, 10, 17, 0.96));
+}
+
+.number {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  color: #06111a;
+  background: #f6c444;
+  font-weight: 950;
+}
+
+.queueItem h2,
+.queueItem h3 {
+  margin: 5px 0 8px;
+  color: #fff;
+}
+
+.sticky {
+  position: sticky;
+  top: 18px;
+}
+
+.caseHero,
+.controlHero,
+.playbookHero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.42fr);
+  gap: 18px;
+  padding: clamp(22px, 3vw, 38px);
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.detailBox {
+  padding: 16px;
+  border: 1px solid rgba(82, 213, 255, 0.16);
+  border-radius: 18px;
+  background: rgba(2, 8, 14, 0.58);
+}
+
+.detailBox h3 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.detailBox ul {
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(238, 248, 255, 0.76);
+}
+
+.roleStrip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.roleStrip article {
+  padding: 14px;
+  border: 1px solid rgba(82, 213, 255, 0.14);
+  border-radius: 16px;
+  background: rgba(3, 12, 22, 0.82);
+}
+
+.laneBoard {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+  align-items: start;
+}
+
+.lane {
+  padding: 16px;
+}
+
+.laneHead {
+  margin-bottom: 14px;
+}
+
+.laneHead strong {
+  float: right;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  color: #06111a;
+  background: #f6c444;
+}
+
+.laneCard {
+  position: relative;
+  margin-top: 12px;
+  padding: 16px;
+  border: 1px solid rgba(82, 213, 255, 0.14);
+  border-radius: 18px;
+  background: rgba(2, 8, 14, 0.68);
+}
+
+.laneCard dl {
+  display: grid;
+  gap: 8px;
+}
+
+.laneCard div:has(> dt) {
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(13, 38, 60, 0.62);
+}
+
+.laneCard dt {
+  color: #f6c444;
+  font-size: 10px;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.laneCard dd {
+  margin: 3px 0 0;
+  color: rgba(238, 248, 255, 0.82);
+}
+
+.metric strong {
+  display: block;
+  margin-top: 8px;
+  color: #f6c444;
+  font-size: 44px;
+  line-height: 1;
+}
+
+.weeklyGrid article {
+  padding: 18px;
+  border: 1px solid rgba(82, 213, 255, 0.14);
+  border-radius: 20px;
+  background: rgba(2, 8, 14, 0.62);
+}
+
+.weeklyGrid strong {
+  display: block;
+  color: #f6c444;
+  font-size: 44px;
+}
+
+.timeline {
+  display: grid;
+  gap: 12px;
+}
+
+.timelineEvent {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 14px;
+  padding: 16px;
+}
+
+.timeline time {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 36px;
+  color: #06111a;
+  border-radius: 999px;
+  background: #f6c444;
+}
+
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.blocked {
+  border-color: rgba(255, 112, 145, 0.36);
+}
+
+.blocked span {
+  color: #ff7091;
+}
+
+.safe {
+  border-color: rgba(87, 231, 155, 0.35);
+}
+
+.safe span {
+  color: #57e79b;
+}
+
+.toneRed::before {
+  background: #ff7091;
+}
+
+.toneAmber::before {
+  background: #f6c444;
+}
+
+.toneBlue::before {
+  background: #4bd7ff;
+}
+
+.toneGreen::before {
+  background: #57e79b;
+}
+
+.tonePurple::before {
+  background: #a88cff;
+}
+
+@media (max-width: 1100px) {
+  .hero,
+  .caseHero,
+  .controlHero,
+  .playbookHero,
+  .split,
+  .detailGrid,
+  .compare {
+    grid-template-columns: 1fr;
+  }
+
+  .modeGrid,
+  .pillarGrid,
+  .verticalGrid,
+  .metricGrid,
+  .weeklyGrid,
+  .guardrailGrid,
+  .caseGrid,
+  .laneBoard,
+  .roleStrip,
+  .playbookGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sticky {
+    position: static;
+  }
+
+  .copy h1,
+  .header h1,
+  .playbookHero h1 {
+    font-size: clamp(42px, 13vw, 64px);
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

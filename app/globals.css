@@ -28716,3 +28716,1333 @@ a[href="/control-centre"]:focus-visible {
   }
 }
 /* === Bee-Aura Control Centre AI Message V5 end === */
+
+/* Bee-Aura Final Blueprint Phase 1.5 visual correction */
+.beeFinalNav .landing-brand {
+  min-width: 310px;
+  max-width: 420px;
+}
+
+.beeFinalNav .landing-brand-title {
+  letter-spacing: 0.04em !important;
+}
+
+.beeFinalNav .landing-brand-subline {
+  font-size: 0.72rem !important;
+  letter-spacing: 0.16em !important;
+  opacity: 0.8;
+}
+
+.beeFinalHero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+  gap: 1.4rem;
+  align-items: stretch;
+  border: 1px solid rgba(255, 203, 64, 0.18);
+  border-radius: 30px;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  background:
+    radial-gradient(circle at 82% 44%, rgba(255, 203, 64, 0.13), transparent 18rem),
+    linear-gradient(135deg, rgba(14, 27, 44, 0.96), rgba(4, 10, 18, 0.98));
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+}
+
+.beeFinalHeroCopy h1 {
+  margin: 0.4rem 0 1rem;
+  max-width: 830px;
+  font-size: clamp(3.2rem, 7vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+.beeFinalHeroCopy p {
+  max-width: 760px;
+  color: rgba(237, 244, 252, 0.72);
+}
+
+.beeFlagshipCase {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 100%;
+  padding: clamp(1.1rem, 2.5vw, 1.7rem);
+  border: 1px solid rgba(255, 203, 64, 0.28);
+  border-radius: 26px;
+  background:
+    linear-gradient(180deg, rgba(13, 35, 55, 0.96), rgba(5, 12, 22, 0.98));
+  box-shadow: inset 0 0 0 1px rgba(49, 194, 240, 0.08), 0 26px 70px rgba(0, 0, 0, 0.28);
+}
+
+.beeFlagshipCase::before {
+  content: "";
+  position: absolute;
+  inset: 1rem auto 1rem 0;
+  width: 5px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffcb40, #ff6f91);
+}
+
+.beeCaseKicker,
+.beeFlagshipCase span,
+.beeModeCard span {
+  color: #2ee6ff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.beeFlagshipCase h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.7rem, 2.5vw, 2.5rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.beeFlagshipCase p,
+.beeModeCard p,
+.beeFinalProofStrip p {
+  color: rgba(237, 244, 252, 0.72);
+}
+
+.beeCaseFacts {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+}
+
+.beeCaseFacts div {
+  padding: 0.85rem;
+  border: 1px solid rgba(49, 194, 240, 0.18);
+  border-radius: 15px;
+  background: rgba(3, 13, 24, 0.56);
+}
+
+.beeCaseFacts dt {
+  color: #ffcb40;
+  font-size: 0.67rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.beeCaseFacts dd {
+  margin: 0.25rem 0 0;
+  color: #fff;
+  font-weight: 800;
+}
+
+.beeFlagshipCase a,
+.beeModeCard small {
+  margin-top: auto;
+  color: #ffcb40;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.beeFinalModeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.beeModeCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-height: 320px;
+  padding: 1.25rem;
+  border: 1px solid rgba(49, 194, 240, 0.16);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(13, 31, 49, 0.86), rgba(4, 10, 18, 0.96));
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.beeModeCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 203, 64, 0.45);
+}
+
+.beeModeCard > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.beeModeCard h2 {
+  color: #fff;
+  font-size: 1.45rem;
+  line-height: 1.05;
+}
+
+.beeModeCard li {
+  color: rgba(237, 244, 252, 0.72);
+  margin-bottom: 0.35rem;
+}
+
+.beeFinalProofStrip {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.4rem;
+  align-items: center;
+  padding: 1.4rem;
+  border: 1px solid rgba(255, 203, 64, 0.2);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 0% 50%, rgba(255, 203, 64, 0.14), transparent 18rem),
+    linear-gradient(135deg, rgba(16, 42, 58, 0.78), rgba(4, 10, 18, 0.94));
+}
+
+.beeFinalProofStrip img {
+  width: 76px;
+  height: 76px;
+}
+
+.beeFinalProofStrip h2 {
+  margin: 0.2rem 0 0.5rem;
+  color: #fff;
+  font-size: clamp(1.4rem, 2.6vw, 2.3rem);
+  line-height: 1.02;
+}
+
+.soloDecisionPage {
+  max-width: 1520px;
+}
+
+.soloDecisionHero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+.soloDecisionCopy,
+.soloFlagshipCase,
+.soloDecisionProof,
+.soloRiskRail {
+  border: 1px solid rgba(255, 203, 64, 0.2);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 95% 20%, rgba(255, 203, 64, 0.1), transparent 16rem),
+    linear-gradient(180deg, rgba(14, 32, 50, 0.92), rgba(4, 10, 18, 0.98));
+}
+
+.soloDecisionCopy {
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+.soloDecisionCopy h1 {
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+.soloFlagshipCase {
+  padding: clamp(1.2rem, 2.8vw, 2rem);
+  border-color: rgba(255, 111, 145, 0.45);
+  position: relative;
+}
+
+.soloFlagshipCase::before {
+  content: "";
+  position: absolute;
+  inset: 1rem auto 1rem 0;
+  width: 5px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffcb40, #ff6f91);
+}
+
+.soloFlagshipCase span,
+.soloDecisionMini span {
+  color: #ffcb40;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.soloFlagshipCase h2 {
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 0.95;
+}
+
+.soloFlagshipCase p,
+.soloFlagshipCase dd,
+.soloDecisionMini p,
+.soloRiskRail strong {
+  color: rgba(237, 244, 252, 0.78);
+}
+
+.soloFlagshipCase dl {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.soloFlagshipCase dt {
+  color: #2ee6ff;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.soloFlagshipCase dd {
+  margin: 0.25rem 0 0;
+}
+
+.soloFlagshipCase a,
+.soloDecisionMini,
+.soloDecisionProof li {
+  text-decoration: none;
+}
+
+.soloFlagshipCase a {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 0.8rem;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  background: #ffcb40;
+  color: #050b12;
+  font-weight: 950;
+}
+
+.soloDecisionStack {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.soloDecisionMini {
+  padding: 1.1rem;
+  border: 1px solid rgba(49, 194, 240, 0.18);
+  border-radius: 20px;
+  background: rgba(6, 17, 30, 0.92);
+}
+
+.soloDecisionMini h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1.1;
+}
+
+.soloDecisionProof {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 0.6fr);
+  gap: 1rem;
+  padding: 1.3rem;
+}
+
+.soloDecisionProof h2 {
+  color: #fff;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+}
+
+.soloDecisionProof li {
+  display: block;
+  padding: 0.8rem;
+  margin-bottom: 0.55rem;
+  border: 1px solid rgba(49, 194, 240, 0.18);
+  border-radius: 14px;
+  color: rgba(237, 244, 252, 0.8);
+  background: rgba(3, 13, 24, 0.46);
+}
+
+.soloTodayRiskHero h1 {
+  max-width: 860px;
+}
+
+.soloRiskRail {
+  padding: 1.4rem;
+  position: sticky;
+  top: 1rem;
+}
+
+.soloRiskRail h2 {
+  color: #fff;
+  font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+  line-height: 1.05;
+}
+
+.soloRiskRailList {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.soloRiskRailList div {
+  padding: 0.85rem;
+  border: 1px solid rgba(49, 194, 240, 0.18);
+  border-radius: 15px;
+  background: rgba(3, 13, 24, 0.48);
+}
+
+.soloRiskRailList span {
+  display: block;
+  color: #2ee6ff;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.teamQueueDecisionStrip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.teamQueueDecisionStrip article {
+  padding: 1rem;
+  border: 1px solid rgba(49, 194, 240, 0.18);
+  border-radius: 18px;
+  background: rgba(5, 18, 32, 0.9);
+}
+
+.teamQueueDecisionStrip span {
+  color: #2ee6ff;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.teamQueueDecisionStrip strong {
+  display: block;
+  margin-top: 0.3rem;
+  color: #fff;
+}
+
+.teamQueueDecisionPage .teamQueueBoardV4 {
+  align-items: start;
+}
+
+.teamQueueDecisionPage .teamQueueLaneV4:nth-child(1) {
+  border-color: rgba(255, 111, 145, 0.34);
+}
+
+.teamQueueDecisionPage .teamQueueLaneV4:nth-child(2) {
+  border-color: rgba(49, 194, 240, 0.32);
+}
+
+.teamQueueDecisionPage .teamQueueLaneV4:nth-child(3) {
+  border-color: rgba(61, 226, 145, 0.28);
+}
+
+.controlCentreMapPage .controlPageHeaderV4,
+.controlProofPage .controlPageHeaderV4,
+.controlWeeklyReviewPage .controlPageHeaderV4,
+.controlGuardrailsPage .controlPageHeaderV4,
+.controlSystemFixPage .controlPageHeaderV4 {
+  border-color: rgba(49, 194, 240, 0.22);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(49, 194, 240, 0.12), transparent 18rem),
+    linear-gradient(180deg, rgba(14, 34, 53, 0.92), rgba(4, 10, 18, 0.96));
+}
+
+.controlGuardrailsPage .controlPageHeaderV4 {
+  border-color: rgba(255, 203, 64, 0.28);
+}
+
+.controlProofPage .controlTimelineItemV4 time {
+  background: #ffcb40;
+  color: #050b12;
+}
+
+.controlWeeklyReviewPage .controlReportsGridV4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.controlSystemSpineGrid .controlProofCardV4 {
+  min-height: 250px;
+}
+
+.sidebar-control-bot-image,
+.sidebar-assistant-card img,
+.sidebar-assistant-premium img,
+.sidebar-assistant-professional img,
+.soloActionBrain img,
+img[src*="aura-assistant-transparent"] {
+  display: none !important;
+}
+
+.sidebar-assistant-card,
+.sidebar-assistant-premium,
+.sidebar-assistant-professional,
+.sidebar-control-card,
+.sidebar-control-card-bot {
+  border-color: rgba(49, 194, 240, 0.18) !important;
+  background:
+    linear-gradient(180deg, rgba(11, 32, 48, 0.9), rgba(3, 13, 24, 0.95)) !important;
+}
+
+.sidebar-assistant-card .status-title,
+.sidebar-assistant-premium .status-title,
+.sidebar-assistant-professional .status-title,
+.sidebar-control-copy .status-title {
+  color: #2ee6ff !important;
+}
+
+.sidebar-assistant-card a,
+.sidebar-assistant-premium a,
+.sidebar-assistant-professional a,
+.sidebar-control-copy .status-note {
+  background: rgba(49, 194, 240, 0.12) !important;
+  color: #bdf4ff !important;
+}
+
+.soloActionBrain {
+  display: none !important;
+}
+
+@media (max-width: 1100px) {
+  .beeFinalHero,
+  .soloDecisionHero,
+  .soloDecisionProof {
+    grid-template-columns: 1fr;
+  }
+
+  .beeFinalModeGrid,
+  .soloDecisionStack,
+  .teamQueueDecisionStrip,
+  .controlWeeklyReviewPage .controlReportsGridV4 {
+    grid-template-columns: 1fr;
+  }
+
+  .soloRiskRail {
+    position: static;
+  }
+}
+/* End Bee-Aura Final Blueprint Phase 1.5 visual correction */
+
+/* Bee-Aura Phase 2 Recovery Control System */
+.rcPage,
+.rcAppPage {
+  min-height: 100vh;
+  color: #eef8ff;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(39, 178, 220, 0.12), transparent 28rem),
+    radial-gradient(circle at 90% 10%, rgba(255, 203, 64, 0.08), transparent 24rem),
+    linear-gradient(180deg, #071725 0%, #030910 100%);
+}
+
+.rcPage {
+  padding: clamp(1rem, 2vw, 2rem);
+}
+
+.rcAppPage {
+  width: min(1520px, calc(100vw - 260px));
+  margin: 0 auto;
+  padding: clamp(1.2rem, 2vw, 2rem);
+}
+
+.rcTopbar,
+.rcTopLinks,
+.rcActionRow,
+.rcPillRow {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.rcTopbar {
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+
+.rcBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255, 203, 64, 0.28);
+  background: rgba(3, 10, 18, 0.72);
+  text-decoration: none;
+  color: #fff;
+}
+
+.rcBrand img {
+  width: 26px;
+  height: 26px;
+}
+
+.rcBrand span {
+  display: grid;
+}
+
+.rcBrand strong {
+  font-weight: 950;
+  letter-spacing: 0.04em;
+}
+
+.rcBrand small,
+.rcTopLinks a,
+.rcEyebrow,
+.rcFlagship span,
+.rcModeCard span,
+.rcPillar span,
+.rcMiniCase span,
+.rcQueueItem span,
+.rcMetric span,
+.rcLaneHead span,
+.rcLaneCard span,
+.rcTeamBrief span,
+.rcStackList span,
+.rcGuardrail span,
+.rcPlaybookGrid span,
+.rcComparePanel span {
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.rcBrand small {
+  color: rgba(238, 248, 255, 0.58);
+}
+
+.rcTopLinks a,
+.rcSecondary,
+.rcPrimary {
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 950;
+}
+
+.rcTopLinks a,
+.rcSecondary {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(73, 214, 255, 0.25);
+  color: #dff8ff;
+  background: rgba(11, 28, 45, 0.8);
+}
+
+.rcPrimary {
+  padding: 0.82rem 1.05rem;
+  color: #061019;
+  background: #ffcb40;
+  box-shadow: 0 12px 28px rgba(255, 203, 64, 0.18);
+}
+
+.rcActionRow {
+  flex-wrap: wrap;
+  margin-top: 1.1rem;
+}
+
+.rcHero,
+.rcPageHeroCompact,
+.rcSoloHero,
+.rcTeamHero,
+.rcControlHero,
+.rcProofStrip,
+.rcControlLoop {
+  border: 1px solid rgba(73, 214, 255, 0.18);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(13, 35, 55, 0.96), rgba(4, 10, 18, 0.96));
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.22);
+}
+
+.rcHeroSplit,
+.rcSoloHero,
+.rcTeamHero,
+.rcControlHero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 0.82fr);
+  gap: 1.2rem;
+  align-items: stretch;
+  padding: clamp(1.2rem, 2.6vw, 2rem);
+}
+
+.rcHeroCopy h1,
+.rcPageHeroCompact h1,
+.rcControlHero h1 {
+  margin: 0.4rem 0 1rem;
+  font-size: clamp(3.2rem, 6vw, 7rem);
+  line-height: 0.89;
+  letter-spacing: -0.08em;
+}
+
+.rcHeroCopy p,
+.rcPageHeroCompact p,
+.rcControlHero p,
+.rcFlagship p,
+.rcModeCard p,
+.rcPillar p,
+.rcQueueItem p,
+.rcLaneCard p,
+.rcStickyPanel p,
+.rcGuardrail p,
+.rcComparePanel h2,
+.rcPlaybookHero p {
+  color: rgba(238, 248, 255, 0.72);
+}
+
+.rcEyebrow {
+  color: #49d6ff;
+}
+
+.rcFlagship,
+.rcDecisionCase,
+.rcTeamBrief,
+.rcControlBrief,
+.rcStickyPanel,
+.rcPillar,
+.rcModeCard,
+.rcMetric,
+.rcLane,
+.rcGuardrail,
+.rcPlaybookGrid article,
+.rcComparePanel article {
+  border: 1px solid rgba(73, 214, 255, 0.18);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 85% 8%, rgba(255, 203, 64, 0.08), transparent 12rem),
+    linear-gradient(180deg, rgba(11, 31, 50, 0.9), rgba(4, 10, 18, 0.98));
+}
+
+.rcFlagship,
+.rcDecisionCase {
+  position: relative;
+  padding: clamp(1.15rem, 2.5vw, 1.75rem);
+}
+
+.rcFlagship::before,
+.rcDecisionCase::before,
+.rcQueueItem::before,
+.rcLaneCard::before,
+.rcGuardrail::before {
+  content: "";
+  position: absolute;
+  inset: 1rem auto 1rem 0;
+  width: 4px;
+  border-radius: 999px;
+  background: #49d6ff;
+}
+
+.rcTone-red::before { background: #ff6f91; }
+.rcTone-amber::before { background: #ffcb40; }
+.rcTone-blue::before { background: #49d6ff; }
+.rcTone-green::before { background: #54e69b; }
+.rcTone-purple::before { background: #a88cff; }
+
+.rcFlagship h2,
+.rcDecisionCase h2,
+.rcControlBrief h2,
+.rcStickyPanel h2 {
+  margin: 0.45rem 0 0.8rem;
+  color: #fff;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+}
+
+.rcFactList,
+.rcDecisionSteps,
+.rcStackList {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.rcFactList div,
+.rcDecisionSteps div,
+.rcStackList div,
+.rcGuardrailPair {
+  padding: 0.8rem;
+  border: 1px solid rgba(73, 214, 255, 0.16);
+  border-radius: 14px;
+  background: rgba(2, 10, 18, 0.54);
+}
+
+.rcFactList dt,
+.rcDecisionSteps b,
+.rcGuardrailPair b {
+  color: #ffcb40;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.rcFactList dd {
+  margin: 0.25rem 0 0;
+  color: #fff;
+  font-weight: 800;
+}
+
+.rcModeGrid,
+.rcMetricGrid,
+.rcPillarGrid,
+.rcSoloRail,
+.rcTeamLanesPreview,
+.rcWeeklyMini,
+.rcGuardrailGrid,
+.rcPlaybookGrid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.rcModeGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.rcPillarGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.rcMetricGrid,
+.rcWeeklyMini,
+.rcPlaybookGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.rcGuardrailGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.rcModeCard,
+.rcPillar,
+.rcMetric,
+.rcTeamBrief,
+.rcControlBrief,
+.rcStickyPanel,
+.rcGuardrail,
+.rcPlaybookGrid article {
+  padding: 1rem;
+}
+
+.rcModeCard {
+  min-height: 230px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.rcModeCard h2,
+.rcPillar h3,
+.rcQueueItem h2,
+.rcQueueItem h3,
+.rcLaneCard h2,
+.rcGuardrail h2,
+.rcPlaybookGrid h2,
+.rcComparePanel h2 {
+  color: #fff;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.rcPillar strong {
+  display: block;
+  margin-top: 0.8rem;
+  padding: 0.7rem;
+  border-radius: 13px;
+  color: #061019;
+  background: #ffcb40;
+}
+
+.rcProofStrip {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1.25rem;
+}
+
+.rcProofStrip img {
+  width: 68px;
+  height: 68px;
+}
+
+.rcProofStrip h2,
+.rcControlLoop h2,
+.rcPageHeroCompact h1 {
+  color: #fff;
+}
+
+.rcPageHeroCompact {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
+  align-items: flex-start;
+  padding: clamp(1.2rem, 2.5vw, 2rem);
+}
+
+.rcPageHeroCompact h1 {
+  max-width: 980px;
+  font-size: clamp(2.8rem, 5vw, 5.8rem);
+}
+
+.rcPageHeroCompact aside {
+  min-width: 230px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 203, 64, 0.25);
+  border-radius: 18px;
+  background: rgba(255, 203, 64, 0.08);
+}
+
+.rcPageHeroCompact aside strong,
+.rcPageHeroCompact aside span {
+  display: block;
+}
+
+.rcTwoColumn {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.36fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: start;
+}
+
+.rcDecisionList {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.rcQueueItem {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1rem 1rem 1.25rem;
+  border: 1px solid rgba(73, 214, 255, 0.16);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(10, 26, 43, 0.88), rgba(4, 10, 18, 0.96));
+}
+
+.rcQueueNumber {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  color: #061019;
+  background: #ffcb40;
+  font-weight: 950;
+}
+
+.rcChipList,
+.rcPillRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.rcChipList li,
+.rcPillRow span {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid rgba(73, 214, 255, 0.18);
+  border-radius: 999px;
+  color: #dff8ff;
+  background: rgba(14, 36, 56, 0.72);
+  font-weight: 800;
+  font-size: 0.78rem;
+}
+
+.rcStickyPanel {
+  position: sticky;
+  top: 1rem;
+}
+
+.rcSoloRail {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.rcMiniCase {
+  padding: 1rem;
+  border: 1px solid rgba(73, 214, 255, 0.16);
+  border-radius: 20px;
+  background: rgba(3, 12, 22, 0.88);
+  text-decoration: none;
+  color: #fff;
+}
+
+.rcControlLoop {
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 0.7fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1.25rem;
+}
+
+.rcLoopCards {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.rcLoopCards article {
+  padding: 0.8rem;
+  border: 1px solid rgba(73, 214, 255, 0.16);
+  border-radius: 14px;
+  background: rgba(3, 12, 22, 0.65);
+}
+
+.rcTeamBrief a {
+  display: block;
+  margin-top: 0.65rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(73, 214, 255, 0.16);
+  border-radius: 14px;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(3, 12, 22, 0.6);
+}
+
+.rcTeamBrief small {
+  display: block;
+  color: rgba(238, 248, 255, 0.62);
+}
+
+.rcTeamLanesPreview {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.rcTeamLanesPreview article {
+  padding: 1rem;
+  border: 1px solid rgba(73, 214, 255, 0.16);
+  border-radius: 22px;
+  background: rgba(7, 24, 39, 0.86);
+}
+
+.rcTeamLanesPreview a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.rcRoleStrip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.rcRoleStrip article {
+  padding: 0.85rem;
+  border: 1px solid rgba(73, 214, 255, 0.16);
+  border-radius: 16px;
+  background: rgba(3, 12, 22, 0.86);
+}
+
+.rcLaneBoard {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: start;
+}
+
+.rcLaneHead {
+  margin-bottom: 0.85rem;
+}
+
+.rcLaneHead strong {
+  float: right;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  color: #061019;
+  background: #ffcb40;
+}
+
+.rcLaneCard {
+  position: relative;
+  margin-top: 0.75rem;
+  padding: 1rem;
+  border: 1px solid rgba(73, 214, 255, 0.16);
+  border-radius: 18px;
+  background: rgba(2, 10, 18, 0.72);
+}
+
+.rcLaneCard dl {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.rcLaneCard div:has(> dt) {
+  padding: 0.65rem;
+  border-radius: 12px;
+  background: rgba(10, 31, 50, 0.65);
+}
+
+.rcLaneCard dt {
+  color: #ffcb40;
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.rcLaneCard dd {
+  margin: 0.2rem 0 0;
+}
+
+.rcControlHero {
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.42fr);
+}
+
+.rcControlBrief {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rcWeeklyMini article {
+  padding: 1rem;
+  border: 1px solid rgba(73, 214, 255, 0.16);
+  border-radius: 18px;
+  background: rgba(4, 15, 27, 0.88);
+}
+
+.rcWeeklyMini strong {
+  display: block;
+  margin: 0.25rem 0;
+  color: #ffcb40;
+  font-size: 2rem;
+}
+
+.rcWeeklyLarge strong {
+  font-size: 3rem;
+}
+
+.rcTimelineEvent {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 1rem;
+}
+
+.rcTimelineEvent time {
+  display: inline-grid;
+  place-items: center;
+  width: 68px;
+  height: 34px;
+  border-radius: 999px;
+  color: #061019;
+  background: #ffcb40;
+  font-weight: 950;
+}
+
+.rcGuardrail {
+  position: relative;
+}
+
+.rcGuardrailPair + .rcGuardrailPair {
+  margin-top: 0.6rem;
+}
+
+.rcPlaybookHero {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(1.2rem, 2.6vw, 2rem);
+}
+
+.rcPlaybookHero h1 {
+  margin: 0.35rem 0;
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+.rcPlaybookHero aside {
+  max-width: 360px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 203, 64, 0.22);
+  border-radius: 18px;
+  background: rgba(255, 203, 64, 0.08);
+}
+
+.rcComparePanel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.rcBlocked {
+  border-color: rgba(255, 111, 145, 0.38) !important;
+}
+
+.rcBlocked span {
+  color: #ff6f91;
+}
+
+.rcSafe {
+  border-color: rgba(84, 230, 155, 0.34) !important;
+}
+
+.rcSafe span {
+  color: #54e69b;
+}
+
+.sidebar-control-card-bot,
+.sidebar-assistant-card,
+.sidebar-assistant-premium,
+.sidebar-assistant-professional,
+.soloActionBrain {
+  display: none !important;
+}
+
+.sidebar-brand,
+.sidebar-brand-premium,
+.sidebar-brand-professional {
+  min-height: auto !important;
+}
+
+.sidebar-brand small,
+.sidebar-brand-premium small,
+.sidebar-brand-professional small {
+  white-space: normal !important;
+  line-height: 1.2 !important;
+}
+
+@media (max-width: 1200px) {
+  .rcAppPage {
+    width: 100%;
+  }
+
+  .rcHeroSplit,
+  .rcSoloHero,
+  .rcTeamHero,
+  .rcControlHero,
+  .rcTwoColumn,
+  .rcControlLoop,
+  .rcPlaybookHero,
+  .rcComparePanel {
+    grid-template-columns: 1fr;
+  }
+
+  .rcModeGrid,
+  .rcPillarGrid,
+  .rcMetricGrid,
+  .rcGuardrailGrid,
+  .rcLaneBoard,
+  .rcTeamLanesPreview,
+  .rcRoleStrip,
+  .rcWeeklyMini,
+  .rcPlaybookGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .rcStickyPanel {
+    position: static;
+  }
+}
+/* End Bee-Aura Phase 2 Recovery Control System */
+
+/* Phase 3 Recovery Control sidebar reset */
+.beeSidebar {
+  width: 220px !important;
+  background:
+    radial-gradient(circle at 30% 12%, rgba(75, 215, 255, 0.13), transparent 12rem),
+    #061421 !important;
+  border-right: 1px solid rgba(75, 215, 255, 0.13) !important;
+  color: #eef8ff !important;
+}
+
+.beeSidebarBrand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 14px;
+  padding: 14px;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(246, 196, 68, 0.28);
+  background: rgba(2, 9, 16, 0.72);
+}
+
+.beeSidebarBrand img {
+  width: 26px;
+  height: 26px;
+}
+
+.beeSidebarBrand strong,
+.beeSidebarBrand small {
+  display: block;
+}
+
+.beeSidebarBrand strong {
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+}
+
+.beeSidebarBrand small {
+  margin-top: 4px;
+  color: rgba(238, 248, 255, 0.58);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.beeSidebarNav {
+  display: grid;
+  gap: 8px;
+  padding: 10px 14px;
+}
+
+.beeSidebarNav a {
+  display: grid;
+  gap: 2px;
+  padding: 11px 12px;
+  color: #dff8ff;
+  text-decoration: none;
+  border: 1px solid rgba(75, 215, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(6, 20, 33, 0.72);
+}
+
+.beeSidebarNav a:hover {
+  border-color: rgba(246, 196, 68, 0.42);
+  background: rgba(246, 196, 68, 0.11);
+}
+
+.beeSidebarNav strong {
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.beeSidebarNav small {
+  color: rgba(238, 248, 255, 0.62);
+  font-size: 10px;
+}
+
+.beeSidebarCard {
+  margin: 14px;
+  padding: 14px;
+  border: 1px solid rgba(75, 215, 255, 0.18);
+  border-radius: 16px;
+  background: rgba(10, 36, 56, 0.72);
+}
+
+.beeSidebarCard strong {
+  color: #4bd7ff;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 11px;
+}
+
+.beeSidebarCard p,
+.beeSidebarCard span {
+  display: block;
+  color: rgba(238, 248, 255, 0.72);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.sidebar-control-card-bot,
+.sidebar-assistant-card,
+.sidebar-assistant-premium,
+.sidebar-assistant-professional,
+.soloActionBrain {
+  display: none !important;
+}
+/* End Phase 3 Recovery Control sidebar reset */
